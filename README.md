@@ -4,7 +4,7 @@
 
 **Large language models for automatic heuristic and algorithm design.**
 
-[Website](https://ciam-group.github.io/awesome-llm4ad/) · [Papers](#papers) · [Contribution guide](docs/CONTRIBUTION_GUIDE.md)
+[Website](https://ciam-group.github.io/awesome-llm4ahd/) · [Papers](#papers) · [Contribution guide](docs/CONTRIBUTION_GUIDE.md)
 
 </div>
 
@@ -32,9 +32,9 @@ Each entry links to the paper, a structured reading note, and code when availabl
 
 ## Interactive atlas
 
-The website connects the collection through a compact [paper timeline](https://ciam-group.github.io/awesome-llm4ad/), a curated [relation map](https://ciam-group.github.io/awesome-llm4ad/relations), and paper-level research notes.
+The website connects the collection through a compact [paper timeline](https://ciam-group.github.io/awesome-llm4ahd/), a curated [relation map](https://ciam-group.github.io/awesome-llm4ahd/relations), and paper-level research notes.
 
-[![AHD Papers timeline](docs/assets/atlas-preview.png)](https://ciam-group.github.io/awesome-llm4ad/)
+[![AHD Papers timeline](docs/assets/atlas-preview.png)](https://ciam-group.github.io/awesome-llm4ahd/)
 
 ## Contributing
 
