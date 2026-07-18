@@ -25,8 +25,11 @@ try {
   const aelRow = page.locator('tr').filter({ hasText: 'Algorithm Evolution Using Large Language Model' })
   await aelRow.locator('a').first().click()
   await page.getByRole('heading', { name: 'Algorithm Evolution Using Large Language Model' }).waitFor()
-  const imageLoaded = await page.locator('.paper-note img').first().evaluate((image) => image.complete && image.naturalWidth > 0)
-  if (!imageLoaded) throw new Error('Paper image did not load through the repository base path')
+  await page.locator('.paper-note img').first().waitFor({ state: 'visible' })
+  await page.waitForFunction(() => {
+    const image = document.querySelector('.paper-note img')
+    return image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0
+  })
   if (errors.length > 0) throw new Error(`Console errors: ${errors.join(' | ')}`)
   console.log('GitHub Pages base-path smoke passed: Timeline → Relations → Papers → AEL detail + image.')
 } finally {
