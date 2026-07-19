@@ -62,7 +62,7 @@ The frontmatter at the top of `index.md` is the source of truth.
 | `institutions` | Existing IDs from `data/institutions.yml`. |
 | `primary_dimension` | The paper's main contribution lens. |
 | `dimensions` | All directly relevant controlled dimensions. |
-| `problems` | Concrete evaluated problems or application settings. |
+| `problems` | Full names of concrete evaluated problems or application settings. |
 | `featured` | `true` for a timeline landmark; otherwise `false`. |
 | `summary` | One precise sentence describing the artifact, search, and contribution. |
 
@@ -93,6 +93,8 @@ featured: false
 summary: The method uses reflective feedback to guide the search for executable routing heuristics.
 ---
 ```
+
+Write full problem names in paper metadata. The README generator applies the compact labels in [`data/problem-abbreviations.yml`](../data/problem-abbreviations.yml) automatically, so contributors do not need to abbreviate them by hand.
 
 ### 4. Write the note
 

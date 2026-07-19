@@ -1,19 +1,28 @@
 import fs from 'node:fs/promises'
+import { parse } from 'yaml'
 import { buildContent } from './build-content.mjs'
 
 const startMarker = '<!-- PAPER_TABLE:START -->'
 const endMarker = '<!-- PAPER_TABLE:END -->'
 const data = await buildContent({ write: false })
 const readme = await fs.readFile('README.md', 'utf8')
+const problemConfig = parse(await fs.readFile('data/problem-abbreviations.yml', 'utf8'))
+const problemAbbreviations = new Map(
+  Object.entries(problemConfig.problem_abbreviations ?? {}).map(([problem, abbreviation]) => [problem.toLowerCase(), String(abbreviation)]),
+)
 
 function escapeCell(value) {
   return String(value).replaceAll('|', '\\|').replaceAll('\n', ' ')
 }
 
+function compactProblem(problem) {
+  return problemAbbreviations.get(problem.toLowerCase()) ?? problem
+}
+
 const rows = data.papers.map((paper) => {
   const resources = [`[Note](content/papers/${paper.id}/index.md)`]
   if (paper.code_url) resources.push(`[Code](${paper.code_url})`)
-  const shownProblems = paper.problems.slice(0, 3).map((problem) => `\`${escapeCell(problem)}\``)
+  const shownProblems = paper.problems.slice(0, 3).map((problem) => `\`${escapeCell(compactProblem(problem))}\``)
   if (paper.problems.length > 3) shownProblems.push(`+${paper.problems.length - 3}`)
   const paperLabel = `**${escapeCell(paper.short_title)}** — ${escapeCell(paper.title)}`
   return `| ${paper.date.slice(0, 7).replace('-', '.')} | [${paperLabel}](${paper.paper_url}) | ${escapeCell(paper.venue)} ${paper.year} | ${shownProblems.join(', ')} | ${data.taxonomy.dimensions[paper.primary_dimension].label} | ${resources.join(' · ')} |`

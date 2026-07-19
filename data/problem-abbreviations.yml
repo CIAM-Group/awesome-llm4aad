@@ -1,0 +1,19 @@
+# Compact labels used only in the generated README table.
+# Paper metadata keeps full problem names for search and readability.
+problem_abbreviations:
+  traveling salesman problem: TSP
+  vehicle routing problem: VRP
+  capacitated vehicle routing problem: CVRP
+  orienteering problem: OP
+  knapsack problem: KP
+  bin packing problem: BPP
+  online bin packing: OBP
+  flow shop scheduling problem: FSSP
+  assignment scheduling problem: ASP
+  cap set problem: Cap Set
+  scientific algorithm discovery: Discovery
+  data-center scheduling: DCS
+  matrix multiplication: MM
+  hardware accelerator optimization: HAO
+  lunarlander: LunarLander
+  carracing: CarRacing

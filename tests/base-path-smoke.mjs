@@ -12,6 +12,23 @@ page.on('console', (message) => {
 })
 page.on('pageerror', (error) => errors.push(error.message))
 
+async function checkDirectRoute(route, heading) {
+  const directPage = await browser.newPage({ viewport: { width: 1280, height: 900 } })
+  const directErrors = []
+  directPage.on('console', (message) => {
+    if (message.type() === 'error') directErrors.push(message.text())
+  })
+  directPage.on('pageerror', (error) => directErrors.push(error.message))
+  try {
+    const response = await directPage.goto(new URL(route, baseUrl).href, { waitUntil: 'domcontentloaded', timeout: 60_000 })
+    if (!response || response.status() >= 400) throw new Error(`${route}: expected HTTP 2xx/3xx, received ${response?.status() ?? 'no response'}`)
+    await directPage.getByRole('heading', { name: heading }).waitFor()
+    if (directErrors.length > 0) throw new Error(`${route}: console errors: ${directErrors.join(' | ')}`)
+  } finally {
+    await directPage.close()
+  }
+}
+
 try {
   await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 })
   await page.getByText('Paper Timeline').waitFor()
@@ -30,8 +47,11 @@ try {
     const image = document.querySelector('.paper-note img')
     return image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0
   })
+  await checkDirectRoute('relations', 'Research relations')
+  await checkDirectRoute('papers', 'Paper index')
+  await checkDirectRoute('papers/ael', 'Algorithm Evolution Using Large Language Model')
   if (errors.length > 0) throw new Error(`Console errors: ${errors.join(' | ')}`)
-  console.log('GitHub Pages base-path smoke passed: Timeline → Relations → Papers → AEL detail + image.')
+  console.log('GitHub Pages smoke passed: client navigation, direct 200 routes, AEL detail, and image assets.')
 } finally {
   await browser.close()
 }
