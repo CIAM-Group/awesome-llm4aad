@@ -40,6 +40,12 @@ nus:
   initials: NUS
   website: https://www.nus.edu.sg/
   accent: '#1d5a8a'
+ntu:
+  name: Nanyang Technological University
+  short_name: NTU
+  initials: NTU
+  website: https://www.ntu.edu.sg/
+  accent: '#c41230'
 sustech:
   name: Southern University of Science and Technology
   short_name: SUSTech
