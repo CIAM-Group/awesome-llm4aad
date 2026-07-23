@@ -59,4 +59,4 @@ Richer or learned instance representations, cheaper subclass-level search budget
 
 ## Connections
 
-InstSpecHH sits downstream of problem-specific evolutionary LLM-AHD lines such as EoH: it keeps LLM-based heuristic generation, but changes the operating scope from one class-wide winner to instance-aware subclass generation and selection. 
+InstSpecHH sits downstream of problem-specific evolutionary LLM-AHD lines such as EoH: it keeps LLM-based heuristic generation, but changes the operating scope from one class-wide winner to instance-aware subclass generation and selection. The atlas records this as a generalization of EoH along the scope dimension.
