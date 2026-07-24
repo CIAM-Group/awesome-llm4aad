@@ -32,9 +32,9 @@ summary: PathWise formulates heuristic discovery as a sequential decision proces
 
 Existing LLM-based AHD methods rely on fixed evolutionary rules and static prompt templates, leading to myopic generation, redundant evaluations, and limited reasoning about heuristic derivation. PathWise introduces a stateful, semantic representation of the search trajectory and a planning-based approach to overcome these limitations.
 
-![PathWise paper overview](./images/paper-cover.jpg)
+![PathWise paper overview](./images/Overview_of_PathsWise.png)
 
-*Paper cover and opening figure. Source: Oguzhan Gungordu et al., PathWise; included for research navigation and linked to the original paper.*
+*Overview of PathWise. Source: Oguzhan Gungordu et al., PathWise; included for research navigation and linked to the original paper.*
 
 ## Core method
 
