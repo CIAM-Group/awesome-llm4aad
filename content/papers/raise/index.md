@@ -29,32 +29,41 @@ summary: RAISE embeds LLM-free adversarial instance search inside an LLM evoluti
 
 ## Why it matters
 
-LLM-based AHD often overfits a fixed training instance set and can degrade sharply under distributional shift. Portfolio methods such as heuristic sets still depend on predefined training distributions, while unconstrained adversarial instance generation can be costly and hard to control.
-
-![RAISE paper overview](./images/paper-cover.jpg)
-
-*Paper cover and opening figure. Source: Liu et al., RAISE; see the [arXiv paper](https://arxiv.org/abs/2606.31801).*
+Methods such as EoH and ReEvo fit a fixed training set and can fail under distributional shift. EoH-S and MoH add more training distributions for coverage, but diverse corpora are hard to enumerate and costly to evaluate. RAISE keeps a small nominal set and searches for nearby worst-case instances during evolution.
 
 ## Core method
 
-RAISE formulates robust AHD as a constrained minimax problem: maximize heuristic quality while minimizing performance over instances in an epsilon-ball around the nominal training set. The outer loop uses LLM evolutionary operators to propose and refine heuristics. The inner loop is LLM-free: it searches for hard instances via a basis-distribution parameterization with boundary projection onto the uncertainty set.
+Robust AHD is cast as a constrained minimax over an epsilon-ball around the nominal set S: outer maximize heuristic quality; inner minimize on hard instances in that ball. This is a practical instance-level stand-in for distributionally robust optimization.
 
-The paper evaluates online bin packing, online job shop scheduling, and online vehicle routing across five distribution families and 95 datasets, comparing RAISE with existing LLM-AHD baselines under both nominal and shifted test conditions.
+![RAISE robust objective](./images/robust-objective.jpg)
+
+*Equation 1: epsilon near 0 recovers standard AHD on S; larger epsilon forces worse-case robustness. Source: Liu et al., RAISE; see the [arXiv paper](https://arxiv.org/abs/2606.31801).*
+
+![RAISE framework overview](./images/paper-cover.jpg)
+
+*LLM outer evolution plus LLM-free inner adversarial search. Source: Liu et al., RAISE, Figure 1; see the [arXiv paper](https://arxiv.org/abs/2606.31801).*
+
+- **Outer loop.** EoH-style LLM evolution under the current adversarial instance set.
+- **Inner loop.** LLM-free search finds a worst-case instance for the current best heuristic: an 18-d gene mixes nine basis distributions, then projects onto the epsilon-ball boundary. The hard instance augments S and the population is re-scored.
 
 ## Contributions
 
-- An instance-level robust AHD objective as a constrained minimax problem over an epsilon-ball uncertainty set.
-- RAISE, a bi-level framework combining LLM heuristic evolution with efficient adversarial instance search.
-- Empirical evidence that RAISE maintains strong performance under shift while prior LLM-AHD methods can degrade by up to 19x.
+- Instance-level robust AHD over an epsilon-ball, as an operational DRO-style objective for LLM-AHD.
+- Bi-level RAISE: LLM outer evolution with LLM-free adversarial search (basis mixture + boundary projection).
+- Strong OOD results on OBP, OJSP, and OVRP from five nominal instances; prior LLM-AHD methods can degrade sharply (up to about 19× on some OBP settings).
+
+![RAISE OBP robustness under distribution shift](./images/figure-2-obp-results.png)
+
+*Figure 2: OBP waste under shift across distributions, aggregate mean±std, and size averages. Source: Liu et al., RAISE, Figure 2; see the [arXiv paper](https://arxiv.org/abs/2606.31801).*
 
 ## Strengths and limitations
 
-The inner loop adds robustness pressure without extra LLM queries and gives a principled alternative to manually curating diverse training distributions. Performance still depends on the chosen robustness radius, basis parameterization, and the fidelity of the adversarial search within the uncertainty set.
+The inner loop adds robustness without extra LLM queries and avoids large multi-distribution training pools. Results still depend on epsilon, the basis mixture, and how well the adversarial search covers the ball.
 
 ## What to improve
 
-Adaptive epsilon selection, richer basis families, and open releases of the adversarial search code would make cross-problem robustness claims easier to audit and extend.
+Adaptive epsilon, richer bases, and an open adversarial-search release.
 
 ## Connections
 
-RAISE targets the same distributional robustness gap addressed by complementary portfolio approaches, but changes the training signal by actively searching for worst-case instances near the nominal distribution rather than relying on a fixed diverse training pool. The atlas records this as a contrast with EoH-S along the scope dimension.
+RAISE targets the same robustness gap as EoH-S, but searches for nearby worst-case instances instead of relying on a fixed diverse training pool. The atlas records a contrast with EoH-S along scope.

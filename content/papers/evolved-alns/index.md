@@ -29,32 +29,47 @@ summary: The framework decomposes ALNS into seven modules, evolves each with an 
 
 ## Why it matters
 
-ALNS performance depends on operators, adaptive scheduling, and control logic that are usually hand-crafted and hard to retune for new problem landscapes. Prior LLM-AHD work often evolves local destroy or repair heuristics while leaving higher-level ALNS decision and control layers fixed. That unbalanced design can bottleneck even strong operators.
-
-![Evolved-ALNS paper overview](./images/paper-cover.jpg)
-
-*Paper cover and opening figure. Source: Yu et al., Evolved-ALNS; see the [arXiv paper](https://arxiv.org/abs/2603.06996).*
+ALNS couples operators with adaptive and control logic that is usually hand-crafted. Prior LLM-AHD often evolves only destroy or repair operators and freezes higher layers. Strong operators can still be limited by static weights, acceptance rules, or destruction schedules.
 
 ## Core method
 
-The paper treats ALNS as seven interacting modules: initial-solution construction, destroy operators, repair operators, operator selection, weight update, acceptance criterion, and destruction-degree control. Each module is evolved in a closed generate-evaluate-feedback loop driven by an LLM. MAP-Elites preserves quality and behavioral diversity, while isolated and cascade evaluators score candidates under controlled budgets.
+ALNS is split into three layers and seven modules, each evolved in a generate–evaluate–feedback loop.
 
-The framework is instantiated along parallel versus serial component scheduling and single-expert versus multi-expert prompt orchestration. The best module elites are assembled into complete Evolved-ALNS algorithms for TSP and CVRP evaluation on TSPLIB and CVRPLIB under fixed-iteration, fixed-time, and extended-budget regimes.
+![Evolved-ALNS evolution loop](./images/paper-cover.jpg)
+
+*MAP-Elites sampling, prompt assembly, LLM generation, and isolated ALNS evaluation. Source: Yu et al., Evolved-ALNS, Figure 1; see the [arXiv paper](https://arxiv.org/abs/2603.06996).*
+
+- **Solution operations:** initial solution, destroy pool, repair pool.
+- **Adaptive mechanism:** operator selector, weight updater.
+- **Global controls:** acceptance criterion, destruction-degree controller.
+
+MAP-Elites keeps quality and diversity. Isolated evaluators score one module while others stay fixed; cascade evaluation screens cheaply before full runs. Elites are then assembled into full Evolved-ALNS solvers.
+
+Four paradigms arise from two axes:
+
+![Evolved-ALNS evolution paradigms](./images/evolution-paradigms.png)
+
+*Parallel vs serial scheduling, and single- vs multi-expert prompting. Source: Yu et al., Evolved-ALNS, Figure 2; see the [arXiv paper](https://arxiv.org/abs/2603.06996).*
+
+- **Parallel:** all modules evolve concurrently; non-targets locked to baseline (fast, weaker coupling awareness).
+- **Serial:** evolve and freeze upstream elites before downstream tasks (captures layer dependence).
+- **Single-expert:** one shared generalist persona.
+- **Multi-expert:** islands use distinct domain personas; one persona active per prompt.
 
 ## Contributions
 
-- A full-component LLM evolution pipeline for ALNS rather than operator-only redesign.
-- MAP-Elites plus cascade evaluation to search complete metaheuristic designs.
-- Systematic comparison of evolution paradigms, LLM backends, and cross-problem transfer between TSP and CVRP.
+- Full-pipeline LLM evolution for ALNS, covering operators plus adaptive and control layers.
+- Systematic comparison of the four paradigms under fixed-iteration and fixed-time budgets.
+- Gains over tuned Baseline-ALNS on TSPLIB and CVRPLIB, with transfer and code-pattern analysis.
 
 ## Strengths and limitations
 
-The work shows that evolved ALNS can beat carefully tuned Baseline-ALNS and surfaces interpretable design patterns such as scale-normalized acceptance and structure-aware operators. Component-level performance does not always compose into the best full algorithm, transfer is asymmetric across problems, and offline evolution remains expensive.
+The full-stack view matches ALNS as a coupled system and yields interpretable patterns. Strong isolated modules need not compose into the best full algorithm; the best paradigm is problem- and budget-dependent; offline evolution is expensive.
 
 ## What to improve
 
-Joint co-evolution of interacting modules, cheaper module evaluators, and published reusable Evolved-ALNS libraries would make the full-pipeline search easier to reproduce and deploy.
+Joint co-evolution of interacting modules, cheaper evaluators, and reusable Evolved-ALNS releases.
 
 ## Connections
 
-Evolved-ALNS extends LLM-AHD from heuristic functions or operators to a complete metaheuristic stack, making the design object an entire ALNS implementation rather than a single local search component. The atlas records this as a generalization of EoH along the design-object dimension.
+Evolved-ALNS expands LLM-AHD from local operators to a complete ALNS stack. The atlas records a generalization of EoH along design-object.
