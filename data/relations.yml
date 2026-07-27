@@ -72,6 +72,14 @@ relations:
       HSEvo includes FunSearch in its analysis of diversity and convergence in
       evolutionary program search.
   - from: eoh
+    to: pathwise
+    type: extends
+    dimension: search
+    description: >-
+      PathWise extends EoH's population-based design by replacing fixed
+      evolutionary operators with a stateful entailment graph and
+      planning-driven agent interactions.
+  - from: eoh
     to: instspechh
     type: generalizes
     dimension: scope
