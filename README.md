@@ -4,7 +4,7 @@
 
 **Large language models for automatic heuristic and algorithm design.**
 
-[Website](https://ciam-group.github.io/awesome-llm4ahd/) · [Papers](#papers) · [Contribution guide](docs/CONTRIBUTION_GUIDE.md)
+[Website](https://ciam-group.github.io/awesome-llm4aad/) · [Papers](#papers) · [Contribution guide](docs/CONTRIBUTION_GUIDE.md)
 
 </div>
 
@@ -25,9 +25,12 @@ Each entry links to the paper, a structured reading note, and code when availabl
 | 2024.02 | [**ReEvo** — ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution](https://arxiv.org/pdf/2402.01145) | NeurIPS 2024 | `TSP`, `VRP`, `OP`, +2 | Feedback | [Note](content/papers/reevo/index.md) · [Code](https://github.com/ai4co/reevo) |
 | 2024.12 | [**HSEvo** — HSEvo: Elevating Automatic Heuristic Design with Diversity-Driven Harmony Search and Genetic Algorithm Using LLMs](https://arxiv.org/pdf/2412.14995) | AAAI 2025 | `TSP`, `BPP`, `OP` | Search | [Note](content/papers/hsevo/index.md) · [Code](https://github.com/datphamvn/HSEvo) |
 | 2025.01 | [**MCTS-AHD** — Monte Carlo Tree Search for Comprehensive Exploration in LLM-Based Automatic Heuristic Design](https://arxiv.org/pdf/2501.08603) | ICML 2025 | `TSP`, `CVRP`, `KP`, +2 | Search | [Note](content/papers/mcts-ahd/index.md) · [Code](https://github.com/zz1358m/MCTS-AHD-master) |
+| 2025.05 | [**InstSpecHH** — LLM-Driven Instance-Specific Heuristic Generation and Selection](https://arxiv.org/pdf/2506.00490) | arXiv 2025 | `OBP`, `CVRP` | Scope | [Note](content/papers/instspechh/index.md) |
 | 2025.06 | [**AlphaEvolve** — AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://arxiv.org/pdf/2506.13131) | arXiv white paper 2025 | `Discovery`, `DCS`, `MM`, +1 | Scope | [Note](content/papers/alphaevolve/index.md) |
 | 2025.08 | [**EoH-S** — EoH-S: Evolution of Heuristic Set using LLMs for Automated Heuristic Design](https://arxiv.org/pdf/2508.03082) | AAAI 2026 | `OBP`, `TSP`, `CVRP` | Scope | [Note](content/papers/eoh-s/index.md) |
 | 2025.08 | [**MLES** — Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](https://arxiv.org/pdf/2508.05433) | ICLR 2026 | `LunarLander`, `CarRacing` | Feedback | [Note](content/papers/mles/index.md) · [Code](https://github.com/QingL2000/MLES) |
+| 2026.03 | [**Evolved-ALNS** — Large Language Model-Driven Full-Component Evolution of Adaptive Large Neighborhood Search](https://arxiv.org/pdf/2603.06996) | arXiv 2026 | `TSP`, `CVRP` | Design object | [Note](content/papers/evolved-alns/index.md) |
+| 2026.06 | [**RAISE** — RAISE: LLM-based Automated Heuristic Design with Robust Adversary Instance Search](https://arxiv.org/pdf/2606.31801) | arXiv 2026 | `OBP`, `Online Job Shop Scheduling`, `Online Vehicle Routing` | Scope | [Note](content/papers/raise/index.md) |
 <!-- PAPER_TABLE:END -->
 
 ## Interactive atlas

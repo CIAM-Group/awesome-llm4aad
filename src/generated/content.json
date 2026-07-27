@@ -123,6 +123,13 @@
       "website": "https://www.nus.edu.sg/",
       "accent": "#1d5a8a"
     },
+    "ntu": {
+      "name": "Nanyang Technological University",
+      "short_name": "NTU",
+      "initials": "NTU",
+      "website": "https://www.ntu.edu.sg/",
+      "accent": "#c41230"
+    },
     "sustech": {
       "name": "Southern University of Science and Technology",
       "short_name": "SUSTech",
@@ -164,6 +171,41 @@
       "initials": "GDM",
       "website": "https://deepmind.google/",
       "accent": "#4285f4"
+    },
+    "njust": {
+      "name": "Nanjing University of Science and Technology",
+      "short_name": "NJUST",
+      "initials": "NJUST",
+      "website": "https://www.njust.edu.cn/",
+      "accent": "#1f4e79"
+    },
+    "centralesupelec": {
+      "name": "Université Paris-Saclay, CentraleSupélec",
+      "short_name": "CentraleSupélec",
+      "initials": "CS",
+      "website": "https://www.centralesupelec.fr/",
+      "accent": "#0055a4"
+    },
+    "em-normandie": {
+      "name": "EM Normandie Business School",
+      "short_name": "EM Normandie",
+      "initials": "EMN",
+      "website": "https://www.em-normandie.com/",
+      "accent": "#003366"
+    },
+    "uzh": {
+      "name": "University of Zurich",
+      "short_name": "UZH",
+      "initials": "UZH",
+      "website": "https://www.uzh.ch/en.html",
+      "accent": "#004494"
+    },
+    "eth-zurich": {
+      "name": "ETH Zurich",
+      "short_name": "ETH Zurich",
+      "initials": "ETH",
+      "website": "https://ethz.ch/en.html",
+      "accent": "#1f407a"
     },
     "affiliation-pending": {
       "name": "Affiliation to be normalized",
@@ -242,6 +284,27 @@
       "type": "evaluated-by",
       "dimension": "search",
       "description": "HSEvo includes FunSearch in its analysis of diversity and convergence in evolutionary program search."
+    },
+    {
+      "from": "eoh",
+      "to": "instspechh",
+      "type": "generalizes",
+      "dimension": "scope",
+      "description": "InstSpecHH moves beyond a single class-wide heuristic by partitioning instances into subclasses, evolving a heuristic per subclass, and selecting online for the target instance."
+    },
+    {
+      "from": "eoh",
+      "to": "evolved-alns",
+      "type": "generalizes",
+      "dimension": "design-object",
+      "description": "Evolved-ALNS expands LLM-driven evolution from local heuristic operators to a full seven-module ALNS stack, including adaptive and control layers."
+    },
+    {
+      "from": "eoh-s",
+      "to": "raise",
+      "type": "contrasts",
+      "dimension": "scope",
+      "description": "RAISE addresses distributional robustness with constrained adversarial instance search, instead of relying on a complementary heuristic set trained on predefined diverse distributions."
     }
   ],
   "papers": [
@@ -467,6 +530,41 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Population-based LLM-AHD systems often preserve only the current elite candidates. That makes the search efficient but can discard a promising branch before its idea has been properly developed. MCTS-AHD treats the history of generated heuristics as a navigable tree.</p>\n<p><img src=\"paper-assets/mcts-ahd/images/paper-cover.jpg\" alt=\"MCTS-AHD paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Zheng et al., MCTS-AHD; see the <a href=\"https://arxiv.org/abs/2501.08603\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>Each heuristic is a node in a Monte Carlo tree. Selection balances exploitation of strong branches with exploration of less-visited branches; expansion asks the LLM to generate a new candidate; evaluation updates node statistics. The tree preserves ancestry and makes it possible to return to an underperforming parent whose descendants may still contain useful design directions.</p>\n<p>The paper evaluates the approach across several combinatorial optimization tasks and compares it with earlier LLM-AHD population procedures.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A tree-structured history for LLM-based heuristic evolution.</li>\n<li>Explicit exploration of candidate lineages instead of only the current elite set.</li>\n<li>A search-controller perspective on improving automatic heuristic design.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Lineage preservation is useful for analysis and for recovering ideas lost by aggressive truncation. Tree growth can become expensive, and node statistics remain tied to noisy, task-specific evaluators. The method also raises a broader question: which branch is worth developing when early objective scores are unreliable?</p>\n<h2>What to improve</h2>\n<p>Graph-based memory, behavior-aware similarity, and adaptive evaluation budgets could help the tree allocate compute to candidates whose potential is not visible in a single score.</p>\n<h2>Connections</h2>\n<p>MCTS-AHD is a search-level contrast to population-centered AHD systems and appears in the atlas as a branch from the EoH research line.</p>\n"
     },
     {
+      "id": "instspechh",
+      "short_title": "InstSpecHH",
+      "title": "LLM-Driven Instance-Specific Heuristic Generation and Selection",
+      "authors": [
+        "Shaofeng Zhang",
+        "Shengcai Liu",
+        "Ning Lu",
+        "Jiahao Wu",
+        "Ji Liu",
+        "Yew-Soon Ong",
+        "Ke Tang"
+      ],
+      "year": 2025,
+      "date": "2025-05-31",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2506.00490",
+      "institutions": [
+        "sustech",
+        "ntu"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Online Bin Packing",
+        "Capacitated Vehicle Routing Problem"
+      ],
+      "featured": false,
+      "summary": "InstSpecHH partitions a problem class into feature-based subclasses, evolves a tailored heuristic for each subclass offline, and uses an LLM online to select the matching heuristic for a target instance.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Mainstream LLM + evolutionary AHD is problem-specific: one global heuristic for all instances. That ignores heterogeneity. On diverse tests the single heuristic often falls back to handcrafted baselines such as Best Fit, while per-instance evolution is too expensive.</p>\n<p>Example: online bin packing with 500 items and capacity 100. Uniform sizes favor Best Fit; normal sizes favor residuals near the mean. One shared heuristic cannot serve both.</p>\n<h2>Core method</h2>\n<p>InstSpecHH pairs costly offline construction with cheap online routing.</p>\n<p><img src=\"paper-assets/instspechh/images/paper-cover.jpg\" alt=\"InstSpecHH framework overview\" /></p>\n<p><em>Offline subclass construction and heuristic generation, then online algorithm selection. Source: Zhang et al., InstSpecHH, Figure 1; see the <a href=\"https://arxiv.org/abs/2506.00490\">arXiv paper</a>.</em></p>\n<ol>\n<li><strong>Representation (offline).</strong> Discrete features describe each instance numerically and in natural language.</li>\n<li><strong>Subclasses (offline).</strong> Feature combinations define subclasses; identical feature vectors share one subclass.</li>\n<li><strong>Heuristic design (offline).</strong> An LLM evolutionary loop yields one strong heuristic per subclass; neighbor search borrows nearby elites into an algorithm pool.</li>\n<li><strong>Selection (online).</strong> An LLM or a small MLP routes a new instance to a stored heuristic.</li>\n</ol>\n<p>Similar instances share one heuristic, so offline cost amortizes across many online queries.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Makes instance heterogeneity an explicit design target instead of one class-wide winner.</li>\n<li>Offline–online pipeline: feature subclasses, subclass evolution with neighbor search, and LLM/NN routing.</li>\n<li>Strong intra- and inter-subclass results on OBPP and CVRP, matching or beating per-instance EoH at much lower online cost.</li>\n</ul>\n<p><img src=\"paper-assets/instspechh/images/table-v-results.png\" alt=\"InstSpecHH intra- and inter-subclass results\" /></p>\n<p><em>Table V: quality vs per-instance EoH, with online time cut by orders of magnitude. Source: Zhang et al., InstSpecHH, Table V; see the <a href=\"https://arxiv.org/abs/2506.00490\">arXiv paper</a>.</em></p>\n<h2>Strengths and limitations</h2>\n<p>The subclass library is reusable, but quality hinges on the hand-chosen features and the selector. Offline generation remains expensive; code release was promised rather than linked at submission.</p>\n<h2>What to improve</h2>\n<p>Learned features, cheaper subclass search, and a published selector-plus-pool release.</p>\n<h2>Connections</h2>\n<p>InstSpecHH keeps LLM heuristic generation from EoH-style lines, but shifts from one class-wide winner to subclass generation and selection. The atlas records this as a generalization of EoH along scope.</p>\n"
+    },
+    {
       "id": "alphaevolve",
       "short_title": "AlphaEvolve",
       "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
@@ -583,6 +681,72 @@
       "featured": true,
       "summary": "MLES combines multimodal LLM policy generation with evolutionary search and visual behavior analysis to discover executable, interpretable control policies.",
       "body_html": "<h2>Why it matters</h2>\n<p>Learned control policies can be powerful but opaque. Scalar rewards alone often do not explain why a policy fails, which makes targeted improvement difficult. MLES uses a multimodal LLM to inspect execution traces and visual behavior while evolving programmatic policies that remain readable and executable.</p>\n<p><img src=\"paper-assets/mles/images/paper-cover.jpg\" alt=\"MLES paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Hu et al., MLES; see the <a href=\"https://arxiv.org/abs/2508.05433\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>MLES runs a closed evolutionary loop over policy programs. The evaluator returns objective performance and visual rollouts; the multimodal model analyzes behavior and proposes targeted modifications. The reported instantiation uses an EoH-style evolutionary backbone, shares comparable initial populations, and adds visual feedback-driven behavior analysis.</p>\n<p>The paper evaluates LunarLander and CarRacing, comparing programmatic policies with reinforcement-learning baselines and an evolution loop without the visual analysis component.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A general multimodal evolutionary search framework for executable policies.</li>\n<li>Behavior-level visual feedback in addition to scalar rewards.</li>\n<li>A bridge between automatic heuristic design and interpretable control-program discovery.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Visual feedback can expose failure modes that a scalar score hides and gives the LLM a richer mutation signal. The approach introduces multimodal inference cost and depends on the quality of rendered traces, behavior descriptions, and evaluator design.</p>\n<h2>What to improve</h2>\n<p>Behavior embeddings, automatic failure-mode taxonomies, and cross-task policy transfer could make the visual feedback channel less dependent on prompt wording.</p>\n<h2>Connections</h2>\n<p>MLES adapts an EoH-like evolutionary backbone to programmatic control, demonstrating how the same search ideas can cross from combinatorial heuristics into multimodal policy discovery.</p>\n"
+    },
+    {
+      "id": "evolved-alns",
+      "short_title": "Evolved-ALNS",
+      "title": "Large Language Model-Driven Full-Component Evolution of Adaptive Large Neighborhood Search",
+      "authors": [
+        "Shaohua Yu",
+        "Tianyu Chen",
+        "Linyan Liu",
+        "Jakob Puchinger"
+      ],
+      "year": 2026,
+      "date": "2026-03-07",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2603.06996",
+      "institutions": [
+        "njust",
+        "centralesupelec",
+        "em-normandie"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem"
+      ],
+      "featured": false,
+      "summary": "The framework decomposes ALNS into seven modules, evolves each with an LLM under MAP-Elites, and assembles the best components into Evolved-ALNS variants that beat tuned classic ALNS on TSPLIB and CVRPLIB.",
+      "body_html": "<h2>Why it matters</h2>\n<p>ALNS couples operators with adaptive and control logic that is usually hand-crafted. Prior LLM-AHD often evolves only destroy or repair operators and freezes higher layers. Strong operators can still be limited by static weights, acceptance rules, or destruction schedules.</p>\n<h2>Core method</h2>\n<p>ALNS is split into three layers and seven modules, each evolved in a generate–evaluate–feedback loop.</p>\n<p><img src=\"paper-assets/evolved-alns/images/paper-cover.jpg\" alt=\"Evolved-ALNS evolution loop\" /></p>\n<p><em>MAP-Elites sampling, prompt assembly, LLM generation, and isolated ALNS evaluation. Source: Yu et al., Evolved-ALNS, Figure 1; see the <a href=\"https://arxiv.org/abs/2603.06996\">arXiv paper</a>.</em></p>\n<ul>\n<li><strong>Solution operations:</strong> initial solution, destroy pool, repair pool.</li>\n<li><strong>Adaptive mechanism:</strong> operator selector, weight updater.</li>\n<li><strong>Global controls:</strong> acceptance criterion, destruction-degree controller.</li>\n</ul>\n<p>MAP-Elites keeps quality and diversity. Isolated evaluators score one module while others stay fixed; cascade evaluation screens cheaply before full runs. Elites are then assembled into full Evolved-ALNS solvers.</p>\n<p>Four paradigms arise from two axes:</p>\n<p><img src=\"paper-assets/evolved-alns/images/evolution-paradigms.png\" alt=\"Evolved-ALNS evolution paradigms\" /></p>\n<p><em>Parallel vs serial scheduling, and single- vs multi-expert prompting. Source: Yu et al., Evolved-ALNS, Figure 2; see the <a href=\"https://arxiv.org/abs/2603.06996\">arXiv paper</a>.</em></p>\n<ul>\n<li><strong>Parallel:</strong> all modules evolve concurrently; non-targets locked to baseline (fast, weaker coupling awareness).</li>\n<li><strong>Serial:</strong> evolve and freeze upstream elites before downstream tasks (captures layer dependence).</li>\n<li><strong>Single-expert:</strong> one shared generalist persona.</li>\n<li><strong>Multi-expert:</strong> islands use distinct domain personas; one persona active per prompt.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>Full-pipeline LLM evolution for ALNS, covering operators plus adaptive and control layers.</li>\n<li>Systematic comparison of the four paradigms under fixed-iteration and fixed-time budgets.</li>\n<li>Gains over tuned Baseline-ALNS on TSPLIB and CVRPLIB, with transfer and code-pattern analysis.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The full-stack view matches ALNS as a coupled system and yields interpretable patterns. Strong isolated modules need not compose into the best full algorithm; the best paradigm is problem- and budget-dependent; offline evolution is expensive.</p>\n<h2>What to improve</h2>\n<p>Joint co-evolution of interacting modules, cheaper evaluators, and reusable Evolved-ALNS releases.</p>\n<h2>Connections</h2>\n<p>Evolved-ALNS expands LLM-AHD from local operators to a complete ALNS stack. The atlas records a generalization of EoH along design-object.</p>\n"
+    },
+    {
+      "id": "raise",
+      "short_title": "RAISE",
+      "title": "RAISE: LLM-based Automated Heuristic Design with Robust Adversary Instance Search",
+      "authors": [
+        "Fei Liu",
+        "Alessio Figalli",
+        "Patrick Owen",
+        "Nicola Serra"
+      ],
+      "year": 2026,
+      "date": "2026-06-30",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2606.31801",
+      "institutions": [
+        "uzh",
+        "eth-zurich"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "Online Bin Packing",
+        "Online Job Shop Scheduling",
+        "Online Vehicle Routing"
+      ],
+      "featured": false,
+      "summary": "RAISE embeds LLM-free adversarial instance search inside an LLM evolutionary loop, optimizing heuristics against worst-case instances within an epsilon-ball around the training distribution.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Methods such as EoH and ReEvo fit a fixed training set and can fail under distributional shift. EoH-S and MoH add more training distributions for coverage, but diverse corpora are hard to enumerate and costly to evaluate. RAISE keeps a small nominal set and searches for nearby worst-case instances during evolution.</p>\n<h2>Core method</h2>\n<p>Robust AHD is cast as a constrained minimax over an epsilon-ball around the nominal set S: outer maximize heuristic quality; inner minimize on hard instances in that ball. This is a practical instance-level stand-in for distributionally robust optimization.</p>\n<p><img src=\"paper-assets/raise/images/robust-objective.jpg\" alt=\"RAISE robust objective\" /></p>\n<p><em>Equation 1: epsilon near 0 recovers standard AHD on S; larger epsilon forces worse-case robustness. Source: Liu et al., RAISE; see the <a href=\"https://arxiv.org/abs/2606.31801\">arXiv paper</a>.</em></p>\n<p><img src=\"paper-assets/raise/images/paper-cover.jpg\" alt=\"RAISE framework overview\" /></p>\n<p><em>LLM outer evolution plus LLM-free inner adversarial search. Source: Liu et al., RAISE, Figure 1; see the <a href=\"https://arxiv.org/abs/2606.31801\">arXiv paper</a>.</em></p>\n<ul>\n<li><strong>Outer loop.</strong> EoH-style LLM evolution under the current adversarial instance set.</li>\n<li><strong>Inner loop.</strong> LLM-free search finds a worst-case instance for the current best heuristic: an 18-d gene mixes nine basis distributions, then projects onto the epsilon-ball boundary. The hard instance augments S and the population is re-scored.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>Instance-level robust AHD over an epsilon-ball, as an operational DRO-style objective for LLM-AHD.</li>\n<li>Bi-level RAISE: LLM outer evolution with LLM-free adversarial search (basis mixture + boundary projection).</li>\n<li>Strong OOD results on OBP, OJSP, and OVRP from five nominal instances; prior LLM-AHD methods can degrade sharply (up to about 19× on some OBP settings).</li>\n</ul>\n<p><img src=\"paper-assets/raise/images/figure-2-obp-results.png\" alt=\"RAISE OBP robustness under distribution shift\" /></p>\n<p><em>Figure 2: OBP waste under shift across distributions, aggregate mean±std, and size averages. Source: Liu et al., RAISE, Figure 2; see the <a href=\"https://arxiv.org/abs/2606.31801\">arXiv paper</a>.</em></p>\n<h2>Strengths and limitations</h2>\n<p>The inner loop adds robustness without extra LLM queries and avoids large multi-distribution training pools. Results still depend on epsilon, the basis mixture, and how well the adversarial search covers the ball.</p>\n<h2>What to improve</h2>\n<p>Adaptive epsilon, richer bases, and an open adversarial-search release.</p>\n<h2>Connections</h2>\n<p>RAISE targets the same robustness gap as EoH-S, but searches for nearby worst-case instances instead of relying on a fixed diverse training pool. The atlas records a contrast with EoH-S along scope.</p>\n"
     }
   ]
 }
