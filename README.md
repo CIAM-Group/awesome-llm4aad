@@ -30,6 +30,7 @@ Each entry links to the paper, a structured reading note, and code when availabl
 | 2025.08 | [**EoH-S** — EoH-S: Evolution of Heuristic Set using LLMs for Automated Heuristic Design](https://arxiv.org/pdf/2508.03082) | AAAI 2026 | `OBP`, `TSP`, `CVRP` | Scope | [Note](content/papers/eoh-s/index.md) |
 | 2025.08 | [**MLES** — Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](https://arxiv.org/pdf/2508.05433) | ICLR 2026 | `LunarLander`, `CarRacing` | Feedback | [Note](content/papers/mles/index.md) · [Code](https://github.com/QingL2000/MLES) |
 | 2026.03 | [**Evolved-ALNS** — Large Language Model-Driven Full-Component Evolution of Adaptive Large Neighborhood Search](https://arxiv.org/pdf/2603.06996) | arXiv 2026 | `TSP`, `CVRP` | Design object | [Note](content/papers/evolved-alns/index.md) |
+| 2026.05 | [**PathWise** — PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs](https://arxiv.org/pdf/2601.20539) | ICML 2026 | `TSP`, `KP`, `CVRP`, +3 | Search | [Note](content/papers/pathwise/index.md) · [Code](https://github.com/oguzhangungordu/PathWise) |
 | 2026.06 | [**RAISE** — RAISE: LLM-based Automated Heuristic Design with Robust Adversary Instance Search](https://arxiv.org/pdf/2606.31801) | arXiv 2026 | `OBP`, `Online Job Shop Scheduling`, `Online Vehicle Routing` | Scope | [Note](content/papers/raise/index.md) |
 <!-- PAPER_TABLE:END -->
 

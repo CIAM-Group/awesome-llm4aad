@@ -172,6 +172,13 @@
       "website": "https://deepmind.google/",
       "accent": "#4285f4"
     },
+    "gatech": {
+      "name": "Georgia Institute of Technology",
+      "short_name": "Georgia Tech",
+      "initials": "GT",
+      "website": "https://www.gatech.edu/",
+      "accent": "#a88b3d"
+    },
     "njust": {
       "name": "Nanjing University of Science and Technology",
       "short_name": "NJUST",
@@ -284,6 +291,13 @@
       "type": "evaluated-by",
       "dimension": "search",
       "description": "HSEvo includes FunSearch in its analysis of diversity and convergence in evolutionary program search."
+    },
+    {
+      "from": "eoh",
+      "to": "pathwise",
+      "type": "extends",
+      "dimension": "search",
+      "description": "PathWise extends EoH's population-based design by replacing fixed evolutionary operators with a stateful entailment graph and planning-driven agent interactions."
     },
     {
       "from": "eoh",
@@ -714,6 +728,40 @@
       "featured": false,
       "summary": "The framework decomposes ALNS into seven modules, evolves each with an LLM under MAP-Elites, and assembles the best components into Evolved-ALNS variants that beat tuned classic ALNS on TSPLIB and CVRPLIB.",
       "body_html": "<h2>Why it matters</h2>\n<p>ALNS couples operators with adaptive and control logic that is usually hand-crafted. Prior LLM-AHD often evolves only destroy or repair operators and freezes higher layers. Strong operators can still be limited by static weights, acceptance rules, or destruction schedules.</p>\n<h2>Core method</h2>\n<p>ALNS is split into three layers and seven modules, each evolved in a generate–evaluate–feedback loop.</p>\n<p><img src=\"paper-assets/evolved-alns/images/paper-cover.jpg\" alt=\"Evolved-ALNS evolution loop\" /></p>\n<p><em>MAP-Elites sampling, prompt assembly, LLM generation, and isolated ALNS evaluation. Source: Yu et al., Evolved-ALNS, Figure 1; see the <a href=\"https://arxiv.org/abs/2603.06996\">arXiv paper</a>.</em></p>\n<ul>\n<li><strong>Solution operations:</strong> initial solution, destroy pool, repair pool.</li>\n<li><strong>Adaptive mechanism:</strong> operator selector, weight updater.</li>\n<li><strong>Global controls:</strong> acceptance criterion, destruction-degree controller.</li>\n</ul>\n<p>MAP-Elites keeps quality and diversity. Isolated evaluators score one module while others stay fixed; cascade evaluation screens cheaply before full runs. Elites are then assembled into full Evolved-ALNS solvers.</p>\n<p>Four paradigms arise from two axes:</p>\n<p><img src=\"paper-assets/evolved-alns/images/evolution-paradigms.png\" alt=\"Evolved-ALNS evolution paradigms\" /></p>\n<p><em>Parallel vs serial scheduling, and single- vs multi-expert prompting. Source: Yu et al., Evolved-ALNS, Figure 2; see the <a href=\"https://arxiv.org/abs/2603.06996\">arXiv paper</a>.</em></p>\n<ul>\n<li><strong>Parallel:</strong> all modules evolve concurrently; non-targets locked to baseline (fast, weaker coupling awareness).</li>\n<li><strong>Serial:</strong> evolve and freeze upstream elites before downstream tasks (captures layer dependence).</li>\n<li><strong>Single-expert:</strong> one shared generalist persona.</li>\n<li><strong>Multi-expert:</strong> islands use distinct domain personas; one persona active per prompt.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>Full-pipeline LLM evolution for ALNS, covering operators plus adaptive and control layers.</li>\n<li>Systematic comparison of the four paradigms under fixed-iteration and fixed-time budgets.</li>\n<li>Gains over tuned Baseline-ALNS on TSPLIB and CVRPLIB, with transfer and code-pattern analysis.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The full-stack view matches ALNS as a coupled system and yields interpretable patterns. Strong isolated modules need not compose into the best full algorithm; the best paradigm is problem- and budget-dependent; offline evolution is expensive.</p>\n<h2>What to improve</h2>\n<p>Joint co-evolution of interacting modules, cheaper evaluators, and reusable Evolved-ALNS releases.</p>\n<h2>Connections</h2>\n<p>Evolved-ALNS expands LLM-AHD from local operators to a complete ALNS stack. The atlas records a generalization of EoH along design-object.</p>\n"
+    },
+    {
+      "id": "pathwise",
+      "short_title": "PathWise",
+      "title": "PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs",
+      "authors": [
+        "Oguzhan Gungordu",
+        "Siheng Xiong",
+        "Faramarz Fekri"
+      ],
+      "year": 2026,
+      "date": "2026-05-25",
+      "venue": "ICML",
+      "paper_url": "https://arxiv.org/pdf/2601.20539",
+      "code_url": "https://github.com/oguzhangungordu/PathWise",
+      "institutions": [
+        "gatech"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Knapsack Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Multiple Knapsack Problem",
+        "Orienteering Problem",
+        "Bin Packing Problem"
+      ],
+      "featured": false,
+      "summary": "PathWise formulates heuristic discovery as a sequential decision process over an entailment graph, where a policy agent plans evolutionary actions, a world model generates heuristic rollouts, and critic agents provide routed reflections, enabling state-aware planning for automated heuristic design.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Existing LLM-based AHD methods rely on fixed evolutionary rules and static prompt templates, leading to myopic generation, redundant evaluations, and limited reasoning about heuristic derivation. PathWise introduces a stateful, semantic representation of the search trajectory and a planning-based approach to overcome these limitations.</p>\n<p><img src=\"paper-assets/pathwise/images/Overview_of_PathsWise.png\" alt=\"PathWise paper overview\" /></p>\n<p><em>Overview of PathWise. Source: Oguzhan Gungordu et al., PathWise; included for research navigation and linked to the original paper.</em></p>\n<h2>Core method</h2>\n<p>PathWise is a multi-agent framework that constructs an entailment graph encoding derivation history. A policy agent selects parent heuristics and proposes natural-language derivation rationales, a world model agent generates code-level heuristic rollouts conditioned on these actions, and two critic agents analyze the results to produce routed reflections that guide subsequent planning and code synthesis. The process is complemented by prompt-level diversity mechanisms and a leaf-first population update.</p>\n<h2>Contributions</h2>\n<p>Introduces a hybrid graph-based and population-based formulation of heuristic evolution via an entailment graph that captures derivation cand performance history.\nProposes a coordinated multi-agent LLM framework with policy, world model, and critic agents that enables state-aware, self-evolving heuristic generation.\nIncorporates prompt-level diversity through perturbation and state shuffling to promote broader exploration.\nDemonstrates consistent improvements over state-of-the-art LLM-based AHD methods across multiple combinatorial optimization problems, with faster convergence and strong scalability.</p>\n<h2>Strengths and limitations</h2>\n<p>Strengths: faster convergence, better heuristic quality, strong cross-problem generalization, and robust performance across different LLM backbones. Limitations: the approach is training-free but still incurs substantial LLM API costs; the multi-agent coordination and graph maintenance add complexity; performance depends on the reasoning capabilities of the underlying LLM and the quality of the predefined search frameworks.</p>\n<h2>What to improve</h2>\n<p>Extend the framework to support a wider range of search frameworks beyond constructive, ACO, and GLS.\nInvestigate methods to adapt the entailment graph representation to other types of design objects, such as algorithm portfolios or hyperparameter configurations.\nEvaluate on more complex, real-world problems with larger instance sizes and dynamic constraints.</p>\n<h2>Connections</h2>\n<p>PathWise extends the population-based design of EoH and ReEvo by replacing fixed operators and static reflection with a stateful entailment graph and planning-driven agent interactions. It contrasts with tree-based methods like MCTS-AHD by adopting a semantic, rationale-based exploration strategy instead of performance-driven UCT scores. The critic-driven feedback mechanism generalizes the single-level reflection of ReEvo into separate policy and world model critics, while the graph memory provides a more structured alternative to the unbounded tree of MCTS-AHD.</p>\n"
     },
     {
       "id": "raise",
