@@ -1,4 +1,4 @@
-# Directed relations always run from the earlier paper (`from`) to the later paper (`to`).
+﻿# Directed relations always run from the earlier paper (`from`) to the later paper (`to`).
 # `concurrent-work` is undirected and appears as a dashed line on the website.
 relations:
   - from: ael
@@ -102,3 +102,27 @@ relations:
       RAISE addresses distributional robustness with constrained adversarial
       instance search, instead of relying on a complementary heuristic set
       trained on predefined diverse distributions.
+  - from: eoh
+    to: llamea-hpo
+    type: contrasts
+    dimension: search
+    description: >-
+      LLaMEA-HPO separates algorithmic structure search from hyper-parameter
+      tuning by keeping structure generation with the LLM and tuning numerical
+      parameters with SMAC.
+  - from: eoh
+    to: redahd
+    type: generalizes
+    dimension: scope
+    description: >-
+      RedAHD uses EoH as an underlying LLM-EPS method and adds language
+      reductions so heuristic design can operate without manually specified
+      generalized algorithmic frameworks.
+  - from: eoh
+    to: meoh
+    type: generalizes
+    dimension: scope
+    description: >-
+      MEoH extends EoH's single-objective heuristic evolution to a
+      multi-objective search that returns non-dominated heuristics across
+      solution quality and runtime.
