@@ -1,8 +1,8 @@
 <div align="center">
 
-# Awesome LLM4AHD
+# Awesome LLM4AAD
 
-**Large language models for automatic heuristic and algorithm design.**
+**Large language models for automatic algorithm design.**
 
 [Website](https://ciam-group.github.io/awesome-llm4aad/) · [Papers](#papers) · [Contribution guide](docs/CONTRIBUTION_GUIDE.md)
 
