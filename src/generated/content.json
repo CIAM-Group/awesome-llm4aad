@@ -219,6 +219,20 @@
       "short_name": "Pending",
       "initials": "?",
       "accent": "#6c746f"
+    },
+    "leiden-university": {
+      "name": "Leiden University",
+      "short_name": "Leiden",
+      "initials": "LEI",
+      "website": "https://www.universiteitleiden.nl/en",
+      "accent": "#003f7d"
+    },
+    "university-nebraska-lincoln": {
+      "name": "University of Nebraska-Lincoln",
+      "short_name": "Nebraska",
+      "initials": "UNL",
+      "website": "https://www.unl.edu/",
+      "accent": "#d00000"
     }
   },
   "relations": [
@@ -319,6 +333,27 @@
       "type": "contrasts",
       "dimension": "scope",
       "description": "RAISE addresses distributional robustness with constrained adversarial instance search, instead of relying on a complementary heuristic set trained on predefined diverse distributions."
+    },
+    {
+      "from": "eoh",
+      "to": "llamea-hpo",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "LLaMEA-HPO separates algorithmic structure search from hyper-parameter tuning by keeping structure generation with the LLM and tuning numerical parameters with SMAC."
+    },
+    {
+      "from": "eoh",
+      "to": "redahd",
+      "type": "generalizes",
+      "dimension": "scope",
+      "description": "RedAHD uses EoH as an underlying LLM-EPS method and adds language reductions so heuristic design can operate without manually specified generalized algorithmic frameworks."
+    },
+    {
+      "from": "eoh",
+      "to": "meoh",
+      "type": "generalizes",
+      "dimension": "scope",
+      "description": "MEoH extends EoH's single-objective heuristic evolution to a multi-objective search that returns non-dominated heuristics across solution quality and runtime."
     }
   ],
   "papers": [
@@ -477,6 +512,73 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Evolution can preserve high-scoring candidates without explaining how to improve a weak one. ReEvo adds a reflective channel that turns evaluation outcomes into natural-language feedback. It frames the broader research direction as language hyper-heuristics: LLMs generate heuristics in an open-ended space with little manual definition of the search space.</p>\n<p><img src=\"paper-assets/reevo/images/paper-cover.jpg\" alt=\"ReEvo paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Ye et al., ReEvo; see the <a href=\"https://github.com/ai4co/reevo\">project repository</a>.</em></p>\n<h2>Core method</h2>\n<p>ReEvo maintains a population of generated heuristics and uses an LLM to reflect on candidate behavior. Short-term reflections focus on recent search outcomes; long-term reflections accumulate lessons that can guide later generations. The resulting verbal gradients complement objective scores and help the search move through a large open-ended heuristic space.</p>\n<p>The paper evaluates multiple algorithm types and combinatorial optimization problems, including both white-box and black-box settings. The emphasis is on broad applicability and LLM query efficiency rather than a single handcrafted heuristic template.</p>\n<h2>Contributions</h2>\n<ul>\n<li>The language hyper-heuristic framing for LLM-generated heuristics.</li>\n<li>Reflective evolution with short- and long-term memory.</li>\n<li>Broad experiments across problem types, COPs, and solver visibility settings.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Reflection provides a human-readable search trace and a natural way to turn failure into a next-step suggestion. Its quality depends on the fidelity of the reflection prompt and the evaluator feedback. Reflection can also concentrate the population too quickly if diversity is not measured explicitly.</p>\n<h2>What to improve</h2>\n<p>Future systems should combine reflection with behavioral diversity, tree or archive-based exploration, and explicit compute accounting so that verbal improvement does not hide expensive trial-and-error.</p>\n<h2>Connections</h2>\n<p>The atlas treats ReEvo as an extension of the feedback channel in the AHD line and links forward to HSEvo's analysis of diversity versus objective quality.</p>\n"
     },
     {
+      "id": "meoh",
+      "short_title": "MEoH",
+      "title": "Multi-Objective Evolution of Heuristic Using Large Language Model",
+      "authors": [
+        "Shunyu Yao",
+        "Fei Liu",
+        "Xi Lin",
+        "Zhichao Lu",
+        "Zhenkun Wang",
+        "Qingfu Zhang"
+      ],
+      "year": 2025,
+      "date": "2024-09-25",
+      "venue": "AAAI",
+      "paper_url": "https://arxiv.org/pdf/2409.16867",
+      "code_url": "https://github.com/Optima-CityU/LLM4AD",
+      "institutions": [
+        "cityu-hk",
+        "sustech"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "design-object",
+        "scope",
+        "search"
+      ],
+      "problems": [
+        "Online Bin Packing",
+        "Traveling Salesman Problem"
+      ],
+      "featured": false,
+      "summary": "MEoH formulates automatic heuristic design as a multi-objective search problem and uses a dominance-dissimilarity mechanism to generate non-dominated heuristics across solution quality and runtime.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Existing LLM-based heuristic design methods usually optimize one objective, such as solution quality on the target problem. MEoH addresses the practical need to consider additional criteria such as efficiency and scalability by searching for a set of trade-off heuristics rather than a single best-scoring heuristic.</p>\n<h2>Core method</h2>\n<p><img src=\"paper-assets/meoh/images/figure-1.jpg\" alt=\"Comparison of heuristic design settings\" /></p>\n<p><em>Comparison of manual, single-objective LLM-based, and multi-objective LLM-based heuristic design. Source: Yao et al., MEoH, Figure 1.</em></p>\n<p>MEoH treats each heuristic as a language description, executable code, and a vector of objective values. The framework initializes a population of heuristics with an LLM, evaluates them on multiple objectives, and uses search operators adapted from EoH to generate offspring in a zero-shot manner.</p>\n<p><img src=\"paper-assets/meoh/images/figure-2.jpg\" alt=\"Dominance-dissimilarity mechanism\" /></p>\n<p><em>Parent selection and population management with dominance-dissimilarity. Source: Yao et al., MEoH, Figure 2.</em></p>\n<p>The key mechanism is dominance-dissimilarity. MEoH combines dominance relationships in the objective space with code dissimilarity in the search space, using the resulting score to guide parent selection and population management. This lets the population keep both convergence toward strong objective values and diversity among heuristic implementations.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A multi-objective formulation of LLM-based automatic heuristic design.</li>\n<li>A dominance-dissimilarity mechanism for parent selection and population management.</li>\n<li>A zero-shot LLM evolutionary search that generates a non-dominated set of heuristics in one run.</li>\n<li>Experiments on online bin packing and TSP showing trade-off heuristics with competitive quality and up to 10x efficiency gains.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>MEoH's main strength is its ability to produce diverse trade-off heuristics over multiple objectives, outperforming FunSearch and EoH on the studied settings. The paper mainly demonstrates two-objective cases, with three-objective results in the appendix, so many-objective performance and broader heuristic design tasks remain open.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include testing MEoH on many-objective cases and applying the framework to a broader range of heuristic design tasks.</p>\n<h2>Connections</h2>\n<p>MEoH extends the EoH framework from single-objective heuristic evolution to multi-objective heuristic search. It keeps the language-and-code heuristic representation but changes selection and population management so the search can return a non-dominated set of heuristics.</p>\n"
+    },
+    {
+      "id": "llamea-hpo",
+      "short_title": "LLaMEA-HPO",
+      "title": "In-the-loop Hyper-Parameter Optimization for LLM-Based Automated Design of Heuristics",
+      "authors": [
+        "Niki van Stein",
+        "Diederick Vermetten",
+        "Thomas Bäck"
+      ],
+      "year": 2025,
+      "date": "2024-10-07",
+      "venue": "ACM TELO",
+      "paper_url": "https://arxiv.org/pdf/2410.16309",
+      "code_url": "https://zenodo.org/records/14917719",
+      "institutions": [
+        "leiden-university"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "design-object",
+        "feedback"
+      ],
+      "problems": [
+        "Online Bin Packing",
+        "Black-Box Optimization",
+        "Traveling Salesman Problem"
+      ],
+      "featured": false,
+      "summary": "LLaMEA-HPO integrates LLaMEA with SMAC-based in-loop hyper-parameter optimization, offloading parameter tuning so the LLM can focus on generating novel algorithmic structures.",
+      "body_html": "<h2>Why it matters</h2>\n<p>LLM-based automatic heuristic design can generate useful metaheuristics, but existing evolutionary loops often spend costly LLM calls on both structural code search and numerical hyper-parameter tuning. LLaMEA-HPO addresses this inefficiency by moving hyper-parameter optimization into the loop: each generated algorithm is tuned before its performance is fed back to selection, reducing misleading fitness signals and letting the LLM focus on algorithmic structures and control flows rather than parameter-level search.</p>\n<h2>Core method</h2>\n<p><img src=\"paper-assets/llamea-hpo/images/figure-1.jpg\" alt=\"LLaMEA-HPO framework overview\" /></p>\n<p><em>Overview of the LLaMEA-HPO loop. Source: van Stein et al., LLaMEA-HPO, Figure 1.</em></p>\n<p>LLaMEA-HPO starts from the open-source LLaMEA evolutionary code-generation framework. The LLM receives a task prompt and proposes a candidate algorithm, but the prompt is extended so that the LLM also returns a Python dictionary describing the candidate's hyper-parameter configuration space. This keeps the design object as executable algorithm code while exposing the numeric knobs that should be tuned by a separate optimizer.</p>\n<p>The added HPO component, implemented with SMAC, evaluates configurations for the generated algorithm and returns the tuned performance to the evolutionary loop. Selection and mutation then operate on candidates whose parameters have already been optimized, so the feedback reflects algorithmic quality more directly than a single default parameter setting. The paper evaluates this loop on online bin packing, BBOB black-box optimization, and traveling salesperson benchmarks.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A hybrid LLaMEA-HPO framework that integrates LLM-driven algorithm design with SMAC-based hyper-parameter optimization inside the evolutionary loop.</li>\n<li>A prompt and candidate interface in which the LLM outputs both executable algorithm code and a hyper-parameter search space for the HPO stage.</li>\n<li>Empirical evidence that delegating parameter tuning to SMAC can reduce LLM query budget and computational cost while achieving superior or comparable performance on online bin packing, black-box optimization, and TSP benchmarks.</li>\n<li>A clearer separation between algorithmic innovation, structural code search, and parameter tuning for future LLM-driven code optimization systems.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The clear strength is specialization: SMAC handles hyper-parameter tuning while the LLM focuses on novel algorithmic structures and control flows. The paper reports better convergence and high solution quality with significantly fewer LLM queries, but the method still depends on HPO budget allocation, benchmark coverage, and the quality of the generated search space.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include dynamically adjusting the HPO budget to algorithm complexity, testing more advanced HPO techniques, expanding to more diverse problem domains, and studying larger-population variants such as HPO-integrated EoH or LLaMEA.</p>\n<h2>Connections</h2>\n<p>LLaMEA-HPO extends LLaMEA by adding hyper-parameter optimization inside the evolutionary loop, and it fits the broader LLM-based automatic heuristic design setting represented by EoH. Its main distinction is the separation between algorithmic structure generation by the LLM and numerical parameter tuning by SMAC.</p>\n"
+    },
+    {
       "id": "hsevo",
       "short_title": "HSEvo",
       "title": "HSEvo: Elevating Automatic Heuristic Design with Diversity-Driven Harmony Search and Genetic Algorithm Using LLMs",
@@ -542,6 +644,41 @@
       "featured": true,
       "summary": "MCTS-AHD organizes LLM-generated heuristics in a tree so that temporarily weak candidates can be revisited instead of disappearing from a fixed elite population.",
       "body_html": "<h2>Why it matters</h2>\n<p>Population-based LLM-AHD systems often preserve only the current elite candidates. That makes the search efficient but can discard a promising branch before its idea has been properly developed. MCTS-AHD treats the history of generated heuristics as a navigable tree.</p>\n<p><img src=\"paper-assets/mcts-ahd/images/paper-cover.jpg\" alt=\"MCTS-AHD paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Zheng et al., MCTS-AHD; see the <a href=\"https://arxiv.org/abs/2501.08603\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>Each heuristic is a node in a Monte Carlo tree. Selection balances exploitation of strong branches with exploration of less-visited branches; expansion asks the LLM to generate a new candidate; evaluation updates node statistics. The tree preserves ancestry and makes it possible to return to an underperforming parent whose descendants may still contain useful design directions.</p>\n<p>The paper evaluates the approach across several combinatorial optimization tasks and compares it with earlier LLM-AHD population procedures.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A tree-structured history for LLM-based heuristic evolution.</li>\n<li>Explicit exploration of candidate lineages instead of only the current elite set.</li>\n<li>A search-controller perspective on improving automatic heuristic design.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Lineage preservation is useful for analysis and for recovering ideas lost by aggressive truncation. Tree growth can become expensive, and node statistics remain tied to noisy, task-specific evaluators. The method also raises a broader question: which branch is worth developing when early objective scores are unreliable?</p>\n<h2>What to improve</h2>\n<p>Graph-based memory, behavior-aware similarity, and adaptive evaluation budgets could help the tree allocate compute to candidates whose potential is not visible in a single score.</p>\n<h2>Connections</h2>\n<p>MCTS-AHD is a search-level contrast to population-centered AHD systems and appears in the atlas as a branch from the EoH research line.</p>\n"
+    },
+    {
+      "id": "redahd",
+      "short_title": "RedAHD",
+      "title": "RedAHD: Reduction-Based End-to-End Automatic Heuristic Design with Large Language Models",
+      "authors": [
+        "Nguyen Thach",
+        "Aida Riahifar",
+        "Nathan Huynh",
+        "Hau Chan"
+      ],
+      "year": 2025,
+      "date": "2025-05-26",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2505.20242",
+      "institutions": [
+        "university-nebraska-lincoln"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Bin Packing Problem",
+        "Online Bin Packing",
+        "Knapsack Problem",
+        "Multiple Knapsack Problem"
+      ],
+      "featured": false,
+      "summary": "RedAHD automates language reduction with LLMs so existing LLM-EPS methods can perform end-to-end automatic heuristic design without manually specified GAFs.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Existing LLM-based evolutionary program search methods design strong heuristic components, but they still rely on a predetermined generalized algorithmic framework such as iterative construction, ant colony optimization, or guided local search. RedAHD targets this remaining manual step by using LLMs to automate language reduction, so the system can design heuristics for a target COP without requiring users to handcraft the framework around it.</p>\n<h2>Core method</h2>\n<p><img src=\"paper-assets/redahd/images/figure-2.jpg\" alt=\"RedAHD framework overview\" /></p>\n<p><em>Illustration of RedAHD. Source: Thach et al., RedAHD, Figure 2.</em></p>\n<p>RedAHD represents a language reduction as a problem description for a better-understood COP, a pair of LLM-generated reduction functions that map instances and solutions between the original problem and the transformed problem, and a code template used by the LLM-EPS method. The framework first initializes several candidate reductions, evaluates the heuristics associated with them, and keeps the reductions whose top heuristics perform best on the original COP.</p>\n<p>Evolution then proceeds through multi-problem LLM-EPS. Heuristics associated with different reductions share algorithmic ideas during mutation or crossover, so a heuristic for one transformed COP can guide offspring for another. When the heuristics tied to a reduction stagnate, the LLM refines the reduction functions and code template, and the update is kept only if the reduction score improves.</p>\n<p><img src=\"paper-assets/redahd/images/figure-3.jpg\" alt=\"Multi-problem LLM-EPS example\" /></p>\n<p><em>Multi-problem LLM-EPS example for TSP. Source: Thach et al., RedAHD, Figure 3.</em></p>\n<h2>Contributions</h2>\n<ul>\n<li>An end-to-end AHD framework that lets existing LLM-EPS methods operate without manually specified GAFs.</li>\n<li>A language reduction mechanism in which the LLM generates reduction functions for mapping instances and solutions between COPs.</li>\n<li>A reduction refinement step that updates reductions when their associated heuristics stagnate.</li>\n<li>Experiments on six COPs showing competitive or improved performance with minimal human involvement.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The main strength is that RedAHD removes much of the manual GAF design still required by prior LLM-EPS work and explores a larger heuristic space through multiple reductions. Its reduction initialization greedily selects the top-scoring LRs, which may discard more promising reductions, and the generated LRs are not required to preserve approximation-ratio guarantees.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include more sophisticated LR selection methods such as Monte Carlo tree search, more advanced refinement procedures to escape local optima, and generated LRs that preserve approximation-ratio guarantees.</p>\n<h2>Connections</h2>\n<p>RedAHD builds directly on existing LLM-EPS methods such as EoH, ReEvo, and MEoH. Its main distinction is that those methods are applied through LLM-generated language reductions, allowing the same evolutionary heuristic search machinery to operate without a manually specified GAF.</p>\n"
     },
     {
       "id": "instspechh",
