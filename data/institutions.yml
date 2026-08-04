@@ -123,3 +123,15 @@ affiliation-pending:
   short_name: Pending
   initials: '?'
   accent: '#6c746f'
+leiden-university:
+  name: Leiden University
+  short_name: Leiden
+  initials: LEI
+  website: https://www.universiteitleiden.nl/en
+  accent: '#003f7d'
+university-nebraska-lincoln:
+  name: University of Nebraska-Lincoln
+  short_name: Nebraska
+  initials: UNL
+  website: https://www.unl.edu/
+  accent: '#d00000'
