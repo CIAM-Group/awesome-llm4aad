@@ -135,3 +135,15 @@ university-nebraska-lincoln:
   initials: UNL
   website: https://www.unl.edu/
   accent: '#d00000'
+xjtu:
+  name: Xi'an Jiaotong University
+  short_name: XJTU
+  initials: XJTU
+  website: https://www.xjtu.edu.cn/
+  accent: '#315f58'
+nwpu:
+  name: Northwestern Polytechnical University
+  short_name: NWPU
+  initials: NWPU
+  website: https://www.nwpu.edu.cn/
+  accent: '#0f4c81'
