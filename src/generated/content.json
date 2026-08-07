@@ -233,6 +233,20 @@
       "initials": "UNL",
       "website": "https://www.unl.edu/",
       "accent": "#d00000"
+    },
+    "xjtu": {
+      "name": "Xi'an Jiaotong University",
+      "short_name": "XJTU",
+      "initials": "XJTU",
+      "website": "https://www.xjtu.edu.cn/",
+      "accent": "#315f58"
+    },
+    "nwpu": {
+      "name": "Northwestern Polytechnical University",
+      "short_name": "NWPU",
+      "initials": "NWPU",
+      "website": "https://www.nwpu.edu.cn/",
+      "accent": "#0f4c81"
     }
   },
   "relations": [
@@ -834,6 +848,39 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Learned control policies can be powerful but opaque. Scalar rewards alone often do not explain why a policy fails, which makes targeted improvement difficult. MLES uses a multimodal LLM to inspect execution traces and visual behavior while evolving programmatic policies that remain readable and executable.</p>\n<p><img src=\"paper-assets/mles/images/paper-cover.jpg\" alt=\"MLES paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Hu et al., MLES; see the <a href=\"https://arxiv.org/abs/2508.05433\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>MLES runs a closed evolutionary loop over policy programs. The evaluator returns objective performance and visual rollouts; the multimodal model analyzes behavior and proposes targeted modifications. The reported instantiation uses an EoH-style evolutionary backbone, shares comparable initial populations, and adds visual feedback-driven behavior analysis.</p>\n<p>The paper evaluates LunarLander and CarRacing, comparing programmatic policies with reinforcement-learning baselines and an evolution loop without the visual analysis component.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A general multimodal evolutionary search framework for executable policies.</li>\n<li>Behavior-level visual feedback in addition to scalar rewards.</li>\n<li>A bridge between automatic heuristic design and interpretable control-program discovery.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Visual feedback can expose failure modes that a scalar score hides and gives the LLM a richer mutation signal. The approach introduces multimodal inference cost and depends on the quality of rendered traces, behavior descriptions, and evaluator design.</p>\n<h2>What to improve</h2>\n<p>Behavior embeddings, automatic failure-mode taxonomies, and cross-task policy transfer could make the visual feedback channel less dependent on prompt wording.</p>\n<h2>Connections</h2>\n<p>MLES adapts an EoH-like evolutionary backbone to programmatic control, demonstrating how the same search ideas can cross from combinatorial heuristics into multimodal policy discovery.</p>\n"
     },
     {
+      "id": "partevo",
+      "short_title": "PartEvo",
+      "title": "Partition to Evolve: Niching-enhanced Evolution with LLMs for Automated Algorithm Discovery",
+      "authors": [
+        "Qinglong Hu",
+        "Qingfu Zhang"
+      ],
+      "year": 2025,
+      "date": "2025-09-15",
+      "venue": "NeurIPS",
+      "paper_url": "https://openreview.net/pdf?id=OEawM2coNT",
+      "code_url": "https://github.com/QingL2000/PartEvo",
+      "institutions": [
+        "cityu-hk"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "design-object",
+        "scope"
+      ],
+      "problems": [
+        "Unimodal Optimization",
+        "Multimodal Optimization",
+        "Mobile Edge Task Offloading",
+        "Heterogeneous Factory Scheduling",
+        "Online Bin Packing"
+      ],
+      "featured": true,
+      "summary": "PartEvo proposes a general niching-enhanced LES framework with feature-assisted niche construction, adapting classic EC niching techniques to abstract language spaces for more efficient automated algorithm discovery.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Existing LES methods mostly rely on simple greedy selection or random grouping, failing to properly balance exploration and exploitation in unstructured language spaces, which severely limits search efficiency. PartEvo proves that mature evolutionary computation techniques can be systematically adapted to language spaces via feature projection, bringing substantial efficiency and robustness gains for algorithm discovery, especially under limited sampling budgets.</p>\n<p><img src=\"paper-assets/partevo/images/PartEvo_mindmap.png\" alt=\"PartEvo mindmap overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Hu et al., PartEvo; see the <a href=\"https://openreview.net/pdf?id=OEawM2coNT\">NeurIPS paper</a>.</em></p>\n<h2>Core method</h2>\n<p>The work presents a general niching-enhanced LES framework, which projects algorithm individuals into interpretable feature spaces and constructs niches via clustering to indirectly partition the abstract language search space. Built on this framework, PartEvo integrates four evolutionary operators and pairs with a niche-level resource allocation strategy to balance exploration and exploitation.</p>\n<p>Experiments are conducted on both synthetic and real-world optimization benchmarks, with full comparisons against human-designed baselines and state-of-the-art LES methods.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A general LES framework that enables structured niche construction in abstract language search spaces.</li>\n<li>It combines language gradients and niche collaborative search for higher discovery efficiency.</li>\n<li>State-of-the-art performance across multiple benchmarks, with up to 90.1% improvement on real-world scheduling tasks.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>It systematically introduces niche-based EC techniques into LES for the first time, delivering healthy search dynamics and prominent efficiency gains on complex problems, with a flexible framework compatible with various features and clustering methods. However, it depends on low-cost algorithm evaluation and is less applicable to extremely expensive optimization scenarios, and the precision of language space feature mapping still has room for improvement.</p>\n<h2>What to improve</h2>\n<p>Future work can explore finer-grained language space mapping approaches, adopt surrogate models to reduce evaluation overhead for expensive tasks, and design adaptive niche granularity mechanisms to reduce hyperparameter sensitivity.</p>\n<h2>Connections</h2>\n<p>PartEvo is built directly on the thought-code dual representation from EoH as a structured upgrade to the single-population LES paradigm. Its feature-based niche construction systematically improves the random island model in Funsearch, while fully inheriting and extending the language gradient mechanism proposed in ReEvo.</p>\n"
+    },
+    {
       "id": "evolved-alns",
       "short_title": "Evolved-ALNS",
       "title": "Large Language Model-Driven Full-Component Evolution of Adaptive Large Neighborhood Search",
@@ -899,6 +946,40 @@
       "featured": false,
       "summary": "PathWise formulates heuristic discovery as a sequential decision process over an entailment graph, where a policy agent plans evolutionary actions, a world model generates heuristic rollouts, and critic agents provide routed reflections, enabling state-aware planning for automated heuristic design.",
       "body_html": "<h2>Why it matters</h2>\n<p>Existing LLM-based AHD methods rely on fixed evolutionary rules and static prompt templates, leading to myopic generation, redundant evaluations, and limited reasoning about heuristic derivation. PathWise introduces a stateful, semantic representation of the search trajectory and a planning-based approach to overcome these limitations.</p>\n<p><img src=\"paper-assets/pathwise/images/Overview_of_PathsWise.png\" alt=\"PathWise paper overview\" /></p>\n<p><em>Overview of PathWise. Source: Oguzhan Gungordu et al., PathWise; included for research navigation and linked to the original paper.</em></p>\n<h2>Core method</h2>\n<p>PathWise is a multi-agent framework that constructs an entailment graph encoding derivation history. A policy agent selects parent heuristics and proposes natural-language derivation rationales, a world model agent generates code-level heuristic rollouts conditioned on these actions, and two critic agents analyze the results to produce routed reflections that guide subsequent planning and code synthesis. The process is complemented by prompt-level diversity mechanisms and a leaf-first population update.</p>\n<h2>Contributions</h2>\n<p>Introduces a hybrid graph-based and population-based formulation of heuristic evolution via an entailment graph that captures derivation cand performance history.\nProposes a coordinated multi-agent LLM framework with policy, world model, and critic agents that enables state-aware, self-evolving heuristic generation.\nIncorporates prompt-level diversity through perturbation and state shuffling to promote broader exploration.\nDemonstrates consistent improvements over state-of-the-art LLM-based AHD methods across multiple combinatorial optimization problems, with faster convergence and strong scalability.</p>\n<h2>Strengths and limitations</h2>\n<p>Strengths: faster convergence, better heuristic quality, strong cross-problem generalization, and robust performance across different LLM backbones. Limitations: the approach is training-free but still incurs substantial LLM API costs; the multi-agent coordination and graph maintenance add complexity; performance depends on the reasoning capabilities of the underlying LLM and the quality of the predefined search frameworks.</p>\n<h2>What to improve</h2>\n<p>Extend the framework to support a wider range of search frameworks beyond constructive, ACO, and GLS.\nInvestigate methods to adapt the entailment graph representation to other types of design objects, such as algorithm portfolios or hyperparameter configurations.\nEvaluate on more complex, real-world problems with larger instance sizes and dynamic constraints.</p>\n<h2>Connections</h2>\n<p>PathWise extends the population-based design of EoH and ReEvo by replacing fixed operators and static reflection with a stateful entailment graph and planning-driven agent interactions. It contrasts with tree-based methods like MCTS-AHD by adopting a semantic, rationale-based exploration strategy instead of performance-driven UCT scores. The critic-driven feedback mechanism generalizes the single-level reflection of ReEvo into separate policy and world model critics, while the graph memory provides a more structured alternative to the unbounded tree of MCTS-AHD.</p>\n"
+    },
+    {
+      "id": "coevo",
+      "short_title": "CoEvo",
+      "title": "LLM-Driven Co-Evolutionary Automated Heuristic Design for Bi-Component Coupled Combinatorial Optimization",
+      "authors": [
+        "Mingen Kuang",
+        "Xudong Deng",
+        "Xi Lin",
+        "Ye Fan",
+        "Jianyong Sun",
+        "Jialong Shi"
+      ],
+      "year": 2026,
+      "date": "2026-05-30",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2606.00718",
+      "institutions": [
+        "xjtu",
+        "nwpu"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Traveling Thief Problem",
+        "Traveling Purchaser Problem"
+      ],
+      "featured": false,
+      "summary": "CoEvo formulates automated heuristic design for bi-component coupled CO and co-evolves two component-specific operator populations to discover complementary pairs via paired evaluation and joint crossover.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-driven automated heuristic design systems evolve heuristics as isolated algorithmic units, which fails to model strong coupling among multiple decision substructures in problems like TTP and TPP. CoEvo shifts the design objective: instead of optimizing individual heuristics in isolation, it co-evolves paired component operators and evaluates their effectiveness jointly under the full coupled objective.</p>\n<p><img src=\"paper-assets/coevo/images/CoEvo_mindmap.png\" alt=\"CoEvo mindmap overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Kuang et al., CoEvo; see the <a href=\"https://arxiv.org/abs/2606.00718\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>The paper proposes CoEvo, a dual-population co-evolutionary framework with component-specific operator populations. It adopts cooperative evaluation to compute both individual operator scores and pairwise synergy scores, and evolves new operators through intra-component mutation, homogeneous crossover, and cross-component joint crossover.</p>\n<p>A tool-augmented environment and structured inter-component communication are further introduced to improve operator reliability and coordination.</p>\n<p>Experiments are conducted on TTP and TPP benchmarks.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Formalization of bi-component coupled automated heuristic design with relational operator utility.</li>\n<li>Dual-population co-evolution with paired evaluation, synergy scoring and cross-component joint crossover.</li>\n<li>Structured inter-component communication protocol and tool-augmented problem environment.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>It automatically discovers complementary operator pairs and delivers competitive solution quality against traditional heuristics, with particularly pronounced advantages on large-scale TPP instances.</p>\n<p>However, it introduces cross-component credit assignment complexity, and its search depth on large TTP still lags behind top handcrafted methods.</p>\n<h2>What to improve</h2>\n<p>Future work can extend the framework to problems with more than two coupled decision components, improve search depth and robustness on large-scale instances, add cost-aware population size control, and explore behavioral diversity metrics for component-level synergy.</p>\n<h2>Connections</h2>\n<p>CoEvo builds upon the lineage of EoH and EoH-S. Unlike multi-operator collaboration at the algorithmic workflow level, it ties operators to heterogeneous decision components of the problem itself, modeling operator complementarity from the problem-structure level.</p>\n"
     },
     {
       "id": "raise",
