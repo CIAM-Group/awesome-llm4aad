@@ -589,6 +589,54 @@
       "initials": "SAI",
       "website": "https://sakana.ai/",
       "accent": "#b4412d"
+    },
+    "zhongguancun-academy": {
+      "name": "Zhongguancun Academy",
+      "short_name": "Zhongguancun Academy",
+      "initials": "ZGCA",
+      "accent": "#315f58"
+    },
+    "warwick": {
+      "name": "University of Warwick",
+      "short_name": "Warwick",
+      "initials": "UoW",
+      "website": "https://warwick.ac.uk/",
+      "accent": "#5b2c83"
+    },
+    "uvic": {
+      "name": "University of Victoria",
+      "short_name": "UVic",
+      "initials": "UVic",
+      "website": "https://www.uvic.ca/",
+      "accent": "#a71930"
+    },
+    "hon-hai-research-institute": {
+      "name": "Hon Hai Research Institute",
+      "short_name": "Hon Hai RI",
+      "initials": "HHRI",
+      "website": "https://www.honhai.com/en-us/",
+      "accent": "#8a4b2b"
+    },
+    "hohai": {
+      "name": "Hohai University",
+      "short_name": "Hohai",
+      "initials": "HHU",
+      "website": "https://en.hhu.edu.cn/",
+      "accent": "#176aa6"
+    },
+    "catl": {
+      "name": "Contemporary Amperex Technology Limited",
+      "short_name": "CATL",
+      "initials": "CATL",
+      "website": "https://www.catl.com/en/",
+      "accent": "#176b50"
+    },
+    "nec": {
+      "name": "NEC Corporation",
+      "short_name": "NEC",
+      "initials": "NEC",
+      "website": "https://www.nec.com/",
+      "accent": "#245aa5"
     }
   },
   "relations": [
@@ -1194,9 +1242,9 @@
       "paper_url": "https://arxiv.org/pdf/2502.15359",
       "code_url": "https://github.com/Ahalikai/ARS-Routbench",
       "institutions": [
+        "sustech",
         "cityu-hk",
-        "huawei-noahs-ark",
-        "sustech"
+        "huawei-noahs-ark"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1288,7 +1336,10 @@
       "paper_url": "https://arxiv.org/pdf/2505.12285",
       "code_url": "https://github.com/whxru/CALM",
       "institutions": [
-        "cityu-hk"
+        "cityu-hk",
+        "seu",
+        "uvic",
+        "hon-hai-research-institute"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -1740,7 +1791,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2601.17899",
       "institutions": [
-        "cityu-hk"
+        "cityu-hk",
+        "catl"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1862,7 +1914,9 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2603.19284",
       "institutions": [
-        "cityu-hk"
+        "hohai",
+        "cityu-hk",
+        "nanjing-university"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -2077,6 +2131,7 @@
       "code_url": "https://github.com/Antoniano1963/AHD-Agent",
       "institutions": [
         "sustech",
+        "zhongguancun-academy",
         "hkust"
       ],
       "primary_dimension": "feedback",
@@ -2105,6 +2160,7 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.14661",
       "institutions": [
+        "warwick",
         "cityu-hk"
       ],
       "primary_dimension": "design-object",
@@ -2353,7 +2409,7 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.15221",
       "institutions": [
-        "openai"
+        "nec"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -2547,9 +2603,7 @@
       "venue": "ICML",
       "paper_url": "https://openreview.net/pdf/5723a21bffbe74a1f5c2b88d97cee90b29e16b4d.pdf",
       "institutions": [
-        "cityu-hk",
-        "zhejiang",
-        "stanford"
+        "cityu-hk"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
