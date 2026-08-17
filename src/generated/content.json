@@ -247,6 +247,348 @@
       "initials": "NWPU",
       "website": "https://www.nwpu.edu.cn/",
       "accent": "#0f4c81"
+    },
+    "kit": {
+      "name": "Karlsruhe Institute of Technology",
+      "short_name": "KIT",
+      "initials": "KIT",
+      "website": "https://www.kit.edu/english/",
+      "accent": "#007a3d"
+    },
+    "tu-dortmund": {
+      "name": "TU Dortmund University",
+      "short_name": "TU Dortmund",
+      "initials": "TUDO",
+      "website": "https://www.tu-dortmund.de/en/",
+      "accent": "#4b4b4d"
+    },
+    "uestc": {
+      "name": "University of Electronic Science and Technology of China",
+      "short_name": "UESTC",
+      "initials": "UESTC",
+      "website": "https://en.uestc.edu.cn/",
+      "accent": "#005bac"
+    },
+    "nudt": {
+      "name": "National University of Defense Technology",
+      "short_name": "NUDT",
+      "initials": "NUDT",
+      "website": "https://english.nudt.edu.cn/",
+      "accent": "#18553b"
+    },
+    "amms": {
+      "name": "Academy of Military Medical Sciences",
+      "short_name": "AMMS",
+      "initials": "AMMS",
+      "accent": "#5f6e4f"
+    },
+    "scau": {
+      "name": "South China Agricultural University",
+      "short_name": "SCAU",
+      "initials": "SCAU",
+      "website": "https://english.scau.edu.cn/",
+      "accent": "#15704a"
+    },
+    "polyu": {
+      "name": "The Hong Kong Polytechnic University",
+      "short_name": "PolyU",
+      "initials": "PolyU",
+      "website": "https://www.polyu.edu.hk/en/",
+      "accent": "#a6192e"
+    },
+    "westlake": {
+      "name": "Westlake University",
+      "short_name": "Westlake",
+      "initials": "WU",
+      "website": "https://en.westlake.edu.cn/",
+      "accent": "#205493"
+    },
+    "openai": {
+      "name": "OpenAI",
+      "short_name": "OpenAI",
+      "initials": "OAI",
+      "website": "https://openai.com/",
+      "accent": "#111817"
+    },
+    "cornell": {
+      "name": "Cornell University",
+      "short_name": "Cornell",
+      "initials": "CU",
+      "website": "https://www.cornell.edu/",
+      "accent": "#b31b1b"
+    },
+    "harvard": {
+      "name": "Harvard University",
+      "short_name": "Harvard",
+      "initials": "HU",
+      "website": "https://www.harvard.edu/",
+      "accent": "#a51c30"
+    },
+    "nvidia": {
+      "name": "NVIDIA",
+      "short_name": "NVIDIA",
+      "initials": "NV",
+      "website": "https://www.nvidia.com/",
+      "accent": "#4f7728"
+    },
+    "university-sydney": {
+      "name": "University of Sydney",
+      "short_name": "Sydney",
+      "initials": "USYD",
+      "website": "https://www.sydney.edu.au/",
+      "accent": "#d64309"
+    },
+    "mit": {
+      "name": "Massachusetts Institute of Technology",
+      "short_name": "MIT",
+      "initials": "MIT",
+      "website": "https://www.mit.edu/",
+      "accent": "#a31f34"
+    },
+    "uc-berkeley": {
+      "name": "University of California, Berkeley",
+      "short_name": "UC Berkeley",
+      "initials": "UCB",
+      "website": "https://www.berkeley.edu/",
+      "accent": "#003262"
+    },
+    "anhui-university": {
+      "name": "Anhui University",
+      "short_name": "Anhui University",
+      "initials": "AHU",
+      "website": "https://www.ahu.edu.cn/",
+      "accent": "#245a9a"
+    },
+    "pengcheng-lab": {
+      "name": "Pengcheng Laboratory",
+      "short_name": "Pengcheng Lab",
+      "initials": "PCL",
+      "website": "https://www.pcl.ac.cn/",
+      "accent": "#166a8f"
+    },
+    "virginia-tech": {
+      "name": "Virginia Tech",
+      "short_name": "Virginia Tech",
+      "initials": "VT",
+      "website": "https://www.vt.edu/",
+      "accent": "#861f41"
+    },
+    "cmu": {
+      "name": "Carnegie Mellon University",
+      "short_name": "CMU",
+      "initials": "CMU",
+      "website": "https://www.cmu.edu/",
+      "accent": "#c41230"
+    },
+    "ai2": {
+      "name": "Allen Institute for AI",
+      "short_name": "Ai2",
+      "initials": "Ai2",
+      "website": "https://allenai.org/",
+      "accent": "#3c5f7c"
+    },
+    "ecnu": {
+      "name": "East China Normal University",
+      "short_name": "ECNU",
+      "initials": "ECNU",
+      "website": "https://english.ecnu.edu.cn/",
+      "accent": "#6b2d70"
+    },
+    "ant-group": {
+      "name": "Ant Group",
+      "short_name": "Ant Group",
+      "initials": "ANT",
+      "website": "https://www.antgroup.com/",
+      "accent": "#1677ff"
+    },
+    "nanjing-university": {
+      "name": "Nanjing University",
+      "short_name": "NJU",
+      "initials": "NJU",
+      "website": "https://www.nju.edu.cn/en/",
+      "accent": "#5c2d91"
+    },
+    "nottingham-ningbo": {
+      "name": "University of Nottingham Ningbo China",
+      "short_name": "UNNC",
+      "initials": "UNNC",
+      "website": "https://www.nottingham.edu.cn/en/",
+      "accent": "#005597"
+    },
+    "nottingham": {
+      "name": "University of Nottingham",
+      "short_name": "Nottingham",
+      "initials": "UON",
+      "website": "https://www.nottingham.ac.uk/",
+      "accent": "#10263b"
+    },
+    "sufe": {
+      "name": "Shanghai University of Finance and Economics",
+      "short_name": "SUFE",
+      "initials": "SUFE",
+      "website": "https://english.sufe.edu.cn/",
+      "accent": "#0e4f79"
+    },
+    "cuhk-shenzhen": {
+      "name": "The Chinese University of Hong Kong, Shenzhen",
+      "short_name": "CUHK-Shenzhen",
+      "initials": "CUHKS",
+      "website": "https://www.cuhk.edu.cn/en",
+      "accent": "#6f2c91"
+    },
+    "sribd": {
+      "name": "Shenzhen Research Institute of Big Data",
+      "short_name": "SRIBD",
+      "initials": "SRIBD",
+      "website": "https://www.sribd.cn/",
+      "accent": "#1f718c"
+    },
+    "cardinal-operations": {
+      "name": "Cardinal Operations",
+      "short_name": "Cardinal Ops",
+      "initials": "CO",
+      "website": "https://www.shanshu.ai/",
+      "accent": "#c23b33"
+    },
+    "columbia": {
+      "name": "Columbia University",
+      "short_name": "Columbia",
+      "initials": "CU",
+      "website": "https://www.columbia.edu/",
+      "accent": "#527a9f"
+    },
+    "duke": {
+      "name": "Duke University",
+      "short_name": "Duke",
+      "initials": "DU",
+      "website": "https://duke.edu/",
+      "accent": "#003087"
+    },
+    "huawei-canada": {
+      "name": "Huawei Technologies Canada",
+      "short_name": "Huawei Canada",
+      "initials": "HCA",
+      "website": "https://www.huawei.com/ca/",
+      "accent": "#c7000b"
+    },
+    "ut-austin": {
+      "name": "The University of Texas at Austin",
+      "short_name": "UT Austin",
+      "initials": "UT",
+      "website": "https://www.utexas.edu/",
+      "accent": "#bf5700"
+    },
+    "stanford": {
+      "name": "Stanford University",
+      "short_name": "Stanford",
+      "initials": "SU",
+      "website": "https://www.stanford.edu/",
+      "accent": "#8c1515"
+    },
+    "shenzhen-tech-univ": {
+      "name": "Shenzhen Technology University",
+      "short_name": "SZTU",
+      "initials": "SZTU",
+      "website": "https://english.sztu.edu.cn/",
+      "accent": "#154f86"
+    },
+    "shanghai-polytechnic": {
+      "name": "Shanghai Polytechnic University",
+      "short_name": "SSPU",
+      "initials": "SSPU",
+      "website": "https://en.sspu.edu.cn/",
+      "accent": "#2d648c"
+    },
+    "sjtu": {
+      "name": "Shanghai Jiao Tong University",
+      "short_name": "SJTU",
+      "initials": "SJTU",
+      "website": "https://en.sjtu.edu.cn/",
+      "accent": "#b5122b"
+    },
+    "tu-delft": {
+      "name": "Delft University of Technology",
+      "short_name": "TU Delft",
+      "initials": "TUD",
+      "website": "https://www.tudelft.nl/en/",
+      "accent": "#0076c0"
+    },
+    "northeastern-cn": {
+      "name": "Northeastern University",
+      "short_name": "NEU China",
+      "initials": "NEU",
+      "website": "https://english.neu.edu.cn/",
+      "accent": "#1d4e89"
+    },
+    "ucas": {
+      "name": "University of Chinese Academy of Sciences",
+      "short_name": "UCAS",
+      "initials": "UCAS",
+      "website": "https://english.ucas.ac.cn/",
+      "accent": "#2f5f98"
+    },
+    "tsinghua": {
+      "name": "Tsinghua University",
+      "short_name": "Tsinghua",
+      "initials": "THU",
+      "website": "https://www.tsinghua.edu.cn/en/",
+      "accent": "#6f2383"
+    },
+    "hkust": {
+      "name": "The Hong Kong University of Science and Technology",
+      "short_name": "HKUST",
+      "initials": "HKUST",
+      "website": "https://hkust.edu.hk/",
+      "accent": "#003366"
+    },
+    "hkust-guangzhou": {
+      "name": "The Hong Kong University of Science and Technology (Guangzhou)",
+      "short_name": "HKUST(GZ)",
+      "initials": "HKGZ",
+      "website": "https://www.hkust-gz.edu.cn/",
+      "accent": "#125a86"
+    },
+    "uc-merced": {
+      "name": "University of California, Merced",
+      "short_name": "UC Merced",
+      "initials": "UCM",
+      "website": "https://www.ucmerced.edu/",
+      "accent": "#002856"
+    },
+    "sun-yat-sen": {
+      "name": "Sun Yat-sen University",
+      "short_name": "SYSU",
+      "initials": "SYSU",
+      "website": "https://www.sysu.edu.cn/sysuen/",
+      "accent": "#006633"
+    },
+    "mbzuai": {
+      "name": "Mohamed bin Zayed University of Artificial Intelligence",
+      "short_name": "MBZUAI",
+      "initials": "MBZAI",
+      "website": "https://mbzuai.ac.ae/",
+      "accent": "#6b3f88"
+    },
+    "chongqing-university": {
+      "name": "Chongqing University",
+      "short_name": "CQU",
+      "initials": "CQU",
+      "website": "https://english.cqu.edu.cn/",
+      "accent": "#24558d"
+    },
+    "zhejiang": {
+      "name": "Zhejiang University",
+      "short_name": "ZJU",
+      "initials": "ZJU",
+      "website": "https://www.zju.edu.cn/english/",
+      "accent": "#1d4f91"
+    },
+    "sakana-ai": {
+      "name": "Sakana AI",
+      "short_name": "Sakana AI",
+      "initials": "SAI",
+      "website": "https://sakana.ai/",
+      "accent": "#b4412d"
     }
   },
   "relations": [
@@ -267,9 +609,9 @@
     {
       "from": "eoh",
       "to": "reevo",
-      "type": "extends",
+      "type": "contrasts",
       "dimension": "feedback",
-      "description": "ReEvo adds short- and long-term reflection as verbal feedback for later heuristic proposals."
+      "description": "ReEvo takes a reflective hyper-heuristic path, using short- and long-term verbal feedback instead of EoH's explicit thought-and-code representation."
     },
     {
       "from": "eoh",
@@ -277,13 +619,6 @@
       "type": "contrasts",
       "dimension": "search",
       "description": "MCTS-AHD preserves heuristic lineages in a tree instead of relying on a fixed elite population."
-    },
-    {
-      "from": "eoh",
-      "to": "hsevo",
-      "type": "evaluated-by",
-      "dimension": "search",
-      "description": "HSEvo analyzes EoH's diversity and convergence before introducing a harmony-search-based alternative."
     },
     {
       "from": "reevo",
@@ -298,13 +633,6 @@
       "type": "generalizes",
       "dimension": "scope",
       "description": "EoH-S changes the output from one heuristic to a complementary set that covers varied instance distributions."
-    },
-    {
-      "from": "eoh",
-      "to": "mles",
-      "type": "adapts",
-      "dimension": "scope",
-      "description": "MLES transfers an EoH-style evolutionary loop from combinatorial heuristics to multimodal programmatic control."
     },
     {
       "from": "funsearch",
@@ -322,24 +650,10 @@
     },
     {
       "from": "eoh",
-      "to": "pathwise",
-      "type": "extends",
-      "dimension": "search",
-      "description": "PathWise extends EoH's population-based design by replacing fixed evolutionary operators with a stateful entailment graph and planning-driven agent interactions."
-    },
-    {
-      "from": "eoh",
       "to": "instspechh",
       "type": "generalizes",
       "dimension": "scope",
       "description": "InstSpecHH moves beyond a single class-wide heuristic by partitioning instances into subclasses, evolving a heuristic per subclass, and selecting online for the target instance."
-    },
-    {
-      "from": "eoh",
-      "to": "evolved-alns",
-      "type": "generalizes",
-      "dimension": "design-object",
-      "description": "Evolved-ALNS expands LLM-driven evolution from local heuristic operators to a full seven-module ALNS stack, including adaptive and control layers."
     },
     {
       "from": "eoh-s",
@@ -347,13 +661,6 @@
       "type": "contrasts",
       "dimension": "scope",
       "description": "RAISE addresses distributional robustness with constrained adversarial instance search, instead of relying on a complementary heuristic set trained on predefined diverse distributions."
-    },
-    {
-      "from": "eoh",
-      "to": "llamea-hpo",
-      "type": "contrasts",
-      "dimension": "search",
-      "description": "LLaMEA-HPO separates algorithmic structure search from hyper-parameter tuning by keeping structure generation with the LLM and tuning numerical parameters with SMAC."
     },
     {
       "from": "eoh",
@@ -370,53 +677,18 @@
       "description": "MEoH extends EoH's single-objective heuristic evolution to a multi-objective search that returns non-dominated heuristics across solution quality and runtime."
     },
     {
-      "from": "eoh",
-      "to": "ahd-eval",
-      "type": "evaluated-by",
-      "dimension": "search",
-      "description": "AHD-Eval includes EoH in its controlled multi-method benchmark and isolates the contribution of evolutionary search, prompting, and model choice."
-    },
-    {
       "from": "reevo",
       "to": "ahd-eval",
       "type": "evaluated-by",
       "dimension": "search",
-      "description": "AHD-Eval re-evaluates ReEvo under shared tasks, models, budgets, and repeated runs as part of its evolutionary-search analysis."
+      "description": "The EPS benchmark re-evaluates ReEvo under shared tasks, models, budgets, and repeated runs as part of its evolutionary-search analysis."
     },
     {
       "from": "funsearch",
       "to": "ahd-eval",
       "type": "evaluated-by",
       "dimension": "search",
-      "description": "AHD-Eval compares FunSearch with other LLM-based evolutionary program search methods under a common experimental protocol."
-    },
-    {
-      "from": "eoh",
-      "to": "ceoh",
-      "type": "extends",
-      "dimension": "feedback",
-      "description": "CEoH explicitly extends EoH by adding problem-specific descriptions and contextual knowledge to its heuristic-generation prompts."
-    },
-    {
-      "from": "eoh",
-      "to": "a-ceoh",
-      "type": "adapts",
-      "dimension": "scope",
-      "description": "A-CEoH extends the EoH workflow to guiding heuristics for A* search and augments prompts with the surrounding A* implementation."
-    },
-    {
-      "from": "eoh",
-      "to": "cdeoh",
-      "type": "extends",
-      "dimension": "search",
-      "description": "CDEoH builds on EoH by recording algorithm categories and using them to maintain diversity and stability during evolutionary selection."
-    },
-    {
-      "from": "eoh",
-      "to": "behavesim",
-      "type": "extends",
-      "dimension": "search",
-      "description": "BehaveSim is integrated into EoH as a behavior-level similarity measure for promoting diversity beyond syntactic code variation."
+      "description": "The EPS benchmark compares FunSearch with other LLM-based evolutionary program search methods under a common experimental protocol."
     },
     {
       "from": "funsearch",
@@ -522,6 +794,7 @@
       "code_url": "https://github.com/FeiLiu36/EoH",
       "institutions": [
         "cityu-hk",
+        "sustech",
         "huawei-noahs-ark"
       ],
       "primary_dimension": "design-object",
@@ -597,7 +870,9 @@
       "venue": "ICLR",
       "paper_url": "https://arxiv.org/pdf/2404.18400",
       "institutions": [
-        "affiliation-pending"
+        "virginia-tech",
+        "cmu",
+        "ai2"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -632,7 +907,13 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2405.17743",
       "institutions": [
-        "affiliation-pending"
+        "sufe",
+        "cuhk-shenzhen",
+        "sribd",
+        "sjtu",
+        "cardinal-operations",
+        "columbia",
+        "duke"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -648,7 +929,7 @@
     },
     {
       "id": "ahd-eval",
-      "short_title": "AHD-Eval",
+      "short_title": "EPS Benchmark",
       "title": "Understanding the Importance of Evolutionary Search in Automated Heuristic Design with Large Language Models",
       "authors": [
         "Rui Zhang",
@@ -699,9 +980,15 @@
       "venue": "ICLR",
       "paper_url": "https://arxiv.org/pdf/2407.09887",
       "institutions": [
+        "hkust-guangzhou",
+        "hkust",
+        "uc-merced",
+        "eth-zurich",
         "cityu-hk",
         "huawei-noahs-ark",
-        "eth-zurich"
+        "sun-yat-sen",
+        "mbzuai",
+        "chongqing-university"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -768,7 +1055,9 @@
       "venue": "ICLR",
       "paper_url": "https://arxiv.org/pdf/2410.13213",
       "institutions": [
-        "affiliation-pending"
+        "ecnu",
+        "ant-group",
+        "nanjing-university"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -929,7 +1218,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2502.11422",
       "institutions": [
-        "affiliation-pending"
+        "anhui-university",
+        "pengcheng-lab"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -960,7 +1250,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2503.03350",
       "institutions": [
-        "affiliation-pending"
+        "tu-dortmund",
+        "kit"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -1098,7 +1389,9 @@
       "venue": "ICLR",
       "paper_url": "https://arxiv.org/pdf/2506.07972",
       "institutions": [
-        "affiliation-pending"
+        "cornell",
+        "harvard",
+        "nvidia"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -1162,7 +1455,7 @@
     },
     {
       "id": "aad-ft",
-      "short_title": "AAD-FT",
+      "short_title": "AAD Fine-tuning",
       "title": "Fine-tuning Large Language Model for Automated Algorithm Design",
       "authors": [
         "Fei Liu",
@@ -1206,7 +1499,8 @@
       "venue": "ICML",
       "paper_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhai25a/zhai25a.pdf",
       "institutions": [
-        "affiliation-pending"
+        "ut-austin",
+        "stanford"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -1304,7 +1598,7 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2509.19349",
       "institutions": [
-        "affiliation-pending"
+        "sakana-ai"
       ],
       "primary_dimension": "search",
       "dimensions": [
@@ -1399,7 +1693,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2601.19622",
       "institutions": [
-        "affiliation-pending"
+        "kit",
+        "tu-dortmund"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -1462,7 +1757,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2601.21239",
       "institutions": [
-        "affiliation-pending"
+        "xjtu",
+        "nwpu"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1490,7 +1786,9 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2602.08253",
       "institutions": [
-        "affiliation-pending"
+        "northeastern-cn",
+        "ucas",
+        "tsinghua"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1593,7 +1891,7 @@
     },
     {
       "id": "strongprior",
-      "short_title": "StrongPrior",
+      "short_title": "Strong Priors",
       "title": "From Heuristic Selection to Automated Algorithm Design: LLMs Benefit from Strong Priors",
       "authors": [
         "Qi Huang",
@@ -1673,7 +1971,9 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2604.24043",
       "institutions": [
-        "affiliation-pending"
+        "uestc",
+        "nudt",
+        "amms"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1689,7 +1989,7 @@
     },
     {
       "id": "ast-evo",
-      "short_title": "AST-Evo",
+      "short_title": "AST Operator",
       "title": "Breaking Validity-Induced Boundaries to Expand Algorithm Search Space: A Two-Stage AST-Based Operator for LLM-Driven Automated Heuristic Evolution",
       "authors": [
         "Shengmin Sun",
@@ -1760,7 +2060,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.08756",
       "institutions": [
-        "sustech"
+        "sustech",
+        "hkust"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -1805,7 +2106,7 @@
     },
     {
       "id": "codegraph",
-      "short_title": "CodeGraph",
+      "short_title": "Code Graph",
       "title": "Budget-Efficient Automatic Algorithm Design via Code Graph",
       "authors": [
         "Maxime Bouscary",
@@ -1817,7 +2118,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.10598",
       "institutions": [
-        "affiliation-pending"
+        "mit",
+        "uc-berkeley"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1828,8 +2130,8 @@
         "Automatic Algorithm Design Benchmarking"
       ],
       "featured": false,
-      "summary": "CodeGraph represents algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly.",
-      "body_html": "<h2>Why it matters</h2>\n<p>CodeGraph represents algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly.</p>\n<h2>Core method</h2>\n<p>A directed acyclic graph stores recurring algorithmic features and supports local recombination and inheritance, targeting higher realized fitness under a fixed evaluation budget.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Introduces the design described above for Automatic Algorithm Design Benchmarking.</li>\n<li>Evaluates the resulting algorithms or formulations through executable task feedback.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.</p>\n<h2>Connections</h2>\n<p>Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.</p>\n"
+      "summary": "A code-graph representation stores algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A code-graph representation stores algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly.</p>\n<h2>Core method</h2>\n<p>A directed acyclic graph stores recurring algorithmic features and supports local recombination and inheritance, targeting higher realized fitness under a fixed evaluation budget.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Introduces the design described above for Automatic Algorithm Design Benchmarking.</li>\n<li>Evaluates the resulting algorithms or formulations through executable task feedback.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.</p>\n<h2>Connections</h2>\n<p>Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.</p>\n"
     },
     {
       "id": "coupleevo",
@@ -1846,7 +2148,7 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.06341",
       "institutions": [
-        "affiliation-pending"
+        "kit"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1859,34 +2161,6 @@
       "featured": false,
       "summary": "CoupleEvo extends LLM-based heuristic evolution to problems composed of tightly coupled subproblems.",
       "body_html": "<h2>Why it matters</h2>\n<p>CoupleEvo extends LLM-based heuristic evolution to problems composed of tightly coupled subproblems.</p>\n<h2>Core method</h2>\n<p>The framework compares sequential, iterative, and integrated coordination strategies for evolving subproblem heuristics, exposing the trade-off between explicit coupling and search complexity.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Introduces the design described above for Coupled Optimization.</li>\n<li>Evaluates the resulting algorithms or formulations through executable task feedback.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.</p>\n<h2>Connections</h2>\n<p>Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.</p>\n"
-    },
-    {
-      "id": "harnesseng",
-      "short_title": "HarnessEng",
-      "title": "Effective Harness Engineering for Algorithm Discovery with Coding Agents",
-      "authors": [
-        "Yoichi Ishibashi",
-        "Taro Yano",
-        "Masafumi Oyamada"
-      ],
-      "year": 2026,
-      "date": "2026-05-01",
-      "venue": "arXiv",
-      "paper_url": "https://arxiv.org/pdf/2605.15221",
-      "institutions": [
-        "affiliation-pending"
-      ],
-      "primary_dimension": "feedback",
-      "dimensions": [
-        "feedback",
-        "scope"
-      ],
-      "problems": [
-        "Algorithm Discovery"
-      ],
-      "featured": false,
-      "summary": "This work studies how evaluation harness design changes the search behavior and discovery quality of coding agents.",
-      "body_html": "<h2>Why it matters</h2>\n<p>This work studies how evaluation harness design changes the search behavior and discovery quality of coding agents.</p>\n<h2>Core method</h2>\n<p>The analysis varies task exposure, evaluator feedback, test coverage, and execution interfaces to isolate the infrastructure choices that determine whether iterative coding agents make reliable progress.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Introduces the design described above for Algorithm Discovery.</li>\n<li>Evaluates the resulting algorithms or formulations through executable task feedback.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.</p>\n<h2>Connections</h2>\n<p>Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.</p>\n"
     },
     {
       "id": "hmace",
@@ -1904,7 +2178,7 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.07214",
       "institutions": [
-        "affiliation-pending"
+        "westlake"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -1923,7 +2197,7 @@
     },
     {
       "id": "knowledgefirst",
-      "short_title": "KnowledgeFirst",
+      "short_title": "Knowledge-first",
       "title": "Back to the Beginning of Heuristic Design: Bridging Code and Knowledge with LLMs",
       "authors": [
         "Nguyen Viet Tuan Kiet",
@@ -1937,7 +2211,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.06123",
       "institutions": [
-        "affiliation-pending"
+        "hust",
+        "university-sydney"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -1995,7 +2270,7 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.17137",
       "institutions": [
-        "affiliation-pending"
+        "huawei-canada"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -2014,7 +2289,7 @@
     },
     {
       "id": "teacherevo",
-      "short_title": "TeacherEvo",
+      "short_title": "Teacher-Aware",
       "title": "Teacher-Aware Evolution of Heuristic Programs from Learned Optimization Policies",
       "authors": [
         "Minyu Chen",
@@ -2028,7 +2303,9 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2605.10634",
       "institutions": [
-        "affiliation-pending"
+        "shenzhen-tech-univ",
+        "shanghai-polytechnic",
+        "sjtu"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -2043,6 +2320,34 @@
       "featured": false,
       "summary": "Teacher-aware evolution uses learned optimization policies as behavioral teachers while retaining static, executable heuristics at deployment.",
       "body_html": "<h2>Why it matters</h2>\n<p>Teacher-aware evolution uses learned optimization policies as behavioral teachers while retaining static, executable heuristics at deployment.</p>\n<h2>Core method</h2>\n<p>Candidate programs receive both endpoint task scores and state-level action preferences queried from an independently trained policy. The teacher guides evolution but is neither distilled into the program nor required during deployment.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Introduces the design described above for Scheduling, Routing, Graph Optimization.</li>\n<li>Evaluates the resulting algorithms or formulations through executable task feedback.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.</p>\n<h2>Connections</h2>\n<p>Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.</p>\n"
+    },
+    {
+      "id": "harnesseng",
+      "short_title": "Vesper",
+      "title": "Effective Harness Engineering for Algorithm Discovery with Coding Agents",
+      "authors": [
+        "Yoichi Ishibashi",
+        "Taro Yano",
+        "Masafumi Oyamada"
+      ],
+      "year": 2026,
+      "date": "2026-05-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2605.15221",
+      "institutions": [
+        "openai"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Algorithm Discovery"
+      ],
+      "featured": false,
+      "summary": "This work studies how evaluation harness design changes the search behavior and discovery quality of coding agents.",
+      "body_html": "<h2>Why it matters</h2>\n<p>This work studies how evaluation harness design changes the search behavior and discovery quality of coding agents.</p>\n<h2>Core method</h2>\n<p>The analysis varies task exposure, evaluator feedback, test coverage, and execution interfaces to isolate the infrastructure choices that determine whether iterative coding agents make reliable progress.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Introduces the design described above for Algorithm Discovery.</li>\n<li>Evaluates the resulting algorithms or formulations through executable task feedback.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.</p>\n<h2>What to improve</h2>\n<p>Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.</p>\n<h2>Connections</h2>\n<p>Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.</p>\n"
     },
     {
       "id": "pathwise",
@@ -2127,7 +2432,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2606.14202",
       "institutions": [
-        "affiliation-pending"
+        "nottingham-ningbo",
+        "nottingham"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -2156,7 +2462,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2606.29953",
       "institutions": [
-        "affiliation-pending"
+        "polyu",
+        "scau"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -2221,7 +2528,9 @@
       "venue": "ICML",
       "paper_url": "https://openreview.net/pdf/5723a21bffbe74a1f5c2b88d97cee90b29e16b4d.pdf",
       "institutions": [
-        "cityu-hk"
+        "cityu-hk",
+        "zhejiang",
+        "stanford"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
