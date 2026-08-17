@@ -49,7 +49,7 @@ function drawRelationMarker(
   const x = (source.x + target.x) / 2
   const y = (source.y + target.y) / 2
   const size = 4.5 / globalScale
-  const lineWidth = 1.5 / globalScale
+  const lineWidth = 1.8 / globalScale
 
   context.save()
   context.translate(x, y)
@@ -175,7 +175,7 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
           context.fill()
         }}
         linkColor={(link: unknown) => relationVisual((link as GraphLink).type).color}
-        linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 1.6 : 1.35}
+        linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 2 : 1.8}
         linkLineDash={(link: unknown) => relationVisual((link as GraphLink).type).dash}
         linkCanvasObjectMode={() => 'after'}
         linkCanvasObject={(link: unknown, context: CanvasRenderingContext2D, globalScale: number) => {

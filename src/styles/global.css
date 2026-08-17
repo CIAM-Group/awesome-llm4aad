@@ -770,12 +770,12 @@ select:focus-visible {
 }
 
 .relation-legend__sample {
-  --relation-color: #64736b;
+  --relation-color: #526e67;
   position: relative;
   width: 36px;
   height: 10px;
   display: inline-block;
-  background: linear-gradient(var(--relation-color), var(--relation-color)) center / 100% 1.5px no-repeat;
+  background: linear-gradient(var(--relation-color), var(--relation-color)) center / 100% 2px no-repeat;
 }
 
 .relation-legend__sample b {
@@ -784,22 +784,22 @@ select:focus-visible {
   left: 50%;
   width: 7px;
   height: 7px;
-  border: 1.5px solid var(--relation-color);
+  border: 1.8px solid var(--relation-color);
   background: var(--paper);
   transform: translate(-50%, -50%);
 }
 
-.relation-visual--extends { --relation-color: #2f6f5e; }
+.relation-visual--extends { --relation-color: #16815f; }
 .relation-visual--extends b { transform: translate(-50%, -50%) rotate(45deg); }
-.relation-visual--generalizes { --relation-color: #8a6424; }
+.relation-visual--generalizes { --relation-color: #bd7a13; }
 .relation-visual--adapts {
-  --relation-color: #416b8a;
-  background: repeating-linear-gradient(to right, var(--relation-color) 0 7px, transparent 7px 11px) center / 100% 1.5px no-repeat;
+  --relation-color: #2677a8;
+  background: repeating-linear-gradient(to right, var(--relation-color) 0 7px, transparent 7px 11px) center / 100% 2px no-repeat;
 }
 .relation-visual--adapts b { border-radius: 50%; }
 .relation-visual--contrasts {
-  --relation-color: #a34d3d;
-  background: repeating-linear-gradient(to right, var(--relation-color) 0 9px, transparent 9px 12px, var(--relation-color) 12px 14px, transparent 14px 17px) center / 100% 1.5px no-repeat;
+  --relation-color: #c64f3b;
+  background: repeating-linear-gradient(to right, var(--relation-color) 0 9px, transparent 9px 12px, var(--relation-color) 12px 14px, transparent 14px 17px) center / 100% 2px no-repeat;
 }
 .relation-visual--contrasts b {
   border: 0;
@@ -818,8 +818,8 @@ select:focus-visible {
 }
 .relation-visual--contrasts b::after { transform: rotate(-45deg); }
 .relation-visual--evaluated-by {
-  --relation-color: #705a83;
-  background: repeating-linear-gradient(to right, var(--relation-color) 0 2px, transparent 2px 6px) center / 100% 1.5px no-repeat;
+  --relation-color: #835bb2;
+  background: repeating-linear-gradient(to right, var(--relation-color) 0 2px, transparent 2px 6px) center / 100% 2px no-repeat;
 }
 .relation-visual--evaluated-by b {
   width: 0;
@@ -831,8 +831,8 @@ select:focus-visible {
   background: transparent;
 }
 .relation-visual--concurrent-work {
-  --relation-color: #66716c;
-  background: repeating-linear-gradient(to right, var(--relation-color) 0 5px, transparent 5px 10px) center / 100% 1.5px no-repeat;
+  --relation-color: #526e67;
+  background: repeating-linear-gradient(to right, var(--relation-color) 0 5px, transparent 5px 10px) center / 100% 2px no-repeat;
 }
 .relation-visual--concurrent-work b {
   border-radius: 50%;
