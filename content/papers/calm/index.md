@@ -12,6 +12,7 @@ year: 2025
 date: 2025-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2505.12285
+code_url: https://github.com/whxru/CALM
 institutions:
   - cityu-hk
 primary_dimension: feedback
@@ -26,25 +27,28 @@ summary: "CALM co-evolves candidate algorithms and the language model that propo
 
 ## Why it matters
 
-CALM co-evolves candidate algorithms and the language model that proposes them, combining verbal and numerical guidance.
+Prompt-based AHD changes the text shown to a fixed generator but never teaches the generator from accumulated evaluations. CALM asks whether the LLM itself can adapt online so that high-quality heuristic regions become more likely under its proposal distribution.
 
 ## Core method
 
-The algorithm search updates prompts from evaluated candidates while reinforcement learning fine-tunes a local LLM from heuristic quality, allowing the generator distribution to adapt to the task.
+CALM maintains an evolutionary loop for executable heuristics while periodically updating a local 7B model with reinforcement learning. Verbal guidance comes from selected candidates and prompts; numerical guidance comes from evaluated solution quality. A changing model proposes the next population, and that population supplies rewards for later model updates.
+
+The system runs locally with 4-bit quantization on a single 24 GB GPU. Across several optimization tasks, it outperforms verbal-only baselines and reports competitive results against methods using substantially larger API models.
 
 ## Contributions
 
-- Introduces the design described above for Combinatorial Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Couples population evolution with online adaptation of the generator.
+- Uses task fitness as numerical model feedback alongside verbal prompting.
+- Demonstrates a locally trainable 7B alternative to larger fixed API models.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Updating the generator can amortize lessons across later samples and reduces dependence on proprietary APIs. Online RL may overfit noisy design instances and makes comparison harder because training compute becomes part of the search budget.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Measure forgetting and cross-task transfer, include total GPU energy and wall time, and study replay or regularization that preserves general code capability during specialization.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+CALM moves adaptation into model weights. AAD Fine-tuning learns from offline preference pairs, whereas CALM interleaves reinforcement updates with the active evolutionary run.

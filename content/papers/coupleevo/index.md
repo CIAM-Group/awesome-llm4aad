@@ -11,6 +11,7 @@ year: 2026
 date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.06341
+code_url: https://github.com/tb-git-kit-research/CoupleEvo
 institutions:
   - kit
 primary_dimension: design-object
@@ -25,25 +26,28 @@ summary: "CoupleEvo extends LLM-based heuristic evolution to problems composed o
 
 ## Why it matters
 
-CoupleEvo extends LLM-based heuristic evolution to problems composed of tightly coupled subproblems.
+Many practical problems cannot be optimized by one heuristic in isolation: decisions in one subproblem alter the state and objective faced by another. Evolving each part independently ignores coupling, while evolving everything together creates a much larger search space.
 
 ## Core method
 
-The framework compares sequential, iterative, and integrated coordination strategies for evolving subproblem heuristics, exposing the trade-off between explicit coupling and search complexity.
+Sequential evolution optimizes one subproblem and freezes it before moving to the next. Iterative evolution alternates between subproblems so later changes can respond to earlier ones. Integrated evolution generates all heuristics jointly. In every scheme, candidate sets are scored by the end-to-end coupled objective rather than isolated subproblem fitness.
+
+Two coupled optimization problems compare convergence and final quality. Decomposition-based sequential and iterative strategies are more stable, while integrated search exhibits higher variance and complexity.
 
 ## Contributions
 
-- Introduces the design described above for Coupled Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Formalizes coordination choices for multi-heuristic LLM evolution.
+- Directly compares sequential, alternating, and joint design.
+- Releases prompts, implementations, and best heuristics for the coupled tasks.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The comparison exposes a decision that single-component AHD avoids. Freezing components can lock in early mistakes, while iterative and integrated schemes multiply evaluation cost. Two examples are insufficient to prescribe one strategy for every coupling structure.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Use dependency graphs to schedule updates, attribute global reward to individual heuristics, and test asymmetric settings where one subproblem dominates cost or uncertainty.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+CoupleEvo broadens EoH from one heuristic to several interacting ones. E2OC studies coordination inside multi-objective algorithms, while Stable targets more general multicomponent structure.

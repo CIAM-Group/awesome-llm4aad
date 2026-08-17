@@ -27,25 +27,28 @@ summary: "BEAM combines high-level algorithm modeling with lower-level code evol
 
 ## Why it matters
 
-BEAM combines high-level algorithm modeling with lower-level code evolution through an adaptive two-level memory.
+Single-function evolution works inside a known solver but does not naturally construct a competent multi-component algorithm. BEAM argues that full solver design needs separate reasoning about high-level structure and low-level implementation, plus memory that connects evidence across those levels.
 
 ## Core method
 
-The outer level maintains algorithmic plans and reusable knowledge, while the inner level refines executable implementations. Memory adaptation links evidence from evaluated programs back to later modeling decisions.
+BEAM formulates design as bilevel optimization. The outer genetic algorithm evolves high-level structures containing function placeholders. For each structure, an inner Monte Carlo tree search realizes and refines those placeholders as executable code. Adaptive Memory stores useful structural and implementation experience, while a Knowledge Augmentation pipeline supplies starting material without fixing one rigid template.
+
+Experiments include hybrid CVRP solver design and Maximum Independent Set. The paper reports a 37.84% aggregate reduction in CVRP optimality gap and an evolved MIS heuristic that outperforms KaMIS in the tested setting.
 
 ## Contributions
 
-- Introduces the design described above for Combinatorial Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A bilevel split between algorithm architecture and component implementation.
+- GA-based outer structure evolution combined with MCTS-based inner realization.
+- Adaptive memory and knowledge augmentation for complex-code generation.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The decomposition mirrors how human designers separate architecture from implementation and supports larger artifacts than a scoring function. It is also computationally heavy: every outer candidate induces an inner search, and memory/knowledge choices introduce additional priors. The paper needs broader replication before claiming general whole-solver design.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Report nested-search cost in evaluator calls and tokens, test structure transfer between tasks, and compare with flat search under equal total compute rather than equal outer generations.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+BEAM extends the design object beyond EoH-style functions and resembles A2DEPT in separating structure from implementation. Its distinctive choice is nested GA/MCTS optimization with cross-level memory.

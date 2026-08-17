@@ -15,6 +15,7 @@ year: 2025
 date: 2024-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2405.17743
+code_url: https://github.com/Cardinal-Operations/ORLM
 institutions:
   - sufe
   - cuhk-shenzhen
@@ -35,25 +36,28 @@ summary: "ORLM provides an open, customizable path for training language models 
 
 ## Why it matters
 
-ORLM provides an open, customizable path for training language models to formulate optimization problems and generate solver code.
+Prompting a closed general model is difficult to customize, audit, or deploy for proprietary OR tasks. ORLM builds an open training pipeline so optimization-modeling ability can be adapted rather than treated as a fixed emergent skill.
 
 ## Core method
 
-OR-Instruct synthesizes modeling data for instruction tuning, while IndustryOR evaluates models on realistic optimization formulations beyond prompt-only closed-model workflows.
+OR-Instruct semi-automatically synthesizes diverse natural-language problems, mathematical formulations, and solver-oriented answers for instruction tuning. The framework trains 7B-scale OR-specialized models and supports customization with domain data. IndustryOR adds realistic industrial cases beyond template-heavy academic sets, while NL4OPT and MAMO provide established comparisons.
+
+Evaluation measures formulation accuracy across these benchmarks and compares specialized open models with general open and closed LLMs.
 
 ## Contributions
 
-- Introduces the design described above for Optimization Modeling.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- OR-Instruct, a scalable data-generation and instruction-tuning pipeline.
+- IndustryOR, an evaluation set aimed at realistic modeling requirements.
+- Open 7B-scale models and code for customizable optimization modeling.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Open weights and data construction make the work reusable for domain adaptation. Synthetic instruction quality bounds the model, and formulation metrics may under-credit mathematically equivalent answers. Industrial breadth is still limited compared with actual enterprise modeling workflows.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Integrate solver execution and equivalence verification, support clarification dialogue, and evaluate secure adaptation on private schemas without leaking business data.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+ORLM is the trainable-model branch of automatic optimization modeling. OptiBench provides a broader end-to-end test, while EquivaMap can verify semantically equivalent formulations.

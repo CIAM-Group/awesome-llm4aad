@@ -9,6 +9,7 @@ year: 2026
 date: 2026-03-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2603.02787
+code_url: https://github.com/RayZhhh/behavesim
 institutions:
   - cityu-hk
 primary_dimension: feedback
@@ -23,25 +24,28 @@ summary: "BehaveSim measures generated algorithms by their problem-solving traje
 
 ## Why it matters
 
-BehaveSim measures generated algorithms by their problem-solving trajectories rather than by surface-level code similarity.
+Population diversity is useful only when different-looking programs actually solve the problem differently. Token, AST, embedding, and final-output similarity can confuse cosmetic rewrites with algorithmic novelty. BehaveSim makes the behavior executed between input and output the comparison object.
 
 ## Core method
 
-The method records intermediate solutions produced during execution and aligns these trajectories with dynamic time warping. It can distinguish syntactically different algorithms with similar behavior and superficially similar code with different logic.
+Each candidate is instrumented to produce a sequence of task-relevant intermediate solutions. Dynamic Time Warping aligns trajectories of different lengths and yields a behavioral distance. The metric is first tested on controlled pairs covering syntax/behavior mismatch cases, then integrated into FunSearch-style selection to suppress behaviorally redundant candidates.
+
+Experiments compare BehaveSim with token, AST, embedding, and output-based measures. When used during search, behavioral diversity improves efficiency and the quality of the final top programs.
 
 ## Contributions
 
-- Introduces the design described above for Algorithm Similarity Evaluation.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A trajectory-level definition of algorithm similarity.
+- A DTW measure that handles unequal execution-trace lengths.
+- Evidence that the metric improves search rather than only classifying static code pairs.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The measure targets algorithmic process more directly than source-code distance. It requires a task-specific choice of what state to log; a poor trajectory can hide important differences, and pairwise DTW becomes expensive for long traces or large archives.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Learn compact trace representations, approximate distances for large archives, and test whether behavioral novelty predicts generalization rather than only diversity on design instances.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+BehaveSim supplies a missing diversity signal for FunSearch and related evolutionary systems. It could complement AST-based variation and Code Graph by checking whether structural novelty produces genuinely different behavior.

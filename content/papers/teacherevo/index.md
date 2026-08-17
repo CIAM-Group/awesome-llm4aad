@@ -30,25 +30,28 @@ summary: "Teacher-aware evolution uses learned optimization policies as behavior
 
 ## Why it matters
 
-Teacher-aware evolution uses learned optimization policies as behavioral teachers while retaining static, executable heuristics at deployment.
+Final objective values are sparse feedback: they reveal that a heuristic failed but not which intermediate decisions diverged from a strong policy. Teacher-aware evolution borrows dense behavioral signals from a learned optimizer without requiring that neural policy at deployment.
 
 ## Core method
 
-Candidate programs receive both endpoint task scores and state-level action preferences queried from an independently trained policy. The teacher guides evolution but is neither distilled into the program nor required during deployment.
+An independently trained optimization policy is queried on states visited by each candidate program. Agreement with the teacher's action preferences supplies local behavioral feedback alongside the candidate's end-to-end task performance. The evolutionary loop uses both signals to select and revise programs. The final artifact remains ordinary static code; this is guidance during design, not policy distillation or hybrid neural inference.
+
+Scheduling, routing, and graph-optimization experiments compare teacher-aware search with performance-only program evolution.
 
 ## Contributions
 
-- Introduces the design described above for Scheduling, Routing, Graph Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Dense state-level behavioral guidance for program evolution.
+- Separation between a neural design-time teacher and a standalone deployment artifact.
+- Cross-domain evaluation beyond one solver family.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The approach turns a strong opaque policy into feedback for an interpretable executable heuristic and can diagnose local mistakes. It inherits teacher bias and requires representative state coverage; excessive imitation could prevent the program from outperforming the teacher.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Anneal teacher influence, query disagreement or uncertainty states selectively, and test whether evolved programs can exceed or transfer beyond their teacher's training distribution.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+Teacher-aware evolution adds a new feedback channel to EoH-like program search. It differs from CALM: the learned policy teaches candidate behavior, while CALM updates the language-model generator itself.

@@ -24,25 +24,28 @@ summary: "This work studies how evaluation harness design changes the search beh
 
 ## Why it matters
 
-This work studies how evaluation harness design changes the search behavior and discovery quality of coding agents.
+Algorithm discovery results are shaped by more than the model and evolutionary rule. The harness decides what files an agent can inspect, how much reasoning fits in a budget, what feedback it receives, and whether exploiting an evaluator looks like progress. This paper treats those choices as research variables.
 
 ## Core method
 
-The analysis varies task exposure, evaluator feedback, test coverage, and execution interfaces to isolate the infrastructure choices that determine whether iterative coding agents make reliable progress.
+The study asks three concrete questions: whether a fixed token budget should fund many short attempts or fewer deep ones; how to detect evaluation hacking; and how filesystem-capable coding agents can run safely in parallel. Vesper implements the proposed answers with coding-agent sessions, hack checks, isolated workspaces, and persistent search memory.
+
+Circle Packing experiments compare harness configurations under matched budgets. The focus is discovery success and robustness, not introducing a new language model.
 
 ## Contributions
 
-- Introduces the design described above for Algorithm Discovery.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Controlled evidence that inference allocation changes discovery outcomes.
+- Practical mechanisms for evaluation-hack detection and parallel isolation.
+- Vesper, a harness that exposes coding-agent capabilities beyond single-shot mutation calls.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The paper surfaces infrastructure assumptions often omitted from method comparisons and evaluates them under a common budget. Its empirical base is narrow, and some safeguards are necessarily task-specific. A strong harness can also encode human insight that should be counted as part of the method.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Replicate the factors across optimization and systems tasks, publish standard hack suites, and report harness engineering effort alongside model tokens and evaluator calls.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+Vesper complements OpenEvolve and ShinkaEvolve by changing the execution layer around code evolution. It is also a warning for every atlas comparison: evaluator and sandbox design can dominate nominal search differences.

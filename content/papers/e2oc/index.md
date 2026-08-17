@@ -27,25 +27,28 @@ summary: "E2OC co-designs interdependent neighborhood operators instead of optim
 
 ## Why it matters
 
-E2OC co-designs interdependent neighborhood operators instead of optimizing each operator in isolation.
+Multi-objective local search depends on operators whose effects interact. Optimizing each one separately can produce individually strong components that work poorly together. E2OC makes operator configuration and dependency part of the search object.
 
 ## Core method
 
-The framework formulates operator-combination design as an MDP, uses Monte Carlo tree search over design strategies, and rotates operators to identify effective configurations while evolving executable code.
+E2OC represents design as an MDP and uses Monte Carlo Tree Search to explore operator strategies. At each node, an underlying LLM-AHD method proposes or modifies code. Operator rotation changes assignments and reveals whether performance comes from a particular operator or its ensemble role. Multi-objective indicators provide rewards for tree backpropagation.
+
+The framework is evaluated across different objective counts against independently designed operators and existing multi-objective search baselines.
 
 ## Contributions
 
-- Introduces the design described above for Multi-Objective Combinatorial Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A planning formulation for jointly designing interdependent operators.
+- Operator rotation to evaluate role and configuration effects.
+- A wrapper capable of using several AHD methods as lower-level designers.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Joint design captures synergies missed by component-wise fitness and the wrapper is method-agnostic. Nested search is expensive, rewards are noisy, and rotation may not disentangle higher-order interactions. Results also depend on initial templates and warm starts.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Add credit assignment for individual and pairwise effects, prune MCTS with uncertainty, and test whether an evolved ensemble transfers across instance distributions.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+E2OC and CoupleEvo both coordinate generated components. E2OC focuses on operator roles inside a multi-objective algorithm and adds MCTS planning.

@@ -17,6 +17,7 @@ year: 2025
 date: 2024-07-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2407.09887
+code_url: https://github.com/yangzhch6/ReSocratic
 institutions:
   - hkust-guangzhou
   - hkust
@@ -39,25 +40,26 @@ summary: "OptiBench evaluates end-to-end optimization modeling, while ReSocratic
 
 ## Why it matters
 
-OptiBench evaluates end-to-end optimization modeling, while ReSocratic synthesizes structured demonstrations to improve smaller models.
+Optimization modeling is not ordinary math QA: a model must translate language and tables into variables, constraints, objectives, executable solver code, and numeric outputs. Earlier datasets were small, linear-only, or stopped before solving. OptiBench evaluates the complete chain.
 
 ## Core method
 
-The benchmark covers linear and nonlinear problems with human-readable inputs and solver-checked outputs. ReSocratic constructs formulations step by step before deriving questions and answers.
+OptiBench contains 605 manually verified problems covering linear and nonlinear programming, integer and mixed-integer variables, and both textual and tabular inputs. A model generates Python solver code, which is executed to recover variables and objective values. ReSocratic reverses data synthesis: it first creates a structured, solvable formulation step by step and then back-translates it into a natural-language question, yielding ReSocratic-29K for supervised fine-tuning.
 
 ## Contributions
 
-- Introduces the design described above for Optimization Modeling.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A 605-problem end-to-end benchmark with nonlinear and tabular cases.
+- Solver-executed evaluation of both formulations and final numerical answers.
+- ReSocratic-29K, a formulation-first synthetic training corpus.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Manual verification and execution make the benchmark substantially stronger than answer-only scoring. Synthetic questions may retain artifacts of the formulation-first generator, and a correct numeric answer can occasionally mask a wrong but coincidentally equivalent formulation.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Add equivalence-aware scoring, ambiguous real user requests, infeasible/unbounded cases, and hidden tests that vary the data while preserving the formulation.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+OptiBench evaluates the artifact produced by systems such as ORLM and LLMOPT. EquivaMap supplies a complementary structural test when two formulations differ syntactically.

@@ -28,25 +28,28 @@ summary: "This paper makes reusable algorithmic knowledge, rather than code alon
 
 ## Why it matters
 
-This paper makes reusable algorithmic knowledge, rather than code alone, the primary search object in automatic heuristic design.
+Most AHD systems search executable programs and summarize insights afterward. That bottom-up loop can lose the principle behind a useful implementation and makes transfer difficult. This work reverses the direction: evolve explicit knowledge first, then generate code to test it.
 
 ## Core method
 
-It formalizes a top-down knowledge-first view through a distortion-compression trade-off and instantiates it in population- and tree-based frameworks, including hybrids with bottom-up code search.
+The formal view treats knowledge as a compressed hypothesis about strong heuristics and code as its task-specific realization. Too much compression loses performance-relevant detail; too little becomes an untransferable program trace. Population- and tree-based instantiations evolve knowledge statements, synthesize executable artifacts from them, evaluate those artifacts, and revise the knowledge. Hybrid variants combine this top-down loop with conventional code-centric search.
+
+Experiments span combinatorial optimization and tasks beyond it, measuring discovery efficiency, transfer, and generalization rather than only in-run best fitness.
 
 ## Contributions
 
-- Introduces the design described above for Combinatorial Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A top-down AHD formulation with knowledge as the primary state.
+- A distortion-compression account of reusable algorithmic hypotheses.
+- Population, tree, and hybrid implementations tested for transfer.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Explicit hypotheses are readable and can survive implementation changes. Their evaluation is indirect because code generation mediates every fitness signal; poor code can unfairly reject good knowledge. Language-level knowledge may also sound plausible without being operationally precise.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Evaluate one knowledge item through multiple implementations, attach uncertainty and evidence to memory, and test human reuse of discovered principles rather than relying only on automated transfer scores.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+The paper inverts the thought-code priority of EoH: code is an experiment for evolving knowledge, not the co-equal search object. It also provides a conceptual foundation for memory systems such as HMACE and MeEvo.

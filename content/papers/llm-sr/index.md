@@ -12,6 +12,7 @@ year: 2025
 date: 2024-04-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2404.18400
+code_url: https://github.com/deep-symbolic-mathematics/LLM-SR
 institutions:
   - virginia-tech
   - cmu
@@ -30,25 +31,28 @@ summary: "LLM-SR frames scientific equation discovery as executable program sear
 
 ## Why it matters
 
-LLM-SR frames scientific equation discovery as executable program search informed by language-model scientific priors.
+Symbolic regression must search an enormous expression space from limited observations. Traditional expression trees provide compositional search but use little scientific knowledge. LLM-SR tests whether a language model can propose plausible equation structure while numerical optimization handles constants.
 
 ## Core method
 
-The LLM proposes equation skeletons as programs, an external optimizer fits numerical parameters, and an experience buffer supports iterative hypothesis refinement across scientific domains.
+The LLM writes equation skeletons as Python programs, making loops, helper functions, and reusable subexpressions available beyond a fixed algebraic grammar. An external optimizer fits free numerical parameters, and data error scores the resulting equation. An experience buffer retains high-performing programs and feedback for subsequent prompts, creating an iterative propose-fit-evaluate loop.
+
+Experiments cover physics, biology, and materials datasets and compare against established symbolic-regression systems. The released repository includes code and data.
 
 ## Contributions
 
-- Introduces the design described above for Scientific Equation Discovery, Symbolic Regression.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Program-based equation representation informed by pretrained scientific knowledge.
+- A clean split between structural generation and coefficient fitting.
+- Multi-domain empirical comparison with symbolic-regression baselines.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Generated equations remain executable and inspectable, while external fitting avoids asking the LLM to guess precise constants. Pretrained familiarity may favor known equation families, and low data error alone does not guarantee identifiability or physical validity. LLM query cost also complicates comparison with mature SR solvers.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Add dimensional and conservation constraints, quantify rediscovery versus genuine extrapolation, and use uncertainty-aware evaluation across multiple data regimes.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+LLM-SR shares the executable proposal-and-evaluation loop of FunSearch, but its artifact is a scientific equation program and its inner optimizer fits continuous parameters.

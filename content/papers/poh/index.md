@@ -26,25 +26,28 @@ summary: "Planning of Heuristics combines LLM self-reflection with Monte Carlo t
 
 ## Why it matters
 
-Planning of Heuristics combines LLM self-reflection with Monte Carlo tree search to plan multi-step heuristic improvements.
+Direct iterative prompting is short-sighted: it accepts one proposed revision before knowing whether that direction has useful descendants. PoH casts heuristic refinement as planning so several possible improvement trajectories can compete over a longer horizon.
 
 ## Core method
 
-Heuristics form states, improvement suggestions form actions, and evaluation results provide rewards. Tree search simulates future refinements before committing evaluation budget.
+A node is an executable heuristic state, an LLM-generated improvement suggestion is an action, and measured task performance supplies reward. Monte Carlo Tree Search balances expanding new suggestions with revisiting promising branches; self-reflection explains failures and proposes actions. Backpropagated rewards let later outcomes revise the value of earlier design choices.
+
+Experiments on TSP and flow-shop scheduling compare PoH with hand-crafted heuristics and LLM-AHD baselines, including larger problem sizes.
 
 ## Contributions
 
-- Introduces the design described above for Traveling Salesman Problem, Flow Shop Scheduling Problem.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A planning formulation of multi-step heuristic improvement.
+- Integration of self-reflective actions with MCTS selection and backup.
+- Evidence across routing and scheduling tasks.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The tree preserves alternative lineages and credits early choices with downstream outcomes. Each expansion still requires generation and execution, making tree breadth expensive. Natural-language actions may also duplicate one another while appearing distinct.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Merge behaviorally equivalent branches, use uncertainty-aware value estimates, and compare with population evolution under the same evaluator calls and prompt-token budget.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+PoH belongs to the tree-search line with MCTS-AHD. Its distinctive framing treats reflective improvement suggestions as actions in a planning problem.

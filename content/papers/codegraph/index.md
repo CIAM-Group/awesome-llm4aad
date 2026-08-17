@@ -25,25 +25,28 @@ summary: "A code-graph representation stores algorithms as reusable substructure
 
 ## Why it matters
 
-A code-graph representation stores algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly.
+Whole-program evolution repeatedly regenerates common scaffolding and discards every part of a weak candidate, even when one fragment is valuable. Under a tight evaluation budget, that is an expensive loss of partial progress. Code Graph introduces a representation intended to retain and recombine such fragments.
 
 ## Core method
 
-A directed acyclic graph stores recurring algorithmic features and supports local recombination and inheritance, targeting higher realized fitness under a fixed evaluation budget.
+The graph stores algorithms as source-to-sink paths; edges carry code and complete paths reconstruct executable candidates. When a new program is evaluated, reusable differences can be merged into the graph instead of surviving only inside one monolithic individual. Search samples graph-supported combinations and uses evaluation evidence to choose expansion regions.
+
+Experiments emphasize performance as a function of expensive evaluator calls, directly testing the claimed budget advantage against whole-program baselines.
 
 ## Contributions
 
-- Introduces the design described above for Automatic Algorithm Design Benchmarking.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A persistent graph representation for partial code inheritance.
+- Candidate construction through recombination of evaluated structures.
+- Evaluation framed around limited algorithm-design budgets.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The graph makes lineage and reuse explicit and can rescue useful components from weak programs. Decomposing arbitrary code is difficult: fragments can have hidden dependencies, and graph growth may accumulate incompatible paths.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Add typed interfaces and dependency checks, prune by uncertainty rather than raw fitness alone, and measure whether fragments transfer between tasks instead of only within one run.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+Code Graph changes the unit of inheritance relative to population-based EoH. It complements A2DEPT: one stores a cross-candidate graph, while the other represents each solver as a program tree.

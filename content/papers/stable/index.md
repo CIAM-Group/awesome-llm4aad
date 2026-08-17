@@ -26,25 +26,28 @@ summary: "STABLE organizes complex algorithms as reusable components and co-evol
 
 ## Why it matters
 
-STABLE organizes complex algorithms as reusable components and co-evolves their configuration and implementation with semantic guidance.
+Real algorithms contain several interacting components. Whole-program rewriting loses useful parts, while tuning components inside a fixed template cannot discover new compositions. Stable searches both the arrangement of components and the code that realizes them.
 
 ## Core method
 
-The method separates high-level component configuration from low-level component implementation in a bilevel search. Semantic descriptions support component retrieval, reuse, and recombination across candidate algorithms.
+The upper evolutionary level changes component configuration and coordination. The lower level improves each component's executable implementation under the current configuration. Semantic descriptions identify related components and support retrieval, reuse, and recombination instead of relying only on literal code overlap. Fitness is measured on the assembled algorithm, preserving interaction effects.
+
+Experiments target multicomponent algorithm design and compare against whole-code evolution and fixed-component alternatives, with ablations for semantics and the bilevel split.
 
 ## Contributions
 
-- Introduces the design described above for Multicomponent Algorithm Design.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A bilevel representation separating component organization from implementation.
+- Semantics-aware component retrieval and reuse.
+- End-to-end co-evaluation of assembled multicomponent algorithms.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Component boundaries make complex systems more manageable and allow partial reuse. Those boundaries and semantic descriptions are themselves strong design choices; hidden dependencies can make independently improved components fail when assembled. Nested evolution increases cost.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Infer interfaces from code, test component libraries across tasks, and use interaction-aware credit assignment so a weak global score does not discard every local improvement.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+Stable generalizes the component-coordination issue seen in CoupleEvo and E2OC. It also shares Code Graph's goal of preserving partial algorithmic value, but uses explicit semantic components and bilevel search.

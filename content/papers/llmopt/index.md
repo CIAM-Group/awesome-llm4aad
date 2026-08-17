@@ -14,6 +14,7 @@ year: 2025
 date: 2024-10-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2410.13213
+code_url: https://github.com/caigaojiang/LLMOPT
 institutions:
   - ecnu
   - ant-group
@@ -30,25 +31,28 @@ summary: "LLMOPT learns a shared representation for defining optimization proble
 
 ## Why it matters
 
-LLMOPT learns a shared representation for defining optimization problems and producing solver code from natural-language descriptions.
+An end user describes goals and constraints in ordinary language, while an OR expert must decide the variables, objective, formulation, solver, and interpretation. LLMOPT targets this whole pipeline rather than evaluating only one intermediate mathematical string.
 
 ## Core method
 
-A five-element formulation normalizes different optimization types, and multi-instruction tuning jointly improves formalization, code generation, and generalization while adding checks against hallucinated solutions.
+The framework normalizes problems into a five-element representation that separates optimization type, variables, objective, constraints, and data. Multi-instruction tuning trains the model across problem definition, formulation, solver-code generation, and answer production. Generated code calls optimization software, and consistency checks reduce unsupported numerical answers.
+
+Evaluation spans multiple families of natural-language optimization problems and reports both definition/formulation quality and executable solution accuracy, including generalization beyond training templates.
 
 ## Contributions
 
-- Introduces the design described above for General Optimization Modeling.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A shared five-element representation across optimization families.
+- Joint instruction training for understanding, modeling, code generation, and solving.
+- End-to-end evaluation grounded by executed solver code.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The intermediate schema makes errors easier to inspect and execution prevents purely verbal answers from passing. A fixed five-element representation may be strained by stochastic, dynamic, or multi-level problems, and executable code can still solve the wrong formulation.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Pair the pipeline with formulation-equivalence checking, add clarification dialogue for ambiguous requests, and evaluate robustness to missing, contradictory, and tabular inputs.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+LLMOPT and ORLM both automate optimization modeling. LLMOPT emphasizes a unified end-to-end representation; ORLM emphasizes scalable data construction and a customizable open model.

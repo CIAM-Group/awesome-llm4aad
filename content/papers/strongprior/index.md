@@ -27,25 +27,28 @@ summary: "This study shows that strong algorithmic priors can make LLM-driven al
 
 ## Why it matters
 
-This study shows that strong algorithmic priors can make LLM-driven algorithm design more efficient and robust.
+Open-ended generation is attractive, but a vast algorithm space can make LLM search inefficient and unstable. Traditional heuristic selection operates in a narrow portfolio with strong prior structure. This paper studies that spectrum and asks how much useful design comes from supplying a high-quality algorithmic starting point.
 
 ## Core method
 
-Token-level attribution motivates supplying high-quality benchmark algorithms as code priors. The resulting search is evaluated on pseudo-Boolean and continuous black-box optimization suites.
+Attribution analysis examines which parts of prompt code influence generated modifications. The design experiments then provide established algorithms as code priors and let LLM-based search refine or specialize them, contrasting this with weaker-prior and selection-style baselines. Pseudo-Boolean optimization and BBOB continuous black-box suites test discrete and continuous regimes.
+
+The paper reports improved efficiency and stability with strong priors, framing heuristic selection as a constrained special case of instance-specific algorithm design.
 
 ## Contributions
 
-- Introduces the design described above for Pseudo-Boolean Optimization, Black-Box Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Connects heuristic selection and open-ended AAD through prior strength.
+- Uses attribution analysis to motivate code-level prior design.
+- Empirical evidence on both pseudo-Boolean and continuous black-box suites.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The work corrects the assumption that less human structure is always better and offers a practical route to lower search cost. Strong priors can cap novelty, leak benchmark expertise, and make gains look like local tuning. The linked repository is promised upon acceptance and is not yet counted as available code.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Vary prior quality and distance systematically, test whether the method can abandon a misleading prior, and report novelty relative to the starting algorithm alongside final fitness.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+This paper supplies a counterpoint to from-scratch and open-ended systems such as ShinkaEvolve. It places heuristic selection, warm-started evolution, and full AAD on one continuum.

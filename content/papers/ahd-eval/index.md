@@ -13,6 +13,7 @@ year: 2024
 date: 2024-07-01
 venue: "PPSN"
 paper_url: https://arxiv.org/pdf/2407.10873
+code_url: https://github.com/zhichao-lu/llm-eps
 institutions:
   - cityu-hk
   - sustech
@@ -28,25 +29,28 @@ summary: "This benchmark isolates the contribution of evolutionary search in LLM
 
 ## Why it matters
 
-This benchmark isolates the contribution of evolutionary search in LLM-based automatic heuristic design across methods, models, and tasks.
+Early LLM-based evolutionary program-search papers used different tasks, models, budgets, and baselines, so higher headline scores did not establish whether evolution itself helped. This study creates a common experimental frame and asks which search components survive controlled comparison.
 
 ## Core method
 
-Four evolutionary program-search methods are compared on four AHD problems with nine LLMs and repeated runs, providing component-level evidence about search, prompting, and model effects.
+The benchmark reimplements four LLM-based EPS methods plus a simple baseline, evaluates four AHD problems, spans nine open and closed LLMs, and repeats each setting five times. Performance is aggregated relative to domain baselines, while separate studies examine evolutionary operators, prompt strategies, model choice, query budget, and initialization.
+
+The main result is nuanced: evolutionary search generally matters, but method rankings vary with the LLM and problem, and simple components can explain part of the reported progress. All implementations and model interfaces are released in one repository.
 
 ## Contributions
 
-- Introduces the design described above for Automatic Heuristic Design Benchmarking.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A cost-conscious, repeated benchmark across methods, tasks, and nine LLMs.
+- Component analyses that distinguish the value of search from the value of the underlying model and prompt.
+- A unified open implementation for subsequent EPS research.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The controlled matrix is much more credible than isolated method results and exposes sensitivity hidden by single-model evaluations. Its four tasks still cover a narrow part of algorithm design, and rapidly changing models can make exact rankings stale. Aggregation may also hide task-specific failure modes.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Extend the suite to full algorithms, coupled components, and modeling agents; record prompt tokens, wall time, and failed executions; and maintain versioned leaderboards rather than treating one model snapshot as permanent evidence.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+This is an evaluation paper rather than another search method. It directly stress-tests FunSearch-style and ReEvo-style EPS claims and provides the fairest basis in the atlas for comparing their search mechanisms.

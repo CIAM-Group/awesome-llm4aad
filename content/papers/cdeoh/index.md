@@ -27,25 +27,28 @@ summary: "CDEoH injects problem-category knowledge into evolutionary algorithm d
 
 ## Why it matters
 
-CDEoH injects problem-category knowledge into evolutionary algorithm design to improve stability and preserve useful diversity.
+A fitness-only population can collapse around one design pattern even when several functional categories are useful. CDEoH treats category structure as an explicit population-management signal rather than hoping semantic diversity survives ordinary selection.
 
 ## Core method
 
-Category-aware prompts and search decisions guide the joint evolution of algorithmic thoughts and code, reducing blind exploration across structurally different problem classes.
+CDEoH organizes generated thought-code pairs into semantic categories. Evolution refines candidates within a category and combines information across categories, preventing one family from monopolizing selection. Category summaries become reusable prompt knowledge while executable performance remains the ground-truth fitness signal.
+
+Experiments cover several combinatorial-optimization tasks and compare with EoH-style evolution. Ablations examine category guidance and population diversity in addition to final objectives.
 
 ## Contributions
 
-- Introduces the design described above for Combinatorial Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Category-aware organization of the thought-code population.
+- Intra-category refinement combined with cross-category exploration.
+- Structured summaries that turn accumulated candidates into reusable knowledge.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Categories give a readable account of diversity and can preserve several design modes. They depend on classification quality and may impose artificial boundaries between hybrid ideas. Classification calls also consume search budget.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Compare semantic categories with behavior-derived clustering, track category stability across models, and support hierarchical or overlapping categories for mixed mechanisms.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+CDEoH retains EoH's thought-code representation but changes population organization. Unlike BehaveSim's execution-based diversity, its diversity signal is semantic and category-level.

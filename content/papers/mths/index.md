@@ -30,25 +30,28 @@ summary: "MTHS separates task-independent metaheuristics from task-specific prog
 
 ## Why it matters
 
-MTHS separates task-independent metaheuristics from task-specific programs and evolves both levels across multiple tasks.
+Task-by-task AHD tends to discover one-off code even when problems share reusable search principles. MTHS asks whether an LLM can evolve a task-independent metaheuristic at one level and instantiate it differently for each task at another.
 
 ## Core method
 
-A hierarchical representation and two-level evolution transfer elite program knowledge between tasks while preserving task-specific implementations, targeting reusable algorithmic structure rather than isolated code fragments.
+The representation separates a high-level metaheuristic description from task-specific executable programs. Cross-task search evolves the shared strategy using evidence from several tasks, while within-task search refines implementations and returns useful lessons upward. Elite knowledge moves between levels without forcing identical code interfaces.
+
+The reported study spans several combinatorial-optimization tasks, compares with hand-designed and LLM-AHD baselines, and tests whether evolved metaheuristics transfer to related held-out settings.
 
 ## Contributions
 
-- Introduces the design described above for Cross-Task Automated Heuristic Design.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Hierarchical separation of transferable strategy and task-specific code.
+- Two-way information flow between multi-task and per-task evolution.
+- Direct evaluation of transfer rather than only multi-task average fitness.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The hierarchy provides a plausible unit for transfer and keeps final programs executable. Negative transfer is possible when tasks share vocabulary but not useful search structure, and the chosen task family strongly determines what appears universal.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Estimate task relatedness before sharing, allow several metaheuristic clusters, and evaluate transfer to tasks with different state and action interfaces under fixed adaptation budgets.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+MTHS moves from within-task heuristic evolution to reusable cross-task strategy. EoH-S broadens one task to a heuristic set, whereas MTHS broadens one design process across tasks.

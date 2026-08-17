@@ -11,6 +11,7 @@ year: 2025
 date: 2025-07-01
 venue: "ICML"
 paper_url: https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhai25a/zhai25a.pdf
+code_url: https://github.com/HumainLab/EquivaMap
 institutions:
   - ut-austin
   - stanford
@@ -26,25 +27,28 @@ summary: "EquivaMap checks whether two optimization formulations preserve feasib
 
 ## Why it matters
 
-EquivaMap checks whether two optimization formulations preserve feasibility and optimality under an LLM-proposed variable mapping.
+Optimization copilots can produce formulations that look different yet encode the same problem, or look plausible while changing feasibility. Text similarity, a few solver outputs, and exact syntax are unreliable correctness tests. EquivaMap turns semantic equivalence into an explicit verification task.
 
 ## Core method
 
-The work defines Quasi-Karp equivalence, asks an LLM to identify decision-variable mappings, and verifies those mappings structurally on the EquivaFormulation dataset.
+Given two formulations, the LLM proposes a structured mapping between variables and mathematical components. EquivaMap then checks the mapping against Quasi-Karp equivalence conditions, separating hypothesis generation from programmatic verification. EquivaFormulation supplies equivalent and non-equivalent pairs with controlled transformations.
+
+Experiments compare the pipeline with LLM-only judgments and simpler heuristics, analyzing mapping quality and final verification accuracy.
 
 ## Contributions
 
-- Introduces the design described above for Optimization Formulation Equivalence.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A formal equivalence target tailored to optimization formulations.
+- A propose-then-verify pipeline combining LLM flexibility with deterministic checks.
+- The public EquivaFormulation dataset and implementation.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+Verification grounds the LLM and produces more diagnostic failures than a binary judgment. The approach still depends on proposing the right mapping; failure to find one is not proof of non-equivalence. The dataset covers a bounded transformation family.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Search over multiple mapping hypotheses, generate counterexamples for failed equivalence, and extend coverage to nonlinear, stochastic, and decomposition-based formulations.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+EquivaMap is a verification component for automatic optimization modeling. It can sit downstream of ORLM or LLMOPT before solver execution.

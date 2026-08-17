@@ -25,25 +25,28 @@ summary: "LaF-MCTS incrementally designs decomposition policies and sub-solvers 
 
 ## Why it matters
 
-LaF-MCTS incrementally designs decomposition policies and sub-solvers for large-scale CVRP instances.
+Large-scale CVRP with hundreds or thousands of nodes is difficult even for strong solvers. Divide-and-conquer helps, but its decomposition rule and sub-solver configuration are tightly coupled and labor-intensive to design. A single thought-to-code mutation is too coarse for this solver architecture.
 
 ## Core method
 
-A three-tier flexible MCTS builds the solver from coarse framework choices to decomposition logic and sub-solver configuration, with semantic pruning to avoid redundant code branches.
+LaF-MCTS uses a three-tier decision hierarchy to build the solver incrementally: high-level framework choices, decomposition-policy logic, and sub-solver configuration. LLM proposals populate tree branches and executable CVRP evaluation supplies rewards. Semantic pruning removes structurally or meaningfully redundant programs, while branch regrowth replaces unproductive regions and restores diversity.
+
+CVRPLib experiments show automatically composed decomposition-enhanced solvers outperforming several state-of-the-art CVRP solvers in the reported large-scale settings.
 
 ## Contributions
 
-- Introduces the design described above for Large-Scale Capacitated Vehicle Routing Problem.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- A hierarchical search space matching the structure of divide-and-conquer routing solvers.
+- Flexible MCTS with semantic pruning and branch regrowth.
+- Joint automation of decomposition policy and sub-solver configuration.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The hierarchy makes complex solver synthesis manageable and branch regrowth addresses early MCTS mistakes. The tiers encode substantial CVRP expertise, semantic pruning can remove superficially similar but behaviorally distinct code, and evaluation of large instances is expensive.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Use execution-based similarity for pruning, transfer decomposers across scale distributions, and compare with automated configuration baselines under equal wall-clock budgets.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+LaF-MCTS specializes tree-structured AHD for large-scale CVRP. Relative to MCTS-AHD, its tree is a three-tier solver-design hierarchy with explicit pruning and regrowth.

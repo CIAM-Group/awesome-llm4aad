@@ -27,25 +27,28 @@ summary: "TIDE jointly evolves heuristic structures and tunes numerical paramete
 
 ## Why it matters
 
-TIDE jointly evolves heuristic structures and tunes numerical parameters through a nested, diversity-aware search process.
+A promising heuristic structure can be rejected because its constants are poorly calibrated, while tuning constants cannot rescue a weak structure. Treating the whole program as one discrete mutation entangles these two failure modes. TIDE separates structural evolution from parameter optimization while coordinating their budgets.
 
 ## Core method
 
-An outer island model uses Tree Similarity Edit Distance to preserve structural diversity, while an inner loop combines LLM-generated logic with differential mutation for parameter tuning. A UCB scheduler allocates queries among prompt strategies.
+The outer loop evolves program logic across parallel islands. Tree Similarity Edit Distance measures structural rather than textual diversity and limits premature convergence. For each structure, an inner differential-mutation process calibrates numerical parameters before fitness comparison. A UCB scheduler learns which prompt operator deserves the next LLM query from its observed improvements.
+
+Experiments on combinatorial-optimization heuristics compare with EoH, ReEvo, and MCTS-AHD-style discrete evolution and ablate parameter tuning, structural diversity, islands, and scheduling.
 
 ## Contributions
 
-- Introduces the design described above for Combinatorial Optimization.
-- Evaluates the resulting algorithms or formulations through executable task feedback.
+- Nested optimization of program structure and numeric parameters.
+- AST/tree-distance diversity management across an island model.
+- Online bandit allocation among LLM prompt operators.
 
 ## Strengths and limitations
 
-The method exposes a concrete, testable design loop and produces artifacts that can be evaluated directly. Its conclusions remain tied to the reported tasks, evaluator design, language models, and computational budget; broader replication is needed before assuming transfer to substantially different settings.
+The separation avoids discarding good logic because of bad constants and makes operator allocation adaptive. Inner tuning multiplies evaluations per structure, tree distance does not guarantee behavioral diversity, and the nested budget complicates fair comparison with simpler methods.
 
 ## What to improve
 
-Useful next steps include stronger cross-task evaluation, cost-matched ablations, and analysis of failure cases and sensitivity to the underlying language model.
+Use multi-fidelity parameter tuning, compare structural and behavioral diversity, and report improvements against total evaluator calls, tokens, and wall time rather than generations alone.
 
 ## Connections
 
-Structured connections are included in the relation map only when the methodological dependency is explicit and well supported.
+TIDE extends EoH-style evolution with a continuous inner loop. It shares BEAM's bilevel perspective, but separates structure from numeric calibration rather than architecture from component implementation.
