@@ -1,6 +1,6 @@
 ---
 id: codegraph
-short_title: "CodeGraph"
+short_title: "Code Graph"
 title: "Budget-Efficient Automatic Algorithm Design via Code Graph"
 authors:
   - "Maxime Bouscary"
@@ -11,7 +11,8 @@ date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.10598
 institutions:
-  - affiliation-pending
+  - mit
+  - uc-berkeley
 primary_dimension: design-object
 dimensions:
   - design-object
@@ -19,12 +20,12 @@ dimensions:
 problems:
   - "Automatic Algorithm Design Benchmarking"
 featured: false
-summary: "CodeGraph represents algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly."
+summary: "A code-graph representation stores algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly."
 ---
 
 ## Why it matters
 
-CodeGraph represents algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly.
+A code-graph representation stores algorithms as reusable substructures so useful code can survive even when its containing candidate performs poorly.
 
 ## Core method
 

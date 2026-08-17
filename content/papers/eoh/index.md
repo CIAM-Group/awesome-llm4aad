@@ -18,6 +18,7 @@ paper_url: https://arxiv.org/pdf/2401.02051
 code_url: https://github.com/FeiLiu36/EoH
 institutions:
   - cityu-hk
+  - sustech
   - huawei-noahs-ark
 primary_dimension: design-object
 dimensions:

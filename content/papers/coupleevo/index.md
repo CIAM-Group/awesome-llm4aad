@@ -12,7 +12,7 @@ date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.06341
 institutions:
-  - affiliation-pending
+  - kit
 primary_dimension: design-object
 dimensions:
   - design-object

@@ -13,7 +13,9 @@ date: 2024-04-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2404.18400
 institutions:
-  - affiliation-pending
+  - virginia-tech
+  - cmu
+  - ai2
 primary_dimension: design-object
 dimensions:
   - design-object

@@ -12,7 +12,8 @@ date: 2026-06-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2606.14202
 institutions:
-  - affiliation-pending
+  - nottingham-ningbo
+  - nottingham
 primary_dimension: feedback
 dimensions:
   - feedback

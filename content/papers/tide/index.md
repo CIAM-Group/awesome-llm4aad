@@ -13,7 +13,8 @@ date: 2026-01-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2601.21239
 institutions:
-  - affiliation-pending
+  - xjtu
+  - nwpu
 primary_dimension: design-object
 dimensions:
   - design-object

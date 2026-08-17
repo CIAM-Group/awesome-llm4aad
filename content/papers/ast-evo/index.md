@@ -1,6 +1,6 @@
 ---
 id: ast-evo
-short_title: "AST-Evo"
+short_title: "AST Operator"
 title: "Breaking Validity-Induced Boundaries to Expand Algorithm Search Space: A Two-Stage AST-Based Operator for LLM-Driven Automated Heuristic Evolution"
 authors:
   - "Shengmin Sun"

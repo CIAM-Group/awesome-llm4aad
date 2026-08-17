@@ -15,7 +15,9 @@ date: 2026-04-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2604.24043
 institutions:
-  - affiliation-pending
+  - uestc
+  - nudt
+  - amms
 primary_dimension: design-object
 dimensions:
   - design-object

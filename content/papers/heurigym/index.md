@@ -21,7 +21,9 @@ date: 2025-06-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2506.07972
 institutions:
-  - affiliation-pending
+  - cornell
+  - harvard
+  - nvidia
 primary_dimension: feedback
 dimensions:
   - feedback

@@ -12,7 +12,8 @@ date: 2026-06-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2606.29953
 institutions:
-  - affiliation-pending
+  - polyu
+  - scau
 primary_dimension: design-object
 dimensions:
   - design-object

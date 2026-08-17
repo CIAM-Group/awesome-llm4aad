@@ -11,7 +11,7 @@ date: 2025-09-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2509.19349
 institutions:
-  - affiliation-pending
+  - sakana-ai
 primary_dimension: search
 dimensions:
   - search

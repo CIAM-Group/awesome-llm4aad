@@ -1,9 +1,10 @@
-import { GitBranch, MousePointer2 } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { GitBranch, MousePointer2, X } from 'lucide-react'
+import { useMemo, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { FilterBar } from '../components/FilterBar'
 import { RelationGraph } from '../components/RelationGraph'
 import { atlas, getPaper } from '../lib/data'
+import { relationVisuals } from '../lib/relationStyles'
 
 export function RelationsPage() {
   const [query, setQuery] = useState('')
@@ -18,9 +19,15 @@ export function RelationsPage() {
     return matchesDimension && matchesType && (!query.trim() || searchable.includes(query.trim().toLowerCase()))
   }), [dimension, query, relationType])
 
-  const visiblePaperIds = useMemo(() => new Set(filteredRelations.flatMap((relation) => [relation.from, relation.to])), [filteredRelations])
+  const filterPaperIds = useMemo(() => new Set(filteredRelations.flatMap((relation) => [relation.from, relation.to])), [filteredRelations])
+  const focusPapers = useMemo(() => atlas.papers.filter((paper) => filterPaperIds.has(paper.id)), [filterPaperIds])
+  const effectiveSelectedPaperId = filterPaperIds.has(selectedPaperId) ? selectedPaperId : ''
+  const graphRelations = useMemo(() => effectiveSelectedPaperId
+    ? filteredRelations.filter((relation) => relation.from === effectiveSelectedPaperId || relation.to === effectiveSelectedPaperId)
+    : filteredRelations, [effectiveSelectedPaperId, filteredRelations])
+  const visiblePaperIds = useMemo(() => new Set(graphRelations.flatMap((relation) => [relation.from, relation.to])), [graphRelations])
   const visiblePapers = useMemo(() => atlas.papers.filter((paper) => visiblePaperIds.has(paper.id)), [visiblePaperIds])
-  const selectedPaper = getPaper(selectedPaperId)
+  const selectedPaper = getPaper(effectiveSelectedPaperId)
 
   const dimensionOptions = [{ value: 'all', label: 'All dimensions' }, ...Object.entries(atlas.taxonomy.dimensions).map(([value, item]) => ({ value, label: item.label }))]
   const typeOptions = [{ value: 'all', label: 'All relation types' }, ...Object.entries(atlas.taxonomy.relation_types).map(([value, item]) => ({ value, label: item.label }))]
@@ -53,28 +60,40 @@ export function RelationsPage() {
           <div className="graph-toolbar">
             <label>
               <MousePointer2 size={15} aria-hidden="true" />
-              <span>Keyboard paper focus</span>
-              <select value={selectedPaperId} onChange={(event) => setSelectedPaperId(event.target.value)}>
+              <span>Focus paper</span>
+              <select value={effectiveSelectedPaperId} onChange={(event) => setSelectedPaperId(event.target.value)}>
                 <option value="">Choose a paper</option>
-                {visiblePapers.map((paper) => <option value={paper.id} key={paper.id}>{paper.short_title} — {paper.title}</option>)}
+                {focusPapers.map((paper) => <option value={paper.id} key={paper.id}>{paper.short_title} — {paper.title}</option>)}
               </select>
             </label>
-            {selectedPaper && <Link to={`/papers/${selectedPaper.id}`}>Read {selectedPaper.short_title}</Link>}
+            {selectedPaper && (
+              <div className="graph-toolbar__focus-actions">
+                <span>{graphRelations.length} direct relation{graphRelations.length === 1 ? '' : 's'}</span>
+                <Link to={`/papers/${selectedPaper.id}`}>Read {selectedPaper.short_title}</Link>
+                <button type="button" onClick={() => setSelectedPaperId('')} aria-label="Clear paper focus" title="Clear paper focus">
+                  <X size={15} aria-hidden="true" />
+                </button>
+              </div>
+            )}
           </div>
-          <RelationGraph papers={visiblePapers} relations={filteredRelations} selectedPaperId={selectedPaperId} />
+          <RelationGraph papers={visiblePapers} relations={graphRelations} selectedPaperId={effectiveSelectedPaperId} />
           <div className="relation-legend" aria-label="Relation line legend">
-            <span><i className="relation-legend__line" />Solid · method relation</span>
-            <span><i className="relation-legend__line relation-legend__line--dashed" />Dashed · concurrent work</span>
+            {Object.entries(atlas.taxonomy.relation_types).map(([type, relationType]) => (
+              <span key={type}>
+                <i className={`relation-legend__sample relation-visual--${type}`} aria-hidden="true"><b /></i>
+                {relationType.label}
+              </span>
+            ))}
           </div>
           <section className="relation-register" aria-labelledby="relation-register-title">
             <h2 id="relation-register-title"><GitBranch size={19} aria-hidden="true" />Relation register</h2>
-            {filteredRelations.map((relation, index) => {
+            {graphRelations.map((relation, index) => {
               const from = getPaper(relation.from)
               const to = getPaper(relation.to)
               return (
                 <article key={`${relation.from}-${relation.to}-${index}`}>
-                  <span className="relation-register__type">{atlas.taxonomy.relation_types[relation.type]?.label}</span>
-                  <h3><Link to={`/papers/${relation.from}`}>{from?.short_title}</Link><span aria-hidden="true">{atlas.taxonomy.relation_types[relation.type]?.direction === 'undirected' ? ' ↔ ' : ' → '}</span><Link to={`/papers/${relation.to}`}>{to?.short_title}</Link></h3>
+                  <span className={`relation-register__type relation-type--${relation.type}`} style={{ '--relation-color': relationVisuals[relation.type]?.color } as CSSProperties}>{atlas.taxonomy.relation_types[relation.type]?.label}</span>
+                  <h3><Link to={`/papers/${relation.from}`}>{from?.short_title}</Link><span aria-hidden="true"> · </span><Link to={`/papers/${relation.to}`}>{to?.short_title}</Link></h3>
                   <p>{relation.description}</p>
                 </article>
               )

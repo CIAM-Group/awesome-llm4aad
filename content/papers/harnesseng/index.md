@@ -1,6 +1,6 @@
 ---
 id: harnesseng
-short_title: "HarnessEng"
+short_title: "Vesper"
 title: "Effective Harness Engineering for Algorithm Discovery with Coding Agents"
 authors:
   - "Yoichi Ishibashi"
@@ -11,7 +11,7 @@ date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.15221
 institutions:
-  - affiliation-pending
+  - openai
 primary_dimension: feedback
 dimensions:
   - feedback

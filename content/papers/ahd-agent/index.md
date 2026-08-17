@@ -13,6 +13,7 @@ venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.08756
 institutions:
   - sustech
+  - hkust
 primary_dimension: feedback
 dimensions:
   - feedback

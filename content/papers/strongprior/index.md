@@ -1,6 +1,6 @@
 ---
 id: strongprior
-short_title: "StrongPrior"
+short_title: "Strong Priors"
 title: "From Heuristic Selection to Automated Algorithm Design: LLMs Benefit from Strong Priors"
 authors:
   - "Qi Huang"

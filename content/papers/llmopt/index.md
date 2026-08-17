@@ -15,7 +15,9 @@ date: 2024-10-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2410.13213
 institutions:
-  - affiliation-pending
+  - ecnu
+  - ant-group
+  - nanjing-university
 primary_dimension: design-object
 dimensions:
   - design-object

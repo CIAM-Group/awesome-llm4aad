@@ -13,7 +13,8 @@ date: 2025-03-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2503.03350
 institutions:
-  - affiliation-pending
+  - tu-dortmund
+  - kit
 primary_dimension: feedback
 dimensions:
   - feedback

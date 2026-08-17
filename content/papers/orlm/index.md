@@ -16,7 +16,13 @@ date: 2024-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2405.17743
 institutions:
-  - affiliation-pending
+  - sufe
+  - cuhk-shenzhen
+  - sribd
+  - sjtu
+  - cardinal-operations
+  - columbia
+  - duke
 primary_dimension: design-object
 dimensions:
   - design-object

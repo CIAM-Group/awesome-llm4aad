@@ -11,7 +11,8 @@ date: 2025-02-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2502.11422
 institutions:
-  - affiliation-pending
+  - anhui-university
+  - pengcheng-lab
 primary_dimension: feedback
 dimensions:
   - feedback

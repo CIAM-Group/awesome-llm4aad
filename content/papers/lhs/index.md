@@ -11,7 +11,7 @@ date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.17137
 institutions:
-  - affiliation-pending
+  - huawei-canada
 primary_dimension: design-object
 dimensions:
   - design-object

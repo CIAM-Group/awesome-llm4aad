@@ -1,6 +1,6 @@
 ---
 id: teacherevo
-short_title: "TeacherEvo"
+short_title: "Teacher-Aware"
 title: "Teacher-Aware Evolution of Heuristic Programs from Learned Optimization Policies"
 authors:
   - "Minyu Chen"
@@ -13,7 +13,9 @@ date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.10634
 institutions:
-  - affiliation-pending
+  - shenzhen-tech-univ
+  - shanghai-polytechnic
+  - sjtu
 primary_dimension: feedback
 dimensions:
   - feedback

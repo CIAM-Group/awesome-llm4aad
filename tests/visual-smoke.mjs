@@ -83,6 +83,15 @@ try {
   }
   await desktop.screenshot({ path: `${outputDirectory}/relations-settled-desktop.png` })
 
+  const focusSelect = desktop.getByLabel('Focus paper')
+  await focusSelect.selectOption('eoh')
+  await desktop.waitForTimeout(900)
+  const focusedRelations = await desktop.locator('.relation-register article').count()
+  if (focusedRelations !== 7) failures.push(`/relations: EoH focus expected 7 direct relations, found ${focusedRelations}`)
+  await desktop.getByRole('button', { name: 'Clear paper focus' }).waitFor()
+  await desktop.screenshot({ path: `${outputDirectory}/relations-eoh-focus-desktop.png` })
+  await desktop.getByRole('button', { name: 'Clear paper focus' }).click()
+
   await auditPage(desktop, '/papers', 'Paper index', 'papers-desktop')
   await auditPage(desktop, '/papers/ael', 'Algorithm Evolution Using Large Language Model', 'ael-detail-desktop')
   const paperImageLoaded = await desktop.locator('.paper-note img').first().evaluate((image) => image.complete && image.naturalWidth > 0)

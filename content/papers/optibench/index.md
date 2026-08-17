@@ -18,9 +18,15 @@ date: 2024-07-01
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2407.09887
 institutions:
+  - hkust-guangzhou
+  - hkust
+  - uc-merced
+  - eth-zurich
   - cityu-hk
   - huawei-noahs-ark
-  - eth-zurich
+  - sun-yat-sen
+  - mbzuai
+  - chongqing-university
 primary_dimension: feedback
 dimensions:
   - feedback

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import ForceGraph2D from 'react-force-graph-2d'
 import { useNavigate } from 'react-router-dom'
 import { atlas, paperYear } from '../lib/data'
+import { relationVisual, type RelationMarker } from '../lib/relationStyles'
 import type { Paper, Relation } from '../types'
 
 interface GraphNode {
@@ -29,6 +30,73 @@ interface RelationGraphProps {
   papers: Paper[]
   relations: Relation[]
   selectedPaperId: string
+}
+
+function nodePosition(endpoint: string | GraphNode): GraphNode | undefined {
+  return typeof endpoint === 'object' ? endpoint : undefined
+}
+
+function drawRelationMarker(
+  link: GraphLink,
+  context: CanvasRenderingContext2D,
+  globalScale: number,
+) {
+  const source = nodePosition(link.source)
+  const target = nodePosition(link.target)
+  if (!source || !target || source.x === undefined || source.y === undefined || target.x === undefined || target.y === undefined) return
+
+  const { color, marker } = relationVisual(link.type)
+  const x = (source.x + target.x) / 2
+  const y = (source.y + target.y) / 2
+  const size = 4.5 / globalScale
+  const lineWidth = 1.5 / globalScale
+
+  context.save()
+  context.translate(x, y)
+  context.fillStyle = '#edf1ee'
+  context.strokeStyle = color
+  context.lineWidth = lineWidth
+  context.setLineDash([])
+
+  const pathMarker = (shape: RelationMarker) => {
+    context.beginPath()
+    if (shape === 'diamond') {
+      context.moveTo(0, -size)
+      context.lineTo(size, 0)
+      context.lineTo(0, size)
+      context.lineTo(-size, 0)
+      context.closePath()
+    } else if (shape === 'square') {
+      context.rect(-size * 0.82, -size * 0.82, size * 1.64, size * 1.64)
+    } else if (shape === 'triangle') {
+      context.moveTo(0, -size)
+      context.lineTo(size, size * 0.8)
+      context.lineTo(-size, size * 0.8)
+      context.closePath()
+    } else {
+      context.arc(0, 0, size * 0.82, 0, Math.PI * 2)
+    }
+    context.fill()
+    context.stroke()
+  }
+
+  if (marker === 'cross') {
+    context.fillRect(-size, -size, size * 2, size * 2)
+    context.beginPath()
+    context.moveTo(-size * 0.78, -size * 0.78)
+    context.lineTo(size * 0.78, size * 0.78)
+    context.moveTo(size * 0.78, -size * 0.78)
+    context.lineTo(-size * 0.78, size * 0.78)
+    context.stroke()
+  } else if (marker === 'double-ring') {
+    pathMarker('circle')
+    context.beginPath()
+    context.arc(0, 0, size * 0.42, 0, Math.PI * 2)
+    context.stroke()
+  } else {
+    pathMarker(marker)
+  }
+  context.restore()
 }
 
 export function RelationGraph({ papers, relations, selectedPaperId }: RelationGraphProps) {
@@ -106,11 +174,13 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
           context.fillStyle = color
           context.fill()
         }}
-        linkColor={() => '#64736b'}
-        linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 1.5 : 1.2}
-        linkLineDash={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? [4, 4] : []}
-        linkDirectionalArrowLength={(link: unknown) => atlas.taxonomy.relation_types[(link as GraphLink).type]?.direction === 'directed' ? 4 : 0}
-        linkDirectionalArrowRelPos={0.9}
+        linkColor={(link: unknown) => relationVisual((link as GraphLink).type).color}
+        linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 1.6 : 1.35}
+        linkLineDash={(link: unknown) => relationVisual((link as GraphLink).type).dash}
+        linkCanvasObjectMode={() => 'after'}
+        linkCanvasObject={(link: unknown, context: CanvasRenderingContext2D, globalScale: number) => {
+          drawRelationMarker(link as GraphLink, context, globalScale)
+        }}
         linkLabel={(link: unknown) => {
           const graphLink = link as GraphLink
           return `${atlas.taxonomy.relation_types[graphLink.type]?.label}: ${graphLink.description}`
@@ -118,7 +188,7 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
         cooldownTicks={100}
         d3AlphaDecay={0.035}
         d3VelocityDecay={0.25}
-        onEngineStop={() => graphRef.current?.zoomToFit(650, 100)}
+        onEngineStop={() => graphRef.current?.zoomToFit(650, 150)}
         onNodeClick={(node: unknown) => navigate(`/papers/${(node as GraphNode).id}`)}
       />
       <p className="relation-graph__instruction">Drag nodes · scroll to zoom · click to read</p>

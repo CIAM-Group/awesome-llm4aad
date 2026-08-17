@@ -1,6 +1,6 @@
 ---
 id: ahd-eval
-short_title: "AHD-Eval"
+short_title: "EPS Benchmark"
 title: "Understanding the Importance of Evolutionary Search in Automated Heuristic Design with Large Language Models"
 authors:
   - "Rui Zhang"

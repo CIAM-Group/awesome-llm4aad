@@ -1,6 +1,6 @@
 ---
 id: knowledgefirst
-short_title: "KnowledgeFirst"
+short_title: "Knowledge-first"
 title: "Back to the Beginning of Heuristic Design: Bridging Code and Knowledge with LLMs"
 authors:
   - "Nguyen Viet Tuan Kiet"
@@ -13,7 +13,8 @@ date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.06123
 institutions:
-  - affiliation-pending
+  - hust
+  - university-sydney
 primary_dimension: design-object
 dimensions:
   - design-object

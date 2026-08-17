@@ -1,6 +1,6 @@
 ---
 id: aad-ft
-short_title: "AAD-FT"
+short_title: "AAD Fine-tuning"
 title: "Fine-tuning Large Language Model for Automated Algorithm Design"
 authors:
   - "Fei Liu"

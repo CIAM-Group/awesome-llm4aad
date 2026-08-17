@@ -11,7 +11,9 @@ date: 2026-02-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2602.08253
 institutions:
-  - affiliation-pending
+  - northeastern-cn
+  - ucas
+  - tsinghua
 primary_dimension: design-object
 dimensions:
   - design-object

@@ -12,7 +12,8 @@ date: 2025-07-01
 venue: "ICML"
 paper_url: https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhai25a/zhai25a.pdf
 institutions:
-  - affiliation-pending
+  - ut-austin
+  - stanford
 primary_dimension: feedback
 dimensions:
   - feedback

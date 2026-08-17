@@ -17,11 +17,11 @@ relations:
       natural-language ideas and executable heuristic code.
   - from: eoh
     to: reevo
-    type: extends
+    type: contrasts
     dimension: feedback
     description: >-
-      ReEvo adds short- and long-term reflection as verbal feedback for later
-      heuristic proposals.
+      ReEvo takes a reflective hyper-heuristic path, using short- and long-term
+      verbal feedback instead of EoH's explicit thought-and-code representation.
   - from: eoh
     to: mcts-ahd
     type: contrasts
@@ -29,13 +29,6 @@ relations:
     description: >-
       MCTS-AHD preserves heuristic lineages in a tree instead of relying on a
       fixed elite population.
-  - from: eoh
-    to: hsevo
-    type: evaluated-by
-    dimension: search
-    description: >-
-      HSEvo analyzes EoH's diversity and convergence before introducing a
-      harmony-search-based alternative.
   - from: reevo
     to: hsevo
     type: evaluated-by
@@ -50,13 +43,6 @@ relations:
     description: >-
       EoH-S changes the output from one heuristic to a complementary set that
       covers varied instance distributions.
-  - from: eoh
-    to: mles
-    type: adapts
-    dimension: scope
-    description: >-
-      MLES transfers an EoH-style evolutionary loop from combinatorial
-      heuristics to multimodal programmatic control.
   - from: funsearch
     to: alphaevolve
     type: generalizes
@@ -72,14 +58,6 @@ relations:
       HSEvo includes FunSearch in its analysis of diversity and convergence in
       evolutionary program search.
   - from: eoh
-    to: pathwise
-    type: extends
-    dimension: search
-    description: >-
-      PathWise extends EoH's population-based design by replacing fixed
-      evolutionary operators with a stateful entailment graph and
-      planning-driven agent interactions.
-  - from: eoh
     to: instspechh
     type: generalizes
     dimension: scope
@@ -87,13 +65,6 @@ relations:
       InstSpecHH moves beyond a single class-wide heuristic by partitioning
       instances into subclasses, evolving a heuristic per subclass, and selecting
       online for the target instance.
-  - from: eoh
-    to: evolved-alns
-    type: generalizes
-    dimension: design-object
-    description: >-
-      Evolved-ALNS expands LLM-driven evolution from local heuristic operators
-      to a full seven-module ALNS stack, including adaptive and control layers.
   - from: eoh-s
     to: raise
     type: contrasts
@@ -102,14 +73,6 @@ relations:
       RAISE addresses distributional robustness with constrained adversarial
       instance search, instead of relying on a complementary heuristic set
       trained on predefined diverse distributions.
-  - from: eoh
-    to: llamea-hpo
-    type: contrasts
-    dimension: search
-    description: >-
-      LLaMEA-HPO separates algorithmic structure search from hyper-parameter
-      tuning by keeping structure generation with the LLM and tuning numerical
-      parameters with SMAC.
   - from: eoh
     to: redahd
     type: generalizes
@@ -126,55 +89,20 @@ relations:
       MEoH extends EoH's single-objective heuristic evolution to a
       multi-objective search that returns non-dominated heuristics across
       solution quality and runtime.
-  - from: eoh
-    to: ahd-eval
-    type: evaluated-by
-    dimension: search
-    description: >-
-      AHD-Eval includes EoH in its controlled multi-method benchmark and
-      isolates the contribution of evolutionary search, prompting, and model choice.
   - from: reevo
     to: ahd-eval
     type: evaluated-by
     dimension: search
     description: >-
-      AHD-Eval re-evaluates ReEvo under shared tasks, models, budgets, and
+      The EPS benchmark re-evaluates ReEvo under shared tasks, models, budgets, and
       repeated runs as part of its evolutionary-search analysis.
   - from: funsearch
     to: ahd-eval
     type: evaluated-by
     dimension: search
     description: >-
-      AHD-Eval compares FunSearch with other LLM-based evolutionary program
+      The EPS benchmark compares FunSearch with other LLM-based evolutionary program
       search methods under a common experimental protocol.
-  - from: eoh
-    to: ceoh
-    type: extends
-    dimension: feedback
-    description: >-
-      CEoH explicitly extends EoH by adding problem-specific descriptions and
-      contextual knowledge to its heuristic-generation prompts.
-  - from: eoh
-    to: a-ceoh
-    type: adapts
-    dimension: scope
-    description: >-
-      A-CEoH extends the EoH workflow to guiding heuristics for A* search and
-      augments prompts with the surrounding A* implementation.
-  - from: eoh
-    to: cdeoh
-    type: extends
-    dimension: search
-    description: >-
-      CDEoH builds on EoH by recording algorithm categories and using them to
-      maintain diversity and stability during evolutionary selection.
-  - from: eoh
-    to: behavesim
-    type: extends
-    dimension: search
-    description: >-
-      BehaveSim is integrated into EoH as a behavior-level similarity measure
-      for promoting diversity beyond syntactic code variation.
   - from: funsearch
     to: behavesim
     type: extends

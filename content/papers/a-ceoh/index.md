@@ -13,7 +13,8 @@ date: 2026-01-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2601.19622
 institutions:
-  - affiliation-pending
+  - kit
+  - tu-dortmund
 primary_dimension: feedback
 dimensions:
   - feedback
