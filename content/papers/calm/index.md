@@ -15,6 +15,9 @@ paper_url: https://arxiv.org/pdf/2505.12285
 code_url: https://github.com/whxru/CALM
 institutions:
   - cityu-hk
+  - seu
+  - uvic
+  - hon-hai-research-institute
 primary_dimension: feedback
 dimensions:
   - feedback

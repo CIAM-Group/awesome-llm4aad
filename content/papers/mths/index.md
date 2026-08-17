@@ -16,8 +16,6 @@ venue: "ICML"
 paper_url: https://openreview.net/pdf/5723a21bffbe74a1f5c2b88d97cee90b29e16b4d.pdf
 institutions:
   - cityu-hk
-  - zhejiang
-  - stanford
 primary_dimension: design-object
 dimensions:
   - design-object

@@ -16,9 +16,9 @@ venue: "OpenReview/arXiv"
 paper_url: https://arxiv.org/pdf/2502.15359
 code_url: https://github.com/Ahalikai/ARS-Routbench
 institutions:
+  - sustech
   - cityu-hk
   - huawei-noahs-ark
-  - sustech
 primary_dimension: design-object
 dimensions:
   - design-object

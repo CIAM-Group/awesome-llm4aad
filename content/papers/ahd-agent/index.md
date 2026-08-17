@@ -14,6 +14,7 @@ paper_url: https://arxiv.org/pdf/2605.08756
 code_url: https://github.com/Antoniano1963/AHD-Agent
 institutions:
   - sustech
+  - zhongguancun-academy
   - hkust
 primary_dimension: feedback
 dimensions:

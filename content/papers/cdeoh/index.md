@@ -14,7 +14,9 @@ date: 2026-03-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2603.19284
 institutions:
+  - hohai
   - cityu-hk
+  - nanjing-university
 primary_dimension: feedback
 dimensions:
   - feedback

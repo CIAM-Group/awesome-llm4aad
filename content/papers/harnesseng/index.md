@@ -11,7 +11,7 @@ date: 2026-05-01
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.15221
 institutions:
-  - openai
+  - nec
 primary_dimension: feedback
 dimensions:
   - feedback

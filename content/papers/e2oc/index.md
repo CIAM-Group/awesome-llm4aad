@@ -15,6 +15,7 @@ venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2601.17899
 institutions:
   - cityu-hk
+  - catl
 primary_dimension: design-object
 dimensions:
   - design-object
