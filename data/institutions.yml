@@ -248,6 +248,18 @@ pengcheng-lab:
   initials: PCL
   website: https://www.pcl.ac.cn/
   accent: '#166a8f'
+ibm-research:
+  name: IBM Research
+  short_name: IBM Research
+  initials: IBM
+  website: https://research.ibm.com/
+  accent: '#054ada'
+tencent-hunyuan:
+  name: Tencent Hunyuan
+  short_name: Tencent Hunyuan
+  initials: THY
+  website: https://hunyuan.tencent.com/
+  accent: '#1d73be'
 virginia-tech:
   name: Virginia Tech
   short_name: Virginia Tech
@@ -374,6 +386,78 @@ xidian-university:
   initials: XDU
   website: https://en.xidian.edu.cn/
   accent: '#005bac'
+victoria-wellington:
+  name: Victoria University of Wellington
+  short_name: Victoria Wellington
+  initials: VUW
+  website: https://www.wgtn.ac.nz/
+  accent: '#006b5f'
+oxford:
+  name: University of Oxford
+  short_name: Oxford
+  initials: OX
+  website: https://www.ox.ac.uk/
+  accent: '#002147'
+northwestern:
+  name: Northwestern University
+  short_name: Northwestern
+  initials: NU
+  website: https://www.northwestern.edu/
+  accent: '#4e2a84'
+augustana:
+  name: Augustana College
+  short_name: Augustana
+  initials: AUG
+  website: https://www.augustana.edu/
+  accent: '#6c1d45'
+interco:
+  name: Inter&Co
+  short_name: Inter&Co
+  initials: ICO
+  website: https://inter.co/
+  accent: '#ff6b35'
+ufmg:
+  name: Federal University of Minas Gerais
+  short_name: UFMG
+  initials: UFMG
+  website: https://ufmg.br/
+  accent: '#003b71'
+wpi:
+  name: Worcester Polytechnic Institute
+  short_name: WPI
+  initials: WPI
+  website: https://www.wpi.edu/
+  accent: '#ac2b37'
+jilin-university:
+  name: Jilin University
+  short_name: JLU
+  initials: JLU
+  website: https://en.jlu.edu.cn/
+  accent: '#1d4f91'
+microsoft-research-asia:
+  name: Microsoft Research Asia
+  short_name: MSRA
+  initials: MSRA
+  website: https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/
+  accent: '#737373'
+tsinghua:
+  name: Tsinghua University
+  short_name: Tsinghua
+  initials: THU
+  website: https://www.tsinghua.edu.cn/en/
+  accent: '#6b1e3f'
+imdea-networks:
+  name: IMDEA Networks Institute
+  short_name: IMDEA Networks
+  initials: IMN
+  website: https://www.networks.imdea.org/
+  accent: '#007c91'
+uc3m:
+  name: Universidad Carlos III de Madrid
+  short_name: UC3M
+  initials: UC3M
+  website: https://www.uc3m.es/home
+  accent: '#003b5c'
 tu-delft:
   name: Delft University of Technology
   short_name: TU Delft
@@ -392,12 +476,6 @@ ucas:
   initials: UCAS
   website: https://english.ucas.ac.cn/
   accent: '#2f5f98'
-tsinghua:
-  name: Tsinghua University
-  short_name: Tsinghua
-  initials: THU
-  website: https://www.tsinghua.edu.cn/en/
-  accent: '#6f2383'
 hkust:
   name: The Hong Kong University of Science and Technology
   short_name: HKUST

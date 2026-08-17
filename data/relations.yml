@@ -280,3 +280,78 @@ relations:
     description: >-
       LLM-SR searches discrete scientific programs with language-model priors,
       whereas LHS optimizes programs through a learned continuous latent manifold.
+
+  - from: llm4ad-platform
+    to: enhancing-cvrp
+    type: adapts
+    dimension: scope
+    description: >-
+      AILS-AHD instantiates the platform-style separation of search, task, and
+      evaluation modules for ruin-heuristic design inside a CVRP solver.
+  - from: enhancing-cvrp
+    to: pyvrp-plus
+    type: contrasts
+    dimension: feedback
+    description: >-
+      AILS-AHD evolves ruin heuristics with performance feedback, while PyVRP+
+      requires explicit diagnosis, hypothesis formation, and reflection in HGS.
+
+  - from: heuragenix
+    to: cogmcts
+    type: contrasts
+    dimension: search
+    description: >-
+      HeurAgenix evolves a portfolio and selects by solver state; CogMCTS instead
+      organizes iterative heuristic proposals as cognitively guided tree search.
+  - from: cogmcts
+    to: dash
+    type: contrasts
+    dimension: feedback
+    description: >-
+      CogMCTS feeds search history and failed branches back into expansion, whereas
+      DASH evaluates complete convergence trajectories and runtime schedules.
+  - from: efficient-heuristics
+    to: dash
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Hercules abstracts shared structure from elite heuristics; DASH retrieves
+      profiled solver components according to instance and convergence dynamics.
+
+  - from: llamea-bo
+    to: beyond-algorithm-evolution
+    type: generalizes
+    dimension: feedback
+    description: >-
+      LLaMEA-BO evolves complete optimization programs under fixed prompts, while
+      Beyond Algorithm Evolution makes the guiding prompt a co-evolving artifact.
+
+  - from: codeevolve
+    to: mutation-without-variation
+    type: contrasts
+    dimension: search
+    description: >-
+      CodeEvolve combines archives and several LLM variation operators; Mutation
+      Without Variation isolates repeated mutation to expose structural attractors.
+  - from: cliffsearch
+    to: reflex
+    type: contrasts
+    dimension: feedback
+    description: >-
+      CliffSearch uses scientific reviewers to gate theory-and-code artifacts,
+      whereas REFLEX separates visual diagnosis from code synthesis and memory.
+  - from: reflex
+    to: mutation-without-variation
+    type: contrasts
+    dimension: search
+    description: >-
+      REFLEX preserves diagnosed skills across mutations; Mutation Without Variation
+      shows why unguided repeated mutation can collapse into recurring structures.
+
+  - from: autosg
+    to: ahd-network
+    type: adapts
+    dimension: scope
+    description: >-
+      Both address expensive evaluation, and AHD-Network adapts solver-generation
+      principles to noisy production constraints in 5G decoding.
