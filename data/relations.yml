@@ -110,3 +110,131 @@ relations:
     description: >-
       BehaveSim is integrated into FunSearch to select behaviorally diverse
       programs using aligned problem-solving trajectories.
+  - from: ceoh
+    to: a-ceoh
+    type: adapts
+    dimension: feedback
+    description: >-
+      CEoH supplies problem-specific context; A-CEoH adapts this idea by exposing
+      the host A* implementation so generated heuristics can reason about how they
+      interact with the search procedure.
+  - from: reevo
+    to: poh
+    type: extends
+    dimension: search
+    description: >-
+      PoH turns reflective improvement suggestions into actions in an MCTS plan,
+      adding lookahead and backpropagated rewards to ReEvo-style iterative
+      reflection.
+  - from: calm
+    to: aad-ft
+    type: contrasts
+    dimension: feedback
+    description: >-
+      CALM updates the generator online with rewards produced during evolution,
+      whereas AAD Fine-tuning learns offline from diversity-aware ranked preference
+      pairs and then reuses the adapted model in search.
+  - from: alphaevolve
+    to: shinkaevolve
+    type: adapts
+    dimension: search
+    description: >-
+      ShinkaEvolve retains island-based program evolution while targeting far fewer
+      evaluations through novelty rejection, LLM prioritization, and an online
+      meta-scratchpad.
+  - from: hsevo
+    to: heurigym
+    type: evaluated-by
+    dimension: scope
+    description: >-
+      HeuriGym evaluates HSEvo in an agentic setting where models must build
+      complete optimization programs, exposing the limits of template-bound
+      heuristic evolution on broader solver-design tasks.
+  - from: hsevo
+    to: tide
+    type: extends
+    dimension: search
+    description: >-
+      TIDE moves HSEvo's post-hoc elite parameter tuning inside the evolutionary
+      loop and couples it with AST-level diversity control and adaptive prompt
+      scheduling.
+  - from: hsevo
+    to: cdeoh
+    type: contrasts
+    dimension: search
+    description: >-
+      HSEvo measures diversity through encoded representations and clustering;
+      CDEoH instead asks an LLM to induce semantic algorithm categories and
+      preserves coverage during population selection.
+  - from: calm
+    to: dyace
+    type: contrasts
+    dimension: design-object
+    description: >-
+      CALM co-evolves the language model that proposes heuristics, while DyACE
+      keeps the generator fixed and redesigns search operators online from observed
+      solution-landscape trajectories.
+  - from: optibench
+    to: equivamap
+    type: extends
+    dimension: feedback
+    description: >-
+      EquivaMap strengthens formulation evaluation beyond OptiBench-style execution
+      outcomes by generating and verifying mappings between alternative variable
+      spaces.
+  - from: reevo
+    to: meevo
+    type: extends
+    dimension: feedback
+    description: >-
+      MeEvo promotes reflection from an auxiliary signal into an alternating
+      metacognitive process whose reasoning traces are preserved as heritable design
+      knowledge between population-evolution cycles.
+  - from: reevo
+    to: lhs
+    type: contrasts
+    dimension: search
+    description: >-
+      ReEvo refines discrete code candidates with verbal reflection, whereas LHS
+      learns a continuous program manifold and optimizes soft prompts before
+      decoding them into executable heuristics.
+  - from: eoh-s
+    to: ast-evo
+    type: adapts
+    dimension: search
+    description: >-
+      The AST operator replaces EoH-S's validity-preserving variation with
+      structural crossover and mutation that may produce invalid code, then uses
+      the LLM to repair those candidates back into executable heuristics.
+  - from: alphaevolve
+    to: codegraph
+    type: extends
+    dimension: design-object
+    description: >-
+      Code Graph makes edit-level search compositional: unlike AlphaEvolve's edits,
+      its corrections remain reusable and toggleable, enabling correction-level
+      credit assignment and multiple programs per query.
+  - from: mcts-ahd
+    to: a2dept
+    type: generalizes
+    dimension: design-object
+    description: >-
+      A2DEPT generalizes tree-structured search from bounded heuristic components to
+      complete solver programs, adding hierarchical edits and dependency repair to
+      keep long-horizon branches executable.
+  - from: a2dept
+    to: beam
+    type: concurrent-work
+    dimension: historical
+    description: >-
+      A2DEPT and BEAM independently move beyond single-function design in April
+      2026: one evolves complete programs in a search tree, while the other splits
+      solver structure and function realization across two levels.
+  - from: alphaevolve
+    to: harnesseng
+    type: contrasts
+    dimension: design-object
+    description: >-
+      Vesper shifts attention from AlphaEvolve-style stateless code edits to the
+      discovery harness itself, using persistent coding agents, repository-level
+      branches, history queries, and evaluation-hack detection.
