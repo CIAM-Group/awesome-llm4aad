@@ -17,3 +17,25 @@ problem_abbreviations:
   hardware accelerator optimization: HAO
   lunarlander: LunarLander
   carracing: CarRacing
+  combinatorial optimization: CO
+  combinatorial optimization benchmarking: CO Bench
+  automatic heuristic design benchmarking: AHD Bench
+  automatic algorithm design benchmarking: AAD Bench
+  automatic algorithm design: AAD
+  multi-objective combinatorial optimization: MOCO
+  cross-task automated heuristic design: Cross-task AHD
+  multiple knapsack problem: MKP
+  permutation flow shop scheduling: PFSP
+  fluid antenna port selection: FAS Port Selection
+  large-scale capacitated vehicle routing problem: Large-scale CVRP
+  complex vehicle routing problem: Complex VRP
+  unit-load pre-marshalling problem: UPMP
+  sliding puzzle problem: SPP
+  pseudo-boolean optimization: PBO
+  black-box optimization: BBO
+  scientific equation discovery: Equation Discovery
+  symbolic regression: SR
+  optimization modeling: Opt. Modeling
+  general optimization modeling: General Opt. Modeling
+  optimization formulation equivalence: Formulation Equivalence
+  algorithm similarity evaluation: Similarity Evaluation
