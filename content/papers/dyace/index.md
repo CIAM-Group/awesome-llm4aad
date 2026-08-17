@@ -7,11 +7,11 @@ authors:
   - "Yiping Liu"
   - "Xiangxiang Zeng"
 year: 2026
-date: 2026-03-01
+date: 2026-03-07
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2603.13344
 institutions:
-  - affiliation-pending
+  - affiliation-not-disclosed
 primary_dimension: design-object
 dimensions:
   - design-object

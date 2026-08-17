@@ -82,7 +82,7 @@ venue: arXiv
 paper_url: https://arxiv.org/pdf/0000.00000
 # code_url: https://github.com/organization/project
 institutions:
-  - affiliation-pending
+  - institution-id # Reuse an ID from data/institutions.yml.
 primary_dimension: search
 dimensions:
   - search
@@ -157,6 +157,8 @@ Relations can be added with a paper or in a separate pull request. Edit [`data/r
 
 Rules:
 
+- Every paper must have at least one relation and no more than two.
+- Do not add more than one relation for the same pair of papers.
 - For every directed type, `from` is older and `to` is newer.
 - `concurrent-work` is undirected but still uses two valid paper IDs.
 - Choose one type and the single dimension that best explains this connection.

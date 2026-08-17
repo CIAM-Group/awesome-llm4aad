@@ -8,7 +8,7 @@ authors:
   - "Xingyu Wu"
   - "Kay Chen Tan"
 year: 2026
-date: 2026-06-01
+date: 2026-06-29
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2606.29953
 institutions:

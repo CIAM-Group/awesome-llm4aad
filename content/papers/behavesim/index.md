@@ -6,7 +6,7 @@ authors:
   - "Rui Zhang"
   - "Zhichao Lu"
 year: 2026
-date: 2026-03-01
+date: 2026-04-23
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2603.02787
 code_url: https://github.com/RayZhhh/behavesim

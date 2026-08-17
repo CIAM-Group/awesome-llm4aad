@@ -7,7 +7,7 @@ authors:
   - "Yuki Imajuku"
   - "Edoardo Cetin"
 year: 2025
-date: 2025-09-01
+date: 2025-09-17
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2509.19349
 code_url: https://github.com/SakanaAI/ShinkaEvolve

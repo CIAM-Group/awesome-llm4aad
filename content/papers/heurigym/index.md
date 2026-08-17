@@ -17,7 +17,7 @@ authors:
   - "Carla P. Gomes"
   - "Zhiru Zhang"
 year: 2026
-date: 2025-06-01
+date: 2026-04-23
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2506.07972
 code_url: https://github.com/cornell-zhang/heurigym

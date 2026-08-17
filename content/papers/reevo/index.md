@@ -12,7 +12,7 @@ authors:
   - Jinkyoo Park
   - Guojie Song
 year: 2024
-date: 2024-02-02
+date: 2024-12-10
 venue: NeurIPS
 paper_url: https://arxiv.org/pdf/2402.01145
 code_url: https://github.com/ai4co/reevo

@@ -10,7 +10,7 @@ authors:
   - Zhenkun Wang
   - Qingfu Zhang
 year: 2025
-date: 2024-09-25
+date: 2025-04-11
 venue: AAAI
 paper_url: https://arxiv.org/pdf/2409.16867
 code_url: https://github.com/Optima-CityU/LLM4AD

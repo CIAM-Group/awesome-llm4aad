@@ -9,7 +9,7 @@ authors:
   - "Tran Cong Dao"
   - "Huynh Thi Thanh Binh"
 year: 2026
-date: 2026-05-01
+date: 2026-05-07
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.06123
 institutions:

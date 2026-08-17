@@ -12,7 +12,7 @@ authors:
   - Zhichao Lu
   - Qingfu Zhang
 year: 2024
-date: 2024-01-04
+date: 2024-07-21
 venue: ICML
 paper_url: https://arxiv.org/pdf/2401.02051
 code_url: https://github.com/FeiLiu36/EoH

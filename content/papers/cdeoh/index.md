@@ -10,7 +10,7 @@ authors:
   - "Bowen Ye"
   - "Qingfu Zhang"
 year: 2026
-date: 2026-03-01
+date: 2026-03-08
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2603.19284
 institutions:

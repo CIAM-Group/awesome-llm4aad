@@ -7,7 +7,7 @@ authors:
   - "Taro Yano"
   - "Masafumi Oyamada"
 year: 2026
-date: 2026-05-01
+date: 2026-05-13
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.15221
 institutions:

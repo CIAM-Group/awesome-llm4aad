@@ -8,8 +8,8 @@ authors:
   - "Max Disselnmeyer"
   - "Anne Meyer"
 year: 2026
-date: 2026-05-01
-venue: "arXiv"
+date: 2026-07-13
+venue: "GECCO Companion"
 paper_url: https://arxiv.org/pdf/2605.06341
 code_url: https://github.com/tb-git-kit-research/CoupleEvo
 institutions:

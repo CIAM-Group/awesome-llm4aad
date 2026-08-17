@@ -9,7 +9,7 @@ authors:
   - "Cong Zhang"
   - "Yew-Soon Ong"
 year: 2026
-date: 2025-10-01
+date: 2026-04-23
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2510.16701
 code_url: https://github.com/ZHANG-NI/AFL

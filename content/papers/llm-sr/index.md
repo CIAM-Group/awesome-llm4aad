@@ -9,7 +9,7 @@ authors:
   - "Amir Barati Farimani"
   - "Chandan K. Reddy"
 year: 2025
-date: 2024-04-01
+date: 2025-04-24
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2404.18400
 code_url: https://github.com/deep-symbolic-mathematics/LLM-SR

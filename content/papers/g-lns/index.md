@@ -7,7 +7,7 @@ authors:
   - "He Wang"
   - "Liang Zeng"
 year: 2026
-date: 2026-02-01
+date: 2026-02-09
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2602.08253
 code_url: https://github.com/ZBoyn/G-LNS

@@ -9,11 +9,12 @@ authors:
   - "Handing Wang"
   - "Junchi Yan"
 year: 2026
-date: 2026-04-01
+date: 2026-04-14
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2604.12898
 institutions:
-  - affiliation-pending
+  - sjtu
+  - xidian-university
 primary_dimension: design-object
 dimensions:
   - design-object

@@ -9,7 +9,7 @@ authors:
   - "Yuanshuai Li"
   - "Yaochu Jin"
 year: 2026
-date: 2026-05-01
+date: 2026-05-08
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.07214
 institutions:

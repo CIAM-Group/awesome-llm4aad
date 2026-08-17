@@ -7,7 +7,7 @@ authors:
   - Siheng Xiong
   - Faramarz Fekri
 year: 2026
-date: 2026-05-25
+date: 2026-07-06
 venue: ICML
 paper_url: https://arxiv.org/pdf/2601.20539
 code_url: https://github.com/oguzhangungordu/PathWise

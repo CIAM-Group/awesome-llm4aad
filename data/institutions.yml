@@ -59,10 +59,10 @@ gmu:
   website: https://www.gmu.edu/
   accent: '#006633'
 hust:
-  name: Hanoi University of Science and Technology
-  short_name: HUST
+  name: Huazhong University of Science and Technology
+  short_name: HUST Wuhan
   initials: HUST
-  website: https://hust.edu.vn/en/
+  website: https://english.hust.edu.cn/
   accent: '#a0272d'
 uw-madison:
   name: University of Wisconsin–Madison
@@ -118,10 +118,10 @@ eth-zurich:
   initials: ETH
   website: https://ethz.ch/en.html
   accent: '#1f407a'  
-affiliation-pending:
-  name: Affiliation to be normalized
-  short_name: Pending
-  initials: '?'
+affiliation-not-disclosed:
+  name: Affiliation not disclosed in the public preprint
+  short_name: Not disclosed
+  initials: N/A
   accent: '#6c746f'
 leiden-university:
   name: Leiden University
@@ -368,6 +368,12 @@ sjtu:
   initials: SJTU
   website: https://en.sjtu.edu.cn/
   accent: '#b5122b'
+xidian-university:
+  name: Xidian University
+  short_name: Xidian
+  initials: XDU
+  website: https://en.xidian.edu.cn/
+  accent: '#005bac'
 tu-delft:
   name: Delft University of Technology
   short_name: TU Delft

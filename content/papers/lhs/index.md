@@ -7,8 +7,8 @@ authors:
   - "Mahdi Mostajabdaveh"
   - "Zirui Zhou"
 year: 2026
-date: 2026-05-01
-venue: "arXiv"
+date: 2026-06-15
+venue: "LION"
 paper_url: https://arxiv.org/pdf/2605.17137
 code_url: https://github.com/cheikh025/LHS
 institutions:

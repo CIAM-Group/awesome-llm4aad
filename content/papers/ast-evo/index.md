@@ -6,8 +6,8 @@ authors:
   - "Shengmin Sun"
   - "Jialong Shi"
 year: 2026
-date: 2026-04-01
-venue: "arXiv"
+date: 2026-07-13
+venue: "GECCO"
 paper_url: https://arxiv.org/pdf/2604.16420
 institutions:
   - xjtu

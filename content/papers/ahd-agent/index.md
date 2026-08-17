@@ -8,7 +8,7 @@ authors:
   - "Ziang Zhou"
   - "Shengcai Liu"
 year: 2026
-date: 2026-05-01
+date: 2026-05-09
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2605.08756
 code_url: https://github.com/Antoniano1963/AHD-Agent

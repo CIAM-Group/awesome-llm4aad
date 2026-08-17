@@ -6,7 +6,7 @@ authors:
   - Qinglong Hu
   - Qingfu Zhang
 year: 2025
-date: 2025-09-15
+date: 2025-12-02
 venue: NeurIPS
 paper_url: https://openreview.net/pdf?id=OEawM2coNT
 code_url: https://github.com/QingL2000/PartEvo

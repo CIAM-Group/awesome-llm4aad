@@ -7,8 +7,8 @@ authors:
   - "Fei Liu"
   - "Qingfu Zhang"
 year: 2026
-date: 2026-05-01
-venue: "arXiv"
+date: 2026-05-14
+venue: "IEEE TWC"
 paper_url: https://arxiv.org/pdf/2605.14661
 institutions:
   - warwick

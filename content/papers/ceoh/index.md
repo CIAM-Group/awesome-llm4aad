@@ -9,7 +9,7 @@ authors:
   - "Laura Dörr"
   - "Anne Meyer"
 year: 2025
-date: 2025-03-01
+date: 2025-03-05
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2503.03350
 institutions:

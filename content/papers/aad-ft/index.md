@@ -9,7 +9,7 @@ authors:
   - "Zhichao Lu"
   - "Qingfu Zhang"
 year: 2025
-date: 2025-07-01
+date: 2025-07-13
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2507.10614
 code_url: https://github.com/RayZhhh/dpo-aad

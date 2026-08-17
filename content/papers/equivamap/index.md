@@ -8,7 +8,7 @@ authors:
   - "Ellen Vitercik"
   - "Liu Leqi"
 year: 2025
-date: 2025-07-01
+date: 2025-07-13
 venue: "ICML"
 paper_url: https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhai25a/zhai25a.pdf
 code_url: https://github.com/HumainLab/EquivaMap

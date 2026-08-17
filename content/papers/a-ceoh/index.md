@@ -9,8 +9,8 @@ authors:
   - "Bastian Amberg"
   - "Anne Meyer"
 year: 2026
-date: 2026-01-01
-venue: "arXiv"
+date: 2026-04-08
+venue: "EvoStar"
 paper_url: https://arxiv.org/pdf/2601.19622
 code_url: https://github.com/tb-git-tud/a-ceoh-evolution-of-heuristics
 institutions:

@@ -12,8 +12,8 @@ authors:
   - "Benyou Wang"
   - "Zizhuo Wang"
 year: 2025
-date: 2024-05-01
-venue: "arXiv"
+date: 2025-05-08
+venue: "Operations Research"
 paper_url: https://arxiv.org/pdf/2405.17743
 code_url: https://github.com/Cardinal-Operations/ORLM
 institutions:

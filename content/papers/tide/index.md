@@ -9,7 +9,7 @@ authors:
   - "Jialong Shi"
   - "Jianyong Sun"
 year: 2026
-date: 2026-01-01
+date: 2026-01-29
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2601.21239
 institutions:

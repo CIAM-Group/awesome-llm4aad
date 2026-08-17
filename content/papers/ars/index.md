@@ -11,8 +11,8 @@ authors:
   - "Mingxuan Yuan"
   - "Qingfu Zhang"
 year: 2025
-date: 2025-02-01
-venue: "OpenReview/arXiv"
+date: 2025-02-21
+venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2502.15359
 code_url: https://github.com/Ahalikai/ARS-Routbench
 institutions:

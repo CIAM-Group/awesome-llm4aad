@@ -11,7 +11,7 @@ authors:
   - "Huichun Li"
   - "Zhengqiu Zhu"
 year: 2026
-date: 2026-04-01
+date: 2026-04-27
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2604.24043
 institutions:

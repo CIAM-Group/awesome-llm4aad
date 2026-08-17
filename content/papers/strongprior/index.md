@@ -9,7 +9,7 @@ authors:
   - "Thomas Bäck"
   - "Niki van Stein"
 year: 2026
-date: 2026-03-01
+date: 2026-03-03
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2603.02792
 institutions:

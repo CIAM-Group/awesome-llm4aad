@@ -7,7 +7,7 @@ authors:
   - Long Doan
   - Huynh Thi Thanh Binh
 year: 2025
-date: 2024-12-19
+date: 2025-04-11
 venue: AAAI
 paper_url: https://arxiv.org/pdf/2412.14995
 code_url: https://github.com/datphamvn/HSEvo

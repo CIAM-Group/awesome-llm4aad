@@ -14,7 +14,7 @@ authors:
   - "Xiaodan Liang"
   - "Jing Tang"
 year: 2025
-date: 2024-07-01
+date: 2025-04-24
 venue: "ICLR"
 paper_url: https://arxiv.org/pdf/2407.09887
 code_url: https://github.com/yangzhch6/ReSocratic

@@ -8,7 +8,7 @@ authors:
   - "Rong Qu"
   - "Ruibin Bai"
 year: 2026
-date: 2026-06-01
+date: 2026-06-12
 venue: "arXiv"
 paper_url: https://arxiv.org/pdf/2606.14202
 code_url: https://github.com/Qzs1335/MeEvo
