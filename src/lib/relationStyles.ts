@@ -11,7 +11,6 @@ export const relationVisuals: Record<string, RelationVisual> = {
   generalizes: { color: '#bd7a13', dash: [], marker: 'square' },
   adapts: { color: '#2677a8', dash: [7, 4], marker: 'circle' },
   contrasts: { color: '#c64f3b', dash: [9, 3, 2, 3], marker: 'cross' },
-  'evaluated-by': { color: '#835bb2', dash: [2, 4], marker: 'triangle' },
   'concurrent-work': { color: '#526e67', dash: [5, 5], marker: 'double-ring' },
 }
 

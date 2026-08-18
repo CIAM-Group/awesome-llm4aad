@@ -36,13 +36,6 @@
         "use_when": "The link reveals a concrete trade-off in design, search, or feedback.",
         "avoid_when": "The earlier paper is merely a benchmark baseline.",
         "direction": "directed"
-      },
-      "evaluated-by": {
-        "label": "Evaluated by",
-        "description": "The later paper explicitly analyzes the earlier method.",
-        "use_when": "The later paper measures or stress-tests a specific property of the earlier work.",
-        "avoid_when": "The earlier paper appears only in a results table.",
-        "direction": "directed"
       }
     },
     "dimensions": {
@@ -867,9 +860,9 @@
     {
       "from": "eoh",
       "to": "heurigym",
-      "type": "evaluated-by",
+      "type": "contrasts",
       "dimension": "feedback",
-      "description": "HeuriGym evaluates EoH-style LLM-crafted heuristics through a shared agentic benchmark that separates generation, execution, and task-level scoring."
+      "description": "HeuriGym broadens EoH-style heuristic evaluation into a shared agentic benchmark with separate generation, execution, and task-level scoring."
     },
     {
       "from": "ars",
@@ -1000,9 +993,9 @@
     {
       "from": "eoh",
       "to": "ahd-eval",
-      "type": "evaluated-by",
+      "type": "contrasts",
       "dimension": "search",
-      "description": "The EPS benchmark isolates the evolutionary-search contribution in EoH-style pipelines by comparing evolution against simpler LLM sampling strategies."
+      "description": "The EPS benchmark makes evolutionary search itself the design variable, in contrast to EoH's coupled proposal-and-selection workflow."
     },
     {
       "from": "eoh",
@@ -1021,9 +1014,9 @@
     {
       "from": "eoh",
       "to": "hsevo",
-      "type": "evaluated-by",
+      "type": "contrasts",
       "dimension": "search",
-      "description": "HSEvo directly analyzes EoH's exploration behavior, then evaluates harmony search and genetic variation as diversity-oriented replacements."
+      "description": "HSEvo takes a diversity-oriented search route, using harmony-search memory and genetic variation where EoH relies on language-model evolutionary operators."
     },
     {
       "from": "eoh",
@@ -1091,7 +1084,7 @@
     {
       "from": "eoh",
       "to": "strongprior",
-      "type": "evaluated-by",
+      "type": "contrasts",
       "dimension": "feedback",
       "description": "Strong Priors tests EoH-family search under richer initial algorithmic scaffolds and shows how prior structure changes the value of LLM evolution."
     },
@@ -1182,7 +1175,7 @@
     {
       "from": "alphaevolve",
       "to": "harnesseng",
-      "type": "evaluated-by",
+      "type": "contrasts",
       "dimension": "feedback",
       "description": "Vesper studies the harness around coding agents as a primary design variable, showing how persistent branches and evaluation structure affect discovery."
     },
@@ -1199,6 +1192,41 @@
       "type": "adapts",
       "dimension": "scope",
       "description": "AHD-Network adapts LLM-based heuristic design to noisy production constraints in 5G decoding, where each candidate requires costly system evaluation."
+    },
+    {
+      "from": "eoh",
+      "to": "ars",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "ARS transfers LLM-guided heuristic design into an end-to-end routing solver with retrieved constraint knowledge and executable evaluation."
+    },
+    {
+      "from": "llm4ad-platform",
+      "to": "llmopt",
+      "type": "generalizes",
+      "dimension": "design-object",
+      "description": "LLMOPT broadens platform-style algorithm design from heuristic components to jointly defining and solving general optimization models."
+    },
+    {
+      "from": "eoh",
+      "to": "g-lns",
+      "type": "adapts",
+      "dimension": "design-object",
+      "description": "G-LNS adapts executable heuristic evolution to a paired destroy-and-repair neighborhood mechanism for large-neighborhood search."
+    },
+    {
+      "from": "eoh",
+      "to": "cdeoh",
+      "type": "extends",
+      "dimension": "search",
+      "description": "CDEoH retains EoH's thought-code representation but reorganizes the population around semantic categories to preserve conceptual search coverage."
+    },
+    {
+      "from": "eoh",
+      "to": "coupleevo",
+      "type": "generalizes",
+      "dimension": "design-object",
+      "description": "CoupleEvo broadens EoH from one generated heuristic to cooperating heuristics for coupled optimization components."
     }
   ],
   "papers": [

@@ -1,7 +1,7 @@
 # Directed relations always run from the earlier paper (`from`) to the later paper (`to`).
 # `concurrent-work` is undirected and appears as a dashed line on the website.
-# Every paper must participate in at least one relation. A paper may declare at
-# most two relations (as `to`); later papers may still create additional links to it.
+# Every paper must participate in at least one relation. Add further links only
+# when the papers' methods, experiments, or explicit comparisons support them.
 relations:
   - from: ael
     to: funsearch
@@ -138,11 +138,11 @@ relations:
 
   - from: eoh
     to: heurigym
-    type: evaluated-by
+    type: contrasts
     dimension: feedback
     description: >-
-      HeuriGym evaluates EoH-style LLM-crafted heuristics through a shared agentic
-      benchmark that separates generation, execution, and task-level scoring.
+      HeuriGym broadens EoH-style heuristic evaluation into a shared agentic
+      benchmark with separate generation, execution, and task-level scoring.
   - from: ars
     to: afl
     type: generalizes
@@ -280,11 +280,11 @@ relations:
   # connection while allowing foundational work to act as a graph hub.
   - from: eoh
     to: ahd-eval
-    type: evaluated-by
+    type: contrasts
     dimension: search
     description: >-
-      The EPS benchmark isolates the evolutionary-search contribution in EoH-style
-      pipelines by comparing evolution against simpler LLM sampling strategies.
+      The EPS benchmark makes evolutionary search itself the design variable, in
+      contrast to EoH's coupled proposal-and-selection workflow.
   - from: eoh
     to: reevo
     type: extends
@@ -301,11 +301,11 @@ relations:
       evaluators, and language models rather than one fixed experiment pipeline.
   - from: eoh
     to: hsevo
-    type: evaluated-by
+    type: contrasts
     dimension: search
     description: >-
-      HSEvo directly analyzes EoH's exploration behavior, then evaluates harmony
-      search and genetic variation as diversity-oriented replacements.
+      HSEvo takes a diversity-oriented search route, using harmony-search memory and
+      genetic variation where EoH relies on language-model evolutionary operators.
   - from: eoh
     to: meoh
     type: generalizes
@@ -371,7 +371,7 @@ relations:
       while retaining population-based heuristic evolution.
   - from: eoh
     to: strongprior
-    type: evaluated-by
+    type: contrasts
     dimension: feedback
     description: >-
       Strong Priors tests EoH-family search under richer initial algorithmic
@@ -466,7 +466,7 @@ relations:
       to gate both artifacts, extending discovery beyond executable candidates.
   - from: alphaevolve
     to: harnesseng
-    type: evaluated-by
+    type: contrasts
     dimension: feedback
     description: >-
       Vesper studies the harness around coding agents as a primary design variable,
@@ -486,3 +486,38 @@ relations:
     description: >-
       AHD-Network adapts LLM-based heuristic design to noisy production constraints
       in 5G decoding, where each candidate requires costly system evaluation.
+  - from: eoh
+    to: ars
+    type: adapts
+    dimension: scope
+    description: >-
+      ARS transfers LLM-guided heuristic design into an end-to-end routing solver
+      with retrieved constraint knowledge and executable evaluation.
+  - from: llm4ad-platform
+    to: llmopt
+    type: generalizes
+    dimension: design-object
+    description: >-
+      LLMOPT broadens platform-style algorithm design from heuristic components to
+      jointly defining and solving general optimization models.
+  - from: eoh
+    to: g-lns
+    type: adapts
+    dimension: design-object
+    description: >-
+      G-LNS adapts executable heuristic evolution to a paired destroy-and-repair
+      neighborhood mechanism for large-neighborhood search.
+  - from: eoh
+    to: cdeoh
+    type: extends
+    dimension: search
+    description: >-
+      CDEoH retains EoH's thought-code representation but reorganizes the population
+      around semantic categories to preserve conceptual search coverage.
+  - from: eoh
+    to: coupleevo
+    type: generalizes
+    dimension: design-object
+    description: >-
+      CoupleEvo broadens EoH from one generated heuristic to cooperating heuristics
+      for coupled optimization components.
