@@ -943,6 +943,17 @@ select:focus-visible {
   line-height: 1.35;
 }
 
+.paper-table td:first-child span.is-title-long {
+  font-size: 0.7rem;
+  line-height: 1.42;
+}
+
+.paper-table td:first-child span.is-title-xlong {
+  font-size: 0.66rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
 .paper-table td:first-child a:hover strong {
   color: var(--accent);
 }
@@ -993,6 +1004,17 @@ select:focus-visible {
   max-width: 1080px;
   font-size: clamp(2.4rem, 5vw, 4.9rem);
   line-height: 1.02;
+  overflow-wrap: anywhere;
+}
+
+.paper-detail__header h1.is-title-long {
+  font-size: clamp(2.15rem, 4.25vw, 4.15rem);
+  line-height: 1.06;
+}
+
+.paper-detail__header h1.is-title-xlong {
+  font-size: clamp(1.9rem, 3.6vw, 3.55rem);
+  line-height: 1.1;
 }
 
 .paper-detail__authors {

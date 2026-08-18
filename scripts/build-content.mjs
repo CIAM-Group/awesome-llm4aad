@@ -175,7 +175,8 @@ export async function buildContent({ write = true } = {}) {
   }
 
   const papersById = new Map(papers.map((paper) => [paper.id, paper]))
-  const relationCounts = new Map(papers.map((paper) => [paper.id, 0]))
+  const involvementCounts = new Map(papers.map((paper) => [paper.id, 0]))
+  const declaredRelationCounts = new Map(papers.map((paper) => [paper.id, 0]))
   const relationPairs = new Set()
   for (const relation of relations) {
     if (!ids.has(relation.from) || !ids.has(relation.to)) {
@@ -185,8 +186,11 @@ export async function buildContent({ write = true } = {}) {
     const pair = [relation.from, relation.to].sort().join('::')
     if (relationPairs.has(pair)) throw new Error(`duplicate relation pair: ${relation.from} <-> ${relation.to}`)
     relationPairs.add(pair)
-    relationCounts.set(relation.from, relationCounts.get(relation.from) + 1)
-    relationCounts.set(relation.to, relationCounts.get(relation.to) + 1)
+    involvementCounts.set(relation.from, involvementCounts.get(relation.from) + 1)
+    involvementCounts.set(relation.to, involvementCounts.get(relation.to) + 1)
+    // Edges display earlier -> later. The later paper declares the relation,
+    // allowing foundational papers to remain useful hubs in the graph.
+    declaredRelationCounts.set(relation.to, declaredRelationCounts.get(relation.to) + 1)
     if (!relationTypes[relation.type]) throw new Error(`unknown relation type: ${relation.type}`)
     if (!dimensions[relation.dimension]) throw new Error(`unknown relation dimension: ${relation.dimension}`)
     if (relationTypes[relation.type].direction === 'directed') {
@@ -197,10 +201,11 @@ export async function buildContent({ write = true } = {}) {
       }
     }
   }
-  for (const [paperId, count] of relationCounts) {
-    if (count < 1 || count > 2) {
-      throw new Error(`${paperId}: expected 1-2 relations, found ${count}`)
-    }
+  for (const [paperId, count] of involvementCounts) {
+    if (count < 1) throw new Error(`${paperId}: expected at least 1 relation, found ${count}`)
+  }
+  for (const [paperId, count] of declaredRelationCounts) {
+    if (count > 2) throw new Error(`${paperId}: may declare at most 2 relations, found ${count}`)
   }
 
   const generated = {

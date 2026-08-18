@@ -1,7 +1,7 @@
 import { ArrowLeft, Code2, ExternalLink, FileText, GitBranch } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { InstitutionMark } from '../components/InstitutionMark'
-import { assetUrl, atlas, formatMonthYear, getPaper, getRelationsForPaper, routePath } from '../lib/data'
+import { assetUrl, atlas, formatMonthYear, getPaper, getRelationsForPaper, routePath, titleLengthClass } from '../lib/data'
 
 export function PaperDetailPage() {
   const { id } = useParams()
@@ -19,7 +19,7 @@ export function PaperDetailPage() {
       <header className="paper-detail__header">
         <div>
           <p className="eyebrow">{paper.short_title} · first public {formatMonthYear(paper.date)}</p>
-          <h1>{paper.title}</h1>
+          <h1 className={titleLengthClass(paper.title)}>{paper.title}</h1>
           <p className="paper-detail__authors">{paper.authors.join(' · ')}</p>
         </div>
         <InstitutionMark ids={paper.institutions} />
@@ -54,7 +54,7 @@ export function PaperDetailPage() {
               return (
                 <article key={`${relation.from}-${relation.to}-${index}`}>
                   <span>{atlas.taxonomy.relation_types[relation.type]?.label} · {atlas.taxonomy.dimensions[relation.dimension]?.label}</span>
-                  <h3><Link to={`/papers/${peerId}`}>{peer?.short_title}: {peer?.title}</Link></h3>
+                  <h3><Link to={`/papers/${peerId}`}>{peer?.title}</Link></h3>
                   <p>{relation.description}</p>
                 </article>
               )

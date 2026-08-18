@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { FilterBar } from '../components/FilterBar'
 import { InstitutionMark } from '../components/InstitutionMark'
-import { atlas, paperYear } from '../lib/data'
+import { atlas, paperYear, titleLengthClass } from '../lib/data'
 
 export function PapersPage() {
   const [searchParams] = useSearchParams()
@@ -50,7 +50,7 @@ export function PapersPage() {
             <tbody>
               {papers.map((paper) => (
                 <tr key={paper.id}>
-                  <td><Link to={`/papers/${paper.id}`}><strong>{paper.short_title}</strong><span>{paper.title}</span></Link></td>
+                  <td><Link to={`/papers/${paper.id}`}><strong>{paper.short_title}</strong><span className={titleLengthClass(paper.title)}>{paper.title}</span></Link></td>
                   <td><InstitutionMark ids={paper.institutions} compact /></td>
                   <td>{paper.date.slice(0, 7)}</td>
                   <td>{paper.venue}</td>

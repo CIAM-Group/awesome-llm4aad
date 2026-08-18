@@ -1,6 +1,7 @@
 # Directed relations always run from the earlier paper (`from`) to the later paper (`to`).
 # `concurrent-work` is undirected and appears as a dashed line on the website.
-# Every paper must have one or two relations so the map stays connected but readable.
+# Every paper must participate in at least one relation. A paper may declare at
+# most two relations (as `to`); later papers may still create additional links to it.
 relations:
   - from: ael
     to: funsearch
@@ -23,13 +24,14 @@ relations:
     description: >-
       EoH-S changes the output from one heuristic to a complementary set that
       covers varied instance distributions.
-  - from: eoh-s
+  - from: eoh
     to: ast-evo
     type: extends
     dimension: search
     description: >-
-      The AST operator permits disruptive structural variation and then repairs
-      invalid offspring, expanding the validity-preserving search used by EoH-S.
+      The AST study replaces EoH's semantic crossover and mutation with structural
+      AST disruption followed by LLM repair; it then evaluates this operator in EoH,
+      ReEvo, and EoH-S rather than extending the heuristic-set objective itself.
   - from: funsearch
     to: alphaevolve
     type: generalizes
@@ -66,13 +68,13 @@ relations:
     description: >-
       A2DEPT expands tree-structured search from bounded heuristic components to
       complete solver programs with hierarchical edits and dependency repair.
-  - from: a2dept
+  - from: mcts-ahd
     to: laf-mcts
-    type: contrasts
+    type: extends
     dimension: search
     description: >-
-      A2DEPT searches explicit program trees, whereas LaF-MCTS uses learned
-      language feedback to guide selection and expansion in the search tree.
+      LaF-MCTS applies hierarchical tree search to large-scale CVRP solver design,
+      extending the tree-search formulation established by MCTS-AHD.
 
   - from: hsevo
     to: partevo
@@ -81,20 +83,6 @@ relations:
     description: >-
       PartEvo converts the diversity concern highlighted by HSEvo into explicit
       feature-space niches with niche-level search-budget allocation.
-  - from: partevo
-    to: tide
-    type: contrasts
-    dimension: search
-    description: >-
-      PartEvo partitions populations into feature-assisted niches, while TIDE
-      coordinates structural diversity with parameter tuning inside evolution.
-  - from: tide
-    to: cdeoh
-    type: contrasts
-    dimension: search
-    description: >-
-      TIDE manages diversity through structural and parameter-level dynamics;
-      CDEoH instead preserves coverage over LLM-induced semantic categories.
   - from: cdeoh
     to: behavesim
     type: contrasts
@@ -125,13 +113,6 @@ relations:
     description: >-
       CALM updates the proposal model online from evolutionary rewards, whereas
       AAD Fine-tuning learns offline from diversity-aware preference pairs.
-  - from: aad-ft
-    to: dyace
-    type: contrasts
-    dimension: feedback
-    description: >-
-      AAD Fine-tuning adapts the generator before search; DyACE keeps redesigning
-      heuristic logic online from observed search-trajectory features.
 
   - from: llmopt
     to: orlm
@@ -152,24 +133,24 @@ relations:
     type: extends
     dimension: feedback
     description: >-
-      EquivaMap strengthens formulation evaluation beyond execution outcomes by
-      proposing and checking mappings between alternative variable spaces.
+      EquivaMap complements outcome-based formulation evaluation with explicit
+      variable mappings and structural checks of semantic equivalence.
 
-  - from: heurigym
+  - from: eoh
+    to: heurigym
+    type: evaluated-by
+    dimension: feedback
+    description: >-
+      HeuriGym evaluates EoH-style LLM-crafted heuristics through a shared agentic
+      benchmark that separates generation, execution, and task-level scoring.
+  - from: ars
     to: afl
-    type: concurrent-work
-    dimension: design-object
+    type: generalizes
+    dimension: scope
     description: >-
-      HeuriGym and AFL independently move from isolated heuristic functions toward
-      agentic construction of complete, executable optimization solvers.
+      AFL expands automatic routing design from specializing a solver backbone to
+      multi-agent construction and repair of complete constrained VRP solvers.
 
-  - from: e2oc
-    to: g-lns
-    type: contrasts
-    dimension: design-object
-    description: >-
-      E2OC co-designs interdependent multi-objective operators, while G-LNS
-      generates complementary destroy-and-repair operators for one LNS loop.
   - from: g-lns
     to: evolved-alns
     type: generalizes
@@ -177,13 +158,6 @@ relations:
     description: >-
       Evolved-ALNS broadens generated neighborhood operators into joint evolution
       of the seven interacting modules of an adaptive LNS solver.
-  - from: evolved-alns
-    to: coupleevo
-    type: contrasts
-    dimension: design-object
-    description: >-
-      Evolved-ALNS decomposes one solver into modules, whereas CoupleEvo divides a
-      coupled optimization problem and evolves cooperating subproblem heuristics.
   - from: coupleevo
     to: coevo
     type: concurrent-work
@@ -199,80 +173,64 @@ relations:
       STABLE broadens paired component co-evolution into semantics-aware bilevel
       design for reusable multicomponent algorithms.
 
-  - from: instspechh
+  - from: eoh-s
     to: raise
     type: contrasts
     dimension: scope
     description: >-
-      InstSpecHH partitions observed instances and selects specialized heuristics;
-      RAISE instead searches adversarial instances to improve robust generalization.
+      RAISE targets robust generalization by actively searching adversarial
+      instances, whereas EoH-S evaluates complementarity over a fixed diverse pool.
 
-  - from: hmace
-    to: ahd-agent
-    type: contrasts
-    dimension: feedback
-    description: >-
-      HMACE assigns proposal and critique to heterogeneous collaborating agents,
-      while AHD Agent learns a long-horizon design policy through reinforcement.
-  - from: ahd-agent
-    to: meevo
-    type: contrasts
-    dimension: feedback
-    description: >-
-      AHD Agent learns actions from environment rewards; MeEvo preserves explicit
-      metacognitive reasoning as heritable knowledge between evolution cycles.
-
-  - from: ars
+  - from: eoh
     to: autoport
     type: adapts
     dimension: scope
     description: >-
-      Both embed generated algorithms in domain solvers; AutoPort transfers the
-      pattern from constrained routing to joint antenna-port and beamforming design.
-  - from: meoh
+      AutoPort adapts executable heuristic evolution to joint antenna-port selection
+      and beamforming under communication-system constraints.
+  - from: eoh
     to: llamea-hpo
-    type: contrasts
+    type: extends
     dimension: search
     description: >-
-      MEoH maintains a Pareto set over solution quality and runtime, while
-      LLaMEA-HPO separates structural evolution from in-loop parameter tuning.
-  - from: mles
+      LLaMEA-HPO separates LLM-generated algorithm structure from numerical
+      hyper-parameter tuning performed inside the evolutionary loop.
+  - from: eoh
     to: teacherevo
-    type: contrasts
+    type: extends
     dimension: feedback
     description: >-
-      MLES reads visual behavior to evolve control programs, whereas Teacher-Aware
-      evolution uses learned policies as behavioral teachers for static heuristics.
-  - from: harnesseng
-    to: pathwise
-    type: contrasts
-    dimension: search
-    description: >-
-      Vesper improves persistent coding-agent branches through harness engineering;
-      PathWise plans design actions using an explicit world model and routed critics.
-
-  - from: ahd-eval
+      Teacher-Aware evolution adds behavioral guidance from learned optimization
+      policies to EoH-like heuristic program search.
+  - from: eoh
     to: redahd
-    type: contrasts
-    dimension: scope
+    type: extends
+    dimension: design-object
     description: >-
-      The EPS benchmark isolates evolutionary search under fixed algorithmic
-      frameworks; RedAHD removes the manually supplied framework via reductions.
-  - from: redahd
+      RedAHD builds on EoH-family evolutionary heuristic search while replacing the
+      manually supplied algorithm framework with LLM-generated problem reductions.
+  - from: eoh
     to: mths
     type: generalizes
     dimension: scope
     description: >-
-      MTHS broadens end-to-end heuristic design across tasks by separating a shared
-      metaheuristic representation from task-specific executable programs.
+      MTHS generalizes within-task heuristic evolution into a cross-task hierarchy
+      with shared metaheuristics and task-specific executable programs.
 
-  - from: beam
-    to: codegraph
-    type: contrasts
+  - from: eoh
+    to: beam
+    type: generalizes
     dimension: design-object
     description: >-
-      BEAM separates high-level solver structure from function realization;
-      Code Graph instead stores reusable corrections as composable code subgraphs.
+      BEAM expands the design object into a bilevel solver structure, separating
+      high-level architecture search from function-level realization.
+  - from: eoh
+    to: codegraph
+    type: extends
+    dimension: design-object
+    description: >-
+      Code Graph replaces whole-candidate inheritance with reusable code subgraphs
+      that preserve corrections and partial algorithmic structure across proposals.
   - from: llm-sr
     to: lhs
     type: contrasts
@@ -288,43 +246,20 @@ relations:
     description: >-
       AILS-AHD instantiates the platform-style separation of search, task, and
       evaluation modules for ruin-heuristic design inside a CVRP solver.
-  - from: enhancing-cvrp
-    to: pyvrp-plus
-    type: contrasts
-    dimension: feedback
+  - from: eoh
+    to: llamea-bo
+    type: adapts
+    dimension: design-object
     description: >-
-      AILS-AHD evolves ruin heuristics with performance feedback, while PyVRP+
-      requires explicit diagnosis, hypothesis formation, and reflection in HGS.
-
-  - from: heuragenix
-    to: cogmcts
-    type: contrasts
-    dimension: search
-    description: >-
-      HeurAgenix evolves a portfolio and selects by solver state; CogMCTS instead
-      organizes iterative heuristic proposals as cognitively guided tree search.
-  - from: cogmcts
-    to: dash
-    type: contrasts
-    dimension: feedback
-    description: >-
-      CogMCTS feeds search history and failed branches back into expansion, whereas
-      DASH evaluates complete convergence trajectories and runtime schedules.
-  - from: efficient-heuristics
-    to: dash
-    type: contrasts
-    dimension: feedback
-    description: >-
-      Hercules abstracts shared structure from elite heuristics; DASH retrieves
-      profiled solver components according to instance and convergence dynamics.
-
-  - from: llamea-bo
+      LLaMEA-BO adapts LLM-driven evolutionary design from heuristic functions to
+      complete Bayesian optimization algorithm programs.
+  - from: eoh
     to: beyond-algorithm-evolution
-    type: generalizes
+    type: extends
     dimension: feedback
     description: >-
-      LLaMEA-BO evolves complete optimization programs under fixed prompts, while
-      Beyond Algorithm Evolution makes the guiding prompt a co-evolving artifact.
+      Beyond Algorithm Evolution makes the prompt strategy a co-evolving artifact
+      alongside the optimization algorithm rather than a fixed search instruction.
 
   - from: codeevolve
     to: mutation-without-variation
@@ -333,25 +268,221 @@ relations:
     description: >-
       CodeEvolve combines archives and several LLM variation operators; Mutation
       Without Variation isolates repeated mutation to expose structural attractors.
-  - from: cliffsearch
+  - from: reevo
     to: reflex
+    type: extends
+    dimension: feedback
+    description: >-
+      REFLEX extends reflective program evolution with visual diagnosis, separated
+      code synthesis, and persistent experience memory.
+
+  # Additional lineage links. These give later papers a second, method-specific
+  # connection while allowing foundational work to act as a graph hub.
+  - from: eoh
+    to: ahd-eval
+    type: evaluated-by
+    dimension: search
+    description: >-
+      The EPS benchmark isolates the evolutionary-search contribution in EoH-style
+      pipelines by comparing evolution against simpler LLM sampling strategies.
+  - from: eoh
+    to: reevo
+    type: extends
+    dimension: feedback
+    description: >-
+      ReEvo augments evolutionary heuristic generation with short- and long-term
+      reflective feedback distilled from comparisons between candidate programs.
+  - from: eoh
+    to: llm4ad-platform
+    type: generalizes
+    dimension: scope
+    description: >-
+      LLM4AD turns the EoH workflow into reusable interfaces for methods, problems,
+      evaluators, and language models rather than one fixed experiment pipeline.
+  - from: eoh
+    to: hsevo
+    type: evaluated-by
+    dimension: search
+    description: >-
+      HSEvo directly analyzes EoH's exploration behavior, then evaluates harmony
+      search and genetic variation as diversity-oriented replacements.
+  - from: eoh
+    to: meoh
+    type: generalizes
+    dimension: scope
+    description: >-
+      MEoH replaces single-objective fitness with Pareto-based evolution so the
+      generated heuristics can trade solution quality against computational cost.
+  - from: eoh
+    to: ceoh
+    type: extends
+    dimension: feedback
+    description: >-
+      CEoH injects explicit problem context into the proposal loop, helping the
+      model reason about unfamiliar optimization structures before writing code.
+  - from: eoh
+    to: instspechh
+    type: generalizes
+    dimension: scope
+    description: >-
+      InstSpecHH moves from one broadly optimized heuristic to generation and
+      selection of specialized heuristics for different instance clusters.
+  - from: eoh
+    to: heuragenix
+    type: generalizes
+    dimension: scope
+    description: >-
+      HeurAgenix expands EoH-style heuristic generation into a portfolio whose
+      members are selected online from the current solver state.
+  - from: eoh
+    to: efficient-heuristics
+    type: extends
+    dimension: feedback
+    description: >-
+      Hercules adds elite-structure abstraction and efficiency-oriented feedback
+      to iterative LLM heuristic generation.
+  - from: eoh
+    to: dash
+    type: extends
+    dimension: feedback
+    description: >-
+      DASH replaces endpoint-only heuristic scoring with convergence-trajectory
+      and runtime profiling to design specialized solver behavior.
+  - from: eoh
+    to: tide
+    type: extends
+    dimension: search
+    description: >-
+      TIDE adds an inner continuous parameter-tuning loop to EoH-style structural
+      evolution instead of asking the LLM to optimize both at once.
+  - from: eoh
+    to: dyace
+    type: generalizes
+    dimension: scope
+    description: >-
+      DyACE moves heuristic evolution from a pre-deployment phase into the active
+      solution search, redesigning heuristics from observed trajectory features.
+  - from: eoh
+    to: hmace
+    type: extends
+    dimension: feedback
+    description: >-
+      HMACE distributes proposal, critique, and memory across heterogeneous agents
+      while retaining population-based heuristic evolution.
+  - from: eoh
+    to: strongprior
+    type: evaluated-by
+    dimension: feedback
+    description: >-
+      Strong Priors tests EoH-family search under richer initial algorithmic
+      scaffolds and shows how prior structure changes the value of LLM evolution.
+
+  - from: reevo
+    to: calm
+    type: extends
+    dimension: feedback
+    description: >-
+      CALM goes beyond textual reflection by updating the proposal model itself
+      from evolutionary rewards, coupling model learning with algorithm search.
+  - from: reevo
+    to: pyvrp-plus
+    type: adapts
+    dimension: feedback
+    description: >-
+      PyVRP+ adapts reflective heuristic evolution to a production hybrid genetic
+      search, separating diagnosis, hypothesis formation, and code revision.
+  - from: reevo
+    to: mles
+    type: generalizes
+    dimension: feedback
+    description: >-
+      MLES broadens reflection beyond scalar and textual signals by using rendered
+      behavior as multimodal feedback for evolving control programs.
+  - from: reevo
+    to: meevo
+    type: extends
+    dimension: feedback
+    description: >-
+      MeEvo makes reflective reasoning heritable across generations and combines it
+      with a separate natural-evolution population process.
+
+  - from: calm
+    to: ahd-agent
     type: contrasts
     dimension: feedback
     description: >-
-      CliffSearch uses scientific reviewers to gate theory-and-code artifacts,
-      whereas REFLEX separates visual diagnosis from code synthesis and memory.
-  - from: reflex
-    to: mutation-without-variation
-    type: contrasts
+      CALM learns the proposal model from evolutionary rewards, whereas AHD Agent
+      trains a multi-turn policy for deciding when to inspect, design, and evaluate.
+
+  - from: mcts-ahd
+    to: cogmcts
+    type: extends
     dimension: search
     description: >-
-      REFLEX preserves diagnosed skills across mutations; Mutation Without Variation
-      shows why unguided repeated mutation can collapse into recurring structures.
+      CogMCTS adds cognitive guidance and explicit use of failed search experience
+      to the lineage-preserving tree search introduced for heuristic evolution.
+  - from: mcts-ahd
+    to: pathwise
+    type: extends
+    dimension: search
+    description: >-
+      PathWise enriches tree-structured planning with a learned world model and
+      routed critics that estimate the consequences of design actions.
+  - from: meoh
+    to: e2oc
+    type: generalizes
+    dimension: design-object
+    description: >-
+      E2OC moves multi-objective evolution from selecting whole heuristics to
+      jointly designing interdependent operators inside a multi-objective solver.
 
-  - from: autosg
+  - from: funsearch
+    to: llm-sr
+    type: adapts
+    dimension: design-object
+    description: >-
+      LLM-SR adapts evaluator-guided program search to scientific equation
+      discovery, using executable programs as structured symbolic expressions.
+  - from: funsearch
+    to: codeevolve
+    type: generalizes
+    dimension: scope
+    description: >-
+      CodeEvolve generalizes evaluator-driven program evolution into an open coding
+      agent with archives, multiple variation operators, and task-defined harnesses.
+  - from: alphaevolve
+    to: codeevolve
+    type: adapts
+    dimension: search
+    description: >-
+      CodeEvolve provides an open implementation of coding-agent evolution with
+      configurable archives and operators for reproducible algorithm discovery.
+  - from: alphaevolve
+    to: cliffsearch
+    type: extends
+    dimension: design-object
+    description: >-
+      CliffSearch co-evolves theoretical explanations with code and uses reviewers
+      to gate both artifacts, extending discovery beyond executable candidates.
+  - from: alphaevolve
+    to: harnesseng
+    type: evaluated-by
+    dimension: feedback
+    description: >-
+      Vesper studies the harness around coding agents as a primary design variable,
+      showing how persistent branches and evaluation structure affect discovery.
+
+  - from: eoh
+    to: autosg
+    type: generalizes
+    dimension: scope
+    description: >-
+      AutoSG broadens heuristic generation into executable solver construction from
+      task prompts under expensive black-box evaluation.
+  - from: eoh
     to: ahd-network
     type: adapts
     dimension: scope
     description: >-
-      Both address expensive evaluation, and AHD-Network adapts solver-generation
-      principles to noisy production constraints in 5G decoding.
+      AHD-Network adapts LLM-based heuristic design to noisy production constraints
+      in 5G decoding, where each candidate requires costly system evaluation.

@@ -157,13 +157,21 @@ Relations can be added with a paper or in a separate pull request. Edit [`data/r
 
 Rules:
 
-- Every paper must have at least one relation and no more than two.
+- Every paper must participate in at least one relation.
+- A new paper may declare at most two relations to earlier or concurrent work.
+  Relations later papers add to it do not count toward this limit, so foundational
+  papers can remain useful hubs in the map.
 - Do not add more than one relation for the same pair of papers.
-- For every directed type, `from` is older and `to` is newer.
-- `concurrent-work` is undirected but still uses two valid paper IDs.
+- For every directed type, `from` is older and `to` is the newer paper declaring
+  the relation.
+- `concurrent-work` is undirected on the graph; put the paper declaring the
+  relation in `to` so the same two-relation limit remains unambiguous.
 - Choose one type and the single dimension that best explains this connection.
 - Describe the concrete methodological link in one or two sentences.
 - Do not add a relation merely because two papers use an LLM or solve the same broad problem.
+- Read the source paper before proposing a relation. Its claim must be supported by
+  the authors' method, experiment, or explicit comparison, rather than inferred
+  from a shared title keyword, task, or citation alone.
 
 ## Choose the classification
 

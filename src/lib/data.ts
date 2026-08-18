@@ -29,3 +29,9 @@ export function formatMonthYear(value: string): string {
 export function paperYear(paper: Paper): number {
   return Number(paper.date.slice(0, 4))
 }
+
+export function titleLengthClass(title: string): string {
+  if (title.length > 110) return 'is-title-xlong'
+  if (title.length > 75) return 'is-title-long'
+  return ''
+}
