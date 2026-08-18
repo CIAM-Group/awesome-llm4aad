@@ -12,6 +12,7 @@ interface GraphNode {
   year: number
   x?: number
   y?: number
+  degree: number
 }
 
 interface GraphLink {
@@ -20,10 +21,12 @@ interface GraphLink {
   type: string
   dimension: string
   description: string
+  curvature: number
 }
 
 interface ForceGraphHandle {
   zoomToFit: (duration?: number, padding?: number) => void
+  d3Force: (name: string) => { strength?: (value: number) => void; distance?: (value: number) => void } | undefined
 }
 
 interface RelationGraphProps {
@@ -103,18 +106,23 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
   const navigate = useNavigate()
   const containerRef = useRef<HTMLDivElement>(null)
   const graphRef = useRef<ForceGraphHandle>(null)
-  const [size, setSize] = useState({ width: 960, height: 620 })
+  const [size, setSize] = useState({ width: 960, height: 760 })
 
   useEffect(() => {
     if (!containerRef.current) return
     const observer = new ResizeObserver(([entry]) => {
-      setSize({ width: Math.max(320, entry.contentRect.width), height: Math.max(520, Math.min(720, window.innerHeight - 190)) })
+      setSize({ width: Math.max(320, entry.contentRect.width), height: Math.max(680, Math.min(820, window.innerHeight - 150)) })
     })
     observer.observe(containerRef.current)
     return () => observer.disconnect()
   }, [])
 
   const graphData = useMemo(() => {
+    const degree = new Map(papers.map((paper) => [paper.id, 0]))
+    relations.forEach((relation) => {
+      degree.set(relation.from, (degree.get(relation.from) ?? 0) + 1)
+      degree.set(relation.to, (degree.get(relation.to) ?? 0) + 1)
+    })
     const nodes: GraphNode[] = papers.map((paper, index) => {
       const angle = (index / Math.max(papers.length, 1)) * Math.PI * 2 - Math.PI / 2
       const radius = 140 + (index % 3) * 34
@@ -125,11 +133,24 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
         year: paperYear(paper),
         x: Math.cos(angle) * radius,
         y: Math.sin(angle) * radius,
+        degree: degree.get(paper.id) ?? 0,
       }
     })
-    const links: GraphLink[] = relations.map((relation) => ({ ...relation, source: relation.from, target: relation.to }))
+    const links: GraphLink[] = relations.map((relation, index) => ({
+      ...relation,
+      source: relation.from,
+      target: relation.to,
+      curvature: ((index % 5) - 2) * 0.12,
+    }))
     return { nodes, links }
   }, [papers, relations])
+
+  useEffect(() => {
+    const charge = graphRef.current?.d3Force('charge')
+    charge?.strength?.(-360)
+    const link = graphRef.current?.d3Force('link')
+    link?.distance?.(145)
+  }, [graphData])
 
   return (
     <div className="relation-graph" ref={containerRef} aria-label="Interactive paper relation graph">
@@ -155,7 +176,9 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
           context.strokeStyle = selected ? '#111814' : '#edf1ee'
           context.stroke()
 
-          const fontSize = Math.max(10 / globalScale, 3.2)
+          const showLabel = selected || globalScale > 0.78 || (globalScale > 0.52 && graphNode.degree >= 5)
+          if (!showLabel) return
+          const fontSize = Math.max(9 / globalScale, 2.8)
           context.font = `${selected ? 700 : 600} ${fontSize}px Newsreader, Georgia, serif`
           context.textAlign = 'left'
           context.textBaseline = 'middle'
@@ -176,6 +199,8 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
         }}
         linkColor={(link: unknown) => relationVisual((link as GraphLink).type).color}
         linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 2 : 1.8}
+        linkCurvature={(link: unknown) => (link as GraphLink).curvature}
+        linkDirectionalArrowLength={0}
         linkLineDash={(link: unknown) => relationVisual((link as GraphLink).type).dash}
         linkCanvasObjectMode={() => 'after'}
         linkCanvasObject={(link: unknown, context: CanvasRenderingContext2D, globalScale: number) => {
@@ -185,10 +210,10 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
           const graphLink = link as GraphLink
           return `${atlas.taxonomy.relation_types[graphLink.type]?.label}: ${graphLink.description}`
         }}
-        cooldownTicks={100}
-        d3AlphaDecay={0.035}
-        d3VelocityDecay={0.25}
-        onEngineStop={() => graphRef.current?.zoomToFit(650, 150)}
+        cooldownTicks={180}
+        d3AlphaDecay={0.06}
+        d3VelocityDecay={0.4}
+        onEngineStop={() => graphRef.current?.zoomToFit(800, 110)}
         onNodeClick={(node: unknown) => navigate(`/papers/${(node as GraphNode).id}`)}
       />
       <p className="relation-graph__instruction">Drag nodes · scroll to zoom · click to read</p>

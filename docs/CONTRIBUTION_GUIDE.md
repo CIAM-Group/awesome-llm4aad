@@ -158,9 +158,9 @@ Relations can be added with a paper or in a separate pull request. Edit [`data/r
 Rules:
 
 - Every paper must participate in at least one relation.
-- A new paper may declare at most two relations to earlier or concurrent work.
-  Relations later papers add to it do not count toward this limit, so foundational
-  papers can remain useful hubs in the map.
+- There is no fixed upper bound on relations. Add only links supported by the
+  papers' methods, experiments, or explicit comparisons; do not add edges to make
+  the graph look connected.
 - Do not add more than one relation for the same pair of papers.
 - For every directed type, `from` is older and `to` is the newer paper declaring
   the relation.
@@ -186,7 +186,6 @@ The vocabulary is fixed in [`data/taxonomy.yml`](../data/taxonomy.yml). Contribu
 | `generalizes` | The later paper broadens tasks, distributions, artifacts, or system scale. |
 | `adapts` | The later paper transfers a recognizable method to a new domain or design artifact. |
 | `contrasts` | The later paper takes a meaningfully different design route on the same question. |
-| `evaluated-by` | The later paper explicitly analyzes or stress-tests the earlier method. |
 
 ### Dimensions
 

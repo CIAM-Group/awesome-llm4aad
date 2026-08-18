@@ -31,12 +31,6 @@ relation_types:
     use_when: The link reveals a concrete trade-off in design, search, or feedback.
     avoid_when: The earlier paper is merely a benchmark baseline.
     direction: directed
-  evaluated-by:
-    label: Evaluated by
-    description: The later paper explicitly analyzes the earlier method.
-    use_when: The later paper measures or stress-tests a specific property of the earlier work.
-    avoid_when: The earlier paper appears only in a results table.
-    direction: directed
 
 dimensions:
   historical:

@@ -728,7 +728,7 @@ select:focus-visible {
 .relation-graph {
   position: relative;
   width: 100%;
-  min-height: 560px;
+  min-height: 700px;
   overflow: hidden;
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
@@ -740,6 +740,7 @@ select:focus-visible {
 
 .relation-graph canvas {
   display: block;
+  min-height: 700px;
 }
 
 .relation-graph__instruction {
@@ -817,19 +818,6 @@ select:focus-visible {
   transform: rotate(45deg);
 }
 .relation-visual--contrasts b::after { transform: rotate(-45deg); }
-.relation-visual--evaluated-by {
-  --relation-color: #835bb2;
-  background: repeating-linear-gradient(to right, var(--relation-color) 0 2px, transparent 2px 6px) center / 100% 2px no-repeat;
-}
-.relation-visual--evaluated-by b {
-  width: 0;
-  height: 0;
-  border: 0;
-  border-right: 4px solid transparent;
-  border-bottom: 7px solid var(--relation-color);
-  border-left: 4px solid transparent;
-  background: transparent;
-}
 .relation-visual--concurrent-work {
   --relation-color: #526e67;
   background: repeating-linear-gradient(to right, var(--relation-color) 0 5px, transparent 5px 10px) center / 100% 2px no-repeat;
