@@ -605,39 +605,39 @@ relations:
       experiment for evolving domain knowledge rather than a co-equal search object.
   - from: alphaevolve
     to: dgm
+    type: concurrent-work
+    dimension: historical
+    description: >-
+      AlphaEvolve and DGM appeared in the same research period but pursue different
+      coding-agent goals: scientific algorithm discovery versus self-modifying agents.
+  - from: or-survey
+    to: qp-adapt
     type: contextualizes
     dimension: scope
     description: >-
-      DGM places evaluator-guided program evolution in a self-modifying coding-agent
-      setting, where the evolving artifact includes the agent's own repository.
-  - from: eoh
-    to: qp-adapt
-    type: adapts
-    dimension: scope
-    description: >-
-      The VVenC study adapts closed-loop LLM heuristic evolution to frame-level
-      quantization decisions inside a production video encoder.
+      The OR survey provides context for the VVenC study's LLM-generated
+      rate-distortion heuristics in a production video encoder.
   - from: alphaevolve
     to: domain-heuristics
-    type: adapts
+    type: contextualizes
     dimension: scope
     description: >-
-      This planning study follows the OpenEvolve/AlphaEvolve executable-program
-      line and transfers MAP-Elites search to domain-independent planning heuristics.
-  - from: eoh
+      The planning study is a neighboring OpenEvolve route that evolves MAP-Elites
+      C++ heuristics for transfer across symbolic-planning domains.
+  - from: ahd-survey
     to: successor-heuristics
-    type: contrasts
+    type: contextualizes
     dimension: design-object
     description: >-
-      Successor-generator planning produces a compiled problem-level heuristic and
-      integrates it with a standard planner, contrasting with EoH's population loop.
+      The AHD survey provides context for Successor-Generator's problem-level
+      LLM-synthesized heuristic and planner integration.
   - from: reevo
     to: trajevo
-    type: adapts
+    type: contextualizes
     dimension: feedback
     description: >-
-      TrajEvo adapts reflective evolution to trajectory prediction with
-      cross-generation elite sampling and statistics-based feedback.
+      TrajEvo is a neighboring LLM-plus-evolution route for trajectory prediction;
+      its cross-generation sampling and statistics feedback are task-specific.
   - from: funsearch
     to: mech-design
     type: adapts
@@ -680,13 +680,13 @@ relations:
     description: >-
       The tensor-network case study adapts OpenEvolve-style executable evolution to
       contraction-order design and compares several coding-agent systems.
-  - from: funsearch
+  - from: ahd-survey
     to: geneplan
-    type: generalizes
+    type: contextualizes
     dimension: scope
     description: >-
-      GenePlan generalizes evolutionary program search to executable generalized
-      PDDL planners rather than isolated heuristic functions.
+      The AHD survey provides context for GenePlan's executable generalized-PDDL
+      planner synthesis.
   - from: eoh
     to: participatory-rules
     type: adapts
@@ -729,13 +729,13 @@ relations:
     description: >-
       MEMOIR extends tree-based AHD with branch-local and global memory for
       transferring useful discoveries across search branches.
-  - from: eoh
+  - from: or-survey
     to: macro-order
-    type: adapts
+    type: contextualizes
     dimension: design-object
     description: >-
-      Order Matters adapts executable evolutionary search to macro-placement
-      ordering policies discovered through proxy-guided evaluation.
+      The OR survey provides context for Order Matters' proxy-guided evolution of
+      macro-placement ordering policies.
   - from: reevo
     to: revel
     type: extends
@@ -745,18 +745,18 @@ relations:
       multi-turn performance feedback.
   - from: eoh
     to: llm-nas
-    type: adapts
+    type: contextualizes
     dimension: design-object
     description: >-
-      UH-NAS transfers LLM evolutionary operators from combinatorial heuristics to
-      hardware-aware neural architecture and physical-network co-design.
+      UH-NAS is a neighboring LLM-evolution route for hardware-aware neural
+      architecture co-design, rather than a direct EoH extension.
   - from: orlm
     to: evooptigraph
-    type: extends
+    type: contrasts
     dimension: feedback
     description: >-
-      EvoOptiGraph extends automatic optimization modeling with weakness-driven
-      graph generation, solver verification, and closed-loop feedback.
+      EvoOptiGraph takes a weakness-driven graph co-evolution route, contrasting
+      with ORLM's learned model-generation framework and fixed training distribution.
   - from: optibench
     to: frontieror
     type: generalizes
@@ -785,13 +785,13 @@ relations:
     description: >-
       The multi-island dispatching-rule method extends ReEvo with personalized
       islands, semantic reflection, and offline/online evolution stages.
-  - from: codegraph
+  - from: ahd-survey
     to: pace
-    type: contrasts
+    type: contextualizes
     dimension: design-object
     description: >-
-      PACE and Code Graph both address loss of useful local code during whole-program
-      evolution, using persistent primitives and Thompson sampling instead of paths.
+      The AHD survey provides context for PACE's primitive-level representation and
+      its attempt to preserve reusable code during executable program evolution.
   - from: eoh
     to: ahd-survey
     type: contextualizes
@@ -819,13 +819,13 @@ relations:
     description: >-
       The CUDA feedback-to-plan study cites EoH as adjacent evolutionary context;
       its contribution is attribution analysis rather than EoH inheritance.
-  - from: eoh
+  - from: llm-optimization-survey
     to: pathplan-llm
     type: contextualizes
     dimension: scope
     description: >-
-      This path-planning paper cites EoH as an algorithm-design reference but does
-      not introduce an automatic reusable heuristic-design framework.
+      The optimization overview provides context for PathPlan-LLM's natural-language
+      formulation, solution generation, and iterative route verification.
   - from: eoh
     to: epb-nco
     type: contextualizes
