@@ -54,7 +54,7 @@ export function PaperDetailPage() {
               return (
                 <article key={`${relation.from}-${relation.to}-${index}`}>
                   <span>{atlas.taxonomy.relation_types[relation.type]?.label} · {atlas.taxonomy.dimensions[relation.dimension]?.label}</span>
-                  <h3><Link to={`/papers/${peerId}`}>{peer?.short_title}: {peer?.title}</Link></h3>
+                  <h3><Link to={`/papers/${peerId}`}>{peer?.title}</Link></h3>
                   <p>{relation.description}</p>
                 </article>
               )

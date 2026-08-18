@@ -169,6 +169,9 @@ Rules:
 - Choose one type and the single dimension that best explains this connection.
 - Describe the concrete methodological link in one or two sentences.
 - Do not add a relation merely because two papers use an LLM or solve the same broad problem.
+- Read the source paper before proposing a relation. Its claim must be supported by
+  the authors' method, experiment, or explicit comparison, rather than inferred
+  from a shared title keyword, task, or citation alone.
 
 ## Choose the classification
 

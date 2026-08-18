@@ -760,11 +760,11 @@
       "description": "EoH-S changes the output from one heuristic to a complementary set that covers varied instance distributions."
     },
     {
-      "from": "eoh-s",
+      "from": "eoh",
       "to": "ast-evo",
       "type": "extends",
       "dimension": "search",
-      "description": "The AST operator permits disruptive structural variation and then repairs invalid offspring, expanding the validity-preserving search used by EoH-S."
+      "description": "The AST study replaces EoH's semantic crossover and mutation with structural AST disruption followed by LLM repair; it then evaluates this operator in EoH, ReEvo, and EoH-S rather than extending the heuristic-set objective itself."
     },
     {
       "from": "funsearch",
