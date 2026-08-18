@@ -21,6 +21,7 @@ PROJECT_ROOT = REPO.parent
 WORKBOOK = PROJECT_ROOT / "literature/_data/AHD_papers_full.xlsx"
 ARXIV_XML = Path("/tmp/arxiv-selected.xml")
 NS = {"a": "http://www.w3.org/2005/Atom"}
+EXCLUDED_ARXIV_IDS = {"2605.07039"}  # PACEvolve++ is outside the AHD scope.
 
 GREEN = "C6EFCE"
 YELLOW = "FFF2CC"
@@ -81,7 +82,7 @@ def recent_records() -> list[dict[str, object]]:
     root = ET.parse(ARXIV_XML).getroot()
     selected = {
         "2608.07395", "2608.16733", "2608.15546", "2608.12522",
-        "2608.10795", "2608.08189", "2605.07039",
+        "2608.10795", "2608.08189",
     }
     records = []
     for entry in root.findall("a:entry", NS):
@@ -132,7 +133,7 @@ def scan_pdf(pdf_path: str | None) -> tuple[str, str, str]:
         context = "direct_method" if re.search(r"baseline|method|heuristic|evolution|compare|benchmark", window, re.I) else "related_work"
         return "yes", context, clean_cell(window[:500])
     if ref_match:
-        return "no", "bibliography_only", "reference list only"
+        return "yes", "bibliography_only", "reference list only"
     return "no", "not_found", ""
 
 
@@ -151,7 +152,12 @@ def main() -> None:
     col = {name: headers.index(name) + 1 for name in headers}
     site_papers = read_site_papers()
 
-    # Append only new arXiv IDs/titles, so repeated runs are idempotent.
+    # Remove candidates that were ruled out by scope review, then append only
+    # new arXiv IDs/titles so repeated runs remain idempotent.
+    for row_number in range(ws.max_row, 1, -1):
+        row_url = str(ws.cell(row_number, col["pdf_url"]).value or "")
+        if arxiv_id(row_url) in EXCLUDED_ARXIV_IDS:
+            ws.delete_rows(row_number)
     existing_keys = set()
     for row in ws.iter_rows(min_row=2, values_only=True):
         existing_keys.add((arxiv_id(str(row[col.get("pdf_url", 10) - 1] or "")), norm(str(row[col["title"] - 1] or ""))))
@@ -196,9 +202,9 @@ def main() -> None:
         is_site = site_match(title, url, site_papers)
         citation, context, evidence = scan_pdf(values.get("pdf_path"))
         # PACE was checked against its arXiv PDF during the recent-paper pass:
-        # EoH occurs in the bibliography, not in the paper body.
+        # EoH occurs in the bibliography, which still counts as a citation.
         if arxiv_id(url) == "2608.07395":
-            citation, context, evidence = "no", "bibliography_only", "Checked arXiv PDF; EoH appears only in references."
+            citation, context, evidence = "yes", "bibliography_only", "Checked arXiv PDF; EoH appears only in references."
         if values.get("curation_tier") == "recent_arxiv_unreviewed":
             status = "recent_arxiv_unreviewed"
         else:
@@ -232,9 +238,9 @@ def main() -> None:
     legend.append(["AHD Papers workbook annotation legend"])
     legend.append(["Color", "Meaning"])
     for label, color, meaning in [
-        ("Green", GREEN, "PDF body contains a strong EoH citation match."),
+        ("Green", GREEN, "PDF contains an EoH citation anywhere; context records where it appears."),
         ("Yellow", YELLOW, "Recent arXiv candidate or PDF could not be verified."),
-        ("Gray", GRAY, "No EoH match found, or reference-list-only match."),
+        ("Gray", GRAY, "No EoH match found."),
         ("Blue status cell", BLUE, "Paper is already represented on the AHD Papers website."),
     ]:
         legend.append([label, meaning])
