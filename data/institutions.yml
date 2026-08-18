@@ -218,6 +218,54 @@ nvidia:
   initials: NV
   website: https://www.nvidia.com/
   accent: '#4f7728'
+carnegie-mellon:
+  name: Carnegie Mellon University
+  short_name: CMU
+  initials: CMU
+  website: https://www.cmu.edu/
+  accent: '#c41230'
+microsoft:
+  name: Microsoft Research
+  short_name: Microsoft
+  initials: MSR
+  website: https://www.microsoft.com/en-us/research/
+  accent: '#737373'
+tencent:
+  name: Tencent
+  short_name: Tencent
+  initials: TCE
+  website: https://www.tencent.com/
+  accent: '#2b6cb0'
+university-california:
+  name: University of California
+  short_name: UC
+  initials: UC
+  website: https://www.universityofcalifornia.edu/
+  accent: '#003b5c'
+university-cambridge:
+  name: University of Cambridge
+  short_name: Cambridge
+  initials: CAM
+  website: https://www.cam.ac.uk/
+  accent: '#a3c1ad'
+chinese-academy-sciences:
+  name: Chinese Academy of Sciences
+  short_name: CAS
+  initials: CAS
+  website: https://english.cas.cn/
+  accent: '#174a7e'
+fudan:
+  name: Fudan University
+  short_name: Fudan
+  initials: FDU
+  website: https://www.fudan.edu.cn/en/
+  accent: '#1f4e79'
+university-chinese-academy-sciences:
+  name: University of Chinese Academy of Sciences
+  short_name: UCAS
+  initials: UCAS
+  website: https://english.ucas.ac.cn/
+  accent: '#3d6b8c'
 university-sydney:
   name: University of Sydney
   short_name: Sydney

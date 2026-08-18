@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import ForceGraph2D from 'react-force-graph-2d'
 import { useNavigate } from 'react-router-dom'
 import { atlas, paperYear } from '../lib/data'
-import { relationVisual, type RelationMarker } from '../lib/relationStyles'
+import { relationVisual } from '../lib/relationStyles'
 import type { Paper, Relation } from '../types'
 
 interface GraphNode {
@@ -33,73 +33,6 @@ interface RelationGraphProps {
   papers: Paper[]
   relations: Relation[]
   selectedPaperId: string
-}
-
-function nodePosition(endpoint: string | GraphNode): GraphNode | undefined {
-  return typeof endpoint === 'object' ? endpoint : undefined
-}
-
-function drawRelationMarker(
-  link: GraphLink,
-  context: CanvasRenderingContext2D,
-  globalScale: number,
-) {
-  const source = nodePosition(link.source)
-  const target = nodePosition(link.target)
-  if (!source || !target || source.x === undefined || source.y === undefined || target.x === undefined || target.y === undefined) return
-
-  const { color, marker } = relationVisual(link.type)
-  const x = (source.x + target.x) / 2
-  const y = (source.y + target.y) / 2
-  const size = 4.5 / globalScale
-  const lineWidth = 1.8 / globalScale
-
-  context.save()
-  context.translate(x, y)
-  context.fillStyle = '#edf1ee'
-  context.strokeStyle = color
-  context.lineWidth = lineWidth
-  context.setLineDash([])
-
-  const pathMarker = (shape: RelationMarker) => {
-    context.beginPath()
-    if (shape === 'diamond') {
-      context.moveTo(0, -size)
-      context.lineTo(size, 0)
-      context.lineTo(0, size)
-      context.lineTo(-size, 0)
-      context.closePath()
-    } else if (shape === 'square') {
-      context.rect(-size * 0.82, -size * 0.82, size * 1.64, size * 1.64)
-    } else if (shape === 'triangle') {
-      context.moveTo(0, -size)
-      context.lineTo(size, size * 0.8)
-      context.lineTo(-size, size * 0.8)
-      context.closePath()
-    } else {
-      context.arc(0, 0, size * 0.82, 0, Math.PI * 2)
-    }
-    context.fill()
-    context.stroke()
-  }
-
-  if (marker === 'cross') {
-    context.fillRect(-size, -size, size * 2, size * 2)
-    context.beginPath()
-    context.moveTo(-size * 0.78, -size * 0.78)
-    context.lineTo(size * 0.78, size * 0.78)
-    context.moveTo(size * 0.78, -size * 0.78)
-    context.lineTo(-size * 0.78, size * 0.78)
-    context.stroke()
-  } else if (marker === 'double-ring') {
-    pathMarker('circle')
-    context.beginPath()
-    context.arc(0, 0, size * 0.42, 0, Math.PI * 2)
-    context.stroke()
-  } else {
-    pathMarker(marker)
-  }
-  context.restore()
 }
 
 export function RelationGraph({ papers, relations, selectedPaperId }: RelationGraphProps) {
@@ -136,20 +69,20 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
         degree: degree.get(paper.id) ?? 0,
       }
     })
-    const links: GraphLink[] = relations.map((relation, index) => ({
+    const links: GraphLink[] = relations.map((relation) => ({
       ...relation,
       source: relation.from,
       target: relation.to,
-      curvature: ((index % 5) - 2) * 0.12,
+      curvature: relationVisual(relation.type).curvature,
     }))
     return { nodes, links }
   }, [papers, relations])
 
   useEffect(() => {
     const charge = graphRef.current?.d3Force('charge')
-    charge?.strength?.(-360)
+    charge?.strength?.(-420)
     const link = graphRef.current?.d3Force('link')
-    link?.distance?.(145)
+    link?.distance?.(126)
   }, [graphData])
 
   return (
@@ -198,14 +131,10 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
           context.fill()
         }}
         linkColor={(link: unknown) => relationVisual((link as GraphLink).type).color}
-        linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 2 : 1.8}
+        linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 2.4 : 2.1}
         linkCurvature={(link: unknown) => (link as GraphLink).curvature}
         linkDirectionalArrowLength={0}
         linkLineDash={(link: unknown) => relationVisual((link as GraphLink).type).dash}
-        linkCanvasObjectMode={() => 'after'}
-        linkCanvasObject={(link: unknown, context: CanvasRenderingContext2D, globalScale: number) => {
-          drawRelationMarker(link as GraphLink, context, globalScale)
-        }}
         linkLabel={(link: unknown) => {
           const graphLink = link as GraphLink
           return `${atlas.taxonomy.relation_types[graphLink.type]?.label}: ${graphLink.description}`

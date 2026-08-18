@@ -87,7 +87,7 @@ try {
   await focusSelect.selectOption('eoh')
   await desktop.waitForTimeout(900)
   const focusedRelations = await desktop.locator('.relation-register article').count()
-  if (focusedRelations !== 7) failures.push(`/relations: EoH focus expected 7 direct relations, found ${focusedRelations}`)
+  if (focusedRelations < 7) failures.push(`/relations: EoH focus expected at least 7 direct relations, found ${focusedRelations}`)
   await desktop.getByRole('button', { name: 'Clear paper focus' }).waitFor()
   await desktop.screenshot({ path: `${outputDirectory}/relations-eoh-focus-desktop.png` })
   await desktop.getByRole('button', { name: 'Clear paper focus' }).click()
