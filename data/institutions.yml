@@ -494,6 +494,18 @@ tsinghua:
   initials: THU
   website: https://www.tsinghua.edu.cn/en/
   accent: '#6b1e3f'
+university-british-columbia:
+  name: University of British Columbia
+  short_name: UBC
+  initials: UBC
+  website: https://www.ubc.ca/
+  accent: '#002145'
+vector-institute:
+  name: Vector Institute
+  short_name: Vector Institute
+  initials: VEC
+  website: https://vectorinstitute.ai/
+  accent: '#3b6ea5'
 imdea-networks:
   name: IMDEA Networks Institute
   short_name: IMDEA Networks
