@@ -1,6 +1,7 @@
 # Directed relations always run from the earlier paper (`from`) to the later paper (`to`).
 # `concurrent-work` is undirected and appears as a dashed line on the website.
-# Every paper must have one or two relations so the map stays connected but readable.
+# Every paper must participate in at least one relation. A paper may declare at
+# most two relations (as `to`); later papers may still create additional links to it.
 relations:
   - from: ael
     to: funsearch
@@ -347,6 +348,167 @@ relations:
     description: >-
       REFLEX preserves diagnosed skills across mutations; Mutation Without Variation
       shows why unguided repeated mutation can collapse into recurring structures.
+
+  # Additional lineage links. These give later papers a second, method-specific
+  # connection while allowing foundational work to act as a graph hub.
+  - from: eoh
+    to: ahd-eval
+    type: evaluated-by
+    dimension: search
+    description: >-
+      The EPS benchmark isolates the evolutionary-search contribution in EoH-style
+      pipelines by comparing evolution against simpler LLM sampling strategies.
+  - from: eoh
+    to: reevo
+    type: extends
+    dimension: feedback
+    description: >-
+      ReEvo augments evolutionary heuristic generation with short- and long-term
+      reflective feedback distilled from comparisons between candidate programs.
+  - from: eoh
+    to: llm4ad-platform
+    type: generalizes
+    dimension: scope
+    description: >-
+      LLM4AD turns the EoH workflow into reusable interfaces for methods, problems,
+      evaluators, and language models rather than one fixed experiment pipeline.
+  - from: eoh
+    to: hsevo
+    type: extends
+    dimension: search
+    description: >-
+      HSEvo strengthens EoH-style population search with harmony-search memory and
+      genetic variation designed to preserve useful diversity.
+  - from: eoh
+    to: meoh
+    type: generalizes
+    dimension: scope
+    description: >-
+      MEoH replaces single-objective fitness with Pareto-based evolution so the
+      generated heuristics can trade solution quality against computational cost.
+  - from: eoh
+    to: ceoh
+    type: extends
+    dimension: feedback
+    description: >-
+      CEoH injects explicit problem context into the proposal loop, helping the
+      model reason about unfamiliar optimization structures before writing code.
+  - from: eoh
+    to: instspechh
+    type: generalizes
+    dimension: scope
+    description: >-
+      InstSpecHH moves from one broadly optimized heuristic to generation and
+      selection of specialized heuristics for different instance clusters.
+  - from: eoh
+    to: strongprior
+    type: evaluated-by
+    dimension: feedback
+    description: >-
+      Strong Priors tests EoH-family search under richer initial algorithmic
+      scaffolds and shows how prior structure changes the value of LLM evolution.
+
+  - from: reevo
+    to: calm
+    type: extends
+    dimension: feedback
+    description: >-
+      CALM goes beyond textual reflection by updating the proposal model itself
+      from evolutionary rewards, coupling model learning with algorithm search.
+  - from: reevo
+    to: pyvrp-plus
+    type: adapts
+    dimension: feedback
+    description: >-
+      PyVRP+ adapts reflective heuristic evolution to a production hybrid genetic
+      search, separating diagnosis, hypothesis formation, and code revision.
+  - from: reevo
+    to: mles
+    type: generalizes
+    dimension: feedback
+    description: >-
+      MLES broadens reflection beyond scalar and textual signals by using rendered
+      behavior as multimodal feedback for evolving control programs.
+
+  - from: mcts-ahd
+    to: cogmcts
+    type: extends
+    dimension: search
+    description: >-
+      CogMCTS adds cognitive guidance and explicit use of failed search experience
+      to the lineage-preserving tree search introduced for heuristic evolution.
+  - from: mcts-ahd
+    to: pathwise
+    type: extends
+    dimension: search
+    description: >-
+      PathWise enriches tree-structured planning with a learned world model and
+      routed critics that estimate the consequences of design actions.
+  - from: hsevo
+    to: cdeoh
+    type: extends
+    dimension: search
+    description: >-
+      CDEoH turns HSEvo's diversity objective into semantic category coverage,
+      allocating search across distinct algorithmic ideas rather than code alone.
+  - from: meoh
+    to: e2oc
+    type: generalizes
+    dimension: design-object
+    description: >-
+      E2OC moves multi-objective evolution from selecting whole heuristics to
+      jointly designing interdependent operators inside a multi-objective solver.
+
+  - from: funsearch
+    to: llm-sr
+    type: adapts
+    dimension: design-object
+    description: >-
+      LLM-SR adapts evaluator-guided program search to scientific equation
+      discovery, using executable programs as structured symbolic expressions.
+  - from: funsearch
+    to: codeevolve
+    type: generalizes
+    dimension: scope
+    description: >-
+      CodeEvolve generalizes evaluator-driven program evolution into an open coding
+      agent with archives, multiple variation operators, and task-defined harnesses.
+  - from: alphaevolve
+    to: codeevolve
+    type: adapts
+    dimension: search
+    description: >-
+      CodeEvolve provides an open implementation of coding-agent evolution with
+      configurable archives and operators for reproducible algorithm discovery.
+  - from: alphaevolve
+    to: cliffsearch
+    type: extends
+    dimension: design-object
+    description: >-
+      CliffSearch co-evolves theoretical explanations with code and uses reviewers
+      to gate both artifacts, extending discovery beyond executable candidates.
+  - from: alphaevolve
+    to: harnesseng
+    type: evaluated-by
+    dimension: feedback
+    description: >-
+      Vesper studies the harness around coding agents as a primary design variable,
+      showing how persistent branches and evaluation structure affect discovery.
+
+  - from: ael
+    to: ars
+    type: adapts
+    dimension: scope
+    description: >-
+      ARS transfers LLM-guided algorithm evolution from a benchmark heuristic into
+      an end-to-end routing setting with executable solver evaluation.
+  - from: llmopt
+    to: autosg
+    type: generalizes
+    dimension: scope
+    description: >-
+      AutoSG broadens task-to-optimization generation from mathematical modeling
+      toward executable solver construction under expensive black-box evaluation.
 
   - from: autosg
     to: ahd-network
