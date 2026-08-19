@@ -46,7 +46,6 @@ relations:
     description: >-
       ShinkaEvolve retains island-based program evolution while targeting fewer
       evaluations through novelty rejection, prioritization, and a meta-scratchpad.
-
   - from: reevo
     to: poh
     type: extends
@@ -75,7 +74,6 @@ relations:
     description: >-
       LaF-MCTS applies hierarchical tree search to large-scale CVRP solver design,
       extending the tree-search formulation established by MCTS-AHD.
-
   - from: hsevo
     to: partevo
     type: extends
@@ -90,7 +88,6 @@ relations:
     description: >-
       CDEoH groups algorithms by semantic categories, whereas BehaveSim measures
       diversity from aligned problem-solving trajectories rather than code form.
-
   - from: ceoh
     to: a-ceoh
     type: adapts
@@ -105,7 +102,6 @@ relations:
     description: >-
       Knowledge-first design operationalizes strong priors as retrieved and
       structured domain knowledge that guides proposals before evaluation.
-
   - from: calm
     to: aad-ft
     type: contrasts
@@ -113,7 +109,6 @@ relations:
     description: >-
       CALM updates the proposal model online from evolutionary rewards, whereas
       AAD Fine-tuning learns offline from diversity-aware preference pairs.
-
   - from: llmopt
     to: orlm
     type: contrasts
@@ -135,7 +130,6 @@ relations:
     description: >-
       EquivaMap complements outcome-based formulation evaluation with explicit
       variable mappings and structural checks of semantic equivalence.
-
   - from: eoh
     to: heurigym
     type: contrasts
@@ -150,7 +144,6 @@ relations:
     description: >-
       AFL expands automatic routing design from specializing a solver backbone to
       multi-agent construction and repair of complete constrained VRP solvers.
-
   - from: g-lns
     to: evolved-alns
     type: generalizes
@@ -172,7 +165,6 @@ relations:
     description: >-
       STABLE broadens paired component co-evolution into semantics-aware bilevel
       design for reusable multicomponent algorithms.
-
   - from: eoh-s
     to: raise
     type: contrasts
@@ -180,7 +172,6 @@ relations:
     description: >-
       RAISE targets robust generalization by actively searching adversarial
       instances, whereas EoH-S evaluates complementarity over a fixed diverse pool.
-
   - from: eoh
     to: autoport
     type: adapts
@@ -216,7 +207,6 @@ relations:
     description: >-
       MTHS generalizes within-task heuristic evolution into a cross-task hierarchy
       with shared metaheuristics and task-specific executable programs.
-
   - from: eoh
     to: beam
     type: generalizes
@@ -238,7 +228,6 @@ relations:
     description: >-
       LLM-SR searches discrete scientific programs with language-model priors,
       whereas LHS optimizes programs through a learned continuous latent manifold.
-
   - from: llm4ad-platform
     to: enhancing-cvrp
     type: adapts
@@ -260,7 +249,6 @@ relations:
     description: >-
       Beyond Algorithm Evolution makes the prompt strategy a co-evolving artifact
       alongside the optimization algorithm rather than a fixed search instruction.
-
   - from: codeevolve
     to: mutation-without-variation
     type: contrasts
@@ -376,7 +364,6 @@ relations:
     description: >-
       Strong Priors tests EoH-family search under richer initial algorithmic
       scaffolds and shows how prior structure changes the value of LLM evolution.
-
   - from: reevo
     to: calm
     type: extends
@@ -405,7 +392,6 @@ relations:
     description: >-
       MeEvo makes reflective reasoning heritable across generations and combines it
       with a separate natural-evolution population process.
-
   - from: calm
     to: ahd-agent
     type: contrasts
@@ -413,7 +399,6 @@ relations:
     description: >-
       CALM learns the proposal model from evolutionary rewards, whereas AHD Agent
       trains a multi-turn policy for deciding when to inspect, design, and evaluate.
-
   - from: mcts-ahd
     to: cogmcts
     type: extends
@@ -435,7 +420,6 @@ relations:
     description: >-
       E2OC moves multi-objective evolution from selecting whole heuristics to
       jointly designing interdependent operators inside a multi-objective solver.
-
   - from: funsearch
     to: llm-sr
     type: adapts
@@ -471,7 +455,6 @@ relations:
     description: >-
       Vesper studies the harness around coding agents as a primary design variable,
       showing how persistent branches and evaluation structure affect discovery.
-
   - from: eoh
     to: autosg
     type: generalizes
@@ -521,3 +504,332 @@ relations:
     description: >-
       CoupleEvo broadens EoH from one generated heuristic to cooperating heuristics
       for coupled optimization components.
+  - from: eoh
+    to: mles
+    type: adapts
+    dimension: design-object
+    description: >-
+      MLES explicitly uses an EoH-style evolutionary backbone, then adapts the
+      thought-code loop to executable control policies for visual environments.
+  - from: eoh
+    to: partevo
+    type: extends
+    dimension: search
+    description: >-
+      PartEvo directly retains EoH's thought-code representation while adding
+      feature-space niches and explicit search-budget allocation.
+  - from: funsearch
+    to: partevo
+    type: extends
+    dimension: search
+    description: >-
+      PartEvo replaces FunSearch's random-island diversity mechanism with
+      feature-based niche construction and niche-level resource allocation.
+  - from: reevo
+    to: partevo
+    type: extends
+    dimension: feedback
+    description: >-
+      PartEvo inherits and extends ReEvo's language-gradient feedback for
+      deciding which weaknesses should guide the next proposal.
+  - from: eoh
+    to: pathwise
+    type: extends
+    dimension: search
+    description: >-
+      PathWise extends EoH's population-based search with entailment-graph state,
+      planning actions, and structured interactions between candidate ideas.
+  - from: reevo
+    to: pathwise
+    type: extends
+    dimension: feedback
+    description: >-
+      PathWise replaces ReEvo's static single-level reflection with policy and
+      world-model critics whose feedback is stored in a structured graph memory.
+  - from: coupleevo
+    to: stable
+    type: concurrent-work
+    dimension: design-object
+    description: >-
+      CoupleEvo and STABLE address multicomponent coordination around the same
+      period, with CoupleEvo studying coupled heuristics and STABLE using semantic
+      bilevel component search; the accepted-version dates overlap the same line.
+  - from: e2oc
+    to: stable
+    type: generalizes
+    dimension: design-object
+    description: >-
+      STABLE generalizes E2OC's interdependent operator coordination to bilevel
+      design of broader multicomponent algorithm structures.
+  - from: reevo
+    to: lhs
+    type: contrasts
+    dimension: search
+    description: >-
+      LHS takes a continuous learned latent-manifold route for program search,
+      contrasting with ReEvo's discrete code mutations and verbal reflection.
+  - from: mcts-ahd
+    to: lhs
+    type: contrasts
+    dimension: search
+    description: >-
+      LHS replaces the tree-structured heuristic lineage used by MCTS-AHD with
+      latent-space optimization of executable programs.
+  - from: funsearch
+    to: behavesim
+    type: adapts
+    dimension: feedback
+    description: >-
+      BehaveSim adapts evolutionary program discovery with trajectory-level
+      behavior feedback, adding a diversity signal beyond FunSearch's scores.
+  - from: eoh-s
+    to: ast-evo
+    type: adapts
+    dimension: search
+    description: >-
+      AST-Evo modifies the variation operator inside EoH-S by combining AST
+      crossover or mutation with LLM repair; it does not change the set objective.
+  - from: aad-ft
+    to: ahd-agent
+    type: contrasts
+    dimension: feedback
+    description: >-
+      AHD Agent uses an explicit multi-turn tool policy, contrasting with AAD
+      Fine-tuning's offline generator updates from candidate-quality preferences.
+  - from: eoh
+    to: knowledgefirst
+    type: contrasts
+    dimension: design-object
+    description: >-
+      Knowledge-first inverts EoH's thought-code balance: code becomes an
+      experiment for evolving domain knowledge rather than a co-equal search object.
+  - from: alphaevolve
+    to: dgm
+    type: concurrent-work
+    dimension: historical
+    description: >-
+      AlphaEvolve and DGM appeared in the same research period but pursue different
+      coding-agent goals: scientific algorithm discovery versus self-modifying agents.
+  - from: or-survey
+    to: qp-adapt
+    type: contextualizes
+    dimension: scope
+    description: >-
+      The OR survey provides context for the VVenC study's LLM-generated
+      rate-distortion heuristics in a production video encoder.
+  - from: alphaevolve
+    to: domain-heuristics
+    type: contextualizes
+    dimension: scope
+    description: >-
+      The planning study is a neighboring OpenEvolve route that evolves MAP-Elites
+      C++ heuristics for transfer across symbolic-planning domains.
+  - from: ahd-survey
+    to: successor-heuristics
+    type: contextualizes
+    dimension: design-object
+    description: >-
+      The AHD survey provides context for Successor-Generator's problem-level
+      LLM-synthesized heuristic and planner integration.
+  - from: reevo
+    to: trajevo
+    type: contextualizes
+    dimension: feedback
+    description: >-
+      TrajEvo is a neighboring LLM-plus-evolution route for trajectory prediction;
+      its cross-generation sampling and statistics feedback are task-specific.
+  - from: funsearch
+    to: mech-design
+    type: adapts
+    dimension: scope
+    description: >-
+      The mechanism-design framework uses FunSearch-style evolution for allocation
+      rules and adds strategy-proofness repair for a new design domain.
+  - from: eoh
+    to: autopbo
+    type: contrasts
+    dimension: design-object
+    description: >-
+      AutoPBO explicitly contrasts direct EoH-style generation with multi-agent
+      optimization of an existing PBO solver and its local-search components.
+  - from: funsearch
+    to: feynman-funsearch
+    type: adapts
+    dimension: scope
+    description: >-
+      This work adapts FunSearch executable evolution to priority-function discovery
+      for Feynman integral reduction.
+  - from: alphaevolve
+    to: code-generators
+    type: adapts
+    dimension: scope
+    description: >-
+      The code-generator study transfers the FunSearch/AlphaEvolve program-evolution
+      pattern to web caching and congestion-control policies.
+  - from: reevo
+    to: or-agent
+    type: extends
+    dimension: search
+    description: >-
+      OR-Agent extends ReEvo's verbal gradients and reflection with a structured
+      research tree, multi-agent search, and backtracking.
+  - from: alphaevolve
+    to: algo-dev
+    type: adapts
+    dimension: scope
+    description: >-
+      The tensor-network case study adapts OpenEvolve-style executable evolution to
+      contraction-order design and compares several coding-agent systems.
+  - from: ahd-survey
+    to: geneplan
+    type: contextualizes
+    dimension: scope
+    description: >-
+      The AHD survey provides context for GenePlan's executable generalized-PDDL
+      planner synthesis.
+  - from: eoh
+    to: participatory-rules
+    type: adapts
+    dimension: scope
+    description: >-
+      The participatory-budgeting framework adapts LLM-guided evolution to allocation
+      rules while evaluating both utility and fairness.
+  - from: alphaevolve
+    to: pattern-gen
+    type: adapts
+    dimension: design-object
+    description: >-
+      OpenEvolve-style executable evolution is transferred from heuristics to
+      programs that generate pattern collections for classical planning.
+  - from: alphaevolve
+    to: magellan
+    type: adapts
+    dimension: scope
+    description: >-
+      Magellan applies the AlphaEvolve coding-agent loop directly to LLVM and XLA
+      compiler optimization heuristics.
+  - from: meoh
+    to: pareto-heuristics
+    type: extends
+    dimension: search
+    description: >-
+      The Pareto-grid method extends MEoH's multi-objective heuristic design with
+      Pareto-front grids, runtime awareness, and structural diversity.
+  - from: eoh
+    to: exp-reflect
+    type: extends
+    dimension: feedback
+    description: >-
+      EvoPH extends EoH's fixed prompting by co-evolving prompts and heuristics from
+      execution experience.
+  - from: mcts-ahd
+    to: memory-tree
+    type: extends
+    dimension: feedback
+    description: >-
+      MEMOIR extends tree-based AHD with branch-local and global memory for
+      transferring useful discoveries across search branches.
+  - from: or-survey
+    to: macro-order
+    type: contextualizes
+    dimension: design-object
+    description: >-
+      The OR survey provides context for Order Matters' proxy-guided evolution of
+      macro-placement ordering policies.
+  - from: reevo
+    to: revel
+    type: extends
+    dimension: feedback
+    description: >-
+      ReVEL extends reflective heuristic evolution with behavior-aware, group-wise,
+      multi-turn performance feedback.
+  - from: eoh
+    to: llm-nas
+    type: contextualizes
+    dimension: design-object
+    description: >-
+      UH-NAS is a neighboring LLM-evolution route for hardware-aware neural
+      architecture co-design, rather than a direct EoH extension.
+  - from: orlm
+    to: evooptigraph
+    type: contrasts
+    dimension: feedback
+    description: >-
+      EvoOptiGraph takes a weakness-driven graph co-evolution route, contrasting
+      with ORLM's learned model-generation framework and fixed training distribution.
+  - from: optibench
+    to: frontieror
+    type: generalizes
+    dimension: scope
+    description: >-
+      FrontierOR generalizes optimization-modeling evaluation to large-scale,
+      structurally complex algorithm-design tasks and test-time evolution.
+  - from: reevo
+    to: scoe
+    type: generalizes
+    dimension: design-object
+    description: >-
+      SCOE builds on ReEvo's reflective evolution while expanding the artifact from
+      one heuristic to a cooperative operator ensemble.
+  - from: eoh
+    to: vrpagent
+    type: adapts
+    dimension: design-object
+    description: >-
+      VRPAgent adapts LLM-guided search to discover VRP-specific destroy and repair
+      operators within a fixed routing solver backbone.
+  - from: reevo
+    to: dhfsp-evo
+    type: extends
+    dimension: search
+    description: >-
+      The multi-island dispatching-rule method extends ReEvo with personalized
+      islands, semantic reflection, and offline/online evolution stages.
+  - from: ahd-survey
+    to: pace
+    type: contextualizes
+    dimension: design-object
+    description: >-
+      The AHD survey provides context for PACE's primitive-level representation and
+      its attempt to preserve reusable code during executable program evolution.
+  - from: eoh
+    to: ahd-survey
+    type: contextualizes
+    dimension: historical
+    description: >-
+      This survey places EoH among the documented LLM-based algorithm-design methods.
+  - from: eoh
+    to: or-survey
+    type: contextualizes
+    dimension: historical
+    description: >-
+      This OR survey contextualizes EoH within a broader review of LLM-assisted
+      optimization and algorithm design.
+  - from: llm-optimization-survey
+    to: eoh
+    type: contextualizes
+    dimension: historical
+    description: >-
+      This overview cites EoH while surveying the intersection of language models
+      and optimization rather than proposing an EoH-derived method.
+  - from: eoh
+    to: cuda-feedback
+    type: contextualizes
+    dimension: feedback
+    description: >-
+      The CUDA feedback-to-plan study cites EoH as adjacent evolutionary context;
+      its contribution is attribution analysis rather than EoH inheritance.
+  - from: llm-optimization-survey
+    to: pathplan-llm
+    type: contextualizes
+    dimension: scope
+    description: >-
+      The optimization overview provides context for PathPlan-LLM's natural-language
+      formulation, solution generation, and iterative route verification.
+  - from: eoh
+    to: epb-nco
+    type: contextualizes
+    dimension: design-object
+    description: >-
+      The programmatic-bottleneck work cites EoH while evolving explanatory programs,
+      a neighboring use of LLM evolution rather than solver design.

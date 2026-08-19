@@ -36,6 +36,13 @@
         "use_when": "The link reveals a concrete trade-off in design, search, or feedback.",
         "avoid_when": "The earlier paper is merely a benchmark baseline.",
         "direction": "directed"
+      },
+      "contextualizes": {
+        "label": "Contextualizes",
+        "description": "A survey, benchmark, or adjacent paper places an AHD method in a broader research context.",
+        "use_when": "The source has a documented citation or synthesis relationship but no method inheritance claim.",
+        "avoid_when": "The papers have a direct method extension, adaptation, or concrete alternative path.",
+        "direction": "directed"
       }
     },
     "dimensions": {
@@ -324,6 +331,62 @@
       "website": "https://www.nvidia.com/",
       "accent": "#4f7728"
     },
+    "carnegie-mellon": {
+      "name": "Carnegie Mellon University",
+      "short_name": "CMU",
+      "initials": "CMU",
+      "website": "https://www.cmu.edu/",
+      "accent": "#c41230"
+    },
+    "microsoft": {
+      "name": "Microsoft Research",
+      "short_name": "Microsoft",
+      "initials": "MSR",
+      "website": "https://www.microsoft.com/en-us/research/",
+      "accent": "#737373"
+    },
+    "tencent": {
+      "name": "Tencent",
+      "short_name": "Tencent",
+      "initials": "TCE",
+      "website": "https://www.tencent.com/",
+      "accent": "#2b6cb0"
+    },
+    "university-california": {
+      "name": "University of California",
+      "short_name": "UC",
+      "initials": "UC",
+      "website": "https://www.universityofcalifornia.edu/",
+      "accent": "#003b5c"
+    },
+    "university-cambridge": {
+      "name": "University of Cambridge",
+      "short_name": "Cambridge",
+      "initials": "CAM",
+      "website": "https://www.cam.ac.uk/",
+      "accent": "#a3c1ad"
+    },
+    "chinese-academy-sciences": {
+      "name": "Chinese Academy of Sciences",
+      "short_name": "CAS",
+      "initials": "CAS",
+      "website": "https://english.cas.cn/",
+      "accent": "#174a7e"
+    },
+    "fudan": {
+      "name": "Fudan University",
+      "short_name": "Fudan",
+      "initials": "FDU",
+      "website": "https://www.fudan.edu.cn/en/",
+      "accent": "#1f4e79"
+    },
+    "university-chinese-academy-sciences": {
+      "name": "University of Chinese Academy of Sciences",
+      "short_name": "UCAS",
+      "initials": "UCAS",
+      "website": "https://english.ucas.ac.cn/",
+      "accent": "#3d6b8c"
+    },
     "university-sydney": {
       "name": "University of Sydney",
       "short_name": "Sydney",
@@ -589,6 +652,20 @@
       "initials": "THU",
       "website": "https://www.tsinghua.edu.cn/en/",
       "accent": "#6b1e3f"
+    },
+    "university-british-columbia": {
+      "name": "University of British Columbia",
+      "short_name": "UBC",
+      "initials": "UBC",
+      "website": "https://www.ubc.ca/",
+      "accent": "#002145"
+    },
+    "vector-institute": {
+      "name": "Vector Institute",
+      "short_name": "Vector Institute",
+      "initials": "VEC",
+      "website": "https://vectorinstitute.ai/",
+      "accent": "#3b6ea5"
     },
     "imdea-networks": {
       "name": "IMDEA Networks Institute",
@@ -1227,6 +1304,335 @@
       "type": "generalizes",
       "dimension": "design-object",
       "description": "CoupleEvo broadens EoH from one generated heuristic to cooperating heuristics for coupled optimization components."
+    },
+    {
+      "from": "eoh",
+      "to": "mles",
+      "type": "adapts",
+      "dimension": "design-object",
+      "description": "MLES explicitly uses an EoH-style evolutionary backbone, then adapts the thought-code loop to executable control policies for visual environments."
+    },
+    {
+      "from": "eoh",
+      "to": "partevo",
+      "type": "extends",
+      "dimension": "search",
+      "description": "PartEvo directly retains EoH's thought-code representation while adding feature-space niches and explicit search-budget allocation."
+    },
+    {
+      "from": "funsearch",
+      "to": "partevo",
+      "type": "extends",
+      "dimension": "search",
+      "description": "PartEvo replaces FunSearch's random-island diversity mechanism with feature-based niche construction and niche-level resource allocation."
+    },
+    {
+      "from": "reevo",
+      "to": "partevo",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "PartEvo inherits and extends ReEvo's language-gradient feedback for deciding which weaknesses should guide the next proposal."
+    },
+    {
+      "from": "eoh",
+      "to": "pathwise",
+      "type": "extends",
+      "dimension": "search",
+      "description": "PathWise extends EoH's population-based search with entailment-graph state, planning actions, and structured interactions between candidate ideas."
+    },
+    {
+      "from": "reevo",
+      "to": "pathwise",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "PathWise replaces ReEvo's static single-level reflection with policy and world-model critics whose feedback is stored in a structured graph memory."
+    },
+    {
+      "from": "coupleevo",
+      "to": "stable",
+      "type": "concurrent-work",
+      "dimension": "design-object",
+      "description": "CoupleEvo and STABLE address multicomponent coordination around the same period, with CoupleEvo studying coupled heuristics and STABLE using semantic bilevel component search; the accepted-version dates overlap the same line."
+    },
+    {
+      "from": "e2oc",
+      "to": "stable",
+      "type": "generalizes",
+      "dimension": "design-object",
+      "description": "STABLE generalizes E2OC's interdependent operator coordination to bilevel design of broader multicomponent algorithm structures."
+    },
+    {
+      "from": "reevo",
+      "to": "lhs",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "LHS takes a continuous learned latent-manifold route for program search, contrasting with ReEvo's discrete code mutations and verbal reflection."
+    },
+    {
+      "from": "mcts-ahd",
+      "to": "lhs",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "LHS replaces the tree-structured heuristic lineage used by MCTS-AHD with latent-space optimization of executable programs."
+    },
+    {
+      "from": "funsearch",
+      "to": "behavesim",
+      "type": "adapts",
+      "dimension": "feedback",
+      "description": "BehaveSim adapts evolutionary program discovery with trajectory-level behavior feedback, adding a diversity signal beyond FunSearch's scores."
+    },
+    {
+      "from": "eoh-s",
+      "to": "ast-evo",
+      "type": "adapts",
+      "dimension": "search",
+      "description": "AST-Evo modifies the variation operator inside EoH-S by combining AST crossover or mutation with LLM repair; it does not change the set objective."
+    },
+    {
+      "from": "aad-ft",
+      "to": "ahd-agent",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "AHD Agent uses an explicit multi-turn tool policy, contrasting with AAD Fine-tuning's offline generator updates from candidate-quality preferences."
+    },
+    {
+      "from": "eoh",
+      "to": "knowledgefirst",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "Knowledge-first inverts EoH's thought-code balance: code becomes an experiment for evolving domain knowledge rather than a co-equal search object."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "dgm",
+      "type": "concurrent-work",
+      "dimension": "historical",
+      "description": "AlphaEvolve and DGM appeared in the same research period but pursue different coding-agent goals: scientific algorithm discovery versus self-modifying agents."
+    },
+    {
+      "from": "or-survey",
+      "to": "qp-adapt",
+      "type": "contextualizes",
+      "dimension": "scope",
+      "description": "The OR survey provides context for the VVenC study's LLM-generated rate-distortion heuristics in a production video encoder."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "domain-heuristics",
+      "type": "contextualizes",
+      "dimension": "scope",
+      "description": "The planning study is a neighboring OpenEvolve route that evolves MAP-Elites C++ heuristics for transfer across symbolic-planning domains."
+    },
+    {
+      "from": "ahd-survey",
+      "to": "successor-heuristics",
+      "type": "contextualizes",
+      "dimension": "design-object",
+      "description": "The AHD survey provides context for Successor-Generator's problem-level LLM-synthesized heuristic and planner integration."
+    },
+    {
+      "from": "reevo",
+      "to": "trajevo",
+      "type": "contextualizes",
+      "dimension": "feedback",
+      "description": "TrajEvo is a neighboring LLM-plus-evolution route for trajectory prediction; its cross-generation sampling and statistics feedback are task-specific."
+    },
+    {
+      "from": "funsearch",
+      "to": "mech-design",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "The mechanism-design framework uses FunSearch-style evolution for allocation rules and adds strategy-proofness repair for a new design domain."
+    },
+    {
+      "from": "eoh",
+      "to": "autopbo",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "AutoPBO explicitly contrasts direct EoH-style generation with multi-agent optimization of an existing PBO solver and its local-search components."
+    },
+    {
+      "from": "funsearch",
+      "to": "feynman-funsearch",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "This work adapts FunSearch executable evolution to priority-function discovery for Feynman integral reduction."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "code-generators",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "The code-generator study transfers the FunSearch/AlphaEvolve program-evolution pattern to web caching and congestion-control policies."
+    },
+    {
+      "from": "reevo",
+      "to": "or-agent",
+      "type": "extends",
+      "dimension": "search",
+      "description": "OR-Agent extends ReEvo's verbal gradients and reflection with a structured research tree, multi-agent search, and backtracking."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "algo-dev",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "The tensor-network case study adapts OpenEvolve-style executable evolution to contraction-order design and compares several coding-agent systems."
+    },
+    {
+      "from": "ahd-survey",
+      "to": "geneplan",
+      "type": "contextualizes",
+      "dimension": "scope",
+      "description": "The AHD survey provides context for GenePlan's executable generalized-PDDL planner synthesis."
+    },
+    {
+      "from": "eoh",
+      "to": "participatory-rules",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "The participatory-budgeting framework adapts LLM-guided evolution to allocation rules while evaluating both utility and fairness."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "pattern-gen",
+      "type": "adapts",
+      "dimension": "design-object",
+      "description": "OpenEvolve-style executable evolution is transferred from heuristics to programs that generate pattern collections for classical planning."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "magellan",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "Magellan applies the AlphaEvolve coding-agent loop directly to LLVM and XLA compiler optimization heuristics."
+    },
+    {
+      "from": "meoh",
+      "to": "pareto-heuristics",
+      "type": "extends",
+      "dimension": "search",
+      "description": "The Pareto-grid method extends MEoH's multi-objective heuristic design with Pareto-front grids, runtime awareness, and structural diversity."
+    },
+    {
+      "from": "eoh",
+      "to": "exp-reflect",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "EvoPH extends EoH's fixed prompting by co-evolving prompts and heuristics from execution experience."
+    },
+    {
+      "from": "mcts-ahd",
+      "to": "memory-tree",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "MEMOIR extends tree-based AHD with branch-local and global memory for transferring useful discoveries across search branches."
+    },
+    {
+      "from": "or-survey",
+      "to": "macro-order",
+      "type": "contextualizes",
+      "dimension": "design-object",
+      "description": "The OR survey provides context for Order Matters' proxy-guided evolution of macro-placement ordering policies."
+    },
+    {
+      "from": "reevo",
+      "to": "revel",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "ReVEL extends reflective heuristic evolution with behavior-aware, group-wise, multi-turn performance feedback."
+    },
+    {
+      "from": "eoh",
+      "to": "llm-nas",
+      "type": "contextualizes",
+      "dimension": "design-object",
+      "description": "UH-NAS is a neighboring LLM-evolution route for hardware-aware neural architecture co-design, rather than a direct EoH extension."
+    },
+    {
+      "from": "orlm",
+      "to": "evooptigraph",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "EvoOptiGraph takes a weakness-driven graph co-evolution route, contrasting with ORLM's learned model-generation framework and fixed training distribution."
+    },
+    {
+      "from": "optibench",
+      "to": "frontieror",
+      "type": "generalizes",
+      "dimension": "scope",
+      "description": "FrontierOR generalizes optimization-modeling evaluation to large-scale, structurally complex algorithm-design tasks and test-time evolution."
+    },
+    {
+      "from": "reevo",
+      "to": "scoe",
+      "type": "generalizes",
+      "dimension": "design-object",
+      "description": "SCOE builds on ReEvo's reflective evolution while expanding the artifact from one heuristic to a cooperative operator ensemble."
+    },
+    {
+      "from": "eoh",
+      "to": "vrpagent",
+      "type": "adapts",
+      "dimension": "design-object",
+      "description": "VRPAgent adapts LLM-guided search to discover VRP-specific destroy and repair operators within a fixed routing solver backbone."
+    },
+    {
+      "from": "reevo",
+      "to": "dhfsp-evo",
+      "type": "extends",
+      "dimension": "search",
+      "description": "The multi-island dispatching-rule method extends ReEvo with personalized islands, semantic reflection, and offline/online evolution stages."
+    },
+    {
+      "from": "ahd-survey",
+      "to": "pace",
+      "type": "contextualizes",
+      "dimension": "design-object",
+      "description": "The AHD survey provides context for PACE's primitive-level representation and its attempt to preserve reusable code during executable program evolution."
+    },
+    {
+      "from": "eoh",
+      "to": "ahd-survey",
+      "type": "contextualizes",
+      "dimension": "historical",
+      "description": "This survey places EoH among the documented LLM-based algorithm-design methods."
+    },
+    {
+      "from": "eoh",
+      "to": "or-survey",
+      "type": "contextualizes",
+      "dimension": "historical",
+      "description": "This OR survey contextualizes EoH within a broader review of LLM-assisted optimization and algorithm design."
+    },
+    {
+      "from": "llm-optimization-survey",
+      "to": "eoh",
+      "type": "contextualizes",
+      "dimension": "historical",
+      "description": "This overview cites EoH while surveying the intersection of language models and optimization rather than proposing an EoH-derived method."
+    },
+    {
+      "from": "eoh",
+      "to": "cuda-feedback",
+      "type": "contextualizes",
+      "dimension": "feedback",
+      "description": "The CUDA feedback-to-plan study cites EoH as adjacent evolutionary context; its contribution is attribution analysis rather than EoH inheritance."
+    },
+    {
+      "from": "llm-optimization-survey",
+      "to": "pathplan-llm",
+      "type": "contextualizes",
+      "dimension": "scope",
+      "description": "The optimization overview provides context for PathPlan-LLM's natural-language formulation, solution generation, and iterative route verification."
+    },
+    {
+      "from": "eoh",
+      "to": "epb-nco",
+      "type": "contextualizes",
+      "dimension": "design-object",
+      "description": "The programmatic-bottleneck work cites EoH while evolving explanatory programs, a neighboring use of LLM evolution rather than solver design."
     }
   ],
   "papers": [
@@ -1305,6 +1711,34 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Large language models can propose plausible but incorrect ideas. FunSearch addresses that weakness by coupling creative program proposals to an evaluator that decides whether a candidate actually works. The result is an evolutionary procedure that searches for executable programs instead of asking an LLM to state a final answer directly.</p>\n<p><img src=\"paper-assets/funsearch/images/paper-cover.jpg\" alt=\"FunSearch paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Romera-Paredes et al., FunSearch; see the original <a href=\"https://www.nature.com/articles/s41586-023-06924-6\">Nature article</a>.</em></p>\n<h2>Core method</h2>\n<p>FunSearch starts with a program skeleton and evolves the part containing the problem-specific logic. A frozen pretrained LLM proposes mutations using best-performing programs as examples. The evaluator executes each candidate and returns an objective score, allowing an evolutionary database to preserve high-performing discoveries and revisit promising branches.</p>\n<p>The paper demonstrates the approach on the cap set problem in extremal combinatorics and on online bin packing. The latter is particularly relevant to LLM4AD because the output is an interpretable heuristic program rather than a raw solution vector.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A reusable LLM-plus-evaluator evolutionary procedure for program search.</li>\n<li>Demonstrations that search can produce new mathematical constructions beyond the model's nominal answer.</li>\n<li>An algorithmic application that discovers improved online bin-packing heuristics.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The evaluator gives the loop a verifiable feedback channel and the program representation makes discoveries inspectable. The approach still depends on a good skeleton, an efficient evaluator, and a search budget. It also leaves open how to move from a single task-specific program to a transferable algorithm system.</p>\n<h2>Connections</h2>\n<p>The atlas places FunSearch beside AEL as a late-2023 concurrent work. Later systems can be explored through the <code>system</code>, <code>search</code>, and <code>feedback</code> filters.</p>\n"
     },
     {
+      "id": "llm-optimization-survey",
+      "short_title": "LLM-Opt Survey",
+      "title": "When Large Language Model Meets Optimization",
+      "authors": [
+        "Sen Huang",
+        "Kaixiang Yang",
+        "Sheng Qi",
+        "Rui Wang"
+      ],
+      "year": 2024,
+      "date": "2024-05-01",
+      "venue": "Swarm and Evolutionary Computation",
+      "paper_url": "https://arxiv.org/pdf/2405.10098",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "An overview of how language models can define, search, and improve optimization models and algorithms.",
+      "body_html": "<h2>Why it matters</h2>\n<p>The overview connects language-model reasoning with optimization modeling, search, evaluation, and human oversight.</p>\n<h2>Core method</h2>\n<p>This survey organizes language-model use in optimization modeling, solver construction, heuristic search, and evaluation. It is included as background for the atlas and should not be read as a new AHD method.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A conceptual bridge between language models and optimization workflows.</li>\n<li>Discussion of modeling, search, evaluation, and human oversight.</li>\n<li>Terminology for positioning later automatic-design systems.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>This is an overview rather than a new AHD system. Its claims should be read as a snapshot of the field at publication time.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
       "id": "eoh",
       "short_title": "EoH",
       "title": "Evolution of Heuristics: Towards Efficient Automatic Algorithm Design Using Large Language Model",
@@ -1375,6 +1809,45 @@
       "featured": false,
       "summary": "This benchmark isolates the contribution of evolutionary search in LLM-based automatic heuristic design across methods, models, and tasks.",
       "body_html": "<h2>Why it matters</h2>\n<p>Early LLM-based evolutionary program-search papers used different tasks, models, budgets, and baselines, so higher headline scores did not establish whether evolution itself helped. This study creates a common experimental frame and asks which search components survive controlled comparison.</p>\n<h2>Core method</h2>\n<p>The benchmark reimplements four LLM-based EPS methods plus a simple baseline, evaluates four AHD problems, spans nine open and closed LLMs, and repeats each setting five times. Performance is aggregated relative to domain baselines, while separate studies examine evolutionary operators, prompt strategies, model choice, query budget, and initialization.</p>\n<p>The main result is nuanced: evolutionary search generally matters, but method rankings vary with the LLM and problem, and simple components can explain part of the reported progress. All implementations and model interfaces are released in one repository.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A cost-conscious, repeated benchmark across methods, tasks, and nine LLMs.</li>\n<li>Component analyses that distinguish the value of search from the value of the underlying model and prompt.</li>\n<li>A unified open implementation for subsequent EPS research.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The controlled matrix is much more credible than isolated method results and exposes sensitivity hidden by single-model evaluations. Its four tasks still cover a narrow part of algorithm design, and rapidly changing models can make exact rankings stale. Aggregation may also hide task-specific failure modes.</p>\n<h2>What to improve</h2>\n<p>Extend the suite to full algorithms, coupled components, and modeling agents; record prompt tokens, wall time, and failed executions; and maintain versioned leaderboards rather than treating one model snapshot as permanent evidence.</p>\n<h2>Connections</h2>\n<p>This is an evaluation paper rather than another search method. It directly stress-tests FunSearch-style and ReEvo-style EPS claims and provides the fairest basis in the atlas for comparing their search mechanisms.</p>\n"
+    },
+    {
+      "id": "ahd-survey",
+      "short_title": "Survey-AHD",
+      "title": "A Systematic Survey on Large Language Models for Algorithm Design",
+      "authors": [
+        "Fei Liu",
+        "Yiming Yao",
+        "Ping Guo",
+        "Zhiyuan Yang",
+        "Zhe Zhao",
+        "Xi Lin",
+        "Xialiang Tong",
+        "Mao, Kun",
+        "Zhichao Lu",
+        "Zhenkun Wang",
+        "Mingxuan Yuan",
+        "Qingfu Zhang"
+      ],
+      "year": 2024,
+      "date": "2024-10-01",
+      "venue": "arXiv (Cornell University)",
+      "paper_url": "https://arxiv.org/pdf/2410.14716",
+      "institutions": [
+        "cityu-hk",
+        "huawei-noahs-ark",
+        "sustech"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "A taxonomy and review of how large language models participate in automatic algorithm design.",
+      "body_html": "<h2>Why it matters</h2>\n<p>The survey is useful as a map of the field: it separates what is being designed, how candidates are searched, how feedback is supplied, and how methods transfer across tasks.</p>\n<h2>Core method</h2>\n<p>This survey classifies LLM-based algorithm design by representation, search, feedback, and generalization. It provides terminology and comparisons for the methods in this atlas, but does not introduce a new search algorithm.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A controlled vocabulary for LLM-based algorithm-design methods.</li>\n<li>A comparison of representations, search strategies, feedback, and transfer settings.</li>\n<li>Open questions that connect individual methods into a research agenda.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>As a survey, its value depends on coverage and categorization choices rather than a new benchmark result. The taxonomy should be revisited as agentic and multimodal methods develop.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     },
     {
       "id": "reevo",
@@ -1460,6 +1933,34 @@
       "featured": false,
       "summary": "LLM4AD packages search methods, design tasks, model interfaces, and a secure evaluation sandbox into one reusable platform.",
       "body_html": "<h2>Why it matters</h2>\n<p>Research systems for LLM-based algorithm design often mix search logic, prompts, evaluators, and task code. LLM4AD makes those parts explicit and reusable, lowering the cost of reproducing and comparing methods.</p>\n<h2>Core method</h2>\n<p>The platform exposes modular blocks for search, algorithm-design tasks, and LLM calls. A common sandbox evaluates executable candidates, while tutorials, examples, and a GUI make new task adapters easier to add.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A unified implementation interface for LLM-assisted algorithm design.</li>\n<li>Reusable search and task modules across optimization, machine learning, and scientific discovery.</li>\n<li>A secure evaluation sandbox and practical support material.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>The platform standardizes interfaces but does not solve budget allocation or evaluation noise by itself. Future extensions could add reproducible experiment manifests and native relation metadata for research atlases.</p>\n"
+    },
+    {
+      "id": "mech-design",
+      "short_title": "LLMRule",
+      "title": "An Interpretable Automated Mechanism Design Framework with Large Language Models",
+      "authors": [
+        "Jiayuan Liu",
+        "Mingyu Guo",
+        "Vincent Conitzer"
+      ],
+      "year": 2025,
+      "date": "2025-02-01",
+      "venue": "arXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2502.12203",
+      "institutions": [
+        "carnegie-mellon"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Mechanism design has long been a cornerstone of economic theory, with traditional approaches relying on mathematical derivations. Recently, automated approaches, including differentiable economics with neural networks, have emerged for designing payments and allocations.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Mechanism design has long been a cornerstone of economic theory, with traditional approaches relying on mathematical derivations. Recently, automated approaches, including differentiable economics with neural networks, have emerged for designing payments and allocations.</p>\n<h2>Core method</h2>\n<p>The framework evolves interpretable mechanism rules in a FunSearch-style program-search loop. Generated rules are evaluated against mechanism-design criteria and repaired when they violate strategy-proofness or other formal constraints.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     },
     {
       "id": "poh",
@@ -2160,6 +2661,69 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Generic prompts often give vague search directions, and evaluating semantically equivalent heuristics wastes computation. Hercules targets both problems with reusable abstractions and similarity-aware evaluation.</p>\n<h2>Core method</h2>\n<p>Core Abstraction Prompting extracts common components from strong elite heuristics and inserts them into later prompts. The framework then generates and evaluates candidates on combinatorial-optimization tasks while reducing redundant evaluations.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A prompt-level abstraction of elite heuristic structure.</li>\n<li>A more specific search signal for LLM-generated heuristics.</li>\n<li>An efficiency-oriented evaluation strategy for redundant candidates.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>The abstractions are tied to the observed elite population. It would be useful to study whether they remain valid under distribution shifts or when the design object changes.</p>\n"
     },
     {
+      "id": "autopbo",
+      "short_title": "AutoPBO",
+      "title": "AutoPBO: LLM-powered Optimization for Local Search PBO Solvers",
+      "authors": [
+        "Jinyuan Li",
+        "Yi Chu",
+        "Yiwen Sun",
+        "Mengchuan Zou",
+        "Shaowei Cai"
+      ],
+      "year": 2025,
+      "date": "2025-09-01",
+      "venue": "arXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2509.04007",
+      "institutions": [
+        "chinese-academy-sciences",
+        "fudan",
+        "university-chinese-academy-sciences"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Pseudo-Boolean Optimization (PBO) provides a powerful framework for modeling combinatorial problems through pseudo-Boolean (PB) constraints. Local search solvers have shown excellent performance in PBO solving, and their efficiency is highly dependent on their internal heuristics to guide the search.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Pseudo-Boolean Optimization (PBO) provides a powerful framework for modeling combinatorial problems through pseudo-Boolean (PB) constraints. Local search solvers have shown excellent performance in PBO solving, and their efficiency is highly dependent on their internal heuristics to guide the search.</p>\n<h2>Core method</h2>\n<p>AutoPBO starts from an existing pseudo-Boolean local-search solver rather than generating a complete solver from scratch. Multiple LLM roles propose and revise solver components, while four benchmark families provide the objective signal used to keep improvements.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "exp-reflect",
+      "short_title": "Exp-CoEvo",
+      "title": "Experience-Guided Reflective Co-Evolution of Prompts and Heuristics for Automatic Algorithm Design",
+      "authors": [
+        "Yihong Liu",
+        "Junyi Li",
+        "W. Zhao",
+        "Hongyu Lu",
+        "Ji-Rong Wen"
+      ],
+      "year": 2025,
+      "date": "2025-09-01",
+      "venue": "arXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2509.24509",
+      "institutions": [
+        "cityu-hk",
+        "tencent"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Combinatorial optimization problems are traditionally tackled with handcrafted heuristic algorithms, which demand extensive domain expertise and significant implementation effort. Recent progress has highlighted the potential of automatic heuristics design powered by large language models (LLMs), enabling the automatic generation and refinement of heuristics.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Combinatorial optimization problems are traditionally tackled with handcrafted heuristic algorithms, which demand extensive domain expertise and significant implementation effort. Recent progress has highlighted the potential of automatic heuristics design powered by large language models (LLMs), enabling the automatic generation and refinement of heuristics.</p>\n<h2>Core method</h2>\n<p>Experience-Guided Reflective Co-Evolution updates both the heuristic population and the prompt population. Execution outcomes become experience records that steer later prompt and code revisions instead of treating the generator as fixed.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
       "id": "shinkaevolve",
       "short_title": "ShinkaEvolve",
       "title": "ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution",
@@ -2188,6 +2752,73 @@
       "featured": false,
       "summary": "ShinkaEvolve is an open-source program-evolution system designed for open-ended and sample-efficient algorithm discovery.",
       "body_html": "<h2>Why it matters</h2>\n<p>Program evolution can spend most of its budget resampling similar parents, generating duplicate edits, or repeatedly choosing an unproductive model. ShinkaEvolve focuses on those system-level efficiency problems and provides an open implementation spanning very different discovery tasks.</p>\n<h2>Core method</h2>\n<p>Parent sampling balances exploitation of elite programs with exploration of the archive. Code-novelty rejection resamples proposals too similar to existing candidates before expensive evaluation. A bandit controller allocates generation calls across an ensemble of LLMs based on their observed utility. Immutable-code protection constrains edits to the intended region.</p>\n<p>The paper evaluates circle packing, agent design, competitive programming, and mixture-of-experts loss discovery, emphasizing samples required to reach a result as well as final performance.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Three reusable controls for parent choice, duplicate rejection, and model allocation.</li>\n<li>A task-general open-source evolution harness.</li>\n<li>Evidence across mathematical, agentic, programming, and ML discovery tasks.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The system is practical, inspectable, and substantially easier to reproduce than closed discovery platforms. Source-code novelty is an imperfect proxy for behavioral novelty, and bandit rewards are non-stationary as the archive evolves. Cross-task results use different evaluators, limiting aggregate claims.</p>\n<h2>What to improve</h2>\n<p>Replace or augment textual novelty with execution behavior, include evaluator wall time in model allocation, and standardize cost reporting against OpenEvolve and other open harnesses.</p>\n<h2>Connections</h2>\n<p>ShinkaEvolve is a system-level successor to FunSearch-style program evolution and a direct open alternative to OpenEvolve. Harness Engineering studies complementary execution-layer choices around such systems.</p>\n"
+    },
+    {
+      "id": "code-generators",
+      "short_title": "Code Generators",
+      "title": "Man-Made Heuristics Are Dead. Long Live Code Generators!",
+      "authors": [
+        "Rohit Dwivedula",
+        "Divyanshu Saxena",
+        "Aditya Akella",
+        "Swarat Chaudhuri",
+        "Daehyeok Kim"
+      ],
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "ACM Workshop on Hot Topics in Networks",
+      "paper_url": "https://arxiv.org/pdf/2510.08803",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Policy design for various systems controllers has conventionally been a manual process, with domain experts carefully tailoring heuristics for the specific instance in which the policy will be deployed. In this paper, we re-imagine policy design via a novel automated search technique fueled by recent advances in generative models, specifically Large Language Model (LLM)-driven code generation.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Policy design for various systems controllers has conventionally been a manual process, with domain experts carefully tailoring heuristics for the specific instance in which the policy will be deployed. In this paper, we re-imagine policy design via a novel automated search technique fueled by recent advances in generative models, specifically Large Language Model (LLM)-driven code generation.</p>\n<h2>Core method</h2>\n<p>This work evolves executable policies for systems problems such as web caching and congestion control. The LLM proposes code, an evaluator measures the policy in the target simulator, and evolutionary selection preserves policies that improve the operational objective.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "vrpagent",
+      "short_title": "VRPAgent",
+      "title": "VRPAgent: LLM-Driven Discovery of Heuristic Operators for Vehicle Routing Problems",
+      "authors": [
+        "André Hottung",
+        "Federico Berto",
+        "Chuanbo Hua",
+        "Nayeli Gast Zepeda",
+        "Daniel Wetzel",
+        "Michael Römer",
+        "Haoran Ye",
+        "Davide Zago",
+        "Michael Poli",
+        "Stefano Massaroli",
+        "Jinkyoo Park",
+        "Kevin Tierney"
+      ],
+      "year": 2025,
+      "date": "2025-10-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2510.07073",
+      "institutions": [
+        "pku",
+        "stanford"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Designing high-performing heuristics for vehicle routing problems (VRPs) is a complex task that requires both intuition and deep domain knowledge. Large language model (LLM)-based code generation has recently shown promise across many domains, but it still falls short of producing heuristics that rival those crafted by human experts.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Designing high-performing heuristics for vehicle routing problems (VRPs) is a complex task that requires both intuition and deep domain knowledge. Large language model (LLM)-based code generation has recently shown promise across many domains, but it still falls short of producing heuristics that rival those crafted by human experts.</p>\n<h2>Core method</h2>\n<p>VRPAgent keeps a generic routing metaheuristic fixed and uses an LLM to generate problem-specific destroy and repair operators. A genetic search embeds, tests, and selects those operators across CVRP, VRPTW, and prize-collecting VRP.</p>\n<h2>Contributions</h2>\n<ul>\n<li>LLM-generated VRP operators inside a fixed metaheuristic.</li>\n<li>Genetic selection across multiple routing variants.</li>\n<li>Single-core comparisons with handcrafted and learning-based operators.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     },
     {
       "id": "codeevolve",
@@ -2316,6 +2947,100 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Most algorithm-evolution systems treat the prompt as fixed infrastructure. This work makes prompt design part of the evolving object, exposing a second source of adaptation when the optimization landscape is uncertain.</p>\n<h2>Core method</h2>\n<p>One LLM alternates between improving swarm-intelligence algorithm programs and proposing prompt templates. A prompt-evaluation procedure measures how well a template guides later proposals, while the algorithm population is tested on several NP problems.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Joint evolution of algorithm code and prompt templates.</li>\n<li>A simple evaluation signal for comparing prompt strategies.</li>\n<li>A swarm-intelligence view of LLM-based automatic algorithm design.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>The framework inherits the cost and instability of two coupled evolutionary loops. Better credit assignment could separate gains caused by prompt changes from gains caused by code changes.</p>\n"
     },
     {
+      "id": "geneplan",
+      "short_title": "GenePlan",
+      "title": "GenePlan: Evolving Better Generalized PDDL Plans Using Large Language Models",
+      "authors": [
+        "Andrew Murray",
+        "Danial Dervovic",
+        "Alberto Pozanco",
+        "Michael Cashmore"
+      ],
+      "year": 2026,
+      "date": "2026-01-01",
+      "venue": "Proceedings of the International Conference on Automated Planning and Scheduling",
+      "paper_url": "https://ojs.aaai.org/index.php/ICAPS/article/download/42885/50445",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "We present GenePlan (GENeralized Evolutionary Planner), a novel framework that leverages large language model (LLM) assisted evolutionary algorithms to generate domain-dependent generalized planners for classical planning tasks described in PDDL. By casting generalized planning as an optimization problem, GenePlan iteratively evolves interpretable Python planners that minimize plan length across diverse problem instances.",
+      "body_html": "<h2>Why it matters</h2>\n<p>We present GenePlan (GENeralized Evolutionary Planner), a novel framework that leverages large language model (LLM) assisted evolutionary algorithms to generate domain-dependent generalized planners for classical planning tasks described in PDDL. By casting generalized planning as an optimization problem, GenePlan iteratively evolves interpretable Python planners that minimize plan length across diverse problem instances.</p>\n<h2>Core method</h2>\n<p>GenePlan evolves complete generalized PDDL planners as executable programs. Candidate planners are tested across planning instances and retained when they improve generalized planning behavior, extending program evolution beyond a single heuristic function.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "magellan",
+      "short_title": "Magellan",
+      "title": "Magellan: Autonomous Discovery of Novel Compiler Optimization Heuristics with AlphaEvolve",
+      "authors": [
+        "Hongzheng Chen",
+        "Alexander Novikov",
+        "N. Vu",
+        "Hanna Alam",
+        "Zhiru Zhang",
+        "Aiden Grossman",
+        "Mircea Trofin",
+        "Amir Yazdanbakhsh"
+      ],
+      "year": 2026,
+      "date": "2026-01-01",
+      "venue": "arXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2601.21096",
+      "institutions": [
+        "google-deepmind"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Modern compilers rely on hand-crafted heuristics to guide optimization passes. These human-designed rules often struggle to adapt to the complexity of modern software and hardware and lead to high maintenance burden.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Modern compilers rely on hand-crafted heuristics to guide optimization passes. These human-designed rules often struggle to adapt to the complexity of modern software and hardware and lead to high maintenance burden.</p>\n<h2>Core method</h2>\n<p>Magellan couples an LLM coding agent with evolutionary search and autotuning to synthesize compiler decision logic. Generated heuristics are compiled into LLVM/XLA pipelines and evaluated on macro-benchmarks such as inlining and register allocation.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "pareto-heuristics",
+      "short_title": "Pareto-Grid",
+      "title": "Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization",
+      "authors": [
+        "Ha Minh Hieu",
+        "Hung Phan",
+        "Tung Duy Doan",
+        "Tung Dao",
+        "Cong Dao Tran",
+        "Huynh Thi Thanh Binh"
+      ],
+      "year": 2026,
+      "date": "2026-01-01",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/download/41024/44985",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Multi-objective combinatorial optimization problems (MOCOP) frequently arise in practical applications that require the simultaneous optimization of conflicting objectives. Although traditional evolutionary algorithms can be effective, they typically depend on domain knowledge and repeated parameter tuning, limiting flexibility when applied to unseen MOCOP instances.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Multi-objective combinatorial optimization problems (MOCOP) frequently arise in practical applications that require the simultaneous optimization of conflicting objectives. Although traditional evolutionary algorithms can be effective, they typically depend on domain knowledge and repeated parameter tuning, limiting flexibility when applied to unseen MOCOP instances.</p>\n<h2>Core method</h2>\n<p>The method treats heuristic quality as a multi-objective search problem. A Pareto grid balances objective value with runtime and structural diversity, so selection does not collapse the population onto one expensive or redundant design.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
       "id": "dash",
       "short_title": "DASH",
       "title": "Rethinking LLM-Driven Heuristic Design: Generating Efficient and Specialized Solvers via Dynamics-Aware Optimization",
@@ -2415,6 +3140,64 @@
       "body_html": "<h2>Why it matters</h2>\n<p>A promising heuristic structure can be rejected because its constants are poorly calibrated, while tuning constants cannot rescue a weak structure. Treating the whole program as one discrete mutation entangles these two failure modes. TIDE separates structural evolution from parameter optimization while coordinating their budgets.</p>\n<h2>Core method</h2>\n<p>The outer loop evolves program logic across parallel islands. Tree Similarity Edit Distance measures structural rather than textual diversity and limits premature convergence. For each structure, an inner differential-mutation process calibrates numerical parameters before fitness comparison. A UCB scheduler learns which prompt operator deserves the next LLM query from its observed improvements.</p>\n<p>Experiments on combinatorial-optimization heuristics compare with EoH, ReEvo, and MCTS-AHD-style discrete evolution and ablate parameter tuning, structural diversity, islands, and scheduling.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Nested optimization of program structure and numeric parameters.</li>\n<li>AST/tree-distance diversity management across an island model.</li>\n<li>Online bandit allocation among LLM prompt operators.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The separation avoids discarding good logic because of bad constants and makes operator allocation adaptive. Inner tuning multiplies evaluations per structure, tree distance does not guarantee behavioral diversity, and the nested budget complicates fair comparison with simpler methods.</p>\n<h2>What to improve</h2>\n<p>Use multi-fidelity parameter tuning, compare structural and behavioral diversity, and report improvements against total evaluator calls, tokens, and wall time rather than generations alone.</p>\n<h2>Connections</h2>\n<p>TIDE extends EoH-style evolution with a continuous inner loop. It shares BEAM's bilevel perspective, but separates structure from numeric calibration rather than architecture from component implementation.</p>\n"
     },
     {
+      "id": "participatory-rules",
+      "short_title": "LLM-PB",
+      "title": "Large Language Models for Designing Participatory Budgeting Rules",
+      "authors": [
+        "Nguyễn Thạch",
+        "Xingchen Sha",
+        "Hau Chan"
+      ],
+      "year": 2026,
+      "date": "2026-02-01",
+      "venue": "arXiv (Cornell University)",
+      "paper_url": "https://arxiv.org/pdf/2602.09349",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Participatory budgeting (PB) is a democratic paradigm for deciding the funding of public projects given the residents' preferences, which has been adopted in numerous cities across the world. The main focus of PB is designing rules, functions that return feasible budget allocations for a set of projects subject to some budget constraint.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Participatory budgeting (PB) is a democratic paradigm for deciding the funding of public projects given the residents' preferences, which has been adopted in numerous cities across the world. The main focus of PB is designing rules, functions that return feasible budget allocations for a set of projects subject to some budget constraint.</p>\n<h2>Core method</h2>\n<p>LLMs generate and evolve participatory-budgeting allocation rules. Each rule is checked for allocation utility and fairness, and the framework includes a repair step for strategy-proofness rather than accepting a high-scoring but invalid rule.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "or-agent",
+      "short_title": "OR-Agent",
+      "title": "OR-Agent: Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery",
+      "authors": [
+        "Qi Liu",
+        "Ruochen Hao",
+        "Can Li",
+        "Wanjing Ma"
+      ],
+      "year": 2026,
+      "date": "2026-02-01",
+      "venue": "arXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2602.13769",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Automating scientific discovery in complex, experiment-driven domains requires more than iterative mutation of programs; it demands structured hypothesis management, environment interaction, and principled reflection. We present OR-Agent, a configurable multi-agent research framework designed for automated exploration in rich experimental environments.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Automating scientific discovery in complex, experiment-driven domains requires more than iterative mutation of programs; it demands structured hypothesis management, environment interaction, and principled reflection. We present OR-Agent, a configurable multi-agent research framework designed for automated exploration in rich experimental environments.</p>\n<h2>Core method</h2>\n<p>OR-Agent combines evolutionary candidate search with a structured research tree. LLM agents propose hypotheses, critique results, record short- and long-term verbal gradients, and backtrack through the tree when a branch stops improving.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
       "id": "g-lns",
       "short_title": "G-LNS",
       "title": "G-LNS: Generative Large Neighborhood Search for LLM-Based Automatic Heuristic Design",
@@ -2476,6 +3259,33 @@
       "featured": false,
       "summary": "AILS-AHD evolves ruin heuristics inside adaptive iterated local search and adds an LLM-based acceleration mechanism for CVRP.",
       "body_html": "<h2>Why it matters</h2>\n<p>CVRP solvers depend on carefully tuned destroy and repair behavior. This paper turns that component-level engineering into an executable LLM-guided search problem while keeping the surrounding AILS solver intact.</p>\n<h2>Core method</h2>\n<p>An evolutionary loop proposes and evaluates ruin heuristics for AILS. A separate language-model acceleration mechanism reduces the cost of testing and refining candidates. The resulting solver is compared with AILS-II, HGS, and other CVRP baselines on moderate and large instances.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Automatic generation of ruin heuristics for an AILS backbone.</li>\n<li>An acceleration path for expensive candidate evaluation.</li>\n<li>Competitive results across CVRP scales and solver baselines.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>The design remains tied to CVRP and the AILS interface. A useful extension would test whether the learned ruin operators transfer to other routing backbones without re-evolution.</p>\n"
+    },
+    {
+      "id": "pathplan-llm",
+      "short_title": "PathPlan",
+      "title": "Constraint-aware Path Planning from Natural Language Instructions Using Large Language Models",
+      "authors": [
+        "Shim, Dylan",
+        "Wei, Minghan"
+      ],
+      "year": 2026,
+      "date": "2026-03-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2603.19257",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Real-world path planning tasks typically involve multiple constraints beyond simple route optimization, such as the number of routes, maximum route length, depot locations, and task-specific requirements. Traditional approaches rely on dedicated formulations and algorithms for each problem variant, making them difficult to scale across diverse scenarios.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Real-world path planning tasks typically involve multiple constraints beyond simple route optimization, such as the number of routes, maximum route length, depot locations, and task-specific requirements. Traditional approaches rely on dedicated formulations and algorithms for each problem variant, making them difficult to scale across diverse scenarios.</p>\n<h2>Core method</h2>\n<p>The path-planning framework parses natural-language constraints into a planning formulation, generates candidate solutions, and iteratively verifies and repairs them. Its design target is an executable solver pipeline rather than a standalone heuristic operator.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     },
     {
       "id": "strongprior",
@@ -2603,6 +3413,40 @@
       "body_html": "<h2>Why it matters</h2>\n<p>A fitness-only population can collapse around one design pattern even when several functional categories are useful. CDEoH treats category structure as an explicit population-management signal rather than hoping semantic diversity survives ordinary selection.</p>\n<h2>Core method</h2>\n<p>CDEoH organizes generated thought-code pairs into semantic categories. Evolution refines candidates within a category and combines information across categories, preventing one family from monopolizing selection. Category summaries become reusable prompt knowledge while executable performance remains the ground-truth fitness signal.</p>\n<p>Experiments cover several combinatorial-optimization tasks and compare with EoH-style evolution. Ablations examine category guidance and population diversity in addition to final objectives.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Category-aware organization of the thought-code population.</li>\n<li>Intra-category refinement combined with cross-category exploration.</li>\n<li>Structured summaries that turn accumulated candidates into reusable knowledge.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Categories give a readable account of diversity and can preserve several design modes. They depend on classification quality and may impose artificial boundaries between hybrid ideas. Classification calls also consume search budget.</p>\n<h2>What to improve</h2>\n<p>Compare semantic categories with behavior-derived clustering, track category stability across models, and support hierarchical or overlapping categories for mixed mechanisms.</p>\n<h2>Connections</h2>\n<p>CDEoH retains EoH's thought-code representation but changes population organization. Unlike BehaveSim's execution-based diversity, its diversity signal is semantic and category-level.</p>\n"
     },
     {
+      "id": "dgm",
+      "short_title": "DGM",
+      "title": "Darwin Godel Machine: Open-ended evolution of self-improving agents",
+      "authors": [
+        "Jenny Zhang",
+        "Shengran Hu",
+        "Cong Lu",
+        "Robert Lange",
+        "Jeff Clune"
+      ],
+      "year": 2026,
+      "date": "2026-03-12",
+      "venue": "ICLR",
+      "paper_url": "https://arxiv.org/pdf/2505.22954",
+      "code_url": "https://github.com/jennyzzt/dgm",
+      "institutions": [
+        "university-british-columbia",
+        "vector-institute",
+        "sakana-ai"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "The Darwin Gödel Machine lets a coding agent modify its own repository, evaluates each child on coding benchmarks, and keeps an archive of validated self-improvements.",
+      "body_html": "<h2>Why it matters</h2>\n<p>The Darwin Gödel Machine targets a broader question than ordinary heuristic search: can a language-model coding agent improve the code that implements the agent itself?</p>\n<h2>Core method</h2>\n<p>DGM maintains an archive of coding agents. It selects an existing agent, asks it to edit its own repository, evaluates the child on coding benchmarks, and adds validated children back to the archive. The archive preserves alternative stepping stones instead of keeping only the latest agent.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A self-referential archive of coding agents.</li>\n<li>Empirical validation of self-modifications on SWE-bench and Polyglot.</li>\n<li>Sandboxing and traceability safeguards for recursive code changes.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
       "id": "eoh-s",
       "short_title": "EoH-S",
       "title": "EoH-S: Evolution of Heuristic Set using LLMs for Automated Heuristic Design",
@@ -2637,6 +3481,38 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Most automatic heuristic design systems return one heuristic that must serve every test instance. A single winner can perform well on the training distribution while failing on a shifted size, geometry, or constraint distribution. EoH-S changes the objective: design a small set of complementary heuristics and let each instance use its strongest member.</p>\n<p><img src=\"paper-assets/eoh-s/images/paper-cover.jpg\" alt=\"EoH-S paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Liu et al., EoH-S; see the <a href=\"https://arxiv.org/abs/2508.03082\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>The paper introduces automated heuristic set design and studies its monotone, supermodular objective. EoH-S adds complementary population management and complementary-aware memetic search to an LLM-driven evolutionary framework. The final set is evaluated by whether its members cover different instances rather than by the score of a single global champion.</p>\n<p>Experiments span online bin packing, TSP, and CVRP across multiple sizes and distributions, with explicit comparisons to single-heuristic methods.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A problem formulation that treats a heuristic set as the design artifact.</li>\n<li>Complementarity-aware population management and local search.</li>\n<li>A direct attack on distribution shift and instance-level generalization.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The formulation better matches real systems that see heterogeneous instances and makes “generalization” measurable through coverage. It also creates a harder credit-assignment problem: a candidate that is not globally best may still be essential to the set.</p>\n<h2>What to improve</h2>\n<p>Future work should make set size cost-aware, learn a fast instance-to-heuristic selector, and report behavioral diversity alongside objective complementarity.</p>\n<h2>Connections</h2>\n<p>EoH-S is modeled as a generalization of the single-heuristic EoH design object. Its main distinction is not a new prompt alone, but the change in what counts as a successful algorithm.</p>\n"
     },
     {
+      "id": "trajevo",
+      "short_title": "TrajEvo",
+      "title": "TrajEvo: Trajectory Prediction Heuristics Design via LLM-driven Evolution",
+      "authors": [
+        "Zhikai Zhao",
+        "Chuanbo Hua",
+        "Federico Berto",
+        "Kanghoon Lee",
+        "Zihan Ma",
+        "Jiachen Li",
+        "Jinkyoo Park"
+      ],
+      "year": 2026,
+      "date": "2026-03-14",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/download/38868/42830",
+      "institutions": [
+        "university-california"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Trajectory prediction is a crucial task in modeling human behavior, especially in safety-critical fields such as social robotics and autonomous vehicle navigation. Traditional heuristics based on handcrafted rules often lack accuracy, while recently proposed deep learning approaches suffer from computational cost, slow inference speed, lack of explainability, and generalization issues that limit their practical adoption in such environments.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Trajectory prediction is a crucial task in modeling human behavior, especially in safety-critical fields such as social robotics and autonomous vehicle navigation. Traditional heuristics based on handcrafted rules often lack accuracy, while recently proposed deep learning approaches suffer from computational cost, slow inference speed, lack of explainability, and generalization issues that limit their practical adoption in such environments.</p>\n<h2>Core method</h2>\n<p>TrajEvo evolves trajectory-prediction heuristics from historical trajectories. Cross-generation elite sampling keeps alternative behaviors alive, while a statistics feedback loop summarizes prediction errors for the next LLM revision.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
       "id": "cliffsearch",
       "short_title": "CliffSearch",
       "title": "CliffSearch: Structured Agentic Co-Evolution over Theory and Code for Scientific Algorithm Discovery",
@@ -2665,6 +3541,38 @@
       "featured": false,
       "summary": "CliffSearch evolves structured theory-and-code artifacts with separate exploration, correction, and review agents.",
       "body_html": "<h2>Why it matters</h2>\n<p>Code-only evolution can optimize a metric while losing the scientific reason behind a candidate. CliffSearch keeps hypotheses, implementations, and review judgments together as one searchable artifact.</p>\n<h2>Core method</h2>\n<p>LLM agents implement pair selection, crossover, mutation, and review. Correctness and originality gates complement benchmark fitness, while exploration mutation imports ideas from adjacent domains and correction mutation repairs targeted weaknesses.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A structured theory-plus-code representation for discovery.</li>\n<li>Separate exploration and correction pathways.</li>\n<li>Review-based gates for correctness and originality.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>Reviewer judgments can be subjective and expensive. Calibrated evidence checks and domain-specific executable tests would make the gates more reliable.</p>\n"
+    },
+    {
+      "id": "revel",
+      "short_title": "ReVEL",
+      "title": "ReVEL: Multi-Turn Reflective LLM-Guided Heuristic Evolution via Structured Performance Feedback",
+      "authors": [
+        "Cuong Van Duc",
+        "Minh Nguyen Dinh Tuan",
+        "Tam Vu Duc",
+        "Tung Vu Duy",
+        "Son Nguyen Van",
+        "Hanh Nguyen Thi",
+        "Binh Huynh Thi Thanh"
+      ],
+      "year": 2026,
+      "date": "2026-04-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2604.04940",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Designing effective heuristics for NP-hard combinatorial optimization problems remains challenging and often requires substantial domain expertise. Recent LLM-guided evolutionary methods have shown promise for automated heuristic generation, but most existing approaches refine heuristics independently or through limited pairwise feedback.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Designing effective heuristics for NP-hard combinatorial optimization problems remains challenging and often requires substantial domain expertise. Recent LLM-guided evolutionary methods have shown promise for automated heuristic generation, but most existing approaches refine heuristics independently or through limited pairwise feedback.</p>\n<h2>Core method</h2>\n<p>ReVEL groups candidate heuristics by observed behavior before reflection. Similarity groups support local refinement, diversity groups encourage exploration, and multi-turn feedback lets the LLM revise a group across several evolutionary iterations.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     },
     {
       "id": "a-ceoh",
@@ -2902,6 +3810,197 @@
       "featured": false,
       "summary": "A2DEPT represents candidate algorithms as evolutionary program trees for controllable hierarchical reuse and variation.",
       "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-AHD systems evolve one function inside a fixed solver template. That protects executability, but it prevents the search from changing control flow, adding modules, or redesigning the solver as a system. A2DEPT targets this gap between component tuning and full algorithm synthesis.</p>\n<h2>Core method</h2>\n<p>A2DEPT represents a solver as an evolutionary program tree whose nodes encode functional modules and whose hierarchy captures their composition. Hybrid selection balances objective quality with structural exploration. Hierarchical operators can expand, prune, replace, and refine subtrees, while the LLM implements or repairs the affected modules. This makes structural edits more localized than rewriting an entire flat program.</p>\n<p>The experiments span combinatorial optimization, differential-equation solvers, and control problems. The paper reports comparisons with EoH and MCTS-AHD, executability analyses, scale studies, and ablations of the tree representation and operators.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Moves the design object from a single heuristic function to a hierarchical, complete program.</li>\n<li>Introduces tree-aware selection and variation for reusable system-level modules.</li>\n<li>Demonstrates the representation across optimization, scientific computing, and control tasks.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The tree gives the search an interpretable structural unit and enables meaningful subtree reuse. Its flexibility also enlarges the invalid-program space and introduces representation choices that may themselves encode strong priors. Comparisons are difficult unless evaluator calls, repair calls, and prompt tokens are all budget-matched.</p>\n<h2>What to improve</h2>\n<p>Measure module reuse across tasks, expose the cost of repair separately from productive evaluations, and compare the learned trees with equally expressive typed program-synthesis or grammar-guided baselines.</p>\n<h2>Connections</h2>\n<p>A2DEPT broadens the design object beyond EoH-style functions. It shares MCTS-AHD's interest in structured exploration, but organizes the <em>program</em> as a tree rather than only organizing the <em>search history</em> as one.</p>\n"
+    },
+    {
+      "id": "cuda-feedback",
+      "short_title": "CUDA Feedback",
+      "title": "Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation",
+      "authors": [
+        "Yee Kien Chong",
+        "Jiaming Wu",
+        "Youhui Zhang",
+        "Peng Qu"
+      ],
+      "year": 2026,
+      "date": "2026-05-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2605.26720",
+      "institutions": [
+        "tsinghua"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Large language models (LLMs) have shown strong empirical gains as self-evolving agents for CUDA kernel generation, driven by feedback-conditioned planning across generations. However, how planning decisions attribute and combine heterogeneous feedback signals remains opaque.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Large language models (LLMs) have shown strong empirical gains as self-evolving agents for CUDA kernel generation, driven by feedback-conditioned planning across generations. However, how planning decisions attribute and combine heterogeneous feedback signals remains opaque.</p>\n<h2>Core method</h2>\n<p>The CUDA study analyzes how feedback should become planning decisions in a self-evolving kernel-generation agent. Profiling results are transformed into explicit plan updates before new kernels are generated and tested, separating diagnosis from code editing.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "dhfsp-evo",
+      "short_title": "DHFSP-Evo",
+      "title": "Automatic generation of heuristic dispatching rules for dynamic hybrid flow shop scheduling via personalized multi-island reflective evolution",
+      "authors": [
+        "Yuning Lei",
+        "Jin Huang",
+        "Xinyu Li",
+        "Qihao Liu",
+        "Liang Gao"
+      ],
+      "year": 2026,
+      "date": "2026-05-01",
+      "venue": "Tsinghua Science & Technology",
+      "paper_url": "https://www.sciopen.com/local/article_pdf/10.26599/TST.2026.9010050.pdf",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Dynamic hybrid flow shop scheduling problems (DHFSP) are critical in modern manufacturing systems, where uncertainties such as order fluctuations and equipment failures pose significant challenges. Traditional exact methods and metaheuristics struggle to meet real-time decision-making requirements under such dynamic conditions.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Dynamic hybrid flow shop scheduling problems (DHFSP) are critical in modern manufacturing systems, where uncertainties such as order fluctuations and equipment failures pose significant challenges. Traditional exact methods and metaheuristics struggle to meet real-time decision-making requirements under such dynamic conditions.</p>\n<h2>Core method</h2>\n<p>The dispatching-rule system combines personalized multi-island evolution with reflection. Each island maintains a different search trajectory, while the LLM uses scheduling feedback to revise rules and the final evaluation checks dynamic hybrid flow-shop performance.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "domain-heuristics",
+      "short_title": "Domain Heuristics",
+      "title": "LLM-Evolved Domain-Independent Heuristics for Symbolic AI Planning",
+      "authors": [
+        "Elliot Gestrin",
+        "Jendrik Seipp"
+      ],
+      "year": 2026,
+      "date": "2026-05-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2605.29649",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Heuristic search is the dominant paradigm in symbolic AI planning, and the strongest heuristics are the result of decades of work by planning researchers. Recent work has shown that large language models (LLMs) can design heuristics for individual planning domains, but no LLM-generated heuristic has so far worked on arbitrary planning tasks.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Heuristic search is the dominant paradigm in symbolic AI planning, and the strongest heuristics are the result of decades of work by planning researchers. Recent work has shown that large language models (LLMs) can design heuristics for individual planning domains, but no LLM-generated heuristic has so far worked on arbitrary planning tasks.</p>\n<h2>Core method</h2>\n<p>The planning system uses an OpenEvolve-style MAP-Elites archive to evolve C++ heuristic code. It evaluates candidates on training domains and tests whether the resulting heuristic transfers to unseen symbolic-planning domains.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "frontieror",
+      "short_title": "FrontierOR",
+      "title": "FrontierOR: Benchmarking LLMs' Capacity for Efficient Algorithm Design in Large-Scale Optimization",
+      "authors": [
+        "Minwei Kong",
+        "Chonghe Jiang",
+        "Ao Qu",
+        "Wenbin Ouyang",
+        "Zhaoming Zeng",
+        "Xiaotong Guo",
+        "Zhekai Li",
+        "Junyi Li",
+        "Yi Fan",
+        "Xinshou Zheng",
+        "Xi Jing",
+        "Yikai Zhang",
+        "Zhiwei Liang",
+        "Seonghoo Kim",
+        "Runqing Yang",
+        "Zijian Zhou",
+        "Sirui Li",
+        "Han Zheng",
+        "Wangyang Ying",
+        "Ou Zheng"
+      ],
+      "year": 2026,
+      "date": "2026-05-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2605.25246",
+      "institutions": [
+        "microsoft",
+        "nus"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Large language models (LLMs) are increasingly used for optimization modeling and solver-code generation, yet practical operations research and optimization problems often require a harder capability: designing scalable algorithms that exploit problem structure and outperform direct formulation-and-solve baselines. Existing benchmarks are limited to small or simplified examples far below real-world scale and complexity.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Large language models (LLMs) are increasingly used for optimization modeling and solver-code generation, yet practical operations research and optimization problems often require a harder capability: designing scalable algorithms that exploit problem structure and outperform direct formulation-and-solve baselines. Existing benchmarks are limited to small or simplified examples far below real-world scale and complexity.</p>\n<h2>Core method</h2>\n<p>FrontierOR evaluates LLMs on large-scale optimization design, including one-shot generation and test-time evolution. Its contribution is a benchmark and protocol for measuring whether generated algorithms remain efficient as problem structure and scale increase.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "memory-tree",
+      "short_title": "MEMOIR",
+      "title": "Memory-Guided Tree Search with Cross-Branch Knowledge Transfer for LLM Solver Synthesis",
+      "authors": [
+        "Fatemeh Haji",
+        "Javier Delarosa Quiros",
+        "Peyman Najafirad"
+      ],
+      "year": 2026,
+      "date": "2026-05-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2605.17539",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Combinatorial optimization (CO) underlies decision-making from logistics to chip design, where infeasible solutions are operationally unusable and small quality gains translate into substantial economic value. Recent work uses large language models (LLMs) to automate solver synthesis: generating executable solver programs from natural-language specifications.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Combinatorial optimization (CO) underlies decision-making from logistics to chip design, where infeasible solutions are operationally unusable and small quality gains translate into substantial economic value. Recent work uses large language models (LLMs) to automate solver synthesis: generating executable solver programs from natural-language specifications.</p>\n<h2>Core method</h2>\n<p>Memory-Guided Tree Search augments solver synthesis with branch-local and global memories. Search branches can retrieve useful discoveries from one another, reducing repeated failures while retaining tree structure for deliberate exploration.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "or-survey",
+      "short_title": "OR Survey",
+      "title": "Large Language Models for Operations Research: A Comprehensive Survey",
+      "authors": [
+        "Xianchao Xiu",
+        "Jianhao Li",
+        "Jun Fan",
+        "Wanquan Liu"
+      ],
+      "year": 2026,
+      "date": "2026-05-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2605.20849",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "A survey of language-model applications across operations research, including modeling, optimization, heuristic search, and solver interaction.",
+      "body_html": "<h2>Why it matters</h2>\n<p>The survey is a map of how language models enter OR workflows: they can formulate models, write solver code, generate heuristics, or interpret evaluation feedback.</p>\n<h2>Core method</h2>\n<p>This is a literature synthesis rather than a new executable search loop. Its organizing view separates modeling, search, feedback, and deployment concerns across OR tasks.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A broad organization of LLM roles in operations research.</li>\n<li>Coverage of optimization modeling, search, code generation, and evaluation.</li>\n<li>A boundary map for deciding which OR papers belong in an AHD atlas.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>As a survey, it synthesizes existing evidence rather than introducing a new LLM search loop. Its categories inherit the scope and publication coverage of the review.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     },
     {
       "id": "laf-mcts",
@@ -3285,6 +4384,279 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-driven automated heuristic design systems evolve heuristics as isolated algorithmic units, which fails to model strong coupling among multiple decision substructures in problems like TTP and TPP. CoEvo shifts the design objective: instead of optimizing individual heuristics in isolation, it co-evolves paired component operators and evaluates their effectiveness jointly under the full coupled objective.</p>\n<p><img src=\"paper-assets/coevo/images/CoEvo_mindmap.png\" alt=\"CoEvo mindmap overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Kuang et al., CoEvo; see the <a href=\"https://arxiv.org/abs/2606.00718\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>The paper proposes CoEvo, a dual-population co-evolutionary framework with component-specific operator populations. It adopts cooperative evaluation to compute both individual operator scores and pairwise synergy scores, and evolves new operators through intra-component mutation, homogeneous crossover, and cross-component joint crossover.</p>\n<p>A tool-augmented environment and structured inter-component communication are further introduced to improve operator reliability and coordination.</p>\n<p>Experiments are conducted on TTP and TPP benchmarks.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Formalization of bi-component coupled automated heuristic design with relational operator utility.</li>\n<li>Dual-population co-evolution with paired evaluation, synergy scoring and cross-component joint crossover.</li>\n<li>Structured inter-component communication protocol and tool-augmented problem environment.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>It automatically discovers complementary operator pairs and delivers competitive solution quality against traditional heuristics, with particularly pronounced advantages on large-scale TPP instances.</p>\n<p>However, it introduces cross-component credit assignment complexity, and its search depth on large TTP still lags behind top handcrafted methods.</p>\n<h2>What to improve</h2>\n<p>Future work can extend the framework to problems with more than two coupled decision components, improve search depth and robustness on large-scale instances, add cost-aware population size control, and explore behavioral diversity metrics for component-level synergy.</p>\n<h2>Connections</h2>\n<p>CoEvo builds upon the lineage of EoH and EoH-S. Unlike multi-operator collaboration at the algorithmic workflow level, it ties operators to heterogeneous decision components of the problem itself, modeling operator complementarity from the problem-structure level.</p>\n"
     },
     {
+      "id": "epb-nco",
+      "short_title": "EPB",
+      "title": "Interpreting Neural Combinatorial Optimization via Evolving Programmatic Bottlenecks",
+      "authors": [
+        "Haocheng Duan",
+        "Yuxin Guo",
+        "Jieyi Bi",
+        "Anqi Xie",
+        "Sirui Li",
+        "Yining Ma",
+        "Cathy Wu"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2606.19741",
+      "institutions": [
+        "carnegie-mellon",
+        "microsoft",
+        "ntu"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Neural Combinatorial Optimization (NCO) achieves strong performance, yet its black-box nature remains a key roadblock to deployment and scientific diagnosis. Standard interpretability tools, such as Concept Bottleneck Models (CBMs), are ill-equipped for NCO, whose decisions are dynamic, state-dependent, and lack proper concept vocabulary definition.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Neural Combinatorial Optimization (NCO) achieves strong performance, yet its black-box nature remains a key roadblock to deployment and scientific diagnosis. Standard interpretability tools, such as Concept Bottleneck Models (CBMs), are ill-equipped for NCO, whose decisions are dynamic, state-dependent, and lack proper concept vocabulary definition.</p>\n<h2>Core method</h2>\n<p>The work evolves programmatic bottlenecks that expose and approximate the decision logic of neural combinatorial-optimization policies. The generated programs are evaluated for fidelity and interpretability, rather than serving as a new routing solver.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "evooptigraph",
+      "short_title": "EvoOptiGraph",
+      "title": "EvoOptiGraph: Weakness-Driven Coevolution via Graph-Based Structural Generation for Optimization Modeling",
+      "authors": [
+        "Qingcan Kang",
+        "Mingyang Liu",
+        "Xiaojin Fu",
+        "Shixiong Kai",
+        "Tao Zhong",
+        "Mingxuan Yuan"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2606.26578",
+      "institutions": [
+        "cityu-hk",
+        "huawei-noahs-ark"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Automating optimization modeling from natural language with large language models (LLMs) faces two key challenges. First, training corpora lack structural diversity.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Automating optimization modeling from natural language with large language models (LLMs) faces two key challenges. First, training corpora lack structural diversity.</p>\n<h2>Core method</h2>\n<p>EvoOptiGraph represents optimization models as graph-structured objects and uses weakness signals to decide what to evolve next. Generated formulations are checked by solvers, while verification results feed the next data/model co-evolution cycle.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "macro-order",
+      "short_title": "Macro Order",
+      "title": "Order Matters: Unveiling the Hidden Impact of Macro Placement Sequences via Proxy-Guided LLM Evolution",
+      "authors": [
+        "Shibing Mo",
+        "Jing Liu",
+        "Jianchu Xu",
+        "Ruilin Wu"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "arXiv (Cornell University)",
+      "paper_url": "https://arxiv.org/pdf/2606.08904",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Macro placement is a fundamental step in modern chip physical design, playing a crucial role in determining the solution quality of high-dimensional combinatorial optimization problems. Despite recent advancements in machine learning for spatial coordinate determination, the temporal dimension of placement sequencing remains largely governed by static heuristics.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Macro placement is a fundamental step in modern chip physical design, playing a crucial role in determining the solution quality of high-dimensional combinatorial optimization problems. Despite recent advancements in machine learning for spatial coordinate determination, the temporal dimension of placement sequencing remains largely governed by static heuristics.</p>\n<h2>Core method</h2>\n<p>Order Matters evolves macro-placement ordering policies with proxy-guided feedback. The proxy ranks candidate sequences cheaply, while selected candidates receive more expensive placement evaluation so the LLM can learn which ordering decisions matter.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "algo-dev",
+      "short_title": "OpenEvolve",
+      "title": "Algorithmic algorithm development with LLMs: A Case Study on LLM-Usage for Contraction Order Optimization in Tensor Networks",
+      "authors": [
+        "Fabian Hoppe",
+        "Melven Röhrig-Zöllner",
+        "Philipp Knechtges"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2606.01975",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "We consider LLM-based algorithm development through a case study on contractionorder optimisation for tensor networks with OpenEvolve. We pay particular attention to the choice of the LLM as well as design choices such as evaluation metric and test instances.",
+      "body_html": "<h2>Why it matters</h2>\n<p>We consider LLM-based algorithm development through a case study on contractionorder optimisation for tensor networks with OpenEvolve. We pay particular attention to the choice of the LLM as well as design choices such as evaluation metric and test instances.</p>\n<h2>Core method</h2>\n<p>The study uses OpenEvolve to evolve executable contraction-order programs for tensor networks. Its experiments vary the language model, verifier/evaluation metric, and test-instance design, then inspect whether apparent gains transfer beyond the selected instances.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete OpenEvolve case study for tensor-network contraction order.</li>\n<li>A controlled analysis of model, verifier, and instance choices.</li>\n<li>Evidence that evaluation and interpretation remain central to coding-agent evolution.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "pattern-gen",
+      "short_title": "PatternGen",
+      "title": "LLM-Evolved Pattern Generators for Optimal Classical Planning",
+      "authors": [
+        "Windy Phung",
+        "Dominik Drexler",
+        "Arnaud Lequen",
+        "Jendrik Seipp"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2606.02438",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Learned heuristics have recently become a competitive alternative to traditional domain-independent heuristics for satisficing planning. Existing approaches, however, focus on improving search guidance rather than guaranteeing admissibility, which makes them unsuitable for optimal classical planning.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Learned heuristics have recently become a competitive alternative to traditional domain-independent heuristics for satisficing planning. Existing approaches, however, focus on improving search guidance rather than guaranteeing admissibility, which makes them unsuitable for optimal classical planning.</p>\n<h2>Core method</h2>\n<p>OpenEvolve searches for executable programs that generate pattern collections for classical planning. The design object is therefore a pattern generator whose output is passed to an optimal planner, not a hand-written pattern set.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "scoe",
+      "short_title": "SCOE",
+      "title": "Large Language Model-Driven Cooperative Operator Ensemble Evolution for Permutation Flow Shop Scheduling",
+      "authors": [
+        "Rui Xu",
+        "Yufan Liao",
+        "Haoze Lv",
+        "Shengcai Liu",
+        "Yi Mei",
+        "Ke Tang"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2606.15334",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "The permutation flow shop scheduling problem (PFSP) is a classical NP-hard combinatorial optimization problem in intelligent manufacturing. In practice, PFSP is commonly addressed using metaheuristic algorithms, among which the iterated greedy (IG) algorithm is widely adopted due to its simplicity and strong empirical performance.",
+      "body_html": "<h2>Why it matters</h2>\n<p>The permutation flow shop scheduling problem (PFSP) is a classical NP-hard combinatorial optimization problem in intelligent manufacturing. In practice, PFSP is commonly addressed using metaheuristic algorithms, among which the iterated greedy (IG) algorithm is widely adopted due to its simplicity and strong empirical performance.</p>\n<h2>Core method</h2>\n<p>SCOE uses a cooperative ReEvo-style loop to evolve an ensemble of interacting flow-shop operators. Operators are evaluated jointly, and the search must improve the ensemble without discarding useful specialization in individual members.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "llm-nas",
+      "short_title": "UH-NAS",
+      "title": "LLM-Guided Neural Architecture Search for Robust Co-Design of Physical Neural Networks",
+      "authors": [
+        "Tyler King",
+        "Timothée Leleu"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "arXiv (Cornell University)",
+      "paper_url": "https://arxiv.org/pdf/2606.10294",
+      "institutions": [
+        "stanford"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Deploying neural networks on unconventional hardware demands architectures that co-optimize task accuracy and platform-specific constraints such as energy cost, physical non-idealities, and numerical precision. Existing neural architecture search (NAS) methods are typically tailored to a single hardware family, limiting cross-platform comparison and generalization.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Deploying neural networks on unconventional hardware demands architectures that co-optimize task accuracy and platform-specific constraints such as energy cost, physical non-idealities, and numerical precision. Existing neural architecture search (NAS) methods are typically tailored to a single hardware family, limiting cross-platform comparison and generalization.</p>\n<h2>Core method</h2>\n<p>UH-NAS uses LLM-guided search to co-design neural architectures and physical implementation choices. Hardware-aware objectives and robustness tests constrain the generated candidates, so architecture quality is judged together with deployment behavior.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "qp-adapt",
+      "short_title": "VVenC-QP",
+      "title": "LLM-Driven Heuristic Frame-Level Quantization Parameter Adaptation for VVenC",
+      "authors": [
+        "Liqiang He",
+        "Yingwen Zhang",
+        "Riyu Lu",
+        "M Wang",
+        "S Q Wang"
+      ],
+      "year": 2026,
+      "date": "2026-06-01",
+      "venue": "ArXiv.org",
+      "paper_url": "https://arxiv.org/pdf/2606.20847",
+      "institutions": [
+        "cityu-hk"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Optimal frame-level quantization parameter (QP) allocation remains a persistent challenge in modern video encoders. The fixed-QP scheme widely adopted in practical systems is inherently content-agnostic, while classical Lagrangian rate-distortion optimization (RDO) methods often suffer from inaccurate multiplier settings.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Optimal frame-level quantization parameter (QP) allocation remains a persistent challenge in modern video encoders. The fixed-QP scheme widely adopted in practical systems is inherently content-agnostic, while classical Lagrangian rate-distortion optimization (RDO) methods often suffer from inaccurate multiplier settings.</p>\n<h2>Core method</h2>\n<p>The VVenC study inserts an LLM-driven closed loop into frame-level quantization-parameter decisions. The LLM proposes executable rate-distortion heuristics, and the video encoder supplies direct compression-quality feedback for revision.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "successor-heuristics",
+      "short_title": "Successor-Gen",
+      "title": "Successor-Generator Planning with LLM-generated Heuristics",
+      "authors": [
+        "Alexander Tuisov",
+        "Yonatan Vernik",
+        "Alexander Shleyfman"
+      ],
+      "year": 2026,
+      "date": "2026-06-08",
+      "venue": "Proceedings of the International Conference on Automated Planning and Scheduling",
+      "paper_url": "https://ojs.aaai.org/index.php/ICAPS/article/download/42843/50403",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Heuristics are a central component of deterministic planning, particularly in domain-independent settings where general applicability is prioritized over task-specific tuning. This work revisits that paradigm in light of recent advances in large language models (LLMs), which enable the automatic synthesis of heuristics directly from problem definitions -- bypassing the need for handcrafted domain knowledge.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Heuristics are a central component of deterministic planning, particularly in domain-independent settings where general applicability is prioritized over task-specific tuning. This work revisits that paradigm in light of recent advances in large language models (LLMs), which enable the automatic synthesis of heuristics directly from problem definitions -- bypassing the need for handcrafted domain knowledge.</p>\n<h2>Core method</h2>\n<p>The method generates a compilable successor-generator heuristic from a planning problem description and integrates it into a conventional planner. The LLM supplies the heuristic code, while planner execution and solution quality provide validation.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
       "id": "meevo",
       "short_title": "MeEvo",
       "title": "MeEvo: Metacognitive Evolution Combined with Natural Evolution for Automatic Heuristic Design",
@@ -3373,6 +4745,37 @@
       "featured": false,
       "summary": "REFLEX separates visual diagnosis from code generation and stores reusable skills in a persistent evolving memory.",
       "body_html": "<h2>Why it matters</h2>\n<p>When one model call both interprets behavior and writes code, the reason for a mutation is hard to audit. REFLEX separates these roles so experience can be inspected and reused across runs.</p>\n<h2>Core method</h2>\n<p>A vision-enabled Critic turns behavioral evidence into structured diagnoses. A text-focused Actor uses those diagnoses to synthesize child policies, while a persistent Skill Memory stores reusable code snippets and lessons.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Decoupled diagnosis and policy synthesis.</li>\n<li>Persistent memory for reusable evolutionary experience.</li>\n<li>A train-free reflective loop for visual policy evolution.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>The public preprint does not disclose the author affiliation, and visual diagnosis quality remains model-dependent. Better memory provenance and benchmarked critic calibration would improve trustworthiness.</p>\n"
+    },
+    {
+      "id": "feynman-funsearch",
+      "short_title": "Feynman-FS",
+      "title": "Explainable AI-assisted optimization for Feynman integral reduction",
+      "authors": [
+        "Zhe Song",
+        "Tong-Zhi Yang",
+        "Qing-Hong Cao",
+        "M. X. Luo",
+        "Hua Xing Zhu"
+      ],
+      "year": 2026,
+      "date": "2026-06-22",
+      "venue": "Journal of High Energy Physics",
+      "paper_url": "https://link.springer.com/content/pdf/10.1007/JHEP06(2026)225.pdf",
+      "institutions": [
+        "pku"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "A bstract We present a novel approach to optimizing the reduction of Feynman integrals using integration-by-parts identities. By developing a priority function through the FunSearch algorithm, which combines large language models and genetic algorithms, we achieve significant improvements in memory usage and computational efficiency compared to traditional methods.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A bstract We present a novel approach to optimizing the reduction of Feynman integrals using integration-by-parts identities. By developing a priority function through the FunSearch algorithm, which combines large language models and genetic algorithms, we achieve significant improvements in memory usage and computational efficiency compared to traditional methods.</p>\n<h2>Core method</h2>\n<p>FunSearch evolves a priority function for Feynman-integral reduction. The generated function is compiled into the reduction pipeline and judged by large-scale symbolic-reduction performance, making the evaluator domain-specific but the program search reusable.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A concrete LLM-based design loop for the target artifact.</li>\n<li>An evaluator or verifier that supplies feedback to subsequent proposals.</li>\n<li>Experiments that expose the method's transfer or scaling behavior.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     },
     {
       "id": "stable",
@@ -3590,6 +4993,37 @@
       "featured": false,
       "summary": "Mutation Without Variation measures how repeated LLM program mutations converge toward attractor regions without selection pressure.",
       "body_html": "<h2>Why it matters</h2>\n<p>LLM evolution can appear exploratory while repeatedly returning to the same structures. This study isolates mutation dynamics so that future AHD systems can distinguish genuine diversity from surface-level edits.</p>\n<h2>Core method</h2>\n<p>The authors run repeated mutation chains in a domain-specific language, varying prompts, models, and stochastic replicas. Structural recurrence, cycles, and self-loops are compared with a classical GP subtree-mutation baseline.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A controlled study of LLM mutation without selection.</li>\n<li>Evidence that structural convergence can be much stronger than textual variation.</li>\n<li>A useful diagnostic for diversity mechanisms in program evolution.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>The experiments use a controlled program language rather than full optimization solvers. Future work should connect convergence statistics to downstream heuristic quality and archive design.</p>\n"
+    },
+    {
+      "id": "pace",
+      "short_title": "PACE",
+      "title": "PACE: Primitive-Aware Code Evolution for Automated Algorithm Design",
+      "authors": [
+        "Zhuoliang Xie",
+        "Ruihao Zheng",
+        "Xiang Xu",
+        "Genghui Li",
+        "Zhengkun Wang"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.07395",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Automatic algorithm design"
+      ],
+      "featured": false,
+      "summary": "Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.</p>\n<h2>Core method</h2>\n<p>PACE separates reusable Executable Algorithmic Primitives from their host programs. Primitive-aware mutation and crossover preserve, transfer, and recombine these units; Thompson sampling prioritizes primitives using parent-relative improvements without an extra validation set.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Persistent executable primitives as reusable search units.</li>\n<li>Primitive-aware variation with parent-relative Thompson sampling.</li>\n<li>Experiments showing component retention across program evolution.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
     }
   ]
 }
