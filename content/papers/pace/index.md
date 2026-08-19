@@ -13,7 +13,8 @@ date: 2026-08-01
 venue: arXiv
 paper_url: https://arxiv.org/pdf/2608.07395
 institutions:
-- affiliation-not-disclosed
+- SUSTech
+- SZU
 primary_dimension: design-object
 dimensions:
 - design-object
