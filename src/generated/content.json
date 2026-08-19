@@ -220,6 +220,110 @@
       "initials": "N/A",
       "accent": "#6c746f"
     },
+    "hanoi-university-science-technology": {
+      "name": "Hanoi University of Science and Technology",
+      "short_name": "Hanoi UST",
+      "initials": "HUST",
+      "website": "https://hust.edu.vn/",
+      "accent": "#9b2c2c"
+    },
+    "phenikaa-university": {
+      "name": "Phenikaa University",
+      "short_name": "Phenikaa",
+      "initials": "PHE",
+      "website": "https://phenikaa-uni.edu.vn/",
+      "accent": "#2d6a4f"
+    },
+    "vinuniversity": {
+      "name": "VinUniversity",
+      "short_name": "VinUniversity",
+      "initials": "VIN",
+      "website": "https://vinuni.edu.vn/",
+      "accent": "#6b4f9b"
+    },
+    "south-china-university-technology": {
+      "name": "South China University of Technology",
+      "short_name": "SCUT",
+      "initials": "SCUT",
+      "website": "https://www.scut.edu.cn/en/",
+      "accent": "#7a1f2b"
+    },
+    "dlr": {
+      "name": "German Aerospace Center",
+      "short_name": "DLR",
+      "initials": "DLR",
+      "website": "https://www.dlr.de/en",
+      "accent": "#3b5f8a"
+    },
+    "bar-ilan": {
+      "name": "Bar-Ilan University",
+      "short_name": "Bar-Ilan",
+      "initials": "BIU",
+      "website": "https://www.biu.ac.il/en",
+      "accent": "#2f5597"
+    },
+    "independent-researcher": {
+      "name": "Independent Researcher",
+      "short_name": "Independent",
+      "initials": "IND",
+      "accent": "#6c746f"
+    },
+    "florida-atlantic": {
+      "name": "Florida Atlantic University",
+      "short_name": "Florida Atlantic",
+      "initials": "FAU",
+      "website": "https://www.fau.edu/",
+      "accent": "#006633"
+    },
+    "tongji": {
+      "name": "Tongji University",
+      "short_name": "Tongji",
+      "initials": "TJU",
+      "website": "https://en.tongji.edu.cn/",
+      "accent": "#1d4f91"
+    },
+    "hebei-university-technology": {
+      "name": "Hebei University of Technology",
+      "short_name": "Hebei Tech",
+      "initials": "HBUT",
+      "website": "https://en.hebut.edu.cn/",
+      "accent": "#1b5e85"
+    },
+    "shanghai-university": {
+      "name": "Shanghai University",
+      "short_name": "Shanghai U",
+      "initials": "SHU",
+      "website": "https://en.shu.edu.cn/",
+      "accent": "#8c2f39"
+    },
+    "university-texas-san-antonio": {
+      "name": "University of Texas at San Antonio",
+      "short_name": "UT San Antonio",
+      "initials": "UTSA",
+      "website": "https://www.utsa.edu/",
+      "accent": "#0c2340"
+    },
+    "jpmorgan-ai-research": {
+      "name": "J.P. Morgan AI Research",
+      "short_name": "J.P. Morgan AI",
+      "initials": "JPM",
+      "website": "https://www.jpmorgan.com/technology/artificial-intelligence",
+      "accent": "#117a65"
+    },
+    "university-science-technology-china": {
+      "name": "University of Science and Technology of China",
+      "short_name": "USTC",
+      "initials": "USTC",
+      "website": "https://en.ustc.edu.cn/",
+      "accent": "#8b1e3f"
+    },
+    "shenzhen-university": {
+      "name": "Shenzhen University",
+      "short_name": "Shenzhen U",
+      "initials": "SZU",
+      "website": "https://en.szu.edu.cn/",
+      "accent": "#006d77"
+    },
     "leiden-university": {
       "name": "Leiden University",
       "short_name": "Leiden",
@@ -806,12 +910,12 @@
       "website": "https://www.nec.com/",
       "accent": "#245aa5"
     },
-    "szu": {
-      "name": "Shenzhen University",
-      "short_name": "SZU",
-      "initials": "SZU",
-      "website": "https://www.szu.edu.cn/",
-      "accent": "#8b008b"
+    "linkoping-university": {
+      "name": "Linköping University",
+      "short_name": "Linköping",
+      "initials": "LIU",
+      "website": "https://liu.se/en",
+      "accent": "#7b2d26"
     }
   },
   "relations": [
@@ -1732,7 +1836,8 @@
       "venue": "Swarm and Evolutionary Computation",
       "paper_url": "https://arxiv.org/pdf/2405.10098",
       "institutions": [
-        "affiliation-not-disclosed"
+        "south-china-university-technology",
+        "nudt"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -2776,7 +2881,7 @@
       "venue": "ACM Workshop on Hot Topics in Networks",
       "paper_url": "https://arxiv.org/pdf/2510.08803",
       "institutions": [
-        "affiliation-not-disclosed"
+        "ut-austin"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -2968,7 +3073,7 @@
       "venue": "Proceedings of the International Conference on Automated Planning and Scheduling",
       "paper_url": "https://ojs.aaai.org/index.php/ICAPS/article/download/42885/50445",
       "institutions": [
-        "affiliation-not-disclosed"
+        "jpmorgan-ai-research"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3033,7 +3138,7 @@
       "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
       "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/download/41024/44985",
       "institutions": [
-        "affiliation-not-disclosed"
+        "hanoi-university-science-technology"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3160,7 +3265,8 @@
       "venue": "arXiv (Cornell University)",
       "paper_url": "https://arxiv.org/pdf/2602.09349",
       "institutions": [
-        "affiliation-not-disclosed"
+        "university-nebraska-lincoln",
+        "northwestern"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3189,7 +3295,7 @@
       "venue": "arXiv.org",
       "paper_url": "https://arxiv.org/pdf/2602.13769",
       "institutions": [
-        "affiliation-not-disclosed"
+        "tongji"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3280,7 +3386,7 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2603.19257",
       "institutions": [
-        "affiliation-not-disclosed"
+        "florida-atlantic"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3567,7 +3673,9 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2604.04940",
       "institutions": [
-        "affiliation-not-disclosed"
+        "hanoi-university-science-technology",
+        "phenikaa-university",
+        "vinuniversity"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3863,7 +3971,7 @@
       "venue": "Tsinghua Science & Technology",
       "paper_url": "https://www.sciopen.com/local/article_pdf/10.26599/TST.2026.9010050.pdf",
       "institutions": [
-        "affiliation-not-disclosed"
+        "hust"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3890,7 +3998,7 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2605.29649",
       "institutions": [
-        "affiliation-not-disclosed"
+        "linkoping-university"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3965,7 +4073,7 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2605.17539",
       "institutions": [
-        "affiliation-not-disclosed"
+        "university-texas-san-antonio"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -3994,7 +4102,9 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2605.20849",
       "institutions": [
-        "affiliation-not-disclosed"
+        "shanghai-university",
+        "hebei-university-technology",
+        "sun-yat-sen"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -4473,7 +4583,7 @@
       "venue": "arXiv (Cornell University)",
       "paper_url": "https://arxiv.org/pdf/2606.08904",
       "institutions": [
-        "affiliation-not-disclosed"
+        "xidian-university"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -4501,7 +4611,7 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2606.01975",
       "institutions": [
-        "affiliation-not-disclosed"
+        "dlr"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -4531,7 +4641,7 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2606.02438",
       "institutions": [
-        "affiliation-not-disclosed"
+        "linkoping-university"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -4562,7 +4672,9 @@
       "venue": "ArXiv.org",
       "paper_url": "https://arxiv.org/pdf/2606.15334",
       "institutions": [
-        "affiliation-not-disclosed"
+        "hohai",
+        "victoria-wellington",
+        "sustech"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -4649,7 +4761,8 @@
       "venue": "Proceedings of the International Conference on Automated Planning and Scheduling",
       "paper_url": "https://ojs.aaai.org/index.php/ICAPS/article/download/42843/50403",
       "institutions": [
-        "affiliation-not-disclosed"
+        "independent-researcher",
+        "bar-ilan"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
@@ -4738,7 +4851,7 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2606.16496",
       "institutions": [
-        "affiliation-not-disclosed"
+        "university-science-technology-china"
       ],
       "primary_dimension": "feedback",
       "dimensions": [
@@ -5017,7 +5130,8 @@
       "venue": "arXiv",
       "paper_url": "https://arxiv.org/pdf/2608.07395",
       "institutions": [
-        "affiliation-not-disclosed"
+        "sustech",
+        "shenzhen-university"
       ],
       "primary_dimension": "design-object",
       "dimensions": [
