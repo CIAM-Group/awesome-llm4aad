@@ -14,7 +14,7 @@ date: 2026-05-01
 venue: Tsinghua Science & Technology
 paper_url: https://www.sciopen.com/local/article_pdf/10.26599/TST.2026.9010050.pdf
 institutions:
-- affiliation-not-disclosed
+- hust
 primary_dimension: design-object
 dimensions:
 - design-object

@@ -6,6 +6,23 @@ import { RelationGraph } from '../components/RelationGraph'
 import { atlas, getPaper } from '../lib/data'
 import { relationVisuals } from '../lib/relationStyles'
 
+function RelationLineSample({ type }: { type: string }) {
+  const visual = relationVisuals[type]
+  const dash = visual?.dash.join(' ')
+  return (
+    <svg className="relation-legend__sample" viewBox="0 0 44 12" aria-hidden="true" focusable="false">
+      <path
+        d="M 1 6 C 13 2, 31 10, 43 6"
+        fill="none"
+        stroke={visual?.color ?? '#5a7770'}
+        strokeWidth={visual?.width ?? 1.6}
+        strokeDasharray={dash || undefined}
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
 export function RelationsPage() {
   const [query, setQuery] = useState('')
   const [dimension, setDimension] = useState('all')
@@ -80,7 +97,7 @@ export function RelationsPage() {
           <div className="relation-legend" aria-label="Relation line legend">
             {Object.entries(atlas.taxonomy.relation_types).map(([type, relationType]) => (
               <span key={type}>
-                <i className={`relation-legend__sample relation-visual--${type}`} aria-hidden="true"><b /></i>
+                <RelationLineSample type={type} />
                 {relationType.label}
               </span>
             ))}

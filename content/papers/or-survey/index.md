@@ -12,7 +12,9 @@ date: 2026-05-01
 venue: ArXiv.org
 paper_url: https://arxiv.org/pdf/2605.20849
 institutions:
-- affiliation-not-disclosed
+- shanghai-university
+- hebei-university-technology
+- sun-yat-sen
 primary_dimension: design-object
 dimensions:
 - design-object

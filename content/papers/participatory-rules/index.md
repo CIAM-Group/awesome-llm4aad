@@ -11,7 +11,8 @@ date: 2026-02-01
 venue: arXiv (Cornell University)
 paper_url: https://arxiv.org/pdf/2602.09349
 institutions:
-- affiliation-not-disclosed
+- university-nebraska-lincoln
+- northwestern
 primary_dimension: design-object
 dimensions:
 - design-object

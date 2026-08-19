@@ -131,7 +131,7 @@ export function RelationGraph({ papers, relations, selectedPaperId }: RelationGr
           context.fill()
         }}
         linkColor={(link: unknown) => relationVisual((link as GraphLink).type).color}
-        linkWidth={(link: unknown) => (link as GraphLink).type === 'concurrent-work' ? 2.4 : 2.1}
+        linkWidth={(link: unknown) => relationVisual((link as GraphLink).type).width}
         linkCurvature={(link: unknown) => (link as GraphLink).curvature}
         linkDirectionalArrowLength={0}
         linkLineDash={(link: unknown) => relationVisual((link as GraphLink).type).dash}

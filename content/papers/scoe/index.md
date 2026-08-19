@@ -15,7 +15,9 @@ date: 2026-06-01
 venue: ArXiv.org
 paper_url: https://arxiv.org/pdf/2606.15334
 institutions:
-- affiliation-not-disclosed
+- hohai
+- victoria-wellington
+- sustech
 primary_dimension: design-object
 dimensions:
 - design-object

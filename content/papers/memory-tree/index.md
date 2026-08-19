@@ -12,7 +12,7 @@ date: 2026-05-01
 venue: ArXiv.org
 paper_url: https://arxiv.org/pdf/2605.17539
 institutions:
-- affiliation-not-disclosed
+- university-texas-san-antonio
 primary_dimension: design-object
 dimensions:
 - design-object

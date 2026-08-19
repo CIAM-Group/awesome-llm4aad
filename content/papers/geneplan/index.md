@@ -12,7 +12,7 @@ date: 2026-01-01
 venue: Proceedings of the International Conference on Automated Planning and Scheduling
 paper_url: https://ojs.aaai.org/index.php/ICAPS/article/download/42885/50445
 institutions:
-- affiliation-not-disclosed
+- jpmorgan-ai-research
 primary_dimension: design-object
 dimensions:
 - design-object

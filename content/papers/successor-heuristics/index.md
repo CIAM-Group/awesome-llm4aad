@@ -11,7 +11,8 @@ date: 2026-06-08
 venue: Proceedings of the International Conference on Automated Planning and Scheduling
 paper_url: https://ojs.aaai.org/index.php/ICAPS/article/download/42843/50403
 institutions:
-- affiliation-not-disclosed
+- independent-researcher
+- bar-ilan
 primary_dimension: design-object
 dimensions:
 - design-object

@@ -13,7 +13,7 @@ date: 2025-10-01
 venue: ACM Workshop on Hot Topics in Networks
 paper_url: https://arxiv.org/pdf/2510.08803
 institutions:
-- affiliation-not-disclosed
+- ut-austin
 primary_dimension: design-object
 dimensions:
 - design-object

@@ -15,7 +15,7 @@ date: 2026-01-01
 venue: Proceedings of the AAAI Conference on Artificial Intelligence
 paper_url: https://ojs.aaai.org/index.php/AAAI/article/download/41024/44985
 institutions:
-- affiliation-not-disclosed
+- hanoi-university-science-technology
 primary_dimension: design-object
 dimensions:
 - design-object
