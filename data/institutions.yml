@@ -625,3 +625,9 @@ nec:
   initials: NEC
   website: https://www.nec.com/
   accent: '#245aa5'
+szu:
+  name: Shenzhen University
+  short_name: SZU
+  initials: SZU
+  website: https://www.szu.edu.cn/
+  accent: '#8b008b'
