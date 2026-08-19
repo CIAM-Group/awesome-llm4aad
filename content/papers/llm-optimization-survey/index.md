@@ -12,7 +12,8 @@ date: 2024-05-01
 venue: Swarm and Evolutionary Computation
 paper_url: https://arxiv.org/pdf/2405.10098
 institutions:
-- affiliation-not-disclosed
+- south-china-university-technology
+- nudt
 primary_dimension: design-object
 dimensions:
 - design-object

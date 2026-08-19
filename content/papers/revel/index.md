@@ -16,7 +16,9 @@ date: 2026-04-01
 venue: ArXiv.org
 paper_url: https://arxiv.org/pdf/2604.04940
 institutions:
-- affiliation-not-disclosed
+- hanoi-university-science-technology
+- phenikaa-university
+- vinuniversity
 primary_dimension: design-object
 dimensions:
 - design-object

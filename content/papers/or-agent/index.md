@@ -13,7 +13,7 @@ date: 2026-02-01
 venue: arXiv.org
 paper_url: https://arxiv.org/pdf/2602.13769
 institutions:
-- affiliation-not-disclosed
+- tongji
 primary_dimension: design-object
 dimensions:
 - design-object

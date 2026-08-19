@@ -13,7 +13,7 @@ date: 2026-06-01
 venue: arXiv (Cornell University)
 paper_url: https://arxiv.org/pdf/2606.08904
 institutions:
-- affiliation-not-disclosed
+- xidian-university
 primary_dimension: design-object
 dimensions:
 - design-object

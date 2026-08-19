@@ -11,7 +11,7 @@ date: 2026-03-01
 venue: ArXiv.org
 paper_url: https://arxiv.org/pdf/2603.19257
 institutions:
-- affiliation-not-disclosed
+- florida-atlantic
 primary_dimension: design-object
 dimensions:
 - design-object

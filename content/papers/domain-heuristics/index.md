@@ -10,7 +10,7 @@ date: 2026-05-01
 venue: ArXiv.org
 paper_url: https://arxiv.org/pdf/2605.29649
 institutions:
-- affiliation-not-disclosed
+- linkoping-university
 primary_dimension: design-object
 dimensions:
 - design-object

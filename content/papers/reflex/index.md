@@ -9,7 +9,7 @@ date: 2026-06-15
 venue: arXiv
 paper_url: https://arxiv.org/pdf/2606.16496
 institutions:
-  - affiliation-not-disclosed
+- university-science-technology-china
 primary_dimension: feedback
 dimensions:
   - feedback
