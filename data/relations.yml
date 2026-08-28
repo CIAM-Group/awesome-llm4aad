@@ -833,3 +833,32 @@ relations:
     description: >-
       The programmatic-bottleneck work cites EoH while evolving explanatory programs,
       a neighboring use of LLM evolution rather than solver design.
+  - from: eoh
+    to: dgs
+    type: extends
+    dimension: search
+    description: >-
+      DGS extends EoH-style evolutionary heuristic design with learned
+      operator-parent selection before expensive LLM generation.
+  - from: reevo
+    to: refineevo
+    type: extends
+    dimension: feedback
+    description: >-
+      RefineEvo extends ReEvo's reflective heuristic evolution with planning,
+      operator refinement, and trajectory-grounded bidirectional experience.
+  - from: eoh
+    to: seaevo
+    type: extends
+    dimension: search
+    description: >-
+      SeaEvo extends EoH-style evolutionary heuristic search with a persistent
+      strategy-space archive and diversity-aware navigation.
+  - from: a2dept
+    to: atlas
+    type: concurrent-work
+    dimension: design-object
+    description: >-
+      A2DEPT and ATLAS independently move LLM-based AHD beyond component
+      synthesis toward open-ended solver synthesis and scaffold-free
+      full-algorithm synthesis, developed concurrently.
