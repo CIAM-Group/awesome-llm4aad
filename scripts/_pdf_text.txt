@@ -1,0 +1,1312 @@
+================================================================================
+FILE: A2DEPT Large Language Model-Driven Automated Algorithm Design via Evolutionary Program Trees.pdf
+================================================================================
+PAGES: 40
+
+----- PAGE 1 -----
+A DEPT: Large Language Model–Driven Automated Algorithm Design via
+2
+Evolutionary Program Trees
+BinChen*1 ShouliangZhu*1 BeidanLiu2 YongZhao2 TianlePu2 HuichunLi3 ZhengqiuZhu†2
+Abstract
+6.6
+6.4
+6.2
+Designingheuristicsforcombinatorialoptimiza- 6.0
+tionproblems(COPs)isafundamentalyetchal- 5.8
+5.6
+lengingtaskthattraditionallyrequiresextensive
+5.4
+domain expertise. Recently, Large Language 5.2
+Model (LLM)-based Automated Heuristic De-
+5.0
+sign(AHD)hasshownpromiseinautonomously
+S1+H1 S2+H1 S2+H2
+generating heuristic components with minimal
+human intervention. However, most existing
+LLM-based AHD methods enforce fixed algo-
+rithmictemplatestoensureexecutability,which
+confines the search to component-level tuning
+and limits system-level algorithmic expressive-
+ness. Toenableopen-endedsolversynthesisbe-
+yondrigidtemplates,weproposeAutomatedAl-
+gorithmDesignviaEvolutionaryProgramTrees
+(A DEPT),whichtreatsLLMsassystem-levelal-
+2
+gorithm architects. A DEPT explores the vast
+2
+program space via a tree-structured evolution-
+ary search with hybrid selection and hierarchi-
+cal operators, enabling iterative refinement of
+completealgorithms. Tomakeopen-endedgen-
+erationpractical,weenforceexecutabilitywitha
+lightweightprogram-maintenanceloopthatper-
+forms feedback-driven repair. In experiments,
+A DEPTconsistentlyoutperformsrepresentative
+2
+LLM-basedbaselinesonbothstandardandhighly
+constrainedbenchmarks. Onthestandardbench-
+marks,itreducesthemeannormalizedoptimality
+gapby9.8%relativetothestrongestcompeting
+AHDbaseline.
+*Equal contribution. † Corresponding authors. 1The Insti-
+tuteofIntelligentComputing,UniversityofElectronicScience
+andTechnologyofChina,Chengdu611731,China2Collegeof
+Systems Engineering, National University of Defense Technol-
+ogy, Changsha 410073, China 3Academy of Military Medical
+Sciences, Beijing 100071, China. Correspondence to: Shou-
+liang Zhu <202522900324@std.uestc.edu.cn>, Zhengqiu Zhu
+<zhuzhengqiu12@nudt.edu.cn>.
+eulaV
+evitcejbO
+Ã
+(a) (b)
+6.53 6.6 6.53 30
+6.34 6.28 6.4 25
+6.2 6.18
+20
+6.0
+5.85
+5.8 15
+5.6
+10
+5.4
+5 5.2
+5.0 0
+H (H;¼) (H;¼;½)
+)%(
+etaR
+elbatucexe-noN
+25.0%
+14.8%
+2.6%
+Figure1.PilotstudyontheTravelingSalesmanProblem(TSP).
+Itillustrates(i)frameworkdependenceintemplate-boundAHD
+and(ii)theexecutabilitychallengewhenscalingfromheuristicsto
+fullsolverlogic.(a)S isastep-by-stepconstructiveframework,
+1 andS addsbacktracking.H1andH2areevolvedunderS and
+2 1
+S . (b)Weexpandtheevolutiontargetfromascoringheuristic
+2
+Hto(H,π)withbacktrackingpolicyπ,andthento(H,π,ρ)by
+addingautilizationmechanismρ. Thereddashedcurvereports
+thenon-executablerate(generatedprogramsthatfailtorun).
+1.Introduction
+Combinatorialoptimizationproblems(COPs)(Desaleetal.,
+2015) are ubiquitous in real-world applications, ranging
+from logistics planning (Bengio et al., 2021) and vehicle
+routing(Braekersetal.,2016)tochipfloorplanning(Mirho-
+seinietal.,2021)andjobscheduling(Chaudhry&Khan,
+2016). Due to the combinatorial explosion of the search
+space,theseproblemsaretypicallyNP-hard(Garey&John-
+son,1979),renderingexactsolverscomputationallyinfea-
+sibleforlarge-scaleinstances. Consequently,constructing
+high-performance heuristics—which trade optimality for
+computationalefficiency—hasbecomethetypicalapproach
+toobtainsatisfactorysolutionsunderlimitedtimebudgets
+(Talbi,2009). However, thetraditionalparadigmofman-
+ual heuristic design faces a severe scalability bottleneck.
+This process is inherently labor-intensive and highly de-
+pendentondomain-specifichumanintuition(Burkeetal.,
+2013).Practitionersmustoftenengageinatedioustrial-and-
+errorcycletohandcraftrulesthatcaptureproblemstructure.
+Moreover,handcraftedheuristicscanbesensitivetoprob-
+lemvariants: strategiestunedforonesettingmaydegrade
+onothers(Wolpert&Macready,2002),requiringsubstantial
+re-tuningorredesign.
+To address these scalability limitations, Large Language
+1
+6202
+rpA
+72
+]IA.sc[
+1v34042.4062:viXra
+
+----- PAGE 2 -----
+A DEPT:LargeLanguageModel–DrivenAutomatedAlgorithmDesignviaEvolutionaryProgramTrees
+2
+Models(LLMs)haverecentlyenabledaparadigmshiftto- change multiple behaviors at once, making it difficult to
+wardAutomatedHeuristicDesign(AHD)(Romera-Paredes attributeperformancedifferencestospecificmodifications
+etal.,2024). Actingasgeneral-purposeheuristicgenerators, andweakeningsearchguidance.
+LLMs can translate high-level intentions into executable
+Inthispaper,weproposeA DEPT(AutomatedAlgorithm
+code(Maetal.,2023). Thismakesitpossibletoautomate 2
+DesignviaEvolutionaryProgramTrees),aframeworkfor
+substantial parts of the heuristic-development pipeline—
+open-endedAADthatevolvescompletesolverprograms.
+fromimplementingcandidaterulestoiteratingovervariants
+A DEPTperformstree-structuredprogramsearchwithhy-
+underauser-specifiedevaluationprotocol—therebyreduc- 2
+bridselection,combiningSA-styleparent–childacceptance
+ingrelianceonrepeatedmanualre-engineering.
+withBoltzmannsamplingtopreservediversetrajectories. It
+Recent studies have further integrated LLMs with Evolu- furtherevolvesprogramswithhierarchicaloperators(micro-
+tionaryComputation(EC)toadvanceAHD.Forinstance, tuning,macro-mutation,semanticcrossover)underadaptive
+FunSearch(Romera-Paredesetal.,2024)adoptsanLLM- scheduling. To keep open-ended evolution runnable, we
+as-mutation-operatorparadigmtoevolvepriorityfunctions. couplethesearchwithalightweightmaintenanceloopthat
+Subsequent methods further improve generation quality: repairsmissingdependenciesviaadependencygraphand
+EoH(Liuetal.,2024a)evolvesnatural-languagethoughts prunesunreachablecode.
+andcodejointly,whileReEvo(Yeetal.,2024)leverages
+Ourmaincontributionsareconcludedasfollows:
+reflectiveverbalgradientsforself-improvement. Mostre-
+cently,MCTS-AHD(Zhengetal.,2025)introducesMonte
+• Problemframing. Weidentifytheframeworkbottle-
+CarloTreeSearchtomitigateprematureconvergenceand
+neck of LLM-based AHD and motivate open-ended
+betterbalanceexplorationandexploitation.
+AADasprogram-spacesearchoverexecutablesolvers.
+Despitetheseadvances,acriticallimitationpersists: most
+• A DEPTframework. WeproposeA DEPT,atree-
+LLM-basedAHDmethodsdesignkeyheuristicfunctions 2 2
+structuredevolutionaryprogramsearchframeworkthat
+within predefined solver frameworks. Advanced search
+uses LLMs as program-level variation operators to
+strategies are therefore applied only to optimize isolated
+evolvecompletesolvers.
+functionalslots. Asaresult,performancebecomestightly
+coupled to the chosen framework. Figure 1(a) illustrates • Mechanismsforreliablelong-horizonevolution.We
+thebottleneck: heuristicsevolvedunderoneconstructive introduce(i)aprogram-maintenanceloopfordepen-
+frameworkcanfailtotransferunderanother,andtherelative dencyrepairandexecutabilityenforcement,(ii)atree-
+advantageofstructuralchoicescanbeproblem-dependent. structuredhybridselectionschemethatpreservesdi-
+Consequently,template-constrainedAHDinheritsahidden versetrajectoriesunderafixedbudget,and(iii)hier-
+yetconsequentialdesigndecision—selectinganappropriate archicaloperatorswithadaptiveschedulingtoenable
+solver backbone—that is difficult to resolve a priori, and localizededitsandimprovedcreditassignment.
+can cap performance even when the heuristic component
+itselfiswelloptimized. • Empirical validation. We evaluate A 2 DEPT on a
+diverse suite of NP-hard combinatorial optimization
+Theselimitationsmotivateatransitionfromtemplate-bound
+benchmarks(standardandhigh-constraint)andshow
+AHDtoopen-endedAutomatedAlgorithmDesign(AAD),
+consistentgainsoverrepresentativeLLM-basedAHD
+wherethesearchtargetexpandsfromheuristiccomponents
+baselines. Onthestandardbenchmarks,A DEPTre-
+2
+tocompletesolverprograms,asillustratedinFigure2(a).
+ducesthemeannormalizedoptimalitygapby9.8%rel-
+Byenablingredesignofthefullalgorithmicworkflow,AAD
+ativetothestrongestcompetingAHDbaseline,where
+unlocks a much richer design space, but it also amplifies
+eachper-taskgapisdefinedastherelativepercentage
+generationdifficulty. AsFigure1(b)suggests,enlargingthe
+deviationfromtheoptimumbeforeaveraging.
+evolutiontargetfromascoringheuristictobroadersolver
+control can improve objective values, yet it increases the
+2.BackgroundandRelatedWork
+non-executablerateduetothegrowingcomplexityoffree-
+formcodegeneration. Thistransitionintroducesthreefun-
+2.1.HeuristicsforCombinatorialOptimization
+damentalchallenges. First,ExecutabilityInstability: com-
+pletesolversinvolvelong,interdependentcodewithfragile Combinatorial optimization problems such as TSP
+interfaces and dependencies, making candidates prone to (Rosenkrantzetal.,1974)andJobShopScheduling(JSP)
+compilation/runtimefailures. Second,SearchSpaceExplo- (Jain&Meeran,1999)aretypicallyNP-hard,makingexact
+sion: AADmustexploreaneffectivelyunboundedprogram solversimpracticalatscale.Heuristicsthereforeserveasthe
+spacewherevalid,high-performingalgorithmsaresparse. workhorseinpractice,broadlyfallinginto(i)constructive
+Third, Credit Assignment Opacity: large coupled edits rulesthatbuildfeasiblesolutionsincrementally(Campbell
+&Savelsbergh,2004;Paessens,1988)and(ii)improvement
+2
+
+----- PAGE 3 -----
+A DEPT:LargeLanguageModel–DrivenAutomatedAlgorithmDesignviaEvolutionaryProgramTrees
+2
+methodsthatiterativelyrefineincumbentsvialocalsearch benchmark-drivenfeedback.
+ormetaheuristics(Dorigoetal.,2007;Katochetal.,2021),
+e.g.,simulatedannealing(Rutenbar,2002)andtabusearch
+3.Methodology
+(Al-Sultan,1995). However,hand-craftedheuristicsareof-
+tenbrittle: theyaretunedtospecificinstancedistributions 3.1.WorkflowOverview
+andcandegradeundershiftingconstraintsoroperatingcon-
+AsillustratedinFigure2,A DEPTcastsAADasanevolu-
+ditions(Hooker,1995). 2
+tionarysearchoveradiscreteprogramspace. Itmaintains
+a global search tree T (Zheng et al., 2025) of executable
+2.2.AutomatedHeuristicDesign
+programs, whereeachnodestorestheprogram, itsscore,
+AutomatedHeuristicDesign(Liuetal.,2024a),oftenstud- anditsgenerationmetadata. Unlikepopulation-basedmeth-
+iedunderthehyper-heuristicsparadigm,aimstoautomate ods,T retainsallevaluatedprograms,enablingstructured
+the construction of optimization heuristics. Early AHD explorationandreuseofpriortrajectories. Formally,each
+workwasdominatedbyGeneticProgramming(GP)(Lang- node is defined as a tuple n = (P,S,h,ω), where P is
+don & Poli, 2013; Koza, 1994), which evolves heuristic anexecutableprogram,S isitsscoreonD,hrecordsthe
+programsviacrossoverandmutationbutcansufferfrom parent/operatorhistory,andωstoreslocaloperatorweights.
+instability(e.g.,invalidprogramsandcodebloat)(O’Neill
+A DEPTdecomposeslong-horizonsolversynthesisintoa
+2
+et al., 2010). More recently, LLMs have enabled seman-
+sequenceoflocalized,verifiableprogrameditsguidedby
+ticallyinformedprogramgenerationandeditingforAHD
+empirical feedback. As shown in Figure 2(b), it expands
+(Liu et al., 2025; van Stein & Ba¨ck, 2024), exemplified
+afrontierinbatches: eachiterationselectsasetofparent
+by FunSearch (Romera-Paredes et al., 2024), EoH (Liu
+nodesviahybridselectionandappliesadaptivelyscheduled
+etal.,2024a),ReEvo(Yeetal.,2024),andtree-basedvari-
+operators to generate multiple independent offspring. To
+antssuchasMCTS-AHD(Zhengetal.,2025). However,
+preventfailuresfrompropagatingacrosstheseexpansions,
+most LLM-based AHD methods remain template-bound:
+the program-maintenance pipeline in Figure 2(c) repairs
+they optimize a small set of heuristic components (e.g.,
+brokendependenciesandprunesunreachablecodebefore
+scoring/priority functions) within predefined algorithmic
+evaluation,andthescoresarewrittenbackintoT toguide
+templates,whilekeepingthesurroundingcontrolflowand
+subsequentselection.
+solverlogicfixed. Thisstructuralconstraintlimitstheirabil-
+itytodiscoversystem-levelalgorithmicinnovationsrequired Theworkflowproceedsintwophases. First,anLLM-based
+bycomplexoptimizationproblems. A DEPTperformsse- initializationproducesadiversesetofexecutablerootpro-
+2
+manticallyinformededitsovercompletesolverprograms grams (see Appendix C.1). Then, A 2 DEPT enters an it-
+with explicit executability checks, enabling system-level erative loop: it selects parent nodes, applies hierarchical
+redesignratherthancomponent-leveltuning. mutationandrecombinationtogeneratenewcode,repairs
+brokendependenciesviatheprogrammaintenancemech-
+2.3.LLMsforProgramSynthesisandOptimization anism,evaluatesfeasibleprograms,andinsertsthemback
+intoT untilthecomputationalbudgetisexhausted. Thespe-
+RecentadvancesinLLMshavecatalyzedprogressinpro- cificmechanismsforselection,generation,andgovernance
+gramsynthesisandcode-leveloptimization(Xietal.,2025; aredetailedinthefollowingsubsections.
+Luetal.,2023;Shypulaetal.,2023;Liventsevetal.,2023).
+A dominant paradigm integrates LLM-based generation
+withevaluation-drivenfeedback(Yangetal.,2023): instead Designrationale. ThecomponentsofA DEPTarenotan
+2
+ofone-shotcodesynthesis,systemsinterleavegeneration interchangeableassembly;eachisnecessitatedbythecon-
+withexecution,verification,orperformanceassessmentto sequencesofthepreviousone,formingaself-reinforcing
+iteratively refine programs (Wang et al., 2023; Wu et al., looptailoredtoopen-endedAAD.Tree-structuredsearch
+2024). Such generation–evaluation loops have been ex- with SA-style parent–child acceptance is a natural fit be-
+ploredacrossdebugging(Chenetal.,2023),promptopti- causeAADprimarilyrequiresdescribingparent–childre-
+mization(Zhouetal.,2022),rewarddesign(Maetal.,2023), finementrelationsratherthanmaintainingpopulation-level
+robotics(Lehmanetal.,2023),andbroadersearch/evolution- dynamics;SAsatisfiesdetailedbalanceandprovidesawell-
+based optimization settings. However, program-space characterizedexploration–exploitationtrade-off. However,
+searchremainschallengingduetothefragilityofcodeedits SA’srejectionrateisinherentlyhighinopen-endedAAD,
+andthesheersizeofthesearchspace(Chen,2021;Austin sincemanychildrencarrystructuralchangeswhosebene-
+etal.,2021). Incontrasttopriorworkthattypicallyopti- fitsarenotimmediatelyreflectedinthescore;thisshrinks
+mizes programs for correctness or local efficiency under theparentfrontierandmotivatesBoltzmannsupplementary
+fixedspecifications/tests,A DEPTtargetsopen-endedalgo- samplingoverT torecovertemporarilyunderperforming
+2
+rithmicperformanceandevolvescompletesolverlogicvia but structurally promising branches. The resulting diver-
+3
+
+
+================================================================================
+FILE: ATLAS.pdf
+================================================================================
+PAGES: 48
+
+----- PAGE 1 -----
+1
+ATLAS: Scaffold-Free Algorithm Synthesis by LLMs
+via Embedding-Guided Quality-Diversity Search
+Danial Yazdani, Mohammad Nabi Omidvar, Yuan Sun, Maksud Ibrahimov, and Xiaodong Li
+Abstract
+Most LLM-based automated algorithm design methods optimize a designated component within a human-specified scaffold,
+fixing overall organization and component interactions. We present ATLAS, an embedding-guided quality-diversity framework for
+scaffold-free full-algorithm synthesis in combinatorial optimization. The problem specification supplies objectives and constraints;
+a minimal I/O interface fixes only instance and solution formats; the LLM chooses and restructures components, interactions, and
+control flow. This freedom enlarges the search space, risking invalid candidates and premature convergence to one design region.
+ATLAS independently detects execution, interface, and feasibility failures, recomputes objectives, and applies error-conditioned
+repair;similarity-basedarchivemanagementpreservesalgorithmsacrossembedding-spaceregionstocounterprematureconvergence.
+Its three-layer search refines the best design, gives other regions dedicated refinement opportunities, and performs cross-region
+synthesistorecombinecomponentsandtheirinteractions.AcrossfourNP-hardproblems,ATLASoutperformsseveralstate-of-the-art
+component-synthesis methods and a matched full-synthesis baseline while remaining competitive with strong human-designed
+algorithms. One ATLAS run retains several algorithms with comparable performance from distinct embedding-space regions rather
+thana singledesign. Codeinspection findsthatthese multi-componentdesigns differin theirprimaryconstruction orglobal-search
+backbone. Our results suggest that embedding-guided quality-diversity search can make the enlarged full-algorithm design space
+practically searchable. Source code and exact executable prompts are available at https://github.com/Danial-Yazdani/ATLAS.
+Index Terms
+Automated algorithm design, combinatorial optimization, large language models, multimodal optimization, quality-diversity
+optimization.
+I. INTRODUCTION
+Optimization algorithms are fundamental tools for applications in logistics, scheduling, and resource allocation [47, 35].
+Designing such algorithms typically requires extensive expert knowledge and problem-specific engineering effort. Recent
+progress in automated algorithm design has shown that large language models (LLMs) can synthesize heuristic components
+through iterative search [54, 28]. Methods such as FUNSEARCH (Searching in the Function Space) [36], Evolution of Heuristics
+(EOH) [25], and Reflective Evolution (REEVO) [57] evolve algorithmic functions (priority selectors, construction heuristics,
+scoring functions) that operate as components within predefined scaffolds. For these methods, the synthesized component
+occupies a designated role inside user-defined control flow; the surrounding framework supplies the remaining end-to-end
+algorithmic machinery and may perform solution-construction or feasibility-preserving operations. Although this scaffolding
+makes synthesis and evaluation manageable, it imposes much of the algorithmic architecture in advance and restricts the LLM
+from going beyond the designated interface to add, remove, reorder, or jointly redesign components and their interactions.
+Full-algorithm synthesis removes this restriction by placing complete algorithms, rather than only designated components,
+under LLM-guided search. This relaxation enables exploration of different component inventories and algorithmic organizations,
+including construction heuristics, local search, metaheuristics, and hybrid pipelines. Existing approaches instantiate it with
+different boundaries: LLAMEA [48] generates complete metaheuristics under a box-constrained black-box interface, whereas
+ALPHAEVOLVE [33] evolves user-marked regions of supplied programs. This greater design freedom expands the search space
+into a larger, more heterogeneous landscape that is harder to navigate and exposes generated algorithms to potential failures in
+execution, interface compliance, solution construction, and constraint handling. This freedom can also increase synthesis cost
+because it admits more complex, multi-stage algorithms whose execution and iterative refinement require greater computational
+effort. However, the main advantage is the resulting design freedom: without a user-prescribed internal architecture, the LLM
+can explore alternative component inventories, component interactions, and control flows that a fixed scaffold would otherwise
+exclude.
+The resulting algorithm landscape is larger and can also be multimodal: competitive algorithms with different internal
+organizations may occupy distinct regions of the selected representation. Niching methods in multimodal optimization seek to
+locate and preserve multiple optima or modes rather than collapsing to a single solution [23]. This motivates full-algorithm
+Danial Yazdani and Xiaodong Li are with the School of Computing Technologies, RMIT University, Melbourne, VIC, Australia (e-mails:
+danial.yazdani@gmail.com;xiaodong.li@rmit.edu.au).MohammadNabiOmidvariswiththeSchoolofComputingandLeedsUniversityBusinessSchool,
+UniversityofLeeds,Leeds,UK(e-mail:M.N.Omidvar@leeds.ac.uk).YuanSuniswithLaTrobeBusinessSchool,LaTrobeUniversity,Melbourne,VIC,
+Australia(e-mail:Yuan.Sun@latrobe.edu.au).MaksudIbrahimoviswithEffectiveAI,Melbourne,VIC,Australia(e-mail:maksud@effective-ai.com.au).
+ThisworkwassupportedbyRMITRACEthroughtheprovisionofAPIaccess.
+Correspondingauthor:XiaodongLi.
+6202
+guA
+81
+]IA.sc[
+2v64551.8062:viXra
+
+----- PAGE 2 -----
+2
+ATLAS: Full Algorithm Synthesis Reachable Algorithm Families (Example Set) Component Synthesis (EoH, FunSearch, ReEvo)
+G S iv c e a n f : f p o r ld o - b f le r m ee s p (f e r c e + e I c / o O nt i r n o t l e r f f lo a w ce ) Greedy Constr d u R e c e f t s i i n t o e r n i d c t f e a d m t il o y o (e n . e g ., S g c r a e f e f d o y ld ) - S G d i c e v a f e f n s f : o o u l l v d s e e ( ( r i f - n i p s x r t e o a d v n i c d c e e o ) n d : t S ro c l a f f f lo o w ld ) + I/O interface
+# parse input + initialize state
+Search Target (LLM-Generated Full Scaffold-free: Local Search (LS) while not done:
+Algorithm)
+multiple # select candidates + enforce constraints
+def full_executable_algorithm(instance): algorithm Metaheuristics
+Search Target (LLM-Generated Component)
+# parse input + initialize families
+# handle constraints + edge cases Hybrid: Meta + LS def heuristic(candidates):
+# improve / optimize (iterative) # priority / scoring / selection rule
+# return solution Hybrid: Greedy + LS # return score / selected candidate
+# update solution
+# return solution
+Fig. 1: Component-based vs. scaffold-free full-algorithm synthesis. ATLAS synthesizes a complete optimization algorithm
+that receives problem instances and returns solutions through a fixed external I/O interface, without a user-provided internal
+algorithmic scaffold; component methods synthesize a designated function within user-provided control flow.
+search that preserves several competitive regions while refining promising designs rather than committing too early to one
+incumbent.
+In LLM-driven synthesis, archive diversity has an additional operational role. Reference-conditioned operators can receive
+the complete source of algorithms from different regions and reason about their components and interactions when constructing
+a new algorithm. Coverage therefore supplies varied source material for cross-region synthesis, not only insurance against
+premature convergence: the LLM can select, discard, adapt, or combine mechanisms from different inputs into a new end-to-end
+organization.
+To navigate this landscape, we introduce ATLAS (Archive-based Three-Layer Algorithm Synthesis), an embedding-guided
+quality-diversity framework for full-algorithm synthesis in combinatorial optimization. ATLAS maintains a coverage-preserving
+archive, or semantic repertoire,1 of executable algorithms organized in a pretrained embedding space [7, 3, 58]. Embedding
+distance organizes retrieval, clustering, redundancy control, and reference selection without requiring hand-specified behavior
+descriptors. The induced regions are recomputed as the archive develops rather than fixed in advance. A three-layer strategy
+concentrates refinement around the current best algorithm and gives representatives of other regions dedicated refinement
+opportunities. Cross-region synthesis supplies the LLM with components and functions from multiple input algorithms. The
+LLM can then reason about their interactions and reorganize them into new hybrid algorithms.
+At its core, ATLAS is scaffold-free. The problem definition supplies the objective and constraints as requirements common
+to any optimization algorithm, while ATLAS fixes only a minimal problem-specific I/O interface and prescribes no internal
+component inventory, function-role partition, or control flow. The LLM therefore controls the complete algorithmic artifact
+and is responsible for end-to-end solution construction and constraint handling. ATLAS’s external evaluator does not supply
+or complete this logic, and it does not make returned solutions feasible; it executes candidates under the common resource
+protocol, verifies returned solutions, and independently recomputes their objective values. Because this responsibility widens the
+failure surface to malformed and infeasible outputs as well as execution errors, error-conditioned REPAIR is treated as a search
+operator that regenerates the candidate algorithm from classified failure evidence.
+Figure1contrastsscaffold-constrainedcomponentsynthesiswithATLAS’sfull-algorithmsearchunderitsminimalexternalI/O
+interface. ATLAS operationalizes this search through prompts that communicate the problem specification and I/O requirements,
+togetherwithLLM-drivenfull-algorithmoperatorsthatreceivecompletesourcecodeforrefinement(IMPROVE,TUNE,SIMPLIFY),
+synthesis(COMBINE, DIVERGE),anderror-conditionedrecovery(REPAIR)[41].Similarity-basedretrievalandredundancy-aware
+pruning preserve coverage across embedding-separated algorithm regions, providing alternatives for targeted refinement and
+recombination. The supporting execution system evaluates candidates under runtime and memory controls and records code,
+lineage, outcomes, resource use, and failure diagnostics.
+Our contributions are as follows.
+• Scaffold-Free Full-Algorithm Synthesis: We introduce ATLAS, a framework for scaffold-free full-algorithm synthesis in
+combinatorial optimization. We provide the problem definition, including its objective and constraints, and specify the callable
+entry point and instance/solution I/O formats. Beyond these necessary problem and interface requirements, the LLM is free
+to design the complete algorithm, choose its components, coordinate their interactions, and organize its end-to-end workflow
+without any user-prescribed restriction on its internal structure.
+• Embedding-Guided Quality-Diversity and Multimodal Search: We propose a coverage-preserving semantic repertoire
+organized in pretrained embedding space. Embedding-based retrieval, clustering, and redundancy control mitigate premature
+1Hereandthroughout,semanticdenotessimilarityinthepretrainedembeddingofanalgorithm’sname,description,andpreprocessedsourcecode,not
+programsemanticsdefinedbyexecutionbehavior.Embedding-spaceregionsorclustersdenotegroupsinducedbythisrepresentation.Mechanism-oriented
+familylabelsareusedonlyfortheauthor-annotatedembeddingbenchmarkorforillustrativerepresentativesexaminedseparatelythroughcodeinspection.
+
+----- PAGE 3 -----
+3
+convergence and support multimodal search in the selected representation, retaining multiple near-best algorithms while
+search continues to improve the strongest designs. The preserved alternatives also provide semantically varied references for
+cross-region synthesis, so coverage contributes to search progress as well as final repertoire quality.
+• Hierarchical Three-Layer Search: We develop a three-layer resource-allocation strategy over the clustered repertoire:
+Layer 1 targets the current best region, Layer 2 gives non-elite region representatives dedicated refinement opportunities, and
+Layer 3 recombines components and their interactions across regions to discover new organizations and hybrids.
+• Independent Evaluation and Failure-Conditioned Recovery: Because generated algorithms are responsible for solution
+construction and constraint handling, evaluation must detect a wider failure surface that includes execution, interface,
+malformed-output, and feasibility failures. ATLAS independently verifies returned solutions and recomputes objectives, applies
+an all-or-nothing validity rule that records failures rather than converting them into finite penalties, and routes classified
+evidence to error-conditioned REPAIR. The accompanying implementation provides problem- and interface-aware prompts,
+worker-process parallel evaluation with runtime and memory controls, and detailed lineage, resource, and failure records.
+• Empirical Design Insights for LLM-Based Full Synthesis: Controlled studies examine artifact scope, representation,
+initialization, grouping, and search allocation. They show that moving from component synthesis to full-algorithm synthesis
+through the ATLAS framework improves performance in most tested settings and provide practical guidance for the design
+of LLM-based full-algorithm synthesis systems.
+We validate these contributions across four NP-hard combinatorial optimization benchmarks. ATLAS outperforms several
+state-of-the-art component-synthesis methods and the matched full-synthesis baseline, remains competitive with strong human-
+designed, domain-specific algorithms, and retains multiple competitive algorithms in separate archive regions within a run,
+consistent with the intended multimodal search behavior.
+The remainder of this paper is organized as follows. Section II reviews LLM-based component and full-algorithm synthesis
+together with relevant quality-diversity research; Section III presents the ATLAS formulation and search framework; Section IV
+describes the experimental protocol and results; and Section V concludes the paper. The supplementary material provides
+extended related work, implementation and evaluation details, problem definitions and instance generation, pseudocode and
+evaluation protocols, configurations and baseline specifications, complete protocols and analyses, additional experiments, and
+descriptions of representative synthesized algorithms.
+II. RELATEDWORK
+This section reviews work related to the LLM-based automated algorithm design aspects of ATLAS. We focus on component
+and full-algorithm synthesis, together with optimization methods that act as meta-optimizers over the generated-algorithm
+space. The concise discussion here highlights the distinctions needed for the present work; a comprehensive taxonomic and
+method-by-method treatment is provided in Appendices A-A and A-B.
+a) LLM-Driven Component Synthesis: Recent methods use LLMs to synthesize algorithmic components that occupy
+predefined roles within user-specified algorithmic control flow. Representative examples include FUNSEARCH [36], EOH [25],
+REEVO [57], HSEvo [9], MCTS-AHD [61], CALM [18], HEURAGENIX [55], MEOH [56], and EOH-S [27]. These methods
+differ in search, reflection, and diversity mechanisms, but their generated functions, including priority rules, construction
+heuristics, and operator-selection policies, do not replace the surrounding algorithmic scaffold. A callable interface alone does
+not imply component synthesis; the distinction is whether the generated artifact owns the end-to-end algorithmic logic or fills a
+role within predefined control flow.
+b) Full Algorithm Synthesis: LLAMEA [48] generates complete Python metaheuristics for box-constrained continuous
+black-box optimization and refines one complete algorithm at a time using execution feedback. ALPHAEVOLVE [33] performs
+patch-based evolution over user-provided codebases with annotated editable regions. A2DEPT [4], developed concurrently
+with ATLAS, evolves complete combinatorial-optimization algorithms using a program-lineage tree, an explicit function-
+level representation, hierarchical micro/macro operators, and dependency-aware repair. These methods all move beyond
+single-component synthesis but impose different domains, representations, and structural priors. ATLAS combines a problem
+specification and minimal combinatorial I/O interface with scaffold-free full-algorithm operators that receive complete source
+code: it prescribes neither a component inventory, function-role partition, nor user-provided algorithmic control flow, and it
+organizes search to preserve coverage across embedding-space regions.
+c) Meta-Optimization and Quality-Diversity Search: The optimization method that searches over generated algorithms acts
+as a meta-optimizer and must balance exploitation of strong designs against exploration and preservation of useful alternatives.
+Prior LLM-based methods retain alternatives through mechanisms such as island models [36], tree search guided by Upper
+Confidence Bounds applied to Trees (UCT), which balances revisiting strong nodes with exploring under-sampled branches [61],
+program-lineage trees [4], and explicit objective- or instance-space diversity criteria [9, 56, 27]. Quality-diversity methods
+preserve collections of high-performing candidates across a chosen descriptor space [7, 3]. ATLAS applies this principle through
+an embedding-based representation: distance organizes retrieval, clustering, redundancy-aware pruning, and the selection of
+inputs for cross-region synthesis. The resulting repertoire reduces premature convergence and supplies distinct regions for
+continued refinement. It also allows the LLM to draw on components and their interactions from algorithms in different regions
+when constructing hybrids.
+
+
+================================================================================
+FILE: G-LNS Generative Large Neighborhood Search for LLM-Based Automatic Heuristic Design.pdf
+================================================================================
+PAGES: 29
+
+----- PAGE 1 -----
+G-LNS: Generative Large Neighborhood Search for
+LLM-Based Automatic Heuristic Design
+BaoyunZhao1 HeWang23 LiangZeng4
+Abstract
+Existing AHD: Restricted Search Our G-LNS: Structural Reshaping
+WhileLargeLanguageModels(LLMs)havere-
+A. Constructive (Rules) Destroy(𝝅𝒅)
+score(next_item) = … Current Solution Partial Solution
+centlyshownpromiseinAutomatedHeuristicDe- B D E B E
+sign(AHD),existingapproachestypicallyformu- B B D E C A G C G
+A A C A G F I H F
+late AHD around constructive priority rules or F I H
+NO
+parameterizedlocalsearchguidance,therebyre- Step0 Step1 S B te A p2 CKTRACK St I e N p G 9
+Empty Solution Choose Item A Choose Item B Final Destroy/Repair Population
+strictingthesearchspacetofixedheuristicforms.
+Suchdesignsofferlimitedcapacityforstructural B. GLS (Penalties) SA Accept Repair(𝝅𝒓)
+exploration, making it difficult to escape deep update_penalty_term(I) = …
+Manually Designed Large Neighborhood Search
+localoptimaincomplexCombinatorialOptimiza- Neighborhood Operators(e.g. 2-opt) (Via Efficient Operators Designed by LLMs)
+tionProblems(COPs). Inthiswork,wepropose
+G-LNS,agenerativeevolutionaryframeworkthat Current Sol. Current Sol.
+Global Opt. Global Opt.
+extends LLM-based AHD to the automated de-
+signofLargeNeighborhoodSearch(LNS)opera- Figure1.ComparisonofG-LNSandtraditionalAHDmethods.
+tors. Unlikepriormethodsthatevolveheuristics Forcombinatorialoptimizationproblems,unlikeexistingAHD
+inisolation,G-LNSleveragesLLMstoco-evolve methodsthatarelargelyrestrictedtolocalsearch,G-LNSenables
+structuralreshapingthroughLLM-generatedLNSoperators,al- tightlycoupledpairsofdestroyandrepairopera-
+lowingthesearchtoescapelocaloptima.
+tors. Acooperativeevaluationmechanismexplic-
+itlycapturestheirinteraction,enablingthediscov-
+1.Introduction
+eryofcomplementaryoperatorlogicthatjointly
+performseffectivestructuraldisruptionandrecon-
+CombinatorialOptimizationProblems(COPs)areubiqui-
+struction. Extensiveexperimentsonchallenging
+tousinindustrialmanufacturingandlogisticsscheduling,
+COP benchmarks, such as Traveling Salesman
+wherecomputationalefficiencydirectlyimpactsoperational
+Problems(TSP)andCapacitatedVehicleRouting
+costs(Dre´o,2006;Desaleetal.,2015).Sincemanypractical
+Problems(CVRP),demonstratethatG-LNSsig-
+COPsareNP-hard(Garey&Johnson,2002),hand-crafted
+nificantlyoutperformsLLM-basedAHDmethods
+heuristicshavelongbeenthedominantapproachforsolving
+as well as strong classical solvers. The discov-
+large-scaleinstances(Blum&Roli,2003;Gendreauetal.,
+eredheuristicsnotonlyachievenear-optimalso-
+2010). However,traditionalheuristicdesignreliesheavily
+lutionswithreducedcomputationalbudgetsbut
+ondomainexpertiseandisoftentailoredtospecificproblem
+alsoexhibitrobustgeneralizationacrossdiverse
+structures,whichsubstantiallylimitsgeneralizationacross
+andunseeninstancedistributions.1
+diversetasks(Stu¨tzle&Lo´pez-Iba´n˜ez,2018).
+RecentadvancesinLargeLanguageModels(LLMs),par-
+1SoftwareCollege,NortheasternUniversity,110819,Shenyang,
+ticularlyinlogicalreasoning(Weietal.,2022;Zengetal.,
+China2InternationalCentreforTheoreticalPhysicsAsia-Pacific,
+2024; Zhang & Zeng, 2024) and code generation (Chen,
+University of Chinese Academy of Sciences, 100190, Beijing,
+China 3Taiji Laboratory for Gravitational Wave Universe, Uni- 2021;Zengetal.,2025),havespurredgrowinginterestin
+versity of Chinese Academy of Sciences, 100049, Beijing, AutomatedHeuristicDesign(AHD)(Burkeetal.,2013).By
+China 4Tsinghua University, 100084, Beijing, China. Corre- leveragingLLMstoautomaticallygenerateandrefinealgo-
+spondence to: He Wang <hewang@ucas.ac.cn>, Liang Zeng rithmiccode,AHDsearchesforhigh-performanceheuristics
+<zengliangcs@gmail.com>.
+withinadiscretealgorithmspace(Yangetal.,2023). Pio-
+neeringframeworkssuchasFunSearch(Romera-Paredes
+1Our code are available at https://github.com/ et al., 2024) and EoH (Liu et al., 2024b) introduced the
+zboyn/G-LNS. evolutionary“Thought–Code”paradigmanddemonstrated
+1
+6202
+beF
+9
+]IA.sc[
+1v35280.2062:viXra
+
+----- PAGE 2 -----
+G-LNS:GenerativeLargeNeighborhoodSearchforLLM-BasedAutomaticHeuristicDesign
+promisingresultsoncanonicaltaskssuchasBinPacking. yondconstructiverulesandfixedlocalmoves.
+Subsequentworkextendedthisparadigmthroughreflective
+• Synergy-awareCo-evolution. Weintroduceacoopera-
+evolution(Yeetal.,2024),tree-basedexplorationstrategies
+tiveevaluationmechanismwithasynergymatrixtoex-
+(Zhengetal.,2025),andheuristicsetevolutiontoimprove
+plicitlycaptureandexploitthecouplingbetweendestroy
+generalization(Liuetal.,2025).
+andrepairoperatorsduringevolution.
+Despitethisprogress,existingAHDmethodsexhibitafun-
+• EmpiricalEffectivenessandGeneralization. Extensive
+damentalstructuralbottleneck(Figure1). Mostapproaches
+experimentsonTSPandCVRPdemonstratethatG-LNS
+instantiate AHD around either Constructive Heuristics
+outperforms state-of-the-art AHD methods and strong
+(Gloveretal.,2001),whichevolvepriorityrulesforsequen-
+classicalsolvers,achievingnear-optimalsolutionswith
+tialdecision-making,orGuidedLocalSearch(Voudouris
+substantiallyreducedcomputationalbudgets.
+&Tsang,1996),whichoptimizespenaltyfunctionsunder
+fixedneighborhoodoperators. Constructiveheuristicsfol-
+2.Background
+lowanirreversibletrajectory: earlysuboptimaldecisions
+aredifficulttocorrectthroughlaterruleadjustments(Mart´ı
+2.1.AutomaticHeuristicDesign
+&Reinelt,2011). Conversely,whilelocalsearchenablesit-
+erativerefinement(Voudouris&Tsang,1999),currentAHD AutomaticHeuristicDesign(AHD)aimstoautomatically
+methods typically treat neighborhood structures (e.g., 2- discoverhigh-performanceheuristicsforcombinatorialop-
+opt(Johnson&McGeoch,1997))asfixedpriors,restricting timizationproblems(COPs)(Burkeetal.,2013;Stu¨tzle&
+theLLMtoparametertuningratherthanenablingstructural Lo´pez-Iba´n˜ez, 2018; Chen et al., 2025b). Let I denote
+algorithmicinnovation(Liuetal.,2024c). the instance space and S the solution space. A heuristic
+h∈Hisamappingh:I →S withinadiscretealgorithm
+To overcome these limitations, we draw inspiration from
+spaceH. TheobjectiveofAHDistoidentifyaheuristic
+LargeNeighborhoodSearch(LNS)(Shaw,1998),ameta-
+h∗thatminimizestheexpectedobjectivevalueoveratarget
+heuristicthatachievesstrongstructuralreshapingthrough
+distributionD:
+alternatingdestroyandrepairoperations(Ropke&Pisinger,
+2006). TheeffectivenessofLNScriticallydependsonthe h∗ =argmin E I∼D (cid:2) f(h(I)|I) (cid:3) . (1)
+h∈H
+coupling between these two operators: the destroy phase
+determinesthestructuraldefectsintroducedintothesolu- While AHD enables systematic search over algorithmic
+tion, while the repair phase must be specifically adapted logic,theexpressivenessofthesearchspaceisdetermined
+toreconstructthem(Pisinger&Ropke,2018). Thisstrong by how heuristics are parameterized. Many existing ap-
+interdependencemakesautomatedLNSdesignparticularly proachesrestrictthesearchtopredefinedtemplates,limiting
+challengingandhaslargelypreventeditsadoptionwithin theabilitytoinducefundamentalchangesintheunderlying
+existingAHDframeworks(DaRosetal.,2025). searchdynamics. Thisworkfocusesonexpandingthede-
+signspacefromfixedheuristicformstostructurallyadaptive
+Inthiswork,weproposeG-LNS,anevolutionaryframework
+searchoperators.
+thatenablesLLMstoautomaticallydesignproblem-specific
+LNSoperators. Insteadofoptimizingscalarheuristicsor
+fixedtemplates,G-LNSpromptstheLLMtogenerateex- 2.2.LargeNeighborhoodSearch
+ecutable code for both destroy and repair operators. To
+LargeNeighborhoodSearch(LNS)isameta-heuristicthat
+explicitlymodeltheircoupling,theframeworkmaintains
+exploresthesolutionspacethroughiterativedestroy-and-
+separatepopulationsfordestroyandrepairoperatorsand
+repair operations (Shaw, 1998). Given a solution x, a
+evaluatesthemjointlywithinanadaptiveLNSprocess.Aco-
+destroyoperatordremovesasubsetofcomponents(con-
+operativeevaluationmechanismrecordstheperformanceof
+trolledbyadestructionratioϵ),producingapartialsolution
+operatorpairs,allowingG-LNStoidentifycomplementary
+x = d(x). A repair operator r then reconstructs a
+partial
+destroy–repairlogicandguidetheirco-evolutionthrough completesolutionx′ =r(x ).
+partial
+synergy-aware crossover. This design allows the search
+process to move beyond local adjustments and discover To balance exploration and exploitation, LNS typically
+heuristicscapableofeffectivestructuraldisruptionandre- employs a Simulated Annealing (SA) acceptance crite-
+construction. Ourcontributionsaresummarizedasfollows: rion(Hendersonetal.,2003),wherenon-improvingsolu-
+tionsmaybeacceptedwithaprobabilitythatdecreasesover
+time. The performance of LNS critically depends on the
+• GenerativeLNSforAHD.WeproposeG-LNS,anevo- couplingbetweendandr: effectiveoperatorsmustintro-
+lutionaryframeworkthatextendsLLM-basedAHDtothe ducetargetedstructuraldisruptionwhileenablingefficient
+automateddesignofLargeNeighborhoodSearch(LNS) reconstruction. Designing such complementary operator
+operators, enabling structural solution perturbation be- pairsremainsacentralchallengeandmotivatesautomation.
+2
+
+----- PAGE 3 -----
+G-LNS:GenerativeLargeNeighborhoodSearchforLLM-BasedAutomaticHeuristicDesign
+2.3.ProblemFormulation illustratedinFigure2,theoverallmethodologyconsistsof
+four phases—Initialization, Evaluation, Population Man-
+WeformulatetheautomateddesignofLNSoperatorsasan
+agement,andEvolution.
+optimizationproblemoveradiscretecodespace. LetΘ
+d
+andΘ denotethespacesofexecutablecodeimplementing
+r 3.2.Initialization
+destroy and repair operators, respectively. A policy π =
+(d,r)∈Θ d ×Θ r isevaluatedbyrunninganLNSalgorithm Tofacilitatetheco-evolutionoftheseinterdependentcom-
+AwithinherentstochasticityξoninstancesI ∼D. ponents, G-LNS establishes a dual-population architec-
+ture(Potter&DeJong,1994),maintainingdistinctreposi-
+Theexpectedperformanceofπisdefinedas
+toriesfordestroyoperators(P )andrepairoperators(P ),
+d r
+J(π)=E (cid:2) f(A(I,π;ξ)|I) (cid:3) , (2) eachwithacapacityofN. Theinitializationphasebegins
+I∼D,ξ
+byinjectingacompactsetofclassicdomain-expertheuris-
+andtheoverallobjectiveistoidentify tics as seeds. For instance, in TSP/VRP tasks, we utilize
+RandomRemovalandWorstRemovalforP ,andGreedy
+π∗ =arg min J(π). (3) d
+π∈Θd×Θr Insertion for P r . These seeds serve a dual purpose: they
+providefoundationalsearchcapabilitiesandfunctionasIn-
+2.4.RelatedWork Context Examples(Brown et al., 2020) to align the LLM
+with the specific task logic. To fully populate the pools
+Recentworkhasintegratedlargelanguagemodels(LLMs)
+(when the number of seeds < N), we employ the Initial-
+into evolutionary frameworks for automated heuristic de-
+izationAction(denotedasi fordestroyandi forrepair).
+1 2
+sign (Novikov et al., 2025; Chen et al., 2025a). Meth-
+Throughi1,i2,theLLMispromptedtoconceptualizenovel
+odssuchasFunSearch(Romera-Paredesetal.,2024)and
+algorithmic logic and translate it into executable Python
+EoH(Liuetal.,2024b)useLLMsasvariationoperatorsto
+code, thereby ensuring the diversity of the search space
+generateheuristiccodeconditionedonpriorimplementa-
+fromtheonset. (SeeAppendixD.1forspecificdetailson
+tionsandperformancefeedback,formingathought–code
+promptengineering).
+co-evolutionparadigmthatimprovesexplorationefficiency
+inlargediscretealgorithmspaces. However,mostexisting Simultaneously,weinitializethreemetricstructurestoguide
+approaches rely on fixed algorithmic templates, focusing theevolutionaryprocess. (1)GlobalFitnessScores(F =
+onconstructiveheuristicsorparametertuningwithinprede- {Fd,Fr}withFd,Fr ∈ RN): Initializedtozeros, these
+finedlocalsearchframeworks(Yeetal.,2024;Zhengetal., vectorstrackthecumulativeperformanceofeachoperatorin
+2025), and thus largely overlook the structural design of P d andP r forpopulationmanagement.(2)SynergyMatrix
+neighborhoodoperators. Incontrast,ourworktargetsthe (S ∈ RN×N): Initializedtozeros,thismatrixrecordsthe
+automatedgenerationoftightlycoupleddestroy-and-repair cooperativeperformanceofspecificpairs(d i ,r j )toguide
+operators,enablingLLMstoreshapethesearchprocessat jointcrossover. (3)AdaptiveWeights(W = {Wd,Wr}
+the structural level. Further discussion is provided in the withWd,Wr ∈RN): Initializedtoones,theseweightsare
+appendix(SectionA). usedsolelywithineachevaluationepisodetoregulatethe
+roulettewheelselectionprobabilities.
+3.Methodology
+3.3.EvaluationPhase
+3.1.OverviewoftheG-LNSFramework
+Theobjectiveofthisphaseistwofold: toquantifythein-
+We propose G-LNS, a framework for automating the dis- dividualcontributionofeachoperatorforpopulationman-
+covery of high-performance destroy and repair operators agement,andtocapturethecouplingeffectivenessbetween
+inLargeNeighborhoodSearch(LNS).G-LNSformulates destroyandrepairoperatorsforsynergisticevolution.Given
+heuristic design as an evolutionary process over algorith- the inherent stochasticity of LNS, we employ a Multi-
+mic structures, where large language models (LLMs) act EpisodeEvaluationMechanism.
+as intelligent variation operators to explore the space of
+We conduct K independent evaluation episodes. Each
+algorithmic logic beyond fixed heuristic templates. This
+episode starts from a random initial solution x and exe-
+evolutionaryformulationrequiresareliablemechanismto 0
+cutesforT iterations. Importantly,theAdaptiveWeights
+assessthequalityofnewlygeneratedoperators.
+W are reset to 1 at the beginning of each episode to en-
+Tothisend,weinstantiatetheLNSalgorithmwithanadap- sureindependentexploration,whereastheGlobalFitness
+tivescoringmechanisminspiredbyAdaptiveLargeNeigh- F andSynergyMatrixSaccumulatestatisticsacrossallK
+borhoodSearch(ALNS)(Ropke&Pisinger,2006),which episodestoobtainrobustperformancemetricsthatsmooth
+provides a quantitative fitness signal by measuring each outsingle-episodestochasticity.
+operator’s contribution to optimization performance. As
+3
+
+
+================================================================================
+FILE: How to Guide LLM Generation Dual-Surrogate Guided Search for Automated Heuristic Design.pdf
+================================================================================
+PAGES: 9
+
+----- PAGE 1 -----
+How to Guide LLM Generation: Dual-Surrogate Guided Search for
+Automated Heuristic Design
+YuhanWang1,ChaodaPeng1,XingyuWu2,Sheng-HaoWu1,Zhi-HuiZhan3
+1CollegeofMathematicsandInformatics,SouthChinaAgriculturalUniversity
+2DepartmentofDataScienceandArtificialIntelligence,TheHongKongPolytechnicUniversity
+3CollegeofArtificialIntelligence,NankaiUniversity
+Abstract feedback (Wu et al. 2024a; Novikov et al. 2025; Lehman
+et al. 2023). This capability has given rise to LLM-based
+Largelanguagemodels(LLMs)havemadeautomatedheuris- AHD(Liuetal.2026;Kietetal.2026),wheretheLLMacts
+tic design (AHD) increasingly practical by generating exe-
+asaprogramgeneratorinsideanautomatedsearchprocess.
+cutable heuristic code from task descriptions and evaluator
+feedback. Yet under a limited query and evaluation budget, ExistingLLM-basedAHDmethodsdiffermainlyinhow
+searchefficiencydependscriticallyonapre-generationdeci- this search process is organized. Some methods refine one
+sion.BeforeeachLLMqueryandblack-boxevaluation,the orafewprogramsthroughiterativeimprovement(vanStein
+systemmustchoosewhicharchivedheuristicstoreuseaspar- andBäck2024),whilepopulation-basedmethods(Liuetal.
+ents and which generation operator should transform them. 2024a)maintainanarchiveofcandidateheuristicsandselect
+Existing methods typically choose such actions with prede- promisingonesforfurthergeneration.Tree-searchmethods
+fined rules, leaving the expected outcome of each concrete
+(Zhengetal.2025)furtherorganizegeneratedheuristicsin
+operator-parentactiononlyindirectlymodeled.Therefore,we anexplicitsearchtreetobroadenexplorationandavoidpre-
+proposeDual-SurrogateGuidedSearch(DGS),asurrogate-
+maturelycommittingtoasmallpopulation.Alongsidethese
+guidedaction-selectionmoduleforoperator-parentselection
+searchframeworks,promptdesign(Chenetal.2025)hasbe-
+inLLM-basedAHD.DGSguidestheLLMcode-generation
+processbyscoringpre-generationactionswithtwocomple- comeacentralmechanismforsteeringheuristicgeneration.
+mentarysurrogates.Specifically,atransitionsurrogateispro- EarlymethodsoftenprompttheLLMtoimitatevariationop-
+posedtopredictthelatentdistributionofthechildrepresenta- erators from evolutionary algorithms (Dat, Doan, and Binh
+tioninducedbyanoperator-parentaction,whileaninstance- 2025;Wuetal.2023),suchasmutationandcrossoverover
+conditionedutilitysurrogateisproposedtoestimatetheex- existingheuristiccode(Liuetal.2024a).Latermethodsen-
+pected performance of sampled child latents. Moreover, we rich this process with reflective feedback (Ye et al. 2024a),
+proposeanuncertainty-awareacquisitionrulethatcombines
+textual gradients (Yuksekgonul et al. 2025), or other forms
+predictedutility,utilityuncertainty,andtransitionuncertainty
+of natural-language guidance (Shi et al. 2025) that explain
+to select the next LLM generation action. Across a diverse
+how previous programs should be improved. These meth-
+heuristic-designsuite,DGSiscompetitivewithstrongLLM-
+odshaveshownstrongempiricalperformanceacrossarange
+AHD baselines, and ablation and action-selection analyses
+suggestthatitsbehaviorgoesbeyondsimplearchiveranking of combinatorial optimization and algorithm-design tasks
+orfixedoperatorpreferences. (Zhao et al. 2026), including routing (Hottung et al. 2025),
+packing (Sun et al. 2026), scheduling (Yu et al. 2026), and
+black-boxoptimization(Xieetal.2025;Huangetal.2025;
+Introduction
+Ma et al. 2025a). Together, these methods establish a com-
+Heuristic algorithms are central to solving difficult opti- monarchive–generation–evaluationloop,inwhichevaluated
+mization problems because they often provide useful solu- heuristicprogramsprovidethecontextforsubsequentLLM-
+tionswhenexactoptimizationiscomputationallyinfeasible. basedcodegenerations.
+However,designingsuchheuristicsisstilllargelyanexpert- OnceLLMscangenerateexecutableheuristics,thelimit-
+driven and task-specific process. This trial-and-error work- ingfactorshiftsfromwhetheracandidatecanbeproduced
+flowiscostlyanddifficulttotransferacrosstasks,motivating towhichgenerationactionshouldbetriednext.Westudythe
+automated heuristic design (AHD): the search for heuris- commonblack-box-querysetting,whereeachLLMqueryin-
+tic programs with limited human intervention (Zhang et al. curscostandreturnsonlythegeneratedcode,andeachevalu-
+2020).TraditionalAHDmethodstypicallysearchwithincon- atorcallmeasurestheresultingheuristicthroughablack-box
+straineddesignspaces,suchassymbolicexpressions(Burke algorithmicevaluationprocess.Beforespendingthisbudget,
+et al. 2019) or neural networks (Luo et al. 2023; Liu et al. thesystemmustchoosewhicharchivedheuristicstoreuseas
+2023). The rapid progress of code-capable large language parents and which prompt operator should transform them.
+models (LLMs) changes this setting: executable heuristic InevolutionaryLLM-AHD(Liuetal.2024a),thischoiceis
+programscanbegeneratedfromtaskspecificationsandfur- naturallyrepresentedasanoperator-parentaction.Selecting
+ther improved according to previous code and evaluation this action is therefore a central way to allocate expensive
+6202
+luJ
+51
+]EN.sc[
+1v11931.7062:viXra
+
+----- PAGE 2 -----
+Figure 1: Overview of existing methods and proposed Dual-Surrogate Guided Search (DGS). A generic archive-based loop
+reuses archived parent code and generation operators to prompt the LLM. DGS additionally trains a transition surrogate
+from parent–operator–child records and an instance-conditioned utility surrogate from per-instance code–score records. The
+acquisitionrulecombinespredictedutilityanduncertaintytochoosethenextoperator-parentactionbeforespendingthenext
+generationandevaluationstep.
+generationandevaluationsteps. • We propose Dual-Surrogate Guided Search, a dual-
+Current systems usually choose these actions with hand- surrogate action-selection module that scores pre-
+specifiedsearchrules,suchasarchiveranking,stochasticpar- generation actions by predicting both their likely child
+entselection,treepolicies,orfixedprompt-operatorsched- latentdistributionsandexpectedutilities.
+ules.Thesemechanismsorganizethearchiveandguidegen- • We introduce an uncertainty-aware acquisition rule that
+eration, but they often do not explicitly learn the expected combinespredictedutility,utilityuncertainty,andtransi-
+effect of a concrete operator-parent action from accumu- tionuncertaintytoallocateexpensiveLLMandevaluator
+lated code-score pairs and parent-child transition records. calls.
+Consequently,theyprovideonlyindirectevidencefordecid- • Weprovideempiricalcomparisons,ablationstudies,and
+ingwhichspecificoperator-parentactionshouldreceivethe
+action-selection analyses that evaluate learned guidance
+nextqueryandevaluation.Thisleavesanunresolvedaction-
+acrossdiverseoptimizationtasks.
+selection question: how can past evaluations be converted
+intoguidanceforthenextLLMcode-generationquery? Preliminaries
+Learning such guidance is nontrivial because the object
+LLM-BasedAutomatedHeuristicDesign
+to be selected is not an already instantiated program. It is
+apre-generationoperator-parentactionthatdetermineshow Automated heuristic design (AHD) searches for heuristic
+the LLM will construct a child heuristic. Before the LLM programs,components,orselectionruleswithlimitedhuman
+query, the corresponding child code is unavailable, so the intervention. Let P tr = {p j }m j=1 be the training instances.
+system cannot directly apply a surrogate model to a con- We view the LLM as a stochastic generator G that maps a
+crete candidate program as in ordinary surrogate-assisted prompt π to executable code, a ∼ G(π). We view evalu-
+optimization.Therefore,weproposeDual-SurrogateGuided ation as a black-box function E that maps a program and
+Search (DGS), a surrogate-guided action-selection module thetrainingsettoper-instancescores,y(a) = E(a,P tr ) =
+that scores pre-generation actions by estimating both their (y 1 (a),...,y m (a)).Scoresareconvertedsothatlargerval-
+induced child representations and their expected utility. As ues are better. The archive score is y(a) =
+(cid:80)m
+j=1 y j (a).
+summarized in Figure 1, DGS combines a transition sur- Given a finite budget T of generated and evaluated pro-
+rogate, an instance-conditioned utility surrogate, and an grams, AHD aims to maximize empirical performance on
+uncertainty-aware acquisition rule to select the next gen- thetraininginstances:
+eration action before invoking the LLM. The contributions m
+1 (cid:88)
+ofthispaperare: a⋆ ∈argmax y (a), (1)
+• Weformulatepre-generationoperator-parentselectionas
+a∈CT m
+j=1
+j
+alearnedaction-selectionproblemforguidingLLMcode whereC isthesetofvalidexecutableprogramsgenerated
+T
+generationinAHD. andevaluatedwithinthebudget.
+
+----- PAGE 3 -----
+LLM-based AHD implements this search as an archive– thereforeusesatransitionsurrogatetomapapre-generation
+generation–evaluationloop.Atiterationt,thearchiveA = actiontoapredictedchild-latentdistribution,andthenuses
+t
+{(a ,y ,y ,o ,S )}nt storesgeneratedcode,aggregateand aninstance-conditionedutilitysurrogatetoestimatethevalue
+i i i i i i=1
+per-instance scores, the operator used to generate the code, ofsampledchildlatents.Thisformulationturnsarchivedata
+and the corresponding parent-index set. Here y = y(a ), intolearnedpre-generationguidanceratherthanonlyranked
+i i
+y = y(a ),S ⊆ {1,...,i−1}indexesthearchivedpro- memoryorpost-generationcandidatescoring.
+i i i
+gramsusedasparents,andS =∅foranindependentinitial-
+i
+ization.Anewgenerationisspecifiedbyanoperator-parent Dual-SurrogateGuidedSearch
+action x = (o,S), where o chooses a prompt operator and
+MethodOverview
+S ⊆{1,...,n }indexesarchivedparentprograms.Theas-
+t
+sembled prompt π(D,o,S) combines the task description DGSguidesLLMcodegenerationbyselectinganoperator-
+and function interface D, the operator instruction, and the parent action before each expensive generation call. Given
+code snippets {a r : r ∈ S}. The LLM then samples child the current archive A t , it chooses x = (o,S) and con-
+code vertsitintoanoperator-specificprompt.Becausexisapre-
+a ∼G(π(D,o,S)), (2) generationinstruction,itschildcodeandscoreareobserved
+t+1
+whichisevaluatedasy =E(a ,P )andappendedto only after the LLM and evaluator are called. DGS reuses
+t+1 t+1 tr
+thearchivetogetherwithitsaggregatescorey . five fixed EoH-style prompt operators (Liu et al. 2024a),
+t+1
+ExistingLLM-basedAHDmethodsmainlydifferinhow
+O = {i1,m1,m2,e1,e2}.Thei1operatorgeneratesini-
+they organize A and choose x. FunSearch uses a score- tial programs from the task description and function tem-
+t
+based archive to preserve and sample promising programs
+plate.Givenoneparent,m1askstheLLMtointroducenew
+(Romera-Paredesetal.2024).EvolutionofHeuristics(EoH) mechanisms or code segments, while m2 varies important
+introducesabroadlyusedevolutionaryprompt-operatortem-
+parametersorequations.Giventwoparents,e1generatesa
+plateoverheuristicthoughtsandcode,coveringinitialization, structurally different algorithm inspired by them, while e2
+mutation-styletransformation,andrecombination-stylegen- mimics crossover in evolutionary algorithms by combining
+eration(Liuetal.2024a).ReEvoaddsreflectivefeedbackand information from both parents. DGS learns which concrete
+verbalgradients todescribehow previousprogramsshould operator-parent action to use while keeping these prompt
+be improved (Ye et al. 2024a). Monte Carlo Tree Search templates fixed. For detailed description of the five oper-
+forAHD(MCTS-AHD)storesgeneratedheuristicsinatree ators, refer to the supplementary material. Note that DGS
+andusestreepoliciestoselectexpansiondirections.Italso is compatible with other prompt operator set O. We also
+builds on the EoH-style operator set by adding one prompt conduct experiments to verify the effectiveness of DGS for
+operator(Zhengetal.2025).Despitetheseadvances,action differentoperatorsets.
+choiceremainslargelyrule-basedorpolicy-drivenanddoes DGSlearnsfromtwoarchive-deriveddatasets.Code-score
+notexplicitlymodeltheexpectedoutcomeofeachconcrete records contain generated code and its aggregate and per-
+operator-parentaction. instance scores on P tr and are used to train the instance-
+Recent work further improves the generation process conditioned utility surrogate. Transition records link each
+through mutation-control prompts, hindsight/foresight or executed operator-parent action to its child and are used to
+metacognitive prompting, LLM co-evolution, structural trainthetransitionsurrogate.AssummarizedinAlgorithm1,
+feedback, coding-agent evolution, and prompt-strategy op- thesearchinitializesAwithn 0 independenti1generations,
+timization (Yin et al. 2024; Yao et al. 2024; Huang et al. samplesn w randomactionstocollectinitialtransitiondata,
+2026;vanSteinetal.2026;Novikovetal.2025).Sinceboth and then begins guided search. At each guided iteration,
+LLMqueriesandheuristicqualityevaluationsareblack-box DGS updates the surrogates from A t , forms the candidate
+and expensive, LLM-based AHD should use the archive to parent-index set B t ⊆ {1,...,n t }, and enumerates its fea-
+guidegenerationsample-efficiently.Thismotivateslearning sible actions. To control online training cost, it alternates
+action-level guidance from code-score records and parent- periodic full updates of the shared representation and both
+child transitions, so that the next operator-parent action is surrogates with fast intermediate updates. The latter freeze
+selectedusingevidenceaccumulatedduringthesearch. therepresentationandupdateonlytheutilityheadsandtran-
+sitionsurrogate.Theactionwiththelargestacquisitionvalue
+Surrogate-GuidedSearch issenttotheLLM,anditsgeneratedchildisevaluatedand
+appendedtothearchive.
+Bayesianoptimizationandsurrogate-assistedsearchusepast
+evaluationstofitacheappredictivemodelandchoosesubse-
+SharedLatentRepresentation
+quentevaluationsthroughanacquisitionrule(Srinivasetal.
+2009;Wangetal.2023).AcommonexampleistheGaussian- DGS represents heuristic code, problem instances, and op-
+process upper confidence bound (GP-UCB), which selects eratorsinlearnedcontinuousspaces.Afrozencode/texten-
+candidatesbycombiningpredictedvalueandpredictiveun- coderfirstmapsthecodeofheuristicatoacodeembedding
+certainty (Srinivas et al. 2009). In standard black-box opti- e(a). We use ModernBERT for this encoder because of its
+mization,thesurrogatescorescandidatesolutionsorparame- long-context encoding capability (Warner et al. 2025). The
+tersettingsthatalreadyexist.LLM-basedAHDchangesthis method can also use other code/text encoders. The embed-
+decisionpoint:beforetheLLMisqueried,thechildcodeas- dingprovidesasemanticrepresentationofthecode,butitis
+sociatedwithanoperator-parentactionisunavailable.DGS nottrainedtoreflecttheperformancelandscapeofthetarget
+
+
+================================================================================
+FILE: RefineEvo Planning-Guided Heuristic Evolution with Bidirectional Experience.pdf
+================================================================================
+PAGES: 43
+
+----- PAGE 1 -----
+RefineEvo: Planning-Guided Heuristic Evolution with Bidirectional Experience
+YangWu*12 JunranPan*12 YifanZhang123 NingXu1 FanshuoZeng12 JianCheng124
+Abstract further accelerates this process (Romera-Paredes et al.,
+2024; Liu et al., 2024b) by enabling semantic, structure-
+AutomaticHeuristicDesign(AHD)hasemerged
+aware code transformations (Chen et al., 2021; Li et al.,
+as a transformative approach for solving com-
+2022; Achiam et al., 2023) that can generate genuinely
+binatorial optimization problems. While recent
+novelalgorithms. However,thiscapabilityalsoopensupan
+Large Language Model (LLM)-based methods
+effectivelyunboundedprogramspace(Wuetal.,2024;Liu
+haveshownpromise,theypredominantlyrelyon
+etal.,2024c;Dongetal.,2025),makingitcrucialtoharness
+fixed evolutionary operators and struggle to ef-
+LLMstofindsuperiorsolutionswithminimaltrial-and-error
+fectivelyaccumulateandreusehistoricalsearch
+andcomputation.
+experience. This paper proposes RefineEvo, a
+novel evolutionary framework that transforms EvolutionaryoperatorsinLLM-basedAHDaretypically
+AHDfromastatictrial-and-errorprocessintoa implementedasprompttemplates,rangingfromexploration-
+planning-guided,experience-drivensystem. Refi- orientedpromptsthatguidetheLLMtomutateorcrossover
+neEvointroducesaPlannertodynamicallysched- codetorefinement-orientedpromptsthatimproveexisting
+uleevolutionaryoperatorsandtriggerrefinement solutions. Pioneeringworks(Romera-Paredesetal.,2024;
+based on the current search state, and a Reflec- Liuetal.,2024b)havecompellinglydemonstratedtheef-
+tortodistillvaluablelessonsintoaBidirectional fectivenessofcouplingLLMswithevolutionarysearchby
+ExperiencePoolcontainingbothpositiveinsights maintaining a fixed pool of pre-defined operators and ap-
+andnegativepitfalls. Thissynergisticframework plyingthembroadlyacrosscandidatealgorithms. However,
+enablesthesystemtoadaptitssearchtoolstothe this“use-all”strategyoverlooksoperatorheterogeneityand
+evolvingcomplexityoftheproblemandleverage state-dependentutility(DiTolloetal.,2015;Peietal.,2025),
+trajectory-aware,situation-conditionedinsightsto somanyoperatorapplicationsaremisalignedwiththecan-
+guidegeneration. Experimentsonseveralclassic didate’scurrentstabilityandprogress. Furthermore,asthe
+combinatorialoptimizationbenchmarksdemon- evolutionaryprocessadvances,findingvalidimprovements
+strate that RefineEvo consistently outperforms becomesincreasinglychallenging(Yeetal.,2025;Cuietal.,
+strong baselines. In particular, RefineEvo de- 2025). Thisnecessitatesthecontinuousrefinementofthe
+liverssuperiorsolutionqualitywhileimproving operatorsthemselvestoadapttotheevolvingcomplexityof
+tokenefficiency,enablingmoreefficientandau- thesearchspace.
+tonomousheuristicdesign.
+Paralleltothefocusonoperators, complementaryefforts
+havebeendirectedtowardsaccumulatingexperiencefrom
+pastiterations(Yeetal.,2024;Datetal.,2025;Chenetal.,
+1.Introduction
+2025;Liuetal.,2025). Thesemethodsprimarilyemploy
+Automatic Heuristic Design (AHD) has emerged as a outcome-basedsummarization,whereinsightsarederived
+promisingavenueforautomatingthediscoveryofeffective simplybycontrastingsuperiorandinferiorcandidates.How-
+heuristics,alleviatingtheburdenoflabor-intensivemanual ever,thiscomparisontreatsalgorithmsasisolateditemsand
+design(Burkeetal.,2013;Stu¨tzle&Lo´pez-Iba´n˜ez,2018). ignoresthefactthateachsolutionisderivedfromaspecific
+TherecentintegrationofLargeLanguageModels(LLMs) parent. Consequently,thesystemfailstocapturetherelative
+improvementoftheoffspringcomparedtoitsparent. More-
+1C2DL, Institute of Automation, Chinese Academy of Sci-
+over, by purely generalizing from success, this approach
+ences 2School of Artificial Intelligence, University of Chinese
+ignores the situation-based nature of experience. That is,
+AcademyofSciences,Beijing3UniversityofChineseAcademy
+ofSciences,Nanjing4AIRIA.Correspondenceto: YifanZhang applying extracted experience is beneficial only when a
+<yfzhang@nlpr.ia.ac.cn>. particular situation is present. Without this context, the
+systemtreatslimitedexperienceasuniversallyvalid,lead-
+Proceedingsofthe43rd InternationalConferenceonMachine
+ingtomisleadingguidancewhenappliedtoincompatible
+Learning,Seoul,SouthKorea.PMLR306,2026.Copyright2026
+states(Xiongetal.,2025;Tanetal.,2025).
+bytheauthor(s).
+1
+6202
+luJ
+31
+]LC.sc[
+1v85311.7062:viXra
+
+----- PAGE 2 -----
+RefineEvo:Planning-GuidedHeuristicEvolutionwithBidirectionalExperience
+Update
+op1
+Exploration Improve Population Next
+Current Select Mode Operator Generate Offspring Evaluate Management Population
+op2
+Population Operator
+Exploitation
+Retrieval Extract
+Mode Experience Pool
+Planner Evolver
+create a new create ... fundamentally parent
+Exploration algorithm that different search ..., Description: ...combine immediate ...
+has a totally exploring adaptive Code:def select_next_node(…):
+op1 different form look-ahead, dynamic for candidate in unvisited:
+op2 f o r n o e m s the given w fo e r i w g a h r t d in e g v , a o l r u m ati u o l n ti - . s .. tep s c o r e = + 0 . 0 6 . 4 * * im lo m o e k d a i h a e te a d Python
+or
+⋯
+Exploitation offspring Eval. set
+Operator Refinement Description:...prunes search space...
+op3 ··· Your role is to analyze operator and Code:def select_next_node(…): ⋮
+⋮ o o p p 4 5 i i h n m a t s p e l r s l o h i v g o e e w n e n t v l # y o p l a u e d t r i a f o o p n r t m e o f a p f n e e c r c a e ti t v s o t e r a n t d e u e s s s s c o . r v T i e p h r t i i s · o · o n · p s e t r o a tor f c ⋯ o a r n n d o id d a e t e i n s = c a { n d d i s i t d [ a .. t . e ]< s: = thres} Fitness ⋮
+⋯
+Reflector
+Negative Experience TrTarjaejcetcotroyry Positive Ex p e r ience
+l [summary]: … Fitness parents:[{Desc: , Code: , fitness: }, ] Fitness l [summary]:
+l l [ [ r a e p c p o l m ica m b e l n e_ d w at h i e o n n ] s : ] : … … o o f p f e s r p a r t i o n r g : : {Desc ⋯ : , Code: ⋯ , fitness ⋯ : } ⋯ l l [ [ r a e p c p o l m ica m b e le n _ d w⋯ at h i e o n n ] s : ] : … …
+⋯ ⋯ ⋯
+⋯
+Figure1.TheoverallframeworkofRefineEvo.Ateachgeneration,thePlannerperceivespopulationandoperatorstatisticstoselecta
+searchmodeandtriggeroperatorrefinementwhenneeded.TheEvolvergeneratesoffspringusingtheselectedoperatorsandretrieves
+relevantexperiencesfromtheBidirectionalExperiencePool(BEP).TheReflectorevaluatesparent-to-offspringtrajectoriesanddistills
+structuredexperiencesintotheBEP.
+Tobridgethesegaps,wepresentRefineEvo,amulti-agent aware, situation-conditionedsignals. Bybindingex-
+frameworktotransformAHDintoaself-evolvingsystem. periencestotheirapplicablepreconditions,weresolve
+Specifically, we introduce a Planner agent to replace ran- the ambiguity of outcome-based summarization and
+dom trials with state-aware decision-making, identifying providepreciseguidanceforfuturegenerations.
+themostsuitableoperatorsbasedontheevolutionarystatus.
+3. Weconductextensiveexperimentsonseveralclassic
+When the search stagnates, the Planner triggers operator
+combinatorialoptimizationproblemsacrossmultiple
+refinement to iteratively adapt the search tools, enabling
+algorithmicparadigms. RefineEvoconsistentlyoutper-
+themtotranscendexistinglimitationsandaddressincreasing
+formsstate-of-the-artbaselineswhileachievingsupe-
+complexity. Finally,aReflectordistillsparent-to-offspring
+riortokenefficiency.
+trajectoriesintoaBidirectionalExperiencePool(BEP),cap-
+turing both successful strategies and failure modes while
+2.RelatedWork
+bindingthemtotheirapplicablepreconditions. Wedemon-
+stratethatthissynergisticapproachenablesthediscoveryof
+2.1.LLM-basedAutomaticHeuristicDesign
+superiorheuristics,achievingstate-of-the-artperformance
+acrossdiversecombinatorialoptimizationtasks. TheuseofLargeLanguageModelsforheuristicdesignis
+arapidlygrowingfield(Romera-Paredesetal.,2024;Liu
+Insummary,ourcontributionsareasfollows:
+et al., 2024b; Huang et al., 2025; Ha et al., 2025; Yang
+et al., 2025; Novikov et al., 2025; Ghimire et al., 2025).
+1. WeproposeaPlannerthatperformsstate-awareopera- Despiteprogress,manyframeworksstillrelyonevolution-
+torselectionandtriggersdynamicoperatorrefinement arysearchwithlargelystaticprompt-basedoperators(Liu
+when progress stalls. This enables efficient naviga- et al., 2024b; Ye et al., 2024; Dat et al., 2025). EoH ap-
+tionofthesearchspacewhileadaptingsearchtoolsto pliespredefinedstrategiesuniformlyacrossgenerations(Liu
+evolvingcomplexity. etal.,2024b),andReEvofollowsafixedevolutionpipeline
+withlimitedexplicitoperatorscheduling(Yeetal.,2024).
+2. WeintroduceaBidirectionalExperiencePoolthatcap- MCTS-AHD (Zheng et al., 2025) structures exploration
+turesbothpositiveandnegativeinsightswithtrajectory- via tree search, yet it selects which heuristic node to ex-
+2
+
+----- PAGE 3 -----
+RefineEvo:Planning-GuidedHeuristicEvolutionwithBidirectionalExperience
+pand rather than which operator to invoke, relying on a Eachheuristicisrepresentedasatupleh=(d,c),whered
+fixedactionsetfornodeexpansion. LLM-LNS(Yeetal., isthenatural-languagedescriptionandcistheexecutable
+2025)evolvespromptstrategieswhenstagnationisdetected, code(seeFigure1).
+but operates at a coarse, strategy-population level rather
+The search process maintains a population P =
+than diagnosing individual operator failures. In contrast, t
+{h ,...,h }ofsizeN ateachgenerationt. Thepopula-
+RefineEvointroducesaPlannerthatperformsstate-aware 1 N
+tionevolvesviaanelitistgreedyprotocol. Aftergenerating
+schedulingandper-operatorconditionalrefinement,guided
+offspring P′, the next population P retains the top-N
+byoperator-specificfailurepatterns. Adetailedfunctional t t+1
+individualsfromP ∪P′basedonfitnessvalues.
+comparisonisprovidedinAppendixA(Table10). t t
+3.2.Planning-GuidedEvolution
+2.2.ExperienceMechanisms
+Insteadofapplyingafixedsetofevolutionaryoperatorsin-
+RecentresearchdemonstratesthataugmentingLLMswith
+discriminately,RefineEvoemploysaPlannertodynamically
+experienceenhancesreasoning(Shinnetal.,2023;Zhang
+managethesearchprocessbyperceivingtheevolutionary
+etal.,2025a;Caietal.,2025),whilehighlightingthecritical
+state,schedulingappropriateoperators,andrefiningthem
+roleofrelevanceandqualitycontrol(Packeretal.,2023;
+whentheybecomeineffective.
+Xiongetal.,2025;Tanetal.,2025;Keetal.,2025). Within
+AHD,frameworkslikeReEvoandHSEvoaccumulatein-
+Perception and Decision. At generation t, the Planner
+sightstoguideevolutionarysearch(Yeetal.,2024;Datetal.,
+perceivestheglobalsearchstateS = (Φ ,Ψ ). Here,
+2025). Concurrentpreprintsexplorerelateddirectionssuch t pop ops
+Φ capturespopulation-levelstatistics,specificallyfitness
+asforesightandhindsightprompting(Chenetal.,2025)and pop
+convergence(thestagnationtrendoftopperformers)and
+prompt-heuristicco-evolution(Liuetal.,2025). However,
+populationdiversity. Simultaneously,Ψ trackstherecent
+theseapproaches relyon outcome-centricsummarization ops
+utilityof eachoperator, summarizingmetrics suchasthe
+withoutexplicitlystoringtheparent-to-offspringtrajectory
+validityrateofgeneratedcodeandthesuccessrateinpro-
+forretrieval,resultingininsightsthatareweaklygrounded
+ducingoffspringthatoutperformtheirparents. Synthesizing
+to specific applicability conditions. RefineEvo addresses
+thesesignals,itdeterminestheoptimalsearchmoderather
+thisbyextractingtrajectory-awareexperiencesandactively
+thanrelyingonasinglefixednumericthreshold.WhenΦ
+managingthepooltoensurecontextuallyalignedretrieval. pop
+indicatesprematureconvergenceordiversitycollapse,the
+systementersExplorationMode,prioritizingoperatorsthat
+3.Methodology
+introducestructuralnovelty. Conversely,whenpromising
+seedsareidentified(e.g.,thebestfitnessimprovessteadily
+Figure 1 illustrates the overall workflow of RefineEvo, a
+whiletopheuristicsremainvalid),itswitchestoExploitation
+frameworkthattransformsAHDfromstatictrial-and-error
+Mode,focusingonlocalrefinement.
+intoaplanning-guided,experience-drivenprocess. Operat-
+ingasaclosedloop,aPlannerdynamicallyschedulesandre-
+AdaptiveOperatorSelection. ThePlannerexecutesthe
+finesevolutionaryoperatorsbasedonthesearchstate,while
+chosenstrategybyselectingasubsetofoperatorsfromapre-
+aReflectordistillshistoricaltrajectoriesintoaBidirectional
+definedlibraryO.Thislibrarycontainsfivemeta-operations
+ExperiencePool(BEP)toguidetheEvolveringenerating
+spanningexploration(e.g.,generatingdistinctalgorithms)
+experience-augmentedoffspring. Inthefollowing,webegin
+and exploitation (e.g., parameter tuning); detailed defini-
+byformalizingtheproblemsetupinSection3.1,thendetail
+tionsareprovidedinAppendixE.2. Withintheactivemode,
+the planning-guided evolution mechanism in Section 3.2,
+itfurtherprioritizesoperatorsbasedontheirhistoricalutil-
+andfinallydescribethebidirectionalexperiencemechanism
+ityrecordedinΨ . Thistwo-levelselectionmechanism
+inSection3.3. ops
+aimstoallocatethecomputationalbudgettotoolsthatare
+bothlogicallyconsistentwiththecurrentsearchphaseand
+3.1.Preliminaries
+empiricallyproventobeeffective.
+Findingaheuristichthatoptimizesperformanceoveratar-
+getproblemdistributionI canbeformulatedasmaximizing Dynamic Operator Refinement. The Planner continu-
+theexpectedfitness ouslymonitorsoperatorperformancetoaddressacritical
+limitationinstaticAHDmethods: fixedprompttemplates
+h∗ =argmaxF(h)=argmaxE [f(h,I)], (1)
+I∼I oftenloseeffectivenessasproblemcomplexityevolves. If
+h∈H h∈H
+an operator consistently fails to improve over the parent
+whereHdenotestheprogramspace. ThefitnessF(h)isa heuristics or yields a high invalidity rate for consecutive
+scalarscorequantifyingtheheuristicquality. Forminimiza- uses,ittriggersaRefinementEvent. Duringthisprocess,it
+tiontasks,itisdefinedasthenegativecost. rewritesthenaturallanguageprompt—transforminggeneric
+3
+
+
+================================================================================
+FILE: SeaEvo Advancing Algorithm Discovery with Strategy Space Evolution.pdf
+================================================================================
+PAGES: 37
+
+----- PAGE 1 -----
+SEAEVO: Advancing Algorithm Discovery with
+Strategy Space Evolution
+SichunLuo1,YiHuang2,HaochenLuo1,FengyuanLiu1,GuanzhiDeng3,LeiLi1
+QinghuaYao1,ZefaHu2,JunlanFeng2,QiLiu1
+1TheUniversityofHongKong 2JIUTIANResearch,ChinaMobile
+3CityUniversityofHongKong
+sichunluo2@gmail.com
+Abstract
+LargeLanguageModel(LLM)-guidedevolutionarysearchisincreasinglyusedfor
+automatedalgorithmdiscovery,yetmostcurrentmethodstracksearchprogress
+primarily through executable programs and scalar fitness. Even when natural-
+languagereasoningisusedthroughheuristicdescriptionsorreflection,ittypically
+remainstransientmutationcontextorunstructuredmemory,ratherthanorganizedas
+persistentpopulation-levelstateoverstrategicdirections. Asaresult,evolutionary
+searchcanstruggletodistinguishsyntacticallydifferentimplementationsofthe
+sameidea,preservelower-fitnessbutstrategicallypromisingdirections,ordetect
+whenanentirefamilyofstrategieshassaturated.
+WeintroduceSEAEVO,amodularstrategy-spacelayerthatturnslanguage-level
+strategic reasoning into first-class population-level evolutionary state in LLM-
+driven program search. SEAEVO represents each candidate program with an
+explicitnatural-languagestrategy,clustersthearchivebystrategysemantics,re-
+trievesbehaviorallycomplementaryinspirations,andperiodicallynavigatesthe
+strategylandscapetoavoidsaturateddirections. Withoutmodifyingtheunderly-
+ingevolutionaryalgorithms,SEAEVOimprovesexistingevolutionarybackbones
+acrossalgorithmdiscovery,systemsoptimization,andagent-scaffolddesigntasks
+in most settings. Across four systems benchmarks, SEAEVO achieves a 20.6%
+averagerelativeimprovement,withthebestsinglerunonPrismscoring3×higher.
+Theseresultssuggestthatpersistentstrategyrepresentationsprovideapractical
+mechanismforimprovingtheeffectivenessandcost-efficiencyofLLM-guidedevo-
+lutionarysearch,pointingtowardcompoundAIsystemswhosesearchcapabilities
+benefitfromthestructuredaccumulationandreuseofalgorithmicstrategies.
+1 Introduction
+Automaticallydiscoveringhigh-performingalgorithmsthroughLargeLanguageModel(LLM)-driven
+evolutionarysearchhasemergedasapromisingparadigm(Romera-Paredesetal.,2024;Novikov
+etal.,2025). BypairingLLMsasmutationoperatorswithprogrammaticevaluators,recentLLM-
+drivenevolutionarysystemsiterativelypropose,execute,andrefinecandidateprograms,achieving
+strongresultsindomainswheresearchspacesarecombinatoriallylargeandhand-craftedheuristics
+arecostlytodesign(Liuetal.,2024;Yeetal.,2024;Liuetal.,2025,2026a).
+Despitethisprogress,mostLLM-drivenevolutionarysystemsstillrepresentsearchstateprimarilyas
+executableprogramsandscalarfitnessvalues(Romera-Paredesetal.,2024;Novikovetal.,2025;
+Sharma,2025).Sucharchivessupportevaluationandselection,buttheyprovideonlyalimitedviewof
+searchprogress: differentprogramsmayinstantiatethesameunderlyingstrategy,similarscoresmay
+correspondtoqualitativelydifferentdirections,andlow-scoringcandidatesmayencodepromising
+Preprint.
+6202
+yaM
+8
+]LC.sc[
+2v27342.4062:viXra
+
+----- PAGE 2 -----
+Figure1: SearchtrajectoriesonCirclePackingbenchmarks. Solidcurvesshowthebest-so-farsum
+ofradiiovergenerations,dottedcurvesshowcumulativeAPIcost,andthegraydashedlinedenotes
+theHuman/SOTAreference. SEAEVO improvesbothOpenEvolveandShinkaEvolvebackbones,
+reachingcompetitivesolutionsearlierwhileincurringlowercumulativecost.
+ideas that have not yet been refined. Recent work has introduced richer language-level signals,
+includingnatural-languageheuristicdescriptions(Liuetal.,2024)andreflectionoverfailures(Shinn
+etal.,2023;Yeetal.,2024;Agrawaletal.,2025). However,thesesignalsaretypicallyusedaslocal
+promptcontextorunstructuredmemory,ratherthanasapersistentpopulation-levelrepresentationof
+semanticstrategyfamilies.
+This strategy-representation gap creates three practical limitations. First, syntactically different
+programsmayimplementthesameunderlyingidea,makingredundantvariantsappearasgenuine
+search progress. Second, selection based primarily on scalar fitness may discard lower-scoring
+candidatesthatencodestrategicallyusefuldirectionsorcovercomplementaryfailuremodes. Third,
+per-program fitness provides little visibility into strategy-family dynamics, making it difficult to
+detectwhenanentireclassofapproacheshassaturated. Theselimitationssuggestthatimproving
+LLM-guidedevolutionrequiresnotonlybettermutationoperatorsorevaluators,butalsoaricher
+representationoftheevolvingstrategylandscape.
+To address this gap, we introduce SEAEVO (Strategy-space Evolution), which elevates natural-
+languagestrategytoafirst-classpopulation-levelrepresentationinLLM-drivenevolutionaryprogram
+search. SEAEVO augmentseachcandidatewithanexplicitnatural-languagestrategydescription
+andembedding,yieldingadual-spacearchiveorganizedbybothexecutableprogramsandsemantic
+strategies. Itconsistsofthreecoordinatedmodules: StrategyArticulation(SA),whichdiagnoses
+failuresandspecifiesastrategicdirectionbeforecodegeneration;StratifiedExperienceRetrieval
+(SER),whichclustersthearchiveinstrategyspaceandretrievesbehaviorallycomplementaryin-
+spirations;andStrategicLandscapeNavigation(SLN),whichsummarizeseffective,saturated,and
+underexplored strategy families to guide future mutations. These modules turn the archive from
+aflatrecordofprogramsintoanavigablemapofalgorithmicideas. WeevaluateSEAEVOacross
+mathematical algorithm discovery, systems optimization, and agent-scaffold design benchmarks,
+usingdiversebackboneLLMsandbaseevolutionaryframeworks. SEAEVOimprovestheunderlying
+backbonesinmostsettings,withthelargestgainsonopen-endedsystemsoptimizationtaskswhere
+qualitativelydistinctstrategyfamiliesexist. Beyondthisaggregategain, SEAEVO alsoimproves
+thesearchfrontier: Figure1showsthatitreachescompetitivesolutionsinfewergenerationswhile
+incurringlowercumulativeAPIcost. CasestudiesinAppendixFfurthershowthatstrategy-space
+guidancecanredirectevolutionawayfromsaturatedlocalrefinementstowardqualitativelydifferent
+algorithmicfamilies. Theseresultssuggestthatpersistentstrategyrepresentationsprovideapractical
+mechanismforimprovingtheeffectivenessandefficiencyofLLM-guidedevolutionarysearch.
+Contributions. Ourcontributionsareasfollows: 1)Weidentifyastrategy-representationgapin
+LLM-guidedevolutionarysearch: existingarchivesorganizesearchstatearoundprogramsandscalar
+fitnessscores,butdonotmaintainapopulation-levelsemanticrepresentationofthestrategiesbeing
+explored. 2) We introduce SEAEVO, a modular strategy-space layer that turns natural-language
+strategiesintopersistentpopulation-levelevolutionarystatethroughstrategydescriptions,semantic
+clustering, behaviorally complementary retrieval, and landscape-level navigation over effective,
+saturated, and underexplored strategy families. 3) Extensive experiments across mathematical
+2
+
+----- PAGE 3 -----
+algorithmdiscovery,systemsoptimization,andagent-scaffolddesignbenchmarksdemonstratethe
+effectivenessofSEAEVO. SEAEVOimprovesmultipleopenevolutionarybackbonesinmostsettings,
+witha20.6%averagerelativeimprovementacrossfoursystemsoptimizationtasks.
+2 RelatedWork
+LLM-DrivenEvolutionaryAlgorithmDiscovery. Recentworkframesalgorithmandprogram
+improvementasanevolutionaryloopinwhichLLMsactasproposalormutationoperators(VanStein
+and Bäck, 2024; Liu et al., 2026b). FunSearch (Romera-Paredes et al., 2024) established this
+paradigm by pairing an LLM with a programmatic evaluator to evolve mathematical functions,
+while AlphaEvolve (Novikov et al., 2025) scaled it to full codebases using a Gemini ensemble
+and a MAP-Elites-inspired program database (Mouret and Clune, 2015). Subsequent systems
+improve the efficiency and dynamics of this loop through mechanisms such as adaptive parent
+samplingandnoveltyrejectioninShinkaEvolve(Langeetal.,2025),island-basedgeneticoperators
+in CodeEvolve (Assumpção et al., 2025), hierarchical context management and backtracking in
+PACEvolve(Yanetal.,2026),andadaptivebudgetandexplorationcontrolinAdaEvolve(Cemri
+etal.,2026). Thesemethodsprimarilyimprovehowprogramsaresampled,mutated,selected,or
+orchestrated. SEAEVO addresses a complementary axis: what the evolutionary state represents.
+Ratherthanreplacingthebaseloop,itaugmentsthearchivewithpersistentstrategydescriptions,
+semanticstrategyclusters,andLLM-drivenlandscapenavigation,makingitcompatiblewithexisting
+evolutionarybackbones.
+Strategy,Reflection,andMemoryinLLM-BasedHeuristicEvolution. Acloselyrelatedlineof
+workintroduceslanguage-levelreasoningintooptimizationandevolutionarysearch(Yuksekgonul
+etal.,2025;Leeetal.,2025). EoH(Liuetal.,2024)co-evolvesnatural-languagethoughtsalongside
+code; ReEvo (Ye et al., 2024), Reflexion (Shinn et al., 2023), and GEPA (Agrawal et al., 2025)
+use verbal feedback or reflection to improve future proposals. Other systems maintain reusable
+insights (Chen et al., 2025), abstractions (Wu et al., 2025), or evolution strategies (Yang et al.,
+2025b). Theseworksshowthatnaturallanguagecanprovideusefulintermediatestructurebetween
+scalar feedback and executable code. SEAEVO builds on this direction but differs in how the
+languagesignalisorganizedandused:priorsystemstypicallyattachthoughts,reflections,insights,or
+recommendationstoindividualcandidates,lineages,ortextualmemories,whereasSEAEVOorganizes
+thefullarchiveintosemanticstrategyclusters,retrievesinspirationsbybehavioralcomplementarity,
+andtracksstrategy-familydynamicsatthepopulationlevel. Thismakesstrategyspaceastructured
+objectofsearchratherthanonlyasourceofpromptcontent.
+3 Method
+3.1 ProblemFormulation
+Weconsidertheproblemofautomaticallydiscoveringahigh-performingprogramforagiventask.
+Letf :P →RbeanevaluationmetricoveraspaceofcandidateprogramsP. Thegoalistodiscover
+P∗ =argmaxf(P), (1)
+P∈P
+wheref measurestask-specificfitness. Inanevolutionaryframework, atgenerationtanarchive
+A ={(P ,s )}withs =f(P )ismaintainedunderafixedcapacity:anLLMpromptisconstructed
+t i i i i
+fromselectedentriesviacontextbuilder,anewcandidateisgeneratedandevaluated,andthenthe
+archiveisupdated.
+Existingframeworkstracksearchprogressonlythroughcodeandscalarfitness,orattachnatural-
+languagereflectionsastransientpromptcontextwithoutpersistingthematthearchivelevel. Neither
+representationexposeswhichstrategicdirectionshavebeenexplored,whichremainunderrepresented,
+andwhichhavealreadysaturated. SEAEVOaddressesthisbyaugmentingeacharchiveentrywith
+a persistent strategy description and embedding, organizing the archive as a navigable map of
+algorithmicideasratherthanaflatrecordofprograms.
+3
+

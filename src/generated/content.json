@@ -170,6 +170,97 @@
       "short_name": "Pending",
       "initials": "?",
       "accent": "#6c746f"
+    },
+    "uestc": {
+      "name": "University of Electronic Science and Technology of China",
+      "short_name": "UESTC",
+      "initials": "UESTC",
+      "website": "https://www.uestc.edu.cn/",
+      "accent": "#2a5caa"
+    },
+    "nudt": {
+      "name": "National University of Defense Technology",
+      "short_name": "NUDT",
+      "initials": "NUDT",
+      "website": "https://www.nudt.edu.cn/",
+      "accent": "#8c1c13"
+    },
+    "neu": {
+      "name": "Northeastern University",
+      "short_name": "NEU",
+      "initials": "NEU",
+      "website": "https://www.neu.edu.cn/",
+      "accent": "#1a4f8b"
+    },
+    "ucas": {
+      "name": "University of Chinese Academy of Sciences",
+      "short_name": "UCAS",
+      "initials": "UCAS",
+      "website": "https://english.ucas.ac.cn/",
+      "accent": "#0f4c9c"
+    },
+    "thu": {
+      "name": "Tsinghua University",
+      "short_name": "THU",
+      "initials": "THU",
+      "website": "https://www.tsinghua.edu.cn/",
+      "accent": "#a51e1e"
+    },
+    "hku": {
+      "name": "The University of Hong Kong",
+      "short_name": "HKU",
+      "initials": "HKU",
+      "website": "https://www.hku.hk/",
+      "accent": "#274c77"
+    },
+    "rmit": {
+      "name": "RMIT University",
+      "short_name": "RMIT",
+      "initials": "RMIT",
+      "website": "https://www.rmit.edu.au/",
+      "accent": "#7a1f2b"
+    },
+    "leeds": {
+      "name": "University of Leeds",
+      "short_name": "Leeds",
+      "initials": "LEEDS",
+      "website": "https://www.leeds.ac.uk/",
+      "accent": "#1d4e8f"
+    },
+    "latrobe": {
+      "name": "La Trobe University",
+      "short_name": "La Trobe",
+      "initials": "LTU",
+      "website": "https://www.latrobe.edu.au/",
+      "accent": "#0a7d5a"
+    },
+    "scau": {
+      "name": "South China Agricultural University",
+      "short_name": "SCAU",
+      "initials": "SCAU",
+      "website": "https://www.scau.edu.cn/",
+      "accent": "#1b8a4c"
+    },
+    "polyu": {
+      "name": "The Hong Kong Polytechnic University",
+      "short_name": "PolyU",
+      "initials": "POLYU",
+      "website": "https://www.polyu.edu.hk/",
+      "accent": "#7b1e2b"
+    },
+    "nankai": {
+      "name": "Nankai University",
+      "short_name": "Nankai",
+      "initials": "NKU",
+      "website": "https://www.nankai.edu.cn/",
+      "accent": "#15356b"
+    },
+    "casia": {
+      "name": "Institute of Automation, Chinese Academy of Sciences",
+      "short_name": "CASIA",
+      "initials": "CASIA",
+      "website": "https://english.ia.cas.cn/",
+      "accent": "#9e1b32"
     }
   },
   "relations": [
@@ -242,6 +333,13 @@
       "type": "evaluated-by",
       "dimension": "search",
       "description": "HSEvo includes FunSearch in its analysis of diversity and convergence in evolutionary program search."
+    },
+    {
+      "from": "a2dept",
+      "to": "atlas",
+      "type": "concurrent-work",
+      "dimension": "design-object",
+      "description": "A2DEPT and ATLAS independently move LLM-based AHD beyond component synthesis toward open-ended solver synthesis and scaffold-free full-algorithm synthesis, developed concurrently."
     }
   ],
   "papers": [
@@ -583,6 +681,225 @@
       "featured": true,
       "summary": "MLES combines multimodal LLM policy generation with evolutionary search and visual behavior analysis to discover executable, interpretable control policies.",
       "body_html": "<h2>Why it matters</h2>\n<p>Learned control policies can be powerful but opaque. Scalar rewards alone often do not explain why a policy fails, which makes targeted improvement difficult. MLES uses a multimodal LLM to inspect execution traces and visual behavior while evolving programmatic policies that remain readable and executable.</p>\n<p><img src=\"paper-assets/mles/images/paper-cover.jpg\" alt=\"MLES paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Hu et al., MLES; see the <a href=\"https://arxiv.org/abs/2508.05433\">arXiv paper</a>.</em></p>\n<h2>Core method</h2>\n<p>MLES runs a closed evolutionary loop over policy programs. The evaluator returns objective performance and visual rollouts; the multimodal model analyzes behavior and proposes targeted modifications. The reported instantiation uses an EoH-style evolutionary backbone, shares comparable initial populations, and adds visual feedback-driven behavior analysis.</p>\n<p>The paper evaluates LunarLander and CarRacing, comparing programmatic policies with reinforcement-learning baselines and an evolution loop without the visual analysis component.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A general multimodal evolutionary search framework for executable policies.</li>\n<li>Behavior-level visual feedback in addition to scalar rewards.</li>\n<li>A bridge between automatic heuristic design and interpretable control-program discovery.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Visual feedback can expose failure modes that a scalar score hides and gives the LLM a richer mutation signal. The approach introduces multimodal inference cost and depends on the quality of rendered traces, behavior descriptions, and evaluator design.</p>\n<h2>What to improve</h2>\n<p>Behavior embeddings, automatic failure-mode taxonomies, and cross-task policy transfer could make the visual feedback channel less dependent on prompt wording.</p>\n<h2>Connections</h2>\n<p>MLES adapts an EoH-like evolutionary backbone to programmatic control, demonstrating how the same search ideas can cross from combinatorial heuristics into multimodal policy discovery.</p>\n"
+    },
+    {
+      "id": "g-lns",
+      "short_title": "G-LNS",
+      "title": "G-LNS: Generative Large Neighborhood Search for LLM-Based Automatic Heuristic Design",
+      "authors": [
+        "Baoyun Zhao",
+        "He Wang",
+        "Liang Zeng"
+      ],
+      "year": 2026,
+      "date": "2026-02-09",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2602.08253",
+      "code_url": "https://github.com/zboyn/G-LNS",
+      "institutions": [
+        "neu",
+        "ucas",
+        "thu"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Orienteering Problem"
+      ],
+      "featured": false,
+      "summary": "G-LNS extends LLM-based AHD to the automated design of Large Neighborhood Search operators, co-evolving coupled destroy and repair operators with a synergy-aware evaluation mechanism.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Existing LLM-based AHD largely instantiates around constructive priority rules or parameterized local-search penalties, restricting the LLM to component tuning or fixed neighborhood operators. Constructive heuristics follow an irreversible trajectory, while local search treats neighborhood structures as fixed priors. Large Neighborhood Search (LNS) achieves strong structural reshaping through alternating destroy and repair, but the tight coupling between these two operators makes automated LNS design particularly challenging and has largely prevented its adoption within AHD.</p>\n<h2>Core method</h2>\n<p>G-LNS evolves executable Python code for both destroy and repair LNS operators, enabling structural solution perturbation beyond fixed templates. Its key design choices are:</p>\n<ul>\n<li>A <strong>dual-population architecture</strong> maintains separate repositories for destroy operators and repair operators, each seeded with classic domain-expert heuristics (e.g., Random/Worst Removal, Greedy Insertion) as in-context examples.</li>\n<li>A <strong>cooperative evaluation</strong> mechanism runs the LNS process and records the joint performance of operator pairs.</li>\n<li>A <strong>Synergy Matrix</strong> captures the cooperative performance of specific (destroy, repair) pairs and guides synergy-aware crossover.</li>\n<li>A <strong>multi-episode evaluation</strong> with adaptive weights smooths the stochasticity of LNS and yields robust fitness and synergy statistics.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>Generative LNS for AHD: the first framework to co-evolve tightly coupled destroy and repair operators for Large Neighborhood Search using LLMs.</li>\n<li>Synergy-aware co-evolution through the Synergy Matrix, which explicitly models operator interactions during evolution.</li>\n<li>Empirical effectiveness and generalization on TSP and CVRP: G-LNS outperforms LLM-based AHD methods and strong classical solvers, achieving near-optimal solutions with reduced computational budgets and generalizing to unseen instance distributions.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>G-LNS enables true structural innovation (operator logic rather than parameter tuning) and models operator coupling explicitly. Its focus is on routing COPs, it carries dual-population overhead, and its performance depends on the quality of the seed operators used for initialization.</p>\n<h2>What to improve</h2>\n<p>The authors outline extensions to additional combinatorial optimization problems, multi-objective optimization, transfer learning across domains, and adaptive computational-budget allocation.</p>\n<h2>Connections</h2>\n<p>G-LNS extends the constructive/local-search AHD line (FunSearch, EoH, ReEvo) to the design of LNS operators and draws on Adaptive Large Neighborhood Search (ALNS) for its fitness mechanism.</p>\n"
+    },
+    {
+      "id": "a2dept",
+      "short_title": "A2DEPT",
+      "title": "A2DEPT: Large Language Model–Driven Automated Algorithm Design via Evolutionary Program Trees",
+      "authors": [
+        "Bin Chen",
+        "Shouliang Zhu",
+        "Beidan Liu",
+        "Yong Zhao",
+        "Tianle Pu",
+        "Huichun Li",
+        "Zhengqiu Zhu"
+      ],
+      "year": 2026,
+      "date": "2026-04-27",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2604.24043",
+      "institutions": [
+        "uestc",
+        "nudt"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Job Shop Scheduling Problem",
+        "Knapsack Problem",
+        "Online Bin Packing",
+        "Orienteering Problem"
+      ],
+      "featured": false,
+      "summary": "A2DEPT treats LLMs as system-level algorithm architects, evolving complete solver programs over a tree-structured program space with a feedback-driven maintenance loop for executability.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-based Automated Heuristic Design (AHD) fixes an algorithmic template and only tunes a small set of heuristic components, which hides a costly design decision—the solver backbone—and caps performance even when the heuristic component is well optimized. A2DEPT argues that this template-bound bottleneck motivates a transition from component tuning to open-ended Automated Algorithm Design (AAD), where the search target expands from a scoring heuristic to a complete executable solver.</p>\n<h2>Core method</h2>\n<p>A2DEPT casts AAD as an evolutionary search over a discrete program space. Rather than a population, it maintains a global search tree of executable programs, where each node stores the program, its score, parent/operator history, and local operator weights. The loop has two phases: an LLM-based initialization seeds diverse root programs, then an iterative loop selects parent nodes, applies adaptively scheduled hierarchical operators, repairs broken dependencies, evaluates feasible programs, and writes scores back into the tree.</p>\n<p>Three mechanisms make long-horizon open-ended evolution practical:</p>\n<ul>\n<li><strong>Hybrid selection</strong> combines SA-style parent–child acceptance with Boltzmann supplementary sampling to preserve diverse trajectories under a fixed budget.</li>\n<li><strong>Hierarchical operators</strong> (micro-tuning, macro-mutation, semantic crossover) with adaptive scheduling enable localized edits and better credit assignment.</li>\n<li><strong>Program-maintenance loop</strong> repairs missing dependencies via a dependency graph and prunes unreachable code to enforce executability.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>Problem framing: AAD as program-space search over complete executable solvers, beyond template-bound AHD.</li>\n<li>The A2DEPT framework with tree-structured evolutionary search, hybrid selection, and hierarchical operators.</li>\n<li>Concrete mechanisms for reliable long-horizon evolution (repair loop, hybrid selection, hierarchical operators).</li>\n<li>Empirical validation on a diverse suite of NP-hard COP benchmarks (standard and high-constraint), reducing the mean normalized optimality gap by 9.8% relative to the strongest competing AHD baseline.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>A2DEPT enables system-level redesign rather than component-level tuning and enforces executability through feedback-driven repair, preserving search diversity via the tree and hybrid acceptance. Its limitations are that the repair loop consumes part of the LLM budget, and gains are problem-dependent—the paper notes that on Flexible Job Shop Scheduling an expert-designed Guided Local Search still outperforms all AAD methods, suggesting the advantage is contingent on the absence of strong domain-specific structures.</p>\n<h2>What to improve</h2>\n<p>Future work should equalize token/query budgets against baselines, scale the population and add domain-specific operators, and broaden the benchmark coverage beyond the studied COP families.</p>\n<h2>Connections</h2>\n<p>A2DEPT builds on FunSearch, EoH, ReEvo, and MCTS-AHD, which it characterizes as template-bound component synthesis, and is developed concurrently with ATLAS on the move toward full-algorithm synthesis.</p>\n"
+    },
+    {
+      "id": "seaevo",
+      "short_title": "SeaEvo",
+      "title": "SeaEvo: Advancing Algorithm Discovery with Strategy Space Evolution",
+      "authors": [
+        "Sichun Luo",
+        "Yi Huang",
+        "Haochen Luo",
+        "Fengyuan Liu",
+        "Guanzhi Deng",
+        "Lei Li",
+        "Qinghua Yao",
+        "Zefa Hu",
+        "Junlan Feng",
+        "Qi Liu"
+      ],
+      "year": 2026,
+      "date": "2026-04-27",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2604.24372",
+      "institutions": [
+        "hku",
+        "cityu-hk"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Circle Packing",
+        "Traveling Salesman Problem",
+        "Job Shop Scheduling Problem"
+      ],
+      "featured": false,
+      "summary": "SeaEvo adds a modular strategy-space layer to LLM-driven evolutionary program search, representing each candidate with an explicit natural-language strategy and clustering the archive to preserve promising directions and avoid saturated strategy families.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-driven evolutionary systems track search state primarily as executable programs and scalar fitness, and when natural-language reasoning is used it stays transient (local mutation context or unstructured memory). This creates three failure modes: syntactically different programs that implement the same idea appear as genuine progress; selection by scalar fitness discards lower-fitness but strategically promising directions; and per-program fitness gives little visibility into when an entire strategy family has saturated.</p>\n<h2>Core method</h2>\n<p>SeaEvo (Strategy-space Evolution) elevates natural-language strategy to a first-class, population-level representation without modifying the underlying evolutionary algorithm. Each candidate is augmented with an explicit strategy description and embedding, yielding a dual-space archive organized by both programs and semantic strategies. Three coordinated modules use this representation:</p>\n<ul>\n<li><strong>Strategy Articulation (SA)</strong> turns mutation into a diagnose–direct–implement process by specifying a strategic direction before code generation.</li>\n<li><strong>Stratified Experience Retrieval</strong> clusters the archive by strategy semantics and selects behaviorally complementary inspirations.</li>\n<li><strong>Strategic Landscape Navigation</strong> periodically summarizes effective, saturated, and underexplored strategy families to steer future mutations away from exhausted directions.</li>\n</ul>\n<p>Because it is a modular layer, SeaEvo drops onto existing evolutionary backbones (e.g., OpenEvolve, ShinkaEvolve) without rewriting their mutation or selection operators.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A strategy-space layer that makes language-level strategic reasoning persistent population-level evolutionary state.</li>\n<li>Three modules for strategy articulation, stratified retrieval, and landscape navigation.</li>\n<li>Consistent improvements of underlying backbones across algorithm discovery, systems optimization, and agent-scaffold design, with a 20.6% average relative improvement across four systems benchmarks and a best single run on Prism scoring 3× higher.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>SeaEvo preserves diversity through semantic clustering, is backbone-agnostic, and enables reuse of strategic knowledge. The main caveat is that total compute is not strictly matched—clustering, retrieval, and navigation add LLM calls beyond a plain evolutionary baseline—and the approach depends on embedding and clustering quality.</p>\n<h2>What to improve</h2>\n<p>The paper implies the need for compute-matched baselines, cross-run transfer of strategy representations, and mechanisms to merge or retire outdated directions as the archive grows.</p>\n<h2>Connections</h2>\n<p>SeaEvo complements reflection-based feedback (e.g., ReEvo) with a persistent organization of strategic directions, operating orthogonally to the single-program fitness search used by most LLM-guided evolutionary systems.</p>\n"
+    },
+    {
+      "id": "refineevo",
+      "short_title": "RefineEvo",
+      "title": "RefineEvo: Planning-Guided Heuristic Evolution with Bidirectional Experience",
+      "authors": [
+        "Yang Wu",
+        "Junran Pan",
+        "Yifan Zhang",
+        "Ning Xu",
+        "Fanshuo Zeng",
+        "Jian Cheng"
+      ],
+      "year": 2026,
+      "date": "2026-07-13",
+      "venue": "ICML",
+      "paper_url": "https://arxiv.org/pdf/2607.11358",
+      "institutions": [
+        "casia",
+        "ucas"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search",
+        "design-object"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Bin Packing Problem",
+        "Knapsack Problem",
+        "Capacitated Vehicle Routing Problem"
+      ],
+      "featured": false,
+      "summary": "RefineEvo transforms AHD into a planning-guided, experience-driven system with a state-aware Planner that schedules and refines evolutionary operators and a Reflector that distills trajectory-aware bidirectional experience.",
+      "body_html": "<h2>Why it matters</h2>\n<p>LLM-based AHD typically relies on a fixed library of prompt-based evolutionary operators applied uniformly across generations, and accumulates experience through outcome-based summarization that contrasts superior and inferior candidates. This ignores the parent-to-offspring trajectory and the situation-specific applicability of an insight, so guidance can be misleading when applied to incompatible search states. As evolution advances, finding valid improvements becomes harder, motivating continuous adaptation of the operators themselves.</p>\n<h2>Core method</h2>\n<p>RefineEvo replaces random trials with a closed planning–experience loop:</p>\n<ul>\n<li>A <strong>Planner</strong> perceives the global search state (population convergence/diversity and recent per-operator utility) and selects an Exploration or Exploitation mode; when an operator consistently fails or yields high invalidity, it triggers a <strong>Dynamic Operator Refinement</strong> that rewrites the operator's natural-language prompt.</li>\n<li>A two-level operator selection first chooses the mode and then prioritizes operators by historical utility within that mode.</li>\n<li>A <strong>Reflector</strong> evaluates parent-to-offspring trajectories and distills structured experiences—both positive insights and negative pitfalls—into a <strong>Bidirectional Experience Pool (BEP)</strong>, binding each lesson to its applicable precondition rather than treating experience as universally valid.</li>\n<li>The population evolves via an elitist greedy protocol over heuristic tuples of natural-language description and executable code.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>A state-aware Planner for operator selection and dynamic refinement that adapts search tools to evolving problem complexity.</li>\n<li>A Bidirectional Experience Pool capturing both positive and negative insights with trajectory grounding and applicability conditions.</li>\n<li>Extensive experiments across classic COPs showing state-of-the-art performance while improving token efficiency.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>RefineEvo adapts its tool use to the search phase, grounds experience in trajectories and preconditions, and improves token efficiency. The Planner and Reflector add LLM calls, the two-level selection requires tuning, and experiments focus on classic combinatorial optimization benchmarks.</p>\n<h2>What to improve</h2>\n<p>Promising directions include generalization to non-COP tasks, theoretical grounding of the mode-switching rule, and explicit compute accounting so planning overhead does not hide search cost.</p>\n<h2>Connections</h2>\n<p>RefineEvo builds on ReEvo's reflection with explicit planning and a bidirectional (including negative) experience pool, and contrasts with MCTS-AHD (which selects which heuristic node to expand) and LLM-LNS (which evolves prompt strategies at a coarser level).</p>\n"
+    },
+    {
+      "id": "dgs",
+      "short_title": "DGS",
+      "title": "How to Guide LLM Generation: Dual-Surrogate Guided Search for Automated Heuristic Design",
+      "authors": [
+        "Yuhan Wang",
+        "Chaoda Peng",
+        "Xingyu Wu",
+        "Sheng-Hao Wu",
+        "Zhi-Hui Zhan"
+      ],
+      "year": 2026,
+      "date": "2026-07-15",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.13911",
+      "institutions": [
+        "scau",
+        "polyu",
+        "nankai"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Online Bin Packing",
+        "Knapsack Problem",
+        "Orienteering Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Job Shop Scheduling Problem"
+      ],
+      "featured": false,
+      "summary": "DGS formulates pre-generation operator-parent selection as a learned action-selection problem, using a transition surrogate and an instance-conditioned utility surrogate with an uncertainty-aware acquisition rule to guide LLM code generation.",
+      "body_html": "<h2>Why it matters</h2>\n<p>In the common black-box query setting, each LLM query and evaluator call is expensive and returns only generated code and a score. Before spending this budget, the system must choose which archived heuristics to reuse as parents and which generation operator should transform them. Existing methods make this choice with predefined rules—archive ranking, stochastic parent selection, tree policies, or fixed operator schedules—which provide only indirect evidence for which concrete operator-parent action should receive the next query.</p>\n<h2>Core method</h2>\n<p>Dual-Surrogate Guided Search (DGS) keeps the EoH-style prompt-operator set fixed and instead learns which operator-parent action to apply. It trains two surrogates from the archive:</p>\n<ul>\n<li>A <strong>transition surrogate</strong> predicts the latent distribution of the child representation induced by an operator-parent action.</li>\n<li>An <strong>instance-conditioned utility surrogate</strong> estimates the expected performance of sampled child latents.</li>\n</ul>\n<p>An <strong>uncertainty-aware acquisition rule</strong> combines predicted utility, utility uncertainty, and transition uncertainty to select the next action before invoking the LLM. A shared latent representation (a ModernBERT code encoder) maps heuristic code, problem instances, and operators into a learned continuous space, and the surrogates are updated with a mix of periodic full updates and fast intermediate updates to control online cost.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Formulates pre-generation operator-parent selection as a learned action-selection problem for guiding LLM code generation in AHD.</li>\n<li>Introduces the dual-surrogate module and an uncertainty-aware acquisition rule that allocates expensive LLM and evaluator calls.</li>\n<li>Provides empirical comparisons, ablation studies, and action-selection analyses across a diverse heuristic-design suite, showing behavior beyond simple archive ranking or fixed operator preferences.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>DGS is sample-efficient, compatible with other operator sets, and demonstrably improves guidance over fixed rules. Its costs are the surrogate overhead on large archives and reliance on historical pre-generation records, and it is evaluated on a defined heuristic-design suite rather than all domains.</p>\n<h2>What to improve</h2>\n<p>The paper points to extending DGS to broader heuristic-design problem families, integrating dynamic archive management, and exploring richer uncertainty representations and alternative acquisition strategies.</p>\n<h2>Connections</h2>\n<p>DGS is orthogonal to search-backbone changes: it operates on top of the archive–generation–evaluation loop shared by FunSearch, EoH, ReEvo, and MCTS-AHD, and learns action-level guidance from the same code-score and parent-child transition records those methods already produce.</p>\n"
+    },
+    {
+      "id": "atlas",
+      "short_title": "ATLAS",
+      "title": "ATLAS: Scaffold-Free Algorithm Synthesis by LLMs via Embedding-Guided Quality-Diversity Search",
+      "authors": [
+        "Danial Yazdani",
+        "Mohammad Nabi Omidvar",
+        "Yuan Sun",
+        "Maksud Ibrahimov",
+        "Xiaodong Li"
+      ],
+      "year": 2026,
+      "date": "2026-08-16",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.15546",
+      "code_url": "https://github.com/Danial-Yazdani/ATLAS",
+      "institutions": [
+        "rmit",
+        "leeds",
+        "latrobe"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "design-object",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Flow Shop Scheduling Problem"
+      ],
+      "featured": false,
+      "summary": "ATLAS performs scaffold-free full-algorithm synthesis with an embedding-guided quality-diversity search that preserves multiple competitive designs across embedding-space regions via a three-layer refinement strategy.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Component-synthesis methods such as FunSearch, EoH, and ReEvo evolve an algorithmic function that occupies a designated role inside a user-defined scaffold; the surrounding control flow is fixed in advance. This makes synthesis manageable but imposes much of the algorithmic architecture and restricts the LLM from adding, removing, or reordering components. Full-algorithm synthesis removes this restriction but enlarges and complicates the search landscape, exposing generated algorithms to execution, interface, and feasibility failures and risking premature convergence to one design region.</p>\n<h2>Core method</h2>\n<p>ATLAS fixes only a minimal I/O interface (instance and solution formats) and lets the LLM choose and restructure components, interactions, and control flow. Its search is organized as an embedding-guided quality-diversity framework:</p>\n<ul>\n<li>A <strong>coverage-preserving archive</strong> (semantic repertoire) of executable algorithms is organized in a pretrained embedding space; embedding distance drives retrieval, clustering, and redundancy-aware pruning without hand-specified descriptors.</li>\n<li>A <strong>three-layer search</strong> refines the current best region (Layer 1), gives non-elite region representatives dedicated refinement (Layer 2), and performs cross-region synthesis to recombine components and interactions (Layer 3).</li>\n<li>An <strong>independent evaluator</strong> verifies returned solutions and recomputes objectives, applies an all-or-nothing validity rule, and routes classified failure evidence to an error-conditioned REPAIR operator that regenerates the candidate.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>Scaffold-free full-algorithm synthesis formulation with only a problem specification and minimal I/O interface.</li>\n<li>Embedding-guided quality-diversity and multimodal search that preserves coverage across embedding-space regions.</li>\n<li>Hierarchical three-layer search over the clustered repertoire.</li>\n<li>Independent evaluation and failure-conditioned recovery with parallel, resource-controlled execution.</li>\n<li>Empirical design insights; ATLAS outperforms several state-of-the-art component-synthesis methods and a matched full-synthesis baseline on four NP-hard COPs while retaining multiple competitive designs from distinct regions.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>ATLAS removes scaffold bias, preserves multiple competing designs (useful for multimodal landscapes), and treats failure as a search operator. The trade-offs are a larger and more heterogeneous search space with higher synthesis cost, and dependence on embedding quality for retrieval and clustering.</p>\n<h2>What to improve</h2>\n<p>The paper suggests broader problem coverage, better embedding or behavior descriptors, and cost control for the enlarged synthesis loop as promising next steps.</p>\n<h2>Connections</h2>\n<p>ATLAS is developed concurrently with A2DEPT on full-algorithm synthesis and situates itself alongside LLAMEA and AlphaEvolve as full-synthesis methods, while contrasting the component-synthesis line (FunSearch, EoH, ReEvo, HSEvo, MCTS-AHD, EoH-S).</p>\n"
     }
   ]
 }

@@ -28,6 +28,12 @@ Each entry links to the paper, a structured reading note, and code when availabl
 | 2025.06 | [**AlphaEvolve** — AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://arxiv.org/pdf/2506.13131) | arXiv white paper 2025 | `Discovery`, `DCS`, `MM`, +1 | Scope | [Note](content/papers/alphaevolve/index.md) |
 | 2025.08 | [**EoH-S** — EoH-S: Evolution of Heuristic Set using LLMs for Automated Heuristic Design](https://arxiv.org/pdf/2508.03082) | AAAI 2026 | `OBP`, `TSP`, `CVRP` | Scope | [Note](content/papers/eoh-s/index.md) |
 | 2025.08 | [**MLES** — Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](https://arxiv.org/pdf/2508.05433) | ICLR 2026 | `LunarLander`, `CarRacing` | Feedback | [Note](content/papers/mles/index.md) · [Code](https://github.com/QingL2000/MLES) |
+| 2026.02 | [**G-LNS** — G-LNS: Generative Large Neighborhood Search for LLM-Based Automatic Heuristic Design](https://arxiv.org/pdf/2602.08253) | arXiv 2026 | `TSP`, `CVRP`, `OP` | Design object | [Note](content/papers/g-lns/index.md) · [Code](https://github.com/zboyn/G-LNS) |
+| 2026.04 | [**A2DEPT** — A2DEPT: Large Language Model–Driven Automated Algorithm Design via Evolutionary Program Trees](https://arxiv.org/pdf/2604.24043) | arXiv 2026 | `TSP`, `CVRP`, `Job Shop Scheduling Problem`, +3 | Design object | [Note](content/papers/a2dept/index.md) |
+| 2026.04 | [**SeaEvo** — SeaEvo: Advancing Algorithm Discovery with Strategy Space Evolution](https://arxiv.org/pdf/2604.24372) | arXiv 2026 | `Circle Packing`, `TSP`, `Job Shop Scheduling Problem` | Search | [Note](content/papers/seaevo/index.md) |
+| 2026.07 | [**RefineEvo** — RefineEvo: Planning-Guided Heuristic Evolution with Bidirectional Experience](https://arxiv.org/pdf/2607.11358) | ICML 2026 | `TSP`, `BPP`, `KP`, +1 | Feedback | [Note](content/papers/refineevo/index.md) |
+| 2026.07 | [**DGS** — How to Guide LLM Generation: Dual-Surrogate Guided Search for Automated Heuristic Design](https://arxiv.org/pdf/2607.13911) | arXiv 2026 | `TSP`, `OBP`, `KP`, +3 | Search | [Note](content/papers/dgs/index.md) |
+| 2026.08 | [**ATLAS** — ATLAS: Scaffold-Free Algorithm Synthesis by LLMs via Embedding-Guided Quality-Diversity Search](https://arxiv.org/pdf/2608.15546) | arXiv 2026 | `TSP`, `CVRP`, `FSSP` | Search | [Note](content/papers/atlas/index.md) · [Code](https://github.com/Danial-Yazdani/ATLAS) |
 <!-- PAPER_TABLE:END -->
 
 ## Interactive atlas

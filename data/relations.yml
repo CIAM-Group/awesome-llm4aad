@@ -71,3 +71,11 @@ relations:
     description: >-
       HSEvo includes FunSearch in its analysis of diversity and convergence in
       evolutionary program search.
+  - from: a2dept
+    to: atlas
+    type: concurrent-work
+    dimension: design-object
+    description: >-
+      A2DEPT and ATLAS independently move LLM-based AHD beyond component
+      synthesis toward open-ended solver synthesis and scaffold-free
+      full-algorithm synthesis, developed concurrently.
