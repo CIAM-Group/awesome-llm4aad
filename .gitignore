@@ -3,8 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-# 忽略根目录下的 .workbuddy 文件夹
+# 忽略根目录下文件夹
 .workbuddy/
+my_papers/
+scripts/
 
 # C extensions
 *.so
