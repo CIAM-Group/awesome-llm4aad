@@ -44,7 +44,7 @@ Dual-Surrogate Guided Search (DGS) keeps the EoH-style prompt-operator set fixed
 
 An **uncertainty-aware acquisition rule** combines predicted utility, utility uncertainty, and transition uncertainty to select the next action before invoking the LLM. A shared latent representation (a ModernBERT code encoder) maps heuristic code, problem instances, and operators into a learned continuous space, and the surrogates are updated with a mix of periodic full updates and fast intermediate updates to control online cost.
 
-![Framework overview](./DGS.png)
+![Framework overview](./dgs.png)
 
 ## Contributions
 
