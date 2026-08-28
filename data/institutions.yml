@@ -720,3 +720,51 @@ linkoping-university:
   initials: LIU
   website: https://liu.se/en
   accent: '#7b2d26'
+rmit:
+  name: RMIT University
+  short_name: RMIT
+  initials: RMIT
+  website: https://www.rmit.edu.au/
+  accent: '#7a1f2b'
+leeds:
+  name: University of Leeds
+  short_name: Leeds
+  initials: LEEDS
+  website: https://www.leeds.ac.uk/
+  accent: '#1d4e8f'
+latrobe:
+  name: La Trobe University
+  short_name: La Trobe
+  initials: LTU
+  website: https://www.latrobe.edu.au/
+  accent: '#0a7d5a'
+nankai:
+  name: Nankai University
+  short_name: Nankai
+  initials: NKU
+  website: https://www.nankai.edu.cn/
+  accent: '#15356b'
+neu:
+  name: Northeastern University
+  short_name: NEU
+  initials: NEU
+  website: https://www.neu.edu.cn/
+  accent: '#1a4f8b'
+thu:
+  name: Tsinghua University
+  short_name: THU
+  initials: THU
+  website: https://www.tsinghua.edu.cn/
+  accent: '#a51e1e'
+casia:
+  name: Institute of Automation, Chinese Academy of Sciences
+  short_name: CASIA
+  initials: CASIA
+  website: https://english.ia.cas.cn/
+  accent: '#9e1b32'
+hku:
+  name: The University of Hong Kong
+  short_name: HKU
+  initials: HKU
+  website: https://www.hku.hk/
+  accent: '#274c77'

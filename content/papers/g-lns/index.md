@@ -36,6 +36,8 @@ The LLM generates executable destroy and repair heuristics inside a Large Neighb
 
 Experiments on TSP and CVRP compare generated LNS with constructive-rule and fixed-local-search AHD baselines, with ablations for cooperative evaluation.
 
+![Framework overview](./G-LNS.png)
+
 ## Contributions
 
 - Expands the artifact to complementary destroy and repair procedures.

@@ -38,6 +38,8 @@ A2DEPT represents a solver as an evolutionary program tree whose nodes encode fu
 
 The experiments span combinatorial optimization, differential-equation solvers, and control problems. The paper reports comparisons with EoH and MCTS-AHD, executability analyses, scale studies, and ablations of the tree representation and operators.
 
+![Framework overview](./A2DEPT.png)
+
 ## Contributions
 
 - Moves the design object from a single heuristic function to a hierarchical, complete program.
