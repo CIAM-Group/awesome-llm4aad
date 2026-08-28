@@ -82,7 +82,7 @@ venue: arXiv
 paper_url: https://arxiv.org/pdf/0000.00000
 # code_url: https://github.com/organization/project
 institutions:
-  - affiliation-pending
+  - institution-id # Reuse an ID from data/institutions.yml.
 primary_dimension: search
 dimensions:
   - search
@@ -157,11 +157,21 @@ Relations can be added with a paper or in a separate pull request. Edit [`data/r
 
 Rules:
 
-- For every directed type, `from` is older and `to` is newer.
-- `concurrent-work` is undirected but still uses two valid paper IDs.
+- Every paper must participate in at least one relation.
+- There is no fixed upper bound on relations. Add only links supported by the
+  papers' methods, experiments, or explicit comparisons; do not add edges to make
+  the graph look connected.
+- Do not add more than one relation for the same pair of papers.
+- For every directed type, `from` is older and `to` is the newer paper declaring
+  the relation.
+- `concurrent-work` is undirected on the graph; put the paper declaring the
+  relation in `to` so the same two-relation limit remains unambiguous.
 - Choose one type and the single dimension that best explains this connection.
 - Describe the concrete methodological link in one or two sentences.
 - Do not add a relation merely because two papers use an LLM or solve the same broad problem.
+- Read the source paper before proposing a relation. Its claim must be supported by
+  the authors' method, experiment, or explicit comparison, rather than inferred
+  from a shared title keyword, task, or citation alone.
 
 ## Choose the classification
 
@@ -176,7 +186,6 @@ The vocabulary is fixed in [`data/taxonomy.yml`](../data/taxonomy.yml). Contribu
 | `generalizes` | The later paper broadens tasks, distributions, artifacts, or system scale. |
 | `adapts` | The later paper transfers a recognizable method to a new domain or design artifact. |
 | `contrasts` | The later paper takes a meaningfully different design route on the same question. |
-| `evaluated-by` | The later paper explicitly analyzes or stress-tests the earlier method. |
 
 ### Dimensions
 

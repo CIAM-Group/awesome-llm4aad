@@ -10,7 +10,7 @@ venue: arXiv
 paper_url: https://arxiv.org/pdf/0000.00000
 # code_url: https://github.com/organization/repository
 institutions:
-  - affiliation-pending
+  - institution-id # Reuse an ID from data/institutions.yml.
 primary_dimension: search
 dimensions:
   - search

@@ -31,11 +31,11 @@ relation_types:
     use_when: The link reveals a concrete trade-off in design, search, or feedback.
     avoid_when: The earlier paper is merely a benchmark baseline.
     direction: directed
-  evaluated-by:
-    label: Evaluated by
-    description: The later paper explicitly analyzes the earlier method.
-    use_when: The later paper measures or stress-tests a specific property of the earlier work.
-    avoid_when: The earlier paper appears only in a results table.
+  contextualizes:
+    label: Contextualizes
+    description: A survey, benchmark, or adjacent paper places an AHD method in a broader research context.
+    use_when: The source has a documented citation or synthesis relationship but no method inheritance claim.
+    avoid_when: The papers have a direct method extension, adaptation, or concrete alternative path.
     direction: directed
 
 dimensions:

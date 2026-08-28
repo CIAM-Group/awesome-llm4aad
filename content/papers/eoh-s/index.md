@@ -9,7 +9,7 @@ authors:
   - Xialiang Tong
   - Mingxuan Yuan
 year: 2026
-date: 2025-08-05
+date: 2026-03-14
 venue: AAAI
 paper_url: https://arxiv.org/pdf/2508.03082
 institutions:

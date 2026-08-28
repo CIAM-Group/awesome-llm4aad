@@ -153,6 +153,9 @@ export async function buildContent({ write = true } = {}) {
       throw new Error(`${paperId}: ${toErrorMessage(error)}`)
     }
     if (metadata.id !== paperId) throw new Error(`${paperId}: frontmatter id must match directory name`)
+    if (!metadata.date.startsWith(`${metadata.year}-`)) {
+      throw new Error(`${paperId}: year must match the publication date`)
+    }
     if (ids.has(metadata.id)) throw new Error(`duplicate paper id: ${metadata.id}`)
     if (shortTitles.has(metadata.short_title.toLowerCase())) throw new Error(`duplicate short title: ${metadata.short_title}`)
     ids.add(metadata.id)
@@ -172,10 +175,18 @@ export async function buildContent({ write = true } = {}) {
   }
 
   const papersById = new Map(papers.map((paper) => [paper.id, paper]))
+  const involvementCounts = new Map(papers.map((paper) => [paper.id, 0]))
+  const relationPairs = new Set()
   for (const relation of relations) {
     if (!ids.has(relation.from) || !ids.has(relation.to)) {
       throw new Error(`relation references unknown paper: ${relation.from} -> ${relation.to}`)
     }
+    if (relation.from === relation.to) throw new Error(`paper cannot relate to itself: ${relation.from}`)
+    const pair = [relation.from, relation.to].sort().join('::')
+    if (relationPairs.has(pair)) throw new Error(`duplicate relation pair: ${relation.from} <-> ${relation.to}`)
+    relationPairs.add(pair)
+    involvementCounts.set(relation.from, involvementCounts.get(relation.from) + 1)
+    involvementCounts.set(relation.to, involvementCounts.get(relation.to) + 1)
     if (!relationTypes[relation.type]) throw new Error(`unknown relation type: ${relation.type}`)
     if (!dimensions[relation.dimension]) throw new Error(`unknown relation dimension: ${relation.dimension}`)
     if (relationTypes[relation.type].direction === 'directed') {
@@ -185,6 +196,9 @@ export async function buildContent({ write = true } = {}) {
         throw new Error(`directed relation must run from earlier to later paper: ${relation.from} -> ${relation.to}`)
       }
     }
+  }
+  for (const [paperId, count] of involvementCounts) {
+    if (count < 1) throw new Error(`${paperId}: expected at least 1 relation, found ${count}`)
   }
 
   const generated = {
