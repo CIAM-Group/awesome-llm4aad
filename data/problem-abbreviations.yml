@@ -1,6 +1,7 @@
 # Compact labels used only in the generated README table.
 # Paper metadata keeps full problem names for search and readability.
 problem_abbreviations:
+  job shop scheduling problem: JSSP
   traveling salesman problem: TSP
   vehicle routing problem: VRP
   capacitated vehicle routing problem: CVRP
