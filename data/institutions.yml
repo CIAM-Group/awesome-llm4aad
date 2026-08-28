@@ -123,84 +123,6 @@ affiliation-not-disclosed:
   short_name: Not disclosed
   initials: N/A
   accent: '#6c746f'
-uestc:
-  name: University of Electronic Science and Technology of China
-  short_name: UESTC
-  initials: UESTC
-  website: https://www.uestc.edu.cn/
-  accent: '#2a5caa'
-nudt:
-  name: National University of Defense Technology
-  short_name: NUDT
-  initials: NUDT
-  website: https://www.nudt.edu.cn/
-  accent: '#8c1c13'
-neu:
-  name: Northeastern University
-  short_name: NEU
-  initials: NEU
-  website: https://www.neu.edu.cn/
-  accent: '#1a4f8b'
-ucas:
-  name: University of Chinese Academy of Sciences
-  short_name: UCAS
-  initials: UCAS
-  website: https://english.ucas.ac.cn/
-  accent: '#0f4c9c'
-thu:
-  name: Tsinghua University
-  short_name: THU
-  initials: THU
-  website: https://www.tsinghua.edu.cn/
-  accent: '#a51e1e'
-hku:
-  name: The University of Hong Kong
-  short_name: HKU
-  initials: HKU
-  website: https://www.hku.hk/
-  accent: '#274c77'
-rmit:
-  name: RMIT University
-  short_name: RMIT
-  initials: RMIT
-  website: https://www.rmit.edu.au/
-  accent: '#7a1f2b'
-leeds:
-  name: University of Leeds
-  short_name: Leeds
-  initials: LEEDS
-  website: https://www.leeds.ac.uk/
-  accent: '#1d4e8f'
-latrobe:
-  name: La Trobe University
-  short_name: La Trobe
-  initials: LTU
-  website: https://www.latrobe.edu.au/
-  accent: '#0a7d5a'
-scau:
-  name: South China Agricultural University
-  short_name: SCAU
-  initials: SCAU
-  website: https://www.scau.edu.cn/
-  accent: '#1b8a4c'
-polyu:
-  name: The Hong Kong Polytechnic University
-  short_name: PolyU
-  initials: POLYU
-  website: https://www.polyu.edu.hk/
-  accent: '#7b1e2b'
-nankai:
-  name: Nankai University
-  short_name: Nankai
-  initials: NKU
-  website: https://www.nankai.edu.cn/
-  accent: '#15356b'
-casia:
-  name: Institute of Automation, Chinese Academy of Sciences
-  short_name: CASIA
-  initials: CASIA
-  website: https://english.ia.cas.cn/
-  accent: '#9e1b32'
 hanoi-university-science-technology:
   name: Hanoi University of Science and Technology
   short_name: Hanoi UST
@@ -326,11 +248,35 @@ tu-dortmund:
   initials: TUDO
   website: https://www.tu-dortmund.de/en/
   accent: '#4b4b4d'
+uestc:
+  name: University of Electronic Science and Technology of China
+  short_name: UESTC
+  initials: UESTC
+  website: https://en.uestc.edu.cn/
+  accent: '#005bac'
+nudt:
+  name: National University of Defense Technology
+  short_name: NUDT
+  initials: NUDT
+  website: https://english.nudt.edu.cn/
+  accent: '#18553b'
 amms:
   name: Academy of Military Medical Sciences
   short_name: AMMS
   initials: AMMS
   accent: '#5f6e4f'
+scau:
+  name: South China Agricultural University
+  short_name: SCAU
+  initials: SCAU
+  website: https://english.scau.edu.cn/
+  accent: '#15704a'
+polyu:
+  name: The Hong Kong Polytechnic University
+  short_name: PolyU
+  initials: PolyU
+  website: https://www.polyu.edu.hk/en/
+  accent: '#a6192e'
 westlake:
   name: Westlake University
   short_name: Westlake
@@ -673,6 +619,12 @@ northeastern-cn:
   initials: NEU
   website: https://english.neu.edu.cn/
   accent: '#1d4e89'
+ucas:
+  name: University of Chinese Academy of Sciences
+  short_name: UCAS
+  initials: UCAS
+  website: https://english.ucas.ac.cn/
+  accent: '#2f5f98'
 hkust:
   name: The Hong Kong University of Science and Technology
   short_name: HKUST
