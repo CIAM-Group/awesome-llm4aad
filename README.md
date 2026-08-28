@@ -131,7 +131,6 @@ Each entry links to the paper, a structured reading note, and code when availabl
 | 2026.07 | [**CoupleEvo** — CoupleEvo: Evolving Heuristics for Coupled Optimization Problems Using Large Language Models](https://arxiv.org/pdf/2605.06341) | GECCO Companion 2026 | `Coupled Optimization` | Design object | [Note](content/papers/coupleevo/index.md) · [Code](https://github.com/tb-git-kit-research/CoupleEvo) |
 | 2026.07 | [**Mutation Dynamics** — Mutation Without Variation: Convergence Dynamics in LLM-Driven Program Evolution](https://arxiv.org/pdf/2606.05408) | GECCO Workshop 2026 | `Program Evolution Dynamics` | Feedback | [Note](content/papers/mutation-without-variation/index.md) · [Code](https://github.com/can-gurkan/lmca) |
 | 2026.08 | [**PACE** — PACE: Primitive-Aware Code Evolution for Automated Algorithm Design](https://arxiv.org/pdf/2608.07395) | arXiv 2026 | `AAD` | Design object | [Note](content/papers/pace/index.md) |
->>>>>>> 0cf906e12b127af4c2dddface76a1cea1ef2f6d9
 <!-- PAPER_TABLE:END -->
 
 ## Interactive atlas
