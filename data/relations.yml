@@ -862,3 +862,11 @@ relations:
       A2DEPT and ATLAS independently move LLM-based AHD beyond component
       synthesis toward open-ended solver synthesis and scaffold-free
       full-algorithm synthesis, developed concurrently.
+  - from: mcts-ahd
+    to: clade-ahd
+    type: extends
+    dimension: search
+    description: >-
+      Clade-AHD retains MCTS-AHD's heuristic tree and LLM-based expansion while
+      replacing node-level UCT estimates with clade-level Bayesian beliefs and
+      Thompson sampling.

@@ -768,3 +768,9 @@ hku:
   initials: HKU
   website: https://www.hku.hk/
   accent: '#274c77'
+guangdong-university-technology:
+  name: Guangdong University of Technology
+  short_name: GDUT
+  initials: GDUT
+  website: https://www.gdut.edu.cn/
+  accent: '#2d6a4f'
