@@ -1,53 +1,53 @@
 ---
 id: poh
-short_title: "PoH"
-title: "Planning of Heuristics: Strategic Planning on Large Language Models with Monte Carlo Tree Search for Automating Heuristic Optimization"
+short_title: PoH
+title: 'Planning of Heuristics: Strategic Planning on Large Language Models with Monte Carlo Tree Search for Automating Heuristic Optimization'
 authors:
-  - "Chaoxu Mu"
-  - "Xufeng Zhang"
-  - "Hui Wang"
+  - Hui Wang
+  - Xufeng Zhang
+  - Chaoxu Mu
 year: 2025
 date: 2025-02-17
-venue: "arXiv"
+venue: arXiv
 paper_url: https://arxiv.org/pdf/2502.11422
 institutions:
   - anhui-university
   - pengcheng-lab
-primary_dimension: feedback
+primary_dimension: search
 dimensions:
-  - feedback
   - search
+  - feedback
 problems:
-  - "Traveling Salesman Problem"
-  - "Flow Shop Scheduling Problem"
+  - Traveling Salesman Problem
+  - Flow Shop Scheduling Problem
 featured: false
-summary: "Planning of Heuristics combines LLM self-reflection with Monte Carlo tree search to plan multi-step heuristic improvements."
+summary: PoH models heuristic refinement as planning over executable states and language actions, using Monte Carlo Tree Search to compare multi-step improvement trajectories.
 ---
 
 ## Why it matters
 
-Direct iterative prompting is short-sighted: it accepts one proposed revision before knowing whether that direction has useful descendants. PoH casts heuristic refinement as planning so several possible improvement trajectories can compete over a longer horizon.
+Direct iteration or population updates make local decisions from the current candidate, even when a reflective suggestion may lead to a poor longer-term trajectory. PoH treats heuristic refinement as planning so alternative futures can be searched before the final heuristic is selected.
 
 ## Core method
 
-A node is an executable heuristic state, an LLM-generated improvement suggestion is an action, and measured task performance supplies reward. Monte Carlo Tree Search balances expanding new suggestions with revisiting promising branches; self-reflection explains failures and proposes actions. Backpropagated rewards let later outcomes revise the value of earlier design choices.
+PoH defines an executable heuristic as a state, a natural-language improvement suggestion as an action, and solver performance as the reward. A base LLM writes heuristic code; an optimizer LLM reads the code, results, and trajectory context to propose suggestions.
 
-Experiments on TSP and flow-shop scheduling compare PoH with hand-crafted heuristics and LLM-AHD baselines, including larger problem sizes.
+These transitions form an MCTS tree. UCT follows promising branches, expansion generates several suggestion-conditioned children, and greedy simulation continues from the strongest child for additional transitions. Rewards are backed up along the trajectory, and the output is the best node on the highest-reward path rather than simply the deepest node. Experiments use Guided Local Search for TSP and flow-shop scheduling.
 
 ## Contributions
 
-- A planning formulation of multi-step heuristic improvement.
-- Integration of self-reflective actions with MCTS selection and backup.
-- Evidence across routing and scheduling tasks.
+- A planning formulation that maps heuristic states, language actions, transitions, and solver rewards to an executable MDP.
+- An MCTS controller that compares multi-step improvement trajectories.
+- Experiments on TSP and flow-shop scheduling, including search-strategy and cross-LLM comparisons.
 
 ## Strengths and limitations
 
-The tree preserves alternative lineages and credits early choices with downstream outcomes. Each expansion still requires generation and execution, making tree breadth expensive. Natural-language actions may also duplicate one another while appearing distinct.
+Explicit action semantics make the search trace inspectable, while lookahead preserves alternatives that greedy updates may discard. The evidence is narrower than the paper's broad claim: experiments cover two tasks under Guided Local Search, reported runtime excludes LLM design cost, and search controllers use different numbers of explored heuristics. Full token and API-cost accounting and significance tests are also limited.
 
 ## What to improve
 
-Merge behaviorally equivalent branches, use uncertainty-aware value estimates, and compare with population evolution under the same evaluator calls and prompt-token budget.
+Future work should match heuristic evaluations, queries, tokens, and wall-clock time when comparing MCTS, greedy, and beam search. Behavioral deduplication, uncertainty-aware values, and tests beyond GLS could reduce redundant branches and expose cross-task transfer.
 
 ## Connections
 
-PoH belongs to the tree-search line with MCTS-AHD. Its distinctive framing treats reflective improvement suggestions as actions in a planning problem.
+PoH builds on ReEvo's reflective improvement direction and is recorded as a search-level relation to that line. It is concurrent with MCTS-AHD: both use trees, but PoH makes free-text suggestions searchable actions and uses multi-step simulation, whereas MCTS-AHD emphasizes a structured action set and lineage preservation. CogMCTS later couples cognitive feedback to expansion; PoH's distinctive contribution is reflection-as-action.
