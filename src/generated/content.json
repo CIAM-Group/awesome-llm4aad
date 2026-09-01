@@ -972,6 +972,13 @@
       "initials": "HKU",
       "website": "https://www.hku.hk/",
       "accent": "#274c77"
+    },
+    "guangdong-university-technology": {
+      "name": "Guangdong University of Technology",
+      "short_name": "GDUT",
+      "initials": "GDUT",
+      "website": "https://www.gdut.edu.cn/",
+      "accent": "#2d6a4f"
     }
   },
   "relations": [
@@ -1828,6 +1835,13 @@
       "type": "concurrent-work",
       "dimension": "design-object",
       "description": "A2DEPT and ATLAS independently move LLM-based AHD beyond component synthesis toward open-ended solver synthesis and scaffold-free full-algorithm synthesis, developed concurrently."
+    },
+    {
+      "from": "mcts-ahd",
+      "to": "clade-ahd",
+      "type": "extends",
+      "dimension": "search",
+      "description": "Clade-AHD retains MCTS-AHD's heuristic tree and LLM-based expansion while replacing node-level UCT estimates with clade-level Bayesian beliefs and Thompson sampling."
     }
   ],
   "papers": [
@@ -2163,9 +2177,9 @@
       "short_title": "PoH",
       "title": "Planning of Heuristics: Strategic Planning on Large Language Models with Monte Carlo Tree Search for Automating Heuristic Optimization",
       "authors": [
-        "Chaoxu Mu",
+        "Hui Wang",
         "Xufeng Zhang",
-        "Hui Wang"
+        "Chaoxu Mu"
       ],
       "year": 2025,
       "date": "2025-02-17",
@@ -2175,18 +2189,18 @@
         "anhui-university",
         "pengcheng-lab"
       ],
-      "primary_dimension": "feedback",
+      "primary_dimension": "search",
       "dimensions": [
-        "feedback",
-        "search"
+        "search",
+        "feedback"
       ],
       "problems": [
         "Traveling Salesman Problem",
         "Flow Shop Scheduling Problem"
       ],
       "featured": false,
-      "summary": "Planning of Heuristics combines LLM self-reflection with Monte Carlo tree search to plan multi-step heuristic improvements.",
-      "body_html": "<h2>Why it matters</h2>\n<p>Direct iterative prompting is short-sighted: it accepts one proposed revision before knowing whether that direction has useful descendants. PoH casts heuristic refinement as planning so several possible improvement trajectories can compete over a longer horizon.</p>\n<h2>Core method</h2>\n<p>A node is an executable heuristic state, an LLM-generated improvement suggestion is an action, and measured task performance supplies reward. Monte Carlo Tree Search balances expanding new suggestions with revisiting promising branches; self-reflection explains failures and proposes actions. Backpropagated rewards let later outcomes revise the value of earlier design choices.</p>\n<p>Experiments on TSP and flow-shop scheduling compare PoH with hand-crafted heuristics and LLM-AHD baselines, including larger problem sizes.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A planning formulation of multi-step heuristic improvement.</li>\n<li>Integration of self-reflective actions with MCTS selection and backup.</li>\n<li>Evidence across routing and scheduling tasks.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The tree preserves alternative lineages and credits early choices with downstream outcomes. Each expansion still requires generation and execution, making tree breadth expensive. Natural-language actions may also duplicate one another while appearing distinct.</p>\n<h2>What to improve</h2>\n<p>Merge behaviorally equivalent branches, use uncertainty-aware value estimates, and compare with population evolution under the same evaluator calls and prompt-token budget.</p>\n<h2>Connections</h2>\n<p>PoH belongs to the tree-search line with MCTS-AHD. Its distinctive framing treats reflective improvement suggestions as actions in a planning problem.</p>\n"
+      "summary": "PoH models heuristic refinement as planning over executable states and language actions, using Monte Carlo Tree Search to compare multi-step improvement trajectories.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Direct iteration or population updates make local decisions from the current candidate, even when a reflective suggestion may lead to a poor longer-term trajectory. PoH treats heuristic refinement as planning so alternative futures can be searched before the final heuristic is selected.</p>\n<h2>Core method</h2>\n<p>PoH defines an executable heuristic as a state, a natural-language improvement suggestion as an action, and solver performance as the reward. A base LLM writes heuristic code; an optimizer LLM reads the code, results, and trajectory context to propose suggestions.</p>\n<p>These transitions form an MCTS tree. UCT follows promising branches, expansion generates several suggestion-conditioned children, and greedy simulation continues from the strongest child for additional transitions. Rewards are backed up along the trajectory, and the output is the best node on the highest-reward path rather than simply the deepest node. Experiments use Guided Local Search for TSP and flow-shop scheduling.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A planning formulation that maps heuristic states, language actions, transitions, and solver rewards to an executable MDP.</li>\n<li>An MCTS controller that compares multi-step improvement trajectories.</li>\n<li>Experiments on TSP and flow-shop scheduling, including search-strategy and cross-LLM comparisons.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Explicit action semantics make the search trace inspectable, while lookahead preserves alternatives that greedy updates may discard. The evidence is narrower than the paper's broad claim: experiments cover two tasks under Guided Local Search, reported runtime excludes LLM design cost, and search controllers use different numbers of explored heuristics. Full token and API-cost accounting and significance tests are also limited.</p>\n<h2>What to improve</h2>\n<p>Future work should match heuristic evaluations, queries, tokens, and wall-clock time when comparing MCTS, greedy, and beam search. Behavioral deduplication, uncertainty-aware values, and tests beyond GLS could reduce redundant branches and expose cross-task transfer.</p>\n<h2>Connections</h2>\n<p>PoH builds on ReEvo's reflective improvement direction and is recorded as a search-level relation to that line. It is concurrent with MCTS-AHD: both use trees, but PoH makes free-text suggestions searchable actions and uses multi-step simulation, whereas MCTS-AHD emphasizes a structured action set and lineage preservation. CogMCTS later couples cognitive feedback to expansion; PoH's distinctive contribution is reflection-as-action.</p>\n"
     },
     {
       "id": "ars",
@@ -3104,15 +3118,18 @@
       "primary_dimension": "search",
       "dimensions": [
         "search",
-        "feedback",
-        "design-object"
+        "feedback"
       ],
       "problems": [
-        "Combinatorial Optimization"
+        "Orienteering Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Multiple Knapsack Problem",
+        "Traveling Salesman Problem",
+        "Knapsack Problem"
       ],
       "featured": false,
-      "summary": "CogMCTS combines LLM cognitive feedback, dual-track node expansion, and elite management for iterative heuristic evolution.",
-      "body_html": "<h2>Why it matters</h2>\n<p>Population search can converge early, while plain MCTS often ignores accumulated reasoning. CogMCTS uses historical experience and negative outcomes as explicit guidance for tree expansion.</p>\n<h2>Core method</h2>\n<p>The framework performs multi-round cognitive feedback over node histories, failed attempts, and elite heuristics. Dual-track expansion balances exploratory proposals with exploitation of promising branches.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Cognitive feedback integrated directly into MCTS.</li>\n<li>Dual-track expansion for exploration and exploitation.</li>\n<li>Explicit management of elite heuristic lineages.</li>\n</ul>\n<h2>Limitations and extensions</h2>\n<p>Repeated cognitive calls increase cost and may amplify correlated errors. A budget-aware controller should decide when another reflection is more valuable than another rollout.</p>\n"
+      "summary": "CogMCTS integrates multi-round cognitive feedback, elite-aware candidate context, and dual-track expansion into MCTS for iterative LLM-based heuristic evolution.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Population-based LLM-AHD methods can discard weak heuristics that might produce useful descendants. MCTS preserves the tree, but does not by itself explain how historical experience, failures, and elite candidates should shape expansion. CogMCTS connects cognitive feedback directly to this loop.</p>\n<h2>Core method</h2>\n<p>The framework uses a virtual root; other nodes store executable Python heuristics and descriptions. UCT with exploration decay selects a node, while an elite set supplies additional candidates. Together they form a Cognitive Candidate Set (CCS). Rapid cognition compares this context, and complex cognition combines the result with positive and negative memories, $K^+$ and $K^-$. Subsequent outcomes update these memories.</p>\n<p>The selected node is expanded through two tracks: <code>em1</code> and <code>em2</code> use cognitive guidance for local combination and global-best reinforcement, while <code>m1</code> and <code>m2</code> perform structural and parameter mutation. Task-specific solvers evaluate the new heuristics, then node statistics and the global best are updated by backpropagation. The framework is tested with ACO, Guided Local Search, and step-by-step construction.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Multi-round cognitive guidance using node context, historical experience, and negative outcomes.</li>\n<li>CCS and dual-track expansion combining elite-aware exploitation with structural and parameter exploration.</li>\n<li>An implementation across three solver frameworks and five problem settings.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>CogMCTS makes feedback part of tree expansion and separates structural from parameter mutation. However, its three-run averages lack confidence intervals and significance tests; the common budget counts heuristic evaluations, not LLM queries, tokens, API cost, or wall-clock time. Global-best changes are only a proxy for useful experience and may mislabel delayed or noisy effects. Specialized solvers remain stronger in some settings, including DeepACO on parts of OP/CVRP and OR-Tools on KP.</p>\n<h2>What to improve</h2>\n<p>Component ablations should isolate CCS construction, rapid and complex cognition, knowledge validation, elite sampling, and each action. Cost-normalized comparisons could measure quality per token or unit time. A stronger memory controller could attach confidence and delayed credit to $K^+$ and $K^-$, followed by cross-task transfer tests.</p>\n<h2>Connections</h2>\n<p>CogMCTS extends the lineage-preserving MCTS-AHD direction with cognitive guidance and failed-search experience; this is recorded in <code>data/relations.yml</code>. It draws on ReEvo's reflection, but places cognition inside expansion and adds elite-aware context. Relative to PoH, it primarily changes feedback context and node expansion rather than action semantics or simulation depth.</p>\n"
     },
     {
       "id": "beyond-algorithm-evolution",
@@ -3334,6 +3351,40 @@
       "featured": false,
       "summary": "TIDE jointly evolves heuristic structures and tunes numerical parameters through a nested, diversity-aware search process.",
       "body_html": "<h2>Why it matters</h2>\n<p>A promising heuristic structure can be rejected because its constants are poorly calibrated, while tuning constants cannot rescue a weak structure. Treating the whole program as one discrete mutation entangles these two failure modes. TIDE separates structural evolution from parameter optimization while coordinating their budgets.</p>\n<h2>Core method</h2>\n<p>The outer loop evolves program logic across parallel islands. Tree Similarity Edit Distance measures structural rather than textual diversity and limits premature convergence. For each structure, an inner differential-mutation process calibrates numerical parameters before fitness comparison. A UCB scheduler learns which prompt operator deserves the next LLM query from its observed improvements.</p>\n<p>Experiments on combinatorial-optimization heuristics compare with EoH, ReEvo, and MCTS-AHD-style discrete evolution and ablate parameter tuning, structural diversity, islands, and scheduling.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Nested optimization of program structure and numeric parameters.</li>\n<li>AST/tree-distance diversity management across an island model.</li>\n<li>Online bandit allocation among LLM prompt operators.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The separation avoids discarding good logic because of bad constants and makes operator allocation adaptive. Inner tuning multiplies evaluations per structure, tree distance does not guarantee behavioral diversity, and the nested budget complicates fair comparison with simpler methods.</p>\n<h2>What to improve</h2>\n<p>Use multi-fidelity parameter tuning, compare structural and behavioral diversity, and report improvements against total evaluator calls, tokens, and wall time rather than generations alone.</p>\n<h2>Connections</h2>\n<p>TIDE extends EoH-style evolution with a continuous inner loop. It shares BEAM's bilevel perspective, but separates structure from numeric calibration rather than architecture from component implementation.</p>\n"
+    },
+    {
+      "id": "clade-ahd",
+      "short_title": "Clade-AHD",
+      "title": "Beyond the Node: Clade-level Selection for MCTS in Automatic Heuristic Design",
+      "authors": [
+        "Kezhao Lai",
+        "Yutao Lai",
+        "Hai-Lin Liu"
+      ],
+      "year": 2026,
+      "date": "2026-01-31",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2602.00549",
+      "code_url": "https://github.com/Mriya0306/Clade-AHD",
+      "institutions": [
+        "guangdong-university-technology"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Knapsack Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Multiple Knapsack Problem",
+        "Online Bin Packing",
+        "Bin Packing Problem"
+      ],
+      "featured": false,
+      "summary": "Clade-AHD replaces node-level MCTS estimates with clade-level Bayesian beliefs and Thompson sampling to allocate sparse heuristic-evaluation budgets across evolutionary branches.",
+      "body_html": "<h2>Why it matters</h2>\n<p>LLM-based heuristic design is a sparse-evaluation regime: generating and running each candidate is expensive, so node-level estimates can be unreliable. A mediocre intermediate heuristic may still be a stepping stone to strong descendants. Clade-AHD therefore evaluates an evolutionary branch rather than treating each node as an independent bandit.</p>\n<h2>Core method</h2>\n<p>A clade is a node and all its descendants. Clade-AHD represents its potential with a Beta belief, converts normalized evaluations into success/failure-style evidence, and propagates that evidence upward with depth decay. This aggregates descendant productivity while reducing the influence of remote generations.</p>\n<p>Selection stabilizes sparse beliefs with pseudo-evaluations, anneals posterior temperature as the budget is consumed, and samples one value from each eligible child clade. The largest Thompson sample determines the LLM mutation or crossover branch. After evaluation, evidence is updated bottom-up and dynamic freezing stops branches with enough visits but low aggregated potential. Experiments use constructive and ACO frameworks across TSP, KP, CVRP, MKP, and online/offline bin packing with a 1,000-evaluation budget.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A clade-level Bayesian abstraction that makes an evolutionary lineage the unit of selection.</li>\n<li>Depth-attenuated belief updates and Clade-Level Thompson Sampling for sparse-evaluation exploration.</li>\n<li>Budget-aware annealing and dynamic freezing to reduce evaluations spent on weak branches.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method exposes how a noisy node score can hide descendant productivity, and its selector, credit assignment, and freezing rule are modular. The advantage is not universal: construction TSP50 is slightly worse than MCTS-AHD, while some ACO settings favor DeepACO or MCTS-AHD. Depth decay is only a proxy for semantic relatedness, and irreversible freezing may remove delayed-reward stepping stones. Results align heuristic evaluations rather than full generation cost and use limited repeated-run statistics.</p>\n<h2>What to improve</h2>\n<p>Future work should compare equal-cost Bayesian selectors and measure posterior calibration directly. Reversible freezing could protect delayed-reward branches. Depth, code, and behavioral similarity should be compared as credit signals, with tokens, API calls, wall-clock time, and failure costs reported alongside heuristic counts.</p>\n<h2>Connections</h2>\n<p>Clade-AHD extends MCTS-AHD by retaining its heuristic tree and LLM expansion while replacing node-level UCT estimates with clade-level Bayesian beliefs and Thompson sampling; the directed relation is recorded in <code>data/relations.yml</code>. Its change is in selection and credit assignment, whereas PoH changes tree-action semantics and CogMCTS changes expansion context. The three methods are complementary directions, not strict successors.</p>\n"
     },
     {
       "id": "participatory-rules",
