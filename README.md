@@ -127,6 +127,7 @@ Each entry links to the paper, a structured reading note, and code when availabl
 | 2026.07 | [**RefineEvo** — RefineEvo: Planning-Guided Heuristic Evolution with Bidirectional Experience](https://arxiv.org/pdf/2607.11358) | ICML 2026 | `TSP`, `CVRP`, `Vehicle Routing Problem with Time Windows`, +3 | Search | [Note](content/papers/refineevo/index.md) · [Code](https://github.com/samwu-learn/RefineEvo) |
 | 2026.07 | [**DGS** — How to Guide LLM Generation: Dual-Surrogate Guided Search for Automated Heuristic Design](https://arxiv.org/pdf/2607.13911) | arXiv 2026 | `TSP`, `OBP`, `KP`, +3 | Search | [Note](content/papers/dgs/index.md) |
 | 2026.08 | [**PACE** — PACE: Primitive-Aware Code Evolution for Automated Algorithm Design](https://arxiv.org/pdf/2608.07395) | arXiv 2026 | `AAD` | Design object | [Note](content/papers/pace/index.md) |
+| 2026.08 | [**MuEvo** — MuEvo: LLM-Driven Evolution of Multi-Heuristic Ensemble](https://arxiv.org/pdf/2608.03636) | arXiv 2026 | `TSP`, `CVRP`, `OBP`, +1 | Design object | [Note](content/papers/muevo/index.md) |
 | 2026.08 | [**ATLAS** — ATLAS: Scaffold-Free Algorithm Synthesis by LLMs via Embedding-Guided Quality-Diversity Search](https://arxiv.org/pdf/2608.15546) | arXiv 2026 | `TSP`, `CVRP`, `FSSP` | Search | [Note](content/papers/atlas/index.md) · [Code](https://github.com/Danial-Yazdani/ATLAS) |
 <!-- PAPER_TABLE:END -->
 

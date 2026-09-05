@@ -1004,6 +1004,20 @@
       "description": "EoH-S changes the output from one heuristic to a complementary set that covers varied instance distributions."
     },
     {
+      "from": "eoh-s",
+      "to": "muevo",
+      "type": "extends",
+      "dimension": "design-object",
+      "description": "MuEvo keeps the ensemble-level design object introduced by EoH-S but adds reversible component management and explicit co-evolution for interacting heuristic components."
+    },
+    {
+      "from": "reevo",
+      "to": "muevo",
+      "type": "extends",
+      "dimension": "search",
+      "description": "MuEvo retains ReEvo's reflective LLM-guided crossover and mutation loop, then extends it with dynamic component management and ensemble-aware co-evolution for multi-heuristic frameworks."
+    },
+    {
       "from": "eoh",
       "to": "ast-evo",
       "type": "extends",
@@ -5393,6 +5407,42 @@
       "featured": false,
       "summary": "Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.",
       "body_html": "<h2>Why it matters</h2>\n<p>Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.</p>\n<h2>Core method</h2>\n<p>PACE separates reusable Executable Algorithmic Primitives from their host programs. Primitive-aware mutation and crossover preserve, transfer, and recombine these units; Thompson sampling prioritizes primitives using parent-relative improvements without an extra validation set.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Persistent executable primitives as reusable search units.</li>\n<li>Primitive-aware variation with parent-relative Thompson sampling.</li>\n<li>Experiments showing component retention across program evolution.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "muevo",
+      "short_title": "MuEvo",
+      "title": "MuEvo: LLM-Driven Evolution of Multi-Heuristic Ensemble",
+      "authors": [
+        "Haoze Lv",
+        "Ning Lu",
+        "Shengcai Liu",
+        "Shaofeng Zhang",
+        "Ke Tang"
+      ],
+      "year": 2026,
+      "date": "2026-08-04",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.03636",
+      "institutions": [
+        "sustech",
+        "hkust"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Online Bin Packing",
+        "Flow Shop Scheduling"
+      ],
+      "featured": false,
+      "summary": "MuEvo evolves multi-heuristic ensembles with reversible component management and LLM-driven co-evolution under ensemble-level feedback.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-based automatic heuristic design methods optimize one heuristic at a time. That does not match algorithm frameworks whose behavior comes from several interacting components: a component that looks weak early can become useful later, and independently improved components can still form a weak ensemble.</p>\n<p>MuEvo treats the ensemble, rather than an isolated heuristic, as the design object. Its experiments cover both controller-mediated selection hyper-heuristics and functionally differentiated components in ant colony optimization.</p>\n<p><img src=\"paper-assets/muevo/images/limitations.png\" alt=\"Why fixed pre-search and independent evolution fail\" /></p>\n<p><em>Figure 2. Fixed pre-search can miss late-potential components, while independent evolution ignores inter-component dependencies. Source: Lv et al., “MuEvo,” Figure 2, <a href=\"https://arxiv.org/abs/2608.03636\">arXiv:2608.03636</a>.</em></p>\n<h2>Core method</h2>\n<p>MuEvo keeps the reflective LLM-evolution loop used by ReEvo—candidate programs are generated, reflected on, and refined through LLM-guided crossover and mutation—then adds two mechanisms for the multi-component setting:</p>\n<ul>\n<li><strong>Dynamic Component Management:</strong> every valid component is briefly probed and placed in a reversible active/inactive lifecycle. Later ensemble feedback can reactivate a component that was underestimated during initialization.</li>\n<li><strong>LLM-Driven Co-Evolution:</strong> component populations are evolved with multi-ensemble evaluation, cross-component information sharing, relation-guided pair evolution, and adaptive budget allocation.</li>\n</ul>\n<p>Each candidate component is evaluated in several collaboration contexts, including the current best ensemble and diverse historical ensembles. This makes selection sensitive to context-dependent improvements, synergy, redundancy, and conflict.</p>\n<p><img src=\"paper-assets/muevo/images/overview.png\" alt=\"MuEvo overview\" /></p>\n<p><em>Figure 3. MuEvo’s reversible lifecycle and ensemble-aware co-evolution loop. Source: Lv et al., “MuEvo,” Figure 3, <a href=\"https://arxiv.org/abs/2608.03636\">arXiv:2608.03636</a>.</em></p>\n<h2>Contributions</h2>\n<ul>\n<li>A formulation of multi-heuristic LLM-AHD that optimizes an ordered ensemble of compatible components.</li>\n<li>A reversible component lifecycle that avoids one-shot top-<em>k</em> pre-selection.</li>\n<li>Ensemble-aware co-evolution with relation memory and adaptive allocation of evaluation budget.</li>\n<li>Evaluation across four combinatorial-optimization domains, two multi-component frameworks, and multiple LLM backbones.</li>\n</ul>\n<h2>Evidence</h2>\n<p>The paper evaluates MuEvo on selection hyper-heuristics and componentized ant colony optimization across TSP, CVRP, online bin packing, and flow-shop scheduling. It reports lower cost or optimality gap than human-designed defaults and strong LLM-AHD extensions on most datasets.</p>\n<p><img src=\"paper-assets/muevo/images/results.png\" alt=\"MuEvo results across four domains\" /></p>\n<p><em>Tables 1–2. Performance across four problem domains and two multi-component frameworks. Lower cost/gap is better. Source: Lv et al., “MuEvo,” Tables 1–2, <a href=\"https://arxiv.org/abs/2608.03636\">arXiv:2608.03636</a>.</em></p>\n<p><img src=\"paper-assets/muevo/images/ablation.png\" alt=\"MuEvo ablation results\" /></p>\n<p><em>Figure 4 and Tables 3–4. Cross-controller generalization, ablations, and backbone sensitivity. Source: Lv et al., “MuEvo,” Figure 4 and Tables 3–4, <a href=\"https://arxiv.org/abs/2608.03636\">arXiv:2608.03636</a>.</em></p>\n<h2>Strengths and limitations</h2>\n<p>MuEvo directly addresses the credit-assignment problem created by interacting heuristics and remains effective for both a high-level controller with a peer pool and a workflow with structured component dependencies. Its main cost is additional ensemble evaluations: the method must measure component changes in several contexts, and the search budget is still substantial.</p>\n<h2>What to improve</h2>\n<p>Future work could learn a cheaper surrogate for context-dependent component value, make the collaboration contexts adaptive, and expose a principled cost-quality trade-off for ensemble size and evaluation budget. It would also be useful to test transfer to unseen component positions and to compare against more general multicomponent program-evolution frameworks.</p>\n<h2>Connections</h2>\n<p>MuEvo extends ReEvo's reflective search loop to a multi-heuristic setting. It is also related to EoH-S through the shift from a single heuristic to a set, while adding component dependencies and reversible selection. Compared with Evolved-ALNS and SCOE, MuEvo emphasizes ensemble-level credit assignment and lifecycle management rather than a fixed ALNS decomposition or one scheduling-specific operator ensemble.</p>\n"
     },
     {
       "id": "atlas",
