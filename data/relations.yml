@@ -24,6 +24,22 @@ relations:
     description: >-
       EoH-S changes the output from one heuristic to a complementary set that
       covers varied instance distributions.
+  - from: eoh-s
+    to: muevo
+    type: extends
+    dimension: design-object
+    description: >-
+      MuEvo keeps the ensemble-level design object introduced by EoH-S but adds
+      reversible component management and explicit co-evolution for interacting
+      heuristic components.
+  - from: reevo
+    to: muevo
+    type: extends
+    dimension: search
+    description: >-
+      MuEvo retains ReEvo's reflective LLM-guided crossover and mutation loop,
+      then extends it with dynamic component management and ensemble-aware
+      co-evolution for multi-heuristic frameworks.
   - from: eoh
     to: ast-evo
     type: extends
