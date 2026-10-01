@@ -1231,3 +1231,39 @@ relations:
     description: AITE searches implementations of wireless algorithm ideas against a supplied evaluator. WARA
       extends the workflow boundary from problem formulation through algorithm design to evidence and
       manuscript artifacts, while its reported comparative scoring is primarily manuscript-level.
+  - from: eoh
+    to: lago
+    type: generalizes
+    dimension: design-object
+    description: >-
+      LaGO generalizes EoH-style heuristic evolution into a modular program
+      optimization framework that can update multiple executable heuristic roles.
+  - from: eoh
+    to: specahd
+    type: generalizes
+    dimension: scope
+    description: >-
+      SpecAHD broadens automated heuristic design from whole-instance scoring to
+      within-instance specialization across heterogeneous repair regions.
+  - from: eoh
+    to: autosnd
+    type: extends
+    dimension: feedback
+    description: >-
+      AutoSND extends evolutionary heuristic discovery by compiling execution
+      quality, runtime, and failure evidence into structural policies for search.
+  - from: mcts-ahd
+    to: autosnd
+    type: extends
+    dimension: feedback
+    description: >-
+      AutoSND extends tree-search-based heuristic discovery with execution-evidence
+      archives and explicit reuse, avoidance, and boundary policies.
+  - from: a2dept
+    to: dga2d
+    type: contrasts
+    dimension: design-object
+    description: >-
+      DGA2D and A2DEPT both pursue system-level algorithm design, but DGA2D uses
+      directed operator graphs and path-dependent credit while A2DEPT uses program trees.
+
