@@ -1856,6 +1856,41 @@
       "type": "extends",
       "dimension": "search",
       "description": "Clade-AHD retains MCTS-AHD's heuristic tree and LLM-based expansion while replacing node-level UCT estimates with clade-level Bayesian beliefs and Thompson sampling."
+    },
+    {
+      "from": "eoh",
+      "to": "lago",
+      "type": "generalizes",
+      "dimension": "design-object",
+      "description": "LaGO generalizes EoH-style heuristic evolution into a modular program optimization framework that can update multiple executable heuristic roles."
+    },
+    {
+      "from": "eoh",
+      "to": "specahd",
+      "type": "generalizes",
+      "dimension": "scope",
+      "description": "SpecAHD broadens automated heuristic design from whole-instance scoring to within-instance specialization across heterogeneous repair regions."
+    },
+    {
+      "from": "eoh",
+      "to": "autosnd",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "AutoSND extends evolutionary heuristic discovery by compiling execution quality, runtime, and failure evidence into structural policies for search."
+    },
+    {
+      "from": "mcts-ahd",
+      "to": "autosnd",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "AutoSND extends tree-search-based heuristic discovery with execution-evidence archives and explicit reuse, avoidance, and boundary policies."
+    },
+    {
+      "from": "a2dept",
+      "to": "dga2d",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "DGA2D and A2DEPT both pursue system-level algorithm design, but DGA2D uses directed operator graphs and path-dependent credit while A2DEPT uses program trees."
     }
   ],
   "papers": [
@@ -3490,6 +3525,40 @@
       "featured": false,
       "summary": "G-LNS expands the design object from priority rules to complementary destroy-and-repair operators for large neighborhood search.",
       "body_html": "<h2>Why it matters</h2>\n<p>Many LLM-AHD systems generate a constructive priority function or tune a fixed local move. Those interfaces limit the reachable algorithm space. G-LNS asks the model to design destroy-and-repair behavior capable of larger structural changes.</p>\n<h2>Core method</h2>\n<p>The LLM generates executable destroy and repair heuristics inside a Large Neighborhood Search loop. Because one component's value depends on its partner, cooperative evaluation records pair performance in a synergy matrix. Selection uses both component evidence and compatibility while the host LNS repeatedly restructures candidate solutions.</p>\n<p>Experiments on TSP and CVRP compare generated LNS with constructive-rule and fixed-local-search AHD baselines, with ablations for cooperative evaluation.</p>\n<p><img src=\"./G-LNS.png\" alt=\"Framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>Expands the artifact to complementary destroy and repair procedures.</li>\n<li>A synergy-aware cooperative evaluation for paired components.</li>\n<li>An open implementation of generative LNS within LLM-AHD.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Large-neighborhood moves can escape basins inaccessible to scoring rules, and pairwise evaluation acknowledges interaction. The matrix adds quadratic pressure as archives grow, while the fixed LNS shell remains a strong human prior.</p>\n<h2>What to improve</h2>\n<p>Use sparse bandit estimates for pair evaluation, transfer component libraries across tasks, and evolve neighborhood size and acceptance criteria alongside destroy/repair code.</p>\n<h2>Connections</h2>\n<p>G-LNS broadens the EoH design object from a scoring function to a paired neighborhood mechanism. Its synergy problem is related to CoupleEvo and E2OC.</p>\n"
+    },
+    {
+      "id": "lago",
+      "short_title": "LaGO",
+      "title": "Heuristic Search as Language-Guided Program Optimization",
+      "authors": [
+        "Mingxin Yu",
+        "Ruixiao Yang",
+        "Chuchu Fan"
+      ],
+      "year": 2026,
+      "date": "2026-02-17",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2602.16038",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "feedback",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Combinatorial Optimization",
+        "Pickup and Delivery Problem",
+        "Crew Pairing",
+        "Technology Mapping",
+        "Intraoperative Optimization"
+      ],
+      "featured": false,
+      "summary": "LaGO decomposes LLM-driven heuristic search into forward evaluation, backward analytical feedback, and update-based program refinement.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-AHD systems evolve heuristic functions inside a fixed scaffold and conflate evaluation, critique, and code generation into a single loop. That is convenient but makes it difficult to swap in richer critics, alternative update rules, or role-specific executors without rewriting the whole pipeline. LaGO argues that what looks like a single \"LLM + evaluator + reflector\" cycle is actually a modular program-optimization process that can be partially reused, partially replaced, and partially compared.</p>\n<h2>Core method</h2>\n<p>LaGO separates the search into three explicit roles:</p>\n<ul>\n<li>A <strong>forward pass</strong> runs candidate programs and records trajectories, costs, validity, and intermediate states.</li>\n<li>A <strong>backward pass</strong> maps those records into a semantic gradient, which can be a natural-language critique, structured feature statistics, an executable analyst, or a hybrid of them.</li>\n<li>An <strong>update step</strong> uses the gradient to propose new programs, and supports both constructive and refinement heuristics, soft penalty shaping, and code-writing analysts that perform lightweight numerical experiments.</li>\n</ul>\n<p>This view lets the authors treat several existing AHD pipelines as restricted instances of LaGO with frozen roles. The framework also introduces diversity-aware population management and is evaluated across four real combinatorial optimization domains (pickup and delivery, crew pairing, technology mapping, intraoperative optimization) where LaGO improves the quality-yield trade-off over strong baselines.</p>\n<p><img src=\"./lago_method.png\" alt=\"LaGO framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>A unified forward / backward / update view of LLM-driven heuristic search.</li>\n<li>Explicit support for executable semantic feedback, constructive and refinement updates, and diversity-aware population control.</li>\n<li>Empirical evidence across four real combinatorial optimization domains.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The decomposition clarifies which role a new component is replacing, supports pluggable critics and updaters, and turns prior systems into comparable instantiations. The framework inherits the brittleness of LLM-driven code generation, depends on having a meaningful semantic representation for each problem, and does not by itself guarantee correctness or feasibility when the analyst is allowed to run executable code.</p>\n<h2>What to improve</h2>\n<p>Stronger type or contract constraints between forward and update artifacts, learned critics that share knowledge across problem domains, and an explicit treatment of feasibility and safety when the backward pass can run code.</p>\n<h2>Connections</h2>\n<p>LaGO generalizes EoH-style heuristic evolution into a modular program-optimization framework. Its forward / backward / update split also subsumes reflective loops such as ReEvo and connects naturally to multi-agent or memory-augmented critics.</p>\n"
     },
     {
       "id": "enhancing-cvrp",
@@ -5377,6 +5446,76 @@
       "body_html": "<h2>Why it matters</h2>\n<p>In the common black-box query setting, each LLM query and evaluator call is expensive and returns only generated code and a score. Before spending this budget, the system must choose which archived heuristics to reuse as parents and which generation operator should transform them. Existing methods make this choice with predefined rules—archive ranking, stochastic parent selection, tree policies, or fixed operator schedules—which provide only indirect evidence for which concrete operator-parent action should receive the next query.</p>\n<h2>Core method</h2>\n<p>Dual-Surrogate Guided Search (DGS) keeps the EoH-style prompt-operator set fixed and instead learns which operator-parent action to apply. It trains two surrogates from the archive:</p>\n<ul>\n<li>A <strong>transition surrogate</strong> predicts the latent distribution of the child representation induced by an operator-parent action.</li>\n<li>An <strong>instance-conditioned utility surrogate</strong> estimates the expected performance of sampled child latents.</li>\n</ul>\n<p>An <strong>uncertainty-aware acquisition rule</strong> combines predicted utility, utility uncertainty, and transition uncertainty to select the next action before invoking the LLM. A shared latent representation (a ModernBERT code encoder) maps heuristic code, problem instances, and operators into a learned continuous space, and the surrogates are updated with a mix of periodic full updates and fast intermediate updates to control online cost.</p>\n<p><img src=\"./dgs.png\" alt=\"Framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>Formulates pre-generation operator-parent selection as a learned action-selection problem for guiding LLM code generation in AHD.</li>\n<li>Introduces the dual-surrogate module and an uncertainty-aware acquisition rule that allocates expensive LLM and evaluator calls.</li>\n<li>Provides empirical comparisons, ablation studies, and action-selection analyses across a diverse heuristic-design suite, showing behavior beyond simple archive ranking or fixed operator preferences.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>DGS is sample-efficient, compatible with other operator sets, and demonstrably improves guidance over fixed rules. Its costs are the surrogate overhead on large archives and reliance on historical pre-generation records, and it is evaluated on a defined heuristic-design suite rather than all domains.</p>\n<h2>What to improve</h2>\n<p>The paper points to extending DGS to broader heuristic-design problem families, integrating dynamic archive management, and exploring richer uncertainty representations and alternative acquisition strategies.</p>\n<h2>Connections</h2>\n<p>DGS is orthogonal to search-backbone changes: it operates on top of the archive–generation–evaluation loop shared by FunSearch, EoH, ReEvo, and MCTS-AHD, and learns action-level guidance from the same code-score and parent-child transition records those methods already produce.</p>\n"
     },
     {
+      "id": "specahd",
+      "short_title": "SpecAHD",
+      "title": "SpecAHD: Localize to Specialize for Automated Heuristic Design in Large-Scale Routing Problems",
+      "authors": [
+        "Kezhao Lai",
+        "Yutao Lai",
+        "Hai-Lin Liu"
+      ],
+      "year": 2026,
+      "date": "2026-07-26",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.23676",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "design-object",
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "Capacitated Vehicle Routing Problem",
+        "Traveling Salesman Problem",
+        "Vehicle Routing Problem with Time Windows",
+        "Split Delivery Vehicle Routing Problem"
+      ],
+      "featured": false,
+      "summary": "SpecAHD jointly learns where to expose bounded repair regions and which executable heuristics should specialize to their local structures.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most AHD systems design one heuristic that has to perform well across every region of every instance. In large-scale routing, the cost landscape is heterogeneous: short, dense city tours share little structure with long, capacity-tight depot tours. A single globally optimized heuristic tends to be dragged toward the average behavior and underperforms on every region. SpecAHD moves specialization inside the search, so the framework can decide both which regions deserve dedicated repair and which heuristics should serve them.</p>\n<h2>Core method</h2>\n<p>SpecAHD couples two search levels:</p>\n<ul>\n<li>An <strong>upper-level program</strong> reads the incumbent solution, diagnoses where it is locally weak, and proposes bounded repair regions.</li>\n<li>A <strong>lower-level repertoire search</strong> evolves a complementary set of executable construction heuristics, each conditioned on a region type rather than the whole instance.</li>\n</ul>\n<p>An exact checker merges repairs, rolls back infeasible changes, and stores the outcomes in a repair response archive of region descriptors, heuristic identifiers, and checked improvements. At inference time, weighted nearest-neighbor routing picks a specialized heuristic for each exposed region. For a fixed region set and candidate pool, the repertoire objective is monotone submodular, so greedy selection admits a (1 - 1/e) approximation guarantee. Experiments across CVRP, TSP, VRPTW, and SDVRP, and across multiple LLM backbones, report substantial held-out cost reductions.</p>\n<p><img src=\"./specAHD_method.png\" alt=\"SpecAHD framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>A bilevel design object that specializes heuristics to local regions rather than whole instances.</li>\n<li>A repair response archive connecting region descriptors, heuristic identities, and checked outcomes.</li>\n<li>A monotone submodular selection guarantee for the repertoire, with a greedy approximation.</li>\n<li>Strong held-out improvements across four routing problems and several LLM backbones.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>SpecAHD turns specialization from a hand-designed rule into a learned bilevel decision and gives a concrete theoretical handle on repertoire quality. Its performance depends on having meaningful local region descriptors, on the quality of the upper-level region proposer, and on the feasibility checker's ability to roll back all changes. The bilevel split also enlarges the search surface and adds a coordination cost between the two searches.</p>\n<h2>What to improve</h2>\n<p>Better learned region descriptors, stronger upper-level region proposers, and tighter integration with continuous- or feature-level tuning inside each region.</p>\n<h2>Connections</h2>\n<p>SpecAHD broadens EoH-style heuristic evolution from whole-instance scoring to within-instance specialization. It is complementary to instance-set approaches such as EoH-S that produce complementary heuristics across instances, and to bilevel algorithm-design systems such as BEAM and A2DEPT that operate on whole solver structures.</p>\n"
+    },
+    {
+      "id": "dga2d",
+      "short_title": "DGA2D",
+      "title": "DGA₂D: Directed Graph-Guided Automated Algorithm Design with Large Language Models",
+      "authors": [
+        "Jiale Zhao",
+        "Zimu Chen",
+        "Sirui Mao",
+        "Wentao Yang",
+        "Yuxiang Bai",
+        "Liyuanjun Lai"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.00700",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Flexible Job Shop Scheduling Problem",
+        "Traveling Salesman Problem",
+        "Maximum Independent Set",
+        "Three-Dimensional Container Loading Problem",
+        "Combinatorial Optimization"
+      ],
+      "featured": false,
+      "summary": "DGA2D models open-ended algorithm design as directed graph walks over functional operators and candidate code implementations.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-AHD systems evolve an isolated function inside a fixed solver scaffold, or evolve a single heuristic inside a search loop. Both routes limit the search to local algorithmic decisions: the rest of the algorithm — how operators are sequenced, which implementation variants are used, which components exist at all — is decided by the user. DGA2D argues that automated design should be free to change those decisions as well, and represents the open algorithm space as a graph that the LLM can simultaneously edit, extend, and traverse.</p>\n<h2>Core method</h2>\n<p>DGA2D structures the open algorithm space as a directed graph:</p>\n<ul>\n<li><strong>Nodes</strong> are functional operators with multiple candidate implementations.</li>\n<li><strong>Edges</strong> encode execution order between operators.</li>\n<li><strong>Directed walks</strong> over this graph form complete algorithmic pipelines.</li>\n</ul>\n<p>The LLM edits operator code, rearranges connections, and chooses implementation variants. Bounded walks keep candidate pipelines tractable, and the framework combines pipeline-level rewards with <strong>first-order path-dependent credit assignment</strong> for implementation transitions. Low-credit implementations and edges are removed or replaced, while the LLM proposes new alternatives.</p>\n<p>Across twelve combinatorial optimization problems (including flexible job-shop scheduling, TSP, maximum independent set, and three-dimensional container loading), DGA2D reports lower normalized gaps than several LLM-driven AHD baselines, illustrating a route from fixed solver templates toward system-level algorithm synthesis.</p>\n<p><img src=\"./dga2d_method.png\" alt=\"DGA2D framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>A directed-graph representation that exposes both functional operators and their implementation choices to LLM-driven search.</li>\n<li>Bounded graph walks as the search object, balancing expressiveness with tractable candidate generation.</li>\n<li>First-order path-dependent credit assignment for transitions between implementation variants.</li>\n<li>Cross-domain evidence on twelve combinatorial optimization problems.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>DGA2D gives the LLM genuine control over algorithm structure rather than only over isolated functions, and the path-dependent credit signal provides a finer-grained learning signal than endpoint rewards alone. The graph and the credit assignment introduce additional hyperparameters (walk bounds, transition depth, removal thresholds) and depend on a sufficiently rich initial operator library; without it, the search can converge to thin variants of a fixed pipeline.</p>\n<h2>What to improve</h2>\n<p>Automated operator-library construction, principled walk-depth and budget schedules, and integration with continuous- or hyperparameter-level tuning inside each operator.</p>\n<h2>Connections</h2>\n<p>DGA2D contrasts with A2DEPT on the broader program-synthesis line: both pursue system-level algorithm design, but DGA2D uses directed operator graphs and path-dependent credit while A2DEPT uses program trees. It also complements design-object expansions of EoH (BEAM, MEVO) by treating the algorithm itself, rather than the heuristic set, as the evolving artifact.</p>\n"
+    },
+    {
       "id": "pace",
       "short_title": "PACE",
       "title": "PACE: Primitive-Aware Code Evolution for Automated Algorithm Design",
@@ -5407,6 +5546,39 @@
       "featured": false,
       "summary": "Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.",
       "body_html": "<h2>Why it matters</h2>\n<p>Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.</p>\n<h2>Core method</h2>\n<p>PACE separates reusable Executable Algorithmic Primitives from their host programs. Primitive-aware mutation and crossover preserve, transfer, and recombine these units; Thompson sampling prioritizes primitives using parent-relative improvements without an extra validation set.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Persistent executable primitives as reusable search units.</li>\n<li>Primitive-aware variation with parent-relative Thompson sampling.</li>\n<li>Experiments showing component retention across program evolution.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "autosnd",
+      "short_title": "AutoSND",
+      "title": "AutoSND: From Execution Evidence to Structural Policies for Automated Network Dismantling Heuristic Discovery",
+      "authors": [
+        "Zhijing Hu",
+        "Changjun Fan",
+        "Yufan Deng",
+        "Zhiguang Cao"
+      ],
+      "year": 2026,
+      "date": "2026-08-04",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.03653",
+      "code_url": "https://github.com/MirrorNew/AutoSND",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search",
+        "design-object",
+        "scope"
+      ],
+      "problems": [
+        "Network Dismantling",
+        "Influence Maximization"
+      ],
+      "featured": false,
+      "summary": "AutoSND uses execution evidence to compile structural policies that guide tree search for complete network dismantling programs.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-AHD systems rely on a single objective signal, which mixes \"did this program get a good score?\" with \"why did this program get a good score?\". Network dismantling programs in particular are bundles of interdependent signals (residual degree, local access, state updates) whose effectiveness depends on how they interact, not just on the final ranking. Treating only the final score leaves the search blind to the structure of the program, so similar-looking candidates are collapsed together and informative failures are discarded. AutoSND argues that execution evidence — quality, runtime, and execution-state traces — should be compiled into explicit structural policies that guide further search.</p>\n<h2>Core method</h2>\n<p>AutoSND is a three-stage tree-search framework for automated network dismantling heuristic discovery:</p>\n<ul>\n<li><strong>Stage I (exploration)</strong> starts from simple heuristics and records candidate quality, runtime, and execution states for each program.</li>\n<li><strong>Stage II (policy compilation)</strong> turns those records into structured descriptions and contrasts positive and negative examples to compile explicit policies about signal reuse, local access, and state-update boundaries.</li>\n<li><strong>Stage III (policy-conditioned refinement)</strong> conditions further tree search on those policies and selects quality- and speed-prioritized candidates from a quality/runtime Pareto frontier.</li>\n</ul>\n<p>The discovered programs use residual degree as a backbone, bounded local signals to adjust node order, and restricted state updates. On real and large networks, AutoSND reports competitive dismantling quality, high candidate validity, and improved runtime, while the execution-to-policy loop makes the final program structure more interpretable than scalar ranking or free-form reflection alone.</p>\n<p><img src=\"./AutoSND_method.png\" alt=\"AutoSND framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>Treats execution evidence (quality, runtime, execution states) as a first-class search artifact for heuristic discovery.</li>\n<li>Compiles positive/negative contrasts into explicit structural policies over signal reuse, local access, and update boundaries.</li>\n<li>Policy-conditioned tree search with Pareto-based quality/runtime candidate selection.</li>\n<li>Interpretable dismantling programs and strong validity / runtime properties on real and large networks.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>AutoSND turns \"what worked\" into \"what structure to try next\", producing more interpretable programs and avoiding redundant search around similar candidates. Its benefit depends on having meaningful execution traces, on the contrast set being rich enough to surface non-trivial policies, and on the dismantling problem admitting interpretable structural priors. Policy compilation also adds an extra stage before candidate generation, and the approach is currently focused on network dismantling rather than the wider combinatorial landscape.</p>\n<h2>What to improve</h2>\n<p>Generalizing structural-policy compilation to richer problem classes, learning or pruning the policy set online, and integrating the evidence archive with planner-style reuse across related dismantling tasks.</p>\n<h2>Connections</h2>\n<p>AutoSND extends evolutionary and tree-search-based heuristic discovery (EoH, MCTS-AHD) by feeding execution evidence back into search. It is complementary to reflective and memory-based critics (ReEvo, CALM, MEVO) and to full-algorithm synthesis systems (A2DEPT, ATLAS) by targeting the structural content of a single algorithm family rather than its overall scaffold.</p>\n"
     },
     {
       "id": "muevo",
