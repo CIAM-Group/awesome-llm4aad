@@ -886,6 +886,351 @@ relations:
       Clade-AHD retains MCTS-AHD's heuristic tree and LLM-based expansion while
       replacing node-level UCT estimates with clade-level Bayesian beliefs and
       Thompson sampling.
+  - from: reevo
+    to: simpleevol
+    type: contrasts
+    dimension: search
+    description: SimpleEvol retains execution feedback and accumulated guidance but uses a single agent trajectory
+      instead of ReEvo’s explicitly managed evolutionary and reflective operators; the comparison concerns how
+      much search structure remains hand-designed.
+  - from: janus
+    to: bife
+    type: contrasts
+    dimension: feedback
+    description: Both reduce expensive program evaluations, but Janus evolves proxy evaluator programs from actual
+      outcomes whereas BiFE screens branching rules with a fixed strong-branching imitation objective before
+      full solver evaluation.
+  - from: atlas
+    to: heurevo
+    type: contrasts
+    dimension: design-object
+    description: HeurEvo explicitly separates plans, executable implementations, and a reusable component library.
+      ATLAS organizes complete algorithms in an embedding-guided archive; HeurEvo instead makes the high-level
+      plan an independently revisable search state.
+  - from: dgm
+    to: hada
+    type: contrasts
+    dimension: design-object
+    description: HADA discusses empirically validated self-improvement in the DGM line, but separates an editable
+      hyper-agent from a task agent that modifies a MetaBBO project. The distinction is which design machinery
+      can change, not a claim that HADA reuses DGM code.
+  - from: reevo
+    to: quantforge
+    type: contrasts
+    dimension: feedback
+    description: ReEvo supplies reflective verbal guidance from search outcomes. QuantForge makes explanatory
+      claims into preregistered controls and requires verdicts to cause checked code responses, distinguishing
+      plausible advice from experimentally tested mechanisms.
+  - from: alphaevolve
+    to: modular-game-search
+    type: adapts
+    dimension: scope
+    description: The game-search study explicitly builds on AlphaEvolve and separates reusable search mechanisms
+      from game-specific knowledge, using distinct credit and evaluation rules to evolve algorithms across
+      games.
+  - from: llamea-bo
+    to: ondesign
+    type: contrasts
+    dimension: scope
+    description: LLaMEA-BO designs reusable Bayesian optimization algorithms offline. OnDesign synthesizes and
+      selects algorithms while optimizing the target task, with feedback credited to both algorithm candidates
+      and state-analysis guidelines.
+  - from: archagent-v2
+    to: presage
+    type: contrasts
+    dimension: design-object
+    description: ArchAgent v2 evolves hardware prefetchers within the cache hierarchy, while Presage inserts
+      software prefetches into application code and evaluates executable patches. Their editable layers and
+      implementation constraints are different.
+  - from: mcts-ahd
+    to: algoevo
+    type: contrasts
+    dimension: feedback
+    description: MCTS-AHD uses a search tree over heuristic candidates. AlgoEvo organizes measured experience
+      cards in a derivation tree and retrieves them with situation-conditioned UCB, separating experience
+      reuse from direct heuristic-lineage selection.
+  - from: reevo
+    to: routerepair
+    type: contrasts
+    dimension: feedback
+    description: RouteRepair replaces undifferentiated improvement advice with a frozen diagnosis of
+      parent-specific failure cases and explicit non-failure protection. A proposed repair must pass measured
+      recovery and collateral-damage checks before normal population admission.
+  - from: reforge
+    to: routerepair
+    type: contrasts
+    dimension: feedback
+    description: Both constrain regressions during targeted revision. ReForge protects historical traffic-family
+      scores, whereas RouteRepair protects parent-defined non-failure instances using one-sided collateral
+      loss; improvement and protection are measured at different granularities.
+  - from: reevo
+    to: quantumevo
+    type: adapts
+    dimension: scope
+    description: QuantumEvo explicitly uses ReEvo to evolve CUDD variable-reordering functions, evaluating
+      candidates through downstream reversible-circuit quantum cost rather than only the size of the decision
+      diagram.
+  - from: eoh
+    to: llm-hcjg
+    type: generalizes
+    dimension: design-object
+    description: LLM-HCJG broadens thought/code heuristic evolution to a shared blueprint and jointly generated
+      initialization/penalty functions. Full-pair evaluation and component-swapping tests address
+      compatibility between interacting routing components.
+  - from: llm-hcjg
+    to: rideskill
+    type: contrasts
+    dimension: search
+    description: Both design interacting routing components, but LLM-HCJG evolves an initialization/penalty pair
+      together, whereas RideSkill trains a skill library, freezes it, then evolves a combiner and finally a
+      repositioner. Joint and staged credit assignment are distinct choices.
+  - from: eoh
+    to: es-ahd
+    type: contrasts
+    dimension: search
+    description: ES-AHD uses elite core insights and correlated temperature perturbations to control subsequent
+      heuristic generation, contrasting with EoH’s predefined exploration and modification operators. Its
+      evolution-strategy analogy is not an explicit covariance-matrix adaptation.
+  - from: eoh
+    to: macroagent
+    type: adapts
+    dimension: scope
+    description: MacroAgent explicitly adopts EoH-style thought/code evolution and prompt operators for the
+      contour-generation component of macro legalization, while clustering, assignment, and the surrounding
+      placement pipeline remain fixed.
+  - from: llamea-hpo
+    to: bi-ezp
+    type: contrasts
+    dimension: search
+    description: Both separate generated structure from numerical tuning. LLaMEA-HPO configures generated
+      optimizers, while Bi-EZP nests CMA-ES inside a search over zero-cost-proxy aggregation code and ranks
+      structures by held-out Kendall correlation.
+  - from: alphaevolve
+    to: seisevo
+    type: contextualizes
+    dimension: scope
+    description: "SeisEvo explicitly situates seismic reconstruction in evaluator-guided executable program
+      discovery, including AlphaEvolve. It emphasizes a domain-specific boundary: editable classical
+      mechanisms and physical admissibility checks must prevent meaningless score improvements; no backbone
+      reuse is asserted."
+  - from: goalevolve
+    to: macroagent
+    type: contrasts
+    dimension: feedback
+    description: GoalEvolve traces frozen end-to-end physical-design goal shortfalls back to source mechanisms.
+      MacroAgent instead evolves a bounded contour component using legalization-specific
+      regularity/displacement feedback, illustrating different feedback granularity within physical-design
+      algorithm discovery.
+  - from: featurehospital
+    to: bi-ezp
+    type: contrasts
+    dimension: design-object
+    description: Both assemble task-specific criteria from predefined primitives. FeatureHospital diagnoses data
+      and assigns catalog losses and weights; Bi-EZP generates aggregation programs over four proxy signals
+      and separately optimizes their numeric parameters.
+  - from: evomem
+    to: eps-memevo
+    type: contrasts
+    dimension: feedback
+    description: EvoMem emphasizes provenance-backed extraction and retrieval of successful mutation knowledge.
+      ε-MemEvo instead learns whether to skip retrieved advice, provide a hint, or inject stronger guidance,
+      addressing when memory should affect search.
+  - from: reevo
+    to: evomem
+    type: contrasts
+    dimension: feedback
+    description: ReEvo accumulates reflective guidance within an evolutionary run. EvoMem persists parent–child
+      mutation evidence across runs and tasks and retrieves bounded, provenance-linked advice while leaving
+      the host evaluator and selection rules unchanged.
+  - from: elmer
+    to: es-ahd
+    type: contrasts
+    dimension: search
+    description: ELMER trains requested mutation strength against measured behavioral displacement. ES-AHD
+      controls sampling through temperature and elite guidance; sampling variability and calibrated behavioral
+      step size are different mechanisms.
+  - from: alphaevolve
+    to: archagent-v2
+    type: adapts
+    dimension: scope
+    description: ArchAgent v2 uses AlphaEvolve to search hardware prefetcher implementations, adding staged and
+      joint cache-level evolution, storage-budget auditing, and short-trace search followed by longer-trace
+      validation.
+  - from: reevo
+    to: trace-guided-design
+    type: contrasts
+    dimension: feedback
+    description: The simulation-trace study grounds revision hypotheses in queryable scheduling events and
+      operational states, rather than relying on aggregate better/worse scores alone. A fixed policy executes
+      within each run, and repeated simulation decides promotion.
+  - from: alphaevolve
+    to: janus
+    type: extends
+    dimension: feedback
+    description: Janus explicitly builds on AlphaEvolve-style island search and adds evolving proxy-evaluator
+      programs, region-conditioned credit, and provisional candidate queues. Only real-valid outcomes enter
+      the target population or update the incumbent.
+  - from: mosaic
+    to: piac
+    type: contrasts
+    dimension: feedback
+    description: MOSAIC generates instances that expose relative strengths of specialist pairs. PIAC values
+      instances by gains accessible through perturbations of the current portfolio, distinguishing
+      discriminative difficulty from estimated improvement potential.
+  - from: shinkaevolve
+    to: relayevolve
+    type: extends
+    dimension: search
+    description: RelayEvolve uses a common ShinkaEvolve backend and adds a Grow–Deepen scheduler, quality-diverse
+      seed-bank curation, and adaptive cheap-to-strong population handoff under measured inference budgets.
+  - from: evopinn
+    to: adsl-pde
+    type: contrasts
+    dimension: design-object
+    description: EvoPINN edits executable representation/training modules and verifies generated changes. ADSL-PDE
+      searches typed solver descriptions compiled deterministically into implementations, moving many validity
+      constraints into the representation itself.
+  - from: eoh-s
+    to: dyca
+    type: extends
+    dimension: search
+    description: DyCA explicitly extends EoH-S complementary population management with inverse-cluster-size
+      weights, dynamic response-based instance clustering, and coordinated specialist pools to reduce
+      majority-instance bias.
+  - from: mosaic
+    to: dyca
+    type: contrasts
+    dimension: search
+    description: MOSAIC organizes specialists and generated instances in a grid of structural features. DyCA
+      instead periodically clusters instance responses to anchor algorithms and balances complementary and
+      specialist pools, changing how specialization regions are defined.
+  - from: reevo
+    to: mosaic
+    type: contrasts
+    dimension: feedback
+    description: MOSAIC contrasts scalar better/worse reflection with two region-specific specialization insights
+      and a hybridization insight grounded in discriminative instances. These insights persist in archive
+      cells even when their specialist changes.
+  - from: funsearch
+    to: funl2o
+    type: adapts
+    dimension: design-object
+    description: FunL2O explicitly uses a FunSearch-style program-evolution loop for feature functions. Each
+      candidate must satisfy a semantic contract and retrain a fixed learning-to-optimize pipeline before
+      downstream performance determines fitness.
+  - from: costada
+    to: relayevolve
+    type: contrasts
+    dimension: search
+    description: CostAda prices local/global frontier progress and tactic interventions throughout search.
+      RelayEvolve allocates short cheap-model trajectory blocks and then hands a curated population to a
+      stronger model, controlling cost at a different level.
+  - from: llamea-hpo
+    to: llamea-mobo
+    type: adapts
+    dimension: scope
+    description: LLaMEA-MOBO explicitly follows LLaMEA-HPO’s separation of generated code and hyperparameter
+      optimization, adapting it to complete multi-objective Bayesian optimizers evaluated by normalized
+      hypervolume.
+  - from: qdevo
+    to: aite
+    type: contrasts
+    dimension: search
+    description: QDEvo preserves quality/runtime alternatives through semantic niches and local Pareto survival.
+      AITE organizes multiple executable implementations per explicit idea and maintains a global
+      performance–complexity frontier, giving different meanings to diversity.
+  - from: reevo
+    to: qdevo
+    type: contrasts
+    dimension: feedback
+    description: QDEvo explicitly develops reflective guidance into immediate comparisons, multi-generation
+      summaries, and error-focused repair memory. Unlike ReEvo’s single-quality search setting, these signals
+      support quality/runtime trade-offs and semantic-niche survival.
+  - from: qdevo
+    to: mosaic
+    type: contrasts
+    dimension: search
+    description: QDEvo defines niches through canonicalized code embeddings and Pareto competition. MOSAIC defines
+      niches through instance structure and local specialist performance, contrasting program-space diversity
+      with coverage of problem regimes.
+  - from: relayevolve
+    to: evolution-or-illusion
+    type: contrasts
+    dimension: search
+    description: RelayEvolve controls trajectory growth and depth online before population handoff. Evolution or
+      Illusion instead reconstructs an offline seeds-by-iterations frontier from logged runs; the latter
+      diagnoses allocation sensitivity but does not provide an online controller.
+  - from: when-ai-designs-ai
+    to: ai4ai-bench
+    type: contrasts
+    dimension: feedback
+    description: When AI Designs AI maps code to human-derived module coordinates to measure structural
+      difference. AI4AI-Bench categorizes training-repository changes by the layer they modify and
+      independently reruns submitted code; both distinguish measured quality from the nature of the design
+      change.
+  - from: when-ai-designs-ai
+    to: tcsalgbench
+    type: contrasts
+    dimension: feedback
+    description: When AI Designs AI assesses empirical performance and module-level design differences.
+      TCSAlgBench asks whether computational guarantees can be justified by natural-language proofs, adding a
+      separate evaluation axis whose verifier acceptance is not formal correctness.
+  - from: adsl-pde
+    to: evoskillrec
+    type: contrasts
+    dimension: design-object
+    description: Both expose typed executable components to constrain composition. ADSL-PDE compiles solver
+      descriptions; EvoSkillRec represents recommendation architectures as skill genomes and promotes
+      validated code inventions into a reusable second-tier library.
+  - from: janus
+    to: jet
+    type: contrasts
+    dimension: feedback
+    description: Janus evolves proxies online and requires real target evaluation before promotion. JET freezes a
+      judge learned on source trajectories and adapts agent programs without target reward access, making
+      evaluator trust and validation fundamentally different.
+  - from: piac
+    to: kernelzero
+    type: contrasts
+    dimension: feedback
+    description: Both generate tasks in response to current algorithm capability. PIAC uses perturbation-based
+      potential gain to evolve a heuristic portfolio; KernelZero rewards Torch modules near a half-correct
+      coder frontier and alternately trains proposer and coder weights.
+  - from: formuevo
+    to: optiskill
+    type: contrasts
+    dimension: feedback
+    description: FormuEvo stores condition–strategy–effect evidence for solver-efficient formulation evolution.
+      OptiSkill separates general modeling procedures from local corrective experiences and validates skill
+      additions/repairs at batch boundaries before reuse.
+  - from: evomem
+    to: ees
+    type: contrasts
+    dimension: feedback
+    description: EvoMem persists provenance-linked mutation advice, while EES specifies task-indexed lessons about
+      executable procedures, failures, and ensembles. EES’s development ledger does not isolate a measured
+      causal benefit of the proposed memory mechanism.
+  - from: constraint-reformulation
+    to: formuevo
+    type: contrasts
+    dimension: feedback
+    description: Both evolve solver-facing model programs. Constraint Model Reformulation selects diverse runtime
+      profiles and checks returned satisfaction answers; FormuEvo diagnoses presolve/relaxation/search-tree
+      behavior and checks optimization objectives on development instances.
+  - from: graphir
+    to: adsl-pde
+    type: contrasts
+    dimension: design-object
+    description: GraphIR extracts descriptive architecture state from code to guide later edits, with tracing and
+      static fallbacks. ADSL-PDE makes typed descriptions the source of deterministic compilation; descriptive
+      context and prescriptive representation provide different validity boundaries.
+  - from: aite
+    to: wara
+    type: contrasts
+    dimension: scope
+    description: AITE searches implementations of wireless algorithm ideas against a supplied evaluator. WARA
+      extends the workflow boundary from problem formulation through algorithm design to evidence and
+      manuscript artifacts, while its reported comparative scoring is primarily manuscript-level.
   - from: eoh
     to: lago
     type: generalizes
@@ -921,3 +1266,4 @@ relations:
     description: >-
       DGA2D and A2DEPT both pursue system-level algorithm design, but DGA2D uses
       directed operator graphs and path-dependent credit while A2DEPT uses program trees.
+

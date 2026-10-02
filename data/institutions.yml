@@ -774,3 +774,218 @@ guangdong-university-technology:
   initials: GDUT
   website: https://www.gdut.edu.cn/
   accent: '#2d6a4f'
+nuist:
+  name: Nanjing University of Information Science and Technology
+  short_name: NUIST
+  initials: NUIST
+  accent: '#255b87'
+shandong-university:
+  name: Shandong University
+  short_name: Shandong
+  initials: SDU
+  accent: '#9b2638'
+purdue:
+  name: Purdue University
+  short_name: Purdue
+  initials: PU
+  accent: '#8e6f3e'
+south-china-normal-university:
+  name: South China Normal University
+  short_name: SCNU
+  initials: SCNU
+  accent: '#315d91'
+google:
+  name: Google
+  short_name: Google
+  initials: G
+  accent: '#4285f4'
+university-washington:
+  name: University of Washington
+  short_name: Washington
+  initials: UW
+  accent: '#4b2e83'
+radical-numerics:
+  name: Radical Numerics
+  short_name: Radical Numerics
+  initials: RN
+  accent: '#456a79'
+omelet:
+  name: Omelet, Inc.
+  short_name: Omelet
+  initials: OML
+  accent: '#a16b2c'
+beijing-normal-university:
+  name: Beijing Normal University
+  short_name: BNU
+  initials: BNU
+  accent: '#225f93'
+astar-iac:
+  name: Institute of Advanced Intelligence and Computing, A*STAR
+  short_name: A*STAR IAC
+  initials: IAC
+  accent: '#315d91'
+cuhk:
+  name: The Chinese University of Hong Kong
+  short_name: CUHK
+  initials: CUHK
+  accent: '#75418c'
+hit:
+  name: Harbin Institute of Technology
+  short_name: HIT
+  initials: HIT
+  accent: '#255b87'
+university-electro-communications:
+  name: The University of Electro-Communications
+  short_name: UEC Tokyo
+  initials: UEC
+  accent: '#255b87'
+axxx:
+  name: AXXX
+  short_name: AXXX
+  initials: AXXX
+  accent: '#456a79'
+moscow-state-university:
+  name: Lomonosov Moscow State University
+  short_name: MSU
+  initials: MSU
+  accent: '#9b2638'
+applied-ai-institute:
+  name: Applied AI Institute
+  short_name: Applied AI
+  initials: AAI
+  accent: '#456a79'
+nof1:
+  name: Nof1
+  short_name: Nof1
+  initials: Nof1
+  accent: '#456a79'
+nyu:
+  name: New York University
+  short_name: NYU
+  initials: NYU
+  accent: '#75418c'
+university-malta:
+  name: University of Malta
+  short_name: Malta
+  initials: UM
+  accent: '#9b2638'
+baidu:
+  name: Baidu
+  short_name: Baidu
+  initials: BIDU
+  accent: '#315d91'
+zhongguancun-institute-ai:
+  name: Zhongguancun Institute of Artificial Intelligence
+  short_name: ZGCAI
+  initials: ZGCAI
+  accent: '#315d91'
+china-mobile-jiutian:
+  name: JIUTIAN Research, China Mobile
+  short_name: China Mobile
+  initials: CMCC
+  accent: '#315d91'
+north-china-university-technology:
+  name: North China University of Technology
+  short_name: NCUT
+  initials: NCUT
+  accent: '#255b87'
+michigan-state:
+  name: Michigan State University
+  short_name: Michigan State
+  initials: MSU
+  accent: '#18453b'
+southern-california:
+  name: University of Southern California
+  short_name: USC
+  initials: USC
+  accent: '#990000'
+idea:
+  name: International Digital Economy Academy
+  short_name: IDEA
+  initials: IDEA
+  accent: '#456a79'
+terra-quantum:
+  name: Terra Quantum AG
+  short_name: Terra Quantum
+  initials: TQ
+  accent: '#456a79'
+george-mason:
+  name: George Mason University
+  short_name: George Mason
+  initials: GMU
+  accent: '#006633'
+einsia-navers:
+  name: Navers Lab, Einsia.AI
+  short_name: Einsia.AI
+  initials: EAI
+  accent: '#456a79'
+cas-ict:
+  name: Institute of Computing Technology, Chinese Academy of Sciences
+  short_name: ICT CAS
+  initials: ICT
+  accent: '#255b87'
+benchcouncil:
+  name: International Open Benchmark Council
+  short_name: BenchCouncil
+  initials: BENCH
+  accent: '#456a79'
+amazon:
+  name: Amazon
+  short_name: Amazon
+  initials: AMZN
+  accent: '#9c601b'
+university-pennsylvania:
+  name: University of Pennsylvania
+  short_name: UPenn
+  initials: PENN
+  accent: '#011f5b'
+kuaishou:
+  name: Kuaishou Technology
+  short_name: Kuaishou
+  initials: KS
+  accent: '#c85132'
+cas-software:
+  name: Institute of Software, Chinese Academy of Sciences
+  short_name: ISCAS
+  initials: ISCAS
+  accent: '#255b87'
+cas-ai-industries:
+  name: Institute of AI for Industries, Chinese Academy of Sciences
+  short_name: CAS AI Industries
+  initials: AII
+  accent: '#255b87'
+beihang:
+  name: Beihang University
+  short_name: Beihang
+  initials: BUAA
+  accent: '#255b87'
+impulse-ai:
+  name: Impulse AI
+  short_name: Impulse AI
+  initials: IMP
+  accent: '#456a79'
+xiaomi:
+  name: Xiaomi Inc.
+  short_name: Xiaomi
+  initials: MI
+  accent: '#ce672b'
+ku-leuven:
+  name: KU Leuven
+  short_name: KU Leuven
+  initials: KUL
+  accent: '#005f83'
+western-macedonia:
+  name: University of Western Macedonia
+  short_name: Western Macedonia
+  initials: UOWM
+  accent: '#456a79'
+st-andrews:
+  name: University of St Andrews
+  short_name: St Andrews
+  initials: STAND
+  accent: '#255b87'
+fnii-shenzhen:
+  name: Shenzhen Future Network of Intelligence Institute
+  short_name: FNii-Shenzhen
+  initials: FNII
+  accent: '#75418c'
