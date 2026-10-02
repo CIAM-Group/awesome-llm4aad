@@ -979,6 +979,264 @@
       "initials": "GDUT",
       "website": "https://www.gdut.edu.cn/",
       "accent": "#2d6a4f"
+    },
+    "nuist": {
+      "name": "Nanjing University of Information Science and Technology",
+      "short_name": "NUIST",
+      "initials": "NUIST",
+      "accent": "#255b87"
+    },
+    "shandong-university": {
+      "name": "Shandong University",
+      "short_name": "Shandong",
+      "initials": "SDU",
+      "accent": "#9b2638"
+    },
+    "purdue": {
+      "name": "Purdue University",
+      "short_name": "Purdue",
+      "initials": "PU",
+      "accent": "#8e6f3e"
+    },
+    "south-china-normal-university": {
+      "name": "South China Normal University",
+      "short_name": "SCNU",
+      "initials": "SCNU",
+      "accent": "#315d91"
+    },
+    "google": {
+      "name": "Google",
+      "short_name": "Google",
+      "initials": "G",
+      "accent": "#4285f4"
+    },
+    "university-washington": {
+      "name": "University of Washington",
+      "short_name": "Washington",
+      "initials": "UW",
+      "accent": "#4b2e83"
+    },
+    "radical-numerics": {
+      "name": "Radical Numerics",
+      "short_name": "Radical Numerics",
+      "initials": "RN",
+      "accent": "#456a79"
+    },
+    "omelet": {
+      "name": "Omelet, Inc.",
+      "short_name": "Omelet",
+      "initials": "OML",
+      "accent": "#a16b2c"
+    },
+    "beijing-normal-university": {
+      "name": "Beijing Normal University",
+      "short_name": "BNU",
+      "initials": "BNU",
+      "accent": "#225f93"
+    },
+    "astar-iac": {
+      "name": "Institute of Advanced Intelligence and Computing, A*STAR",
+      "short_name": "A*STAR IAC",
+      "initials": "IAC",
+      "accent": "#315d91"
+    },
+    "cuhk": {
+      "name": "The Chinese University of Hong Kong",
+      "short_name": "CUHK",
+      "initials": "CUHK",
+      "accent": "#75418c"
+    },
+    "hit": {
+      "name": "Harbin Institute of Technology",
+      "short_name": "HIT",
+      "initials": "HIT",
+      "accent": "#255b87"
+    },
+    "university-electro-communications": {
+      "name": "The University of Electro-Communications",
+      "short_name": "UEC Tokyo",
+      "initials": "UEC",
+      "accent": "#255b87"
+    },
+    "axxx": {
+      "name": "AXXX",
+      "short_name": "AXXX",
+      "initials": "AXXX",
+      "accent": "#456a79"
+    },
+    "moscow-state-university": {
+      "name": "Lomonosov Moscow State University",
+      "short_name": "MSU",
+      "initials": "MSU",
+      "accent": "#9b2638"
+    },
+    "applied-ai-institute": {
+      "name": "Applied AI Institute",
+      "short_name": "Applied AI",
+      "initials": "AAI",
+      "accent": "#456a79"
+    },
+    "nof1": {
+      "name": "Nof1",
+      "short_name": "Nof1",
+      "initials": "Nof1",
+      "accent": "#456a79"
+    },
+    "nyu": {
+      "name": "New York University",
+      "short_name": "NYU",
+      "initials": "NYU",
+      "accent": "#75418c"
+    },
+    "university-malta": {
+      "name": "University of Malta",
+      "short_name": "Malta",
+      "initials": "UM",
+      "accent": "#9b2638"
+    },
+    "baidu": {
+      "name": "Baidu",
+      "short_name": "Baidu",
+      "initials": "BIDU",
+      "accent": "#315d91"
+    },
+    "zhongguancun-institute-ai": {
+      "name": "Zhongguancun Institute of Artificial Intelligence",
+      "short_name": "ZGCAI",
+      "initials": "ZGCAI",
+      "accent": "#315d91"
+    },
+    "china-mobile-jiutian": {
+      "name": "JIUTIAN Research, China Mobile",
+      "short_name": "China Mobile",
+      "initials": "CMCC",
+      "accent": "#315d91"
+    },
+    "north-china-university-technology": {
+      "name": "North China University of Technology",
+      "short_name": "NCUT",
+      "initials": "NCUT",
+      "accent": "#255b87"
+    },
+    "michigan-state": {
+      "name": "Michigan State University",
+      "short_name": "Michigan State",
+      "initials": "MSU",
+      "accent": "#18453b"
+    },
+    "southern-california": {
+      "name": "University of Southern California",
+      "short_name": "USC",
+      "initials": "USC",
+      "accent": "#990000"
+    },
+    "idea": {
+      "name": "International Digital Economy Academy",
+      "short_name": "IDEA",
+      "initials": "IDEA",
+      "accent": "#456a79"
+    },
+    "terra-quantum": {
+      "name": "Terra Quantum AG",
+      "short_name": "Terra Quantum",
+      "initials": "TQ",
+      "accent": "#456a79"
+    },
+    "george-mason": {
+      "name": "George Mason University",
+      "short_name": "George Mason",
+      "initials": "GMU",
+      "accent": "#006633"
+    },
+    "einsia-navers": {
+      "name": "Navers Lab, Einsia.AI",
+      "short_name": "Einsia.AI",
+      "initials": "EAI",
+      "accent": "#456a79"
+    },
+    "cas-ict": {
+      "name": "Institute of Computing Technology, Chinese Academy of Sciences",
+      "short_name": "ICT CAS",
+      "initials": "ICT",
+      "accent": "#255b87"
+    },
+    "benchcouncil": {
+      "name": "International Open Benchmark Council",
+      "short_name": "BenchCouncil",
+      "initials": "BENCH",
+      "accent": "#456a79"
+    },
+    "amazon": {
+      "name": "Amazon",
+      "short_name": "Amazon",
+      "initials": "AMZN",
+      "accent": "#9c601b"
+    },
+    "university-pennsylvania": {
+      "name": "University of Pennsylvania",
+      "short_name": "UPenn",
+      "initials": "PENN",
+      "accent": "#011f5b"
+    },
+    "kuaishou": {
+      "name": "Kuaishou Technology",
+      "short_name": "Kuaishou",
+      "initials": "KS",
+      "accent": "#c85132"
+    },
+    "cas-software": {
+      "name": "Institute of Software, Chinese Academy of Sciences",
+      "short_name": "ISCAS",
+      "initials": "ISCAS",
+      "accent": "#255b87"
+    },
+    "cas-ai-industries": {
+      "name": "Institute of AI for Industries, Chinese Academy of Sciences",
+      "short_name": "CAS AI Industries",
+      "initials": "AII",
+      "accent": "#255b87"
+    },
+    "beihang": {
+      "name": "Beihang University",
+      "short_name": "Beihang",
+      "initials": "BUAA",
+      "accent": "#255b87"
+    },
+    "impulse-ai": {
+      "name": "Impulse AI",
+      "short_name": "Impulse AI",
+      "initials": "IMP",
+      "accent": "#456a79"
+    },
+    "xiaomi": {
+      "name": "Xiaomi Inc.",
+      "short_name": "Xiaomi",
+      "initials": "MI",
+      "accent": "#ce672b"
+    },
+    "ku-leuven": {
+      "name": "KU Leuven",
+      "short_name": "KU Leuven",
+      "initials": "KUL",
+      "accent": "#005f83"
+    },
+    "western-macedonia": {
+      "name": "University of Western Macedonia",
+      "short_name": "Western Macedonia",
+      "initials": "UOWM",
+      "accent": "#456a79"
+    },
+    "st-andrews": {
+      "name": "University of St Andrews",
+      "short_name": "St Andrews",
+      "initials": "STAND",
+      "accent": "#255b87"
+    },
+    "fnii-shenzhen": {
+      "name": "Shenzhen Future Network of Intelligence Institute",
+      "short_name": "FNii-Shenzhen",
+      "initials": "FNII",
+      "accent": "#75418c"
     }
   },
   "relations": [
@@ -1856,6 +2114,349 @@
       "type": "extends",
       "dimension": "search",
       "description": "Clade-AHD retains MCTS-AHD's heuristic tree and LLM-based expansion while replacing node-level UCT estimates with clade-level Bayesian beliefs and Thompson sampling."
+    },
+    {
+      "from": "reevo",
+      "to": "simpleevol",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "SimpleEvol retains execution feedback and accumulated guidance but uses a single agent trajectory instead of ReEvo’s explicitly managed evolutionary and reflective operators; the comparison concerns how much search structure remains hand-designed."
+    },
+    {
+      "from": "janus",
+      "to": "bife",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "Both reduce expensive program evaluations, but Janus evolves proxy evaluator programs from actual outcomes whereas BiFE screens branching rules with a fixed strong-branching imitation objective before full solver evaluation."
+    },
+    {
+      "from": "atlas",
+      "to": "heurevo",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "HeurEvo explicitly separates plans, executable implementations, and a reusable component library. ATLAS organizes complete algorithms in an embedding-guided archive; HeurEvo instead makes the high-level plan an independently revisable search state."
+    },
+    {
+      "from": "dgm",
+      "to": "hada",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "HADA discusses empirically validated self-improvement in the DGM line, but separates an editable hyper-agent from a task agent that modifies a MetaBBO project. The distinction is which design machinery can change, not a claim that HADA reuses DGM code."
+    },
+    {
+      "from": "reevo",
+      "to": "quantforge",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "ReEvo supplies reflective verbal guidance from search outcomes. QuantForge makes explanatory claims into preregistered controls and requires verdicts to cause checked code responses, distinguishing plausible advice from experimentally tested mechanisms."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "modular-game-search",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "The game-search study explicitly builds on AlphaEvolve and separates reusable search mechanisms from game-specific knowledge, using distinct credit and evaluation rules to evolve algorithms across games."
+    },
+    {
+      "from": "llamea-bo",
+      "to": "ondesign",
+      "type": "contrasts",
+      "dimension": "scope",
+      "description": "LLaMEA-BO designs reusable Bayesian optimization algorithms offline. OnDesign synthesizes and selects algorithms while optimizing the target task, with feedback credited to both algorithm candidates and state-analysis guidelines."
+    },
+    {
+      "from": "archagent-v2",
+      "to": "presage",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "ArchAgent v2 evolves hardware prefetchers within the cache hierarchy, while Presage inserts software prefetches into application code and evaluates executable patches. Their editable layers and implementation constraints are different."
+    },
+    {
+      "from": "mcts-ahd",
+      "to": "algoevo",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "MCTS-AHD uses a search tree over heuristic candidates. AlgoEvo organizes measured experience cards in a derivation tree and retrieves them with situation-conditioned UCB, separating experience reuse from direct heuristic-lineage selection."
+    },
+    {
+      "from": "reevo",
+      "to": "routerepair",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "RouteRepair replaces undifferentiated improvement advice with a frozen diagnosis of parent-specific failure cases and explicit non-failure protection. A proposed repair must pass measured recovery and collateral-damage checks before normal population admission."
+    },
+    {
+      "from": "reforge",
+      "to": "routerepair",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "Both constrain regressions during targeted revision. ReForge protects historical traffic-family scores, whereas RouteRepair protects parent-defined non-failure instances using one-sided collateral loss; improvement and protection are measured at different granularities."
+    },
+    {
+      "from": "reevo",
+      "to": "quantumevo",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "QuantumEvo explicitly uses ReEvo to evolve CUDD variable-reordering functions, evaluating candidates through downstream reversible-circuit quantum cost rather than only the size of the decision diagram."
+    },
+    {
+      "from": "eoh",
+      "to": "llm-hcjg",
+      "type": "generalizes",
+      "dimension": "design-object",
+      "description": "LLM-HCJG broadens thought/code heuristic evolution to a shared blueprint and jointly generated initialization/penalty functions. Full-pair evaluation and component-swapping tests address compatibility between interacting routing components."
+    },
+    {
+      "from": "llm-hcjg",
+      "to": "rideskill",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "Both design interacting routing components, but LLM-HCJG evolves an initialization/penalty pair together, whereas RideSkill trains a skill library, freezes it, then evolves a combiner and finally a repositioner. Joint and staged credit assignment are distinct choices."
+    },
+    {
+      "from": "eoh",
+      "to": "es-ahd",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "ES-AHD uses elite core insights and correlated temperature perturbations to control subsequent heuristic generation, contrasting with EoH’s predefined exploration and modification operators. Its evolution-strategy analogy is not an explicit covariance-matrix adaptation."
+    },
+    {
+      "from": "eoh",
+      "to": "macroagent",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "MacroAgent explicitly adopts EoH-style thought/code evolution and prompt operators for the contour-generation component of macro legalization, while clustering, assignment, and the surrounding placement pipeline remain fixed."
+    },
+    {
+      "from": "llamea-hpo",
+      "to": "bi-ezp",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "Both separate generated structure from numerical tuning. LLaMEA-HPO configures generated optimizers, while Bi-EZP nests CMA-ES inside a search over zero-cost-proxy aggregation code and ranks structures by held-out Kendall correlation."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "seisevo",
+      "type": "contextualizes",
+      "dimension": "scope",
+      "description": "SeisEvo explicitly situates seismic reconstruction in evaluator-guided executable program discovery, including AlphaEvolve. It emphasizes a domain-specific boundary: editable classical mechanisms and physical admissibility checks must prevent meaningless score improvements; no backbone reuse is asserted."
+    },
+    {
+      "from": "goalevolve",
+      "to": "macroagent",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "GoalEvolve traces frozen end-to-end physical-design goal shortfalls back to source mechanisms. MacroAgent instead evolves a bounded contour component using legalization-specific regularity/displacement feedback, illustrating different feedback granularity within physical-design algorithm discovery."
+    },
+    {
+      "from": "featurehospital",
+      "to": "bi-ezp",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "Both assemble task-specific criteria from predefined primitives. FeatureHospital diagnoses data and assigns catalog losses and weights; Bi-EZP generates aggregation programs over four proxy signals and separately optimizes their numeric parameters."
+    },
+    {
+      "from": "evomem",
+      "to": "eps-memevo",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "EvoMem emphasizes provenance-backed extraction and retrieval of successful mutation knowledge. ε-MemEvo instead learns whether to skip retrieved advice, provide a hint, or inject stronger guidance, addressing when memory should affect search."
+    },
+    {
+      "from": "reevo",
+      "to": "evomem",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "ReEvo accumulates reflective guidance within an evolutionary run. EvoMem persists parent–child mutation evidence across runs and tasks and retrieves bounded, provenance-linked advice while leaving the host evaluator and selection rules unchanged."
+    },
+    {
+      "from": "elmer",
+      "to": "es-ahd",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "ELMER trains requested mutation strength against measured behavioral displacement. ES-AHD controls sampling through temperature and elite guidance; sampling variability and calibrated behavioral step size are different mechanisms."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "archagent-v2",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "ArchAgent v2 uses AlphaEvolve to search hardware prefetcher implementations, adding staged and joint cache-level evolution, storage-budget auditing, and short-trace search followed by longer-trace validation."
+    },
+    {
+      "from": "reevo",
+      "to": "trace-guided-design",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "The simulation-trace study grounds revision hypotheses in queryable scheduling events and operational states, rather than relying on aggregate better/worse scores alone. A fixed policy executes within each run, and repeated simulation decides promotion."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "janus",
+      "type": "extends",
+      "dimension": "feedback",
+      "description": "Janus explicitly builds on AlphaEvolve-style island search and adds evolving proxy-evaluator programs, region-conditioned credit, and provisional candidate queues. Only real-valid outcomes enter the target population or update the incumbent."
+    },
+    {
+      "from": "mosaic",
+      "to": "piac",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "MOSAIC generates instances that expose relative strengths of specialist pairs. PIAC values instances by gains accessible through perturbations of the current portfolio, distinguishing discriminative difficulty from estimated improvement potential."
+    },
+    {
+      "from": "shinkaevolve",
+      "to": "relayevolve",
+      "type": "extends",
+      "dimension": "search",
+      "description": "RelayEvolve uses a common ShinkaEvolve backend and adds a Grow–Deepen scheduler, quality-diverse seed-bank curation, and adaptive cheap-to-strong population handoff under measured inference budgets."
+    },
+    {
+      "from": "evopinn",
+      "to": "adsl-pde",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "EvoPINN edits executable representation/training modules and verifies generated changes. ADSL-PDE searches typed solver descriptions compiled deterministically into implementations, moving many validity constraints into the representation itself."
+    },
+    {
+      "from": "eoh-s",
+      "to": "dyca",
+      "type": "extends",
+      "dimension": "search",
+      "description": "DyCA explicitly extends EoH-S complementary population management with inverse-cluster-size weights, dynamic response-based instance clustering, and coordinated specialist pools to reduce majority-instance bias."
+    },
+    {
+      "from": "mosaic",
+      "to": "dyca",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "MOSAIC organizes specialists and generated instances in a grid of structural features. DyCA instead periodically clusters instance responses to anchor algorithms and balances complementary and specialist pools, changing how specialization regions are defined."
+    },
+    {
+      "from": "reevo",
+      "to": "mosaic",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "MOSAIC contrasts scalar better/worse reflection with two region-specific specialization insights and a hybridization insight grounded in discriminative instances. These insights persist in archive cells even when their specialist changes."
+    },
+    {
+      "from": "funsearch",
+      "to": "funl2o",
+      "type": "adapts",
+      "dimension": "design-object",
+      "description": "FunL2O explicitly uses a FunSearch-style program-evolution loop for feature functions. Each candidate must satisfy a semantic contract and retrain a fixed learning-to-optimize pipeline before downstream performance determines fitness."
+    },
+    {
+      "from": "costada",
+      "to": "relayevolve",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "CostAda prices local/global frontier progress and tactic interventions throughout search. RelayEvolve allocates short cheap-model trajectory blocks and then hands a curated population to a stronger model, controlling cost at a different level."
+    },
+    {
+      "from": "llamea-hpo",
+      "to": "llamea-mobo",
+      "type": "adapts",
+      "dimension": "scope",
+      "description": "LLaMEA-MOBO explicitly follows LLaMEA-HPO’s separation of generated code and hyperparameter optimization, adapting it to complete multi-objective Bayesian optimizers evaluated by normalized hypervolume."
+    },
+    {
+      "from": "qdevo",
+      "to": "aite",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "QDEvo preserves quality/runtime alternatives through semantic niches and local Pareto survival. AITE organizes multiple executable implementations per explicit idea and maintains a global performance–complexity frontier, giving different meanings to diversity."
+    },
+    {
+      "from": "reevo",
+      "to": "qdevo",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "QDEvo explicitly develops reflective guidance into immediate comparisons, multi-generation summaries, and error-focused repair memory. Unlike ReEvo’s single-quality search setting, these signals support quality/runtime trade-offs and semantic-niche survival."
+    },
+    {
+      "from": "qdevo",
+      "to": "mosaic",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "QDEvo defines niches through canonicalized code embeddings and Pareto competition. MOSAIC defines niches through instance structure and local specialist performance, contrasting program-space diversity with coverage of problem regimes."
+    },
+    {
+      "from": "relayevolve",
+      "to": "evolution-or-illusion",
+      "type": "contrasts",
+      "dimension": "search",
+      "description": "RelayEvolve controls trajectory growth and depth online before population handoff. Evolution or Illusion instead reconstructs an offline seeds-by-iterations frontier from logged runs; the latter diagnoses allocation sensitivity but does not provide an online controller."
+    },
+    {
+      "from": "when-ai-designs-ai",
+      "to": "ai4ai-bench",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "When AI Designs AI maps code to human-derived module coordinates to measure structural difference. AI4AI-Bench categorizes training-repository changes by the layer they modify and independently reruns submitted code; both distinguish measured quality from the nature of the design change."
+    },
+    {
+      "from": "when-ai-designs-ai",
+      "to": "tcsalgbench",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "When AI Designs AI assesses empirical performance and module-level design differences. TCSAlgBench asks whether computational guarantees can be justified by natural-language proofs, adding a separate evaluation axis whose verifier acceptance is not formal correctness."
+    },
+    {
+      "from": "adsl-pde",
+      "to": "evoskillrec",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "Both expose typed executable components to constrain composition. ADSL-PDE compiles solver descriptions; EvoSkillRec represents recommendation architectures as skill genomes and promotes validated code inventions into a reusable second-tier library."
+    },
+    {
+      "from": "janus",
+      "to": "jet",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "Janus evolves proxies online and requires real target evaluation before promotion. JET freezes a judge learned on source trajectories and adapts agent programs without target reward access, making evaluator trust and validation fundamentally different."
+    },
+    {
+      "from": "piac",
+      "to": "kernelzero",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "Both generate tasks in response to current algorithm capability. PIAC uses perturbation-based potential gain to evolve a heuristic portfolio; KernelZero rewards Torch modules near a half-correct coder frontier and alternately trains proposer and coder weights."
+    },
+    {
+      "from": "formuevo",
+      "to": "optiskill",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "FormuEvo stores condition–strategy–effect evidence for solver-efficient formulation evolution. OptiSkill separates general modeling procedures from local corrective experiences and validates skill additions/repairs at batch boundaries before reuse."
+    },
+    {
+      "from": "evomem",
+      "to": "ees",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "EvoMem persists provenance-linked mutation advice, while EES specifies task-indexed lessons about executable procedures, failures, and ensembles. EES’s development ledger does not isolate a measured causal benefit of the proposed memory mechanism."
+    },
+    {
+      "from": "constraint-reformulation",
+      "to": "formuevo",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "Both evolve solver-facing model programs. Constraint Model Reformulation selects diverse runtime profiles and checks returned satisfaction answers; FormuEvo diagnoses presolve/relaxation/search-tree behavior and checks optimization objectives on development instances."
+    },
+    {
+      "from": "graphir",
+      "to": "adsl-pde",
+      "type": "contrasts",
+      "dimension": "design-object",
+      "description": "GraphIR extracts descriptive architecture state from code to guide later edits, with tracing and static fallbacks. ADSL-PDE makes typed descriptions the source of deterministic compilation; descriptive context and prescriptive representation provide different validity boundaries."
+    },
+    {
+      "from": "aite",
+      "to": "wara",
+      "type": "contrasts",
+      "dimension": "scope",
+      "description": "AITE searches implementations of wireless algorithm ideas against a supplied evaluator. WARA extends the workflow boundary from problem formulation through algorithm design to evidence and manuscript artifacts, while its reported comparative scoring is primarily manuscript-level."
     },
     {
       "from": "eoh",
@@ -5217,6 +5818,326 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Methods such as EoH and ReEvo fit a fixed training set and can fail under distributional shift. EoH-S and MoH add more training distributions for coverage, but diverse corpora are hard to enumerate and costly to evaluate. RAISE keeps a small nominal set and searches for nearby worst-case instances during evolution.</p>\n<h2>Core method</h2>\n<p>Robust AHD is cast as a constrained minimax over an epsilon-ball around the nominal set S: outer maximize heuristic quality; inner minimize on hard instances in that ball. This is a practical instance-level stand-in for distributionally robust optimization.</p>\n<p><img src=\"paper-assets/raise/images/robust-objective.jpg\" alt=\"RAISE robust objective\" /></p>\n<p><em>Equation 1: epsilon near 0 recovers standard AHD on S; larger epsilon forces worse-case robustness. Source: Liu et al., RAISE; see the <a href=\"https://arxiv.org/abs/2606.31801\">arXiv paper</a>.</em></p>\n<p><img src=\"paper-assets/raise/images/paper-cover.jpg\" alt=\"RAISE framework overview\" /></p>\n<p><em>LLM outer evolution plus LLM-free inner adversarial search. Source: Liu et al., RAISE, Figure 1; see the <a href=\"https://arxiv.org/abs/2606.31801\">arXiv paper</a>.</em></p>\n<ul>\n<li><strong>Outer loop.</strong> EoH-style LLM evolution under the current adversarial instance set.</li>\n<li><strong>Inner loop.</strong> LLM-free search finds a worst-case instance for the current best heuristic: an 18-d gene mixes nine basis distributions, then projects onto the epsilon-ball boundary. The hard instance augments S and the population is re-scored.</li>\n</ul>\n<h2>Contributions</h2>\n<ul>\n<li>Instance-level robust AHD over an epsilon-ball, as an operational DRO-style objective for LLM-AHD.</li>\n<li>Bi-level RAISE: LLM outer evolution with LLM-free adversarial search (basis mixture + boundary projection).</li>\n<li>Strong OOD results on OBP, OJSP, and OVRP from five nominal instances; prior LLM-AHD methods can degrade sharply (up to about 19× on some OBP settings).</li>\n</ul>\n<p><img src=\"paper-assets/raise/images/figure-2-obp-results.png\" alt=\"RAISE OBP robustness under distribution shift\" /></p>\n<p><em>Figure 2: OBP waste under shift across distributions, aggregate mean±std, and size averages. Source: Liu et al., RAISE, Figure 2; see the <a href=\"https://arxiv.org/abs/2606.31801\">arXiv paper</a>.</em></p>\n<h2>Strengths and limitations</h2>\n<p>The inner loop adds robustness without extra LLM queries and avoids large multi-distribution training pools. Results still depend on epsilon, the basis mixture, and how well the adversarial search covers the ball.</p>\n<h2>What to improve</h2>\n<p>Adaptive epsilon, richer bases, and an open adversarial-search release.</p>\n<h2>Connections</h2>\n<p>RAISE targets the same robustness gap as EoH-S, but searches for nearby worst-case instances instead of relying on a fixed diverse training pool. The atlas records a contrast with EoH-S along scope.</p>\n"
     },
     {
+      "id": "aite",
+      "short_title": "AITE",
+      "title": "Autonomous Discovery of Wireless Communications Algorithms",
+      "authors": [
+        "Fayçal Aït Aoudia",
+        "Jakob Hoydis",
+        "Sebastian Cammerer",
+        "Gian Marti",
+        "Merlin Nimier-David",
+        "Nicolas Roussel",
+        "Alexander Keller"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.17762",
+      "code_url": "https://github.com/nvlabs/the-ai-telco-engineer",
+      "institutions": [
+        "nvidia"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Wireless Communications",
+        "OTFS Equalization",
+        "Pilotless OFDM Reception"
+      ],
+      "featured": false,
+      "summary": "Coordinates idea generation and parallel coding agents to discover wireless algorithms along a measured performance–complexity frontier.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Promising signal-processing ideas can be rejected because of one poor implementation, while raw performance can hide impractical computational cost.</p>\n<h2>Core method</h2>\n<p>An orchestrator proposes distinct algorithmic ideas and assigns multiple isolated ReAct workers to each. Workers edit, run, and refine code through a task-specific evaluator returning performance and complexity. Optional postrun hyperparameter optimization yields multiple operating points; all reported experiments use this tuning stage.</p>\n<p>A leaderboard retains the Pareto front and selected off-front examples. Post-processing checks whether an implementation actually followed its assigned idea, so a deviating implementation does not falsely discredit that idea. Worker journals also refine generic operating instructions while protected task and idea text remain unchanged. This implementation is built with LangChain rather than reused wholesale from another evolutionary framework.</p>\n<h2>Contributions</h2>\n<p>Separates idea quality, implementation quality, and parameter configuration within an auditable wireless-algorithm search process.</p>\n<h2>Strengths and limitations</h2>\n<p>OTFS equalization and pilotless OFDM reception exercise different discovery challenges. Monte Carlo evaluation dominates cost; explainable algorithms are not automatically low-latency implementations, and hyperparameter-search allocation remains unresolved.</p>\n<h2>What to improve</h2>\n<p>Budget the complete idea/implementation/tuning hierarchy, test channel and hardware shifts, and independently verify generated derivations and receiver assumptions.</p>\n<h2>Connections</h2>\n<p><a href=\"../qdevo/index.md\">QDEvo</a> preserves quality/runtime trade-offs through semantic niches and local Pareto selection. AITE instead organizes implementations by explicit ideas and a global performance–complexity frontier; both retain alternatives, but their diversity mechanisms differ.</p>\n"
+    },
+    {
+      "id": "constraint-reformulation",
+      "short_title": "Constraint Reform.",
+      "title": "LLM-Guided Evolutionary Search for Constraint Model Reformulation to Improve Solver Efficiency",
+      "authors": [
+        "Kostis Michailidis",
+        "Dimos Tsouros",
+        "Nguyen Dang",
+        "Tias Guns"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.28268",
+      "institutions": [
+        "ku-leuven",
+        "western-macedonia",
+        "st-andrews"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Constraint Satisfaction",
+        "Constraint Model Reformulation",
+        "Solver Efficiency"
+      ],
+      "featured": false,
+      "summary": "Searches faster constraint-model implementations and retains prompt examples that are both fast and behaviorally diverse across instances.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A correct declarative model can be slow because of its variable viewpoint or encoding, even when the backend solver is unchanged.</p>\n<h2>Core method</h2>\n<p>An LLM proposes a rationale and executable reformulation. The evaluator solves development instances, measures time to the first solution, and checks each returned problem-level answer against the baseline model. Auxiliary variables and alternative encodings are allowed. This establishes validity of observed answers, not equality of complete solution sets.</p>\n<p>Search strategies control retained attempts and instructions. Profile-Diverse Retention keeps the fastest model, then uses maximal-marginal-relevance selection to balance speed with diversity in normalized log-runtime vectors. A separate validation set selects among discovered incumbents, with timeout penalties, before held-out testing. The study compares ten strategies over eight CSPLib satisfaction problems through CPMpy and CP-SAT.</p>\n<h2>Contributions</h2>\n<p>Treats prompt-history selection as an algorithmic design choice and grounds diversity in instance-level solver behavior rather than code appearance.</p>\n<h2>Strengths and limitations</h2>\n<p>Separate final selection reduces training-runtime overfitting. Finite solution checking cannot certify unsatisfiability or general equivalence; one model/backend setup and timing sensitivity limit generalization.</p>\n<h2>What to improve</h2>\n<p>Add complete or proof-assisted equivalence checks where feasible, repeat timing under controlled loads, and test cross-solver transfer without reselection on test data.</p>\n<h2>Connections</h2>\n<p><a href=\"../formuevo/index.md\">FormuEvo</a> explores the same solver-facing design layer for optimization models. This study differs in its satisfaction-oriented answer validation and runtime-profile context selection, rather than white-box solver diagnosis.</p>\n"
+    },
+    {
+      "id": "costada",
+      "short_title": "CostAda",
+      "title": "Budget-Aware LLM Discovery via Cost-Calibrated Frontier Utility",
+      "authors": [
+        "Yansen Zhang",
+        "Yilu Liu",
+        "Tianyu Liu",
+        "Jiamin Chen",
+        "Xiaokun Zhang",
+        "Kai Xie",
+        "Qingfu Zhang",
+        "Xue Liu",
+        "Yiyan Qi",
+        "Chen Ma"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.26828",
+      "institutions": [
+        "idea",
+        "cityu-hk",
+        "mbzuai"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Budgeted Program Discovery",
+        "Geometric Optimization",
+        "Systems Optimization"
+      ],
+      "featured": false,
+      "summary": "Allocates program-search effort using measured gain, realized model cost, and remaining budget rather than score improvement alone.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Equal numbers of search steps can consume very different budgets when prompts, retries, and guidance calls have unequal costs.</p>\n<h2>Core method</h2>\n<p>Each frontier maintains a local archive. After a candidate is evaluated, CostAda records improvement over both the previous local best and the global best, together with actual search-side cost. A remaining-budget-dependent utility combines these gains and divides by a logarithmically scaled cost penalty; credit increasingly emphasizes global improvement as spending accumulates.</p>\n<p>Smoothed utility controls local exploration, while cost-calibrated global progress guides UCB-style frontier allocation. Tactic generation is triggered by stagnation or low-yield spending only when enough budget remains to generate and test advice. Successful guidance receives a consolidation window; unsuccessful guidance delays the next intervention. These decisions use past observations, not advance knowledge of the next action's cost.</p>\n<h2>Contributions</h2>\n<p>Integrates cost into search decisions and credit assignment instead of using it solely as a final stopping condition.</p>\n<h2>Strengths and limitations</h2>\n<p>Eight benchmarks and two backbones test equal-budget quality and budget-to-target. The worst-case argument shows a limitation of cost-blind control, not a universal optimality guarantee for this particular controller.</p>\n<h2>What to improve</h2>\n<p>Include evaluator wall time and hardware costs, test changing prices and inaccurate affordability estimates, and compare controllers under identical implementation overhead.</p>\n<h2>Connections</h2>\n<p><a href=\"../relayevolve/index.md\">RelayEvolve</a> also controls inference spending, but does so through staged population handoff between two models. CostAda continuously prices progress across search frontiers and tactic interventions; the two mechanisms address different allocation units.</p>\n"
+    },
+    {
+      "id": "evopinn",
+      "short_title": "EvoPINN",
+      "title": "EvoPINN: Agentic Discovery of Executable Algorithms for Physics-Informed Neural Networks",
+      "authors": [
+        "Peng Yin",
+        "Kai Li",
+        "Yifan Zhang",
+        "Jian Cheng"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.26490",
+      "institutions": [
+        "university-chinese-academy-sciences",
+        "casia"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Physics-Informed Neural Networks",
+        "PDE Solver Design"
+      ],
+      "featured": false,
+      "summary": "Evolves PINN representation and training programs one module at a time, using diagnostics and constrained execution tests to evaluate structural changes.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Changing neural representation and training logic together makes useful mechanisms hard to identify and can conceal gains from simply spending more compute.</p>\n<h2>Core method</h2>\n<p>An individual contains a representation module and a training-program module. A UCB-style scheduler chooses which one to edit, leaving the other fixed. Training diagnostics, successful motifs, failed proposal families, and diverse search focuses condition parallel LLM proposals.</p>\n<p>Candidates must differ under both ordinary and normalized syntax trees, excluding formatting, renaming, and constant-only changes. Small-instance execution tests check compatibility and differentiability, with bounded repairs. Full evaluations share training-step and sampling budgets. Selected designs are frozen and retrained on independent seeds, with final error measured on a disjoint reporting set. The discovered SLRC-PINN receives additional parameter-matched analysis rather than being judged only by search fitness.</p>\n<h2>Contributions</h2>\n<p>Combines module-level credit assignment, structural-change checks, and budget-matched numerical evaluation for executable PINN discovery.</p>\n<h2>Strengths and limitations</h2>\n<p>The verification pipeline filters trivial or invalid changes, and four PDE regimes test more than one equation. Syntax difference does not establish mathematical novelty or correctness; nearby-parameter transfer is narrower than arbitrary PDE generalization.</p>\n<h2>What to improve</h2>\n<p>Add stronger numerical invariants and broader PDE shifts, and isolate scheduler, memory, representation, and training-program contributions under total compute accounting.</p>\n<h2>Connections</h2>\n<p><a href=\"../adsl-pde/index.md\">ADSL-PDE</a> tackles the same implementation-validity bottleneck with a typed solver language. EvoPINN retains executable module edits and checks them after generation; this is a representation/verification contrast, not an asserted lineage.</p>\n"
+    },
+    {
+      "id": "funl2o",
+      "short_title": "FunL2O",
+      "title": "FunL2O: LLM-Guided Feature Function Design for Learning to Optimize",
+      "authors": [
+        "Bingheng Li",
+        "Junyang Cai",
+        "Yupeng Zhang",
+        "Bistra Dilkina",
+        "Jayant Kalagnanam",
+        "Dzung T. Phan"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.27389",
+      "institutions": [
+        "michigan-state",
+        "southern-california",
+        "uw-madison",
+        "ibm-research"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Learning to Optimize",
+        "Linear Programming",
+        "Quadratic Programming",
+        "Mixed-Integer Linear Programming"
+      ],
+      "featured": false,
+      "summary": "Evolves executable feature functions for learning-to-optimize pipelines, retraining the fixed host model to measure each representation's downstream value.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A learned solver cannot easily exploit relationships that its fixed input features fail to expose.</p>\n<h2>Core method</h2>\n<p>The search changes only the feature function. Each host pipeline supplies a semantic contract defining accessible inputs, tensor interfaces, required original channels, and executable validity checks. Generated features may combine deployment-available quantities but cannot access reference solutions, labels, files, networks, or external solvers.</p>\n<p>A valid function is inserted into a fresh host pipeline and the learner is retrained. Input width can change mechanically, but hidden architecture, training procedure, data, and downstream solver remain fixed. Native validation outcomes form a lexicographic ranking that prioritizes feasibility before objective quality or solver work. Elite feature code and measured outcomes condition later proposals; deployed preprocessing needs no LLM.</p>\n<h2>Contributions</h2>\n<p>Makes representation code, rather than a solver heuristic or neural architecture, the algorithm-design object across multiple continuous and mixed-integer pipelines.</p>\n<h2>Strengths and limitations</h2>\n<p>Retraining avoids unfairly testing new features with an old representation's weights. It is also expensive, and one pipeline's metric cannot be directly equated with another's; some prediction tasks trade objective gains against feasibility.</p>\n<h2>What to improve</h2>\n<p>Report amortized feature-search cost and test transfer to unseen distributions with frozen features. Audit contracts for subtle information leakage and budget-match alternative feature search.</p>\n<h2>Connections</h2>\n<p><a href=\"../funsearch/index.md\">FunSearch</a> motivates the program-evolution loop. FunL2O adapts that idea to feature functions whose fitness is measured only after retraining a separate learner, rather than directly executing the generated function as the complete solver.</p>\n"
+    },
+    {
+      "id": "llamea-mobo",
+      "short_title": "LLaMEA-MOBO",
+      "title": "LLM-Driven Evolutionary Generation of Multi-Objective Bayesian Optimization Algorithms",
+      "authors": [
+        "Georgios Laskaris",
+        "Reuben Brasher",
+        "Niki van Stein",
+        "Elena Raponi",
+        "Thomas Bäck",
+        "Florian Neukart"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.08791",
+      "code_url": "https://github.com/glatq/LLaMEA-MOO/tree/publication_llamea_moo_unconstrained",
+      "institutions": [
+        "terra-quantum",
+        "leiden-university"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Multi-Objective Bayesian Optimization",
+        "Algorithm Generation"
+      ],
+      "featured": false,
+      "summary": "Extends LLaMEA-style code evolution and hyperparameter optimization to complete multi-objective Bayesian optimization algorithms.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Surrogates, acquisitions, decomposition strategies, and numerical tuning interact, so a promising MOBO structure can look weak with a poor configuration.</p>\n<h2>Core method</h2>\n<p>Mutation or crossover prompts produce a complete Python optimizer, rationale, and a bounded configuration space containing three to seven tunable parameters. Duplicate detection and reduced-budget execution screen candidates before SMAC tuning. The tuned implementation is evaluated across benchmark problems using mean normalized hypervolume, with runtime and errors returned as feedback.</p>\n<p>The study compares elitist single-parent and population strategies with a non-elitist population strategy. Approximately 900 generated algorithms from nine runs are assessed on synthetic problems and then unseen engineering tasks. Generated algorithms optimize multiple objectives, but outer evolutionary ranking uses a scalar aggregate hypervolume rather than a Pareto population of discovery objectives.</p>\n<h2>Contributions</h2>\n<p>Searches complete surrogate-assisted optimizer structures while delegating numeric configuration to a separate optimizer.</p>\n<h2>Strengths and limitations</h2>\n<p>Reports downstream quality and wall-clock trade-offs, including engineering transfer. The authors disclose fixed-seed behavior corrected by reruns and a mechanical indexing correction; results therefore should not be described as completely intervention-free.</p>\n<h2>What to improve</h2>\n<p>Enforce seed handling and dimensionality checks before selection, widen constrained/noisy testing, and charge nested SMAC and benchmark evaluation to the total discovery budget.</p>\n<h2>Connections</h2>\n<p><a href=\"../llamea-hpo/index.md\">LLaMEA-HPO</a> provides the explicit code-generation plus configuration-optimization methodology. LLaMEA-MOBO adapts it to complete multi-objective Bayesian optimizers and a hypervolume-based evaluation contract.</p>\n"
+    },
+    {
+      "id": "mosaic",
+      "short_title": "MOSAIC",
+      "title": "MOSAIC: Adversarial Co-evolution of Specialist Heuristics and Problem Instances for LLM-based Automated Heuristic Design",
+      "authors": [
+        "Oguzhan Gungordu",
+        "Siheng Xiong",
+        "Faramarz Fekri"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.07544",
+      "institutions": [
+        "gatech"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Knapsack Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Algorithm Portfolios"
+      ],
+      "featured": false,
+      "summary": "Co-evolves discriminative problem instances and region-specialist heuristics in a structural-feature quality-diversity archive.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Scalar better/worse feedback hides where a heuristic wins and can discard specialists that are valuable only on particular instance structures.</p>\n<h2>Core method</h2>\n<p>Archive cells store a specialist, representative instances, and persistent insights. For heuristics from distant regions, an LLM writes a generate-and-transform operator; an inner evolutionary loop searches for instances that favor each parent over the other. A shallow decision tree explains the winner regions and helps validate where instances and insights enter the grid.</p>\n<p>Reflection produces two specialization directions and one hybridization direction. Crossover and region-aware mutation use these insights, with offspring competing locally rather than against an average over unrelated regions. Insight memory survives replacement of a cell's specialist. After search, greedy selection extracts a compact complementary test-time portfolio.</p>\n<h2>Contributions</h2>\n<p>Grounds reflective guidance in discriminative instances and preserves region-specific knowledge through a quality-diversity archive.</p>\n<h2>Strengths and limitations</h2>\n<p>Experiments vary instance structure and size across constructive routing and packing tasks. Handcrafted structural features define the archive; finite adversarial search cannot prove global dominance, and generating instances has nontrivial cost.</p>\n<h2>What to improve</h2>\n<p>Measure robustness to feature choices and adversarial-search failures, and account for portfolio deployment and instance-evolution costs alongside generated-heuristic counts.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> supplies the broader reflective-search idea; MOSAIC contrasts with scalar pairwise reflection by conditioning advice on discriminative instance regions. <a href=\"../dyca/index.md\">DyCA</a> learns regions from algorithm responses instead of a predefined structural grid.</p>\n"
+    },
+    {
+      "id": "qdevo",
+      "short_title": "QDEvo",
+      "title": "QDEvo: A Multi-Objective Quality-Diversity Framework for Automated Heuristic Design",
+      "authors": [
+        "Nam Do Khanh",
+        "Nhat Nguyen Tran Minh",
+        "Dat Pham Vu Tuan",
+        "Long Doan",
+        "Binh Huynh Thi Thanh"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "GECCO Companion",
+      "paper_url": "https://arxiv.org/pdf/2607.11916",
+      "code_url": "https://github.com/datphamvn/QDEvo",
+      "institutions": [
+        "hanoi-university-science-technology",
+        "george-mason"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Multi-Objective Heuristic Design",
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Online Bin Packing",
+        "Airline Crew Pairing"
+      ],
+      "featured": false,
+      "summary": "Maintains semantically distinct heuristic niches, using local Pareto competition and hierarchical reflective feedback to preserve quality/runtime alternatives.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A globally competitive population can converge to nearly identical code even when its objective values still cover a trade-off front.</p>\n<h2>Core method</h2>\n<p>Individuals contain a thought/code pair, a code embedding, and quality/runtime scores. LLM crossover and mutation use three feedback layers: immediate comparisons, multi-generation guidance, and error-derived repair/avoidance rules. One mutation mode specifically targets runtime through implementation changes such as caching or vectorization.</p>\n<p>Code is canonicalized and embedded. A new individual joins a semantic cluster only when its similarity exceeds the threshold for every member; otherwise it starts a new cluster. Pareto competition occurs within clusters, preserving different niches rather than globally deleting every dominated-but-distinct program. The archive can grow as new niches appear. Evaluation includes quality/runtime formulations and multi-objective combinatorial tasks.</p>\n<h2>Contributions</h2>\n<p>Separates diversity in program space from diversity along an objective front, with reflection feeding both successful mechanisms and failure lessons into variation.</p>\n<h2>Strengths and limitations</h2>\n<p>Embedding-versus-structural-descriptor ablations probe the niche mechanism. Embedding similarity does not prove behavioral similarity, unbounded archives can become costly, and runtime objectives require stable measurement conditions.</p>\n<h2>What to improve</h2>\n<p>Audit clustering errors, vary similarity thresholds, and report archive growth, timing noise, and total cost alongside hypervolume and IGD.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> motivates verbal reflective guidance, which QDEvo explicitly expands into immediate, accumulated, and error-focused memory. <a href=\"../mosaic/index.md\">MOSAIC</a> instead indexes diversity by instance regions, contrasting two meanings of a specialist niche.</p>\n"
+    },
+    {
+      "id": "wara",
+      "short_title": "WARA",
+      "title": "WARA: A Closed-Loop Multi-Agent Framework for Wireless Optimization Autoresearch",
+      "authors": [
+        "Yuan Guo",
+        "Yilong Chen",
+        "Chao Hu",
+        "Xianghao Yu",
+        "Liang Hong",
+        "Jie Xu"
+      ],
+      "year": 2026,
+      "date": "2026-07-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2607.19822",
+      "code_url": "https://github.com/guoyuan-dotcom/WARA_CUHKSZ",
+      "institutions": [
+        "cuhk-shenzhen",
+        "fnii-shenzhen",
+        "cityu-hk",
+        "sun-yat-sen"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "design-object",
+        "feedback"
+      ],
+      "problems": [
+        "Wireless Resource Allocation",
+        "Optimization Modeling",
+        "Algorithm Design"
+      ],
+      "featured": false,
+      "summary": "Coordinates wireless research agents through validated artifacts linking problem formulation, algorithm design, executed experiments, and manuscript claims.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A plausible formulation, runnable solver, and polished report can still contradict one another if each stage proceeds from informal summaries.</p>\n<h2>Core method</h2>\n<p>WARA first grounds a topic in literature and freezes a bounded problem contract. Formulation and theory agents then specify the system model, optimization problem, tractability analysis, and implementable update rules. Accepted mathematical and algorithmic contracts constrain experiment generation in a controller-owned execution harness.</p>\n<p>Validation checks logs, benchmark consistency, metrics, and figures before promoting outputs to an evidence contract. Writing and analysis agents consume those artifacts; review failures are routed to the responsible artifact for local repair rather than restarting everything. The workflow has three major phases with multiple subphases, not a single unconstrained conversation among agents.</p>\n<h2>Contributions</h2>\n<p>Makes cross-stage consistency and scoped repair explicit in an end-to-end wireless-optimization research workflow.</p>\n<h2>Strengths and limitations</h2>\n<p>Artifact ownership and frozen contracts improve traceability. The comparative evaluation mainly scores manuscript-visible research validity with an LLM; a high score does not independently verify novelty, proofs, or all numerical claims.</p>\n<h2>What to improve</h2>\n<p>Add blinded expert review, executable replication, and mechanism-level ablations, separating manuscript quality from actual algorithmic improvement.</p>\n<h2>Connections</h2>\n<p><a href=\"../aite/index.md\">AITE</a> concentrates on implementing and comparing wireless algorithm ideas. WARA covers a wider problem-to-manuscript workflow; the useful contrast is search within a fixed evaluator versus maintaining consistency across formulation, method, and evidence.</p>\n"
+    },
+    {
       "id": "mths",
       "short_title": "MTHS",
       "title": "Hierarchical Representations for Cross-task Automated Heuristic Design using LLMs",
@@ -5479,6 +6400,148 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Most AHD systems design one heuristic that has to perform well across every region of every instance. In large-scale routing, the cost landscape is heterogeneous: short, dense city tours share little structure with long, capacity-tight depot tours. A single globally optimized heuristic tends to be dragged toward the average behavior and underperforms on every region. SpecAHD moves specialization inside the search, so the framework can decide both which regions deserve dedicated repair and which heuristics should serve them.</p>\n<h2>Core method</h2>\n<p>SpecAHD couples two search levels:</p>\n<ul>\n<li>An <strong>upper-level program</strong> reads the incumbent solution, diagnoses where it is locally weak, and proposes bounded repair regions.</li>\n<li>A <strong>lower-level repertoire search</strong> evolves a complementary set of executable construction heuristics, each conditioned on a region type rather than the whole instance.</li>\n</ul>\n<p>An exact checker merges repairs, rolls back infeasible changes, and stores the outcomes in a repair response archive of region descriptors, heuristic identifiers, and checked improvements. At inference time, weighted nearest-neighbor routing picks a specialized heuristic for each exposed region. For a fixed region set and candidate pool, the repertoire objective is monotone submodular, so greedy selection admits a (1 - 1/e) approximation guarantee. Experiments across CVRP, TSP, VRPTW, and SDVRP, and across multiple LLM backbones, report substantial held-out cost reductions.</p>\n<p><img src=\"./specAHD_method.png\" alt=\"SpecAHD framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>A bilevel design object that specializes heuristics to local regions rather than whole instances.</li>\n<li>A repair response archive connecting region descriptors, heuristic identities, and checked outcomes.</li>\n<li>A monotone submodular selection guarantee for the repertoire, with a greedy approximation.</li>\n<li>Strong held-out improvements across four routing problems and several LLM backbones.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>SpecAHD turns specialization from a hand-designed rule into a learned bilevel decision and gives a concrete theoretical handle on repertoire quality. Its performance depends on having meaningful local region descriptors, on the quality of the upper-level region proposer, and on the feasibility checker's ability to roll back all changes. The bilevel split also enlarges the search surface and adds a coordination cost between the two searches.</p>\n<h2>What to improve</h2>\n<p>Better learned region descriptors, stronger upper-level region proposers, and tighter integration with continuous- or feature-level tuning inside each region.</p>\n<h2>Connections</h2>\n<p>SpecAHD broadens EoH-style heuristic evolution from whole-instance scoring to within-instance specialization. It is complementary to instance-set approaches such as EoH-S that produce complementary heuristics across instances, and to bilevel algorithm-design systems such as BEAM and A2DEPT that operate on whole solver structures.</p>\n"
     },
     {
+      "id": "adsl-pde",
+      "short_title": "ADSL-PDE",
+      "title": "Improving Auto-Design of Neural PDE Solvers with a Domain-Specific Language",
+      "authors": [
+        "Shengxin Kong",
+        "Liwen Xu",
+        "Jingwen Fu"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.04384",
+      "code_url": "https://github.com/Super-KongCC/Improving-Auto-Design-of-Neural-PDE-Solvers-with-a-Domain-Specific-Language",
+      "institutions": [
+        "north-china-university-technology",
+        "zhongguancun-academy"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Neural PDE Solver Design"
+      ],
+      "featured": false,
+      "summary": "Searches typed neural-PDE solver descriptions that a deterministic compiler turns into executable training pipelines.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Unrestricted solver-code generation spends much of its budget on invalid implementations, while fixed hyperparameter grids exclude structural design choices.</p>\n<h2>Core method</h2>\n<p>ADSL describes the PDE task, solver family, architecture, physical losses, sampling, and training recipe. Parsing produces a typed dependency graph; static checks reject incompatible shapes, unsupported derivatives, missing variables, or unavailable backend primitives before training. A deterministic compiler instantiates the specified solver without hidden parameter search.</p>\n<p>Method islands evolve family-compatible descriptions. Valid candidates receive quick training, then promising ones receive full training and validation. Structured compiler diagnostics and numerical performance guide later edits. Controlled cross-island composition can register validated new implementations in the backend library, extending the available families without allowing arbitrary unchecked code in every candidate.</p>\n<h2>Contributions</h2>\n<p>Treats the representation and compiler contract as central parts of reliable solver discovery, with representation-level validity and efficiency measurements.</p>\n<h2>Strengths and limitations</h2>\n<p>The design makes invalid states easier to reject and decisions easier to inspect. Expressiveness remains limited by implemented primitives and compatible compositions; search cost includes repeated neural training.</p>\n<h2>What to improve</h2>\n<p>Test transfer to PDEs requiring new primitives and separate gains from representation, backend engineering, quick-training selection, and additional solver families.</p>\n<h2>Connections</h2>\n<p><a href=\"../evopinn/index.md\">EvoPINN</a> searches executable PINN designs. ADSL-PDE offers a contrasting design substrate: typed descriptions and deterministic compilation across solver families instead of free-form implementation edits.</p>\n"
+    },
+    {
+      "id": "ai4ai-bench",
+      "short_title": "AI4AI-Bench",
+      "title": "AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement",
+      "authors": [
+        "Yizhe Chi",
+        "Wenyi Li",
+        "Deyao Hong",
+        "Xiaoqiu Wang",
+        "Mingju Gao",
+        "Kaisen Yang",
+        "Bingxiang He",
+        "Youjie Zheng",
+        "Calvin Xiao",
+        "Qinhuai Na"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.20318",
+      "institutions": [
+        "einsia-navers",
+        "tsinghua"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "design-object",
+        "scope"
+      ],
+      "problems": [
+        "Training Algorithm Design",
+        "Research Agent Evaluation"
+      ],
+      "featured": false,
+      "summary": "Benchmarks agents that rewrite training repositories, then measures the submitted algorithms through fixed, from-scratch reruns.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A strong checkpoint or a faster development run does not show that an agent has improved the learning algorithm itself.</p>\n<h2>Core method</h2>\n<p>Ten tasks freeze research repositories spanning training and model-transformation families. Agents receive a starting model and an inexpensive development proxy, with four hours on one B300 GPU. They submit modified source, not a claimed score or trained checkpoint. The submission is then rerun from scratch under the verification budget and a predetermined final evaluator unavailable during development.</p>\n<p>Cross-task scoring maps an uninformative reference, the original repository, and an ideal metric value to fixed anchors. Separate code-diff analysis classifies changes to execution settings versus changes to objectives, supervision, update rules, or data. That classification uses another LLM and should be distinguished from the executable performance measurement.</p>\n<h2>Contributions</h2>\n<p>Separates development from verification and makes the kind of algorithmic intervention a second evaluation axis alongside final performance.</p>\n<h2>Strengths and limitations</h2>\n<p>Frozen reruns reduce dependence on retained checkpoints and unverified self-reported scores. Proxy–target mismatch, hardware budgets, normalization choices, and model-based diff labels all affect interpretation; success does not demonstrate a completed recursive self-improvement cycle.</p>\n<h2>What to improve</h2>\n<p>Add expert audits of change categories, multiple rerun seeds, and task-level raw metrics so normalized averages do not hide failures.</p>\n<h2>Connections</h2>\n<p><a href=\"../when-ai-designs-ai/index.md\">When AI Designs AI</a> measures distance from human algorithmic designs. AI4AI-Bench instead categorizes which layer of a training procedure an agent changed; both separate performance from what was actually designed, using different operational definitions.</p>\n"
+    },
+    {
+      "id": "archagent-v2",
+      "short_title": "ArchAgent v2",
+      "title": "ArchAgent v2: A Case Study with the Data Prefetching Championship",
+      "authors": [
+        "Abraham Gonzalez",
+        "Raghav Gupta",
+        "Akanksha Jain",
+        "Hanna Alam",
+        "Alexander Novikov",
+        "Po-Sen Huang",
+        "Matej Balog",
+        "Marvin Eisenberger",
+        "Sergey Shirobokov",
+        "Ngân Vũ",
+        "Hank Levy",
+        "Borivoje Nikolić",
+        "Sagar Karandikar",
+        "Martin Dixon",
+        "Parthasarathy Ranganathan"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.09874",
+      "institutions": [
+        "google",
+        "uc-berkeley",
+        "google-deepmind"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Hardware Prefetching",
+        "Cache Hierarchy Optimization"
+      ],
+      "featured": false,
+      "summary": "Evolves coordinated hardware prefetchers across cache levels using staged search, joint refinement, and simulation-based validation.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A prefetcher that helps one cache can waste bandwidth or interfere with another, so independent per-level tuning misses interactions.</p>\n<h2>Core method</h2>\n<p>The system first evolves L1D, L2, and last-level-cache prefetchers in stages while freezing the other levels. It then runs joint and multicore refinement passes, reusing promising lineages. AlphaEvolve proposes code changes and simulation evaluates the resulting cache hierarchy, rather than evaluating each prefetcher as an isolated predictor.</p>\n<p>Search uses shortened traces; selected designs face longer validation traces. Generated implementations must respect per-level storage budgets. Their size-reporting functions are co-edited and audited, including final manual checking, so the process is not a proof that arbitrary generated hardware satisfies every implementation constraint. Reported IPC gains concern the DPC4 simulation configuration and workloads.</p>\n<h2>Contributions</h2>\n<p>Turns hierarchical coordination and compute-conscious simulation into explicit parts of prefetcher discovery.</p>\n<h2>Strengths and limitations</h2>\n<p>Joint passes address cross-level interactions neglected by isolated search. Simulator IPC and storage accounting do not establish silicon timing, power, or robustness to all unseen workloads.</p>\n<h2>What to improve</h2>\n<p>Validate physical implementation costs and test whether improvements survive trace, core-count, and memory-system shifts under fixed search budgets.</p>\n<h2>Connections</h2>\n<p><a href=\"../alphaevolve/index.md\">AlphaEvolve</a> supplies the evolutionary program-search backbone. <a href=\"../presage/index.md\">Presage</a> instead inserts software prefetches into application code; the distinction is the editable layer, not two names for the same prefetching technique.</p>\n"
+    },
+    {
+      "id": "bi-ezp",
+      "short_title": "Bi-EZP",
+      "title": "Bi-EZP: LLM-Guided Bilevel Program Evolution for Ensemble Zero-Cost Proxy Discovery",
+      "authors": [
+        "Yutao Lai",
+        "Kezhao Lai",
+        "Hai-Lin Liu"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.21927",
+      "code_url": "https://anonymous.4open.science/r/Bi-EZP-318D",
+      "institutions": [
+        "guangdong-university-technology"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "design-object"
+      ],
+      "problems": [
+        "Zero-Cost Neural Architecture Ranking"
+      ],
+      "featured": false,
+      "summary": "Separates LLM search over zero-cost-proxy aggregation programs from CMA-ES calibration of their numerical parameters.",
+      "body_html": "<h2>Why it matters</h2>\n<p>An aggregation formula can look weak simply because its coefficients are poorly calibrated. Structural and numerical search should not be judged as if they were the same decision.</p>\n<h2>Core method</h2>\n<p>The upper level proposes Python programs combining four precomputed NAS signals, together with finite parameter bounds. An AST/interface gate checks outputs; limited repair attempts precede a fixed fallback if generation remains invalid. For each accepted structure, a fresh CMA-ES run fits coefficients using rank correlation on inner-training architectures.</p>\n<p>Disjoint inner-validation architectures determine the calibrated program's evolutionary fitness. Tournament selection, crossover/mutation, and elitist survival then choose structures. Parameters are not blindly inherited between incompatible programs. Numeric fitness influences which parents are shown, while stored rationales are not reused as semantic memory. Evaluation uses architecture-ranking benchmarks and subsequent NAS tests; the product is an evaluator program, not a neural architecture itself.</p>\n<h2>Contributions</h2>\n<p>Couples open-ended aggregation-code search with a clearly separated numerical calibration and validation loop.</p>\n<h2>Strengths and limitations</h2>\n<p>The split avoids using validation rank correlation directly as the inner optimizer's objective. However, the outer loop repeatedly selects on that validation set, and the four base proxies remain a fixed feature vocabulary.</p>\n<h2>What to improve</h2>\n<p>Quantify validation overfitting and total inner-optimization cost, and test transfer to new proxy sets and architecture families.</p>\n<h2>Connections</h2>\n<p><a href=\"../llamea-hpo/index.md\">LLaMEA-HPO</a> also separates LLM structural proposals from numerical optimization. Bi-EZP applies this division to proxy programs with explicit inner-training and outer-validation ranking objectives; this is a mechanism comparison, not an asserted implementation lineage.</p>\n"
+    },
+    {
       "id": "dga2d",
       "short_title": "DGA2D",
       "title": "DGA₂D: Directed Graph-Guided Automated Algorithm Design with Large Language Models",
@@ -5516,6 +6579,359 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Most LLM-AHD systems evolve an isolated function inside a fixed solver scaffold, or evolve a single heuristic inside a search loop. Both routes limit the search to local algorithmic decisions: the rest of the algorithm — how operators are sequenced, which implementation variants are used, which components exist at all — is decided by the user. DGA2D argues that automated design should be free to change those decisions as well, and represents the open algorithm space as a graph that the LLM can simultaneously edit, extend, and traverse.</p>\n<h2>Core method</h2>\n<p>DGA2D structures the open algorithm space as a directed graph:</p>\n<ul>\n<li><strong>Nodes</strong> are functional operators with multiple candidate implementations.</li>\n<li><strong>Edges</strong> encode execution order between operators.</li>\n<li><strong>Directed walks</strong> over this graph form complete algorithmic pipelines.</li>\n</ul>\n<p>The LLM edits operator code, rearranges connections, and chooses implementation variants. Bounded walks keep candidate pipelines tractable, and the framework combines pipeline-level rewards with <strong>first-order path-dependent credit assignment</strong> for implementation transitions. Low-credit implementations and edges are removed or replaced, while the LLM proposes new alternatives.</p>\n<p>Across twelve combinatorial optimization problems (including flexible job-shop scheduling, TSP, maximum independent set, and three-dimensional container loading), DGA2D reports lower normalized gaps than several LLM-driven AHD baselines, illustrating a route from fixed solver templates toward system-level algorithm synthesis.</p>\n<p><img src=\"./dga2d_method.png\" alt=\"DGA2D framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>A directed-graph representation that exposes both functional operators and their implementation choices to LLM-driven search.</li>\n<li>Bounded graph walks as the search object, balancing expressiveness with tractable candidate generation.</li>\n<li>First-order path-dependent credit assignment for transitions between implementation variants.</li>\n<li>Cross-domain evidence on twelve combinatorial optimization problems.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>DGA2D gives the LLM genuine control over algorithm structure rather than only over isolated functions, and the path-dependent credit signal provides a finer-grained learning signal than endpoint rewards alone. The graph and the credit assignment introduce additional hyperparameters (walk bounds, transition depth, removal thresholds) and depend on a sufficiently rich initial operator library; without it, the search can converge to thin variants of a fixed pipeline.</p>\n<h2>What to improve</h2>\n<p>Automated operator-library construction, principled walk-depth and budget schedules, and integration with continuous- or hyperparameter-level tuning inside each operator.</p>\n<h2>Connections</h2>\n<p>DGA2D contrasts with A2DEPT on the broader program-synthesis line: both pursue system-level algorithm design, but DGA2D uses directed operator graphs and path-dependent credit while A2DEPT uses program trees. It also complements design-object expansions of EoH (BEAM, MEVO) by treating the algorithm itself, rather than the heuristic set, as the evolving artifact.</p>\n"
     },
     {
+      "id": "dyca",
+      "short_title": "DyCA",
+      "title": "Beyond Average Performance: Dynamic Instance Clustering and Specialized Algorithm Design in LLM-Assisted Evolutionary Search",
+      "authors": [
+        "Qinglong Hu",
+        "Qingfu Zhang",
+        "Fei Liu",
+        "Xialiang Tong",
+        "Kun Mao",
+        "Mingxuan Yuan"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.03129",
+      "institutions": [
+        "cityu-hk",
+        "huawei-noahs-ark"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Online Bin Packing",
+        "Algorithm Portfolios"
+      ],
+      "featured": false,
+      "summary": "Re-clusters instances using their responses to evolved algorithms and allocates search between complementary and specialist heuristic pools.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Optimizing an average can repeatedly favor abundant instance groups while neglecting smaller groups on which every current heuristic is weak.</p>\n<h2>Core method</h2>\n<p>Accumulated algorithm–instance scores represent each instance behaviorally. A compact, periodically updated set of anchor algorithms reduces dimensionality before re-clustering; no handcrafted instance features are required. The clusters are revised as new algorithms expose previously unseen distinctions.</p>\n<p>DyCA extends EoH-S complementary population management with inverse-cluster-size weights, preventing large clusters from dominating marginal contributions. Separate specialist pools optimize cluster-specific objectives. Search initially favors broad complementary coverage, then shifts toward specialists as clustering stabilizes. Candidates are evaluated on all training instances and shared across pools, including cross-pool reuse when a specialist stagnates.</p>\n<h2>Contributions</h2>\n<p>Couples instance-structure discovery to portfolio search rather than freezing a partition before evolution.</p>\n<h2>Strengths and limitations</h2>\n<p>The response representation can transfer across problem types, but it depends on stable measurements and informative probe algorithms. Noisy runtimes can distort clusters, and deploying multiple portfolio members increases solve-time cost.</p>\n<h2>What to improve</h2>\n<p>Quantify sensitivity to response noise and cluster instability, and compare tail robustness under matched deployment budgets rather than only equal search budgets.</p>\n<h2>Connections</h2>\n<p><a href=\"../eoh-s/index.md\">EoH-S</a> supplies complementary population management, which DyCA explicitly modifies with cluster-balanced weights. <a href=\"../mosaic/index.md\">MOSAIC</a> provides a different specialization substrate: a structural-feature grid with adversarially generated instances rather than response-based dynamic clusters.</p>\n"
+    },
+    {
+      "id": "elmer",
+      "short_title": "ELMER",
+      "title": "ELMER: Evolutionary Language Model that Explores and Refines",
+      "authors": [
+        "Matthew Siper",
+        "Ahmed Khalifa",
+        "Julian Togelius"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.10196",
+      "institutions": [
+        "nof1",
+        "nyu",
+        "university-malta"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "design-object",
+        "feedback"
+      ],
+      "problems": [
+        "Evolutionary Program Search",
+        "Trading Policy Synthesis"
+      ],
+      "featured": false,
+      "summary": "Learns natural-language mutation operators whose requested strength is grounded in measured changes to program behavior.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Asking for a small or large code edit does not reliably control how much an executable policy actually changes.</p>\n<h2>Core method</h2>\n<p>Policies have natural-language descriptions and typed GPTL programs. Training examples come from grammar-valid degradation chains; parent/child executions assign low, medium, or high mutation labels using action-sequence disagreement on shared historical states. A Qwen3-8B model learns mutation, compilation, and translation tasks through supervised training, then common-parent offset preference optimization improves strength conditioning.</p>\n<p>In evolutionary search, descriptions are mutated and compiled into programs; validation fitness, not behavioral distance, selects survivors. A mutation can have the requested behavioral size and still be unprofitable. Tests use three futures assets, chronological splits with embargoes, multiple outer search algorithms, and a common 1,000-evaluation budget. Matched code-output training isolates representation from model size and training data.</p>\n<h2>Contributions</h2>\n<p>Provides an executable behavioral definition of mutation strength and a controlled comparison between language-space and code-space variation.</p>\n<h2>Strengths and limitations</h2>\n<p>Behavior-grounded labels outperform merely naming strength categories. Calibration is ordinal rather than exact, outer-loop effects differ, and historical trading tests do not establish future returns.</p>\n<h2>What to improve</h2>\n<p>Transfer the behavioral calibration to non-financial programs and report validity, training cost, search efficiency, and held-out quality separately.</p>\n<h2>Connections</h2>\n<p><a href=\"../es-ahd/index.md\">ES-AHD</a> controls exploration through generation temperature and elite guidance. ELMER instead trains variation strength against observed program behavior, giving a concrete distinction between sampling diversity and behavioral step size.</p>\n"
+    },
+    {
+      "id": "es-ahd",
+      "short_title": "ES-AHD",
+      "title": "ES-AHD: An Evolution Strategy Framework for Automatic Heuristic Design",
+      "authors": [
+        "Yutao Lai",
+        "Kezhao Lai",
+        "Hai-Lin Liu",
+        "Yuping Wang",
+        "Ping Guo"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "ICIST",
+      "paper_url": "https://arxiv.org/pdf/2609.00023",
+      "code_url": "https://github.com/Mriya0306/ES-AHD",
+      "institutions": [
+        "guangdong-university-technology",
+        "xidian-university",
+        "beijing-normal-university"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem"
+      ],
+      "featured": false,
+      "summary": "Generates heuristics around an LLM summary of elite design patterns, varying sampling temperature through a momentum-like stochastic update.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Editing one parent at a time may fail to combine patterns shared by several successful heuristics. ES-AHD explores a generation-level semantic summary as the center of subsequent proposals.</p>\n<h2>Core method</h2>\n<p>The LLM initializes a population of executable heuristics. After evaluation, the best subset is summarized into a textual core insight. New candidates are sampled using that shared insight rather than obtained only through pairwise crossover or single-parent mutation.</p>\n<p>A scalar temperature retains part of its previous value, adds Gaussian noise, and is clipped below by a positive minimum. The paper interprets this as an evolution-strategy-inspired control of semantic variation. It does not estimate a code-space covariance matrix or establish numerical equivalence to CMA-ES.</p>\n<p>Experiments generate the next-city selection function of a constructive TSP solver. They report a top-four training score, route lengths at several sizes, and TSPLIB comparisons under a shared LLM backbone.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Replaces individual-level reproduction with elite-summary-conditioned population generation.</li>\n<li>Adds a stochastic temperature schedule to that semantic search loop.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The search mechanism is compact and produces directly executable rules. Evidence is confined to TSP and one reported backbone, and the reported aggregates should not be read as a universal ranking of AHD frameworks. Temperature is only an indirect control of behavioral diversity.</p>\n<h2>What to improve</h2>\n<p>Separate the effects of elite summarization and temperature noise across repeated runs, and measure actual program-behavior diversity rather than assuming temperature tracks it.</p>\n<h2>Connections</h2>\n<p><a href=\"../eoh/index.md\">EoH</a> evolves ideas together with executable heuristics. ES-AHD offers an alternative reproduction mechanism: a shared elite insight guides a new population instead of prescribed individual-level thought/code operators.</p>\n"
+    },
+    {
+      "id": "evomem",
+      "short_title": "EvoMem",
+      "title": "EvoMem: Memory-Augmented Evolution for Code Optimization",
+      "authors": [
+        "Viktor Volkov",
+        "Valentin Khrulkov",
+        "Andrey V. Galichin",
+        "Danil Sivtsov",
+        "Nikita Glazkov",
+        "Olga Volkova",
+        "Konstantin Pchelin",
+        "Iaroslav Bespalov",
+        "Dmitry V. Dylov",
+        "Petr Anokhin",
+        "Ivan Oseledets"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.10795",
+      "institutions": [
+        "axxx",
+        "moscow-state-university",
+        "applied-ai-institute"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Code Optimization",
+        "Geometric Optimization",
+        "GPU Kernel Optimization",
+        "Multi-Hop Question Answering"
+      ],
+      "featured": false,
+      "summary": "Converts successful parent–child mutations into persistent, provenance-backed advice for subsequent evolutionary code searches.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A useful modification discovered in one run is often lost when the program population is discarded.</p>\n<h2>Core method</h2>\n<p>After a run, EvoMem extracts promising non-root mutation events together with their parent/child programs, measured changes, and task context. Semantic clustering and conservative merging consolidate repeated mechanisms without treating superficially similar code as the same idea. Memory entries retain exemplars and provenance rather than only ungrounded verbal summaries.</p>\n<p>During a later search, task-scoped lexical and embedding retrieval selects a bounded set of entries to guide mutation. The underlying parent selection, validity checks, and fitness evaluation remain in place; advice does not bypass execution. The GigaEvo-based study covers geometry, question answering, AlgoTune, and KernelBench. Its search-speed ratio measures candidate evaluations needed to reach the baseline endpoint, not wall-clock acceleration.</p>\n<h2>Contributions</h2>\n<p>Separates a post-run memory-writing phase from bounded, task-aware memory use during mutation.</p>\n<h2>Strengths and limitations</h2>\n<p>Linked execution evidence makes advice auditable and enables cross-run reuse. Gains vary substantially across tasks and runs; some reach targets more slowly, and memory construction adds model cost.</p>\n<h2>What to improve</h2>\n<p>Report full amortized cost over repeated tasks, test forgetting and stale-memory policies, and isolate the value of provenance from retrieval and extra prompt tokens.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> uses reflective search feedback within a run. EvoMem instead persists measured mutation knowledge across runs and tasks; <a href=\"../eps-memevo/index.md\">ε-MemEvo</a> then offers a contrasting control strategy for deciding when such memories should be used.</p>\n"
+    },
+    {
+      "id": "featurehospital",
+      "short_title": "FeatureHospital",
+      "title": "FeatureHospital: A Skill-Driven Multi-Agent Framework for Automated Algorithm Customization in Multi-View Multi-Label Feature Selection",
+      "authors": [
+        "Junxuan Li",
+        "Zhiqi Chen",
+        "Yuzhou Liu",
+        "Peng Zhang",
+        "Huaxiao Liu"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.16148",
+      "institutions": [
+        "jilin-university"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "feedback"
+      ],
+      "problems": [
+        "Multi-View Multi-Label Feature Selection"
+      ],
+      "featured": false,
+      "summary": "Diagnoses a dataset and composes a feature-selection objective from a fixed catalog of loss components using specialized agents.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A single feature-selection loss need not fit datasets with different label imbalance, redundant features, and unreliable views.</p>\n<h2>Core method</h2>\n<p>Training-data statistics become a diagnostic profile. A diagnosis agent produces issue cards, a triage agent selects departments, and specialist agents propose implemented loss components from their medicine catalogs. A pharmacist resolves duplicated or conflicting prescriptions and assigns each retained loss a role and weight: backbone, regularizer, supporting term, or guardrail.</p>\n<p>The resulting objective trains a continuous feature-selection vector through sigmoid logits. Features are ranked by the learned selection strengths and the top-k subset is evaluated on held-out data. The reusable skills, formulas, and validation rules are defined in advance: the LLM composes a dataset-specific algorithm rather than inventing arbitrary loss code or repeatedly querying test performance.</p>\n<h2>Contributions</h2>\n<p>Exposes dataset diagnosis, component selection, and objective assembly as separate, inspectable decisions. Experiments cover seven multi-view multi-label datasets and four prediction metrics.</p>\n<h2>Strengths and limitations</h2>\n<p>The catalog constrains invalid designs and makes selected objectives interpretable. Its expressiveness is also bounded by that catalog; results vary by dataset and metric rather than uniformly dominating every baseline.</p>\n<h2>What to improve</h2>\n<p>Measure sensitivity to diagnostic errors and pharmacist-assigned weights, and compare with budget-matched non-LLM selection over exactly the same catalog.</p>\n<h2>Connections</h2>\n<p><a href=\"../bi-ezp/index.md\">Bi-EZP</a> also combines predefined signals into a task-specific evaluator. FeatureHospital selects and weights catalog losses through diagnosis; Bi-EZP searches executable aggregation structure and separately optimizes numeric weights. This is a design-object comparison, not claimed inheritance.</p>\n"
+    },
+    {
+      "id": "formuevo",
+      "short_title": "FormuEvo",
+      "title": "FormuEvo: LLM-Guided Evolution for Discovering Solver-Efficient Mixed-Integer Programming Formulations",
+      "authors": [
+        "Haofeng Yuan",
+        "Jianing Peng",
+        "Jieyi Bi",
+        "Ni Zhang",
+        "Shiji Song",
+        "Zhiguang Cao"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.23353",
+      "code_url": "https://github.com/Xyz-yuanhf/formuevo",
+      "institutions": [
+        "tsinghua",
+        "ntu",
+        "smu"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "Mixed-Integer Programming Formulation",
+        "Solver Efficiency",
+        "Neural Network Verification"
+      ],
+      "featured": false,
+      "summary": "Evolves executable MIP formulations using solver-internal diagnostics and reusable modeling memories, targeting faster solution without changing the intended problem.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Equivalent-looking formulations can have very different relaxation strength, symmetry, presolve cost, and branch-and-bound behavior.</p>\n<h2>Core method</h2>\n<p>A generator initializes and evolves a population of solver-modeling programs from a problem description and template. Execution checks include comparison of solved objectives with known values; failed candidates receive bounded repair. Valid candidates are ranked by shifted geometric mean runtime across development instances.</p>\n<p>Before crossover or mutation, a diagnostic agent inspects presolve information, relaxation quality, and search-tree statistics to propose structural changes. A reflector records condition–strategy–effect memories from parent/child outcomes, including failures. A distiller removes instance-specific details for transfer to other problems. Final formulations are tested on larger held-out instances, while the commercial solver itself stays fixed.</p>\n<h2>Contributions</h2>\n<p>Moves algorithm discovery into the symbolic formulation layer and uses white-box solver behavior to guide edits beyond scalar runtime.</p>\n<h2>Strengths and limitations</h2>\n<p>Tests include several MILP/MINLP families and less standard verification/mathematical tasks. Matching objectives on finite instances does not prove global equivalence; the method targets static formulations, not complete dynamic decomposition algorithms.</p>\n<h2>What to improve</h2>\n<p>Add independent semantic-equivalence checks and robust timing protocols, and test whether transferred memory remains valid under different solvers and formulation families.</p>\n<h2>Connections</h2>\n<p><a href=\"../constraint-reformulation/index.md\">Constraint Reform.</a> also searches solver-facing model code. FormuEvo emphasizes solver-internal diagnosis and transfer memory, whereas that study emphasizes runtime-profile diversity and solution-level validity for satisfaction models.</p>\n"
+    },
+    {
+      "id": "goalevolve",
+      "short_title": "GoalEvolve",
+      "title": "GoalEvolve: From Handcrafted Algorithm Priors to Goal-Driven Evolution of Physical Design Algorithms",
+      "authors": [
+        "Haixu Liu",
+        "Lei Zhou",
+        "Yuhao Ren",
+        "Yumao Wu",
+        "Zhiang Wang"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.16733",
+      "institutions": [
+        "fudan"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "design-object"
+      ],
+      "problems": [
+        "VLSI Physical Design",
+        "Timing and Power Optimization"
+      ],
+      "featured": false,
+      "summary": "Uses remaining end-of-flow timing and power target gaps to guide source-level evolution of physical-design algorithms.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A source edit can improve a local design stage while causing downstream routing or power regressions.</p>\n<h2>Core method</h2>\n<p>GoalEvolve fixes a multi-metric target region and measures normalized positive violations after the complete design flow. A Teacher traces the dominant gap through checkpoints, retrieves implementation and paper cards, and proposes source-level hypotheses. Four Student branches start from the same parent: two explore new mechanisms, one refines a promising mechanism, and one integrates compatible validated changes.</p>\n<p>Isolated builds and identical evaluation conditions support comparison. Checkpoint analysis tracks local gains, degradation in other metrics, and whether later stages preserve or reverse those effects. A program database retains validated, failed, and promising mechanisms; plateau handling can revisit distinct feasible lineages while retaining the champion. The case study edits OpenROAD post-placement timing/power mechanisms with downstream evaluation held fixed.</p>\n<h2>Contributions</h2>\n<p>Makes unmet final goals, rather than only local scores, the control signal for source-code evolution and evidence retrieval.</p>\n<h2>Strengths and limitations</h2>\n<p>Full-flow checks expose hidden regressions. Targets come from preliminary commercial-flow characterization, evaluation is expensive, and improved aggregate distance does not mean every target was met on every design.</p>\n<h2>What to improve</h2>\n<p>Freeze targets and budgets prospectively on unseen designs, and separately measure transfer of mechanisms versus design-specific source tuning.</p>\n<h2>Connections</h2>\n<p><a href=\"../macroagent/index.md\">MacroAgent</a> evolves a bounded contour generator inside a mostly fixed legalization pipeline. GoalEvolve instead attributes final-flow shortfalls to editable source mechanisms, illustrating a different feedback granularity in physical-design algorithm discovery.</p>\n"
+    },
+    {
+      "id": "graphir",
+      "short_title": "GraphIR",
+      "title": "GraphIR: Architecture-Level Search States for LLM-Guided Neural Architecture Evolution",
+      "authors": [
+        "Zhen Liu",
+        "Wanqi Zhou",
+        "Shuanghao Bai",
+        "Yuhan Liu",
+        "Jinjun Wang",
+        "Jingwen Fu"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.01633",
+      "institutions": [
+        "xjtu",
+        "xiaomi",
+        "zhongguancun-academy",
+        "zhongguancun-institute-ai"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Neural Architecture Search",
+        "Algorithmic Reasoning"
+      ],
+      "featured": false,
+      "summary": "Extracts architecture-level state from candidate neural programs so LLM mutations can reason about tensor dependencies and editable components.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Source code exposes implementation details but often hides the architecture dependencies needed to make safe, meaningful edits.</p>\n<h2>Core method</h2>\n<p>Static analysis identifies modules, tensor operations, and editable regions. Lightweight instantiation and PyTorch FX tracing recover observed interfaces and producer–consumer dependencies when possible; conservative static dependencies provide a fallback. Fixed extraction rules produce structure facts rather than asking an LLM to summarize its own code.</p>\n<p>The compact state describes the computation skeleton, mutation surface, and interface constraints. Mutation prompts contain the original program, this state, and evaluation history. The executable artifact remains source code, and GraphIR is rebuilt for each later candidate. Tests examine structural reasoning, architecture search on MNIST1D variants, and neural algorithmic reasoning on CLRS.</p>\n<h2>Contributions</h2>\n<p>Makes mutation-relevant architecture evidence explicit without restricting every candidate to a fixed operator genome.</p>\n<h2>Strengths and limitations</h2>\n<p>Extracted dependencies can reduce invalid edits and clarify interfaces. Trace coverage, default input synthesis, static fallbacks, and bounded context remain incomplete; the extracted state is not a correctness proof, and some comparisons report best runs.</p>\n<h2>What to improve</h2>\n<p>Test dynamic control flow and unusual modules, quantify extraction errors, and compare representation gains with matched prompt-token and full search-time budgets.</p>\n<h2>Connections</h2>\n<p><a href=\"../adsl-pde/index.md\">ADSL-PDE</a> uses a typed representation as the source of deterministic compilation. GraphIR instead extracts a descriptive state from existing executable code to guide edits; both expose structure, but enforce different validity guarantees.</p>\n"
+    },
+    {
+      "id": "janus",
+      "short_title": "Janus",
+      "title": "Janus: An Algorithm-Evaluator Co-Evolution Framework for LLM-Driven Discovery under Expensive Evaluation Budgets",
+      "authors": [
+        "Ximeng Liu",
+        "Qianlong Wang",
+        "Yingming Mao",
+        "Annan Li",
+        "Yatao Li",
+        "Shizhen Zhao",
+        "Jianmin Wu",
+        "Dawei Yin",
+        "Dou Shen"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.08189",
+      "institutions": [
+        "sjtu",
+        "zhongguancun-academy",
+        "baidu",
+        "xjtu",
+        "zhongguancun-institute-ai"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Scientific Program Discovery",
+        "Expensive Simulation Optimization"
+      ],
+      "featured": false,
+      "summary": "Co-evolves candidate programs and executable proxy evaluators, while requiring real evaluation before any candidate enters the validated population.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Expensive simulators make evaluating every mutation impractical, while a fixed surrogate can become inaccurate as search changes the candidate distribution.</p>\n<h2>Core method</h2>\n<p>AlphaEvolve-style islands maintain real-validated program populations. Separate LLM-generated evaluator programs contain structural formulas or branches and, where applicable, parameters fitted to an archive of actual outcomes. Their selection objective emphasizes recovering high-quality candidates near the top of the ranking rather than minimizing average prediction error.</p>\n<p>Region-conditioned evaluator portfolios score provisional candidates; subsequent real outcomes update regional credit. Promotion balances predicted quality, uncertainty, and novelty, and periodically bypasses surrogate ranking for direct exploration. Proxy scores never update the incumbent: only real-valid outcomes enter the target population. Archive refreshes refit evaluators and rescore waiting candidates as the search distribution changes.</p>\n<h2>Contributions</h2>\n<p>Makes the screening evaluator itself a searched program, with an explicit boundary between provisional predictions and validated algorithm improvements.</p>\n<h2>Strengths and limitations</h2>\n<p>Five scientific/simulation tasks support real-evaluation savings under matched call budgets. Extra proxy evolution has its own token/runtime cost, and three seeds do not establish universal reliability under severe distribution shift.</p>\n<h2>What to improve</h2>\n<p>Audit discarded high-quality candidates and compare total cost, not only real calls. Stress-test evaluator disagreement and shared blind spots on new task families.</p>\n<h2>Connections</h2>\n<p><a href=\"../alphaevolve/index.md\">AlphaEvolve</a> supplies the island-based target search. <a href=\"../bife/index.md\">BiFE</a> instead screens using a fixed strong-branching imitation objective; Janus evolves the proxy structure online, a specific contrast in low-cost feedback design.</p>\n"
+    },
+    {
+      "id": "macroagent",
+      "short_title": "MacroAgent",
+      "title": "MacroAgent: Regularity-Aware Macro Legalization with LLM-Agent-Designed Contour Algorithms",
+      "authors": [
+        "Jiaxi Jiang",
+        "Xufeng Yao",
+        "Yuxuan Zhao",
+        "Yuntao Lu",
+        "Peiyu Liao",
+        "Zuodong Zhang",
+        "Yibo Lin",
+        "Bei Yu"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.24946",
+      "code_url": "https://github.com/gilgamsh/MacroAgent",
+      "institutions": [
+        "cuhk",
+        "pku"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "design-object"
+      ],
+      "problems": [
+        "Macro Legalization",
+        "VLSI Physical Design"
+      ],
+      "featured": false,
+      "summary": "Evolves contour-generation heuristics inside a macro-legalization pipeline to trade layout regularity against displacement and downstream routing quality.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Rectangular macro arrangements improve regularity but can move macros too far from useful global-placement locations.</p>\n<h2>Core method</h2>\n<p>MacroAgent clusters macros, generates candidate contours, matches macros to grid templates inside those contours, and refines inter-cluster overlaps. The LLM designs the contour generator, not this entire physical-design flow. Prompts include geometric interfaces, quality metrics, previous ideas/code, and reference layouts.</p>\n<p>EoH-style exploration and modification prompts generate 110 candidate heuristics in the reported budget. Rather than keeping a fixed population, the database retains candidates that improve regularity or displacement on any testcase. Grid templates are assigned with bipartite matching, and downstream placement/routing evaluates the resulting legalizations. Experiments compare matched legalization stages and include an industrial place-and-route flow.</p>\n<h2>Contributions</h2>\n<p>Adapts idea/code evolution to regularity-aware geometry and retains multiple contour strategies to handle the regularity–displacement trade-off.</p>\n<h2>Strengths and limitations</h2>\n<p>Downstream evaluation checks whether geometric improvements survive the design flow. The surrounding pipeline and reference examples remain human-designed; best-of-many legalization results require their total evaluation cost to be counted.</p>\n<h2>What to improve</h2>\n<p>Evaluate unseen macro shapes and technology settings, and compare single-contour and portfolio choices under equal end-to-end runtime.</p>\n<h2>Connections</h2>\n<p><a href=\"../eoh/index.md\">EoH</a> is the explicit source of the five idea/code evolution directives. MacroAgent adapts them to contour-generation programs and changes retention to preserve useful geometric trade-offs.</p>\n"
+    },
+    {
       "id": "pace",
       "short_title": "PACE",
       "title": "PACE: Primitive-Aware Code Evolution for Automated Algorithm Design",
@@ -5546,6 +6962,232 @@
       "featured": false,
       "summary": "Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.",
       "body_html": "<h2>Why it matters</h2>\n<p>Large Language Model (LLM)-based automated algorithm design typically evolves algorithms as complete, indivisible programs. While this whole-program perspective simplifies the search space, it fundamentally couples the useful local logic to its host program.</p>\n<h2>Core method</h2>\n<p>PACE separates reusable Executable Algorithmic Primitives from their host programs. Primitive-aware mutation and crossover preserve, transfer, and recombine these units; Thompson sampling prioritizes primitives using parent-relative improvements without an extra validation set.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Persistent executable primitives as reusable search units.</li>\n<li>Primitive-aware variation with parent-relative Thompson sampling.</li>\n<li>Experiments showing component retention across program evolution.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The method makes the design artifact executable and lets task feedback guide later proposals. Its conclusions remain tied to the evaluator, search budget, and task scaffold; transfer outside the reported settings is therefore an open question.</p>\n<h2>What to improve</h2>\n<p>Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.</p>\n<h2>Connections</h2>\n<p>The relation atlas records only method-level links supported by the paper's method or experiments.</p>\n"
+    },
+    {
+      "id": "piac",
+      "short_title": "PIAC",
+      "title": "Evolving Parallel Algorithm Portfolios via Potential-Aware Instance Generation with LLMs",
+      "authors": [
+        "Shaofeng Zhang",
+        "Shengcai Liu",
+        "Zhiyuan Wang",
+        "Ke Tang"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.06808",
+      "code_url": "https://anonymous.4open.science/r/piac-BAF3",
+      "institutions": [
+        "sustech",
+        "zhongguancun-academy"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Algorithm Portfolios"
+      ],
+      "featured": false,
+      "summary": "Co-evolves instance-mutator programs and complementary heuristic portfolios using improvement potential rather than reference-solution gaps.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A hard instance may offer little useful learning signal, and computing its gap to an optimum can itself be expensive.</p>\n<h2>Core method</h2>\n<p>PIAC alternates instance generation and portfolio construction. LLM-generated mutator programs transform seed instances; their fitness is the mean potential gain of their outputs. This gain compares the current portfolio with variants produced by perturbing its internal heuristic scoring matrices under the same solver backbone. It estimates locally accessible improvement without requiring an optimal reference solution.</p>\n<p>High-potential instances augment the accumulated training set. LLM crossover and mutation then generate heuristic components, which are inserted into fixed constructive, ant-colony, or guided-local-search backbones. Greedy portfolio updates reward complementary instance coverage. Thus both the training distribution and executable heuristics change, but the perturbation interface remains backbone-specific.</p>\n<h2>Contributions</h2>\n<p>Separates useful training-instance discovery from absolute hardness and searches over executable instance mutators rather than one fixed generator.</p>\n<h2>Strengths and limitations</h2>\n<p>Experiments cover TSP/CVRP under multiple distributions and backbones. Potential gain is a surrogate for eventual generalization, not a guarantee; perturbation and repeated portfolio evaluations add cost.</p>\n<h2>What to improve</h2>\n<p>Test whether high potential predicts held-out improvement across new problems, and report complete instance-generation costs and sensitivity to perturbation scales.</p>\n<h2>Connections</h2>\n<p><a href=\"../mosaic/index.md\">MOSAIC</a> evolves instances that discriminate between specialist heuristics. PIAC instead ranks instances by improvement available through controlled perturbations of the current portfolio, providing a concrete contrast in co-evolutionary training signals.</p>\n"
+    },
+    {
+      "id": "reforge",
+      "short_title": "ReForge",
+      "title": "ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Edits",
+      "authors": [
+        "Zhiqiang He",
+        "Zhi Liu"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.15138",
+      "institutions": [
+        "university-electro-communications"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "design-object"
+      ],
+      "problems": [
+        "Adaptive Bitrate Streaming",
+        "Policy Routing"
+      ],
+      "featured": false,
+      "summary": "Evolves an interpretable fuzzy router over frozen streaming policies while checking each revision against accumulated traffic families.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Adapting a router to a new traffic regime can erase performance on earlier regimes even when average reward improves.</p>\n<h2>Core method</h2>\n<p>Five base adaptive-bitrate policies remain frozen. The search edits a fuzzy router that chooses among them. Each fresh LLM prompt receives counterfactual policy probes, coverage diagnostics, a difficult episode trace, and a ledger of rejected edits. Proposals use a closed edit language for adding, removing, splitting, or modifying rules and membership functions.</p>\n<p>Mechanically valid proposals are replayed on all accumulated probe families. Acceptance requires preserving each family's historical best within a tolerance and improving aggregate or worst-family performance; specified simplifying edits can be neutral. New families arrive sequentially. Disjoint held-out episodes test the resulting router, rather than supplying the acceptance signal. In the reported sequence, 48 proposals yield 18 accepted revisions without increasing the final eight-rule count.</p>\n<h2>Contributions</h2>\n<p>Makes historical regression protection and compact routing logic explicit constraints on LLM-driven policy revision.</p>\n<h2>Strengths and limitations</h2>\n<p>The restricted edit language and rejection ledger make changes auditable. Protection applies to finite probe families, not every future network condition, and the base-policy library limits possible behavior.</p>\n<h2>What to improve</h2>\n<p>Test truly novel policy libraries and regime shifts, and assess whether tolerance choices hide cumulative regressions under noisy probes.</p>\n<h2>Connections</h2>\n<p><a href=\"../routerepair/index.md\">RouteRepair</a> also separates targeted improvement from regression protection. ReForge guards historical traffic-family performance, whereas RouteRepair checks parent-defined failure and non-failure instances; these are different units of acceptance evidence.</p>\n"
+    },
+    {
+      "id": "relayevolve",
+      "short_title": "RelayEvolve",
+      "title": "Relay, Don't Route: Adaptive Population Handoff for Cost-Efficient LLM-Driven Evolution",
+      "authors": [
+        "Sichun Luo",
+        "Yi Huang",
+        "Guanzhi Deng",
+        "Haibo Wang",
+        "Haochen Luo",
+        "Lei Li",
+        "Zefa Hu",
+        "Junlan Feng",
+        "Qi Liu"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.05651",
+      "institutions": [
+        "hku",
+        "china-mobile-jiutian",
+        "cityu-hk",
+        "carnegie-mellon"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Program Discovery",
+        "Geometric Optimization",
+        "Transaction Scheduling",
+        "Systems Optimization"
+      ],
+      "featured": false,
+      "summary": "Uses cheap-model search to build a quality-diverse seed bank, then hands one curated population to a stronger model for refinement.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Model calls modify a shared search state, so selecting the cheapest model independently for each call can ignore the value of the population being built.</p>\n<h2>Core method</h2>\n<p>A cheap model explores several trajectories in short blocks. A Grow–Deepen bandit decides whether to start a new trajectory or extend an existing one, using the marginal improvement of a bounded relay bank as reward. The bank objective combines strong candidates with embedding-based coverage of promising regions.</p>\n<p>Persistently low relative relay gain, or the cheap-stage budget, triggers handoff. The complete cheap-stage candidate pool is curated again using greedy selection and local swaps. The selected seeds initialize one shared strong-model population, not independent strong-model runs. All phases count against inference spending and a generation cap; the remaining budget funds refinement.</p>\n<h2>Contributions</h2>\n<p>Coordinates trajectory allocation, stopping, and seed transfer through one population-level objective.</p>\n<h2>Strengths and limitations</h2>\n<p>Matched-backend experiments on four tasks distinguish the handoff policy from mutation machinery. The submodular guarantee concerns selecting a seed set for a fixed surrogate objective, not the final program quality; results depend on model prices and evaluator costs.</p>\n<h2>What to improve</h2>\n<p>Test more model pairs and include expensive evaluator time in the budget. Audit whether embedding diversity predicts useful downstream complementary mutations.</p>\n<h2>Connections</h2>\n<p><a href=\"../shinkaevolve/index.md\">ShinkaEvolve</a> is the shared evolutionary backend used in the experiments. RelayEvolve adds population-level cheap-to-strong search scheduling rather than replacing the underlying program evaluator.</p>\n"
+    },
+    {
+      "id": "seisevo",
+      "short_title": "SeisEvo",
+      "title": "SeisEvo: Evolution of Seismic Data Reconstruction Algorithms by Agents",
+      "authors": [
+        "Yingjie Xu",
+        "Siwei Yu",
+        "Jianwei Ma"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.18272",
+      "institutions": [
+        "hit",
+        "nus",
+        "pku"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "feedback"
+      ],
+      "problems": [
+        "Seismic Data Reconstruction",
+        "Seismic Interpolation and Denoising"
+      ],
+      "featured": false,
+      "summary": "Evolves white-box seismic reconstruction operators under hard physical-consistency and parameter-provenance constraints.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Classical reconstruction operators are interpretable but their coupled thresholds, schedules, and projections are difficult to redesign manually.</p>\n<h2>Core method</h2>\n<p>A human specifies a seed algorithm, editable components, score, and legality contract. Coding agents inspect strong, failed, and diverse candidates, then propose mechanism-level edits with rationales and parameter provenance. A fixed evaluator rejects illegal, divergent, or non-executable candidates before scoring reconstruction quality on search-time sub-blocks.</p>\n<p>Accepted scores and failure records update the next context through programmatic rules; agent explanations are proposals, not adjudicated evidence. Pure scalar retuning and unexplained free constants are disallowed. After the budget ends, the best legal program is frozen and evaluated on external volumes and sampling/noise conditions. POCS and MSSA case studies produce standalone evolved reconstruction algorithms requiring no agent at inference.</p>\n<h2>Contributions</h2>\n<p>Connects program evolution to auditable physical constraints and explicitly separates search-time blocks from final reconstruction tests.</p>\n<h2>Strengths and limitations</h2>\n<p>Hard gates protect observed traces where exact consistency is appropriate. The reported improvements are relative to selected seeds and datasets; human choices of editable surface, physical rules, and scoring still shape the discovery space.</p>\n<h2>What to improve</h2>\n<p>Test harsher acquisition shifts and compare against matched-cost non-LLM mechanism search. Independently audit parameter provenance and the effects of each discovered operator.</p>\n<h2>Connections</h2>\n<p><a href=\"../alphaevolve/index.md\">AlphaEvolve</a> is explicitly discussed as part of the evaluator-guided program-discovery background. SeisEvo emphasizes a domain-specific boundary: editable classical mechanisms and physical-admissibility checks must prevent meaningless score gains. This is research context, not a claim of reused implementation.</p>\n"
+    },
+    {
+      "id": "trace-guided-design",
+      "short_title": "Trace-Guided Design",
+      "title": "LLM-Guided Heuristic Design from Simulation Traces: A Case Study in Dynamic Production and AGV Scheduling",
+      "authors": [
+        "Jinbo Li",
+        "Chuanhao Li"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.09343",
+      "institutions": [
+        "tsinghua"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Dynamic Production Scheduling",
+        "Automated Guided Vehicle Scheduling"
+      ],
+      "featured": false,
+      "summary": "Uses queryable simulation traces to diagnose and revise executable production and AGV scheduling policies between evaluation batches.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A mean simulator score does not reveal whether a scheduling policy fails because of charging, empty travel, buffer blocking, or starvation.</p>\n<h2>Core method</h2>\n<p>Each candidate remains fixed during a simulation run. Repeated scoring runs estimate its mean performance; a selected difficult replication provides a trace database and grouped operational metrics. A manager agent inspects this evidence and the incumbent, proposes revision directions, and delegates executable changes to editing agents.</p>\n<p>Loading or runtime failures trigger bounded repairs followed by a complete reevaluation. Only fully evaluated candidates can compete with the incumbent, which is retained unless a candidate has a better estimated mean. The process stops on budget, target score, or stagnation. Diagnostic hypotheses guide edits, but simulator outcomes decide promotion; no LLM makes online dispatch decisions during deployment.</p>\n<h2>Contributions</h2>\n<p>Connects process-level evidence to code revision in a dynamic production/transport scheduling case study.</p>\n<h2>Strengths and limitations</h2>\n<p>Traces make failure mechanisms inspectable. A single incumbent limits diversity, finite independent-seed estimates can misrank candidates, and the worst replication may not represent normal operation.</p>\n<h2>What to improve</h2>\n<p>Compare matched-seed promotion tests, alternative trace-selection rules, and structured revision memory before claiming transfer to other discrete-event systems.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> turns performance feedback into reflective guidance. This study changes the feedback substrate to inspectable simulation events and operational states, allowing hypotheses about mechanisms rather than only aggregate scores.</p>\n"
+    },
+    {
+      "id": "when-ai-designs-ai",
+      "short_title": "When AI Designs AI",
+      "title": "When AI Designs AI: Innovation or Imitation?",
+      "authors": [
+        "Yikang Yang",
+        "Zhengxin Yang",
+        "Luzhou Peng",
+        "Minghao Luo",
+        "Yanqi Kan",
+        "Wanling Gao",
+        "Jianfeng Zhan"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.17471",
+      "institutions": [
+        "cas-ict",
+        "benchcouncil",
+        "university-chinese-academy-sciences",
+        "northwestern"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "design-object"
+      ],
+      "problems": [
+        "Algorithmic Novelty Evaluation",
+        "AI Research Agents"
+      ],
+      "featured": false,
+      "summary": "Maps agent-designed and human-designed AI methods into shared module-level design spaces to distinguish performance gains from structural novelty.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Code similarity and benchmark accuracy alone cannot reveal whether an agent discovered a different algorithm or recombined familiar choices.</p>\n<h2>Core method</h2>\n<p>Reference implementations are converted into structured descriptions, grouped into role-based modules, and organized as task-specific dependency graphs. Human experts review the proposed design spaces. Each method receives coordinates recording its choice at every module; Hamming distance to the nearest collected human method measures algorithmic difference at that chosen granularity.</p>\n<p>Agent submissions are mapped from their executed code using the same definitions, with sampled human checks and systematic corrections. New choices can extend a module's option set; methods incompatible with the graph are labeled out of space. Six AI tasks supply performance comparisons, with and without prepared reference material, separately from design-distance analysis.</p>\n<h2>Contributions</h2>\n<p>Provides an inspectable account of where designs differ, rather than asking a judge for a single impressionistic novelty score.</p>\n<h2>Strengths and limitations</h2>\n<p>Human review and code-based mapping improve auditability. The distance depends on the reference collection and module granularity: zero distance does not mean identical implementation, and out-of-space does not by itself establish scientific novelty.</p>\n<h2>What to improve</h2>\n<p>Report mapping agreement and uncertainty, vary graph granularity, and have independent experts inspect potentially novel mechanisms before assigning originality claims.</p>\n<h2>Connections</h2>\n<p><a href=\"../ai4ai-bench/index.md\">AI4AI-Bench</a> distinguishes training-algorithm changes from execution changes. This paper supplies a finer, task-specific design-coordinate view; the relation is complementary evaluation methodology, not baseline usage.</p>\n"
+    },
+    {
+      "id": "eps-memevo",
+      "short_title": "ε-MemEvo",
+      "title": "$\\varepsilon$-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution",
+      "authors": [
+        "Aofan Liu",
+        "Shiyuan Song",
+        "Yiyan Qi"
+      ],
+      "year": 2026,
+      "date": "2026-08-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2608.12522",
+      "institutions": [
+        "affiliation-not-disclosed"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "Mathematical Program Discovery",
+        "Systems Optimization"
+      ],
+      "featured": false,
+      "summary": "Learns when and how strongly to inject cross-task mutation memories into an existing evolutionary code-search loop.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Reusable advice can accelerate search, but irrelevant memories can repeatedly push mutations in an unhelpful direction.</p>\n<h2>Core method</h2>\n<p>A completed task contributes a tactic distilled from its best program. Embedding retrieval supplies a small set of candidate memories during later AdaEvolve searches. A contextual Thompson-sampling gate chooses no memory, a light hint, or stronger guidance. Its six contexts combine improvement/plateau/stagnation with early/late search.</p>\n<p>Gate credit comes from improvement over a delayed five-iteration window, not the LLM's confidence in its own advice. Beta posteriors carry across tasks. Leave-one-task-out evaluation excludes target-task memory content, but retains the learned gate posterior; it therefore tests transfer of the controller as well as the memory. Experiments use eight mathematical and systems tasks, two model backbones, and paired runs.</p>\n<h2>Contributions</h2>\n<p>Treats memory use as a learned search-control decision rather than injecting retrieved text at every mutation.</p>\n<h2>Strengths and limitations</h2>\n<p>Skip and weak-guidance actions can limit negative transfer. Delayed binary rewards make credit assignment coarse, and leave-one-task-out memory exclusion should not be mistaken for resetting all learned state.</p>\n<h2>What to improve</h2>\n<p>Separately hold out gate-training tasks, compare complete token costs, and audit failed transfers under deliberately misleading memories.</p>\n<h2>Connections</h2>\n<p><a href=\"../evomem/index.md\">EvoMem</a> focuses on extracting provenance-backed mutation knowledge and retrieving relevant entries. ε-MemEvo addresses a complementary question: whether retrieved knowledge should influence the next search stage at all.</p>\n"
     },
     {
       "id": "autosnd",
@@ -5651,6 +7293,695 @@
       "featured": false,
       "summary": "ATLAS performs scaffold-free full-algorithm synthesis with an embedding-guided quality-diversity search that preserves multiple competitive designs across embedding-space regions via a three-layer refinement strategy.",
       "body_html": "<h2>Why it matters</h2>\n<p>Component-synthesis methods such as FunSearch, EoH, and ReEvo evolve an algorithmic function that occupies a designated role inside a user-defined scaffold; the surrounding control flow is fixed in advance. This makes synthesis manageable but imposes much of the algorithmic architecture and restricts the LLM from adding, removing, or reordering components. Full-algorithm synthesis removes this restriction but enlarges and complicates the search landscape, exposing generated algorithms to execution, interface, and feasibility failures and risking premature convergence to one design region.</p>\n<h2>Core method</h2>\n<p>ATLAS fixes only a minimal I/O interface (instance and solution formats) and lets the LLM choose and restructure components, interactions, and control flow. Its search is organized as an embedding-guided quality-diversity framework:</p>\n<ul>\n<li>A <strong>coverage-preserving archive</strong> (semantic repertoire) of executable algorithms is organized in a pretrained embedding space; embedding distance drives retrieval, clustering, and redundancy-aware pruning without hand-specified descriptors.</li>\n<li>A <strong>three-layer search</strong> refines the current best region (Layer 1), gives non-elite region representatives dedicated refinement (Layer 2), and performs cross-region synthesis to recombine components and interactions (Layer 3).</li>\n<li>An <strong>independent evaluator</strong> verifies returned solutions and recomputes objectives, applies an all-or-nothing validity rule, and routes classified failure evidence to an error-conditioned REPAIR operator that regenerates the candidate.</li>\n</ul>\n<p><img src=\"./atlas.png\" alt=\"Framework overview\" /></p>\n<h2>Contributions</h2>\n<ul>\n<li>Scaffold-free full-algorithm synthesis formulation with only a problem specification and minimal I/O interface.</li>\n<li>Embedding-guided quality-diversity and multimodal search that preserves coverage across embedding-space regions.</li>\n<li>Hierarchical three-layer search over the clustered repertoire.</li>\n<li>Independent evaluation and failure-conditioned recovery with parallel, resource-controlled execution.</li>\n<li>Empirical design insights; ATLAS outperforms several state-of-the-art component-synthesis methods and a matched full-synthesis baseline on four NP-hard COPs while retaining multiple competitive designs from distinct regions.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>ATLAS removes scaffold bias, preserves multiple competing designs (useful for multimodal landscapes), and treats failure as a search operator. The trade-offs are a larger and more heterogeneous search space with higher synthesis cost, and dependence on embedding quality for retrieval and clustering.</p>\n<h2>What to improve</h2>\n<p>The paper suggests broader problem coverage, better embedding or behavior descriptors, and cost control for the enlarged synthesis loop as promising next steps.</p>\n<h2>Connections</h2>\n<p>ATLAS is developed concurrently with A2DEPT on full-algorithm synthesis and situates itself alongside LLAMEA and AlphaEvolve as full-synthesis methods, while contrasting the component-synthesis line (FunSearch, EoH, ReEvo, HSEvo, MCTS-AHD, EoH-S).</p>\n"
+    },
+    {
+      "id": "algoevo",
+      "short_title": "AlgoEvo",
+      "title": "AlgoEvo: Self-Evolving Agentic Search for Automated Algorithm Discovery",
+      "authors": [
+        "Junhao Qiu",
+        "Qinglong Hu",
+        "Ji Cheng",
+        "Xialiang Tong",
+        "Liyong Lin",
+        "Qingfu Zhang"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.15820",
+      "institutions": [
+        "cityu-hk",
+        "huawei-noahs-ark",
+        "astar-iac"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Combinatorial Optimization",
+        "Multi-Objective Optimization",
+        "Multi-Component Algorithm Design"
+      ],
+      "featured": false,
+      "summary": "An autonomous code-search agent uses paradigm-specific design skills and a hierarchical experience bank to accumulate reusable algorithm-design knowledge.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Fixed generation pipelines make it difficult to reuse one discovery engine across single heuristics, multi-objective operators, and interacting components.</p>\n<h2>Core method</h2>\n<p>A design skill specifies editable roles, code interfaces, valid changes, and evaluation conventions. The agent chooses when to inspect, edit, diagnose, retrieve, or evaluate rather than following a fixed operator sequence. Only evaluation events create experience cards containing the modification, context, measured reward, and rationale.</p>\n<p>Cards form a derivation tree. Retrieval uses UCB statistics conditioned on situations such as stagnation, bottlenecks, component coupling, or a sparse Pareto front; descendant rewards update ancestor statistics. After enough completed task trees accumulate, their patterns refine the corresponding skill. Skills remain fixed within a task, so cross-task consolidation is distinct from within-task search. Experiments cover six problems across three design paradigms.</p>\n<h2>Contributions</h2>\n<p>Connects an action-selecting coding agent to explicit design contracts and a task-indexed hierarchy of measured experiences.</p>\n<h2>Strengths and limitations</h2>\n<p>The framework separates transferable design knowledge from task interfaces. Its benefits depend on the diagnostic categories and quality of distilled cards; fewer evaluator calls need not imply lower total agent cost.</p>\n<h2>What to improve</h2>\n<p>Test transfer to entirely new design interfaces and report token, diagnostic, and evaluator costs together. Audit whether stale or incorrectly attributed experience harms later tasks.</p>\n<h2>Connections</h2>\n<p><a href=\"../mcts-ahd/index.md\">MCTS-AHD</a> uses a tree to allocate heuristic search. AlgoEvo instead indexes measured experience by the current diagnostic situation and separately consolidates it into cross-task skills; this is a concrete alternative use of tree search and memory.</p>\n"
+    },
+    {
+      "id": "bife",
+      "short_title": "BiFE",
+      "title": "BiFE: Search-Efficient Discovery of CPU-Only Branching Policies via LLM-based Bi-Fidelity Evolution",
+      "authors": [
+        "Ce Zhang",
+        "Bin Zhang",
+        "Zhiwei Xu",
+        "Hao Chen",
+        "Xinyue Lu",
+        "Shanwei Fan",
+        "Yingxuan Teng",
+        "Guoliang Fan"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.36735",
+      "institutions": [
+        "casia",
+        "university-chinese-academy-sciences",
+        "shandong-university"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "Mixed-Integer Linear Programming",
+        "Combinatorial Auctions",
+        "Set Covering Problem",
+        "Maximum Independent Set",
+        "Capacitated Facility Location"
+      ],
+      "featured": false,
+      "summary": "Bi-fidelity evolution discovers CPU branching programs by screening with strong-branching imitation and reserving solver runs for selected elites.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A branching rule that imitates an expert well can still solve MILPs slowly: its own search visits different states, and CPU inference overhead matters. Evaluating every generated rule with full solver runs is expensive.</p>\n<h2>Core method</h2>\n<p>The LLM generates, crosses, and mutates executable scoring functions over 72 candidate-variable features. A low-fidelity score measures agreement with strong-branching choices in an offline dataset. A high-fidelity score measures actual solving performance on separate MILP instances.</p>\n<p>Initially, only the best imitation-ranked fraction receives solver evaluation. Later, a candidate is admitted to expensive evaluation if its imitation score reaches the threshold associated with the weakest solver-evaluated elite. Parent selection ranks these elites by true solver performance before the remaining imitation-ranked population; survival selection likewise prioritizes elites. Thus imitation filters proposals but cannot alone determine the returned rule.</p>\n<p>Evaluation replaces branching inside SCIP, with root-only cuts and restarts disabled. Four standard distributions and three application benchmarks distinguish same-scale tests, larger instances, solving time, node counts, and primal-dual progress.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Couples a cheap expert-imitation screen with measured solver feedback in population selection.</li>\n<li>Separates search cost, per-node inference cost, and final solving quality in CPU deployment.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The discovered rules are fastest among the reported CPU methods on all four same-scale benchmarks, but not universally on larger instances: default branching remains stronger on transferred set covering. The cheap screen can still reject novel rules that imitate poorly. Results depend on a specific solver configuration and feature interface.</p>\n<h2>What to improve</h2>\n<p>Occasionally evaluate rejected candidates to measure screening false negatives, and test the rules with unrestricted solver cuts/restarts and broader distribution shifts.</p>\n<h2>Connections</h2>\n<p><a href=\"../janus/index.md\">Janus</a> also reserves expensive evaluation for selected candidates. The distinction is concrete: Janus evolves executable ranking proxies alongside programs, whereas BiFE uses a fixed expert-imitation surrogate with an elite admission threshold. Neither paper is being labeled as the other's implementation.</p>\n"
+    },
+    {
+      "id": "ees",
+      "short_title": "EES",
+      "title": "Evolutionary Ensemble Search: Council-Guided Program Evolution with Persistent Memory",
+      "authors": [
+        "Juan P. Madrigal-Cianci",
+        "Eshan Chordia"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.17590",
+      "code_url": "https://github.com/impulse-ai/mlebench-medals",
+      "institutions": [
+        "impulse-ai"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Machine Learning Procedure Design",
+        "Program Evolution",
+        "Ensemble Construction"
+      ],
+      "featured": false,
+      "summary": "Specifies council-guided evolution of executable ML procedures, with measured child fitness, compatible-prediction ensembling, and cross-run lessons.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Combining agent recommendations is useful only if changes create executable candidates with comparable evidence and traceable lineage.</p>\n<h2>Core method</h2>\n<p>A role-specialized council interprets task evidence and recommends directions; an orchestrator assigns implementation and evaluation work. Mutation and crossover start from measured parents and create changed code or typed pipeline specifications. Every child must execute and earn its own validation score; inherited code does not imply inherited fitness.</p>\n<p>Archives retain useful alternatives. Parent-relative feedback informs operator credit, while session summaries and problem-indexed lessons can guide future runs. Prediction ensembles require matching row, target, class, and validation semantics, then must outperform the best individual under a validation gate. Different execution profiles implement different subsets of this architecture, which must be recorded for a comparison to be meaningful.</p>\n<h2>Contributions</h2>\n<p>Defines contracts connecting deliberation, executable edits, population evidence, memory, and final ensemble selection.</p>\n<h2>Strengths and limitations</h2>\n<p>The public ledger exposes concrete artifacts and caveats. Its 19-of-22 medal-threshold record includes between-run grading, external-source routes, and mixed confirmation; it neither establishes blind autonomous success nor isolates the benefit of the full proposed stack.</p>\n<h2>What to improve</h2>\n<p>Run preregistered, budget-matched component ablations with untouched tasks and per-run manifests, keeping terminal grades outside development feedback.</p>\n<h2>Connections</h2>\n<p><a href=\"../evomem/index.md\">EvoMem</a> also persists measured search experience across runs. EES broadens the memory to task-indexed pipeline and ensemble lessons, but its historical ledger does not isolate the causal effect of that retrieval mechanism.</p>\n"
+    },
+    {
+      "id": "evolution-or-illusion",
+      "short_title": "Evolution/Illusion",
+      "title": "Evolution or Illusion? Rethinking Evaluation in LLM Evolutionary Search",
+      "authors": [
+        "Tal Oved",
+        "Roi Pony",
+        "Oshri Naparstek",
+        "Udi Barzelay"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.19799",
+      "institutions": [
+        "ibm-research"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "Evolutionary Search Evaluation",
+        "Search Budget Allocation"
+      ],
+      "featured": false,
+      "summary": "Evaluates evolutionary-search methods over a seeds-by-iterations grid to reveal budget-dependent rankings and width/depth trade-offs.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Declaring a winner at one search depth and one seed count can conceal a different winner under another equally valid budget allocation.</p>\n<h2>Core method</h2>\n<p>Each logged seed yields a best-so-far trajectory. For every depth and subset size, exact order statistics compute the expected best result over subsets of the 40 observed seeds, avoiding Monte Carlo noise in that finite-sample calculation. The analysis then finds the best width/depth split under a product budget and compares strategy rankings across the resulting surface.</p>\n<p>Bootstrap analysis estimates how often partial-budget rankings differ from the full-budget ranking. Three strategies and five optimization tasks are examined up to 200 iterations. This is post-hoc analysis of already collected trajectories: the budget-optimal split is not known to an online search procedure without first observing the grid.</p>\n<h2>Contributions</h2>\n<p>Replaces a single reported operating point with an auditable budget frontier and demonstrates that seed count, search depth, and method ranking interact.</p>\n<h2>Strengths and limitations</h2>\n<p>Reusing logs makes allocation comparisons reproducible. Collecting enough independent trajectories is costly, finite observed seeds limit inference, and iteration counts do not normalize token or evaluator cost.</p>\n<h2>What to improve</h2>\n<p>Select allocations on independent development tasks and report dollar/time frontiers alongside the seed–iteration grid, with uncertainty for ranking conclusions.</p>\n<h2>Connections</h2>\n<p><a href=\"../relayevolve/index.md\">RelayEvolve</a> decides online whether to grow or deepen trajectories. This study contextualizes that decision with an offline width/depth evaluation protocol; it is not evidence that one framework implements the other.</p>\n"
+    },
+    {
+      "id": "evoskillrec",
+      "short_title": "EvoSkillRec",
+      "title": "EvoSkillRec: Skill-Genome Evolution for Recommender Architecture Discovery",
+      "authors": [
+        "Xiaopeng Li",
+        "Kuo Cai",
+        "Bo Chen",
+        "Wenlin Zhang",
+        "Mengyang Ma",
+        "Yingyi Zhang",
+        "Zichuan Fu",
+        "Yu Yang",
+        "Qidong Liu",
+        "Yiyu Wang",
+        "Ruiming Tang",
+        "Wenwu Ou",
+        "Jiang Wu",
+        "Zhanbo Xu",
+        "Xiangyu Zhao"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.34552",
+      "code_url": "https://github.com/Xiaopengli1/EvoSkill-Rec",
+      "institutions": [
+        "cityu-hk",
+        "kuaishou",
+        "xjtu"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Recommender Architecture Discovery",
+        "Click-Through Rate Prediction",
+        "Multi-Task Learning"
+      ],
+      "featured": false,
+      "summary": "Evolves typed recommender architectures through both validated skill recombination and open code invention, promoting successful modules into a reusable library.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Unrestricted architecture edits often fail, while a fixed operator library cannot retain new mechanisms discovered during search.</p>\n<h2>Core method</h2>\n<p>Seed recommenders are decomposed into executable skills with tensor contracts, inductive-bias tags, validation tests, and empirical memory. Reconstruction tests check that extracted skills reproduce seed-model behavior. Genomes are graphs of these modules connected through a shared tensor context.</p>\n<p>Skill-space search retrieves compatible modules through metadata rules and applies bounded graph edits. Code-space search uses a planner and synthesizer to invent new modules, followed by capability, interface, gradient, and portability checks. Both streams receive training-based validation. Generated skills carried by surviving candidates are promoted into a second library tier with provenance. Stagnation shifts proposal budget toward invention; successful promotion shifts it back toward reuse.</p>\n<h2>Contributions</h2>\n<p>Converts validated code inventions into reusable architectural units rather than leaving them as isolated patches.</p>\n<h2>Strengths and limitations</h2>\n<p>Tests span multiple recommendation settings and quality/efficiency trade-offs. A module's success in one host genome does not prove universal usefulness; extraction, training, and promotion costs remain substantial.</p>\n<h2>What to improve</h2>\n<p>Test cross-task skill transfer with frozen libraries, audit false promotion caused by host interactions, and separate compatibility validity from independent causal benefit.</p>\n<h2>Connections</h2>\n<p><a href=\"../adsl-pde/index.md\">ADSL-PDE</a> likewise constrains composition through typed executable components. EvoSkillRec differs by making validated new modules and their reuse history an explicit evolving library, rather than only searching solver descriptions.</p>\n"
+    },
+    {
+      "id": "hada",
+      "short_title": "HADA",
+      "title": "Hyper Algorithm Design Agent: Evolving Learnable Optimizer from Zero",
+      "authors": [
+        "Zipei Yu",
+        "Yue-Jiao Gong",
+        "Zeyuan Ma",
+        "Yuncheng Jiang",
+        "Zhiguang Cao"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.35328",
+      "code_url": "https://github.com/MetaEvo/HADA-AAD",
+      "institutions": [
+        "south-china-university-technology",
+        "south-china-normal-university",
+        "smu"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "scope"
+      ],
+      "problems": [
+        "Black-Box Optimization",
+        "Constrained Optimization",
+        "Multi-Objective Optimization",
+        "UAV Path Planning"
+      ],
+      "featured": false,
+      "summary": "A hyper agent edits its own and a task agent's behavior while the task agent evolves a trainable MetaBBO optimizer project.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Learning-to-optimize systems automate low-level decisions but still rely on humans to choose the policy architecture, observations, training loop, and underlying optimizer. HADA searches over that larger software project.</p>\n<h2>Core method</h2>\n<p>Each evolutionary node stores a MetaBBO project and execution information: code, patches, domain notes, training logs, and evaluation scores. The archive samples promising but less-explored valid parents using performance and child counts.</p>\n<p>A hyper agent first edits the instructions governing the task agent and itself. The task agent then modifies the optimizer project, including the learned policy, low-level environment, and training logic. The changed project is trained and evaluated, and the resulting child is archived. Unlike the hyper agent, the task agent cannot edit the agent machinery.</p>\n<p>Search uses cheaper training and repeated evaluation; the selected optimizer receives longer training and more final runs. The experiments span continuous single-objective, constrained, and multi-objective benchmarks, plus UAV planning. The product is a learned optimizer together with its training code, not simply an LLM-generated update formula.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Evolves both a learning-assisted optimizer and the agent procedure that designs it.</li>\n<li>Uses an execution-history tree to revisit alternative development paths and transfer design behavior across domains.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The editable project provides a broad design space, but training each candidate makes evaluation costly and noisy. Improvements are empirical and benchmark-dependent: recursive editing is not a proof of beneficial self-modification, nor does it bypass no-free-lunch results. The integrity of evaluation interfaces is especially important when project files are editable.</p>\n<h2>What to improve</h2>\n<p>Independently freeze final evaluators, audit all allowed file changes, and compare hyper-agent evolution against equally budgeted fixed-agent search across multiple seeds.</p>\n<h2>Connections</h2>\n<p><a href=\"../dgm/index.md\">Darwin Gödel Machine</a> and HADA both use empirical evaluation and archives for self-improvement, but organize the editable system differently. DGM evolves a coding agent; HADA separates a hyper agent that edits agent behavior from a task agent that edits the optimizer project. This is a comparison of design boundaries, not a claim that HADA reuses DGM's implementation.</p>\n"
+    },
+    {
+      "id": "heurevo",
+      "short_title": "HeurEvo",
+      "title": "HeurEvo: Agentic Evolution of Hybrid Solver-Augmented Heuristics for Time-Critical Mathematical Optimization",
+      "authors": [
+        "Feijie Wu",
+        "Hugo Barbalho",
+        "Konstantina Mellou",
+        "Marco Molinaro",
+        "Jing Gao",
+        "Ishai Menache",
+        "Xinzhi Zhang",
+        "Sirui Li"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.36303",
+      "institutions": [
+        "purdue",
+        "microsoft"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Mixed-Integer Linear Programming",
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Scheduling",
+        "Geometric Packing"
+      ],
+      "featured": false,
+      "summary": "Co-evolves hybrid solver plans, executable implementations, and a shared component library to allocate a strict per-instance runtime budget.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Under a short deadline, a solver call is only one possible stage of a useful algorithm. Choosing when to construct, repair, invoke a mathematical solver, and stop can matter as much as improving any individual heuristic.</p>\n<h2>Core method</h2>\n<p>A plan specifies ordered components, subgoals, and runtime allocation. Each island holds one plan and several implementations; all islands share a reusable component library and program archive. A coder refines implementation details without changing the plan's ordered structure. An interpreter compares parent and child using feasibility, objective quality, runtime, and step-level traces.</p>\n<p>A UCB controller selects islands. When code-level progress stalls, a planner can replace or reorder stages and start a new active code population; old programs remain available as inspiration. Separately, a component evolver revises, adds, or removes reusable building blocks using evidence accumulated across islands. Library updates do not silently rewrite current plans.</p>\n<p>Experiments use 200 generated programs and two minutes per instance, covering eleven synthetic tasks, six MIPLIB-derived problems, and nonlinear geometry. The reported geometry records additionally use subsequent AdaEvolve refinement, not HeurEvo alone.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Makes algorithm composition and runtime allocation explicit evolutionary objects.</li>\n<li>Separates local code improvement, stalled-plan revision, and cross-island component learning.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Synthetic experiments include held-out instances and strong performance relative to long-running Gurobi incumbents. Those incumbents are not proven optima. MIPLIB results are training-only, and geometric search is instance-specific; neither demonstrates the same generalization as the synthetic tests. Discovery cost must also be separated from the two-minute deployment budget.</p>\n<h2>What to improve</h2>\n<p>Evaluate unseen MIPLIB instances and report amortized discovery cost. Isolate how much benefit comes from time allocation, component evolution, and the external solver itself.</p>\n<h2>Connections</h2>\n<p><a href=\"../atlas/index.md\">ATLAS</a> permits whole-program evolution. HeurEvo explicitly separates composition plans and reusable components from implementation, exposing a structured-versus-implicit search-space trade-off discussed in its related work.</p>\n"
+    },
+    {
+      "id": "jet",
+      "short_title": "JET",
+      "title": "JET: Judge-Guided Evolution at Test Time for Agent Programs",
+      "authors": [
+        "Yao Long Teng",
+        "Jiayi Cai",
+        "Bo An"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.34126",
+      "institutions": [
+        "ntu"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Agent Program Evolution",
+        "Reward-Hidden Adaptation"
+      ],
+      "featured": false,
+      "summary": "Evolves an executable evaluator on labeled source trajectories, freezes it, and uses it to guide agent-code adaptation without target reward queries.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Deployment settings may expose trajectories but withhold the evaluator that originally supplied search rewards.</p>\n<h2>Core method</h2>\n<p>Source-side evolution rewrites judge code, including prompts, preprocessing, deterministic computations, calibration, and parsing. Training labels guide search; a separate validation split selects the judge, which is then frozen. Its underlying model weights are not retrained.</p>\n<p>At target time, proposed agent programs execute on visible tasks. The frozen judge supplies scores for promotion and diagnostics for further rewrites; feedback from rejected candidates is retained. True target evaluator outputs are isolated for post-hoc auditing. The target tasks do influence adaptation through their trajectories, so improvement there is not evidence of zero-shot generalization to entirely unseen tasks.</p>\n<h2>Contributions</h2>\n<p>Separates evaluator development from target program evolution and tests whether learned evaluation procedures transfer across reward-hidden settings.</p>\n<h2>Strengths and limitations</h2>\n<p>Source/target information boundaries make the claim precise. Judge errors can be exploited by search; PushT includes an exactly reconstructible reward control, while WebShop requires approximate judgment, so their difficulties differ.</p>\n<h2>What to improve</h2>\n<p>Test shifts in reward semantics as well as observations, audit judge hacking, and evaluate frozen adapted programs on additional unseen target tasks.</p>\n<h2>Connections</h2>\n<p><a href=\"../janus/index.md\">Janus</a> continually updates proxy evaluators and requires real validation for promotion. JET freezes a source-trained judge and cannot make that target-time check; this contrast identifies a consequential evaluator-trust boundary.</p>\n"
+    },
+    {
+      "id": "kernelzero",
+      "short_title": "KernelZero",
+      "title": "KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation",
+      "authors": [
+        "Changxin Ke",
+        "Rui Zhang",
+        "Zixiang Fang",
+        "Zhenghong Li",
+        "Yuanbo Wen",
+        "Jiashuo Shen",
+        "Shuo Wang",
+        "Jiaming Guo",
+        "Ling Li",
+        "Qi Guo",
+        "Yunji Chen"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.33074",
+      "institutions": [
+        "cas-ict",
+        "university-chinese-academy-sciences",
+        "cas-software",
+        "cas-ai-industries"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "GPU Kernel Generation",
+        "CUDA Optimization",
+        "Triton Optimization"
+      ],
+      "featured": false,
+      "summary": "Alternately trains task-proposing and kernel-coding models, using capability-matched Torch modules and correctness-gated speed rewards.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Fixed kernel datasets can become too easy or too hard as a coder improves, while rewarding speed before correctness encourages invalid kernels.</p>\n<h2>Core method</h2>\n<p>The proposer receives API sets sampled from realistic co-occurrence patterns and generates Torch modules. Syntax/interface checks, execution, and numerical-stability tests reject unusable tasks. Its reward peaks when roughly half of the coder's sampled implementations are correct, encouraging challenges near the current capability boundary rather than trivial or impossible modules.</p>\n<p>The coder is first distilled using compiler-inspired tiling, fusion, pipelining, and reordering principles. Correctness-aware GRPO then rewards valid CUDA/Triton implementations, activating the performance term only when group-level correctness is sufficiently reliable. Alternating proposer and coder updates changes model weights and the training curriculum; this is not simply inference-time mutation of one fixed kernel population.</p>\n<h2>Contributions</h2>\n<p>Couples adaptive training-task generation with an explicit correctness-before-speed mechanism.</p>\n<h2>Strengths and limitations</h2>\n<p>CUDA and Triton evaluations distinguish correctness from faster-than-reference success. Randomized equivalence tests remain finite, hardware and operator distributions constrain transfer, and training cost must be separated from deployment inference cost.</p>\n<h2>What to improve</h2>\n<p>Test unseen shapes, numerical corner cases, and different GPUs, and report curriculum construction plus reinforcement-learning cost alongside final pass and speed metrics.</p>\n<h2>Connections</h2>\n<p><a href=\"../piac/index.md\">PIAC</a> also adapts generated tasks to weaknesses of the current solver. PIAC evolves heuristic portfolios using perturbation-based improvement potential; KernelZero trains a coder using tasks near a measured correctness boundary. This is a curriculum-feedback contrast, not implementation reuse.</p>\n"
+    },
+    {
+      "id": "llm-hcjg",
+      "short_title": "LLM-HCJG",
+      "title": "LLM-Driven Joint Evolution of Coupled Heuristics Components for Routing Optimization",
+      "authors": [
+        "Juntao Wei",
+        "Yangming Zhou",
+        "Zhibin Jiang",
+        "Shan Jiang"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.02353",
+      "institutions": [
+        "sjtu"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "search"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem"
+      ],
+      "featured": false,
+      "summary": "Jointly evolves routing initialization and GLS penalty functions under a shared blueprint, evaluating their compatibility as a complete pair.",
+      "body_html": "<h2>Why it matters</h2>\n<p>An initialization rule determines the search states seen by a penalty rule, so independently strong components can be incompatible when combined.</p>\n<h2>Core method</h2>\n<p>Each individual contains a shared design blueprint and two executable functions: solution initialization and edge-distance/penalty construction. Crossover and mutation operate on complete records, producing a child blueprint and both components together. Rank-based selection and population truncation use the pair's measured routing performance.</p>\n<p>The generated functions run inside an enhanced GLS scaffold. Influential-edge targeting, local perturbation, further improvement, and periodic restoration of the incumbent are fixed framework mechanisms, not LLM inventions. The paper transfers the coupled interfaces from TSP to CVRP and tests intact versus swapped component pairs. Its blueprint-consistency argument assumes semantic faithfulness; a parser can check fields but cannot prove that assumption.</p>\n<h2>Contributions</h2>\n<p>Makes cross-component compatibility an explicit search object and tests it by replacing individual modules under the same solver scaffold.</p>\n<h2>Strengths and limitations</h2>\n<p>Pair-swapping experiments provide more informative evidence than a single end-to-end ranking. Gains must still be separated from fixed GLS enhancements, and the study covers two related routing problems rather than arbitrary component systems.</p>\n<h2>What to improve</h2>\n<p>Add independently co-evolved components under identical budgets and test whether blueprint consistency can be checked behaviorally rather than only structurally.</p>\n<h2>Connections</h2>\n<p><a href=\"../eoh/index.md\">EoH</a> evolves thought/code heuristics. LLM-HCJG broadens the individual to a blueprint plus coupled initialization/penalty functions; the meaningful link is coordinated component design, not simply its baseline comparison.</p>\n"
+    },
+    {
+      "id": "modular-game-search",
+      "short_title": "Modular Game Search",
+      "title": "Modular Discovery of General Game-Playing Algorithms with Large Language Models",
+      "authors": [
+        "Zun Li",
+        "John Schultz",
+        "Marc Lanctot",
+        "Daniel Hennes"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.33115",
+      "institutions": [
+        "google-deepmind"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "design-object",
+        "feedback"
+      ],
+      "problems": [
+        "General Game Playing",
+        "Monte Carlo Tree Search"
+      ],
+      "featured": false,
+      "summary": "Factorizes LLM evolution into reusable C++ search mechanisms and per-game knowledge modules, with reference-engine evaluation to separate their contributions.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Evolving one game-playing program can entangle genuinely transferable search logic with knowledge of a particular game. The paper makes this distinction explicit.</p>\n<h2>Core method</h2>\n<p>Built on AlphaEvolve, a coordinator evolves game-independent procedural search operators while workers evolve per-game priors, value estimators, and history resamplers. All candidates are compiled C++ modules with typed interfaces.</p>\n<p>Credit assignment is deliberately asymmetric. Knowledge workers use fixed reference PUCT; the coordinator measures how an evolved search mechanism improves over that reference and over executing the prior alone. Headroom-normalized scores are aggregated across games. Hidden-state access checks reject cheating in imperfect-information games. Opponents remain fixed within a curriculum epoch, then advance only after a confirmation tournament; old and new epoch scores are not directly ranked together.</p>\n<p>Evaluation covers OpenSpiel training and held-out games, procedurally synthesized games, and frozen neural policy/value representations. Cross-game tournament rankings supplement results under controlled time and simulation budgets.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Separates transferable search machinery from domain knowledge during program evolution.</li>\n<li>Addresses confounded module credit and changing opponents rather than relying on one scalar game score.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The breadth of transfer tests is a strength. However, reference-PUCT evaluation biases knowledge modules toward compatibility with that engine. Offline discovery is expensive, and a general search mechanism does not replace specialized endgame knowledge or large pretrained evaluators.</p>\n<h2>What to improve</h2>\n<p>Test alternative reference engines and report transfer gains per unit of offline discovery compute. Study how much unseen-game performance depends on newly synthesized domain knowledge.</p>\n<h2>Connections</h2>\n<p><a href=\"../alphaevolve/index.md\">AlphaEvolve</a> supplies the program-evolution backbone. This work generalizes that setup into coordinated archives with distinct roles for transferable mechanisms and task-specific knowledge.</p>\n"
+    },
+    {
+      "id": "ondesign",
+      "short_title": "OnDesign",
+      "title": "Online Automated Algorithm Design with Large Language Models",
+      "authors": [
+        "Zhiyao Zhang",
+        "Yichen Li",
+        "Xingyu Wu",
+        "Liang Feng",
+        "Kay Chen Tan"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.25325",
+      "institutions": [
+        "polyu",
+        "chongqing-university"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "feedback",
+        "design-object"
+      ],
+      "problems": [
+        "Bayesian Optimization",
+        "Continuous Optimization",
+        "Mixed-Variable Optimization"
+      ],
+      "featured": false,
+      "summary": "Synthesizes optimization algorithms during the target run, jointly adapting executable search logic and the guideline used to interpret runtime state.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Offline algorithm discovery returns a program before deployment. OnDesign instead asks whether the algorithm should change as the same optimization run encounters new information or stalls.</p>\n<h2>Core method</h2>\n<p>A state analyst summarizes runtime observations using an editable State Analysis Guideline (SAG). Several proposers receive that report and an archive of previous algorithms and gains; each offers a design direction, supporting rationale, and implementation advice. An arbiter reconciles these proposals into executable search logic.</p>\n<p>Executing that program produces new candidate solutions and objective feedback. The resulting gain is recorded both with the algorithm and with the SAG that informed it. Periodically, a refiner updates the guideline using its archived scores. Thus the system changes both what algorithm is run and what evidence the next design decision emphasizes, without a separate offline pretraining stage.</p>\n<p>Experiments instantiate this loop for Bayesian, continuous evolutionary, and mixed-variable optimization. The accompanying bound decomposes errors under stated representation and synthesis assumptions; it does not guarantee that LLM edits always help.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Couples state-conditioned program synthesis with optimization inside a single run.</li>\n<li>Separates algorithm history from an evolving state-interpretation guideline.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Module ablations support the combined design on the tested benchmarks. SAG scores are heuristic credit signals, not isolated causal effects. Evaluation is mainly single-objective and at most 30-dimensional; online model latency and token cost can matter even when objective-call budgets match.</p>\n<h2>What to improve</h2>\n<p>Report full wall-clock budgets and investigate noisy, constrained, and larger-scale problems with rollback safeguards for harmful online edits.</p>\n<h2>Connections</h2>\n<p><a href=\"../llamea-bo/index.md\">LLaMEA-BO</a> evolves complete Bayesian optimization algorithms offline. OnDesign explores a different deployment boundary: repeated state-dependent synthesis during the optimization run, trading continued model overhead for online adaptability.</p>\n"
+    },
+    {
+      "id": "optiskill",
+      "short_title": "OptiSkill",
+      "title": "OptiSkill: A Hierarchical and Evolving SkillBank for LLM-Based Optimization Modeling",
+      "authors": [
+        "Ruiqing Zhao",
+        "Rui Liu",
+        "Yuan Zuo",
+        "Huarong Zhang",
+        "Xiao Han",
+        "Junjie Wu"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "EMNLP",
+      "paper_url": "https://arxiv.org/pdf/2609.22987",
+      "code_url": "https://github.com/rachhhhing/OptiSkill",
+      "institutions": [
+        "beihang"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "design-object",
+        "scope"
+      ],
+      "problems": [
+        "Operations Research Modeling",
+        "Mathematical Program Generation"
+      ],
+      "featured": false,
+      "summary": "Distills reusable formulation strategies and local error-avoidance lessons, then updates an OR-modeling skill bank through batch-level validation.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Solving each modeling problem independently repeats variable-domain, activation, and constraint errors that could be remembered as reusable formulation skills.</p>\n<h2>Core method</h2>\n<p>Successful trajectories supply global modeling procedures; success/failure pairs supply local trigger-and-guidance experiences. Supported, nonredundant skills are organized by problem type. Retrieval selects applicable strategies and experiences, which guide a frozen LLM in producing a mathematical formulation and executable solver code.</p>\n<p>During test-time evolution, the bank remains fixed within a batch. Failed formulations can be refined using solver feedback, then diagnosed as missing knowledge, misleading retrieved knowledge, or unrelated coding errors. New and repaired skills stay inactive until batch-level support, repair, and regression checks pass. Reliability labels influence later retrieval, and persistently risky entries can be removed.</p>\n<h2>Contributions</h2>\n<p>Makes skill revision and historical-success preservation explicit, rather than appending every successful example to memory.</p>\n<h2>Strengths and limitations</h2>\n<p>The hierarchy separates reusable structure from local corrections. Solver success is not universal semantic verification, structural overlap is not zero, and sequential test-time learning should not be confused with a frozen independent-test protocol.</p>\n<h2>What to improve</h2>\n<p>Audit skill correctness with experts, vary batch order, and report no-update versus continual-update results on prospectively separated problem families.</p>\n<h2>Connections</h2>\n<p><a href=\"../formuevo/index.md\">FormuEvo</a> stores condition–strategy–effect memories to improve solver efficiency. OptiSkill instead organizes formulation procedures and corrective experiences, with validated batch-level bank revisions; the shared issue is transferring modeling knowledge without propagating bad advice.</p>\n"
+    },
+    {
+      "id": "presage",
+      "short_title": "Presage",
+      "title": "Presage: Prefetch Search via Agent-Guided Experiments",
+      "authors": [
+        "Matthew Giordano",
+        "Parthasarathy Ranganathan",
+        "Baris Kasikci",
+        "Akanksha Jain"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.22636",
+      "institutions": [
+        "google",
+        "university-washington"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "feedback"
+      ],
+      "problems": [
+        "Software Prefetching",
+        "CPU Code Optimization"
+      ],
+      "featured": false,
+      "summary": "Agents propose, experimentally optimize, and combine software-prefetch patches using source-level profiling and measured workload runtime.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A prefetch can slow a program by adding instructions or interfering with other memory accesses. Finding useful insertion sites and composing individually good edits requires understanding program behavior.</p>\n<h2>Core method</h2>\n<p>A proposer inspects source and profiling summaries to nominate functions with prefetchable bottlenecks; it intentionally does not prescribe exact code. Separate optimizer agents work in isolated copies, insert and revise prefetches, and benchmark runtime. Custom tools expose instruction-normalized source and assembly metrics to explain results; cache misses are diagnostic signals, not the optimization objective.</p>\n<p>A combiner then searches combinations of successful patches. Combining two individually good changes is not automatically accepted: the result must improve on the baseline and individual proposals. The output is a small source patch specialized to a workload, compiler, operating system, and microarchitecture. Tests provide feedback, while manual patch review remains part of the correctness process.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Uses semantic code reasoning and experiment loops for software-prefetch discovery.</li>\n<li>Explicitly handles interference when combining independently optimized regions.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The reported suite spans 81 workloads and includes large multi-file applications. Results are hardware-specific; tests and LLM review do not prove semantic equivalence. The pruning of combinations also relies on assumptions about how independently discovered proposals interact.</p>\n<h2>What to improve</h2>\n<p>Measure portability and patch durability after software changes, and strengthen automated correctness checks without hiding manual review costs.</p>\n<h2>Connections</h2>\n<p><a href=\"../archagent-v2/index.md\">ArchAgent v2</a> evolves hardware-prefetch logic across cache levels. Presage instead modifies application-side software prefetches. The shared optimization target exposes a concrete design-boundary trade-off, not a claim that their implementations derive from one another.</p>\n"
+    },
+    {
+      "id": "quantforge",
+      "short_title": "QuantForge",
+      "title": "QuantForge: Discovering Residual Decompositions for MXFP4 Post-Training Quantization",
+      "authors": [
+        "Qiulin Shang",
+        "Zhoutong Wu",
+        "Jie Hu",
+        "Kun Yuan"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.34680",
+      "institutions": [
+        "pku"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "design-object"
+      ],
+      "problems": [
+        "Post-Training Quantization"
+      ],
+      "featured": false,
+      "summary": "Turns controlled experiments about quantization errors into checked program revisions, discovering a staged MXFP4 quantizer.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A quantizer's score does not identify why an edit helped. Coordinate transforms, legal low-bit encoding, and downstream residual correction interact, so a mistaken explanation can send the next edit in the wrong direction.</p>\n<h2>Core method</h2>\n<p>QuantForge maintains two records: useful executable programs and unresolved explanations of their remaining errors. Before an experiment, it records competing explanations and their predicted responses to controls. It then selects a low-cost set of comparisons that distinguishes those predictions under a frozen evaluation contract.</p>\n<p>The result is compiled into a requirement for a successor program. Changed code and an execution probe check whether that requirement was implemented. A successful program can be retained even if its original explanation is rejected. Remeasuring the revised program determines the next unresolved error.</p>\n<p>The resulting HiRes quantizer combines coordinate shaping, legal code-assignment refinement, and attention/MLP path correction, always measuring residuals after earlier stages. Search experiments compare four feedback schemes at 240 evaluator calls; QuantForge spends some calls on controls and compliance checks instead of new candidates.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Distinguishes program selection from validation of the explanation guiding its revision.</li>\n<li>Provides controlled-search and post-discovery component ablations, plus a frozen quantizer tested across model families.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The matched-budget study reports better held-out transfer despite fewer newly evaluated programs. However, MXFP4 is simulated in PyTorch: native-kernel latency, throughput, and memory savings are not demonstrated. The ability to formulate distinguishing controls is also specific to the available quantization interface.</p>\n<h2>What to improve</h2>\n<p>Measure end-to-end hardware costs of HiRes and test whether the same evidence-to-code procedure helps other algorithm families where causal controls are harder to construct.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> turns performance comparisons into natural-language reflection. QuantForge takes a different feedback route: pre-registered competing explanations, executed controls, and checked implementation obligations. This connects two specific forms of feedback, without claiming direct method inheritance.</p>\n"
+    },
+    {
+      "id": "quantumevo",
+      "short_title": "QuantumEvo",
+      "title": "LLM-Driven Algorithm Design for Quantum Circuit Synthesis based on Binary Decision Diagrams",
+      "authors": [
+        "Yoonju Sim",
+        "Federico Berto",
+        "Chuanbo Hua",
+        "Jinkyoo Park",
+        "Changhyun Kwon"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.05327",
+      "code_url": "https://github.com/syj5268/Quantumevo",
+      "institutions": [
+        "kaist",
+        "radical-numerics",
+        "omelet"
+      ],
+      "primary_dimension": "scope",
+      "dimensions": [
+        "scope",
+        "feedback"
+      ],
+      "problems": [
+        "BDD Variable Ordering",
+        "Reversible Circuit Synthesis"
+      ],
+      "featured": false,
+      "summary": "Adapts reflective program evolution to CUDD variable-ordering heuristics, scoring the quantum cost of synthesized circuits rather than BDD size.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A smaller binary decision diagram need not yield the cheapest reversible circuit. Optimizing an intermediate representation can therefore miss the downstream objective.</p>\n<h2>Core method</h2>\n<p>QuantumEvo explicitly builds on ReEvo's reflective evolutionary search. Each candidate is a compiled C function using the CUDD library to reorder a BDD. The population starts from sifting, genetic-algorithm, and simulated-annealing heuristics, giving the LLM several algorithmic families to recombine.</p>\n<p>Candidate orderings pass through a fixed reversible-synthesis procedure. Fitness averages relative quantum circuit cost against the best classical baseline for each search instance; stochastic candidates receive repeated evaluation. A separate validation set selects among evolutionary runs before a final benchmark of 148 functions. The selected HGA-QE heuristic combines genetic search and local refinement, rather than generating a bespoke quantum circuit directly for each input.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Connects generated ordering code to the final circuit-cost objective.</li>\n<li>Tests initialization diversity, LLM guidance, and the choice of downstream versus proxy fitness separately.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Search, validation, and final benchmark functions are separated. Non-LLM evolution remains competitive, so the added inference cost is not automatically justified. Only variable ordering is evolved; the fixed synthesis procedure still controls other resource trade-offs, including ancilla use.</p>\n<h2>What to improve</h2>\n<p>Study selective LLM invocation and joint circuit-resource objectives, with complete discovery-cost accounting and alternative synthesis backends.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> is a documented methodological source. QuantumEvo adapts its reflective search to compiled BDD ordering and changes feedback to downstream circuit cost.</p>\n"
+    },
+    {
+      "id": "rideskill",
+      "short_title": "RideSkill",
+      "title": "RideSkill: A Hierarchical Algorithm for Generalized Ride Sharing with LLM-Driven Automatic Evolution",
+      "authors": [
+        "Zijian Zhao",
+        "Sen Li",
+        "Xialiang Tong",
+        "Mingxuan Yuan"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.02250",
+      "institutions": [
+        "hkust",
+        "huawei-noahs-ark",
+        "hkust-guangzhou"
+      ],
+      "primary_dimension": "design-object",
+      "dimensions": [
+        "design-object",
+        "scope"
+      ],
+      "problems": [
+        "Ride Sharing",
+        "Order Dispatch",
+        "Vehicle Repositioning"
+      ],
+      "featured": false,
+      "summary": "Evolves executable dispatch skills, a context-dependent skill combiner, and an idle-vehicle repositioner for ride-sharing deployment without runtime LLM calls.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Sharing multiple orders expands dispatch decisions, while policies trained for one fleet or reward definition may not transfer to another.</p>\n<h2>Core method</h2>\n<p>First, LLM-assisted evolution builds atomic order-scoring skills with explicit contracts. A combiner is then evolved on top of the frozen skill repository. It probes a supplied reward function using basic events, combines standardized skill scores, and adapts weights to vehicle and environmental context. A third phase evolves a repositioner, processing idle vehicles sequentially while updating effective regional demand to avoid sending everyone to the same hotspot.</p>\n<p>Mutation and crossover propose code; compilation, field checks, and simulation determine validity and fitness. Randomized environments and generated objectives diversify training. Repositioner fitness measures improvement over matched reposition-off runs. These are staged design phases, not a claim that all components are co-evolved simultaneously. Final execution uses the resulting programs without LLM calls.</p>\n<h2>Contributions</h2>\n<p>Separates reusable dispatch primitives, objective-aware combination, and supply repositioning, with transfer experiments in a Manhattan ride-sharing simulator.</p>\n<h2>Strengths and limitations</h2>\n<p>Executable deployment avoids repeated model latency. Simulator and reward-design assumptions limit external validity; optional income rescaling is a heuristic, not a fairness guarantee.</p>\n<h2>What to improve</h2>\n<p>Test new cities and arrival processes, and isolate the value of reward probes from the skill library under matched discovery budgets.</p>\n<h2>Connections</h2>\n<p><a href=\"../llm-hcjg/index.md\">LLM-HCJG</a> keeps interacting routing functions together in each evolutionary individual. RideSkill instead freezes lower-level skills before evolving their combiner and repositioner, exposing a joint-versus-staged component-design trade-off rather than direct inheritance.</p>\n"
+    },
+    {
+      "id": "routerepair",
+      "short_title": "RouteRepair",
+      "title": "RouteRepair: Instance-Level Failure Diagnosis and Targeted Repair in LLM-Based Automated Heuristic Design for Routing Optimization",
+      "authors": [
+        "Binghao Ji",
+        "Di Huang",
+        "Jiahui Fang",
+        "Zhiyuan Liu"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.11452",
+      "institutions": [
+        "seu"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem"
+      ],
+      "featured": false,
+      "summary": "Diagnoses each routing heuristic's instance-level weaknesses and validates bounded repairs against both failure recovery and collateral degradation.",
+      "body_html": "<h2>Why it matters</h2>\n<p>An average score can conceal a useful routing heuristic's recurring failures on particular instance structures. Replacing it wholesale may erase behavior that already works well.</p>\n<h2>Core method</h2>\n<p>For each selected parent, within-scale performance ranks define failure cases and representative strengths. All non-failure instances form a larger protection set. A diagnosis expert combines these outcomes with spatial, demand, route-behavior, and code evidence to identify a bounded edit target. Its reviewed brief is frozen before a separate repair expert changes the permitted scoring function or edge-prior matrix.</p>\n<p>Parent and child are reevaluated with matched instances, seeds, solver settings, and budgets. Verified repair requires sufficient recovery on failure cases and limited one-sided degradation over the protection set: improvements elsewhere cannot cancel new damage. Importantly, verification is distinct from admission to the outer population; a useful aggregate trade-off need not qualify as a successful repair. Outcome-aware memory records both successes and failures.</p>\n<p>Experiments retain fixed constructive, GLS, and ACO backbones for TSP and CVRP.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Converts instance-wise outcomes into parent-specific diagnosis and bounded code edits.</li>\n<li>Explicitly measures preserved behavior instead of relying only on mean fitness.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Matched validation makes local improvement claims testable. Nevertheless, the diagnosis is a hypothesis rather than established causality, and protection only covers the sampled instance distribution and chosen tolerances. The editable interfaces remain domain-specific.</p>\n<h2>What to improve</h2>\n<p>Evaluate repairs on a separate distribution-shift set and study whether repeated reuse of protection cases gradually overfits the acceptance test.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> uses comparative feedback to guide heuristic revision. RouteRepair offers a more localized alternative: a parent's failure profile, a frozen repair contract, and an external collateral-damage test replace unconstrained reflection as the principal guide.</p>\n"
+    },
+    {
+      "id": "simpleevol",
+      "short_title": "SimpleEvol",
+      "title": "SimpleEvol: An Agent-Loop Framework for LLM-Driven Automated Heuristic Design with Minimal Human Priors",
+      "authors": [
+        "Jianghan Zhu",
+        "Cong Zhang",
+        "Rongjie Zhu",
+        "Chi Zhang",
+        "Zhiguang Cao"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "NeurIPS",
+      "paper_url": "https://arxiv.org/pdf/2609.37172",
+      "code_url": "https://github.com/HenryZhu1029/SimpleEvol-Master",
+      "institutions": [
+        "smu",
+        "independent-researcher",
+        "nuist",
+        "nus"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "Traveling Salesman Problem",
+        "Capacitated Vehicle Routing Problem",
+        "Flow Shop Scheduling Problem"
+      ],
+      "featured": false,
+      "summary": "A single-trajectory heuristic-design agent uses execution feedback and compressed history, studying how framework complexity affects gains from stronger language models.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A more elaborate search framework need not make better use of a stronger LLM. This paper asks how much improved model capability translates into improved heuristics, rather than comparing frameworks with only one backbone.</p>\n<h2>Core method</h2>\n<p>SimpleEvol keeps one evolving trajectory and a best-so-far heuristic. The agent receives the task, elite code, recent attempts, and compressed working notes, then proposes executable code with a short explanation. Evaluation returns objective values, runtime, and execution errors. Every few iterations, history is summarized into useful and unsuccessful design patterns; older records are removed. There is no explicit population selection or separate crossover/mutation controller.</p>\n<p>The paper also defines AHI from orchestration components, invocation types, and call counts. ICE is a fitted slope relating heuristic performance to an external model-capability score across backbones—not a direct measure of intelligence or a causal effect. Experiments use constructive TSP heuristics, CVRP heuristic matrices inside ACO, and FSSP perturbation rules inside GLS, with ten LLMs and a common generated-heuristic budget.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A compact feedback-driven alternative to explicitly orchestrated evolutionary operators.</li>\n<li>A cross-model evaluation protocol, including cost comparisons and ablations of memory, metadata, and elite retention.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The experiments report favorable performance and ICE across the three settings. Removing history summaries or elite context degrades results. However, the relationship between AHI and ICE is observational, depends on the chosen index and model panel, and does not establish that removing structure always helps. Equal candidate counts also do not mean equal token expenditure.</p>\n<h2>What to improve</h2>\n<p>A useful follow-up would hold dollar and evaluator budgets fixed while varying one orchestration component at a time, and test whether the fitted scaling trend predicts genuinely unseen backbones.</p>\n<h2>Connections</h2>\n<p><a href=\"../reevo/index.md\">ReEvo</a> uses explicit short- and long-term reflection within population search. SimpleEvol instead incorporates execution history into one autonomous trajectory. This is an alternative organization of feedback and search, not an extension claim.</p>\n"
+    },
+    {
+      "id": "tcsalgbench",
+      "short_title": "TCSAlgBench",
+      "title": "TCSAlgBench: Benchmarking Automated Proving for Research-Level Theoretical Computer Science",
+      "authors": [
+        "Chutong Yang",
+        "Xiyuan Zhang",
+        "Yu Huang",
+        "Boran Han",
+        "Soonho Kong",
+        "Shuai Zhang",
+        "Vihang Prakash Patil",
+        "Zhen Han",
+        "Michael Bohlke-Schneider",
+        "Bernie Wang"
+      ],
+      "year": 2026,
+      "date": "2026-09-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2609.35606",
+      "institutions": [
+        "ut-austin",
+        "amazon",
+        "university-pennsylvania"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "scope"
+      ],
+      "problems": [
+        "Theoretical Algorithm Design",
+        "Natural-Language Proof Discovery"
+      ],
+      "featured": false,
+      "summary": "Evaluates research-level algorithmic proof discovery using versioned theorem challenges with necessary context but withheld target constructions and proofs.",
+      "body_html": "<h2>Why it matters</h2>\n<p>An algorithmic improvement requires a valid argument about correctness and complexity, not only favorable empirical results.</p>\n<h2>Core method</h2>\n<p>A source-processing pipeline extracts theorem dependencies from STOC/COLT papers and constructs self-contained challenges. Definitions and assumptions are restored without supplying the target proof; when algorithm construction is part of the challenge, the construction is withheld while the required guarantees remain. An offline sandbox exposes only permitted cited prior work.</p>\n<p>Provers return natural-language proofs. A citation-organizing step checks referenced statements, and separately sampled verifier votes determine acceptance. Workflow comparisons match model-call opportunities while reporting token costs separately. A supplementary pipeline compiles provisional Lean theorem statements and checks their intended meaning; it does not formally prove the generated natural-language solutions.</p>\n<h2>Contributions</h2>\n<p>Builds refreshable, source-versioned evaluation for theoretical algorithm discovery and compares discussion, decomposition, and planning workflows.</p>\n<h2>Strengths and limitations</h2>\n<p>Carefully withheld constructions make some tasks genuine design-and-proof problems. Main scores remain LLM-verifier acceptance with limited expert auditing, and published source material leaves contamination risk; this is a theoretical-adjacent benchmark, not executable heuristic search.</p>\n<h2>What to improve</h2>\n<p>Expand independent proof audits and formal verification, and distinguish algorithm-construction tasks from lower-bound proofs when reporting algorithm-design capability.</p>\n<h2>Connections</h2>\n<p><a href=\"../when-ai-designs-ai/index.md\">When AI Designs AI</a> evaluates empirical performance and design differences. TCSAlgBench adds a distinct assessment axis—whether a proposed computational improvement can be justified with a checkable argument—without claiming that proof acceptance measures implementation quality.</p>\n"
     }
   ]
 }
