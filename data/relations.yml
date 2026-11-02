@@ -12,7 +12,7 @@ relations:
       quantum compiler passes and runtime policies, retaining program-database
       selection and LLM mutation while adding hardness-guided circuit coresets,
       execution snapshots, and quantum-specific rewards.
-  # November search and memory methods: nots/2026-11-02-review-a04-a40.md.
+  # Search and memory methods.
   - from: mcts-ahd
     to: dream-cop
     type: contrasts
@@ -158,7 +158,7 @@ relations:
     type: contrasts
     dimension: feedback
     description: "EvoMem consolidates promising mutation events after a run with exemplars and provenance; SEDIMA writes evidence-linked insights after each evaluation and retrieves synthesized advice through a persistent semantic hierarchy across disjoint problems."
-  # November 2026 applications and evaluation: source evidence in nots/2026-11-02-review-{b,cd}.md.
+  # Applications and evaluation.
   - from: semantic-index-evo
     to: tgr-evodag
     type: contrasts

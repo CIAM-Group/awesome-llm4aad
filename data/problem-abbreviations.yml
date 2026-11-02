@@ -1,5 +1,6 @@
-# Compact labels used only in the generated README table.
-# Paper metadata keeps full problem names for search and readability.
+# Legacy compact labels retained for earlier tooling and local alternatives.
+# The current README does not display problems or use this dictionary.
+# Paper metadata keeps full problem names for website search and details.
 problem_abbreviations:
   job shop scheduling problem: JSSP
   traveling salesman problem: TSP

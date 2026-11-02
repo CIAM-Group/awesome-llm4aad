@@ -38,7 +38,7 @@ export function TimelinePage() {
           <h1>Paper Timeline</h1>
           <p className="atlas-intro__lede">Track how LLMs design, search, and improve algorithms.</p>
         </div>
-        <div className="atlas-intro__facts" aria-label="Atlas statistics">
+        <div className="atlas-intro__facts" aria-label="Collection statistics">
           <div><strong>{atlas.papers.length}</strong><span>curated papers</span></div>
           <div><strong>{atlas.relations.length}</strong><span>typed relations</span></div>
           <div><strong>{Object.keys(atlas.taxonomy.dimensions).length}</strong><span>research dimensions</span></div>

@@ -22,7 +22,7 @@ export function App() {
       <ScrollToTop />
       <SiteHeader />
       <main>
-        <Suspense fallback={<div className="route-loading" role="status">Drawing the atlas…</div>}>
+        <Suspense fallback={<div className="route-loading" role="status">Loading the collection…</div>}>
           <Routes>
             <Route path="/" element={<TimelinePage />} />
             <Route path="/relations" element={<RelationsPage />} />

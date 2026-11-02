@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="250" viewBox="0 0 1280 250" role="img" aria-labelledby="title desc">
+  <title id="title">AHD Papers research collection</title>
+  <desc id="desc">A large AHD Papers title beside a decorative network of research nodes. The illustration does not encode actual paper relations.</desc>
+  <rect x="1" y="1" width="1278" height="248" rx="10" fill="#f4f7f5" stroke="#d5dfd9"/>
+  <text x="54" y="154" font-family="Georgia,serif" font-size="88" fill="#183d38">AHD Papers</text>
+  <g fill="none" stroke="#b6c9c1" stroke-width="1.6">
+    <path d="M730 130C785 130 780 54 836 54S908 94 958 94S1024 38 1083 38S1142 76 1193 76"/>
+    <path d="M730 130C784 130 796 207 850 207S913 155 958 155S1024 209 1076 209S1150 164 1193 164"/>
+    <path d="M836 54C875 54 912 155 958 155S1038 116 1089 116S1151 164 1193 164"/>
+    <path d="M850 207C894 207 905 94 958 94S1037 116 1089 116S1149 76 1193 76"/>
+  </g>
+  <path d="M730 130C785 130 780 54 836 54S908 94 958 94S1037 116 1089 116S1151 164 1193 164" fill="none" stroke="#267a6b" stroke-width="2.4"/>
+  <g stroke="#f4f7f5" stroke-width="4">
+    <circle cx="730" cy="130" r="9" fill="#176b63"/>
+    <circle cx="836" cy="54" r="7" fill="#176b63"/>
+    <circle cx="850" cy="207" r="6" fill="#879f94"/>
+    <circle cx="958" cy="94" r="9" fill="#176b63"/>
+    <circle cx="958" cy="155" r="7" fill="#879f94"/>
+    <circle cx="1083" cy="38" r="6" fill="#879f94"/>
+    <circle cx="1089" cy="116" r="8" fill="#176b63"/>
+    <circle cx="1076" cy="209" r="6" fill="#879f94"/>
+    <circle cx="1193" cy="76" r="6" fill="#879f94"/>
+    <circle cx="1193" cy="164" r="9" fill="#176b63"/>
+  </g>
+</svg>

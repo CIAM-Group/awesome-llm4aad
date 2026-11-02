@@ -8,6 +8,7 @@ on:
       - 'data/**'
       - 'scripts/build-content.mjs'
       - 'scripts/generate-readme.mjs'
+      - 'scripts/readme-content.mjs'
   workflow_dispatch:
 
 permissions:

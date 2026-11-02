@@ -124,6 +124,11 @@ public/paper-assets/
 artifacts/screenshots/
 .DS_Store
 
+# Local discussions, research drafts and implementation plans
+/nots/
+/plans/
+/docs/plans/
+
 # pixi
 #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
 # pixi.lock

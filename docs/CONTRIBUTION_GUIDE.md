@@ -1,16 +1,18 @@
 # Contribution Guide
 
-This guide covers papers, images, relations, and the controlled classification system. The shortest workflow happens entirely in the browser—no repository download, Node.js installation, or npm command is required.
+This guide covers papers, images, relations, and the controlled classification system. The shortest workflow happens entirely in the browser. No repository download, Node.js installation, or npm command is required.
 
 ## What automation handles
 
-After you open a pull request, GitHub Actions checks the metadata, taxonomy values, relation endpoints, image paths, tests, and website build. After merge, automation:
+After you open a pull request, GitHub Actions checks the metadata, taxonomy values, relation endpoints, image paths, tests, and website build. It also generates the README paper directory to verify that the selected layout works with your changes. After merge, automation:
 
-1. regenerates the paper table in `README.md`;
-2. regenerates `src/generated/content.json`;
+1. regenerates the year index and monthly paper tables in `README.md`.
+2. regenerates `src/generated/content.json`.
 3. rebuilds and deploys the website.
 
 Do **not** edit the generated README table or `src/generated/content.json` by hand.
+
+The README table has Paper, Publication and Links columns. Links include Paper PDF, Note and optional Code. Year links, month counts, sorting and the expanded latest month are generated from paper Markdown. The PR check does not commit generated files to your branch. The post-merge sync writes them back automatically.
 
 ## Browser-only workflow
 
@@ -94,7 +96,7 @@ summary: The method uses reflective feedback to guide the search for executable 
 ---
 ```
 
-Write full problem names in paper metadata. The README generator applies the compact labels in [`data/problem-abbreviations.yml`](../data/problem-abbreviations.yml) automatically, so contributors do not need to abbreviate them by hand.
+Write full problem names in paper metadata for website search and paper details. The README does not display problems and no longer uses `data/problem-abbreviations.yml`. The dictionary is retained for compatibility with earlier tooling, not as an additional contribution requirement.
 
 For institutions, check the original paper's author block and reuse the existing institution ID. Search by full name as well as abbreviation before proposing a new ID. Different abbreviations of the same institution should share one ID; distinct campuses, universities and research institutes must not be merged merely because their names are similar.
 
