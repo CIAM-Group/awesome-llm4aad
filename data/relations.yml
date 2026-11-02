@@ -1955,4 +1955,3 @@ relations:
     description: >-
       DGA2D and A2DEPT both pursue system-level algorithm design, but DGA2D uses
       directed operator graphs and path-dependent credit while A2DEPT uses program trees.
-
