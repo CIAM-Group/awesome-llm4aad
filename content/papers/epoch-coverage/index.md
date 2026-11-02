@@ -50,4 +50,6 @@ Learn inexpensive instance routing, jointly optimize teacher feedback, and compa
 
 ## Connections
 
-[EoH-S](../eoh-s/index.md) makes complementary heuristic sets the design object. EPOCH extends that coverage objective through search control and adds online preference learning and reflective distillation. It is distinct from [EPOCH-Evidence](../epoch-evidence/index.md), which governs research claims rather than training heuristic generators.
+Both search for complementary heuristic sets using instance-level performance. [EoH-S](../eoh-s/index.md) uses complementarity in reproduction and survival with a frozen LLM. EPOCH also uses coverage to reward operators and trigger recovery, while training the generator on verified preference pairs and reflective improvements.
+
+This is distinct from [EPOCH-Evidence](../epoch-evidence/index.md), which governs research claims rather than training heuristic generators.

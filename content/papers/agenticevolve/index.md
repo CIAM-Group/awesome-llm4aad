@@ -51,4 +51,4 @@ Use enforced sandboxes, include experiment runtime in cost frontiers, and evalua
 
 ## Connections
 
-[AHD Agent](../ahd-agent/index.md) provides diagnostic actions for heuristic design. AgenticEvolve instead lets persistent island agents author arbitrary analysis scripts while retaining explicit population archives and migration; the distinction is self-designed experiments within an evolutionary scaffold.
+Both let an agent gather evidence between formal heuristic evaluations. [AHD Agent](../ahd-agent/index.md) chooses from predefined instance-analysis and AST diagnostics. AgenticEvolve lets persistent island agents write and run their own analysis scripts before committing a candidate to the protected evaluator.

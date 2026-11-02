@@ -52,4 +52,4 @@ Run repeated, fully matched end-to-end cost comparisons, expand to expensive sci
 
 ## Connections
 
-[EvoMem](../evomem/index.md) also preserves lessons from successful program changes. TTME separates failure-derived implementation rules from reusable strategy families and tests memory as a substitute for parametric adaptation under fixed archive rules.
+Both turn evaluated code changes into reusable mutation guidance. [EvoMem](../evomem/index.md) consolidates memory after a run for retrieval in later runs. TTME updates operational guidelines and strategy families during the active search, then adapts selected strategies into parent-specific edit instructions.

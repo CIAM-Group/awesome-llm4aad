@@ -40,4 +40,4 @@ Expand adversarial verification, evaluate fixed-key calibration prospectively, a
 
 ## Connections
 
-The related-work discussion explicitly places AutoMark alongside evaluator-guided program discovery such as [AlphaEvolve](../alphaevolve/index.md). Its contribution in that setting is to specify watermark admissibility—distribution preservation and false-positive calibration, including reliability for a fixed key—before optimizing detection and robustness. This is a contextual connection, not a claim of shared implementation or formal correctness guarantees.
+AutoMark cites [AlphaEvolve](../alphaevolve/index.md) when motivating evaluator-guided discovery, then studies the additional statistical safeguards needed for watermark search. Distribution preservation and false-positive controls are checked before detection and robustness scores are trusted. This is evaluation context, not implementation reuse.

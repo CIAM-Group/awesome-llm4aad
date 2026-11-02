@@ -54,4 +54,6 @@ Test corrupted or contradictory notebook summaries, noisy evaluations, and long-
 
 ## Connections
 
-[RefineEvo](../refineevo/index.md) separates Planner, Evolver, and Reflector roles with a bidirectional experience pool. LabBook instead delegates retrieval and memory rewriting to one agent. [EvoDuet](../evoduet/index.md) searches external documents, whereas LabBook retrieves exact records from its own run.
+[RefineEvo](../refineevo/index.md) retrieves structured positive and negative lessons to guide its planned evolutionary operations. LabBook lets one agent rewrite a compact notebook and selectively reopen exact past code and results before proposing the next program.
+
+LabBook updates memory from the current discovery run and retrieves exact experiments before each new program. [MUSE](../muse/index.md) freezes a bank built from prior tasks, then gates implementation advice after tool returns. They place experimental memory at different points in the coding process.

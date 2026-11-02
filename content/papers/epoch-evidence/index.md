@@ -51,4 +51,6 @@ Release replayable artifacts and complete resource ledgers, enlarge paired evalu
 
 ## Connections
 
-[Lean Runtime](../lean-runtime/index.md) pursues machine-checked asymptotic runtime certificates for generated randomized algorithms. EPOCH instead governs heterogeneous empirical, finite, and formal evidence through scoped admission. Both constrain what can be claimed, but only the former makes a particular runtime-proof target central. This EPOCH is unrelated to [EPOCH-Coverage](../epoch-coverage/index.md).
+Both separate a promising score from an accepted research result, but place evidence review differently. EPOCH includes challenge, claim support and replay in an explicit admission contract, with unresolved checks blocking acceptance. [Épi](../epi/index.md) fixes validity and meaningful-gain criteria for each campaign and uses a separate model's review to redirect research, while an isolated verifier checks the artifact. The distinction is admission control versus directional review, not proof versus no proof.
+
+This is distinct from [EPOCH-Coverage](../epoch-coverage/index.md), which trains heuristic generators using coverage and preferences.

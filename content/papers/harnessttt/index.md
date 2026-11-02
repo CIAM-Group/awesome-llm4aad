@@ -59,4 +59,4 @@ Explain and resolve quarantined task protocols, release audit artifacts, repeat 
 
 ## Connections
 
-[CALM](../calm/index.md) updates the model generating heuristic code. HarnessTTT routes evaluation reward into a separate harness proposer while freezing the executor, changing both the trained object and the transferable artifact.
+Both train a proposer with frozen execution, but [Guidance-TTT](../guidance-ttt/index.md) learns parent-conditioned strategic changes whereas HarnessTTT searches the executor's prompts, skills, tools, and middleware as a complete harness.

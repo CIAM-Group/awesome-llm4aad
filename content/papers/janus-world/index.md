@@ -52,4 +52,6 @@ Measure forecast calibration and false-pruning rates, audit rejected proposals, 
 
 ## Connections
 
-[PathWise](../pathwise/index.md) uses a learned predictive representation to plan heuristic discovery. JANUS instead maintains a research DAG and updates explicit prediction and coordination skills from experiments while ranking proposals on immediate and downstream value. This is not the earlier repository entry named [Janus](../janus/index.md).
+The two systems give world models different roles in selecting search actions. [PathWise](../pathwise/index.md) generates and executes multiple heuristic rollouts before choosing an entailment step. JANUS predicts proposal value before implementation, combining expected improvement, information gain and future exploration utility.
+
+This is distinct from the earlier paper named [Janus](../janus/index.md).

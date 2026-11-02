@@ -50,4 +50,6 @@ Increase independent generation blocks, compare token- and compute-matched contr
 
 ## Connections
 
-[AlphaEvolve](../alphaevolve/index.md) supplies the program-evolution mechanism, adapted to exact quantum-code evaluation. [Weight-Five BB](../weight-five-bb/index.md) also evolves generators, but emphasizes catalogue certification and connected-component reduction rather than researcher-derived infinite families.
+The EAQECC study uses [AlphaEvolve](../alphaevolve/index.md) to modify exact-oracle-guided search programs, then separates finite-code generation from researcher-led family generalization, checked algebra, and nonexistence certificates.
+
+For quantum-code discovery, [Weight-Five BB](../weight-five-bb/index.md) uses staged distance estimates to rank candidates and certifies selected results afterward. EAQECC Discovery uses exact parameter evaluation within its program search and independently rechecks returned codes. The code families and evaluation costs differ.

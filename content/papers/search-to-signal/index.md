@@ -49,4 +49,6 @@ Repeat with larger groups, additional hosts and models, and timestamped end-to-e
 
 ## Connections
 
-The intervention preserves [CALM](../calm/index.md)'s co-evolutionary loop while replacing and auditing its reward construction. [PCPO](../pcpo/index.md) instead curates replayed elites and adds periodic positive off-policy updates, changing the training-data and update organization as well as credit assignment.
+Search to Signal retains [CALM](../calm/index.md)'s search transitions and GRPO backend while implementing alternative reward mappings. Shared-record and reset-search audits separate effective learner credit from archive growth and endpoint performance.
+
+[PCPO](../pcpo/index.md) gives every replayed verified elite positive rank-based credit. Search to Signal keeps CALM's group-relative normalizer fixed and examines when positive learner credit does not mean improvement over a parent or frontier. This contrasts credit rules, not end-to-end system performance.

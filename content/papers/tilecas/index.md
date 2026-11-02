@@ -54,4 +54,6 @@ Test deeper abstraction hierarchies, quantify porting effort, and compare uncert
 
 ## Connections
 
-[ADSL-PDE](../adsl-pde/index.md) constrains search to a typed solver language with a fixed compilation path. TileCas makes the abstraction level itself editable and revisitable, trading a smaller guaranteed structure for greater low-level control.
+Both retain kernel candidates across abstraction levels. TileCas explicitly selects the source candidate, edit action and target level for a base workflow. [LEKA](../edgekernelbench/index.md) assigns agents to portable IR levels and routes hardware feedback to the responsible layer. Both support revisiting retained alternatives.
+
+Both consider when kernel development should leave a high-level representation. TileCas explicitly selects an edit action, retained source candidate and abstraction level from mapped code and profiling evidence. In [JustGoal](../justgoal/index.md)'s GDN case study, the general coding agent decides its own progression from Triton to CUDA and hardware-specific tensor-core instructions without prescribed stages. This compares explicit abstraction scheduling with agent-directed toolchain changes.

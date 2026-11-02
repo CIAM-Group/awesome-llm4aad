@@ -8,36 +8,37 @@ relations:
     type: adapts
     dimension: scope
     description: >-
-      QSA instantiates AlphaEvolve-style program evolution through OpenEvolve for
-      quantum compiler passes and runtime policies, retaining program-database
-      selection and LLM mutation while adding hardness-guided circuit coresets,
-      execution snapshots, and quantum-specific rewards.
+      QSA applies the AlphaEvolve-style program-evolution loop through OpenEvolve to quantum compiler
+      passes and runtime policies. Its quantum-specific contribution is the verification, execution
+      context and reward harness, not a direct modification of the AlphaEvolve implementation.
   # Search and memory methods.
   - from: mcts-ahd
     to: dream-cop
     type: contrasts
     dimension: search
-    description: "MCTS-AHD allocates revisions with a fixed tree-search rule; Dream-COP learns executable branching and stopping policies by replaying recorded search trees before deployment."
-  - from: llamea-hpo
-    to: lean-runtime
-    type: contrasts
-    dimension: feedback
-    description: "LLaMEA-HPO evaluates generated black-box optimizers empirically with hyperparameter optimization; Lean Runtime filters formal optimizer definitions through proof guards and drift certificates, obtaining query-complexity guarantees rather than benchmark fitness."
-  - from: shinkaevolve
-    to: coral-discovery
-    type: contrasts
-    dimension: search
-    description: "ShinkaEvolve screens candidate novelty and adapts evolutionary sampling; Coral Discovery allocates persistent agents across verified mechanism-level directions using direction-local credit and an explicit new-direction option."
+    description: >-
+      Both allocate heuristic-generation budget across revision branches. MCTS-AHD uses a prescribed
+      UCT rule with exploration decay. Dream-COP instead searches executable branching and stopping
+      policies by replaying recorded trees, then deploys the selected policy in the next real search
+      round.
   - from: evomem
     to: ttme
     type: contrasts
     dimension: feedback
-    description: "EvoMem retrieves lessons from successful mutations; TTME maintains separate operational guidelines and strategy families, adapting strategies to selected parents while replacing test-time weight updates within otherwise unchanged discovery loops."
+    description: >-
+      Both turn evaluated code changes into reusable mutation guidance. EvoMem consolidates memory
+      after a run for retrieval in later runs. TTME updates operational guidelines and strategy
+      families during the active search, then adapts selected strategies into parent-specific edit
+      instructions.
   - from: ahd-agent
     to: agenticevolve
     type: contrasts
     dimension: feedback
-    description: "AHD Agent supplies predefined heuristic-diagnostic actions; AgenticEvolve lets persistent agents write their own analysis scripts between formal evaluations, while an island archive and migration retain explicit population structure."
+    description: >-
+      Both let an agent gather evidence between formal heuristic evaluations. AHD Agent chooses from
+      predefined instance-analysis and AST diagnostics. AgenticEvolve lets persistent island agents
+      write and run their own analysis scripts before committing a candidate to the protected
+      evaluator.
   - from: eoh
     to: prs
     type: contrasts
@@ -47,7 +48,11 @@ relations:
     to: expevolve
     type: contrasts
     dimension: feedback
-    description: "EvoMem retrieves mutation lessons; ExpEvolve admits explicit idea factors using unexplained score contrasts and archive support, then uses bandit-selected factor edits and background-factor suppression to steer search."
+    description: >-
+      Both screen reusable ideas before using them to guide code changes. EvoMem promotes advice
+      supported by mutation lineage and downstream outcomes. ExpEvolve admits explicit factors that
+      explain previously unexplained score contrasts, then turns those factors into bandit-selected
+      edit actions.
   - from: relayevolve
     to: specevo
     type: contrasts
@@ -67,7 +72,11 @@ relations:
     to: organon
     type: contrasts
     dimension: design-object
-    description: "Beyond Algorithm Evolution co-evolves solver code and guiding prompts; Organon makes selection, survival, tools, memory, worker coordination, and even revision procedures dynamically editable while preserving an authoritative evaluator and accumulated history."
+    description: >-
+      Both let program search revise part of its own control process. Beyond Algorithm Evolution
+      co-evolves operation-specific prompt templates with solver code. Organon instead exposes the
+      live selection, survival, tool, memory and coordination procedures for reversible revision while
+      keeping official evaluation fixed.
   - from: simpleevol
     to: discovery-forgetting
     type: contrasts
@@ -77,22 +86,29 @@ relations:
     to: epoch-coverage
     type: contrasts
     dimension: search
-    description: "EoH-S selects complementary heuristics with a frozen generator; EPOCH-Coverage uses instance-coverage gaps throughout parent choice, operator allocation, and recovery, while training its generator with verified reflective preference pairs."
-  - from: calm
-    to: harnessttt
-    type: contrasts
-    dimension: design-object
-    description: "CALM trains the model that directly generates heuristics; HarnessTTT instead trains a separate proposer of executable prompts, tools, middleware, and controls, using frozen-executor rollout rewards and retaining the harness as a transferable artifact."
+    description: >-
+      Both search for complementary heuristic sets using instance-level performance. EoH-S uses
+      complementarity in reproduction and survival with a frozen LLM. EPOCH also uses coverage to
+      reward operators and trigger recovery, while training the generator on verified preference pairs
+      and reflective improvements.
   - from: archagent-v2
     to: duodiscover
     type: contrasts
     dimension: feedback
-    description: "ArchAgent v2 searches with predefined shortened traces before longer hardware validation; DuoDiscover co-discovers target-specific proxy evaluators and continuously tests their ranking agreement, invalidating proxies when optimized candidates expose drift."
+    description: >-
+      Both reduce the cost of evaluating generated optimization code. ArchAgent v2 searches using
+      predetermined short ChampSim traces and validates selected prefetchers on longer traces.
+      DuoDiscover co-discovers target-specific proxy evaluators and repeatedly checks their ranking
+      agreement with true evaluations.
   - from: pathwise
     to: janus-world
     type: contrasts
     dimension: search
-    description: "PathWise plans heuristic discovery with a predictive representation; JANUS-World ranks research proposals in a DAG by immediate improvement, information gain, and follow-up utility, then revises explicit prediction and coordination skills from execution outcomes."
+    description: >-
+      The two systems give world models different roles in selecting search actions. PathWise
+      generates and executes multiple heuristic rollouts before choosing an entailment step. JANUS
+      predicts proposal value before implementation, combining expected improvement, information gain
+      and future exploration utility.
   - from: shinkaevolve
     to: evoalloc
     type: extends
@@ -102,12 +118,11 @@ relations:
     to: gal
     type: contrasts
     dimension: feedback
-    description: "RAISE uses adversarial instance search within a prescribed uncertainty set; GAL evolves structured test generators and repairs approximate-inference code against the accumulated counterexamples."
-  - from: calm
-    to: agar
-    type: contrasts
-    dimension: feedback
-    description: "CALM updates generator parameters using online reinforcement learning; AGAR keeps the generator frozen and revises persistent text guidelines for separate controller modules, without empirical Bellman backups."
+    description: >-
+      Both alternate algorithm improvement with the discovery of failure cases. RAISE uses LLM-free
+      instance search inside a prescribed uncertainty set. GAL evolves test-generating programs for
+      inference algorithms, admits cases solved by unapproximated inference and repairs against the
+      accumulated counterexamples.
   - from: sla
     to: discovery-forgetting
     type: contrasts
@@ -118,16 +133,6 @@ relations:
     type: contrasts
     dimension: design-object
     description: "Both train a proposer with frozen execution, but Guidance-TTT learns parent-conditioned strategic changes whereas HarnessTTT searches the executor's prompts, skills, tools, and middleware as a complete harness."
-  - from: meco
-    to: population-evolution
-    type: contrasts
-    dimension: scope
-    description: "MECo evolves a frozen heuristic set using source-task feedback for unseen constraint combinations; PE exchanges executable model interventions, retrains them on peer instances, and promotes them across training scales."
-  - from: epoch-evidence
-    to: lean-runtime
-    type: contrasts
-    dimension: feedback
-    description: "EPOCH admits artifacts according to scoped empirical, finite, or formal evidence and independent replay; Lean Runtime makes Lean-checked asymptotic expected-runtime certificates the specific validation target for generated randomized algorithms."
   - from: agentdiscover
     to: sla
     type: contrasts
@@ -137,7 +142,11 @@ relations:
     to: dish
     type: contrasts
     dimension: feedback
-    description: "RefineEvo uses population-conditioned operator scheduling and retrieved trajectory lessons; DiSH derives independent edit-scope restrictions from feasibility and groups diagnostic failures to preserve previously valid solver behavior."
+    description: >-
+      Both use failure evidence to guide solver revision. RefineEvo adapts operator prompts and
+      retrieves successful and failed edit experiences. DiSH separately constrains the permitted edit
+      scope by current feasibility and groups diagnostic failures into repair directions to reduce
+      regressions.
   - from: adaeva
     to: evoalloc
     type: contrasts
@@ -152,7 +161,11 @@ relations:
     to: meco
     type: contrasts
     dimension: scope
-    description: "EoH-S optimizes complementary instance coverage; MECo coordinates task-conditioned populations and selects a set from source-combination scores to transfer to unseen constraint combinations without target-side heuristic search."
+    description: >-
+      Both select complementary heuristic sets, but define coverage differently. EoH-S covers
+      instances within one problem distribution. MECo combines task-conditioned populations and
+      selects using source-task combinations before applying the frozen set to unseen constraint
+      combinations.
   - from: evomem
     to: sedima
     type: contrasts
@@ -164,17 +177,18 @@ relations:
     type: contrasts
     dimension: feedback
     description: >-
-      Semantic-index evolution restricts mutable components to preserve tiny-generator
-      proxy transfer, whereas TGR-EvoDAG budgets stage-dependent retraining and
-      deliberately adapts downstream stages after upstream changes.
+      Both face coupled stages and costly retraining in generative retrieval systems. Evolving
+      Semantic Indexes finds that a tiny-generator proxy transfers better for index changes than for
+      unrestricted objective or pipeline edits. TGR-EvoDAG instead budgets stage-dependent retraining
+      and explicitly adapts downstream stages after upstream changes.
   - from: evoskillrec
     to: tgr-evodag
     type: contrasts
     dimension: design-object
     description: >-
-      EvoSkillRec combines open-code exploration with promotion into typed reusable
-      architecture skills; TGR-EvoDAG instead merges complete recommendation-code
-      branches and enforces downstream adaptation after upstream-stage changes.
+      Both reuse code discoveries in recommender search. EvoSkillRec promotes validated modules into
+      typed skills for composition inside an architecture. TGR-EvoDAG keeps a graph of evaluated code
+      versions and merges complementary branches, resolving code and cross-stage dependencies.
   - from: shinkaevolve
     to: adapt-science
     type: adapts
@@ -184,45 +198,23 @@ relations:
       program search in scientific-history retrieval and separate evolution of
       initialization-selection policies and numerical optimizers.
   - from: alphaevolve
-    to: comrsi
-    type: contrasts
-    dimension: search
-    description: >-
-      AlphaEvolve preserves a diverse candidate population, whereas ComRSI follows
-      one accepted code lineage with a minimum-improvement and paired-bootstrap
-      gate, trading search breadth for controlled cumulative revisions.
-  - from: alphaevolve
-    to: ai-research-teams
-    type: contrasts
-    dimension: search
-    description: >-
-      AlphaEvolve organizes exploration around archived programs; AI Research Teams
-      additionally allocates opportunities to persistent researchers through
-      discounted improvement credit and preserves their private reasoning histories.
-  - from: alphaevolve
     to: precocial
     type: contrasts
     dimension: feedback
     description: >-
-      PRECOCIAL explicitly replaces independently trained program evaluations with
-      a single accepted lineage that carries neural pretraining checkpoints forward,
-      making fitness history-dependent while reducing repeated training.
+      For pretraining-program search, PRECOCIAL contrasts its single accepted lineage with
+      population-based AlphaEvolve runs that train a fresh network for each candidate. Continuing or
+      rolling back the accepted checkpoint reduces repeated training but makes candidate fitness
+      depend on search history.
   - from: tide
     to: evo-bnb
     type: adapts
     dimension: search
     description: >-
-      Evo-B&B uses TIDE's separation of island-based structural evolution and
-      numerical tuning for joint SCIP policies, adding matched behavioral probes
-      and restricting local tuning to promising retained candidates.
-  - from: alphaevolve
-    to: autonovo
-    type: contrasts
-    dimension: feedback
-    description: >-
-      AutoNovo separates the oracle queried by an evolved sequence optimizer from
-      an optional orthogonal oracle used by outer program selection, making transfer
-      quality a distinct search signal rather than relying on direct optimization reward.
+      Evo-B&B adapts TIDE's multi-island organization and separation of structural search from
+      numerical tuning to joint SCIP branching and node-selection policies. It uses matched decision
+      probes for diversity and limits bounded-Gaussian tuning to retained policies close to the island
+      best.
   - from: aite
     to: siteevo
     type: contrasts
@@ -236,17 +228,19 @@ relations:
     type: contrasts
     dimension: search
     description: >-
-      MCTS-AHD expands heuristic-program nodes; LLM-BlockFE uses immutable block
-      extensions and depth-calibrated child-success estimates for rollback, trading
-      unrestricted rewriting for stable incremental feature-program construction.
+      MCTS-AHD selects heuristic-program branches with UCT and backpropagated quality statistics.
+      LLM-BlockFE instead freezes accepted code blocks and uses depth-calibrated estimates of child
+      success to continue or backtrack, preserving stable prefixes while restricting subsequent edits.
   - from: leanplan
     to: kernaut
     type: contrasts
     dimension: feedback
     description: >-
-      LeanPlan requires a generated admissibility proof for each heuristic, while
-      Kernaut assembles kernels through trusted PSD-preserving constructions and
-      checks component behavior, contrasting proof search with restricted construction.
+      LeanPlan accepts a domain heuristic only with Lean-checked consistency and goal-awareness proofs
+      under an explicit certificate. Kernaut instead assembles kernels through PSD-preserving
+      construction contracts, supplemented by checks on component purity and interfaces. The
+      comparison is proof generation versus constrained construction, not an equivalence of
+      guarantees.
   - from: reevo
     to: reevo-fas
     type: adapts
@@ -260,9 +254,10 @@ relations:
     type: contrasts
     dimension: search
     description: >-
-      MuEvo keeps component participation reversible and tests collaboration contexts;
-      RLDiscover first freezes isolated component improvements, then switches to
-      joint evolution under progressively longer multi-seed training evaluations.
+      MuEvo keeps component eligibility reversible and evaluates updates with multiple collaborators
+      throughout search. RLDiscover first freezes low-gain single-component search arms, validates a
+      merged seed, then allows joint changes to any components under staged training evaluation. These
+      are different schedules for discovering component interactions.
   - from: a-ceoh
     to: leanplan
     type: contrasts
@@ -276,25 +271,11 @@ relations:
     type: contrasts
     dimension: design-object
     description: >-
-      AutoSella modifies an established optimizer on fixed molecular benchmark
-      inputs behind force-cost and energy-fidelity gates; ADAPT co-designs historical
-      initialization selection and the subsequent optimizer as separate programs.
-  - from: knowledgefirst
-    to: adsd
-    type: contrasts
-    dimension: feedback
-    description: >-
-      Knowledge-first evolves algorithmic principles and tests their code realizations;
-      ADSD starts with numerical failure diagnoses and admits literature-derived
-      executable skills only after claim audits and empirical implementation checks.
-  - from: optiskill
-    to: adsd
-    type: contrasts
-    dimension: feedback
-    description: >-
-      OptiSkill revises trajectory-derived formulation knowledge through batch-level
-      bank checks, whereas ADSD builds literature-backed numerical solver skills
-      from verified diagnoses and freezes them before private evaluation.
+      The studies expose different parts of a scientific optimization pipeline to code search.
+      AutoSella edits the molecular optimizer while benchmark starting structures remain fixed. ADAPT
+      evolves both the policy that selects an initialization from historical designs and the optimizer
+      that follows it. This compares the boundary of the design space, not performance across the two
+      scientific tasks.
   - from: eoh
     to: trace
     type: extends
@@ -308,9 +289,9 @@ relations:
     type: contrasts
     dimension: search
     description: >-
-      ShinkaEvolve maintains a program population; the anomaly-detector study keeps
-      one agent's complete edit history, including regressions, and selects its
-      session-best program without automatic hill-climbing rejection.
+      The anomaly-detector study contrasts ShinkaEvolve's sampled parent and inspiration programs with
+      a single coding session that retains its sequence of attempts, including regressions. The latter
+      returns the session-best detector without automatically reverting each unsuccessful edit.
   - from: network-world-models
     to: trace
     type: contrasts
@@ -324,33 +305,27 @@ relations:
     type: adapts
     dimension: design-object
     description: >-
-      OpenArchEvo explicitly carries EoH's idea-code pairing into spike-constrained
-      architecture programs and adds initialization-time behavioral fingerprints
-      for novelty screening and surrogate-guided training allocation.
-  - from: graphir
-    to: openarchevo
-    type: contrasts
-    dimension: feedback
-    description: >-
-      GraphIR extracts tensor dependencies and mutation interfaces to guide code
-      edits; OpenArchEvo measures fixed-input responses and structural statistics
-      to estimate novelty and rank architectures before expensive training.
+      OpenArchEvo explicitly adopts EoH's idea-code pairing for spiking-network architecture programs
+      and jointly revises code and design rationales. It adds initialization-time fingerprints and
+      surrogate-guided training allocation rather than reusing EoH's full search procedure.
   - from: gradaslim
     to: autonovo
     type: contrasts
     dimension: design-object
     description: >-
-      GrAdaSlim searches source-index-preserving deletion programs with same-oracle
-      activity scoring; AutoNovo searches general sequence designers with optional
-      outer cross-oracle evaluation, separating edit validity from predictive transfer.
+      Both studies use ERA to search executable DNA designers. GrAdaSlim enforces deletion-only,
+      order-preserving outputs and scores activity with a design oracle. AutoNovo searches
+      length-preserving designers and can score programs with an additional oracle hidden from the
+      designer, separating edit validity from cross-oracle transfer.
   - from: mcts-ahd
     to: automip
     type: contrasts
     dimension: search
     description: >-
-      AutoMIP separates a persistent pool of unused research directions from its
-      tree of restorable code and artifacts, labeling local refinements and direction
-      switches rather than treating the state solely as a heuristic-program tree.
+      MCTS-AHD allocates expansions among heuristic-program nodes using UCT. AutoMIP keeps unused
+      research directions in a separate pool and restores compatible code and artifacts before a
+      direction switch. The contrast is program-tree selection versus explicit management of research
+      directions and experimental state.
   - from: formuevo
     to: automip
     type: contrasts
@@ -364,18 +339,19 @@ relations:
     type: contextualizes
     dimension: feedback
     description: >-
-      AutoMark explicitly situates watermark-program discovery in AlphaEvolve's
-      evaluator-guided research setting, then defines distribution-preservation and
-      false-positive controls that must be screened before rewarding detection and
-      robustness; it does not claim to reuse AlphaEvolve's implementation.
+      AutoMark cites AlphaEvolve when motivating evaluator-guided discovery, then studies the
+      additional statistical safeguards needed for watermark search. Distribution preservation and
+      false-positive controls are checked before detection and robustness scores are trusted. This is
+      evaluation context, not implementation reuse.
   - from: evoskillrec
     to: memevo-video
     type: contrasts
     dimension: design-object
     description: >-
-      EvoSkillRec promotes validated inventions into an evolving architecture-skill
-      library; MemEvo also admits new typed operators but fixes causal memory roles
-      and freezes components along a prescribed staged search schedule.
+      Both methods expand a typed library with generated executable modules. EvoSkillRec promotes
+      modules carried by successful recommender architectures for later recombination. MemEvo admits
+      new memory operators inside fixed causal roles and searches those roles in a prescribed order,
+      trading compositional freedom for a stable runtime contract.
 
 
   # R01
@@ -389,13 +365,12 @@ relations:
     to: research-arena
     type: contrasts
     dimension: feedback
-    description: "AI4AI-Bench independently rechecks research claims; Auto-Research Arena makes quality and non-target resource constraints explicit admission gates and charges failed GPU experiments while leaving harness search policy open."
+    description: >-
+      AI4AI-Bench separates proxy-guided development from a fresh final run scored by a hidden
+      evaluator. Auto-Research Arena exposes constrained resource objectives in a shared
+      language-modeling setting and charges every started GPU experiment, including failures. They
+      assess research code under different feedback and budget contracts.
   # R03
-  - from: alphaevolve
-    to: research-arena
-    type: contextualizes
-    dimension: scope
-    description: "Auto-Research Arena explicitly situates population-based program evolution among research harnesses and compares open search procedures under shared language-model quality and resource objectives."
   # R04
   - from: alphaevolve
     to: radonbench
@@ -403,53 +378,49 @@ relations:
     dimension: design-object
     description: "RadonBench uses an OpenEvolve constructor-program search with exact Radon certificates, transferring executable evolutionary discovery to unresolved geometric construction targets without reporting a successful target construction."
   # R05
-  - from: behavesim
-    to: principle-collapse
-    type: contrasts
-    dimension: feedback
-    description: "BehaveSim measures executed trajectory distance for selection; Principle Collapse diagnoses retained design-route concentration jointly with an attainable-reference gap and a plateau, contrasting observable diversity granularity and purpose."
   # R06
   - from: evolution-or-illusion
     to: token-accounting
     type: contrasts
     dimension: feedback
-    description: "The token-accounting analysis revisits width/depth trajectory comparisons with cumulative model-token budgets and candidate-validity audits, rather than treating a proposal as a common unit of search cost."
+    description: >-
+      Evolution or Illusion compares width and depth at a fixed number of proposals. The
+      token-accounting study treats proposal cost as variable and compares logged search with
+      independent sampling at equal cumulative model tokens. The papers address complementary
+      accounting choices, and the latter describes the former as concurrent work.
   # R07
   - from: behavesim
     to: divalgo
     type: contrasts
     dimension: feedback
-    description: "DivAlgo evaluates algorithmic diversity through a learned static paradigm–technique–data-structure similarity, whereas BehaveSim instruments executed trajectories; the trade-off is portable source-level semantics versus task-specific behavioral evidence."
+    description: >-
+      BehaveSim compares instrumented problem-solving trajectories with dynamic time warping. DivAlgo
+      estimates population diversity using a source-code embedding distilled from pairwise LLM
+      judgments and a Vendi score, with separate ontology labels for interpretation. It also checks
+      the static metric on BehaveSim's human-curated examples.
   # R08
   - from: alphaevolve
     to: bermudan-audit
     type: contextualizes
     dimension: feedback
-    description: "The Bermudan audit explicitly places executable discovery beside AlphaEvolve while showing why noisy policy evaluation and a loose primal–dual gap cannot serve as an exact construction certificate or reliable optimization headroom."
+    description: >-
+      The Bermudan audit cites AlphaEvolve's mathematical-discovery setting to motivate a different
+      evaluation regime. For stopping policies scored by noisy simulation, it separates policy value,
+      estimated primal-dual gaps and bound looseness, showing why a search score alone need not
+      certify improvement.
   # R09
-  - from: adsl-pde
-    to: worldsolver
-    type: contrasts
-    dimension: feedback
-    description: "ADSL-PDE constrains solver descriptions through a typed compilation interface; WorldSolver permits solver implementations behind a fixed simulation interface and evaluates executable trajectories through visual and physical evidence."
   # R10
   - from: strongprior
     to: d2k-bench
     type: contrasts
     dimension: feedback
-    description: "StrongPrior initializes search with strong executable priors; D2K-Bench supplies progressively detailed expert design explanations without expert source, isolating access to implementation knowledge from access to an executable seed."
+    description: >-
+      StrongPrior guides search with executable benchmark algorithms as starting points and recurring
+      code examples. D2K-Bench supplies layered expert design guidance while withholding expert
+      implementations. The contrast concerns the form of prior knowledge available to code generation,
+      not a controlled comparison of code and prose across tasks.
   # R11
-  - from: when-ai-designs-ai
-    to: algoreval
-    type: contrasts
-    dimension: feedback
-    description: "When AI Designs AI assesses empirical quality and design differences; AlgoREval instead requests a named published algorithm and tests executable reconstruction, separating reproduction ability from novelty claims."
   # R12
-  - from: algoreval
-    to: divalgo
-    type: contrasts
-    dimension: feedback
-    description: "AlgoREval asks whether a named algorithm can be reconstructed correctly; DivAlgo asks whether a set of solutions spans different algorithmic paradigms, techniques, and structures, distinguishing single-program reproduction from population diversity."
   # R13
   - from: alphaevolve
     to: eaqecc-families
@@ -461,25 +432,22 @@ relations:
     to: rngd-kernel-loop
     type: contrasts
     dimension: feedback
-    description: "AscendEvolve retrieves versioned external platform evidence; the RNGD case actively builds, measures, and rechecks target knowledge during toolchain changes, contrasting complementary ways to ground unfamiliar-accelerator search."
+    description: >-
+      For unfamiliar accelerators, AscendEvolve retrieves from a version-scoped platform corpus and
+      records task-local counterevidence. The RNGD loop explicitly builds and rechecks its platform
+      knowledge with probe kernels and compiler tests when the toolchain changes.
   # R15
-  - from: kernel-proof
-    to: bievolve
-    type: contrasts
-    dimension: feedback
-    description: "Kernel Proofs targets conditional floating-point equivalence and parallel safety; BIEvolve screens dependencies and tests bitwise outputs across batch contexts, adding a separate property with finite rather than universal checks."
   # R16
-  - from: tilecas
-    to: autoprofiler
-    type: contrasts
-    dimension: feedback
-    description: "TileCas attributes measurements across editable abstraction levels; AutoProfiler evolves a deterministic policy for which measurements to acquire before a fixed downstream rewrite, contrasting feedback interpretation with evidence acquisition."
   # R17
   - from: d2k-bench
     to: justgoal
     type: contrasts
     dimension: feedback
-    description: "D2K-Bench measures benefits of expert design explanations; JustGoal tests whether specialized guidance and workflow components add value beyond a same-model, same-scope agent that constructs its own evaluation loop."
+    description: >-
+      D2K-Bench isolates the value of supplied algorithmic and dataflow guidance with paired
+      kernel-development runs. JustGoal asks a general coding agent to construct its own optimization
+      loop from a goal and constraints. They probe the need for specialized guidance under different
+      tasks and controls.
   # R18
   - from: alphaevolve
     to: splatlab
@@ -491,37 +459,41 @@ relations:
     to: splatlab
     type: adapts
     dimension: feedback
-    description: "SplatLab explicitly uses ReEvo-style verbal gradients to turn candidate comparisons and experimental weaknesses into revisions inside its 3DGS island tournament."
+    description: >-
+      SplatLab explicitly adopts ReEvo's verbal-gradient idea, but sends rationales from measured 3DGS
+      candidate comparisons to its ideator. The reflections guide new plugin ideas rather than ReEvo's
+      original heuristic mutation step.
   # R20
   - from: llm-sr
     to: optscientist
     type: contrasts
     dimension: design-object
-    description: "LLM-SR searches expressions describing observations; OptScientist infers symbolic objectives and constraints whose induced optimizing choices explain observations, changing the scientific artifact and its identification problem."
+    description: >-
+      LLM-SR proposes symbolic equations that predict observed outputs. OptScientist instead recovers
+      objectives and constraints whose optimizing choices explain those outputs, using an optimization
+      learner and symbolic distillation inside an LLM-assisted research loop.
   # R21
-  - from: knowledgefirst
-    to: ascendevolve
-    type: contrasts
-    dimension: feedback
-    description: "Knowledge-first evolves knowledge hypotheses through their generated implementations; AscendEvolve instead retrieves versioned external platform evidence to constrain executable kernel search."
   # R22
   - from: tilecas
     to: edgekernelbench
     type: contrasts
     dimension: design-object
-    description: "TileCas retains revisitable high- and low-level source alternatives, including rollback; LEKA uses a common graph–tensor–schedule IR with progressive lowering, contrasting abstraction revisitation with layered backend portability."
+    description: >-
+      Both retain kernel candidates across abstraction levels. TileCas explicitly selects the source
+      candidate, edit action and target level for a base workflow. LEKA assigns agents to portable IR
+      levels and routes hardware feedback to the responsible layer. Both support revisiting retained
+      alternatives.
   # R23
   - from: d2k-bench
     to: kernel-proof
     type: contrasts
     dimension: feedback
-    description: "D2K-Bench combines finite execution tests with design-adherence judgments; Kernel Proofs instead generates conditional semantic-equivalence and parallel-safety proof obligations, exposing different guarantees for generated kernels."
+    description: >-
+      D2K-Bench checks generated kernels by execution and separately judges adherence to expert
+      designs. Kernel Proofs checks semantic equivalence and parallel safety through formal
+      obligations under stated assumptions. The comparison concerns what correctness evidence
+      establishes, not which method produces faster kernels.
   # R24
-  - from: eoh
-    to: mosaic-dag
-    type: contrasts
-    dimension: design-object
-    description: "EoH searches executable heuristics and paired explanations; MoSAIC fixes a priority-feature family, recovers weights with Bayesian optimization, and trains an LLM's ready-task decisions from optimal schedules."
   # R25
   - from: dgm
     to: harmony-harness
@@ -529,17 +501,16 @@ relations:
     dimension: design-object
     description: "DGM archives whole self-modified coding agents; Harmony Harness separates general and environment-specific components and decomposes selection across objectives before recomposing the harness."
   # R26
-  - from: adsl-pde
-    to: tilecas
-    type: contrasts
-    dimension: design-object
-    description: "ADSL-PDE keeps search within a typed solver description and fixed compiler path; TileCas makes the representation level itself a revisitable search decision to expose lower-level performance controls."
   # R27
   - from: funsearch
     to: elitetable
     type: contrasts
     dimension: search
-    description: "FunSearch organizes archived programs across islands; EliteTable tests a fixed ten-program table with new, edit, and remix operators for control policies, without controls establishing the superiority of that archive design."
+    description: >-
+      FunSearch samples parents within separate islands and periodically reseeds weak islands.
+      EliteTable uses one top-ten table, frozen during each generation, with uniform parent sampling
+      for edit and remix proposals. These are different archive choices, not a demonstrated ranking
+      between them.
   # R28
   - from: alphaevolve
     to: art-eda
@@ -547,23 +518,25 @@ relations:
     dimension: scope
     description: "The EDA trials explicitly situate their executable research beside AlphaEvolve, then distinguish independent acceptance authority and whole-tool utility from intermediate algorithmic or proof milestones."
   # R29
-  - from: funsearch
-    to: weight-five-bb
-    type: contrasts
-    dimension: feedback
-    description: "Both approaches evaluate programs that construct mathematical objects, but weight-five code search ranks with staged distance estimates and selectively certifies outputs afterward, separating search fitness from exact evidence."
   # R30
   - from: weight-five-bb
     to: eaqecc-families
     type: contrasts
     dimension: feedback
-    description: "Weight-Five BB emphasizes finite-catalogue distance certificates, equivalence, and connected-component reduction; the later EAQECC study emphasizes researcher-led infinite-family generalization with a separate formal algebraic certificate."
+    description: >-
+      For quantum-code discovery, Weight-Five BB uses staged distance estimates to rank candidates and
+      certifies selected results afterward. EAQECC Discovery uses exact parameter evaluation within
+      its program search and independently rechecks returned codes. The code families and evaluation
+      costs differ.
   # R31
   - from: alphaevolve
     to: triza
     type: contrasts
-    dimension: feedback
-    description: "TRIZa predeclares contradiction-guided mutation types and separates useful metric changes from frozen evidence-qualified promotion, rather than allowing candidate score improvement alone to establish acceptance."
+    dimension: search
+    description: >-
+      AlphaEvolve proposes code diffs within user-defined editable regions. TRIZa requires a declared
+      technical contradiction and a typed TRIZ transformation before evaluation. The difference is how
+      proposals are constrained, not whether an evaluator checks the result.
   - from: shinkaevolve
     to: discovery-init
     type: extends
@@ -585,25 +558,17 @@ relations:
     type: contrasts
     dimension: feedback
     description: >-
-      RefineEvo uses distinct planning, evolution, and reflection roles with a
-      bidirectional experience pool. LabBook gives one agent a rewritten notebook
-      and read-only access to exact experiments, without a population controller.
-  - from: evoduet
-    to: labbook
-    type: contrasts
-    dimension: feedback
-    description: >-
-      EvoDuet refines web queries to acquire external knowledge for program proposals.
-      LabBook instead retrieves exact code and measured outcomes from its own run;
-      the distinction is new evidence acquisition versus selective experimental recall.
+      RefineEvo retrieves structured positive and negative lessons to guide its planned evolutionary
+      operations. LabBook lets one agent rewrite a compact notebook and selectively reopen exact past
+      code and results before proposing the next program.
   - from: labbook
     to: muse
     type: contrasts
     dimension: feedback
     description: >-
-      LabBook rewrites within-run memory and chooses exact experiment records before
-      proposing a program. MUSE freezes cross-task memory before testing and gates
-      implementation advice at tool-return events during an ongoing coding trajectory.
+      LabBook updates memory from the current discovery run and retrieves exact experiments before
+      each new program. MUSE freezes a bank built from prior tasks, then gates implementation advice
+      after tool returns. They place experimental memory at different points in the coding process.
   - from: evopinn
     to: conflictguide
     type: contrasts
@@ -617,9 +582,10 @@ relations:
     type: contrasts
     dimension: feedback
     description: >-
-      GoalEvolve localizes unmet final objectives to physical-design stages.
-      ConflictGuide instead identifies a coupled behavioral conflict and qualifies
-      probes of its two sides before using their changes to guide model-code evolution.
+      GoalEvolve diagnoses physical-design stages from target gaps and tracks each edit's local gain,
+      side effects and final outcome. ConflictGuide keeps a mechanism-specific pair of competing
+      behaviors as its diagnostic target and qualifies probes before using them in model-code
+      evolution.
   - from: component-feedback
     to: conflictguide
     type: contrasts
@@ -641,17 +607,19 @@ relations:
     type: contrasts
     dimension: search
     description: >-
-      CALM interleaves heuristic evolution with generator updates from current
-      candidate groups. PCPO additionally maintains structurally curated, instance-bucketed
-      elites and alternates fresh on-policy learning with regularized off-policy replay.
+      CALM updates its generator from each newly evaluated evolutionary group. PCPO alternates fresh
+      on-policy updates with replay of structurally curated elites stored in instance-specific
+      buckets. These are different ways to reuse executable feedback for generator training, not an
+      established inheritance link.
   - from: pcpo
     to: search-to-signal
     type: contrasts
     dimension: feedback
     description: >-
-      PCPO deliberately gives replayed verified elites nonnegative rank-based credit.
-      Search to Signal holds CALM's group normalizer fixed and audits when peer-relative
-      positive credit differs from actual parent or frontier improvement.
+      PCPO gives every replayed verified elite positive rank-based credit. Search to Signal keeps
+      CALM's group-relative normalizer fixed and examines when positive learner credit does not mean
+      improvement over a parent or frontier. This contrasts credit rules, not end-to-end system
+      performance.
   - from: reevo
     to: component-feedback
     type: contrasts
@@ -665,17 +633,9 @@ relations:
     type: contrasts
     dimension: design-object
     description: >-
-      E2OC searches combinations of interacting MOCO operators under a fixed
-      controller. HEMO makes retrieval, targeting, parent selection, and candidate
-      evolution inside that controller editable while protecting evaluator interfaces.
-  - from: simpleevol
-    to: hemo
-    type: contrasts
-    dimension: feedback
-    description: >-
-      SimpleEvol compresses history to guide one heuristic-design trajectory.
-      HEMO retains an external record of evaluated operators across controller
-      states and evolves the policy deciding which records become active context.
+      E2OC co-evolves operator design thoughts and implementations through prescribed MCTS and
+      rotation rules. HEMO also makes the design harness's retrieval, targeting, parent-selection and
+      generation roles editable, while keeping evaluation and archive interfaces fixed.
   - from: shinkaevolve
     to: holidivevolve
     type: contrasts
@@ -689,9 +649,9 @@ relations:
     type: contrasts
     dimension: feedback
     description: >-
-      EvoMem retrieves provenance-backed lessons from successful code mutations
-      for later evolutionary proposals. MUSE uses successful and failed tool
-      trajectories and gates implementation-level advice during an agent's execution.
+      EvoMem curates provenance-backed lessons from past program-evolution jobs and retrieves advice
+      before mutations. MUSE extracts lessons from successful and failed coding trajectories, then
+      selectively injects implementation checks after tool returns.
   - from: ael
     to: funsearch
     type: concurrent-work
@@ -1955,3 +1915,266 @@ relations:
     description: >-
       DGA2D and A2DEPT both pursue system-level algorithm design, but DGA2D uses
       directed operator graphs and path-dependent credit while A2DEPT uses program trees.
+
+  # Method reuse and specific design comparisons
+  - from: eoh
+    to: meco
+    type: generalizes
+    dimension: scope
+    description: >-
+      MECo's EoH-MECo variant retains EoH's native generation and population updates inside each task
+      population. MECo adds task pairing, parent transfer and source-only set selection for zero-shot
+      evaluation on unseen constraint combinations.
+  - from: reevo
+    to: meco
+    type: generalizes
+    dimension: scope
+    description: >-
+      The ReEvo-MECo variant runs ReEvo's original search rules within MECo's task populations.
+      Task-level pairing and heuristic transfer broaden the local engine to source-only multi-task
+      search and zero-shot heuristic-set deployment.
+  - from: hsevo
+    to: meco
+    type: generalizes
+    dimension: scope
+    description: >-
+      The HSEvo-MECo variant uses HSEvo as the local heuristic engine while MECo manages task
+      populations, transfers and final set selection. This broadens the engine to unseen constraint
+      combinations, with initialization compatibility rules documented in the appendix.
+  - from: shinkaevolve
+    to: sedima
+    type: extends
+    dimension: feedback
+    description: >-
+      SEDIMA augments ShinkaEvolve with persistent cross-run insight memory through a write after
+      evaluation and a read before mutation. The integrated version keeps the underlying selection,
+      population and mutation logic unchanged.
+  - from: eoh
+    to: adaeva
+    type: extends
+    dimension: feedback
+    description: >-
+      AdaEva augments EoH with progressively allocated instance evaluations and early candidate
+      elimination. The integration preserves EoH's generator, parent selection and population update
+      rules while replacing exhaustive fitness measurement with halving or racing.
+  - from: ai-research-teams
+    to: coral-discovery
+    type: contrasts
+    dimension: search
+    description: >-
+      Both allocate scarce experiments among persistent research agents. AI Research Teams assigns
+      credit and discounted-UCB priority to individual researchers. Coral Discovery tracks verified
+      mechanism-level directions instead, including an explicit option to open a new direction.
+  - from: eoh
+    to: evo-bnb
+    type: adapts
+    dimension: design-object
+    description: >-
+      Evo-B&B reuses EoH's evolutionary prompt operators to generate joint branching and
+      node-selection policies for SCIP. Behavior-aware population management, adaptive operator
+      scheduling and selective numerical tuning surround these transferred operators.
+  - from: behavesim
+    to: openarchevo
+    type: contrasts
+    dimension: feedback
+    description: >-
+      BehaveSim measures behavioral differences through complete problem-solving trajectories.
+      OpenArchEvo cites this motivation but uses fixed initialization-time responses and architecture
+      statistics to compare SNN programs before training, exchanging task-execution evidence for
+      cheaper candidate screening.
+  - from: when-ai-designs-ai
+    to: divalgo
+    type: contrasts
+    dimension: feedback
+    description: >-
+      When AI Designs AI measures distance from human methods in reviewed, task-specific module
+      coordinates. DivAlgo measures diversity across human and generated solutions with a learned
+      code-similarity metric and separate ontology labels. The comparison is interpretable local
+      design axes versus a scalable cross-program similarity proxy.
+  - from: refineevo
+    to: agar
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both revise persistent textual controls for later program mutations. RefineEvo rewrites an
+      operator prompt when repeated uses produce invalid code or no improvement. AGAR updates
+      modular controller guidelines from rollout feedback, and replaces unconditional rewrites with
+      bounded rule edits and delayed validation. The comparison concerns how prompt-level search
+      policies are revised and checked, not training the code generator itself.
+  - from: epoch-evidence
+    to: epi
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both separate a promising score from an accepted research result, but place evidence review
+      differently. EPOCH includes challenge, claim support and replay in an explicit admission
+      contract, with unresolved checks blocking acceptance. Épi fixes validity and meaningful-gain
+      criteria for each campaign and uses a separate model's review to redirect research, while an
+      isolated verifier checks the artifact. The distinction is admission control versus directional
+      review, not proof versus no proof.
+  - from: leanplan
+    to: lean-runtime
+    type: contrasts
+    dimension: search
+    description: >-
+      Both make Lean proof obligations constrain generated search algorithms, but organize synthesis
+      differently. LeanPlan lets a coding agent revise a domain heuristic and admissibility proof,
+      then independently rebuilds and tests the final candidate. Lean Runtime uses a prescribed
+      sequence of algorithm definitions, structural guards, potential construction and drift
+      certificates. This contrasts an open revision loop with staged proof-guided construction,
+      without treating optimality and runtime guarantees as interchangeable.
+  - from: population-evolution
+    to: rldiscover
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both screen executable training-code changes before spending on expensive training. Population
+      Evolution's decomposed track requires successful replay on peer subsets and two intermediate
+      instances before full-target training. RLDiscover instead promotes by short-training scores
+      against a higher-fidelity leader, then increases training steps and repeated seeds on the same
+      task. Their promotion evidence tests transfer across data subsets versus ranking reliability
+      within a task.
+  - from: evoduet
+    to: muse
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both gate external evidence before it influences further coding. EvoDuet makes a retrieval
+      decision before program mutation, choosing no retrieval, stored documents or a new web-query
+      optimization loop. MUSE instead inspects designated tool returns and selectively injects at
+      most one source from a frozen experience bank. The comparison concerns the timing and source
+      of knowledge intervention, not whether either system has memory.
+  - from: rldiscover
+    to: comrsi
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both reserve repeated training for promising code candidates, but use that evidence
+      differently. RLDiscover selects its final program by the highest observed full-budget fitness
+      over repeated seeds. ComRSI tests each candidate against the incumbent on paired validation
+      images after three fresh training runs, requiring both a minimum score gain and a positive
+      bootstrap lower bound before replacement. This distinguishes ranking by repeated measurements
+      from an uncertainty-aware acceptance gate.
+  - from: frugalevo
+    to: guidance-ttt
+    type: contrasts
+    dimension: search
+    description: >-
+      Both separate a proposed design change from its implementation. FrugalEvo assigns strategy
+      generation to a fixed expensive model and repeated implementation to a cheaper model.
+      Guidance-TTT instead updates a compact guidance model from the rewards of sibling
+      implementations while keeping a separate execution model frozen. The contrast is where
+      adaptation and model cost are placed within the same strategy-to-code interface.
+  - from: trace
+    to: adsd
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both turn execution traces into diagnostic knowledge for subsequent solver code. TRACE
+      generates schema-specific analysis programs that extract insights or callable surrogates from
+      a shared log buffer. ADSD builds literature-grounded probes, verifies diagnostic hypotheses on
+      a separate public pool, and audits the methods packaged as solver skills. The contrast is how
+      actionable diagnoses acquire evidence, not a claim that either framework inherits the other.
+  - from: algoreval
+    to: decompgym
+    type: contrasts
+    dimension: feedback
+    description: >-
+      AlgoREval's supplementary fidelity audit compares a judge-inferred technique category from a
+      task statement with the category found in generated code. DecompGym instead prescribes a
+      decomposition contract and audits operative master-subproblem information flow and claimed
+      solution status. Both examine method conformance, but inferred category agreement and an
+      explicit operational contract establish different kinds of evidence.
+  - from: mutation-without-variation
+    to: principle-collapse
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Mutation Without Variation diagnoses structural contraction through neutral mutation chains,
+      accepting every valid proposal and tracking repeated program skeletons. Principle Collapse
+      studies selected optimization trajectories and requires retained-principle concentration, a
+      prolonged plateau and a gap to an attainable reference before diagnosing harmful locking. The
+      contrast separates operator-level contraction from evidence that narrowed search has become
+      ineffective.
+  - from: strongprior
+    to: autonovo
+    type: contrasts
+    dimension: search
+    description: >-
+      Both inject expert algorithms to guide program search, but at different representational
+      boundaries. StrongPrior supplies executable benchmark code at initialization and periodically
+      during evolution. AutoNovo asks an LLM to reconstruct designers from detailed algorithm
+      descriptions before ERA refines the resulting code. This contrasts code-grounded priors with
+      description-grounded initialization, which also introduces implementation-fidelity risk.
+  - from: coral-discovery
+    to: holidivevolve
+    type: contrasts
+    dimension: search
+    description: >-
+      Both allocate evaluations across ongoing research routes using progress and exploration
+      statistics. Coral Discovery groups programs by verified mechanism and gives agents advisory
+      direction priorities based on local record gains. HoliDivEvolve directly selects a population
+      island using current quality, recent growth, remaining budget and an exploration bonus. The
+      key choice is semantic directions independent of code lineage versus explicit evolving program
+      pools.
+  - from: evopinn
+    to: worldsolver
+    type: contrasts
+    dimension: feedback
+    description: >-
+      EvoPINN ranks generated PDE-solving algorithms by relative solution error against reference
+      values, separately from their physics-informed training loss. WorldSolver evaluates generated
+      simulator code through selected physical-law residuals and visual phenomenon criteria without
+      comparing against a reference trajectory. This contrasts reference-solution accuracy with
+      checked physical and visual properties, not equivalent correctness guarantees or
+      interchangeable solver tasks.
+  - from: justgoal
+    to: autoprofiler
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both address who controls hardware measurement during kernel improvement. JustGoal lets the
+      coding agent choose profiling tools and probes within its run. AutoProfiler instead evolves a
+      profiling tree offline, then selects metric groups deterministically before a single rewrite.
+      This contrasts online discretionary profiling with a reusable, budgeted measurement policy.
+  - from: evoduet
+    to: ascendevolve
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both retrieve external evidence to address specific gaps encountered during program search.
+      EvoDuet evolves web queries and ranks documents by predicted downstream solution gains.
+      AscendEvolve routes exact questions into a fixed, version-scoped platform corpus, filters by
+      source authority, and lets device evidence override documentation for the current task.
+  - from: teacherevo
+    to: mosaic-dag
+    type: contrasts
+    dimension: design-object
+    description: >-
+      Both use expert action information to improve sequential scheduling decisions. Teacher-Aware
+      queries a learned policy on program-visited states and uses disagreements to evolve standalone
+      heuristic code. MoSAIC trains its scheduling LLM on CP-SAT next-task traces with motif context
+      and refines it with makespan rewards, retaining model inference in the scheduling policy. The
+      contrast is teacher-guided program search versus trained runtime action selection.
+  - from: tilecas
+    to: justgoal
+    type: contrasts
+    dimension: search
+    description: >-
+      Both consider when kernel development should leave a high-level representation. TileCas
+      explicitly selects an edit action, retained source candidate and abstraction level from mapped
+      code and profiling evidence. In JustGoal's GDN case study, the general coding agent decides
+      its own progression from Triton to CUDA and hardware-specific tensor-core instructions without
+      prescribed stages. This compares explicit abstraction scheduling with agent-directed toolchain
+      changes.
+  - from: kernaut
+    to: bievolve
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both check that changing unrelated batch members does not change a preserved result. Kernaut
+      uses purity-constrained covariance components and consistency tests within a numerical
+      tolerance under permutation, subsetting, extension and duplication. BIEvolve checks dependencies from
+      batch variables into protected GPU mechanisms and requires bitwise output agreement across
+      matched batch contexts. This contrasts interface-based purity checks with targeted dependency
+      and bitwise checks.

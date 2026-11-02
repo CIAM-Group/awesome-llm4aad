@@ -39,4 +39,6 @@ Report amortization across repeated targets, test genuinely out-of-distribution 
 
 ## Connections
 
-[ShinkaEvolve](../shinkaevolve/index.md) is one of the explicitly used program-evolution backends. ADAPT adds scientific retrieval, semantic parameter transfer, and separate initialization-selection and optimizer tasks around that backend rather than proposing a replacement evolutionary controller.
+ADAPT uses [ShinkaEvolve](../shinkaevolve/index.md) as one of its explicit evolution backends, wrapping program search in scientific-history retrieval and separate evolution of initialization-selection policies and numerical optimizers.
+
+The studies expose different parts of a scientific optimization pipeline to code search. [AutoSella](../autosella/index.md) edits the molecular optimizer while benchmark starting structures remain fixed. ADAPT evolves both the policy that selects an initialization from historical designs and the optimizer that follows it. This compares the boundary of the design space, not performance across the two scientific tasks.

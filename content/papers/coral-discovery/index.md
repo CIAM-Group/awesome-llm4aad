@@ -61,4 +61,6 @@ Report uncertainty across more runs, test verifier consistency, and learn when d
 
 ## Connections
 
-[ShinkaEvolve](../shinkaevolve/index.md) promotes novelty through candidate filtering and adaptive evolutionary sampling. Coral Discovery intervenes at a coarser unit: it credits and budgets research directions while persistent agents choose their own edits.
+Both allocate scarce experiments among persistent research agents. [AI Research Teams](../ai-research-teams/index.md) assigns credit and discounted-UCB priority to individual researchers. Coral Discovery tracks verified mechanism-level directions instead, including an explicit option to open a new direction.
+
+Both allocate evaluations across ongoing research routes using progress and exploration statistics. Coral Discovery groups programs by verified mechanism and gives agents advisory direction priorities based on local record gains. [HoliDivEvolve](../holidivevolve/index.md) directly selects a population island using current quality, recent growth, remaining budget and an exploration bonus. The key choice is semantic directions independent of code lineage versus explicit evolving program pools.

@@ -60,4 +60,4 @@ Validate online detectors prospectively, audit route annotations, and preserve p
 
 ## Connections
 
-[BehaveSim](../behavesim/index.md) compares executed trajectories and uses that distance during candidate selection. Principle Collapse instead diagnoses retained, coarser design routes together with an attainable-reference gap and a plateau. The contrast concerns the granularity and purpose of observable diversity evidence, not an inheritance claim.
+[Mutation Without Variation](../mutation-without-variation/index.md) diagnoses structural contraction through neutral mutation chains, accepting every valid proposal and tracking repeated program skeletons. Principle Collapse studies selected optimization trajectories and requires retained-principle concentration, a prolonged plateau and a gap to an attainable reference before diagnosing harmful locking. The contrast separates operator-level contraction from evidence that narrowed search has become ineffective.

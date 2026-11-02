@@ -51,4 +51,4 @@ Test observationally equivalent laws using interventions, expand misspecified an
 
 ## Connections
 
-[LLM-SR](../llm-sr/index.md) searches expressions that directly describe observed relations. OptScientist changes the design object to objectives and constraints whose induced choices explain those observations, adding an inverse-optimization identification problem.
+[LLM-SR](../llm-sr/index.md) proposes symbolic equations that predict observed outputs. OptScientist instead recovers objectives and constraints whose optimizing choices explain those outputs, using an optimization learner and symbolic distillation inside an LLM-assisted research loop.

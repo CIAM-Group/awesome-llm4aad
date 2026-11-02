@@ -39,4 +39,6 @@ Evaluate independent biological assays, remove identity shortcuts, standardize r
 
 ## Connections
 
-[AlphaEvolve](../alphaevolve/index.md) makes execution scores the arbiter of program evolution. AutoNovo's concrete alternative is a nested evaluator: an evolved optimizer sees one oracle while outer program selection can use another, separating optimization success from transfer quality.
+Both studies use ERA to search executable DNA designers. [GrAdaSlim](../gradaslim/index.md) enforces deletion-only, order-preserving outputs and scores activity with a design oracle. AutoNovo searches length-preserving designers and can score programs with an additional oracle hidden from the designer, separating edit validity from cross-oracle transfer.
+
+Both inject expert algorithms to guide program search, but at different representational boundaries. [StrongPrior](../strongprior/index.md) supplies executable benchmark code at initialization and periodically during evolution. AutoNovo asks an LLM to reconstruct designers from detailed algorithm descriptions before ERA refines the resulting code. This contrasts code-grounded priors with description-grounded initialization, which also introduces implementation-fidelity risk.

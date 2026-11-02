@@ -51,4 +51,6 @@ Repeat full searches across datasets and seeds, expose reproducible cost account
 
 ## Connections
 
-[Semantic Index Evo](../semantic-index-evo/index.md) restricts search to components with reliable small-model proxies; TGR-EvoDAG instead spends stage-aware training compute to adapt the whole pipeline. [EvoSkillRec](../evoskillrec/index.md) combines open-code exploration with promotion into typed reusable architecture skills, whereas this work merges whole recommendation-code branches and handles training-stage dependencies.
+Both face coupled stages and costly retraining in generative retrieval systems. [Evolving Semantic Indexes](../semantic-index-evo/index.md) finds that a tiny-generator proxy transfers better for index changes than for unrestricted objective or pipeline edits. TGR-EvoDAG instead budgets stage-dependent retraining and explicitly adapts downstream stages after upstream changes.
+
+Both reuse code discoveries in recommender search. [EvoSkillRec](../evoskillrec/index.md) promotes validated modules into typed skills for composition inside an architecture. TGR-EvoDAG keeps a graph of evaluated code versions and merges complementary branches, resolving code and cross-stage dependencies.

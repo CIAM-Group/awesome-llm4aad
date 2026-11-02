@@ -53,4 +53,4 @@ Test replay-policy transfer across more heterogeneous solvers, quantify sensitiv
 
 ## Connections
 
-[MCTS-AHD](../mcts-ahd/index.md) uses a prescribed tree-search rule to allocate heuristic revisions. Dream-COP instead searches executable branching and stopping rules using historical replay; the contrast is the allocation mechanism, not merely their benchmark comparison.
+Both allocate heuristic-generation budget across revision branches. [MCTS-AHD](../mcts-ahd/index.md) uses a prescribed UCT rule with exploration decay. Dream-COP instead searches executable branching and stopping policies by replaying recorded trees, then deploys the selected policy in the next real search round.

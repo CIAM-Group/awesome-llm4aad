@@ -40,4 +40,4 @@ Repeat independent searches, vary synthetic anomaly families, and evaluate unsee
 
 ## Connections
 
-[ShinkaEvolve](../shinkaevolve/index.md) maintains an evolutionary population; this agent retains a single editable trajectory, including regressions, and returns its session-best program. The paper observes different artifact complexity under matched prompts without establishing universal accuracy superiority for either search organization.
+The anomaly-detector study contrasts [ShinkaEvolve](../shinkaevolve/index.md)'s sampled parent and inspiration programs with a single coding session that retains its sequence of attempts, including regressions. The latter returns the session-best detector without automatically reverting each unsuccessful edit.

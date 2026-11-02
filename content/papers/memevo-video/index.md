@@ -39,4 +39,6 @@ Search temporal retrieval rules, revisit frozen components under a joint budget,
 
 ## Connections
 
-[EvoSkillRec](../evoskillrec/index.md) promotes validated code inventions into a reusable architecture-skill library. MemEvo also admits new typed operators, but fixes memory-state roles and uses sequential stage freezing rather than freely evolving architecture genomes. This video-memory paper is distinct from EvoMem and ε-MemEvo, which store algorithm-search experience.
+Both methods expand a typed library with generated executable modules. [EvoSkillRec](../evoskillrec/index.md) promotes modules carried by successful recommender architectures for later recombination. MemEvo admits new memory operators inside fixed causal roles and searches those roles in a prescribed order, trading compositional freedom for a stable runtime contract.
+
+This video-memory paper is distinct from EvoMem and ε-MemEvo, which store algorithm-search experience.

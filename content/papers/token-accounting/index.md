@@ -48,4 +48,4 @@ Report token, wall-clock, and evaluator costs together, log coverage during sear
 
 ## Connections
 
-[Evolution or Illusion?](../evolution-or-illusion/index.md) studies width/depth allocation using proposal budgets. This paper reuses that trajectory-analysis setting but changes the accounting unit and audits candidate validity.
+[Evolution or Illusion](../evolution-or-illusion/index.md) compares width and depth at a fixed number of proposals. The token-accounting study treats proposal cost as variable and compares logged search with independent sampling at equal cumulative model tokens. The papers address complementary accounting choices, and the latter describes the former as concurrent work.

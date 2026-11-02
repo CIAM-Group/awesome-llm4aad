@@ -52,4 +52,4 @@ Learn quality-aware scope rules, retain regression protection while allowing maj
 
 ## Connections
 
-[RefineEvo](../refineevo/index.md) adapts operator choice from population statistics and retrieves trajectory-conditioned lessons. DiSH instead derives a separate pre-generation edit-scope restriction directly from feasibility and compresses failures by diagnostic groups, emphasizing regression prevention over broad evolutionary exploration.
+Both use failure evidence to guide solver revision. [RefineEvo](../refineevo/index.md) adapts operator prompts and retrieves successful and failed edit experiences. DiSH separately constrains the permitted edit scope by current feasibility and groups diagnostic failures into repair directions to reduce regressions.

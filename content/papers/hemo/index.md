@@ -57,4 +57,4 @@ Measure amortized harness-training cost across repeated tasks and test memory tr
 
 ## Connections
 
-[E2OC](../e2oc/index.md) searches interacting operator combinations inside a fixed controller. HEMO changes the controller itself. [SimpleEvol](../simpleevol/index.md) instead keeps one compact generation trajectory with compressed history; HEMO preserves external records across evolving controller states. These are design contrasts, not claims that HEMO reuses their implementations.
+[E2OC](../e2oc/index.md) co-evolves operator design thoughts and implementations through prescribed MCTS and rotation rules. HEMO also makes the design harness's retrieval, targeting, parent-selection and generation roles editable, while keeping evaluation and archive interfaces fixed.

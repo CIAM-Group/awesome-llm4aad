@@ -47,4 +47,4 @@ Log all attempts, search connected components directly, and compare exact certif
 
 ## Connections
 
-Both this study and [FunSearch](../funsearch/index.md) evaluate programs that construct mathematical objects. The feedback differs: weight-five code search uses staged distance estimates followed by selective exact certification, so a search score is not itself the final certificate. The later [EAQECC Families](../eaqecc-families/index.md) study instead emphasizes researcher-led infinite-family generalization and a separate formal algebraic certificate.
+For quantum-code discovery, Weight-Five BB uses staged distance estimates to rank candidates and certifies selected results afterward. [EAQECC Discovery](../eaqecc-families/index.md) uses exact parameter evaluation within its program search and independently rechecks returned codes. The code families and evaluation costs differ.

@@ -59,4 +59,6 @@ Calibrate document-value predictions, report average-run cost and reliability, a
 
 ## Connections
 
-Compared with [LabBook](../labbook/index.md), which retrieves exact internal experiments, EvoDuet optimizes access to external knowledge. [MUSE](../muse/index.md) provides another contrast: frozen implementation memories are gated during execution rather than web queries being evolved around a candidate program.
+Both gate external evidence before it influences further coding. EvoDuet makes a retrieval decision before program mutation, choosing no retrieval, stored documents or a new web-query optimization loop. [MUSE](../muse/index.md) instead inspects designated tool returns and selectively injects at most one source from a frozen experience bank. The comparison concerns the timing and source of knowledge intervention, not whether either system has memory.
+
+Both retrieve external evidence to address specific gaps encountered during program search. EvoDuet evolves web queries and ranks documents by predicted downstream solution gains. [AscendEvolve](../ascendevolve/index.md) routes exact questions into a fixed, version-scoped platform corpus, filters by source authority, and lets device evidence override documentation for the current task.

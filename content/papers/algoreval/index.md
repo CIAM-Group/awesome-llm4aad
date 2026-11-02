@@ -48,4 +48,4 @@ Add property-based and adversarial tests, broaden representation coverage, and u
 
 ## Connections
 
-[When AI Designs AI](../when-ai-designs-ai/index.md) measures distance from human design choices. AlgoREval supplies a complementary boundary case: accurate reconstruction of a named algorithm is deliberately the target, not evidence of novelty. [DivAlgo](../divalgo/index.md) instead asks whether correct outputs span multiple strategies.
+AlgoREval's supplementary fidelity audit compares a judge-inferred technique category from a task statement with the category found in generated code. [DecompGym](../decompgym/index.md) instead prescribes a decomposition contract and audits operative master-subproblem information flow and claimed solution status. Both examine method conformance, but inferred category agreement and an explicit operational contract establish different kinds of evidence.

@@ -40,4 +40,6 @@ Enforce dimension-generic interfaces, strengthen purity restrictions, and test l
 
 ## Connections
 
-[LeanPlan](../leanplan/index.md) requires a generated proof for each heuristic's admissibility. Kernaut instead relies on trusted PSD-preserving assembly plus component checks: a concrete contrast between per-program proof search and validity by restricted construction.
+[LeanPlan](../leanplan/index.md) accepts a domain heuristic only with Lean-checked consistency and goal-awareness proofs under an explicit certificate. Kernaut instead assembles kernels through PSD-preserving construction contracts, supplemented by checks on component purity and interfaces. The comparison is proof generation versus constrained construction, not an equivalence of guarantees.
+
+Both check that changing unrelated batch members does not change a preserved result. Kernaut uses purity-constrained covariance components and consistency tests within a numerical tolerance under permutation, subsetting, extension and duplication. [BIEvolve](../bievolve/index.md) checks dependencies from batch variables into protected GPU mechanisms and requires bitwise output agreement across matched batch contexts. This contrasts interface-based purity checks with targeted dependency and bitwise checks.

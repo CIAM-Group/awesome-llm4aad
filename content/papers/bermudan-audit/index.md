@@ -46,4 +46,4 @@ Use positive controls with weaker parents, contracts with larger headroom, candi
 
 ## Connections
 
-The paper explicitly places [AlphaEvolve](../alphaevolve/index.md) and [FunSearch](../funsearch/index.md) in context: an exact construction verifier differs fundamentally from a noisy policy evaluator whose apparent gains require independent statistical checks.
+The Bermudan audit cites [AlphaEvolve](../alphaevolve/index.md)'s mathematical-discovery setting to motivate a different evaluation regime. For stopping policies scored by noisy simulation, it separates policy value, estimated primal-dual gaps and bound looseness, showing why a search score alone need not certify improvement.

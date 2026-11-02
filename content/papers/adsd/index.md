@@ -39,4 +39,4 @@ Audit diagnostic false positives, test contradictory or inapplicable literature,
 
 ## Connections
 
-[Knowledge-first](../knowledgefirst/index.md) evolves algorithmic principles before generating code. ADSD instead grounds acquisition in diagnosed numerical failures and audited literature. [OptiSkill](../optiskill/index.md) validates an evolving bank of formulation experiences; ADSD freezes literature-backed executable solver skills before private evaluation, offering a different source and validation lifecycle for reusable knowledge.
+Both turn execution traces into diagnostic knowledge for subsequent solver code. [TRACE](../trace/index.md) generates schema-specific analysis programs that extract insights or callable surrogates from a shared log buffer. ADSD builds literature-grounded probes, verifies diagnostic hypotheses on a separate public pool, and audits the methods packaged as solver skills. The contrast is how actionable diagnoses acquire evidence, not a claim that either framework inherits the other.

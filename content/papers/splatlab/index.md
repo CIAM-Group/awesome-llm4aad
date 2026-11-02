@@ -47,4 +47,6 @@ Release complete cost-normalized runs, replicate all selected results across see
 
 ## Connections
 
-The method adapts [AlphaEvolve](../alphaevolve/index.md)'s editable program-block search to 3DGS plugin scaffolds and explicitly uses [ReEvo](../reevo/index.md)-style verbal gradients to turn experimental evidence into candidate revisions.
+SplatLab wraps [AlphaEvolve](../alphaevolve/index.md)-style editable program blocks in verified 3DGS plugin scaffolds and a domain taxonomy, linking evolved implementations to measured experiments and run-backed manuscript claims.
+
+SplatLab explicitly adopts [ReEvo](../reevo/index.md)'s verbal-gradient idea, but sends rationales from measured 3DGS candidate comparisons to its ideator. The reflections guide new plugin ideas rather than ReEvo's original heuristic mutation step.

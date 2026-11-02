@@ -54,4 +54,6 @@ Evaluate new toolchains and operators, publish retrieval and device-cost account
 
 ## Connections
 
-[Knowledge-first](../knowledgefirst/index.md) evolves knowledge hypotheses and tests them through generated code. AscendEvolve instead treats external platform evidence as a versioned resource constraining code search, exposing different roles for knowledge in heuristic design.
+For unfamiliar accelerators, AscendEvolve retrieves from a version-scoped platform corpus and records task-local counterevidence. The RNGD loop explicitly builds and rechecks its platform knowledge with probe kernels and compiler tests when the toolchain changes. See [RNGD Kernel Loop](../rngd-kernel-loop/index.md).
+
+Both retrieve external evidence to address specific gaps encountered during program search. [EvoDuet](../evoduet/index.md) evolves web queries and ranks documents by predicted downstream solution gains. AscendEvolve routes exact questions into a fixed, version-scoped platform corpus, filters by source authority, and lets device evidence override documentation for the current task.

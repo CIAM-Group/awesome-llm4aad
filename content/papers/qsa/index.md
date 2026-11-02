@@ -39,4 +39,4 @@ Use uncertainty-triggered full-fidelity checks, audit cross-platform proxy calib
 
 ## Connections
 
-[AlphaEvolve](../alphaevolve/index.md) supplies the program-evolution paradigm explicitly described in QSA's background. QSA implements that loop through OpenEvolve, retains program-database selection and LLM mutation, and adds quantum-specific verification, execution snapshots, and rewards. This is domain adaptation through OpenEvolve, not a claim that QSA uses AlphaEvolve's proprietary implementation.
+QSA applies the [AlphaEvolve](../alphaevolve/index.md)-style program-evolution loop through OpenEvolve to quantum compiler passes and runtime policies. Its quantum-specific contribution is the verification, execution context and reward harness, not a direct modification of the AlphaEvolve implementation.

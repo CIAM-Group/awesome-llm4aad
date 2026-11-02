@@ -46,4 +46,4 @@ Add budget-matched controls, ablate archive conditioning and remixing, and test 
 
 ## Connections
 
-[FunSearch](../funsearch/index.md) uses archived programs to condition further executable proposals. EliteTable explores a simpler fixed-table, new/edit/remix design for control policies; the relevant contrast is archive organization, not evidence of general recursive self-improvement.
+[FunSearch](../funsearch/index.md) samples parents within separate islands and periodically reseeds weak islands. EliteTable uses one top-ten table, frozen during each generation, with uniform parent sampling for edit and remix proposals. These are different archive choices, not a demonstrated ranking between them.

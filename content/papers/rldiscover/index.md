@@ -39,4 +39,8 @@ Calibrate each algorithm family, promote candidates using learning-curve uncerta
 
 ## Connections
 
-[MuEvo](../muevo/index.md) keeps component participation reversible and evaluates collaboration contexts. RLDiscover instead first freezes local edits, then switches to unrestricted co-evolution, trading persistent component-level interaction modeling for a staged search and training budget.
+[MuEvo](../muevo/index.md) keeps component eligibility reversible and evaluates updates with multiple collaborators throughout search. RLDiscover first freezes low-gain single-component search arms, validates a merged seed, then allows joint changes to any components under staged training evaluation. These are different schedules for discovering component interactions.
+
+Both screen executable training-code changes before spending on expensive training. [Population Evolution](../population-evolution/index.md)'s decomposed track requires successful replay on peer subsets and two intermediate instances before full-target training. RLDiscover instead promotes by short-training scores against a higher-fidelity leader, then increases training steps and repeated seeds on the same task. Their promotion evidence tests transfer across data subsets versus ranking reliability within a task.
+
+Both reserve repeated training for promising code candidates, but use that evidence differently. RLDiscover selects its final program by the highest observed full-budget fitness over repeated seeds. [ComRSI](../comrsi/index.md) tests each candidate against the incumbent on paired validation images after three fresh training runs, requiring both a minimum score gain and a positive bootstrap lower bound before replacement. This distinguishes ranking by repeated measurements from an uncertainty-aware acceptance gate.

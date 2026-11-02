@@ -52,4 +52,6 @@ Release the complete training recipe and artifacts, separate BO-only and LLM-pol
 
 ## Connections
 
-[EoH](../eoh/index.md) searches executable heuristic programs with natural-language explanations. MoSAIC instead fixes the priority-feature family and learns weights and next-task decisions from exact supervision. It is distinct from the repository's unrelated [MOSAIC](../mosaic/index.md).
+Both use expert action information to improve sequential scheduling decisions. [Teacher-Aware](../teacherevo/index.md) queries a learned policy on program-visited states and uses disagreements to evolve standalone heuristic code. MoSAIC trains its scheduling LLM on CP-SAT next-task traces with motif context and refines it with makespan rewards, retaining model inference in the scheduling policy. The contrast is teacher-guided program search versus trained runtime action selection.
+
+This scheduling paper is distinct from [MOSAIC](../mosaic/index.md).
