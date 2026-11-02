@@ -45,4 +45,4 @@ Charge internal computation explicitly, provide richer drift theorems, audit spe
 
 ## Connections
 
-[LLaMEA-HPO](../llamea-hpo/index.md) selects executable optimizers using empirical performance and tuning. This pipeline pursues the same optimizer-design goal with formal drift certificates instead of measured fitness, trading practical breadth for conditional mathematical guarantees.
+Both make Lean proof obligations constrain generated search algorithms, but organize synthesis differently. [LeanPlan](../leanplan/index.md) lets a coding agent revise a domain heuristic and admissibility proof, then independently rebuilds and tests the final candidate. Lean Runtime uses a prescribed sequence of algorithm definitions, structural guards, potential construction and drift certificates. This contrasts an open revision loop with staged proof-guided construction, without treating optimality and runtime guarantees as interchangeable.

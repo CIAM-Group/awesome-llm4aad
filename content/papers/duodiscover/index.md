@@ -71,4 +71,4 @@ Study uncertainty-aware proxy admission, account for failed proxy construction a
 
 ## Connections
 
-[ArchAgent v2](../archagent-v2/index.md) reduces hardware-search cost with prescribed shortened traces before longer validation. DuoDiscover instead lets agents construct target-specific proxies and repeatedly invalidate them when their rankings cease to match true evaluations.
+Both reduce the cost of evaluating generated optimization code. [ArchAgent v2](../archagent-v2/index.md) searches using predetermined short ChampSim traces and validates selected prefetchers on longer traces. DuoDiscover co-discovers target-specific proxy evaluators and repeatedly checks their ranking agreement with true evaluations.

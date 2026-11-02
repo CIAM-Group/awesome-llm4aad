@@ -39,4 +39,6 @@ Audit all claimed records against independently checked feasibility, compare ful
 
 ## Connections
 
-[MCTS-AHD](../mcts-ahd/index.md) searches a tree of heuristic candidates. AutoMIP separates an unused-idea pool from restorable experimental states and distinguishes local refinements from direction switches. [FormuEvo](../formuevo/index.md) restricts improvement to solver-facing formulations; AutoMIP's task skill permits broader executable research directions, including decomposition and neighborhood search.
+[MCTS-AHD](../mcts-ahd/index.md) allocates expansions among heuristic-program nodes using UCT. AutoMIP keeps unused research directions in a separate pool and restores compatible code and artifacts before a direction switch. The contrast is program-tree selection versus explicit management of research directions and experimental state.
+
+[FormuEvo](../formuevo/index.md) restricts improvement to formulations consumed by a fixed solver. AutoMIP's task skill permits broader executable research directions, including decomposition and neighborhood search, and restores the artifacts each requires.

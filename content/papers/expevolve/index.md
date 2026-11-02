@@ -54,4 +54,4 @@ Audit factor annotations and intervention faithfulness, report all factor-learni
 
 ## Connections
 
-[EvoMem](../evomem/index.md) retrieves lessons associated with successful edits. ExpEvolve additionally tests whether categorical factors explain score ordering and makes add/remove/set actions over those factors the search controller's choices.
+Both screen reusable ideas before using them to guide code changes. [EvoMem](../evomem/index.md) promotes advice supported by mutation lineage and downstream outcomes. ExpEvolve admits explicit factors that explain previously unexplained score contrasts, then turns those factors into bandit-selected edit actions.

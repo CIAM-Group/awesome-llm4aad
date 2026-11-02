@@ -39,4 +39,4 @@ Calibrate on more independently sampled candidates, introduce uncertainty-aware 
 
 ## Connections
 
-[TGR-EvoDAG](../tgr-evodag/index.md) addresses another route through generative pipeline coupling: full stage-aware retraining and downstream adaptation. Here, restricting mutable components is crucial to preserving proxy-to-target transfer.
+Both face coupled stages and costly retraining in generative retrieval systems. Evolving Semantic Indexes finds that a tiny-generator proxy transfers better for index changes than for unrestricted objective or pipeline edits. [TGR-EvoDAG](../tgr-evodag/index.md) instead budgets stage-dependent retraining and explicitly adapts downstream stages after upstream changes.

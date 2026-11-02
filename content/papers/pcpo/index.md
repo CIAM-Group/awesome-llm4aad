@@ -52,4 +52,6 @@ Report training-cost amortization over unseen designs and isolate replay quality
 
 ## Connections
 
-[CALM](../calm/index.md) updates the generator from the evolving candidate stream. PCPO adds persistent, instance-bucketed elite replay and hybrid updates. [Search to Signal](../search-to-signal/index.md) studies a complementary question: which credit distinctions survive normalization when the surrounding CALM procedure is held fixed.
+[CALM](../calm/index.md) updates its generator from each newly evaluated evolutionary group. PCPO alternates fresh on-policy updates with replay of structurally curated elites stored in instance-specific buckets. These are different ways to reuse executable feedback for generator training, not an established inheritance link.
+
+PCPO gives every replayed verified elite positive rank-based credit. [Search to Signal](../search-to-signal/index.md) keeps CALM's group-relative normalizer fixed and examines when positive learner credit does not mean improvement over a parent or frontier. This contrasts credit rules, not end-to-end system performance.

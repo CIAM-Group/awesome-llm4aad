@@ -40,4 +40,4 @@ Use fresh confirmation splits, report molecule-level failure and fidelity distri
 
 ## Connections
 
-[ADAPT for Science](../adapt-science/index.md) co-designs historical starting-point selection and update dynamics. AutoSella holds the molecular benchmark inputs fixed and modifies an established optimizer behind force-cost and energy gates, distinguishing solver-mechanism improvement from better initialization retrieval.
+The studies expose different parts of a scientific optimization pipeline to code search. AutoSella edits the molecular optimizer while benchmark starting structures remain fixed. [ADAPT](../adapt-science/index.md) evolves both the policy that selects an initialization from historical designs and the optimizer that follows it. This compares the boundary of the design space, not performance across the two scientific tasks.

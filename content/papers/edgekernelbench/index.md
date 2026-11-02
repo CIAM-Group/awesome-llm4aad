@@ -52,4 +52,4 @@ Test unseen backend versions, broaden end-to-end agent workloads, and measure th
 
 ## Connections
 
-[TileCas](../tilecas/index.md) preserves editable alternatives across high- and low-level representations, including rollback. LEKA instead organizes search through a common layered IR and progressive lowering, exposing a concrete trade-off between revisitable abstractions and structured backend portability.
+Both retain kernel candidates across abstraction levels. [TileCas](../tilecas/index.md) explicitly selects the source candidate, edit action and target level for a base workflow. LEKA assigns agents to portable IR levels and routes hardware feedback to the responsible layer. Both support revisiting retained alternatives.

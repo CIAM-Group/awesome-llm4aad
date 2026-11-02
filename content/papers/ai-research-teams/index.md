@@ -39,4 +39,4 @@ Repeat team-level searches, measure end-to-end research cost, and test whether d
 
 ## Connections
 
-[AlphaEvolve](../alphaevolve/index.md) allocates search around candidate programs, whereas this team also allocates opportunities to persistent researchers using discounted improvement credit. Private histories preserve the reasoning behind unsuccessful experiments rather than representing search state solely through executable candidates and their scores.
+Both allocate scarce experiments among persistent research agents. AI Research Teams assigns credit and discounted-UCB priority to individual researchers. [Coral Discovery](../coral-discovery/index.md) tracks verified mechanism-level directions instead, including an explicit option to open a new direction.

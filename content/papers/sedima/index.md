@@ -50,4 +50,6 @@ Measure amortized costs over repeated searches, benchmark against other persiste
 
 ## Connections
 
-[EvoMem](../evomem/index.md) consolidates promising mutation events after a run with exemplar provenance. SEDIMA writes after each evaluation and uses a three-level semantic hierarchy to retrieve synthesized advice across disjoint problems. Their difference is the timing and granularity of memory construction, not simply whether memory exists.
+[EvoMem](../evomem/index.md) consolidates promising mutation events after a run with exemplars and provenance. SEDIMA writes evidence-linked insights after each evaluation and retrieves synthesized advice through a persistent semantic hierarchy across disjoint problems.
+
+SEDIMA augments [ShinkaEvolve](../shinkaevolve/index.md) with persistent cross-run insight memory through a write after evaluation and a read before mutation. The integrated version keeps the underlying selection, population and mutation logic unchanged.

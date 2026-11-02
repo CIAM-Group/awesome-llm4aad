@@ -69,4 +69,6 @@ Replicate independent searches at matched total training, inference, and evaluat
 
 ## Connections
 
-[HarnessTTT](../harnessttt/index.md) also trains a proposer while leaving execution frozen. Guidance-TTT learns a parent-conditioned strategic change; HarnessTTT learns the broader harness, including prompts, skills, tools, and middleware. This changes the action space and the credit-assignment problem.
+Both train a proposer with frozen execution, but Guidance-TTT learns parent-conditioned strategic changes whereas [HarnessTTT](../harnessttt/index.md) searches the executor's prompts, skills, tools, and middleware as a complete harness.
+
+Both separate a proposed design change from its implementation. [FrugalEvo](../frugalevo/index.md) assigns strategy generation to a fixed expensive model and repeated implementation to a cheaper model. Guidance-TTT instead updates a compact guidance model from the rewards of sibling implementations while keeping a separate execution model frozen. The contrast is where adaptation and model cost are placed within the same strategy-to-code interface.

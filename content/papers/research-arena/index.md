@@ -55,4 +55,4 @@ Repeat searches and retraining across seeds, report token and GPU costs together
 
 ## Connections
 
-[AI4AI-Bench](../ai4ai-bench/index.md) separates development from final algorithm verification. Arena instead separates quality admissibility from the resource being optimized. Its appendix explicitly places evaluator-guided research in the program-search context of [AlphaEvolve](../alphaevolve/index.md).
+[AI4AI-Bench](../ai4ai-bench/index.md) separates proxy-guided development from a fresh final run scored by a hidden evaluator. Auto-Research Arena exposes constrained resource objectives in a shared language-modeling setting and charges every started GPU experiment, including failures. They assess research code under different feedback and budget contracts.

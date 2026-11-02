@@ -48,4 +48,4 @@ Verify translation passes, reduce trusted automation and operation assumptions, 
 
 ## Connections
 
-[D2K-Bench](../d2k-bench/index.md) combines execution tests with a design-adherence judge; this framework instead targets semantic and parallel-safety proof obligations under explicit assumptions. [BIEvolve](../bievolve/index.md) later tests the separate property of cross-batch bitwise consistency. These checks answer different reliability questions.
+[D2K-Bench](../d2k-bench/index.md) checks generated kernels by execution and separately judges adherence to expert designs. Kernel Proofs checks semantic equivalence and parallel safety through formal obligations under stated assumptions. The comparison concerns what correctness evidence establishes, not which method produces faster kernels.

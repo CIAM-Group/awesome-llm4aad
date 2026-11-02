@@ -53,4 +53,8 @@ Report retrieval/gating overhead against gains, test additional backbones, and e
 
 ## Connections
 
-[EvoMem](../evomem/index.md) retrieves lessons from successful parent–child mutations to guide later code evolution. MUSE instead extracts successful and failed tool trajectories and decides whether to intervene at a particular implementation step. Both preserve source evidence, but their retrieval unit and timing differ.
+[LabBook](../labbook/index.md) updates memory from the current discovery run and retrieves exact experiments before each new program. MUSE freezes a bank built from prior tasks, then gates implementation advice after tool returns. They place experimental memory at different points in the coding process.
+
+[EvoMem](../evomem/index.md) curates provenance-backed lessons from past program-evolution jobs and retrieves advice before mutations. MUSE extracts lessons from successful and failed coding trajectories, then selectively injects implementation checks after tool returns.
+
+Both gate external evidence before it influences further coding. [EvoDuet](../evoduet/index.md) makes a retrieval decision before program mutation, choosing no retrieval, stored documents or a new web-query optimization loop. MUSE instead inspects designated tool returns and selectively injects at most one source from a frozen experience bank. The comparison concerns the timing and source of knowledge intervention, not whether either system has memory.

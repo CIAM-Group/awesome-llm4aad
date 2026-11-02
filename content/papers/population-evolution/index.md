@@ -55,4 +55,4 @@ Reserve independent calibration and test splits, quantify whole-search variance,
 
 ## Connections
 
-The main implementation uses [AdaEvolve's local search](https://arxiv.org/abs/2602.20133), but this catalogue does not contain an AdaEvolve node. [MECo](../meco/index.md) develops frozen heuristic sets from source-task feedback; PE instead shares executable model interventions, retrains them on peer instances, and promotes successful changes across training scales. The comparison concerns how cross-task evidence supports transfer, not a claimed lineage.
+Both screen executable training-code changes before spending on expensive training. Population Evolution's decomposed track requires successful replay on peer subsets and two intermediate instances before full-target training. [RLDiscover](../rldiscover/index.md) instead promotes by short-training scores against a higher-fidelity leader, then increases training steps and repeated seeds on the same task. Their promotion evidence tests transfer across data subsets versus ranking reliability within a task.

@@ -39,4 +39,4 @@ Evaluate cross-program feature redundancy, audit temporal drift and repeated-val
 
 ## Connections
 
-[MCTS-AHD](../mcts-ahd/index.md) allocates expansions among heuristic-program nodes. LLM-BlockFE makes nodes immutable appended blocks and uses depth-relative child-success estimates for backtracking, trading unrestricted rewrites for stable incremental construction.
+[MCTS-AHD](../mcts-ahd/index.md) selects heuristic-program branches with UCT and backpropagated quality statistics. LLM-BlockFE instead freezes accepted code blocks and uses depth-calibrated estimates of child success to continue or backtrack, preserving stable prefixes while restricting subsequent edits.

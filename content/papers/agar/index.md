@@ -64,4 +64,4 @@ Test learned return estimates, report larger leave-one-module-out studies, and v
 
 ## Connections
 
-[CALM](../calm/index.md) changes the program generator through online reinforcement learning. AGAR instead keeps that model frozen and improves modular text controls, separating prompt-level policy adaptation from parameter-level learning.
+Both revise persistent textual controls for later program mutations. [RefineEvo](../refineevo/index.md) rewrites an operator prompt when repeated uses produce invalid code or no improvement. AGAR updates modular controller guidelines from rollout feedback, and replaces unconditional rewrites with bounded rule edits and delayed validation. The comparison concerns how prompt-level search policies are revised and checked, not training the code generator itself.

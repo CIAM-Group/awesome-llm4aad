@@ -56,4 +56,4 @@ Increase expert auditing, add perturbation and long-horizon stability tests, and
 
 ## Connections
 
-[ADSL-PDE](../adsl-pde/index.md) restricts solver designs through a typed description and compiler. WorldSolver evaluates comparatively unrestricted solver code inside a protected environment: they expose complementary representation-level and execution-level approaches to validity.
+[EvoPINN](../evopinn/index.md) ranks generated PDE-solving algorithms by relative solution error against reference values, separately from their physics-informed training loss. WorldSolver evaluates generated simulator code through selected physical-law residuals and visual phenomenon criteria without comparing against a reference trajectory. This contrasts reference-solution accuracy with checked physical and visual properties, not equivalent correctness guarantees or interchangeable solver tasks.

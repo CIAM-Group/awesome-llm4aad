@@ -53,4 +53,4 @@ Add controlled revision ablations, repeat full searches, measure total resource 
 
 ## Connections
 
-[Beyond Algorithm Evolution](../beyond-algorithm-evolution/index.md) co-evolves solver code and prompts. Organon changes a wider operational object—selection, survival, tools, coordination, and revision procedures—while keeping authoritative evaluation fixed; this is a design-object contrast rather than a claim of direct inheritance.
+Both let program search revise part of its own control process. Beyond Algorithm Evolution co-evolves operation-specific prompt templates with solver code. Organon instead exposes the live selection, survival, tool, memory and coordination procedures for reversible revision while keeping official evaluation fixed. See [Beyond Algo Evo](../beyond-algorithm-evolution/index.md).

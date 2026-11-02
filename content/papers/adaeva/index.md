@@ -55,4 +55,6 @@ Optimize combined inference and evaluation cost, test fixed-target stopping, and
 
 ## Connections
 
-[EvoAlloc](../evoalloc/index.md) also decides how much evaluation a candidate deserves. AdaEva applies explicit halving or statistical-racing rules over a shared instance pool; EvoAlloc evolves natural-language allocation policies and validates them through future disagreements and audits.
+AdaEva allocates shared-instance evaluations using explicit halving or statistical-racing rules. [EvoAlloc](../evoalloc/index.md) evolves natural-language allocation strategies and checks challenger decisions on future disagreements with audits of rejected candidates.
+
+AdaEva augments [EoH](../eoh/index.md) with progressively allocated instance evaluations and early candidate elimination. The integration preserves EoH's generator, parent selection and population update rules while replacing exhaustive fitness measurement with halving or racing.

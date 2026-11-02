@@ -56,4 +56,8 @@ Repeat runs, audit rubric judgments with experts, and test guidance transfer acr
 
 ## Connections
 
-[Strong Priors](../strongprior/index.md) supplies algorithmic starting code; D2K-Bench supplies structured design explanations without source code. The contrast separates useful prior knowledge from the remaining burden of implementing it efficiently.
+[StrongPrior](../strongprior/index.md) guides search with executable benchmark algorithms as starting points and recurring code examples. D2K-Bench supplies layered expert design guidance while withholding expert implementations. The contrast concerns the form of prior knowledge available to code generation, not a controlled comparison of code and prose across tasks.
+
+D2K-Bench isolates the value of supplied algorithmic and dataflow guidance with paired kernel-development runs. [JustGoal](../justgoal/index.md) asks a general coding agent to construct its own optimization loop from a goal and constraints. They probe the need for specialized guidance under different tasks and controls.
+
+D2K-Bench checks generated kernels by execution and separately judges adherence to expert designs. [Kernel Proofs](../kernel-proof/index.md) checks semantic equivalence and parallel safety through formal obligations under stated assumptions. The comparison concerns what correctness evidence establishes, not which method produces faster kernels.

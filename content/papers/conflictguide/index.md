@@ -52,4 +52,8 @@ Evaluate automatic probe qualification on unfamiliar model families and measure 
 
 ## Connections
 
-The related-work discussion explicitly distinguishes [EvoPINN](../evopinn/index.md)'s training-state diagnostics and [GoalEvolve](../goalevolve/index.md)'s stage-localized goal gaps from conflict-specific behavior probes. [Component Feedback](../component-feedback/index.md) instead associates code diffs with already available metric changes; it does not qualify new conflict probes.
+[EvoPINN](../evopinn/index.md) diagnoses neural-PDE training trajectories to guide representation and training edits. ConflictGuide explicitly distinguishes those diagnostics from qualified probes of competing behaviors used for guidance and guarded retention.
+
+[GoalEvolve](../goalevolve/index.md) diagnoses physical-design stages from target gaps and tracks each edit's local gain, side effects and final outcome. ConflictGuide keeps a mechanism-specific pair of competing behaviors as its diagnostic target and qualifies probes before using them in model-code evolution.
+
+[Component Feedback](../component-feedback/index.md) associates changed functions and constants with existing metric deltas. ConflictGuide designs and qualifies behavior-specific probes. One improves the record of edits, while the other changes what is measured.

@@ -51,4 +51,10 @@ Learn source-only deployment selection, include the cost of cross-task evaluatio
 
 ## Connections
 
-[EoH-S](../eoh-s/index.md) searches for complementary coverage across instances. MECo instead organizes interacting populations around task combinations and selects a set using source-combination coverage for unseen problem definitions. [Population Evolution](../population-evolution/index.md) provides another transfer route: replaying model-code interventions with fresh training and promoting them across scales.
+Both select complementary heuristic sets, but define coverage differently. [EoH-S](../eoh-s/index.md) covers instances within one problem distribution. MECo combines task-conditioned populations and selects using source-task combinations before applying the frozen set to unseen constraint combinations.
+
+MECo's EoH-MECo variant retains [EoH](../eoh/index.md)'s native generation and population updates inside each task population. MECo adds task pairing, parent transfer and source-only set selection for zero-shot evaluation on unseen constraint combinations.
+
+The ReEvo-MECo variant runs [ReEvo](../reevo/index.md)'s original search rules within MECo's task populations. Task-level pairing and heuristic transfer broaden the local engine to source-only multi-task search and zero-shot heuristic-set deployment.
+
+The HSEvo-MECo variant uses [HSEvo](../hsevo/index.md) as the local heuristic engine while MECo manages task populations, transfers and final set selection. This broadens the engine to unseen constraint combinations, with initialization compatibility rules documented in the appendix.

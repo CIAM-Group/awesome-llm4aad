@@ -39,4 +39,4 @@ Disentangle curriculum order, total pretraining exposure, and program quality; t
 
 ## Connections
 
-[AlphaEvolve](../alphaevolve/index.md) normally independently evaluates population candidates. PRECOCIAL explicitly replaces that assumption with an accepted single lineage carrying neural training state, trading independent fitness comparisons for cheaper cumulative learning.
+For pretraining-program search, PRECOCIAL contrasts its single accepted lineage with population-based [AlphaEvolve](../alphaevolve/index.md) runs that train a fresh network for each candidate. Continuing or rolling back the accepted checkpoint reduces repeated training but makes candidate fitness depend on search history.

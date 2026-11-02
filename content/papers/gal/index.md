@@ -54,4 +54,4 @@ Run longer replicated loops, reserve unseen adversarial generators for testing, 
 
 ## Connections
 
-[RAISE](../raise/index.md) also changes the inputs used to judge a generated algorithm. Its adversarial instance search targets robustness within a prescribed uncertainty set; GAL evolves structured benchmark generators and repairs approximate-inference algorithms against a growing archive of counterexamples.
+Both alternate algorithm improvement with the discovery of failure cases. [RAISE](../raise/index.md) uses LLM-free instance search inside a prescribed uncertainty set. GAL evolves test-generating programs for inference algorithms, admits cases solved by unapproximated inference and repairs against the accumulated counterexamples.

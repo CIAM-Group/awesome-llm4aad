@@ -48,4 +48,6 @@ Expand expert validation and reference families, test more languages, and measur
 
 ## Connections
 
-DivAlgo explicitly discusses and validates against [BehaveSim](../behavesim/index.md). It trades execution-trace specificity for scalable static embeddings and ontology labels, enabling broader coverage while introducing a different approximation.
+[BehaveSim](../behavesim/index.md) compares instrumented problem-solving trajectories with dynamic time warping. DivAlgo estimates population diversity using a source-code embedding distilled from pairwise LLM judgments and a Vendi score, with separate ontology labels for interpretation. It also checks the static metric on BehaveSim's human-curated examples.
+
+[When AI Designs AI](../when-ai-designs-ai/index.md) measures distance from human methods in reviewed, task-specific module coordinates. DivAlgo measures diversity across human and generated solutions with a learned code-similarity metric and separate ontology labels. The comparison is interpretable local design axes versus a scalable cross-program similarity proxy.

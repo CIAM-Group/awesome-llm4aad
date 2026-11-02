@@ -63,4 +63,8 @@ Repeat with fully reproducible harnesses, equal end-to-end budgets, more devices
 
 ## Connections
 
-[D2K-Bench](../d2k-bench/index.md) injects expert design explanations under controlled generation conditions. JustGoal supplies the complementary test: whether such assistance or predefined machinery adds value beyond the same model's independently constructed loop.
+[D2K-Bench](../d2k-bench/index.md) isolates the value of supplied algorithmic and dataflow guidance with paired kernel-development runs. JustGoal asks a general coding agent to construct its own optimization loop from a goal and constraints. They probe the need for specialized guidance under different tasks and controls.
+
+Both address who controls hardware measurement during kernel improvement. JustGoal lets the coding agent choose profiling tools and probes within its run. [AutoProfiler](../autoprofiler/index.md) instead evolves a profiling tree offline, then selects metric groups deterministically before a single rewrite. This contrasts online discretionary profiling with a reusable, budgeted measurement policy.
+
+Both consider when kernel development should leave a high-level representation. [TileCas](../tilecas/index.md) explicitly selects an edit action, retained source candidate and abstraction level from mapped code and profiling evidence. In JustGoal's GDN case study, the general coding agent decides its own progression from Triton to CUDA and hardware-specific tensor-core instructions without prescribed stages. This compares explicit abstraction scheduling with agent-directed toolchain changes.

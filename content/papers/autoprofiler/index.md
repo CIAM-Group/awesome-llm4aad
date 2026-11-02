@@ -50,4 +50,4 @@ Report amortized training cost and equal-token comparisons, test compiler and de
 
 ## Connections
 
-[TileCas](../tilecas/index.md) attributes measurements across editable programming levels. AutoProfiler addresses the preceding feedback decision—what measurements to acquire—while keeping the downstream rewrite interface fixed.
+Both address who controls hardware measurement during kernel improvement. [JustGoal](../justgoal/index.md) lets the coding agent choose profiling tools and probes within its run. AutoProfiler instead evolves a profiling tree offline, then selects metric groups deterministically before a single rewrite. This contrasts online discretionary profiling with a reusable, budgeted measurement policy.

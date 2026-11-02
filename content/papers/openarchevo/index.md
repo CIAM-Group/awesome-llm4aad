@@ -40,4 +40,6 @@ Repeat complete searches under matched budgets, test fingerprint calibration aft
 
 ## Connections
 
-The paper explicitly adapts [EoH](../eoh/index.md)'s idea–code pairing, adding a behavioral view for spike-constrained architecture search. [GraphIR](../graphir/index.md) extracts tensor dependencies to guide edits; OpenArchEvo instead uses fixed-input response/statistical fingerprints for novelty and surrogate ranking, addressing a different role for architecture evidence.
+OpenArchEvo explicitly adopts [EoH](../eoh/index.md)'s idea-code pairing for spiking-network architecture programs and jointly revises code and design rationales. It adds initialization-time fingerprints and surrogate-guided training allocation rather than reusing EoH's full search procedure.
+
+[BehaveSim](../behavesim/index.md) measures behavioral differences through complete problem-solving trajectories. OpenArchEvo cites this motivation but uses fixed initialization-time responses and architecture statistics to compare SNN programs before training, exchanging task-execution evidence for cheaper candidate screening.

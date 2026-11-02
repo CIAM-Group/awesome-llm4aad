@@ -50,4 +50,4 @@ Release complete records, validate reference-population sensitivity, and compare
 
 ## Connections
 
-[AlphaEvolve](../alphaevolve/index.md) evaluates generated variants through task scores. TRIZa takes a concrete alternative route by constraining mutation types before execution and separating useful metric change from evidence-qualified promotion.
+[AlphaEvolve](../alphaevolve/index.md) proposes code diffs within user-defined editable regions. TRIZa requires a declared technical contradiction and a typed TRIZ transformation before evaluation. The difference is how proposals are constrained, not whether an evaluator checks the result.

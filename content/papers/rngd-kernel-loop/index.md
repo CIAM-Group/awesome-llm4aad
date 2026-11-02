@@ -47,4 +47,4 @@ Repeat on isolated devices and new accelerators, preregister acceptance tests, v
 
 ## Connections
 
-[AscendEvolve](../ascendevolve/index.md) retrieves versioned external platform knowledge. This case instead foregrounds actively measuring and rebuilding target knowledge during a changing-toolchain campaign, revealing complementary feedback routes for data-poor accelerators.
+For unfamiliar accelerators, [AscendEvolve](../ascendevolve/index.md) retrieves from a version-scoped platform corpus and records task-local counterevidence. The RNGD loop explicitly builds and rechecks its platform knowledge with probe kernels and compiler tests when the toolchain changes.

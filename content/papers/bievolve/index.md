@@ -48,4 +48,4 @@ Expand language and cross-file coverage, independently validate contracts, and t
 
 ## Connections
 
-[Kernel Proofs](../kernel-proof/index.md) pursues conditional semantic equivalence and parallel safety through proofs. BIEvolve adds a distinct cross-context property using static screening and finite execution tests; neither guarantee subsumes the other.
+Both check that changing unrelated batch members does not change a preserved result. [Kernaut](../kernaut/index.md) uses purity-constrained covariance components and consistency tests within a numerical tolerance under permutation, subsetting, extension and duplication. BIEvolve checks dependencies from batch variables into protected GPU mechanisms and requires bitwise output agreement across matched batch contexts. This contrasts interface-based purity checks with targeted dependency and bitwise checks.

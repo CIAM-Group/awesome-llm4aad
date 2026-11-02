@@ -39,4 +39,4 @@ Use independent activity predictors and assays, increase starts and optimizer se
 
 ## Connections
 
-[AutoNovo](../autonovo/index.md) also uses ERA to search sequence-design programs, but its ordinary sequence editing and cross-oracle objective differ from GrAdaSlim's exact deletion contract and same-oracle activity evaluation. Algorithm validity and biological transfer are separate questions.
+Both studies use ERA to search executable DNA designers. GrAdaSlim enforces deletion-only, order-preserving outputs and scores activity with a design oracle. [AutoNovo](../autonovo/index.md) searches length-preserving designers and can score programs with an additional oracle hidden from the designer, separating edit validity from cross-oracle transfer.

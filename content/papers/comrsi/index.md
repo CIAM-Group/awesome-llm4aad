@@ -39,4 +39,4 @@ Increase independent search repetitions, evaluate digital communication and adap
 
 ## Connections
 
-[AlphaEvolve](../alphaevolve/index.md) maintains a diverse candidate population; ComRSI instead follows one statistically accepted code lineage with explicit public/hidden evaluation boundaries. This trades breadth of exploration for controlled cumulative changes and stronger acceptance checks.
+Both reserve repeated training for promising code candidates, but use that evidence differently. [RLDiscover](../rldiscover/index.md) selects its final program by the highest observed full-budget fitness over repeated seeds. ComRSI tests each candidate against the incumbent on paired validation images after three fresh training runs, requiring both a minimum score gain and a positive bootstrap lower bound before replacement. This distinguishes ranking by repeated measurements from an uncertainty-aware acceptance gate.

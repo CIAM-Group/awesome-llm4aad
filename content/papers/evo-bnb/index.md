@@ -39,4 +39,6 @@ Refresh probes with policy-induced states, account for tuning and failed candida
 
 ## Connections
 
-[TIDE](../tide/index.md) separates island-based structural evolution from numeric tuning. Evo-B&B explicitly uses that design pattern for coupled SCIP policies, replacing structural-diversity emphasis with matched behavioral probes and tuning only promising retained candidates.
+Evo-B&B adapts [TIDE](../tide/index.md)'s multi-island organization and separation of structural search from numerical tuning to joint SCIP branching and node-selection policies. It uses matched decision probes for diversity and limits bounded-Gaussian tuning to retained policies close to the island best.
+
+Evo-B&B reuses [EoH](../eoh/index.md)'s evolutionary prompt operators to generate joint branching and node-selection policies for SCIP. Behavior-aware population management, adaptive operator scheduling and selective numerical tuning surround these transferred operators.
