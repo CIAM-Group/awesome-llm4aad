@@ -1,16 +1,18 @@
 # Contribution Guide
 
-This guide covers papers, images, relations, and the controlled classification system. The shortest workflow happens entirely in the browser—no repository download, Node.js installation, or npm command is required.
+This guide covers papers, images, relations, and the controlled classification system. The shortest workflow happens entirely in the browser. No repository download, Node.js installation, or npm command is required.
 
 ## What automation handles
 
-After you open a pull request, GitHub Actions checks the metadata, taxonomy values, relation endpoints, image paths, tests, and website build. After merge, automation:
+After you open a pull request, GitHub Actions checks the metadata, taxonomy values, relation endpoints, image paths, tests, and website build. It also generates the README paper directory to verify that the selected layout works with your changes. After merge, automation:
 
-1. regenerates the paper table in `README.md`;
-2. regenerates `src/generated/content.json`;
+1. regenerates the year index and monthly paper tables in `README.md`.
+2. regenerates `src/generated/content.json`.
 3. rebuilds and deploys the website.
 
 Do **not** edit the generated README table or `src/generated/content.json` by hand.
+
+The README table has Paper, Publication and Links columns. Links include Paper PDF, Note and optional Code. Year links, month counts, sorting and the expanded latest month are generated from paper Markdown. The PR check does not commit generated files to your branch. The post-merge sync writes them back automatically.
 
 ## Browser-only workflow
 
@@ -54,8 +56,8 @@ The frontmatter at the top of `index.md` is the source of truth.
 | `short_title` | Official acronym or a concise method name, 2–20 characters. |
 | `title` | Full paper title. Quote it when it contains `:`. |
 | `authors` | One author per YAML list item, in paper order. |
-| `year` | Venue year, or expected venue year when confirmed. |
-| `date` | First public date in `YYYY-MM-DD`, usually the first arXiv version. |
+| `year` | Year of the verified month recorded in `date`. |
+| `date` | Verified acceptance/publication month, otherwise first arXiv month; store `YYYY-MM-01`. Never substitute a revision date. |
 | `venue` | Venue abbreviation, `arXiv`, or a clear public-report label. |
 | `paper_url` | Direct public PDF URL. |
 | `code_url` | Optional; delete or comment out when code is unavailable. |
@@ -77,7 +79,7 @@ authors:
   - First Author
   - Second Author
 year: 2026
-date: 2026-01-15
+date: 2026-01-01
 venue: arXiv
 paper_url: https://arxiv.org/pdf/0000.00000
 # code_url: https://github.com/organization/project
@@ -94,7 +96,9 @@ summary: The method uses reflective feedback to guide the search for executable 
 ---
 ```
 
-Write full problem names in paper metadata. The README generator applies the compact labels in [`data/problem-abbreviations.yml`](../data/problem-abbreviations.yml) automatically, so contributors do not need to abbreviate them by hand.
+Write full problem names in paper metadata for website search and paper details. The README does not display problems and no longer uses `data/problem-abbreviations.yml`. The dictionary is retained for compatibility with earlier tooling, not as an additional contribution requirement.
+
+For institutions, check the original paper's author block and reuse the existing institution ID. Search by full name as well as abbreviation before proposing a new ID. Different abbreviations of the same institution should share one ID; distinct campuses, universities and research institutes must not be merged merely because their names are similar.
 
 ### 4. Write the note
 
@@ -159,13 +163,15 @@ Rules:
 
 - Every paper must participate in at least one relation.
 - There is no fixed upper bound on relations. Add only links supported by the
-  papers' methods, experiments, or explicit comparisons; do not add edges to make
-  the graph look connected.
+  papers' methods, experiments, or explicit comparisons. Keep the complete graph
+  connected by looking for supported bridges between research strands; connectivity
+  is never evidence for a relationship. If no defensible bridge is found, flag the
+  unresolved entry for review instead of inventing an edge.
 - Do not add more than one relation for the same pair of papers.
 - For every directed type, `from` is older and `to` is the newer paper declaring
   the relation.
-- `concurrent-work` is undirected on the graph; put the paper declaring the
-  relation in `to` so the same two-relation limit remains unambiguous.
+- `concurrent-work` is undirected on the graph; use chronological endpoint order
+  where known. There is no per-paper two-relation limit.
 - Choose one type and the single dimension that best explains this connection.
 - Describe the concrete methodological link in one or two sentences.
 - Do not add a relation merely because two papers use an LLM or solve the same broad problem.
@@ -186,6 +192,7 @@ The vocabulary is fixed in [`data/taxonomy.yml`](../data/taxonomy.yml). Contribu
 | `generalizes` | The later paper broadens tasks, distributions, artifacts, or system scale. |
 | `adapts` | The later paper transfers a recognizable method to a new domain or design artifact. |
 | `contrasts` | The later paper takes a meaningfully different design route on the same question. |
+| `contextualizes` | A survey, benchmark, or adjacent study explicitly analyzes or synthesizes the earlier method; it is not merely a baseline in a results table. |
 
 ### Dimensions
 
@@ -205,7 +212,11 @@ If no type or dimension fits, open an issue with the two papers, the proposed de
 
 Edit its `content/papers/<paper-id>/index.md`. Keep the ID and folder name unchanged. Typical updates include a new venue, code link, corrected metadata, stronger note, added image, or new relation.
 
-Do not change the first-public `date` when a preprint is accepted later; update `venue` and `year` instead.
+Use a verified acceptance/publication month for an accepted paper when available;
+otherwise retain the verified arXiv first-submission month. If acceptance is stated
+but its month is not disclosed, record that uncertainty in the source-review note
+instead of guessing. Keep `year` consistent with `date`; use day `01` for month-only
+precision. An arXiv revision date is not a new first-public date.
 
 ## What the checks report
 

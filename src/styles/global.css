@@ -131,14 +131,6 @@ select:focus-visible {
   font-weight: 600;
 }
 
-.wordmark small {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-}
-
 .primary-nav {
   display: flex;
   align-items: center;
@@ -1197,12 +1189,13 @@ select:focus-visible {
   width: min(100%, var(--content-width));
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
   padding: 30px var(--page-pad) 42px;
   border-top: 1px solid var(--line-strong);
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
 }
 
 .site-footer p {
@@ -1260,7 +1253,6 @@ select:focus-visible {
     gap: 10px;
   }
 
-  .wordmark small,
   .github-link,
   .primary-nav__link svg {
     display: none;

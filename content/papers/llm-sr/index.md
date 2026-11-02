@@ -15,7 +15,7 @@ paper_url: https://arxiv.org/pdf/2404.18400
 code_url: https://github.com/deep-symbolic-mathematics/LLM-SR
 institutions:
   - virginia-tech
-  - cmu
+  - carnegie-mellon
   - ai2
 primary_dimension: design-object
 dimensions:

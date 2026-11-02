@@ -14,7 +14,6 @@ export function SiteHeader() {
         <span className="wordmark__mark"><GitFork size={20} strokeWidth={1.6} aria-hidden="true" /></span>
         <span>
           <strong>AHD Papers</strong>
-          <small>Research Atlas</small>
         </span>
       </NavLink>
       <nav className="primary-nav" aria-label="Primary navigation">
@@ -25,7 +24,7 @@ export function SiteHeader() {
           </NavLink>
         ))}
       </nav>
-      <a className="github-link" href="https://github.com/CIAM-Group/awesome-llm4ahd" target="_blank" rel="noreferrer" aria-label="Open GitHub repository" title="GitHub repository">
+      <a className="github-link" href="https://github.com/CIAM-Group/awesome-llm4aad" target="_blank" rel="noreferrer" aria-label="Open GitHub repository" title="GitHub repository">
         <Github size={18} strokeWidth={1.7} aria-hidden="true" />
       </a>
     </header>
