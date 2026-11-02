@@ -13,7 +13,7 @@ paper_url: https://arxiv.org/pdf/2602.08253
 code_url: https://github.com/ZBoyn/G-LNS
 institutions:
   - northeastern-cn
-  - ucas
+  - university-chinese-academy-sciences
   - tsinghua
 primary_dimension: design-object
 dimensions:

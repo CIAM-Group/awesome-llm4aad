@@ -16,7 +16,7 @@ paper_url: https://arxiv.org/pdf/2607.11358
 code_url: https://github.com/samwu-learn/RefineEvo
 institutions:
   - chinese-academy-sciences
-  - ucas
+  - university-chinese-academy-sciences
 primary_dimension: search
 dimensions:
   - search

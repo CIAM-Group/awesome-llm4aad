@@ -1,9 +1,544 @@
+mcgill:
+  name: "McGill University"
+  short_name: "McGill"
+  initials: McG
+  accent: '#466d7a'
+shanghai-innovation-institute:
+  name: "Shanghai Innovation Institute"
+  short_name: "SII"
+  initials: SII
+  accent: '#466d7a'
+bedi-cloud:
+  name: "BEDI Cloud"
+  short_name: "BEDI Cloud"
+  initials: BEDI
+  accent: '#466d7a'
+bournemouth:
+  name: "Bournemouth University"
+  short_name: "Bournemouth"
+  initials: BU
+  accent: '#466d7a'
+wuhan-university:
+  name: "Wuhan University"
+  short_name: "Wuhan"
+  initials: WHU
+  accent: '#466d7a'
+chongqing-jiaotong:
+  name: "Chongqing Jiaotong University"
+  short_name: "Chongqing Jiaotong"
+  initials: CQJTU
+  accent: '#466d7a'
+xjtlu:
+  name: "Xi'an Jiaotong-Liverpool University"
+  short_name: "XJTLU"
+  initials: XJTLU
+  accent: '#466d7a'
+surrey:
+  name: "University of Surrey"
+  short_name: "Surrey"
+  initials: Sur
+  accent: '#466d7a'
+uc-santa-barbara:
+  name: "University of California, Santa Barbara"
+  short_name: "UC Santa Barbara"
+  initials: UCSB
+  accent: '#466d7a'
+penn-state:
+  name: "Pennsylvania State University"
+  short_name: "Penn State"
+  initials: PSU
+  accent: '#466d7a'
+linkedin:
+  name: "LinkedIn"
+  short_name: "LinkedIn"
+  initials: LI
+  accent: '#466d7a'
+coupang:
+  name: "Coupang"
+  short_name: "Coupang"
+  initials: CP
+  accent: '#466d7a'
+cisco-research:
+  name: "Cisco Research"
+  short_name: "Cisco Research"
+  initials: Cisco
+  accent: '#466d7a'
+allen-institute:
+  name: "Allen Institute"
+  short_name: "Allen Institute"
+  initials: Allen
+  accent: '#466d7a'
+move37-labs:
+  name: "Move37 Labs"
+  short_name: "Move37"
+  initials: M37
+  accent: '#466d7a'
+qfin:
+  name: "Qfin Holdings, Inc."
+  short_name: "Qfin"
+  initials: Qfin
+  accent: '#466d7a'
+tianjin-university:
+  name: "Tianjin University"
+  short_name: "Tianjin"
+  initials: TJU
+  accent: '#466d7a'
+hit-shenzhen:
+  name: "Harbin Institute of Technology, Shenzhen"
+  short_name: "HIT Shenzhen"
+  initials: HITSZ
+  accent: '#466d7a'
+bristol:
+  name: "University of Bristol"
+  short_name: "Bristol"
+  initials: Brist
+  accent: '#466d7a'
+ufrgs:
+  name: "Federal University of Rio Grande do Sul"
+  short_name: "UFRGS"
+  initials: UFRGS
+  accent: '#466d7a'
+aberdeen:
+  name: "University of Aberdeen"
+  short_name: "Aberdeen"
+  initials: Abdn
+  accent: '#466d7a'
+itmo:
+  name: "ITMO University"
+  short_name: "ITMO"
+  initials: ITMO
+  accent: '#466d7a'
+zelinsky-institute:
+  name: "N. D. Zelinsky Institute of Organic Chemistry, Russian Academy of Sciences"
+  short_name: "Zelinsky Institute"
+  initials: ZIOC
+  accent: '#466d7a'
+uc-san-diego:
+  name: "University of California, San Diego"
+  short_name: "UC San Diego"
+  initials: UCSD
+  accent: '#466d7a'
+adobe-research:
+  name: "Adobe Research"
+  short_name: "Adobe Research"
+  initials: Adobe
+  accent: '#466d7a'
+uc-davis:
+  name: "University of California, Davis"
+  short_name: "UC Davis"
+  initials: UCD
+  accent: '#466d7a'
+manchester:
+  name: "University of Manchester"
+  short_name: "Manchester"
+  initials: UoM
+  accent: '#466d7a'
+honda-research-europe:
+  name: "Honda Research Institute Europe"
+  short_name: "Honda RI Europe"
+  initials: HRI
+  accent: '#466d7a'
+xinzhuai:
+  name: "XinZhuAI"
+  short_name: "XinZhuAI"
+  initials: XZAI
+  accent: '#466d7a'
+barnard-college:
+  name: "Barnard College"
+  short_name: "Barnard"
+  initials: BC
+  accent: '#466d7a'
+shanghai-ai-lab:
+  name: "Shanghai Artificial Intelligence Laboratory"
+  short_name: "Shanghai AI Lab"
+  initials: SHAIL
+  accent: '#466d7a'
+alibaba:
+  name: "Alibaba Group"
+  short_name: "Alibaba"
+  initials: Ali
+  accent: '#466d7a'
+edinburgh:
+  name: "University of Edinburgh"
+  short_name: "Edinburgh"
+  initials: Edin
+  accent: '#466d7a'
+eindhoven-university-technology:
+  name: "Eindhoven University of Technology"
+  short_name: "TU Eindhoven"
+  initials: TUe
+  accent: '#466d7a'
+central-south-university:
+  name: "Central South University"
+  short_name: "Central South"
+  initials: CSU
+  accent: '#466d7a'
+university-birmingham:
+  name: "University of Birmingham"
+  short_name: "Birmingham"
+  initials: UoB
+  accent: '#466d7a'
+coral-ai-labs:
+  name: "Coral AI Labs"
+  short_name: "Coral AI"
+  initials: Coral
+  accent: '#466d7a'
+university-trento:
+  name: "University of Trento"
+  short_name: "Trento"
+  initials: Trent
+  accent: '#466d7a'
+kings-college-london:
+  name: "King's College London"
+  short_name: "King's College London"
+  initials: KCL
+  accent: '#466d7a'
+university-hull:
+  name: "University of Hull"
+  short_name: "Hull"
+  initials: Hull
+  accent: '#466d7a'
+cas-theoretical-physics:
+  name: "Institute of Theoretical Physics, Chinese Academy of Sciences"
+  short_name: "ITP CAS"
+  initials: ITP
+  accent: '#466d7a'
+qualcomm:
+  name: "Qualcomm Technologies"
+  short_name: "Qualcomm"
+  initials: QCOM
+  accent: '#466d7a'
+bake-ai:
+  name: "Bake AI"
+  short_name: "Bake AI"
+  initials: Bake
+  accent: '#466d7a'
+university-notre-dame:
+  name: "University of Notre Dame"
+  short_name: "Notre Dame"
+  initials: ND
+  accent: '#466d7a'
+stevens-institute-technology:
+  name: "Stevens Institute of Technology"
+  short_name: "Stevens"
+  initials: SIT
+  accent: '#466d7a'
+scale-ai:
+  name: "Scale AI"
+  short_name: "Scale AI"
+  initials: Scale
+  accent: '#466d7a'
+cohere-labs:
+  name: "Cohere Labs"
+  short_name: "Cohere Labs"
+  initials: Coher
+  accent: '#466d7a'
+ohio-state-university:
+  name: "Ohio State University"
+  short_name: "Ohio State"
+  initials: OSU
+  accent: '#466d7a'
+microsoft-corporation:
+  name: "Microsoft"
+  short_name: "Microsoft"
+  initials: MS
+  accent: '#466d7a'
+hong-kong-baptist-university:
+  name: "Hong Kong Baptist University"
+  short_name: "HKBU"
+  initials: HKBU
+  accent: '#466d7a'
+bespoke-labs:
+  name: "Bespoke Labs"
+  short_name: "Bespoke Labs"
+  initials: BL
+  accent: '#466d7a'
+huawei:
+  name: "Huawei Technologies"
+  short_name: "Huawei"
+  initials: HW
+  accent: '#466d7a'
+astar:
+  name: "Agency for Science, Technology and Research"
+  short_name: "A*STAR"
+  initials: ASTAR
+  accent: '#466d7a'
+sogang:
+  name: "Sogang University"
+  short_name: "Sogang"
+  initials: SGU
+  accent: '#466d7a'
+ewha-womans:
+  name: "Ewha Womans University"
+  short_name: "Ewha"
+  initials: EWU
+  accent: '#466d7a'
+fluidstack:
+  name: "Fluidstack"
+  short_name: "Fluidstack"
+  initials: FS
+  accent: '#466d7a'
+uibe:
+  name: "University of International Business and Economics"
+  short_name: "UIBE"
+  initials: UIBE
+  accent: '#466d7a'
+modelbest:
+  name: "ModelBest Inc."
+  short_name: "ModelBest"
+  initials: MB
+  accent: '#466d7a'
+plokerm-ai:
+  name: "Plokerm AI Lab"
+  short_name: "Plokerm AI"
+  initials: PAI
+  accent: '#466d7a'
+xiamen:
+  name: "Xiamen University"
+  short_name: "Xiamen"
+  initials: XMU
+  accent: '#466d7a'
+tuebingen:
+  name: "University of Tübingen"
+  short_name: "Tübingen"
+  initials: TUE
+  accent: '#466d7a'
+slai:
+  name: "Shenzhen Loop Area Institute"
+  short_name: "SLAI"
+  initials: SLAI
+  accent: '#466d7a'
+guangzhou-university:
+  name: "Guangzhou University"
+  short_name: "Guangzhou"
+  initials: GZHU
+  accent: '#466d7a'
+swufe:
+  name: "Southwestern University of Finance and Economics"
+  short_name: "SWUFE"
+  initials: SWUFE
+  accent: '#466d7a'
+imperial-college:
+  name: "Imperial College London"
+  short_name: "Imperial"
+  initials: ICL
+  accent: '#466d7a'
+logos-research:
+  name: "Logos Research"
+  short_name: "Logos"
+  initials: Logos
+  accent: '#466d7a'
+stony-brook:
+  name: "Stony Brook University"
+  short_name: "Stony Brook"
+  initials: SBU
+  accent: '#466d7a'
+barcelona-supercomputing:
+  name: "Barcelona Supercomputing Center"
+  short_name: "BSC"
+  initials: BSC
+  accent: '#466d7a'
+hofstra:
+  name: "Hofstra University"
+  short_name: "Hofstra"
+  initials: HU
+  accent: '#466d7a'
+tongming-lake:
+  name: "Beijing Tongming Lake Information Technology Application Innovation Center"
+  short_name: "Tongming Lake"
+  initials: TML
+  accent: '#466d7a'
+ut-dallas:
+  name: "The University of Texas at Dallas"
+  short_name: "UT Dallas"
+  initials: UTD
+  accent: '#466d7a'
+casa-dilauro:
+  name: "Casa Dilauro Independent Research"
+  short_name: "Casa Dilauro"
+  initials: CDIR
+  accent: '#466d7a'
+bupt:
+  name: "Beijing University of Posts and Telecommunications"
+  short_name: "BUPT"
+  initials: BUPT
+  accent: '#466d7a'
+denglu-technology:
+  name: "Beijing Denglu Technology Ltd."
+  short_name: "Denglu Technology"
+  initials: DL
+  accent: '#466d7a'
+johns-hopkins:
+  name: "Johns Hopkins University"
+  short_name: "Johns Hopkins"
+  initials: JHU
+  accent: '#466d7a'
+meta:
+  name: "Meta"
+  short_name: "Meta"
+  initials: Meta
+  accent: '#466d7a'
+kaust:
+  name: "King Abdullah University of Science and Technology"
+  short_name: "KAUST"
+  initials: KAUST
+  accent: '#466d7a'
+iit-bombay:
+  name: "Indian Institute of Technology Bombay"
+  short_name: "IIT Bombay"
+  initials: IITB
+  accent: '#466d7a'
+sambanova-systems:
+  name: "SambaNova Systems, Inc."
+  short_name: "SambaNova"
+  initials: SN
+  accent: '#466d7a'
+bytedance:
+  name: "ByteDance Inc."
+  short_name: "ByteDance"
+  initials: BD
+  accent: '#466d7a'
+singapore-mit-alliance:
+  name: "Singapore-MIT Alliance for Research and Technology"
+  short_name: "SMART"
+  initials: SMART
+  accent: '#466d7a'
+texas-am:
+  name: "Texas A&M University"
+  short_name: "Texas A&M"
+  initials: TAMU
+  accent: '#466d7a'
+university-waterloo:
+  name: "University of Waterloo"
+  short_name: "Waterloo"
+  initials: UW
+  accent: '#466d7a'
+jd-com:
+  name: "JD.com"
+  short_name: "JD.com"
+  initials: JD
+  accent: '#466d7a'
+alibaba-damo:
+  name: "DAMO Academy, Alibaba Group U.S."
+  short_name: "Alibaba DAMO"
+  initials: DAMO
+  accent: '#466d7a'
+nec-labs-europe:
+  name: "NEC Laboratories Europe"
+  short_name: "NEC Labs Europe"
+  initials: NECLE
+  accent: '#466d7a'
+i2cat:
+  name: "i2CAT Foundation"
+  short_name: "i2CAT"
+  initials: i2CAT
+  accent: '#466d7a'
+icrea:
+  name: "ICREA"
+  short_name: "ICREA"
+  initials: ICREA
+  accent: '#466d7a'
+lamarr-institute:
+  name: "Lamarr Institute for Machine Learning and Artificial Intelligence"
+  short_name: "Lamarr Institute"
+  initials: Lamar
+  accent: '#466d7a'
+fraunhofer-iais:
+  name: "Fraunhofer Institute for Intelligent Analysis and Information Systems IAIS"
+  short_name: "Fraunhofer IAIS"
+  initials: IAIS
+  accent: '#466d7a'
+emory:
+  name: "Emory University"
+  short_name: "Emory"
+  initials: Emory
+  accent: '#466d7a'
+uiuc:
+  name: "University of Illinois Urbana-Champaign"
+  short_name: "UIUC"
+  initials: UIUC
+  accent: '#466d7a'
+chengdu-information-technology:
+  name: Chengdu University of Information Technology
+  short_name: CUIT
+  initials: CUIT
+  accent: '#466d7a'
+sorbonne-university:
+  name: Sorbonne University
+  short_name: Sorbonne
+  initials: SU
+  accent: '#466d7a'
+cnrs:
+  name: Centre National de la Recherche Scientifique
+  short_name: CNRS
+  initials: CNRS
+  accent: '#466d7a'
+princeton:
+  name: Princeton University
+  short_name: Princeton
+  initials: PU
+  accent: '#466d7a'
 cityu-hk:
   name: City University of Hong Kong
   short_name: CityUHK
   initials: CityU
   website: https://www.cityu.edu.hk/
   accent: '#8b1e3f'
+postech:
+  name: Pohang University of Science and Technology
+  short_name: POSTECH
+  initials: POST
+  accent: '#9b2855'
+university-chicago:
+  name: University of Chicago
+  short_name: UChicago
+  initials: UChi
+  accent: '#800000'
+university-toronto:
+  name: University of Toronto
+  short_name: U of T
+  initials: UofT
+  accent: '#253b65'
+university-virginia:
+  name: University of Virginia
+  short_name: UVA
+  initials: UVA
+  accent: '#e57200'
+university-minnesota:
+  name: University of Minnesota
+  short_name: Minnesota
+  initials: UMN
+  accent: '#7a0019'
+seoul-national-university:
+  name: Seoul National University
+  short_name: SNU
+  initials: SNU
+  accent: '#243f85'
+hanyang-university:
+  name: Hanyang University
+  short_name: Hanyang
+  initials: HYU
+  accent: '#214e81'
+wenzhou-university:
+  name: Wenzhou University
+  short_name: Wenzhou
+  initials: WZU
+  accent: '#a42b3e'
+santa-clara-university:
+  name: Santa Clara University
+  short_name: Santa Clara
+  initials: SCU
+  accent: '#862633'
+state-key-cognitive-intelligence:
+  name: State Key Laboratory of Cognitive Intelligence
+  short_name: SKL Cognitive Intelligence
+  initials: SKLCI
+  accent: '#3d6b8c'
+renmin-university:
+  name: Renmin University of China
+  short_name: Renmin
+  initials: RUC
+  accent: '#a52a3d'
 huawei-noahs-ark:
   name: Huawei Noah's Ark Lab
   short_name: Huawei NAL
@@ -403,12 +938,6 @@ virginia-tech:
   initials: VT
   website: https://www.vt.edu/
   accent: '#861f41'
-cmu:
-  name: Carnegie Mellon University
-  short_name: CMU
-  initials: CMU
-  website: https://www.cmu.edu/
-  accent: '#c41230'
 ai2:
   name: Allen Institute for AI
   short_name: Ai2
@@ -619,12 +1148,6 @@ northeastern-cn:
   initials: NEU
   website: https://english.neu.edu.cn/
   accent: '#1d4e89'
-ucas:
-  name: University of Chinese Academy of Sciences
-  short_name: UCAS
-  initials: UCAS
-  website: https://english.ucas.ac.cn/
-  accent: '#2f5f98'
 hkust:
   name: The Hong Kong University of Science and Technology
   short_name: HKUST
@@ -744,18 +1267,6 @@ nankai:
   initials: NKU
   website: https://www.nankai.edu.cn/
   accent: '#15356b'
-neu:
-  name: Northeastern University
-  short_name: NEU
-  initials: NEU
-  website: https://www.neu.edu.cn/
-  accent: '#1a4f8b'
-thu:
-  name: Tsinghua University
-  short_name: THU
-  initials: THU
-  website: https://www.tsinghua.edu.cn/
-  accent: '#a51e1e'
 casia:
   name: Institute of Automation, Chinese Academy of Sciences
   short_name: CASIA
@@ -909,11 +1420,6 @@ terra-quantum:
   short_name: Terra Quantum
   initials: TQ
   accent: '#456a79'
-george-mason:
-  name: George Mason University
-  short_name: George Mason
-  initials: GMU
-  accent: '#006633'
 einsia-navers:
   name: Navers Lab, Einsia.AI
   short_name: Einsia.AI

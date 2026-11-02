@@ -15,7 +15,7 @@ paper_url: https://arxiv.org/pdf/2607.11916
 code_url: https://github.com/datphamvn/QDEvo
 institutions:
   - hanoi-university-science-technology
-  - george-mason
+  - gmu
 primary_dimension: search
 dimensions:
   - search
