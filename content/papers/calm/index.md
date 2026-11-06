@@ -8,10 +8,10 @@ authors:
   - "Kui Wu"
   - "Jianping Wang"
   - "Wei-Bin Lee"
-year: 2025
-date: 2025-05-18
-venue: "arXiv"
-paper_url: https://arxiv.org/pdf/2505.12285
+year: 2026
+date: 2026-04-01
+venue: ICLR
+paper_url: https://proceedings.iclr.cc/paper_files/paper/2026/file/75ed738c083f8941cfc990245e4f6265-Paper-Conference.pdf
 code_url: https://github.com/whxru/CALM
 institutions:
   - cityu-hk
@@ -34,7 +34,7 @@ Prompt-based AHD changes the text shown to a fixed generator but never teaches t
 
 ## Core method
 
-CALM maintains an evolutionary loop for executable heuristics while periodically updating a local 7B model with reinforcement learning. Verbal guidance comes from selected candidates and prompts; numerical guidance comes from evaluated solution quality. A changing model proposes the next population, and that population supplies rewards for later model updates.
+CALM maintains an evolutionary loop for executable heuristics while periodically updating a local 7B model with reinforcement learning. Verbal guidance comes from selected candidates and prompts. Numerical guidance comes from evaluated solution quality. A changing model proposes the next population, and that population supplies rewards for later model updates.
 
 The system runs locally with 4-bit quantization on a single 24 GB GPU. Across several optimization tasks, it outperforms verbal-only baselines and reports competitive results against methods using substantially larger API models.
 

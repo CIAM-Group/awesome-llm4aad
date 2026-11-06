@@ -48,4 +48,6 @@ Learn compact state descriptors, cache reusable operators, and compare online de
 
 ## Connections
 
-DyACE changes *when* design occurs: it continues during solution search. EoH and most atlas methods finish heuristic evolution before deployment.
+DyACE changes *when* design occurs: it continues during solution search. Its generated operators are evaluated from the current population state.
+
+[Cut Management](../cut-management/index.md) instead selects stored cut-selection policies from solver-state descriptions. [RACE-Sched](../race-sched/index.md) explicitly separates fast policy execution from slow redesign and validation. These comparisons distinguish proposal evaluation, policy reuse and update latency.

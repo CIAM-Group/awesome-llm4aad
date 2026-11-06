@@ -44,3 +44,5 @@ The first stage compares seed and improved heuristics to extract reusable evolut
 ## Limitations and extensions
 
 The selector adds another learned component and can inherit model bias. A shared benchmark for selection quality, switching cost, and final solution quality would strengthen comparisons.
+
+[LACE](../lace/index.md) runs complete solver functions independently and retains the best feasible result. HeurAgenix instead selects operation heuristics as a solution trajectory unfolds. Both use multiple heuristics, at different levels of composition.

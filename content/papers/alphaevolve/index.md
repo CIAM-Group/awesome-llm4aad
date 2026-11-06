@@ -70,4 +70,6 @@ Open implementations, transparent evaluation harnesses, and standardized budgets
 
 ## Connections
 
-The atlas treats AlphaEvolve as a system-level generalization of evaluator-guided program search, including FunSearch as its closest historical anchor.
+The collection treats AlphaEvolve as a system-level generalization of evaluator-guided program search, including FunSearch as its closest historical anchor.
+
+[CheckMate](../checkmate/index.md) adapts this execution-guided search pattern through OpenEvolve, adding declarative solution checking and structured constraint-violation feedback.

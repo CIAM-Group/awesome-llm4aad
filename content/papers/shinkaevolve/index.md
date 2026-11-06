@@ -51,3 +51,5 @@ Replace or augment textual novelty with execution behavior, include evaluator wa
 ## Connections
 
 ShinkaEvolve is a system-level successor to FunSearch-style program evolution and a direct open alternative to OpenEvolve. Harness Engineering studies complementary execution-layer choices around such systems.
+
+[MetaMuse](../metamuse/index.md) measures diversity through execution on multiple traces. It offers a concrete contrast to ShinkaEvolve's code-embedding and LLM novelty filters before evaluation.

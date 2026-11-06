@@ -63,4 +63,6 @@ The evaluator gives the loop a verifiable feedback channel and the program repre
 
 ## Connections
 
-The atlas places FunSearch beside AEL as a late-2023 concurrent work. Later systems can be explored through the `system`, `search`, and `feedback` filters.
+FunSearch and AEL appeared as independent work in late 2023.
+
+[GenePlan](../geneplan/index.md) explicitly adapts the scored-program evolution pattern to reusable PDDL planners. It changes parent sampling and replacement, and validates complete action sequences instead of returning a score for a single critical function.

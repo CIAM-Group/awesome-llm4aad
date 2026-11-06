@@ -59,3 +59,5 @@ Future work should make set size cost-aware, learn a fast instance-to-heuristic 
 ## Connections
 
 EoH-S is modeled as a generalization of the single-heuristic EoH design object. Its main distinction is not a new prompt alone, but the change in what counts as a successful algorithm.
+
+[LACE](../lace/index.md) shares the per-instance best-of-portfolio objective but selects a subset through a rank-based MILP. EoH-S uses greedy marginal improvement in instance-wise performance. This compares selection criteria without asserting direct implementation inheritance.
