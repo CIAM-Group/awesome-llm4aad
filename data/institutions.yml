@@ -1495,3 +1495,53 @@ fnii-shenzhen:
   short_name: FNii-Shenzhen
   initials: FNII
   accent: '#75418c'
+hubei-university-technology:
+  name: Hubei University of Technology
+  short_name: HBUT
+  initials: HBUT
+  accent: '#2d608f'
+picardie-jules-verne:
+  name: Université de Picardie Jules Verne
+  short_name: UPJV
+  initials: UPJV
+  accent: '#207a8c'
+aix-marseille:
+  name: Aix-Marseille Université
+  short_name: AMU
+  initials: AMU
+  accent: '#147ba4'
+seedmath:
+  name: SeedMath Technology Limited
+  short_name: SeedMath
+  initials: SEED
+  accent: '#35678b'
+university-klagenfurt:
+  name: University of Klagenfurt
+  short_name: Klagenfurt
+  initials: AAU
+  accent: '#407981'
+university-udine:
+  name: University of Udine
+  short_name: Udine
+  initials: UNIUD
+  accent: '#577442'
+sichuan-ai-institute:
+  name: Sichuan Artificial Intelligence Research Institute
+  short_name: Sichuan AI
+  initials: SAIRI
+  accent: '#33628b'
+orebro-university:
+  name: Örebro University
+  short_name: Örebro
+  initials: ORU
+  accent: '#8e384f'
+university-liverpool:
+  name: University of Liverpool
+  short_name: Liverpool
+  initials: LIV
+  accent: '#32678b'
+national-taiwan:
+  name: National Taiwan University
+  short_name: NTU Taiwan
+  initials: NTUTW
+  accent: '#8b4d48'

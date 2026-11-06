@@ -149,16 +149,20 @@ Open a month to browse. The latest month is expanded.
 </details>
 
 <details>
-<summary><strong>2026.08 · 26 papers</strong></summary>
+<summary><strong>2026.08 · 32 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
 | <a href="https://arxiv.org/pdf/2608.04384">Improving Auto-Design of Neural PDE Solvers with a Domain-Specific Language</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.04384) · [Note](content/papers/adsl-pde/index.md) · [Code](https://github.com/Super-KongCC/Improving-Auto-Design-of-Neural-PDE-Solvers-with-a-Domain-Specific-Language) |
+| <a href="https://ijcai.org/proceedings/2026/0257.pdf">Bridging LLMs and SAT Solving: Automated Evolution of High-Performance Heuristics</a> | IJCAI 2026 | [Paper PDF](https://ijcai.org/proceedings/2026/0257.pdf) · [Note](content/papers/aesat/index.md) · [Code](https://github.com/FSQH-dh/AESAT) |
 | <a href="https://arxiv.org/pdf/2608.20318">AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.20318) · [Note](content/papers/ai4ai-bench/index.md) |
 | <a href="https://arxiv.org/pdf/2608.09874">ArchAgent v2: A Case Study with the Data Prefetching Championship</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.09874) · [Note](content/papers/archagent-v2/index.md) |
+| <a href="https://arxiv.org/pdf/2604.16420">Breaking Validity-Induced Boundaries to Expand Algorithm Search Space: A Two-Stage AST-Based Operator for LLM-Driven Automated Heuristic Evolution</a> | GECCO Companion 2026 | [Paper PDF](https://arxiv.org/pdf/2604.16420) · [Note](content/papers/ast-evo/index.md) |
 | <a href="https://arxiv.org/pdf/2608.15546">ATLAS: Scaffold-Free Algorithm Synthesis by LLMs via Embedding-Guided Quality-Diversity Search</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.15546) · [Note](content/papers/atlas/index.md) · [Code](https://github.com/Danial-Yazdani/ATLAS) |
 | <a href="https://arxiv.org/pdf/2608.03653">AutoSND: From Execution Evidence to Structural Policies for Automated Network Dismantling Heuristic Discovery</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.03653) · [Note](content/papers/autosnd/index.md) · [Code](https://github.com/MirrorNew/AutoSND) |
 | <a href="https://arxiv.org/pdf/2608.21927">Bi-EZP: LLM-Guided Bilevel Program Evolution for Ensemble Zero-Cost Proxy Discovery</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.21927) · [Note](content/papers/bi-ezp/index.md) · [Code](https://anonymous.4open.science/r/Bi-EZP-318D) |
+| <a href="https://ijcai.org/proceedings/2026/0451.pdf">Learning to Solve and Optimize by Evolving Code</a> | IJCAI 2026 | [Paper PDF](https://ijcai.org/proceedings/2026/0451.pdf) · [Note](content/papers/checkmate/index.md) · [Code](https://git-ainf.aau.at/checkmate/ijcai26) |
+| <a href="https://ijcai.org/proceedings/2026/0736.pdf">LLM-guided Cutting-plane Management for Mixed-integer Linear Programming</a> | IJCAI AI4Tech 2026 | [Paper PDF](https://ijcai.org/proceedings/2026/0736.pdf) · [Note](content/papers/cut-management/index.md) · [Code](https://github.com/BeeeeenWANG/LLM-guided-cutting-plane-management) |
 | <a href="https://arxiv.org/pdf/2608.00700">DGA₂D: Directed Graph-Guided Automated Algorithm Design with Large Language Models</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.00700) · [Note](content/papers/dga2d/index.md) |
 | <a href="https://arxiv.org/pdf/2608.03129">Beyond Average Performance: Dynamic Instance Clustering and Specialized Algorithm Design in LLM-Assisted Evolutionary Search</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.03129) · [Note](content/papers/dyca/index.md) |
 | <a href="https://arxiv.org/pdf/2608.10196">ELMER: Evolutionary Language Model that Explores and Refines</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.10196) · [Note](content/papers/elmer/index.md) |
@@ -169,10 +173,12 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2608.16733">GoalEvolve: From Handcrafted Algorithm Priors to Goal-Driven Evolution of Physical Design Algorithms</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.16733) · [Note](content/papers/goalevolve/index.md) |
 | <a href="https://arxiv.org/pdf/2608.01633">GraphIR: Architecture-Level Search States for LLM-Guided Neural Architecture Evolution</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.01633) · [Note](content/papers/graphir/index.md) |
 | <a href="https://arxiv.org/pdf/2608.08189">Janus: An Algorithm-Evaluator Co-Evolution Framework for LLM-Driven Discovery under Expensive Evaluation Budgets</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.08189) · [Note](content/papers/janus/index.md) |
+| <a href="https://www.nature.com/articles/s42256-026-01307-8.pdf">Large language models discover complementary heuristics for combinatorial optimization</a> | Nature Machine Intelligence 2026 | [Paper PDF](https://www.nature.com/articles/s42256-026-01307-8.pdf) · [Note](content/papers/lace/index.md) · [Code](https://github.com/PJ-NTU/LACE) |
 | <a href="https://arxiv.org/pdf/2608.24946">MacroAgent: Regularity-Aware Macro Legalization with LLM-Agent-Designed Contour Algorithms</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.24946) · [Note](content/papers/macroagent/index.md) · [Code](https://github.com/gilgamsh/MacroAgent) |
 | <a href="https://arxiv.org/pdf/2608.03636">MuEvo: LLM-Driven Evolution of Multi-Heuristic Ensemble</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.03636) · [Note](content/papers/muevo/index.md) |
 | <a href="https://arxiv.org/pdf/2608.07395">PACE: Primitive-Aware Code Evolution for Automated Algorithm Design</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.07395) · [Note](content/papers/pace/index.md) |
 | <a href="https://arxiv.org/pdf/2608.06808">Evolving Parallel Algorithm Portfolios via Potential-Aware Instance Generation with LLMs</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.06808) · [Note](content/papers/piac/index.md) · [Code](https://anonymous.4open.science/r/piac-BAF3) |
+| <a href="https://ijcai.org/proceedings/2026/0684.pdf">Harmonizing Real-Time Constraints and Long-Horizon Reasoning: An Asynchronous Agentic Framework for Dynamic Scheduling</a> | IJCAI 2026 | [Paper PDF](https://ijcai.org/proceedings/2026/0684.pdf) · [Note](content/papers/race-sched/index.md) · [Code](https://github.com/cls1277/RACE-Sched) |
 | <a href="https://arxiv.org/pdf/2608.15138">ReForge: Keeping ABR Algorithms Never Finished with Verified Large Language Model Edits</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.15138) · [Note](content/papers/reforge/index.md) |
 | <a href="https://arxiv.org/pdf/2608.05651">Relay, Don't Route: Adaptive Population Handoff for Cost-Efficient LLM-Driven Evolution</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.05651) · [Note](content/papers/relayevolve/index.md) |
 | <a href="https://arxiv.org/pdf/2608.18272">SeisEvo: Evolution of Seismic Data Reconstruction Algorithms by Agents</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.18272) · [Note](content/papers/seisevo/index.md) |
@@ -183,18 +189,19 @@ Open a month to browse. The latest month is expanded.
 </details>
 
 <details>
-<summary><strong>2026.07 · 17 papers</strong></summary>
+<summary><strong>2026.07 · 19 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
+| <a href="https://arxiv.org/pdf/2604.24043">A2DEPT: Large Language Model-Driven Automated Algorithm Design via Evolutionary Program Trees</a> | ICML 2026 | [Paper PDF](https://arxiv.org/pdf/2604.24043) · [Note](content/papers/a2dept/index.md) |
 | <a href="https://arxiv.org/pdf/2607.17762">Autonomous Discovery of Wireless Communications Algorithms</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.17762) · [Note](content/papers/aite/index.md) · [Code](https://github.com/nvlabs/the-ai-telco-engineer) |
-| <a href="https://arxiv.org/pdf/2604.16420">Breaking Validity-Induced Boundaries to Expand Algorithm Search Space: A Two-Stage AST-Based Operator for LLM-Driven Automated Heuristic Evolution</a> | GECCO 2026 | [Paper PDF](https://arxiv.org/pdf/2604.16420) · [Note](content/papers/ast-evo/index.md) |
 | <a href="https://arxiv.org/pdf/2607.28268">LLM-Guided Evolutionary Search for Constraint Model Reformulation to Improve Solver Efficiency</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.28268) · [Note](content/papers/constraint-reformulation/index.md) |
 | <a href="https://arxiv.org/pdf/2607.26828">Budget-Aware LLM Discovery via Cost-Calibrated Frontier Utility</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.26828) · [Note](content/papers/costada/index.md) |
 | <a href="https://arxiv.org/pdf/2605.06341">CoupleEvo: Evolving Heuristics for Coupled Optimization Problems Using Large Language Models</a> | GECCO Companion 2026 | [Paper PDF](https://arxiv.org/pdf/2605.06341) · [Note](content/papers/coupleevo/index.md) · [Code](https://github.com/tb-git-kit-research/CoupleEvo) |
 | <a href="https://arxiv.org/pdf/2607.13911">How to Guide LLM Generation: Dual-Surrogate Guided Search for Automated Heuristic Design</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.13911) · [Note](content/papers/dgs/index.md) |
 | <a href="https://arxiv.org/pdf/2607.26490">EvoPINN: Agentic Discovery of Executable Algorithms for Physics-Informed Neural Networks</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.26490) · [Note](content/papers/evopinn/index.md) |
 | <a href="https://arxiv.org/pdf/2607.27389">FunL2O: LLM-Guided Feature Function Design for Learning to Optimize</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.27389) · [Note](content/papers/funl2o/index.md) |
+| <a href="https://arxiv.org/pdf/2602.04529">Landscape-aware Automated Algorithm Design: An Efficient Framework for Real-world Optimization</a> | GECCO 2026 | [Paper PDF](https://arxiv.org/pdf/2602.04529) · [Note](content/papers/landscape-aad/index.md) |
 | <a href="https://arxiv.org/pdf/2607.08791">LLM-Driven Evolutionary Generation of Multi-Objective Bayesian Optimization Algorithms</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.08791) · [Note](content/papers/llamea-mobo/index.md) · [Code](https://github.com/glatq/LLaMEA-MOO/tree/publication_llamea_moo_unconstrained) |
 | <a href="https://arxiv.org/pdf/2608.07544">MOSAIC: Adversarial Co-evolution of Specialist Heuristics and Problem Instances for LLM-based Automated Heuristic Design</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2608.07544) · [Note](content/papers/mosaic/index.md) |
 | <a href="https://openreview.net/pdf/5723a21bffbe74a1f5c2b88d97cee90b29e16b4d.pdf">Hierarchical Representations for Cross-task Automated Heuristic Design using LLMs</a> | ICML 2026 | [Paper PDF](https://openreview.net/pdf/5723a21bffbe74a1f5c2b88d97cee90b29e16b4d.pdf) · [Note](content/papers/mths/index.md) |
@@ -202,16 +209,18 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2601.20539">PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs</a> | ICML 2026 | [Paper PDF](https://arxiv.org/pdf/2601.20539) · [Note](content/papers/pathwise/index.md) · [Code](https://github.com/oguzhangungordu/PathWise) |
 | <a href="https://arxiv.org/pdf/2607.11916">QDEvo: A Multi-Objective Quality-Diversity Framework for Automated Heuristic Design</a> | GECCO Companion 2026 | [Paper PDF](https://arxiv.org/pdf/2607.11916) · [Note](content/papers/qdevo/index.md) · [Code](https://github.com/datphamvn/QDEvo) |
 | <a href="https://arxiv.org/pdf/2607.11358">RefineEvo: Planning-Guided Heuristic Evolution with Bidirectional Experience</a> | ICML 2026 | [Paper PDF](https://arxiv.org/pdf/2607.11358) · [Note](content/papers/refineevo/index.md) · [Code](https://github.com/samwu-learn/RefineEvo) |
+| <a href="https://arxiv.org/pdf/2603.28416">Evolutionary Discovery of Reinforcement Learning Algorithms via Large Language Models</a> | GECCO 2026 | [Paper PDF](https://arxiv.org/pdf/2603.28416) · [Note](content/papers/rl-update-discovery/index.md) |
 | <a href="https://arxiv.org/pdf/2607.23676">SpecAHD: Localize to Specialize for Automated Heuristic Design in Large-Scale Routing Problems</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.23676) · [Note](content/papers/specahd/index.md) |
 | <a href="https://arxiv.org/pdf/2607.19822">WARA: A Closed-Loop Multi-Agent Framework for Wireless Optimization Autoresearch</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.19822) · [Note](content/papers/wara/index.md) · [Code](https://github.com/guoyuan-dotcom/WARA_CUHKSZ) |
 
 </details>
 
 <details>
-<summary><strong>2026.06 · 15 papers</strong></summary>
+<summary><strong>2026.06 · 16 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
+| <a href="https://www.nature.com/articles/s41467-026-74949-2.pdf">Discovering heuristics in a complex SAT solver with large language models</a> | Nature Communications 2026 | [Paper PDF](https://www.nature.com/articles/s41467-026-74949-2.pdf) · [Note](content/papers/automodsat/index.md) · [Code](https://doi.org/10.5281/zenodo.17856395) |
 | <a href="https://arxiv.org/pdf/2606.19741">Interpreting Neural Combinatorial Optimization via Evolving Programmatic Bottlenecks</a> | ArXiv.org 2026 | [Paper PDF](https://arxiv.org/pdf/2606.19741) · [Note](content/papers/epb-nco/index.md) |
 | <a href="https://arxiv.org/pdf/2606.26578">EvoOptiGraph: Weakness-Driven Coevolution via Graph-Based Structural Generation for Optimization Modeling</a> | ArXiv.org 2026 | [Paper PDF](https://arxiv.org/pdf/2606.26578) · [Note](content/papers/evooptigraph/index.md) |
 | <a href="https://link.springer.com/content/pdf/10.1007/JHEP06(2026)225.pdf">Explainable AI-assisted optimization for Feynman integral reduction</a> | Journal of High Energy Physics 2026 | [Paper PDF](https://link.springer.com/content/pdf/10.1007/JHEP06(2026)225.pdf) · [Note](content/papers/feynman-funsearch/index.md) |
@@ -257,17 +266,18 @@ Open a month to browse. The latest month is expanded.
 </details>
 
 <details>
-<summary><strong>2026.04 · 10 papers</strong></summary>
+<summary><strong>2026.04 · 11 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
 | <a href="https://arxiv.org/pdf/2601.19622">Algorithmic Prompt-Augmentation for Efficient LLM-Based Heuristic Design for A* Search</a> | EvoStar 2026 | [Paper PDF](https://arxiv.org/pdf/2601.19622) · [Note](content/papers/a-ceoh/index.md) · [Code](https://github.com/tb-git-tud/a-ceoh-evolution-of-heuristics) |
-| <a href="https://arxiv.org/pdf/2604.24043">A2DEPT: Large Language Model-Driven Automated Algorithm Design via Evolutionary Program Trees</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2604.24043) · [Note](content/papers/a2dept/index.md) |
 | <a href="https://arxiv.org/pdf/2510.16701">AFL: An Agentic Framework with LLMs for Solving Complex Vehicle Routing Problems</a> | ICLR 2026 | [Paper PDF](https://arxiv.org/pdf/2510.16701) · [Note](content/papers/afl/index.md) · [Code](https://github.com/ZHANG-NI/AFL) |
 | <a href="https://arxiv.org/pdf/2604.12898">BEAM: Bi-level Memory-adaptive Algorithmic Evolution for LLM-Powered Heuristic Design</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2604.12898) · [Note](content/papers/beam/index.md) |
 | <a href="https://arxiv.org/pdf/2603.02787">Rethinking Code Similarity for Automated Algorithm Design with LLMs</a> | ICLR 2026 | [Paper PDF](https://arxiv.org/pdf/2603.02787) · [Note](content/papers/behavesim/index.md) · [Code](https://github.com/RayZhhh/behavesim) |
+| <a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/75ed738c083f8941cfc990245e4f6265-Paper-Conference.pdf">CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design</a> | ICLR 2026 | [Paper PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/75ed738c083f8941cfc990245e4f6265-Paper-Conference.pdf) · [Note](content/papers/calm/index.md) · [Code](https://github.com/whxru/CALM) |
 | <a href="https://arxiv.org/pdf/2604.01210">CliffSearch: Structured Agentic Co-Evolution over Theory and Code for Scientific Algorithm Discovery</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2604.01210) · [Note](content/papers/cliffsearch/index.md) |
 | <a href="https://arxiv.org/pdf/2506.07972">HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization</a> | ICLR 2026 | [Paper PDF](https://arxiv.org/pdf/2506.07972) · [Note](content/papers/heurigym/index.md) · [Code](https://github.com/cornell-zhang/heurigym) |
+| <a href="https://fyy.cs.illinois.edu/files/metamuse-iclr26.pdf">MetaMuse: Algorithm Generation via Creative Ideation</a> | ICLR 2026 | [Paper PDF](https://fyy.cs.illinois.edu/files/metamuse-iclr26.pdf) · [Note](content/papers/metamuse/index.md) · [Code](https://github.com/illinois-nsai/MetaMuse) |
 | <a href="https://arxiv.org/pdf/2508.05433">Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies</a> | ICLR 2026 | [Paper PDF](https://arxiv.org/pdf/2508.05433) · [Note](content/papers/mles/index.md) · [Code](https://github.com/QingL2000/MLES) |
 | <a href="https://arxiv.org/pdf/2604.04940">ReVEL: Multi-Turn Reflective LLM-Guided Heuristic Evolution via Structured Performance Feedback</a> | ArXiv.org 2026 | [Paper PDF](https://arxiv.org/pdf/2604.04940) · [Note](content/papers/revel/index.md) |
 | <a href="https://arxiv.org/pdf/2604.24372">SeaEvo: Advancing Algorithm Discovery with Strategy Space Evolution</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2604.24372) · [Note](content/papers/seaevo/index.md) |
@@ -291,7 +301,7 @@ Open a month to browse. The latest month is expanded.
 </details>
 
 <details>
-<summary><strong>2026.02 · 5 papers</strong></summary>
+<summary><strong>2026.02 · 6 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
@@ -300,6 +310,7 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2602.16038">Heuristic Search as Language-Guided Program Optimization</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2602.16038) · [Note](content/papers/lago/index.md) |
 | <a href="https://arxiv.org/pdf/2602.09349">Large Language Models for Designing Participatory Budgeting Rules</a> | arXiv (Cornell University) 2026 | [Paper PDF](https://arxiv.org/pdf/2602.09349) · [Note](content/papers/participatory-rules/index.md) |
 | <a href="https://arxiv.org/pdf/2602.13769">OR-Agent: Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery</a> | arXiv.org 2026 | [Paper PDF](https://arxiv.org/pdf/2602.13769) · [Note](content/papers/or-agent/index.md) |
+| <a href="https://arxiv.org/pdf/2410.14716">A Systematic Survey on Large Language Models for Algorithm Design</a> | ACM Computing Surveys 2026 | [Paper PDF](https://arxiv.org/pdf/2410.14716) · [Note](content/papers/ahd-survey/index.md) |
 
 </details>
 
@@ -374,12 +385,13 @@ Open a month to browse. The latest month is expanded.
 </details>
 
 <details>
-<summary><strong>2025.06 · 2 papers</strong></summary>
+<summary><strong>2025.06 · 3 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
 | <a href="https://arxiv.org/pdf/2506.13131">AlphaEvolve: A coding agent for scientific and algorithmic discovery</a> | arXiv white paper 2025 | [Paper PDF](https://arxiv.org/pdf/2506.13131) · [Note](content/papers/alphaevolve/index.md) |
 | <a href="https://arxiv.org/pdf/2506.15196">HeurAgenix: Leveraging LLMs for Solving Complex Combinatorial Optimization Challenges</a> | arXiv 2025 | [Paper PDF](https://arxiv.org/pdf/2506.15196) · [Note](content/papers/heuragenix/index.md) · [Code](https://github.com/microsoft/HeurAgenix) |
+| <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11043025">LLM-Driven Neighborhood Search for Efficient Heuristic Design</a> | IEEE CEC 2025 | [Paper PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11043025) · [Note](content/papers/lhns/index.md) · [Code](https://github.com/Acquent0/LHNS) |
 
 </details>
 
@@ -388,9 +400,9 @@ Open a month to browse. The latest month is expanded.
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
-| <a href="https://arxiv.org/pdf/2505.12285">CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design</a> | arXiv 2025 | [Paper PDF](https://arxiv.org/pdf/2505.12285) · [Note](content/papers/calm/index.md) · [Code](https://github.com/whxru/CALM) |
 | <a href="https://arxiv.org/pdf/2506.00490">LLM-Driven Instance-Specific Heuristic Generation and Selection</a> | arXiv 2025 | [Paper PDF](https://arxiv.org/pdf/2506.00490) · [Note](content/papers/instspechh/index.md) |
 | <a href="https://arxiv.org/pdf/2505.21034">LLaMEA-BO: A Large Language Model Evolutionary Algorithm for Automatically Generating Bayesian Optimization Algorithms</a> | arXiv 2025 | [Paper PDF](https://arxiv.org/pdf/2505.21034) · [Note](content/papers/llamea-bo/index.md) · [Code](https://github.com/Ewendawi/LLaMEA-BO) |
+| <a href="https://yuejiaogong.github.io/papers/MetaBBOsurvey.pdf">Toward Automated Algorithm Design: A Survey and Practical Guide to Meta-Black-Box-Optimization</a> | IEEE TEVC 2025 | [Paper PDF](https://yuejiaogong.github.io/papers/MetaBBOsurvey.pdf) · [Note](content/papers/metabbo-survey/index.md) |
 | <a href="https://arxiv.org/pdf/2405.17743">ORLM: A Customizable Framework in Training Large Models for Automated Optimization Modeling</a> | Operations Research 2025 | [Paper PDF](https://arxiv.org/pdf/2405.17743) · [Note](content/papers/orlm/index.md) · [Code](https://github.com/Cardinal-Operations/ORLM) |
 | <a href="https://arxiv.org/pdf/2505.20242">RedAHD: Reduction-Based End-to-End Automatic Heuristic Design with Large Language Models</a> | arXiv 2025 | [Paper PDF](https://arxiv.org/pdf/2505.20242) · [Note](content/papers/redahd/index.md) |
 
@@ -439,15 +451,6 @@ Open a month to browse. The latest month is expanded.
 | :--- | :--- | :--- |
 | <a href="https://arxiv.org/pdf/2412.17287">LLM4AD: A Platform for Algorithm Design with Large Language Model</a> | arXiv 2024 | [Paper PDF](https://arxiv.org/pdf/2412.17287) · [Note](content/papers/llm4ad-platform/index.md) · [Code](https://github.com/Optima-CityU/LLM4AD) |
 | <a href="https://arxiv.org/pdf/2402.01145">ReEvo: Large Language Models as Hyper-Heuristics with Reflective Evolution</a> | NeurIPS 2024 | [Paper PDF](https://arxiv.org/pdf/2402.01145) · [Note](content/papers/reevo/index.md) · [Code](https://github.com/ai4co/reevo) |
-
-</details>
-
-<details>
-<summary><strong>2024.10 · 1 paper</strong></summary>
-
-| Paper | Publication | Links |
-| :--- | :--- | :--- |
-| <a href="https://arxiv.org/pdf/2410.14716">A Systematic Survey on Large Language Models for Algorithm Design</a> | arXiv (Cornell University) 2024 | [Paper PDF](https://arxiv.org/pdf/2410.14716) · [Note](content/papers/ahd-survey/index.md) |
 
 </details>
 

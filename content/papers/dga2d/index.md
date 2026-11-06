@@ -66,4 +66,4 @@ Automated operator-library construction, principled walk-depth and budget schedu
 
 ## Connections
 
-DGA2D contrasts with A2DEPT on the broader program-synthesis line: both pursue system-level algorithm design, but DGA2D uses directed operator graphs and path-dependent credit while A2DEPT uses program trees. It also complements design-object expansions of EoH (BEAM, MEVO) by treating the algorithm itself, rather than the heuristic set, as the evolving artifact.
+DGA2D represents operator execution order as a design graph and assigns credit to implementation transitions. [A2DEPT](../a2dept/index.md) instead evolves complete programs, records their ancestry in a lineage tree and maintains a separate dependency graph for repair. These structures encode different objects, not merely different graph shapes. DGA2D also broadens the design artifact beyond EoH-style heuristic components.

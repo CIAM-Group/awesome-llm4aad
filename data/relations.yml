@@ -730,8 +730,10 @@ relations:
     type: generalizes
     dimension: design-object
     description: >-
-      A2DEPT expands tree-structured search from bounded heuristic components to
-      complete solver programs with hierarchical edits and dependency repair.
+      A2DEPT broadens trajectory-based program search from heuristic functions to complete
+      solver programs, adding function-level edits and dependency repair. Its lineage-tree
+      selection uses simulated annealing and Boltzmann sampling rather than MCTS selection
+      and backpropagation.
   - from: mcts-ahd
     to: laf-mcts
     type: extends
@@ -767,8 +769,8 @@ relations:
     description: >-
       Knowledge-first design operationalizes strong priors as retrieved and
       structured domain knowledge that guides proposals before evaluation.
-  - from: calm
-    to: aad-ft
+  - from: aad-ft
+    to: calm
     type: contrasts
     dimension: feedback
     description: >-
@@ -1345,13 +1347,15 @@ relations:
     description: >-
       The tensor-network case study adapts OpenEvolve-style executable evolution to
       contraction-order design and compares several coding-agent systems.
-  - from: ahd-survey
+  - from: funsearch
     to: geneplan
-    type: contextualizes
-    dimension: scope
+    type: adapts
+    dimension: design-object
     description: >-
-      The AHD survey provides context for GenePlan's executable generalized-PDDL
-      planner synthesis.
+      GenePlan explicitly adapts FunSearch's scored-program database and LLM-driven
+      evolution to reusable PDDL planners. It adds plan validation, inverse-decaying
+      parent sampling and elitist replacement for mean plan-length optimization,
+      without retaining FunSearch's island-based population management.
   - from: eoh
     to: participatory-rules
     type: adapts
@@ -1524,9 +1528,9 @@ relations:
     type: concurrent-work
     dimension: design-object
     description: >-
-      A2DEPT and ATLAS independently move LLM-based AHD beyond component
-      synthesis toward open-ended solver synthesis and scaffold-free
-      full-algorithm synthesis, developed concurrently.
+      ATLAS explicitly identifies A2DEPT as concurrent work on full-algorithm synthesis.
+      A2DEPT uses program-lineage memory and role-partitioned functions, while ATLAS
+      organizes complete programs in an embedding-guided quality-diversity archive.
   - from: mcts-ahd
     to: clade-ahd
     type: extends
@@ -1913,8 +1917,10 @@ relations:
     type: contrasts
     dimension: design-object
     description: >-
-      DGA2D and A2DEPT both pursue system-level algorithm design, but DGA2D uses
-      directed operator graphs and path-dependent credit while A2DEPT uses program trees.
+      DGA2D designs pipelines as bounded walks through an operator-execution graph and
+      assigns credit to implementation transitions. A2DEPT evolves complete programs,
+      stores their ancestry in a lineage tree and uses a separate dependency graph for
+      repair. The graph structures therefore represent different objects.
 
   # Method reuse and specific design comparisons
   - from: eoh
@@ -2178,3 +2184,114 @@ relations:
       batch variables into protected GPU mechanisms and requires bitwise output agreement across
       matched batch contexts. This contrasts interface-based purity checks with targeted dependency
       and bitwise checks.
+  - from: alphaevolve
+    to: checkmate
+    type: adapts
+    dimension: feedback
+    description: >-
+      CheckMate adapts AlphaEvolve-style execution-guided program search through OpenEvolve.
+      It supplies a declarative solution verifier and structured constraint-violation feedback
+      for configuration and scheduling solvers. This is an adaptation through the open-source
+      implementation, not a modification of AlphaEvolve's proprietary code.
+  - from: automodsat
+    to: checkmate
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both check the outputs of evolved solver code. AutoModSAT validates SAT assignments
+      and unsatisfiability certificates. CheckMate checks returned solutions against a
+      declarative constraint model and reports violated constraints. This compares concrete
+      evaluator contracts, neither of which proves a generated program correct on every input.
+  - from: automodsat
+    to: aesat
+    type: contrasts
+    dimension: search
+    description: >-
+      Both redesign internal SAT-solver heuristics using runtime feedback. AutoModSAT combines
+      a modular MiniSat-derived interface with edit-location screening and diversity-oriented
+      prompt preparation. AESAT refines Kissat-MAB heuristics through local search,
+      multi-parent recombination and ancestry-based prompt updates.
+  - from: shinkaevolve
+    to: metamuse
+    type: contrasts
+    dimension: feedback
+    description: >-
+      ShinkaEvolve filters candidates through code embeddings and an LLM novelty check before
+      expensive evaluation. MetaMuse steers later ideas with measured multi-trace performance
+      vectors. This separates cheap semantic novelty filtering from execution-based evidence
+      of behavioral diversity, without claiming direct inheritance.
+  - from: dyace
+    to: cut-management
+    type: contrasts
+    dimension: search
+    description: >-
+      DyACE compares regenerated evolutionary operators through rollouts from the same
+      population state. Cut Management keeps separator configuration fixed and retrieves
+      generated cut-selection rules using the current branch-and-bound state. Both address
+      online component adaptation, but allocate cost differently between new proposals,
+      controlled evaluation and reuse of stored policies.
+  - from: dyace
+    to: race-sched
+    type: contrasts
+    dimension: search
+    description: >-
+      DyACE uses matched-state rollouts to select changed evolutionary operators during a run.
+      RACE-Sched explicitly separates the executing dispatch policy from a redesign stream
+      that prepares and validates replacements. The comparison concerns controlled candidate
+      evaluation and latency-safe integration, not a claim that DyACE cannot run asynchronously.
+  - from: eoh
+    to: lhns
+    type: contrasts
+    dimension: search
+    description: >-
+      EoH evolves a population of paired descriptions and programs. LHNS retains that paired
+      representation but follows an incumbent through partial-code ruin and reconstruction,
+      controlled neighborhood changes and non-greedy acceptance. This isolates a
+      population-search versus neighborhood-search choice.
+  - from: llamea-bo
+    to: landscape-aad
+    type: contrasts
+    dimension: feedback
+    description: >-
+      LLaMEA-BO generates optimizers that use surrogate models and acquisition rules to conserve
+      expensive evaluations during optimization. Landscape-aware AAD instead generates proxy
+      objectives to reduce repeated candidate-algorithm evaluation during discovery. The methods
+      place approximation at different levels of the evaluation budget.
+  - from: llamea-hpo
+    to: rl-update-discovery
+    type: contrasts
+    dimension: search
+    description: >-
+      LLaMEA-HPO tunes each generated algorithm before feeding its fitness into evolutionary
+      selection. RL Update Discovery first evolves training-update structures and then refines
+      selected finalists. This contrasts joint structural and parameter evaluation with delayed
+      tuning, whose lower inner-loop cost can leave promising structures under-tuned during search.
+  - from: eoh
+    to: metabbo-survey
+    type: contextualizes
+    dimension: design-object
+    description: >-
+      The MetaBBO survey places EoH in algorithm generation and in-context learning, distinguishing
+      generated optimizer code from algorithm selection, parameter configuration and direct
+      solution manipulation. This is a documented taxonomy connection, not a claim that EoH
+      participates in the survey's MetaBox empirical comparison.
+  - from: eoh-s
+    to: lace
+    type: contrasts
+    dimension: search
+    description: >-
+      Both optimize a complementary set using the best member on each development instance.
+      EoH-S greedily retains heuristics by their marginal improvement in instance-wise
+      performance. LACE instead minimizes the mean best rank through exact MILP selection
+      from the current candidate pool. This contrasts magnitude-sensitive greedy selection
+      with rank-based joint selection, without implying that either criterion universally dominates.
+  - from: heuragenix
+    to: lace
+    type: contrasts
+    dimension: design-object
+    description: >-
+      HeurAgenix evolves state-to-operation heuristics and selects among them while a solution
+      trajectory unfolds. LACE evolves complete solve functions behind a tested input, output
+      and tool interface, then runs portfolio members independently and keeps the best feasible
+      result. The distinction is state-level composition versus instance-level solver
+      complementarity, not whether either method has multiple heuristics.

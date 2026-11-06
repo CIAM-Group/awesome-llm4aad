@@ -42,3 +42,5 @@ An evolution strategy asks an LLM to generate Python implementations containing 
 ## Limitations and extensions
 
 Generated BO code is still evaluated through a fixed interface and benchmark family. Future work should test transfer to noisy, constrained, and multi-fidelity objectives.
+
+[Landscape-aware AAD](../landscape-aad/index.md) uses proxy objectives to economize the outer algorithm-discovery loop. LLaMEA-BO instead puts surrogate models inside the generated optimizer, economizing objective calls during its execution.

@@ -7,22 +7,24 @@ authors:
 - Yiming Yao
 - Ping Guo
 - Zhiyuan Yang
-- Zhe Zhao
 - Xi Lin
+- Zhe Zhao
 - Xialiang Tong
-- Mao, Kun
+- Kun Mao
 - Zhichao Lu
 - Zhenkun Wang
 - Mingxuan Yuan
 - Qingfu Zhang
-year: 2024
-date: 2024-10-01
-venue: arXiv (Cornell University)
+year: 2026
+date: 2026-02-01
+venue: ACM Computing Surveys
 paper_url: https://arxiv.org/pdf/2410.14716
 institutions:
 - cityu-hk
 - huawei-noahs-ark
 - sustech
+- xjtu
+- huawei
 primary_dimension: design-object
 dimensions:
 - design-object
@@ -34,26 +36,28 @@ summary: A taxonomy and review of how large language models participate in autom
 ---
 ## Why it matters
 
-The survey is useful as a map of the field: it separates what is being designed, how candidates are searched, how feedback is supplied, and how methods transfer across tasks.
+The survey distinguishes generating solutions with an LLM from using one to design reusable algorithms. It also considers support roles that do not themselves produce algorithm code.
 
 ## Core method
 
-This survey classifies LLM-based algorithm design by representation, search, feedback, and generalization. It provides terminology and comparisons for the methods in this atlas, but does not introduce a new search algorithm.
+The authors screen literature and organize it by four LLM roles. Optimizers directly propose solutions. Predictors estimate useful properties or performance. Extractors recover features and knowledge. Designers create algorithms or their components.
+
+A second view follows ideation, implementation and evaluation. Application sections cover optimization, machine learning and scientific computing. The article synthesizes existing evidence rather than running a new unified benchmark.
 
 ## Contributions
 
-- A controlled vocabulary for LLM-based algorithm-design methods.
-- A comparison of representations, search strategies, feedback, and transfer settings.
-- Open questions that connect individual methods into a research agenda.
+- A role-based taxonomy separating direct solving from algorithm generation.
+- A development-stage view that includes evaluation and interpretation.
+- Research questions about efficiency, generalization and reproducible benchmarking.
 
 ## Strengths and limitations
 
-As a survey, its value depends on coverage and categorization choices rather than a new benchmark result. The taxonomy should be revisited as agentic and multimodal methods develop.
+Its broad coverage is useful background, but not every surveyed application belongs to this collection's narrower executable-algorithm scope. The taxonomy is not evidence that methods have been compared under equal budgets.
 
 ## What to improve
 
-Useful follow-ups include stronger behavioral deduplication, cross-task evaluation, and explicit accounting of model and verifier cost.
+Maintain version-aware coverage and separate direct solution generation, learned solver policies and reusable code discovery in future comparisons.
 
 ## Connections
 
-The relation atlas records only method-level links supported by the paper's method or experiments.
+Section 3.4 discusses [EoH](../eoh/index.md) as algorithm design through coupled ideas and code. This is a literature synthesis link, not a method extension.

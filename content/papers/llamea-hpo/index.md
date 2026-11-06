@@ -58,3 +58,5 @@ Useful next steps include dynamically adjusting the HPO budget to algorithm comp
 ## Connections
 
 LLaMEA-HPO extends LLaMEA by adding hyper-parameter optimization inside the evolutionary loop, and it fits the broader LLM-based automatic heuristic design setting represented by EoH. Its main distinction is the separation between algorithmic structure generation by the LLM and numerical parameter tuning by SMAC.
+
+[RL Update Discovery](../rl-update-discovery/index.md) delays parameter tuning until selected training-update programs have completed evolution. This differs from evaluating each candidate after HPO inside LLaMEA-HPO's search loop.

@@ -64,3 +64,5 @@ Useful next steps include behavioral deduplication, cross-task representations, 
 ## Connections
 
 EoH is connected to AEL as a later representation extension. The atlas intentionally does not create a direct EoH–FunSearch edge in the first release.
+
+[LHNS](../lhns/index.md) contrasts population evolution with incumbent-based partial-code reconstruction. The [MetaBBO Survey](../metabbo-survey/index.md) places EoH within algorithm generation and in-context learning, separate from selecting algorithms or directly generating solutions.
