@@ -2,13 +2,16 @@ import { ArrowLeft, Code2, ExternalLink, FileText, GitBranch } from 'lucide-reac
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { InstitutionMark } from '../components/InstitutionMark'
 import { assetUrl, atlas, formatMonthYear, getPaper, getRelationsForPaper, routePath, titleLengthClass } from '../lib/data'
+import { resolvePaperNoteLinks } from '../lib/paperLinks'
+
+const paperIds = new Set(atlas.papers.map((paper) => paper.id))
 
 export function PaperDetailPage() {
   const { id } = useParams()
   const paper = id ? getPaper(id) : undefined
   if (!paper) return <Navigate to="/papers" replace />
 
-  const bodyHtml = paper.body_html
+  const bodyHtml = resolvePaperNoteLinks(paper.body_html, paperIds, import.meta.env.BASE_URL)
     .split('src="paper-assets/').join(`src="${assetUrl('paper-assets/')}`)
     .split('href="/relations/"').join(`href="${routePath('/relations/')}"`)
   const relations = getRelationsForPaper(paper.id)
