@@ -22,7 +22,7 @@ Open a month to browse. The latest month is expanded.
 ### 2026
 
 <details open>
-<summary><strong>2026.10 · 78 papers</strong></summary>
+<summary><strong>2026.10 · 76 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
@@ -55,7 +55,6 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2610.17184">DuoDiscover: Scaling Autonomous Discovery Beyond the Evaluation Bottleneck</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.17184) · [Note](content/papers/duodiscover/index.md) |
 | <a href="https://arxiv.org/pdf/2610.41183">Researcher-in-the-Loop Evolutionary Discovery of Entanglement-Assisted Quantum Code Families</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.41183) · [Note](content/papers/eaqecc-families/index.md) · [Code](https://github.com/LeGenAI/llm_guided_EAQECC_search) |
 | <a href="https://arxiv.org/pdf/2610.24648">EdgeKernelBench: Unified LLM-Driven Kernel Generation for Edge Backends</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.24648) · [Note](content/papers/edgekernelbench/index.md) |
-| <a href="https://arxiv.org/pdf/2610.12536">EliteTable: Self-Improving Program Search for Executable Control Policies</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.12536) · [Note](content/papers/elitetable/index.md) · [Code](https://github.com/StuartFarmer/elitetable) |
 | <a href="https://arxiv.org/pdf/2610.24944">Epi: Towards a Persistent, Self-Improving Agent for Autonomous Research</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.24944) · [Note](content/papers/epi/index.md) |
 | <a href="https://arxiv.org/pdf/2610.17379">EPOCH: Coverage-Aware Evolution with Experiential Preference Optimization for LLM-based Automated Heuristic Design</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.17379) · [Note](content/papers/epoch-coverage/index.md) |
 | <a href="https://arxiv.org/pdf/2610.06986">EPOCH: Reliable Discovery through Evidence-Governed Search</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.06986) · [Note](content/papers/epoch-evidence/index.md) |
@@ -100,7 +99,6 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2610.14740">TileCas: Cascading Kernel Development Across Programming Abstractions</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.14740) · [Note](content/papers/tilecas/index.md) · [Code](https://github.com/TongmingLAIC/tilecas) |
 | <a href="https://arxiv.org/pdf/2610.23977">LLM Evolutionary Search Strategies Should be Compared by Tokens</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.23977) · [Note](content/papers/token-accounting/index.md) |
 | <a href="https://arxiv.org/pdf/2610.01887">TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.01887) · [Note](content/papers/trace/index.md) |
-| <a href="https://arxiv.org/pdf/2610.04555">TRIZᵃ: Guiding Agent Evolution from Pattern Recognition to Solution Invention</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.04555) · [Note](content/papers/triza/index.md) |
 | <a href="https://arxiv.org/pdf/2610.32046">Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.32046) · [Note](content/papers/ttme/index.md) · [Code](https://github.com/yepengliu/TTME) |
 | <a href="https://arxiv.org/pdf/2610.06623">Large Language Model-Guided Discovery of Weight-Five Bivariate Bicycle Codes</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.06623) · [Note](content/papers/weight-five-bb/index.md) · [Code](https://github.com/qiskit-community/qcode-discovery) |
 | <a href="https://arxiv.org/pdf/2610.08720">WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.08720) · [Note](content/papers/worldsolver/index.md) · [Code](https://github.com/sirujiang/WorldSolver) |
@@ -108,7 +106,7 @@ Open a month to browse. The latest month is expanded.
 </details>
 
 <details>
-<summary><strong>2026.09 · 33 papers</strong></summary>
+<summary><strong>2026.09 · 31 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
@@ -119,7 +117,6 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2609.38639">Component-Aware Feedback for Self-Evolving Programs</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.38639) · [Note](content/papers/component-feedback/index.md) |
 | <a href="https://arxiv.org/pdf/2609.39933">ConflictGuide: AutoResearch Improves When Competing Behaviors Are Made Visible</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.39933) · [Note](content/papers/conflictguide/index.md) |
 | <a href="https://arxiv.org/pdf/2610.00707">Initialization Improves LLM-Driven Discovery</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.00707) · [Note](content/papers/discovery-init/index.md) · [Code](https://github.com/msakarvadia/llm_optimizer) |
-| <a href="https://arxiv.org/pdf/2609.17590">Evolutionary Ensemble Search: Council-Guided Program Evolution with Persistent Memory</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.17590) · [Note](content/papers/ees/index.md) · [Code](https://github.com/impulse-ai/mlebench-medals) |
 | <a href="https://arxiv.org/pdf/2609.40340">EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.40340) · [Note](content/papers/evoduet/index.md) · [Code](https://github.com/Open-Galapagos/EvoDuet) |
 | <a href="https://arxiv.org/pdf/2609.19799">Evolution or Illusion? Rethinking Evaluation in LLM Evolutionary Search</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.19799) · [Note](content/papers/evolution-or-illusion/index.md) |
 | <a href="https://arxiv.org/pdf/2609.34552">EvoSkillRec: Skill-Genome Evolution for Recommender Architecture Discovery</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.34552) · [Note](content/papers/evoskillrec/index.md) · [Code](https://github.com/Xiaopengli1/EvoSkill-Rec) |
@@ -127,7 +124,6 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2609.35328">Hyper Algorithm Design Agent: Evolving Learnable Optimizer from Zero</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.35328) · [Note](content/papers/hada/index.md) · [Code](https://github.com/MetaEvo/HADA-AAD) |
 | <a href="https://arxiv.org/pdf/2609.36303">HeurEvo: Agentic Evolution of Hybrid Solver-Augmented Heuristics for Time-Critical Mathematical Optimization</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.36303) · [Note](content/papers/heurevo/index.md) |
 | <a href="https://arxiv.org/pdf/2609.34126">JET: Judge-Guided Evolution at Test Time for Agent Programs</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.34126) · [Note](content/papers/jet/index.md) |
-| <a href="https://arxiv.org/pdf/2609.33074">KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.33074) · [Note](content/papers/kernelzero/index.md) |
 | <a href="https://arxiv.org/pdf/2610.00675">LabBook: Harnessing Experimental History for Efficient LLM-Driven Discovery</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.00675) · [Note](content/papers/labbook/index.md) |
 | <a href="https://arxiv.org/pdf/2609.02353">LLM-Driven Joint Evolution of Coupled Heuristics Components for Routing Optimization</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.02353) · [Note](content/papers/llm-hcjg/index.md) |
 | <a href="https://arxiv.org/pdf/2609.36581">MemEvo: Automatic Discovery of Streaming Video Memory Mechanisms</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2609.36581) · [Note](content/papers/memevo-video/index.md) |
@@ -189,7 +185,7 @@ Open a month to browse. The latest month is expanded.
 </details>
 
 <details>
-<summary><strong>2026.07 · 19 papers</strong></summary>
+<summary><strong>2026.07 · 18 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
@@ -211,7 +207,6 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2607.11358">RefineEvo: Planning-Guided Heuristic Evolution with Bidirectional Experience</a> | ICML 2026 | [Paper PDF](https://arxiv.org/pdf/2607.11358) · [Note](content/papers/refineevo/index.md) · [Code](https://github.com/samwu-learn/RefineEvo) |
 | <a href="https://arxiv.org/pdf/2603.28416">Evolutionary Discovery of Reinforcement Learning Algorithms via Large Language Models</a> | GECCO 2026 | [Paper PDF](https://arxiv.org/pdf/2603.28416) · [Note](content/papers/rl-update-discovery/index.md) |
 | <a href="https://arxiv.org/pdf/2607.23676">SpecAHD: Localize to Specialize for Automated Heuristic Design in Large-Scale Routing Problems</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.23676) · [Note](content/papers/specahd/index.md) |
-| <a href="https://arxiv.org/pdf/2607.19822">WARA: A Closed-Loop Multi-Agent Framework for Wireless Optimization Autoresearch</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2607.19822) · [Note](content/papers/wara/index.md) · [Code](https://github.com/guoyuan-dotcom/WARA_CUHKSZ) |
 
 </details>
 

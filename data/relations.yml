@@ -501,16 +501,6 @@ relations:
     dimension: design-object
     description: "DGM archives whole self-modified coding agents; Harmony Harness separates general and environment-specific components and decomposes selection across objectives before recomposing the harness."
   # R26
-  # R27
-  - from: funsearch
-    to: elitetable
-    type: contrasts
-    dimension: search
-    description: >-
-      FunSearch samples parents within separate islands and periodically reseeds weak islands.
-      EliteTable uses one top-ten table, frozen during each generation, with uniform parent sampling
-      for edit and remix proposals. These are different archive choices, not a demonstrated ranking
-      between them.
   # R28
   - from: alphaevolve
     to: art-eda
@@ -528,15 +518,6 @@ relations:
       certifies selected results afterward. EAQECC Discovery uses exact parameter evaluation within
       its program search and independently rechecks returned codes. The code families and evaluation
       costs differ.
-  # R31
-  - from: alphaevolve
-    to: triza
-    type: contrasts
-    dimension: search
-    description: >-
-      AlphaEvolve proposes code diffs within user-defined editable regions. TRIZa requires a declared
-      technical contradiction and a typed TRIZ transformation before evaluation. The difference is how
-      proposals are constrained, not whether an evaluator checks the result.
   - from: shinkaevolve
     to: discovery-init
     type: extends
@@ -1842,13 +1823,6 @@ relations:
     description: Janus evolves proxies online and requires real target evaluation before promotion. JET freezes a
       judge learned on source trajectories and adapts agent programs without target reward access, making
       evaluator trust and validation fundamentally different.
-  - from: piac
-    to: kernelzero
-    type: contrasts
-    dimension: feedback
-    description: Both generate tasks in response to current algorithm capability. PIAC uses perturbation-based
-      potential gain to evolve a heuristic portfolio; KernelZero rewards Torch modules near a half-correct
-      coder frontier and alternately trains proposer and coder weights.
   - from: formuevo
     to: optiskill
     type: contrasts
@@ -1856,13 +1830,6 @@ relations:
     description: FormuEvo stores condition–strategy–effect evidence for solver-efficient formulation evolution.
       OptiSkill separates general modeling procedures from local corrective experiences and validates skill
       additions/repairs at batch boundaries before reuse.
-  - from: evomem
-    to: ees
-    type: contrasts
-    dimension: feedback
-    description: EvoMem persists provenance-linked mutation advice, while EES specifies task-indexed lessons about
-      executable procedures, failures, and ensembles. EES’s development ledger does not isolate a measured
-      causal benefit of the proposed memory mechanism.
   - from: constraint-reformulation
     to: formuevo
     type: contrasts
@@ -1877,13 +1844,6 @@ relations:
     description: GraphIR extracts descriptive architecture state from code to guide later edits, with tracing and
       static fallbacks. ADSL-PDE makes typed descriptions the source of deterministic compilation; descriptive
       context and prescriptive representation provide different validity boundaries.
-  - from: aite
-    to: wara
-    type: contrasts
-    dimension: scope
-    description: AITE searches implementations of wireless algorithm ideas against a supplied evaluator. WARA
-      extends the workflow boundary from problem formulation through algorithm design to evidence and
-      manuscript artifacts, while its reported comparative scoring is primarily manuscript-level.
   - from: eoh
     to: lago
     type: generalizes

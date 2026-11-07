@@ -2336,13 +2336,6 @@
       "description": "DGM archives whole self-modified coding agents; Harmony Harness separates general and environment-specific components and decomposes selection across objectives before recomposing the harness."
     },
     {
-      "from": "funsearch",
-      "to": "elitetable",
-      "type": "contrasts",
-      "dimension": "search",
-      "description": "FunSearch samples parents within separate islands and periodically reseeds weak islands. EliteTable uses one top-ten table, frozen during each generation, with uniform parent sampling for edit and remix proposals. These are different archive choices, not a demonstrated ranking between them."
-    },
-    {
       "from": "alphaevolve",
       "to": "art-eda",
       "type": "contextualizes",
@@ -2355,13 +2348,6 @@
       "type": "contrasts",
       "dimension": "feedback",
       "description": "For quantum-code discovery, Weight-Five BB uses staged distance estimates to rank candidates and certifies selected results afterward. EAQECC Discovery uses exact parameter evaluation within its program search and independently rechecks returned codes. The code families and evaluation costs differ."
-    },
-    {
-      "from": "alphaevolve",
-      "to": "triza",
-      "type": "contrasts",
-      "dimension": "search",
-      "description": "AlphaEvolve proposes code diffs within user-defined editable regions. TRIZa requires a declared technical contradiction and a typed TRIZ transformation before evaluation. The difference is how proposals are constrained, not whether an evaluator checks the result."
     },
     {
       "from": "shinkaevolve",
@@ -3638,25 +3624,11 @@
       "description": "Janus evolves proxies online and requires real target evaluation before promotion. JET freezes a judge learned on source trajectories and adapts agent programs without target reward access, making evaluator trust and validation fundamentally different."
     },
     {
-      "from": "piac",
-      "to": "kernelzero",
-      "type": "contrasts",
-      "dimension": "feedback",
-      "description": "Both generate tasks in response to current algorithm capability. PIAC uses perturbation-based potential gain to evolve a heuristic portfolio; KernelZero rewards Torch modules near a half-correct coder frontier and alternately trains proposer and coder weights."
-    },
-    {
       "from": "formuevo",
       "to": "optiskill",
       "type": "contrasts",
       "dimension": "feedback",
       "description": "FormuEvo stores condition–strategy–effect evidence for solver-efficient formulation evolution. OptiSkill separates general modeling procedures from local corrective experiences and validates skill additions/repairs at batch boundaries before reuse."
-    },
-    {
-      "from": "evomem",
-      "to": "ees",
-      "type": "contrasts",
-      "dimension": "feedback",
-      "description": "EvoMem persists provenance-linked mutation advice, while EES specifies task-indexed lessons about executable procedures, failures, and ensembles. EES’s development ledger does not isolate a measured causal benefit of the proposed memory mechanism."
     },
     {
       "from": "constraint-reformulation",
@@ -3671,13 +3643,6 @@
       "type": "contrasts",
       "dimension": "design-object",
       "description": "GraphIR extracts descriptive architecture state from code to guide later edits, with tracing and static fallbacks. ADSL-PDE makes typed descriptions the source of deterministic compilation; descriptive context and prescriptive representation provide different validity boundaries."
-    },
-    {
-      "from": "aite",
-      "to": "wara",
-      "type": "contrasts",
-      "dimension": "scope",
-      "description": "AITE searches implementations of wireless algorithm ideas against a supplied evaluator. WARA extends the workflow boundary from problem formulation through algorithm design to evidence and manuscript artifacts, while its reported comparative scoring is primarily manuscript-level."
     },
     {
       "from": "eoh",
@@ -7803,44 +7768,6 @@
       "body_html": "<h2>Why it matters</h2>\n<p>Improving a reward function leaves the underlying learning algorithm unchanged. This work instead searches the executable update procedure, allowing candidate programs to maintain auxiliary models and state while the surrounding policy and rollout interfaces remain fixed.</p>\n<h2>Core method</h2>\n<p>The framework extends REvolve from reward-function search to training-update code. To encourage nonstandard designs, prompts disallow canonical actor-critic structures, temporal-difference losses and value bootstrapping during discovery. These restrictions define a deliberate search space rather than an unconstrained search over all RL algorithms.</p>\n<p>An island-based population is varied by LLM-generated mutations and crossover. Mutations target a coherent algorithmic component. Crossover combines candidate programs, with parent selection considering both fitness and code dissimilarity. Each candidate is evaluated through complete training runs across several environments and random seeds. Normalized peak checkpoint returns provide evolutionary fitness.</p>\n<p>After evolution, the LLM proposes bounded ranges for scalar parameters of selected rules. Uniform sampling over these ranges evaluates refinements through additional training runs. This tuning is separate from the main structural search. The discovered examples combine learned dynamics, planning or differentiable imagined trajectories with policy updates.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Executable learning-update rules as the search artifact, rather than rewards or policy parameters alone.</li>\n<li>An evolutionary evaluation protocol based on end-to-end learning outcomes.</li>\n<li>Post-search parameter refinement and evaluation beyond the environments used during discovery.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The experiments demonstrate meaningful algorithm discovery, not merely fine-tuning an LLM. However, the search requires extensive training compute, and only a small number of complete evolutionary runs are reported. The final comparison emphasizes selected successful candidates rather than uniform success across backends. Results use peak checkpoints, and performance on new environments includes task-specific parameter tuning, so it is not zero-shot generalization. Strong conventional algorithms remain better on some tasks.</p>\n<h2>What to improve</h2>\n<p>Evaluate anytime and final-checkpoint performance, include unsuccessful searches in cost reporting, and separate zero-shot transfer from gains obtained through new-task tuning.</p>\n<h2>Connections</h2>\n<p>LLaMEA-HPO tunes each generated algorithm before its fitness enters evolutionary selection. This work first searches update structures and then tunes selected finalists. The contrast exposes a budget trade-off. Delayed tuning is cheaper during structural search but can discard structures whose default parameters hide their potential.</p>\n"
     },
     {
-      "id": "wara",
-      "short_title": "WARA",
-      "title": "WARA: A Closed-Loop Multi-Agent Framework for Wireless Optimization Autoresearch",
-      "authors": [
-        "Yuan Guo",
-        "Yilong Chen",
-        "Chao Hu",
-        "Xianghao Yu",
-        "Liang Hong",
-        "Jie Xu"
-      ],
-      "year": 2026,
-      "date": "2026-07-01",
-      "venue": "arXiv",
-      "paper_url": "https://arxiv.org/pdf/2607.19822",
-      "code_url": "https://github.com/guoyuan-dotcom/WARA_CUHKSZ",
-      "institutions": [
-        "cuhk-shenzhen",
-        "fnii-shenzhen",
-        "cityu-hk",
-        "sun-yat-sen"
-      ],
-      "primary_dimension": "scope",
-      "dimensions": [
-        "scope",
-        "design-object",
-        "feedback"
-      ],
-      "problems": [
-        "Wireless Resource Allocation",
-        "Optimization Modeling",
-        "Algorithm Design"
-      ],
-      "featured": false,
-      "summary": "Coordinates wireless research agents through validated artifacts linking problem formulation, algorithm design, executed experiments, and manuscript claims.",
-      "body_html": "<h2>Why it matters</h2>\n<p>A plausible formulation, runnable solver, and polished report can still contradict one another if each stage proceeds from informal summaries.</p>\n<h2>Core method</h2>\n<p>WARA first grounds a topic in literature and freezes a bounded problem contract. Formulation and theory agents then specify the system model, optimization problem, tractability analysis, and implementable update rules. Accepted mathematical and algorithmic contracts constrain experiment generation in a controller-owned execution harness.</p>\n<p>Validation checks logs, benchmark consistency, metrics, and figures before promoting outputs to an evidence contract. Writing and analysis agents consume those artifacts; review failures are routed to the responsible artifact for local repair rather than restarting everything. The workflow has three major phases with multiple subphases, not a single unconstrained conversation among agents.</p>\n<h2>Contributions</h2>\n<p>Makes cross-stage consistency and scoped repair explicit in an end-to-end wireless-optimization research workflow.</p>\n<h2>Strengths and limitations</h2>\n<p>Artifact ownership and frozen contracts improve traceability. The comparative evaluation mainly scores manuscript-visible research validity with an LLM; a high score does not independently verify novelty, proofs, or all numerical claims.</p>\n<h2>What to improve</h2>\n<p>Add blinded expert review, executable replication, and mechanism-level ablations, separating manuscript quality from actual algorithmic improvement.</p>\n<h2>Connections</h2>\n<p><a href=\"../aite/index.md\">AITE</a> concentrates on implementing and comparing wireless algorithm ideas. WARA covers a wider problem-to-manuscript workflow; the useful contrast is search within a fixed evaluator versus maintaining consistency across formulation, method, and evidence.</p>\n"
-    },
-    {
       "id": "mths",
       "short_title": "MTHS",
       "title": "Hierarchical Representations for Cross-task Automated Heuristic Design using LLMs",
@@ -9408,37 +9335,6 @@
       "body_html": "<h2>Why it matters</h2>\n<p>A diversity mechanism cannot reliably rescue a search that starts in an unproductive region. This study separates the quality of initial candidates from how a harness manages later exploration.</p>\n<h2>Core method</h2>\n<p>The authors construct twelve OPRO-derived harnesses by crossing four mutation strategies with three parent-selection strategies. They compare sequential refinement with independent proposals under matched token budgets and measure code/text embedding diversity along trajectories.</p>\n<p>The intervention first spends part of the same budget generating independent mutations of the initial seed. It greedily selects high-performing candidates with a near-duplicate filter, then starts sequential search. Modular harnesses receive a population; the tested existing harnesses receive the best seed. A convergence analysis of parallel proposals suggests when to switch phases, rather than treating initialization as free extra compute.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Separates initialization, population diversity, and sequential search in a controlled harness family.</li>\n<li>Tests the warm-start intervention across five tasks and existing discovery systems.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>Initialization improves the reported settings, whereas stronger diversity filtering sometimes hurts. Early-score correlations vary considerably by task; they are not a universal predictor. The convergence criterion is analyzed on ordered parallel samples, so prospective online stopping deserves separate validation. The task collection also includes prompt optimization and fixed-instance TSP, not only transferable algorithm synthesis.</p>\n<h2>What to improve</h2>\n<p>Test prospectively fixed stopping rules, behavioral rather than embedding diversity, and amortized wall-clock/evaluator cost.</p>\n<h2>Connections</h2>\n<p>The paper directly warm-starts <a href=\"../shinkaevolve/index.md\">ShinkaEvolve</a> while retaining its search machinery. <a href=\"../holidivevolve/index.md\">HoliDivEvolve</a> instead prioritizes separated island seeds and continuing migration. Their differing initialization objectives reveal a quality–diversity trade-off, not an established inheritance relationship.</p>\n"
     },
     {
-      "id": "ees",
-      "short_title": "EES",
-      "title": "Evolutionary Ensemble Search: Council-Guided Program Evolution with Persistent Memory",
-      "authors": [
-        "Juan P. Madrigal-Cianci",
-        "Eshan Chordia"
-      ],
-      "year": 2026,
-      "date": "2026-09-01",
-      "venue": "arXiv",
-      "paper_url": "https://arxiv.org/pdf/2609.17590",
-      "code_url": "https://github.com/impulse-ai/mlebench-medals",
-      "institutions": [
-        "impulse-ai"
-      ],
-      "primary_dimension": "search",
-      "dimensions": [
-        "search",
-        "feedback",
-        "scope"
-      ],
-      "problems": [
-        "Machine Learning Procedure Design",
-        "Program Evolution",
-        "Ensemble Construction"
-      ],
-      "featured": false,
-      "summary": "Specifies council-guided evolution of executable ML procedures, with measured child fitness, compatible-prediction ensembling, and cross-run lessons.",
-      "body_html": "<h2>Why it matters</h2>\n<p>Combining agent recommendations is useful only if changes create executable candidates with comparable evidence and traceable lineage.</p>\n<h2>Core method</h2>\n<p>A role-specialized council interprets task evidence and recommends directions; an orchestrator assigns implementation and evaluation work. Mutation and crossover start from measured parents and create changed code or typed pipeline specifications. Every child must execute and earn its own validation score; inherited code does not imply inherited fitness.</p>\n<p>Archives retain useful alternatives. Parent-relative feedback informs operator credit, while session summaries and problem-indexed lessons can guide future runs. Prediction ensembles require matching row, target, class, and validation semantics, then must outperform the best individual under a validation gate. Different execution profiles implement different subsets of this architecture, which must be recorded for a comparison to be meaningful.</p>\n<h2>Contributions</h2>\n<p>Defines contracts connecting deliberation, executable edits, population evidence, memory, and final ensemble selection.</p>\n<h2>Strengths and limitations</h2>\n<p>The public ledger exposes concrete artifacts and caveats. Its 19-of-22 medal-threshold record includes between-run grading, external-source routes, and mixed confirmation; it neither establishes blind autonomous success nor isolates the benefit of the full proposed stack.</p>\n<h2>What to improve</h2>\n<p>Run preregistered, budget-matched component ablations with untouched tasks and per-run manifests, keeping terminal grades outside development feedback.</p>\n<h2>Connections</h2>\n<p><a href=\"../evomem/index.md\">EvoMem</a> also persists measured search experience across runs. EES broadens the memory to task-indexed pipeline and ensemble lessons, but its historical ledger does not isolate the causal effect of that retrieval mechanism.</p>\n"
-    },
-    {
       "id": "evoduet",
       "short_title": "EvoDuet",
       "title": "EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery",
@@ -9687,48 +9583,6 @@
       "featured": false,
       "summary": "Evolves an executable evaluator on labeled source trajectories, freezes it, and uses it to guide agent-code adaptation without target reward queries.",
       "body_html": "<h2>Why it matters</h2>\n<p>Deployment settings may expose trajectories but withhold the evaluator that originally supplied search rewards.</p>\n<h2>Core method</h2>\n<p>Source-side evolution rewrites judge code, including prompts, preprocessing, deterministic computations, calibration, and parsing. Training labels guide search; a separate validation split selects the judge, which is then frozen. Its underlying model weights are not retrained.</p>\n<p>At target time, proposed agent programs execute on visible tasks. The frozen judge supplies scores for promotion and diagnostics for further rewrites; feedback from rejected candidates is retained. True target evaluator outputs are isolated for post-hoc auditing. The target tasks do influence adaptation through their trajectories, so improvement there is not evidence of zero-shot generalization to entirely unseen tasks.</p>\n<h2>Contributions</h2>\n<p>Separates evaluator development from target program evolution and tests whether learned evaluation procedures transfer across reward-hidden settings.</p>\n<h2>Strengths and limitations</h2>\n<p>Source/target information boundaries make the claim precise. Judge errors can be exploited by search; PushT includes an exactly reconstructible reward control, while WebShop requires approximate judgment, so their difficulties differ.</p>\n<h2>What to improve</h2>\n<p>Test shifts in reward semantics as well as observations, audit judge hacking, and evaluate frozen adapted programs on additional unseen target tasks.</p>\n<h2>Connections</h2>\n<p><a href=\"../janus/index.md\">Janus</a> continually updates proxy evaluators and requires real validation for promotion. JET freezes a source-trained judge and cannot make that target-time check; this contrast identifies a consequential evaluator-trust boundary.</p>\n"
-    },
-    {
-      "id": "kernelzero",
-      "short_title": "KernelZero",
-      "title": "KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation",
-      "authors": [
-        "Changxin Ke",
-        "Rui Zhang",
-        "Zixiang Fang",
-        "Zhenghong Li",
-        "Yuanbo Wen",
-        "Jiashuo Shen",
-        "Shuo Wang",
-        "Jiaming Guo",
-        "Ling Li",
-        "Qi Guo",
-        "Yunji Chen"
-      ],
-      "year": 2026,
-      "date": "2026-09-01",
-      "venue": "arXiv",
-      "paper_url": "https://arxiv.org/pdf/2609.33074",
-      "institutions": [
-        "cas-ict",
-        "university-chinese-academy-sciences",
-        "cas-software",
-        "cas-ai-industries"
-      ],
-      "primary_dimension": "search",
-      "dimensions": [
-        "search",
-        "feedback",
-        "scope"
-      ],
-      "problems": [
-        "GPU Kernel Generation",
-        "CUDA Optimization",
-        "Triton Optimization"
-      ],
-      "featured": false,
-      "summary": "Alternately trains task-proposing and kernel-coding models, using capability-matched Torch modules and correctness-gated speed rewards.",
-      "body_html": "<h2>Why it matters</h2>\n<p>Fixed kernel datasets can become too easy or too hard as a coder improves, while rewarding speed before correctness encourages invalid kernels.</p>\n<h2>Core method</h2>\n<p>The proposer receives API sets sampled from realistic co-occurrence patterns and generates Torch modules. Syntax/interface checks, execution, and numerical-stability tests reject unusable tasks. Its reward peaks when roughly half of the coder's sampled implementations are correct, encouraging challenges near the current capability boundary rather than trivial or impossible modules.</p>\n<p>The coder is first distilled using compiler-inspired tiling, fusion, pipelining, and reordering principles. Correctness-aware GRPO then rewards valid CUDA/Triton implementations, activating the performance term only when group-level correctness is sufficiently reliable. Alternating proposer and coder updates changes model weights and the training curriculum; this is not simply inference-time mutation of one fixed kernel population.</p>\n<h2>Contributions</h2>\n<p>Couples adaptive training-task generation with an explicit correctness-before-speed mechanism.</p>\n<h2>Strengths and limitations</h2>\n<p>CUDA and Triton evaluations distinguish correctness from faster-than-reference success. Randomized equivalence tests remain finite, hardware and operator distributions constrain transfer, and training cost must be separated from deployment inference cost.</p>\n<h2>What to improve</h2>\n<p>Test unseen shapes, numerical corner cases, and different GPUs, and report curriculum construction plus reinforcement-learning cost alongside final pass and speed metrics.</p>\n<h2>Connections</h2>\n<p><a href=\"../piac/index.md\">PIAC</a> also adapts generated tasks to weaknesses of the current solver. PIAC evolves heuristic portfolios using perturbation-based improvement potential; KernelZero trains a coder using tasks near a measured correctness boundary. This is a curriculum-feedback contrast, not implementation reuse.</p>\n"
     },
     {
       "id": "labbook",
@@ -11316,34 +11170,6 @@
       "featured": false,
       "summary": "Uses a shared graph–tensor–schedule IR and layered agent search to compare correctness and speed across heterogeneous edge backends.",
       "body_html": "<h2>Why it matters</h2>\n<p>Backend-specific source languages make it difficult to share algorithmic decisions or compare generated kernels across constrained edge devices.</p>\n<h2>Core method</h2>\n<p>EdgeKernelBench defines 331 canonical tasks spanning operators, subgraphs, and compact models. A unified IR exposes graph, tensor, and schedule decisions, while a compiler interface handles backend lowering. The reference TVM path performs legalization rather than silently optimizing the agent's decisions.</p>\n<p>The Layered Edge Kernel Agent (LEKA) projects context to the active level, keeps candidate histories, and routes hardware evidence to the responsible layer. Progressive lowering fixes upper-level choices before refining lower-level ones. Evaluation covers mobile CPU, Jetson GPU, and Mali GPU backends.</p>\n<h2>Contributions</h2>\n<p>Best single-attempt correctness is 64.5%, but only 25.5% of outputs beat the reference. On the 69-task agent subset, LEKA reaches 43.5% <a href=\"mailto:Fast@1.0\">Fast@1.0</a> versus 26.1% for Claude Code under the same base model and optimization budget.</p>\n<h2>Strengths and limitations</h2>\n<p>Shared semantics expose the correctness–performance gap across backends, and the agent comparison controls key budgets. However, the agent subset is smaller than the benchmark, supported compiler paths constrain the design space, and results do not establish portability to NPUs or heterogeneous execution within one program.</p>\n<h2>What to improve</h2>\n<p>Test unseen backend versions, broaden end-to-end agent workloads, and measure the performance cost of fixing upper-level decisions too early.</p>\n<h2>Connections</h2>\n<p>Both retain kernel candidates across abstraction levels. <a href=\"../tilecas/index.md\">TileCas</a> explicitly selects the source candidate, edit action and target level for a base workflow. LEKA assigns agents to portable IR levels and routes hardware feedback to the responsible layer. Both support revisiting retained alternatives.</p>\n"
-    },
-    {
-      "id": "elitetable",
-      "short_title": "EliteTable",
-      "title": "EliteTable: Self-Improving Program Search for Executable Control Policies",
-      "authors": [
-        "Stuart Farmer"
-      ],
-      "year": 2026,
-      "date": "2026-10-01",
-      "venue": "arXiv",
-      "paper_url": "https://arxiv.org/pdf/2610.12536",
-      "code_url": "https://github.com/StuartFarmer/elitetable",
-      "institutions": [
-        "casa-dilauro"
-      ],
-      "primary_dimension": "search",
-      "dimensions": [
-        "search",
-        "scope"
-      ],
-      "problems": [
-        "Executable Control Policies",
-        "Archive-Guided Program Search"
-      ],
-      "featured": false,
-      "summary": "Uses a fixed elite table to condition new, edited, and remixed control programs, then tests selected winners on fresh episodes.",
-      "body_html": "<h2>Why it matters</h2>\n<p>An archive can make program search improve in-run while repeatedly fitting the same evaluation episodes. Fresh-episode tests are needed to distinguish those outcomes.</p>\n<h2>Core method</h2>\n<p>EliteTable freezes a ten-program table each generation. Fifty candidate slots propose new programs, edits, or remixes of up to three parents, using a 20/40/40 mixture after initialization. Even nominally new proposals see the elite context; they are not independent-sampling controls.</p>\n<p>Duplicate checks and bounded repair attempts precede evaluation on ten fixed episodes. The best ten incumbent and candidate programs form the next table. After ten generations, selected first- and last-generation winners are frozen and evaluated on one hundred new episodes. Each of six Gymnasium tasks has ten independent searches.</p>\n<h2>Contributions</h2>\n<p>All ten paired held-out endpoints improve in four tasks. The report also preserves important failures: six Acrobot searches decline, CartPole saturates in generation one, and BipedalWalker and CarRacing remain below their reporting targets.</p>\n<h2>Strengths and limitations</h2>\n<p>Held-out episodes and paired search endpoints strengthen the descriptive evidence. There are no independent-sampling, non-LLM, archive-size, or operator-mixture controls, so the study cannot attribute gains or establish relative performance. The search controller and model weights do not themselves evolve.</p>\n<h2>What to improve</h2>\n<p>Add budget-matched controls, ablate archive conditioning and remixing, and test robustness beyond the selected episode distributions.</p>\n<h2>Connections</h2>\n<p><a href=\"../funsearch/index.md\">FunSearch</a> samples parents within separate islands and periodically reseeds weak islands. EliteTable uses one top-ten table, frozen during each generation, with uniform parent sampling for edit and remix proposals. These are different archive choices, not a demonstrated ranking between them.</p>\n"
     },
     {
       "id": "epi",
@@ -12935,38 +12761,6 @@
       "featured": false,
       "summary": "Extends heuristic evolution with agents that turn execution logs into compact system insights and callable surrogate tools for resource-assignment policies.",
       "body_html": "<h2>Why it matters</h2>\n<p>Processing affinity, queue behavior, and energy costs are often absent from the problem specification. Execution logs contain this information, but are too large and schema-specific to insert wholesale into mutation prompts.</p>\n<h2>Core method</h2>\n<p>An EoH-style population loop evaluates assignment programs and accumulates their logs. At epoch boundaries, a reasoner sees the objective and log schema or excerpt, then proposes a distinct diagnostic hypothesis. A coder writes and runs schema-specific extraction code on the complete log buffer.</p>\n<p>Workflow runs alternate textual insights and low-parameter surrogate models with callable prediction interfaces. A merge step rewrites concise system information, including tool signatures, for later heuristic-generation prompts. New heuristics may call these tools and are selected by end-to-end assignment cost. After a bounded number of successful extraction runs, knowledge freezes while evolution continues; the costly reasoner is invoked much less often than the lightweight generation model.</p>\n<h2>Contributions</h2>\n<p>Synthetic cloud workloads and a measurement-driven 5G vRAN simulation test policies balancing latency, drops, and energy. The extraction workflow adds under 2% wall-clock overhead relative to the compared EoH generation budget and produces auditable system-aware rules.</p>\n<h2>Strengths and limitations</h2>\n<p>Generated parsers adapt to different schemas and process logs without context-window limits. Missing fields, bad hypotheses, or invalid parsing code can remove the benefit; an executable diagnostic is not automatically a true causal explanation. The vRAN result uses measured components and traffic traces inside simulation, not a live deployment experiment.</p>\n<h2>What to improve</h2>\n<p>Validate extracted models on fresh traces, quantify misleading-knowledge failures, and measure adaptation cost after hardware and traffic shifts.</p>\n<h2>Connections</h2>\n<p><a href=\"../eoh/index.md\">EoH</a> supplies the evolutionary backbone. TRACE extends its proposal context with execution-derived system knowledge and tools, making unknown dynamics inspectable rather than leaving them implicit in a scalar score.</p>\n"
-    },
-    {
-      "id": "triza",
-      "short_title": "TRIZa",
-      "title": "TRIZᵃ: Guiding Agent Evolution from Pattern Recognition to Solution Invention",
-      "authors": [
-        "Wenyin Liu",
-        "Yiheng Huang",
-        "Kai Wang"
-      ],
-      "year": 2026,
-      "date": "2026-10-01",
-      "venue": "arXiv",
-      "paper_url": "https://arxiv.org/pdf/2610.04555",
-      "institutions": [
-        "guangdong-university-technology",
-        "bupt",
-        "denglu-technology"
-      ],
-      "primary_dimension": "feedback",
-      "dimensions": [
-        "feedback",
-        "search",
-        "design-object"
-      ],
-      "problems": [
-        "Auditable Program Evolution",
-        "Cybersecurity Detector Design"
-      ],
-      "featured": false,
-      "summary": "Declares contradiction-guided typed mutations before evaluation and separates functional-information diagnostics from frozen promotion gates.",
-      "body_html": "<h2>Why it matters</h2>\n<p>A better detector score need not justify replacing an incumbent when other benefits, harms, or validation requirements deteriorate.</p>\n<h2>Core method</h2>\n<p>TRIZa maps inventive principles to typed code or configuration transformations. Before evaluation, each proposal declares its contradiction, operator, allowed changes, and frozen protocol. The LLM instantiates the edit; a provenance record links it to the resulting evidence.</p>\n<p>Useful and harmful functional information are measured separately against fixed reference populations. Integrity, safety, reproducibility, and resource gates determine eligibility before certification level and replication status are compared. FI-based Ideality is diagnostic or tie-breaking evidence, not permission to override a failed gate.</p>\n<h2>Contributions</h2>\n<p>Paired legacy reruns report F1 gains on three cybersecurity datasets. More importantly, a completed 45-activity CICIoT2023 campaign improves macro-F1 from 0.8325 to 0.8483 but is not promoted: both the relative-gain and false-positive-reduction thresholds fail. Later deteriorating candidates are also retained as negative evidence.</p>\n<h2>Strengths and limitations</h2>\n<p>Frozen protocols and separate decision levels make score improvements auditable. They do not establish that TRIZ or FI caused the gains: matched-budget component ablations are absent. The 2,040 controller decisions form a nested descriptive aggregate, not independent replications. Raw trace artifacts are promised for later release, so current reproducibility is manuscript-level.</p>\n<h2>What to improve</h2>\n<p>Release complete records, validate reference-population sensitivity, and compare typed versus unguided edits with identical budgets and promotion rules.</p>\n<h2>Connections</h2>\n<p><a href=\"../alphaevolve/index.md\">AlphaEvolve</a> proposes code diffs within user-defined editable regions. TRIZa requires a declared technical contradiction and a typed TRIZ transformation before evaluation. The difference is how proposals are constrained, not whether an evaluator checks the result.</p>\n"
     },
     {
       "id": "ttme",
