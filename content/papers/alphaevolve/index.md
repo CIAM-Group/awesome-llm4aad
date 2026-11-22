@@ -73,3 +73,5 @@ Open implementations, transparent evaluation harnesses, and standardized budgets
 The collection treats AlphaEvolve as a system-level generalization of evaluator-guided program search, including FunSearch as its closest historical anchor.
 
 [CheckMate](../checkmate/index.md) adapts this execution-guided search pattern through OpenEvolve, adding declarative solution checking and structured constraint-violation feedback.
+
+[CacheFit](../cachefit/index.md) explicitly adopts the generator/evaluator pattern for cache replacement programs. It combines ChampSim performance feedback with HARCOM circuit-cost estimates and hardware-budget gates, without claiming reuse of AlphaEvolve's implementation.

@@ -2255,3 +2255,21 @@ relations:
       and tool interface, then runs portfolio members independently and keeps the best feasible
       result. The distinction is state-level composition versus instance-level solver
       complementarity, not whether either method has multiple heuristics.
+  - from: alphaevolve
+    to: cachefit
+    type: adapts
+    dimension: feedback
+    description: >-
+      CacheFit explicitly adopts AlphaEvolve's generator/evaluator pattern for cache-policy
+      programs, combining ChampSim performance with HARCOM circuit-cost estimates and
+      budget-based rejection. This is a methodological adaptation to hardware-constrained
+      policy redesign, not a claim of implementation reuse.
+  - from: cachefit
+    to: cacheforge
+    type: contrasts
+    dimension: feedback
+    description: >-
+      Both evolve executable cache replacement policies. CacheFit gates proposals using
+      analytical circuit-path, area and power estimates, while CACHEFORGE emphasizes
+      simulator performance and metadata-capacity budgets. The comparison concerns
+      what hardware cost the search can observe, not shared code or universal superiority.
