@@ -22,7 +22,7 @@ Open a month to browse. The latest month is expanded.
 ### 2026
 
 <details open>
-<summary><strong>2026.10 · 76 papers</strong></summary>
+<summary><strong>2026.10 · 78 papers</strong></summary>
 
 | Paper | Publication | Links |
 | :--- | :--- | :--- |
@@ -43,6 +43,8 @@ Open a month to browse. The latest month is expanded.
 | <a href="https://arxiv.org/pdf/2610.06577">Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation Algorithms</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.06577) · [Note](content/papers/autosella/index.md) · [Code](https://github.com/vdeshchenya/autosella) |
 | <a href="https://arxiv.org/pdf/2610.14063">Auditing LLM Program Search for Bermudan Stopping with Primal--Dual Certificates</a> | NeurIPS MATH-AI Workshop 2026 | [Paper PDF](https://arxiv.org/pdf/2610.14063) · [Note](content/papers/bermudan-audit/index.md) · [Code](https://github.com/MrSteeeve/OpenHyra) |
 | <a href="https://arxiv.org/pdf/2610.36623">God Does Not Play Dice: Enforcing Batch Invariance in Agentic Kernel Generation</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.36623) · [Note](content/papers/bievolve/index.md) |
+| <a href="https://arxiv.org/pdf/2610.10579">CacheFit: The Rising Cost of Cache Replacement and Constraint-Driven Redesign of Last-Level Cache Replacement Policies</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.10579) · [Note](content/papers/cachefit/index.md) |
+| <a href="https://arxiv.org/pdf/2610.07668">CACHEFORGE: LLM-Guided End-to-End Generative Cache Replacement Policy for Performance and Hardware Efficiency</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.07668) · [Note](content/papers/cacheforge/index.md) |
 | <a href="https://arxiv.org/pdf/2610.29641">Recursive Code Evolution for Task-Oriented Semantic Communications</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.29641) · [Note](content/papers/comrsi/index.md) |
 | <a href="https://arxiv.org/pdf/2610.33281">Coral Discovery: The Division of Cognitive Labor in Autonomous Research</a> | arXiv 2026 | [Paper PDF](https://arxiv.org/pdf/2610.33281) · [Note](content/papers/coral-discovery/index.md) |
 | <a href="https://arxiv.org/pdf/2610.25697">CVaR-RMD: CVaR Selection Pressure for Robust Metaheuristic Discovery</a> | Findings of EMNLP 2026 | [Paper PDF](https://arxiv.org/pdf/2610.25697) · [Note](content/papers/cvar-rmd/index.md) · [Code](https://github.com/BeyondHeaven/CVaR-RMD) |

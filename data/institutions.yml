@@ -1545,3 +1545,9 @@ national-taiwan:
   short_name: NTU Taiwan
   initials: NTUTW
   accent: '#8b4d48'
+north-carolina-state:
+  name: North Carolina State University
+  short_name: NC State
+  initials: NCSU
+  website: https://www.ncsu.edu/
+  accent: '#b52b38'

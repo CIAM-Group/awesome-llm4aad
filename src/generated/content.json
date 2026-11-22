@@ -1905,6 +1905,13 @@
       "short_name": "NTU Taiwan",
       "initials": "NTUTW",
       "accent": "#8b4d48"
+    },
+    "north-carolina-state": {
+      "name": "North Carolina State University",
+      "short_name": "NC State",
+      "initials": "NCSU",
+      "website": "https://www.ncsu.edu/",
+      "accent": "#b52b38"
     }
   },
   "relations": [
@@ -3951,6 +3958,20 @@
       "type": "contrasts",
       "dimension": "design-object",
       "description": "HeurAgenix evolves state-to-operation heuristics and selects among them while a solution trajectory unfolds. LACE evolves complete solve functions behind a tested input, output and tool interface, then runs portfolio members independently and keeps the best feasible result. The distinction is state-level composition versus instance-level solver complementarity, not whether either method has multiple heuristics."
+    },
+    {
+      "from": "alphaevolve",
+      "to": "cachefit",
+      "type": "adapts",
+      "dimension": "feedback",
+      "description": "CacheFit explicitly adopts AlphaEvolve's generator/evaluator pattern for cache-policy programs, combining ChampSim performance with HARCOM circuit-cost estimates and budget-based rejection. This is a methodological adaptation to hardware-constrained policy redesign, not a claim of implementation reuse."
+    },
+    {
+      "from": "cachefit",
+      "to": "cacheforge",
+      "type": "contrasts",
+      "dimension": "feedback",
+      "description": "Both evolve executable cache replacement policies. CacheFit gates proposals using analytical circuit-path, area and power estimates, while CACHEFORGE emphasizes simulator performance and metadata-capacity budgets. The comparison concerns what hardware cost the search can observe, not shared code or universal superiority."
     }
   ],
   "papers": [
@@ -4805,7 +4826,7 @@
       ],
       "featured": true,
       "summary": "AlphaEvolve presents an evolutionary coding agent that edits executable algorithms, receives evaluator feedback, and searches across scientific and production infrastructure tasks.",
-      "body_html": "<h2>Why it matters</h2>\n<p>AlphaEvolve makes the system boundary larger than a single heuristic function. An autonomous pipeline of language models proposes direct code changes, evaluators measure them, and the search continues across longer-lived algorithmic artifacts. The paper describes a white-paper system rather than a conventional conference submission, so the atlas labels it accurately.</p>\n<p><img src=\"paper-assets/alphaevolve/images/paper-cover.jpg\" alt=\"AlphaEvolve paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Novikov et al., AlphaEvolve; see the <a href=\"https://arxiv.org/abs/2506.13131\">arXiv white paper</a>.</em></p>\n<h2>Core method</h2>\n<p>AlphaEvolve orchestrates coding agents, evolutionary selection, and one or more evaluators. Candidates are executable programs, and the harness can apply domain-specific correctness and performance checks. The paper reports applications to data-center scheduling, accelerator circuits, LLM training infrastructure, mathematical algorithms, and matrix multiplication.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A general coding-agent architecture for evaluator-guided algorithm evolution.</li>\n<li>Evidence that evolutionary code editing can target both scientific and production systems.</li>\n<li>A broad system-level framing of automatic discovery beyond fixed heuristic templates.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The executable artifact and evaluator make the loop concrete, while the wider system boundary enables real engineering impact. Reproducibility is limited by proprietary models, infrastructure, evaluators, and compute. Long-horizon evolution also makes harness safety, budget allocation, and anti-hacking checks central research concerns.</p>\n<h2>What to improve</h2>\n<p>Open implementations, transparent evaluation harnesses, and standardized budgets would make comparisons with academic AHD systems more meaningful.</p>\n<h2>Connections</h2>\n<p>The collection treats AlphaEvolve as a system-level generalization of evaluator-guided program search, including FunSearch as its closest historical anchor.</p>\n<p><a href=\"../checkmate/index.md\">CheckMate</a> adapts this execution-guided search pattern through OpenEvolve, adding declarative solution checking and structured constraint-violation feedback.</p>\n"
+      "body_html": "<h2>Why it matters</h2>\n<p>AlphaEvolve makes the system boundary larger than a single heuristic function. An autonomous pipeline of language models proposes direct code changes, evaluators measure them, and the search continues across longer-lived algorithmic artifacts. The paper describes a white-paper system rather than a conventional conference submission, so the atlas labels it accurately.</p>\n<p><img src=\"paper-assets/alphaevolve/images/paper-cover.jpg\" alt=\"AlphaEvolve paper overview\" /></p>\n<p><em>Paper cover and opening figure. Source: Novikov et al., AlphaEvolve; see the <a href=\"https://arxiv.org/abs/2506.13131\">arXiv white paper</a>.</em></p>\n<h2>Core method</h2>\n<p>AlphaEvolve orchestrates coding agents, evolutionary selection, and one or more evaluators. Candidates are executable programs, and the harness can apply domain-specific correctness and performance checks. The paper reports applications to data-center scheduling, accelerator circuits, LLM training infrastructure, mathematical algorithms, and matrix multiplication.</p>\n<h2>Contributions</h2>\n<ul>\n<li>A general coding-agent architecture for evaluator-guided algorithm evolution.</li>\n<li>Evidence that evolutionary code editing can target both scientific and production systems.</li>\n<li>A broad system-level framing of automatic discovery beyond fixed heuristic templates.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The executable artifact and evaluator make the loop concrete, while the wider system boundary enables real engineering impact. Reproducibility is limited by proprietary models, infrastructure, evaluators, and compute. Long-horizon evolution also makes harness safety, budget allocation, and anti-hacking checks central research concerns.</p>\n<h2>What to improve</h2>\n<p>Open implementations, transparent evaluation harnesses, and standardized budgets would make comparisons with academic AHD systems more meaningful.</p>\n<h2>Connections</h2>\n<p>The collection treats AlphaEvolve as a system-level generalization of evaluator-guided program search, including FunSearch as its closest historical anchor.</p>\n<p><a href=\"../checkmate/index.md\">CheckMate</a> adapts this execution-guided search pattern through OpenEvolve, adding declarative solution checking and structured constraint-violation feedback.</p>\n<p><a href=\"../cachefit/index.md\">CacheFit</a> explicitly adopts the generator/evaluator pattern for cache replacement programs. It combines ChampSim performance feedback with HARCOM circuit-cost estimates and hardware-budget gates, without claiming reuse of AlphaEvolve's implementation.</p>\n"
     },
     {
       "id": "heuragenix",
@@ -10721,6 +10742,72 @@
       "featured": false,
       "summary": "Adds contract-based static analysis and cross-batch bitwise tests to kernel agents before speed measurements can reward a candidate.",
       "body_html": "<h2>Why it matters</h2>\n<p>Ordinary correctness tests may accept a kernel whose output for one request changes when other requests join its batch. Serving reproducibility therefore requires a separate property.</p>\n<h2>Core method</h2>\n<p>BIEvolve is a plug-in evaluator rather than a new search algorithm. A task contract identifies batch-varying inputs and protects sample-local reductions, indexing, and randomness. Static dependency analysis screens suspicious dataflow; native correctness tests and dynamic checks then compare an unchanged sample across batch contexts at bitwise precision.</p>\n<p>Only passing candidates reach timing. Rejection diagnostics return to the host agent's existing repair loop. Integrations retain the original KSearch, Iterative, and Evolve search mechanisms.</p>\n<h2>Contributions</h2>\n<p>The artifact audit confirms violations in 19 of 83 batch-applicable released kernels. Across three frameworks on H100 serving workloads, BI-aware generation raises the reported batch-invariance pass rate from 67.6% to 91.9%, retaining 91.8% of baseline geometric-mean speedup.</p>\n<h2>Strengths and limitations</h2>\n<p>The study distinguishes numerical tolerance from bitwise invariance and measures both missed violations and false rejections. Static support is limited to particular source patterns, and finite dynamic contexts do not prove invariance. The contract must correctly identify independent sample semantics; some operations intentionally couple examples.</p>\n<h2>What to improve</h2>\n<p>Expand language and cross-file coverage, independently validate contracts, and test unseen batch sizes and production batching policies.</p>\n<h2>Connections</h2>\n<p>Both check that changing unrelated batch members does not change a preserved result. <a href=\"../kernaut/index.md\">Kernaut</a> uses purity-constrained covariance components and consistency tests within a numerical tolerance under permutation, subsetting, extension and duplication. BIEvolve checks dependencies from batch variables into protected GPU mechanisms and requires bitwise output agreement across matched batch contexts. This contrasts interface-based purity checks with targeted dependency and bitwise checks.</p>\n"
+    },
+    {
+      "id": "cachefit",
+      "short_title": "CacheFit",
+      "title": "CacheFit: The Rising Cost of Cache Replacement and Constraint-Driven Redesign of Last-Level Cache Replacement Policies",
+      "authors": [
+        "Bita Aslrousta",
+        "Kaushal Mhapsekar",
+        "Darsh Asher",
+        "Azam Ghanbari",
+        "Joshua Kalyanapu",
+        "Samira Mirbagher Ajorpaz"
+      ],
+      "year": 2026,
+      "date": "2026-10-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2610.10579",
+      "institutions": [
+        "north-carolina-state"
+      ],
+      "primary_dimension": "feedback",
+      "dimensions": [
+        "feedback",
+        "search"
+      ],
+      "problems": [
+        "CPU last-level cache replacement",
+        "Hardware-constrained cache policy redesign"
+      ],
+      "featured": false,
+      "summary": "CacheFit redesigns executable cache replacement policies using LLM proposals, ChampSim performance feedback, HARCOM circuit-cost estimates and editable search memory under explicit hardware budgets.",
+      "body_html": "<h2>Why it matters</h2>\n<p>A cache replacement algorithm can improve simulated throughput while requiring impractical metadata or decision logic. Metadata capacity alone also misses differences in array geometry and dependent operations. CacheFit puts estimated implementation costs inside algorithm search, rather than considering them only after a policy has been selected.</p>\n<h2>Core method</h2>\n<p>The design artifact is a complete C++ cache replacement policy compatible with ChampSim. A pretrained LLM receives a seed policy, interface requirements, hardware budgets and retrieved design lessons. It proposes revised code, which is compiled and repaired within a bounded retry loop. ChampSim measures performance on instruction traces. A second representation expresses the policy's arrays and operations as HARCOM circuit-model components, with compilation and mechanical fidelity checks before cost evaluation.</p>\n<p>The controller rejects candidates that violate specified budgets even if their instructions per cycle, or IPC, improve. It then distills experimental outcomes into an editable summary with four fields: principles, discouraged mechanisms, adjustable choices and unresolved questions. This summary is capped at 32 entries and retains links to the originating experiments. It is external search memory, not a change to model weights.</p>\n<p>When progress stalls, the search can cross two candidates from its top-eight archive. The second parent is selected for distance between code embeddings, encouraging combinations beyond small edits of the best policy. The same stagnation trigger coordinates crossover, model rotation and memory refresh. A designer can insert, remove or revise memory entries to redirect subsequent proposals. These mechanisms are detailed in Section III-C.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Combines execution feedback with estimated latency, storage, area and power during policy generation.</li>\n<li>Makes accumulated search lessons inspectable and editable without retraining the LLM.</li>\n<li>Shows concrete redesigns rather than only aggregate search scores. Fit-MPPPB halves the predictor-table count, narrows counters and shrinks the sampler. Across 20 SPEC CPU2017 workloads, it reports 60.3% less storage and 56.3% less modeled static power with about 1.1% higher aggregate IPC.</li>\n<li>Demonstrates a different trade-off with Fit-SHiP++: about 56% less storage and 61% less modeled static power at a 1.54% IPC reduction.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The useful contribution is the connection between a generated program, its evaluated behavior and a decomposed cost estimate. Component-level analyses explain where savings arise, and the memory-intervention examples make human steering concrete.</p>\n<p>All circuit costs come from HARCOM's analytical model, not RTL synthesis or silicon measurements. Some modeled paths are only partially elaborated. Results depend on the program-to-model translation and the selected 5 nm assumptions. The main performance study uses a single-core simulator and 20 workloads. The separate 27-workload generalization result includes the nine tuning workloads, and the stronger-prefetcher check uses a shorter simulation window. Comparisons with other discovery frameworks need clearer matched-budget reporting before supporting broad superiority claims.</p>\n<h2>What to improve</h2>\n<p>Release the generator, translations and evaluation traces. Validate selected policies through RTL synthesis and timing analysis. Report independent search repetitions, equal-budget baselines, separate held-out results and a common simulation protocol for prefetcher comparisons.</p>\n<h2>Connections</h2>\n<p><a href=\"../alphaevolve/index.md\">AlphaEvolve</a> provides the generator/evaluator pattern that CacheFit explicitly adopts. CacheFit specializes the evaluator for cache-policy execution and analytical circuit-cost constraints. This is a method adaptation, not a claim that AlphaEvolve's implementation is reused.</p>\n<p><a href=\"../cacheforge/index.md\">CACHEFORGE</a> also evolves executable cache policies, but emphasizes simulator performance and metadata budgets. Comparing the two reveals why metadata capacity and explicit circuit-path, area and power estimates impose different design constraints.</p>\n"
+    },
+    {
+      "id": "cacheforge",
+      "short_title": "CACHEFORGE",
+      "title": "CACHEFORGE: LLM-Guided End-to-End Generative Cache Replacement Policy for Performance and Hardware Efficiency",
+      "authors": [
+        "Kaushal Mhapsekar",
+        "Bita Aslrousta",
+        "Brijesh Kumar Bhayana",
+        "Paula Contreras",
+        "Azam Ghanbari",
+        "Ethan Goodman",
+        "Anna Andriiko",
+        "Samira Mirbagher Ajorpaz"
+      ],
+      "year": 2026,
+      "date": "2026-10-01",
+      "venue": "arXiv",
+      "paper_url": "https://arxiv.org/pdf/2610.07668",
+      "institutions": [
+        "north-carolina-state"
+      ],
+      "primary_dimension": "search",
+      "dimensions": [
+        "search",
+        "feedback"
+      ],
+      "problems": [
+        "CPU last-level cache replacement",
+        "Cache policy performance and metadata efficiency"
+      ],
+      "featured": false,
+      "summary": "CACHEFORGE evolves C++ cache replacement logic through LLM proposals, CRC-2 ChampSim evaluation, retrieved design memory, adaptive mutations and cross-policy recombination under metadata budgets.",
+      "body_html": "<h2>Why it matters</h2>\n<p>Searching parameters within a fixed cache-policy template cannot change its metadata structures or decision rules. CACHEFORGE instead searches executable code. It also separates cache hit rate from processor throughput, since retaining more lines does not necessarily prevent the misses that stall execution.</p>\n<h2>Core method</h2>\n<p>The generator receives the cache interface, optimization objective, storage constraints, prior policies and retrieved experimental lessons. It emits a policy name, rationale, C++ implementation and overhead estimate. Candidates are compiled into CRC-2 ChampSim and evaluated on SPEC CPU2006 traces. Feedback includes IPC, misses, access-type hit rates and metadata usage. Search can start from a human-designed policy or an initially empty design context.</p>\n<p>The search retains short-term context, episodic experiment records and distilled design summaries. Retrieval supplies relevant prior attempts to the next prompt. Temperature controls proposal diversity, while mutation instructions request smaller refinements or larger structural changes according to recent performance. Branching proposals can refine a parent, combine different successful policies or generate a new policy informed by accumulated lessons. The paper compares hit-rate, IPC and combined reward choices rather than assuming that one metric always predicts the others.</p>\n<p>The resulting programs include more than parameter adjustments. SPARC+ combines spatial and reuse information with insertion rules and victim feedback. TA-DPIP uses reuse, stride and thrashing signals to control insertion priority. Other outputs redesign MPPPB predictor features, sampling and storage. Sections III and VI describe the search machinery and generated mechanisms, respectively.</p>\n<h2>Contributions</h2>\n<ul>\n<li>Searches cache replacement code with mutable control flow and metadata rather than only a fixed vector of parameters.</li>\n<li>Connects generated policy mechanisms to simulation outcomes and examines memory, seeds, temperature and mutation choices.</li>\n<li>Reports 10,687 generated policies across its experiments. The highlighted SPARC+ result improves IPC by about 10.15% over LRU on five memory-intensive workloads. A separate evaluation tests policies across all 28 SPEC CPU2006 traces, so that subset speedup should not be presented as an all-suite result.</li>\n<li>Shows that the policy selected for throughput need not be the one selected for hit rate or performance per unit of metadata.</li>\n</ul>\n<h2>Strengths and limitations</h2>\n<p>The paper provides identifiable generated algorithms and sensitivity studies, making it directly relevant to executable algorithm discovery. It is not simply an LLM choosing the next cache victim at runtime or training a replacement predictor.</p>\n<p>Evidence comes from trace-based simulation, not deployed hardware. Compilation and structural checks do not establish RTL feasibility or formal correctness. Search and evaluation windows differ, and the full-suite evaluation includes the five tuning workloads. Independent search variability and equal-budget comparisons need fuller reporting. Some numerical descriptions also need reconciliation: the stated 43% storage reduction does not follow from the same paragraph's 12 KB and 29.05 KB figures. No verified public implementation was identified for this entry.</p>\n<h2>What to improve</h2>\n<p>Release policies, prompts, lineage records and evaluation scripts. Report held-out workloads separately, repeat searches under matched budgets and clarify the phase-transition rules and storage accounting. Validate selected policies with circuit-level implementation checks beyond metadata capacity.</p>\n<h2>Connections</h2>\n<p><a href=\"../cachefit/index.md\">CacheFit</a> targets the same executable cache-policy artifact but includes HARCOM estimates of circuit latency, area and power in its feasibility gates. CACHEFORGE focuses on performance and metadata-guided discovery. This is a concrete difference in evaluation constraints, not evidence that either method extends or universally outperforms the other.</p>\n"
     },
     {
       "id": "comrsi",
